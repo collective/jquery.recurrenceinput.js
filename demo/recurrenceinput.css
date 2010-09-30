@@ -1,0 +1,35 @@
+.recurrenceinput {
+    width: 600px;
+    border: 1px solid #000;
+    margin: 1em;
+}
+.recurrenceinput .buttons a {
+    background: #000;
+    color: #FFF;
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 1em;
+    display: block;
+    float: left;
+}
+.recurrenceinput .clear {
+    clear: both;
+}
+
+.recurrenceinput .rrule {
+    margin: 1em;
+}
+.recurrenceinput .freq {
+    list-style: none;
+    margin: 0;
+    padding: 0 1em 0 0;
+    display: block;
+    float: left;
+    border-right: 1px solid #000;
+}
+.recurrenceinput .freq li {
+    margin: 0;
+}
+.recurrenceinput .freq-options div {
+    margin: 0 0 0 1em;
+}
