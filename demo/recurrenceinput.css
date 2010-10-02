@@ -12,24 +12,9 @@
     display: block;
     float: left;
 }
-.recurrenceinput .clear {
-    clear: both;
-}
-
-.recurrenceinput .rrule {
+.recurrenceinput .rule {
     margin: 1em;
 }
 .recurrenceinput .freq {
-    list-style: none;
-    margin: 0;
-    padding: 0 1em 0 0;
-    display: block;
-    float: left;
     border-right: 1px solid #000;
-}
-.recurrenceinput .freq li {
-    margin: 0;
-}
-.recurrenceinput .freq-options div {
-    margin: 0 0 0 1em;
 }
