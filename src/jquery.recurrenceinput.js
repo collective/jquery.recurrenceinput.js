@@ -35,17 +35,16 @@
          * Initial steps to activate widget
          */
 
-        // initialize
-        // TODO:
-
         // add actions to widget buttons
         widget.find('.buttons > a')
             .unbind('click')
             .click(function () {
-                // TODO: add rrule, exdate, rdate or exdate 
-                add_rule();
+                var class_name = $(this).attr('class');
+                if (class_name == 'add_rrule') { add_rule('rrule') }
+                else if (class_name == 'add_exrule') { add_rule('exrule') }
+                else if (class_name == 'add_rdate') { add_date('rdate') }
+                else if (class_name == 'add_exdate') { add_date('exdate') }
             });
-
 
 
         function add_rule (rule_class, data) {
@@ -61,15 +60,15 @@
             });
 
             // select 
+            rule.find('.freq input[name=freq]').attr('class', '');
             rule.find('.freq input[name=freq]').unbind("change").change(function() {
-                $this = $(this);
-                rule.find('.freq input[name=freq]').attr('class', '');
-                $this.attr('class', 'active')
+                var el = $(this);
+                el.attr('class', 'active');
                 rule.find('.freq-options > div').css('display', 'none');
-                rule.find('.freq-options .' + $this.val().toLowerCase())
+                rule.find('.freq-options .' + el.val().toLowerCase())
                         .css('display', 'block')
-                        .css('margin-left', +$this.parent().parent().width() +
-                                            2*(+($this.parent().parent().css('font-size')
+                        .css('margin-left', +el.parent().parent().width() +
+                                            2*(+(el.parent().parent().css('font-size')
                                                 .replace('px', '')
                                                 .replace('em', ''))));
             });
@@ -114,6 +113,7 @@
         $.extend(self, {
             widget: widget,
             widget_ruleset: widget_ruleset,
+            initialize: function () { add_rule('rrule') },
             parse_rrule: function (el) { return 'RRULE: '+parse_rule(el) },
             parse_exrule: function (el) { return 'EXRULE: '+parse_rule(el) },
             parse_rdate: function (el) { return 'RDATE: '+parse_date(el) },
@@ -143,6 +143,13 @@
 
                 // hide textarea
                 textarea.css('display', 'none');
+
+                // initialize widget
+                if (textarea.val == '') {
+                    recurrenceinput.initial_structure();
+                } else {
+                    // TODO: populate data
+                }
 
                 // on form submit we write to textarea
                 form.submit(function(e) {
