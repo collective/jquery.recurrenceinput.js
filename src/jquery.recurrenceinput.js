@@ -27,8 +27,10 @@
     function Recurrenceinput (textarea, conf) {
 
         var widget_str = '<div class="recurrenceinput"><div class="ruleset"></div><div class="buttons"><a href="#" class="add_rrule">'+_('Add RRULE')+'</a><a href="#" class="add_exrule">'+_('Add EXRULE')+'</a><a href="#" class="add_rdate">'+_('Add RDATE')+'</a><a href="#" class="add_exdate">'+_('Add EXDATE')+'</a></div><div style="clear:both;"><!-- --></div></div>'; 
-        var rule_str = '<div class="rule RULE_CLASS"><form><a href="#" class="remove">'+_('Remove RULE')+'</a><div style="clear:both;"><!-- --></div><ul class="freq" style="list-style:none; margin: 0; padding: 0 1em 0 0; display: block; float: left;"><li style="margin: 0;"><input type="radio" name="freq" value="DAILY" /><label>'+_('Daily')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" /><label>'+_('Weekly')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" /><label>'+_('Monthly')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" /><label>'+_('Yearly')+'</label></li></ul><div class="freq-options"><div class="daily" style="margin: 0 0 0 1em;">DAILY OPTIONS</div><div class="weekly" style="margin: 0 0 0 1em;">WEEKLY OPTIONS</div><div class="monthly" style="margin: 0 0 0 1em;">MONTHLY OPTIONS</div><div class="yearly" style="margin: 0 0 0 1em;">YEARLY OPTIONS</div></div><div style="clear:both;"><!-- --></div></form></div>';
-        var date_str = '<div class="rule DATE_CLASS"><form><a href="#" class="remove">'+_('Remove DATE')+'</a><input type="input" name="date" value="" /></form></div>';
+
+        var rule_str = '<div class="rule"><form><a href="#" class="remove">'+_('Remove RULE')+'</a><div style="clear:both;"><!-- --></div><ul class="freq" style="list-style:none; margin: 0; padding: 0 1em 0 0; display: block; float: left;"><li style="margin: 0;"><input type="radio" name="freq" value="DAILY" /><label>'+_('Daily')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" /><label>'+_('Weekly')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" /><label>'+_('Monthly')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" /><label>'+_('Yearly')+'</label></li></ul><div class="freq-options"><div class="daily" style="margin: 0 0 0 1em;">DAILY OPTIONS</div><div class="weekly" style="margin: 0 0 0 1em;">WEEKLY OPTIONS</div><div class="monthly" style="margin: 0 0 0 1em;">MONTHLY OPTIONS</div><div class="yearly" style="margin: 0 0 0 1em;">YEARLY OPTIONS</div></div><div style="clear:both;"><!-- --></div></form></div>';
+
+        var date_str = '<div class="rule DATE_CLASS"><form><a href="#" class="remove">'+_('Remove DATE')+'</a><br /><input type="input" name="date" value="" /></form></div>';
 
         var self = this;
         var widget = $(widget_str);
@@ -43,7 +45,9 @@
         // add actions to widget buttons
         widget.find('.buttons > a')
             .unbind('click')
-            .click(function () {
+            .click(function (e) {
+                e.preventDefault();
+
                 var class_name = $(this).attr('class');
                 if (class_name == 'add_rrule') { add_rule('rrule') }
                 else if (class_name == 'add_exrule') { add_rule('exrule') }
@@ -57,7 +61,7 @@
 
             // remove rrule action
             rule.find('a.remove').unbind("click").click(function () {
-                $(this).parent().parent().remove();
+                $(this).closest("div.rule").remove();
             });
 
             // append rrule to ruleset
@@ -65,39 +69,45 @@
         }
 
         function add_rule (rule_class, data) {
-            var rule = $(rule_str.replace('RULE_CLASS', rule_class));
+            var rule = $(rule_str);
+            rule.addClass(rule_class);
 
             // hide options of frequencies
-            rule.find('.freq-options > div').css('display', 'none');
+            $('.freq-options > div', rule).hide();
 
             // make label of freq option active for selection
             rule.find('.freq label').unbind("click").click(function () {
                 var input = $(this).parent().find('input[name=freq]');
-                input.click(); input.change();
+                input.click(); 
+                input.change();
             });
 
+
             // select 
-            rule.find('.freq input[name=freq]').attr('class', '');
+            rule.find('.freq input[name=freq]').removeClass("active");
             rule.find('.freq input[name=freq]').unbind("change").change(function() {
                 var el = $(this);
-                el.attr('class', 'active');
-                rule.find('.freq-options > div').css('display', 'none');
+                
+                rule.find('.freq input[name=freq]').removeClass("active");
+                rule.find('.freq-options > div').hide();
+
+                el.addClass('active');
+
+                parent_list = el.closest("ul");
+                font_size = parent_list.css('font-size').replace('px', '').replace('em','');
+
                 rule.find('.freq-options .' + el.val().toLowerCase())
-                        .css('display', 'block')
-                        .css('margin-left', +el.parent().parent().width() +
-                                            2*(+(el.parent().parent().css('font-size')
-                                                .replace('px', '')
-                                                .replace('em', ''))));
+                        .show()
+                        .css('margin-left', + (parent_list.width() + 2*font_size));
             });
 
             // remove rrule action
             rule.find('a.remove').unbind("click").click(function () {
-                $(this).parent().parent().remove();
+                $(this).closest("div.rule").remove();
             });
 
             // append rrule to ruleset
             widget_ruleset.append(rule);
-
         }
 
 
@@ -109,13 +119,14 @@
         // method for parsing rules (rrule and exrule)
         function parse_rule(el) {
             var str_ = '';
-            str_ += 'FREQ='+el.find('input[class=active]').val()
+            freq = el.find('input.active').val();
+            str_ += 'FREQ=' + freq;
             // TODO: parse other options
             return str_;
         }
 
         // function for parsing dates (rdate and exdate)
-        function parse_rule(el) {
+        function parse_date(el) {
             var str_ = '';
             // TODO: parse other options
             return str_;
@@ -155,66 +166,44 @@
             if (this.tagName == 'TEXTAREA') {
 
                 var textarea = $(this);
-                var form = detect_form(textarea);
+                var form = textarea.closest("form");
                 var recurrenceinput = new Recurrenceinput($.extend(true, {}, default_conf, conf));
 
-                // hide textarea
-                textarea.css('display', 'none');
+                //textarea.hide();
 
                 // initialize widget
                 if (textarea.val() == '') {
                     recurrenceinput.initial_structure();
                 } else {
-                    // TODO: populate data
+                    // TODO: populate data from existing relations
                 }
 
                 // on form submit we write to textarea
                 form.submit(function(e) {
+                    e.preventDefault();
 
                     // create string for rule widget
                     var ruleset_str = '';
-                    recurrenceinput.widget_ruleset.each(function () {
-                        var el = $(this);
-                        if (el.hasClass('rrule')) {
-                            ruleset_str += recurrenceinput.parse_rrule(el)+'\n';
-                        } else if (el.hasClass('exrule')) {
-                            ruleset_str += recurrenceinput.parse_exrule(el)+'\n';
-                        } else if (el.hasClass('rdate')) {
-                            ruleset_str += parse_rdate(el)+'\n';
-                        } else if (el.hasClass('exdate')) {
-                            ruleset_str += parse_exdate(el)+'\n';
-                        }
-                    });
+                    var f = function(pf, el) {
+                        ruleset_str += pf($(el)) + "\n";
+                    }
+                    var widgets = recurrenceinput.widget_ruleset
+                    $('div.rrule', widgets).each( function() { f(recurrenceinput.parse_rrule, this) });
+                    $('div.exrule', widgets).each(function() { f(recurrenceinput.parse_exdate, this) });
+                    $('div.rdate', widgets).each( function() { f(recurrenceinput.parse_rdate, this) });
+                    $('div.exdate', widgets).each(function() { f(recurrenceinput.parse_exdate, this) })
 
                     // insert string generated form above to textarea
                     textarea.val(ruleset_str);
 
                     // remove widget
-                    recurrenceinput.widget.remove();
+                    //recurrenceinput.widget.remove();
                 });
 
                 // insert recurrance widget right after textarea 
                 textarea.after(recurrenceinput.widget)
             };
         });
-
-
-
-        /*
-         * HELPING FUNCTIONS
-         */
-
-        // FIXME: maybe there is a better way to detect form
-        function detect_form (textarea) {
-            var form = textarea.parent()
-            while (form[0].tagName!= 'FORM') {
-                form = textarea.parent();
-                if (form[0].type == 'BODY') {
-                    break;
-                }
-            }
-            return form
-        }
     };
 
 })(jQuery);
