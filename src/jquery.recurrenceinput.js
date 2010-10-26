@@ -17,8 +17,8 @@
      */
     var default_conf = {
         'widget-tmpl': '#jquery-recurrenceinput-widget-tmpl',
-        'rule_tmpl': '#jquery-recurrenceinput-rule-tmpl',
-        'date_tmpl': '#jquery-recurrenceinput-date-tmpl'
+        'rule-tmpl': '#jquery-recurrenceinput-rule-tmpl',
+        'date-tmpl': '#jquery-recurrenceinput-date-tmpl'
     };
 
     // private
