@@ -78,7 +78,10 @@
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $("textarea[name=demo]").recurrenceinput();
+            $("textarea[name=demo1]").recurrenceinput();
+        });
+        $(document).ready(function() {
+            $("textarea[name=demo2]").recurrenceinput();
         });
     </script>
     
@@ -88,7 +91,18 @@
 <body>
 
     <form>
-        <textarea name="demo"></textarea>
+        <div>
+            <label>Demo 1</label>
+            <div>
+                <textarea name="demo1"></textarea>
+            </div>
+        </div>
+        <div>
+            <label>Demo 2</label>
+            <div>
+                <textarea name="demo2"></textarea>
+            </div>
+        </div>
         <input type="submit" />
     </form>
 
