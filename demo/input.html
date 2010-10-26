@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../lib/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
     <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
+    <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
 
     <script id="jquery-recurrenceinput-widget-tmpl" type="text/x-jquery-tmpl">
         <div class="recurrenceinput">
@@ -66,16 +67,25 @@
     </script>
 
     <script id="jquery-recurrenceinput-date-tmpl" type="text/x-jquery-tmpl">
+        <!--
+            { 'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
+              'dateDay': '1', 'dateMonth': '2', 'dateYear': '2010' }
+        -->
         <li class="rule" style="clear:both;">
             <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
-            <input type="input" name="date" value="" />
+            <input type="text" name="date-day" size="2" maxlength="2" value="${dateDay}"/> /
+            <select name="date-month">
+                {{each months}}
+                    <option value="${$index+1}"
+                            {{if $index+1==dateMonth}}selected="selected"{{/if}}>
+                        ${$value}</option>
+                {{/each}}
+            </select> /
+            <input type="text" name="date-year" size="4" maxlength="4" value="${dateYear}"/>
         </li>
     </script>
 
-
-
-    <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("textarea[name=demo1]").recurrenceinput();

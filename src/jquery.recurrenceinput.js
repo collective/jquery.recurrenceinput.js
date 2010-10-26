@@ -47,7 +47,11 @@
 
 
         function add_date(date_class, data) {
-            var rule = $(conf['date-tmpl']).tmpl()
+            var rule = $(conf['date-tmpl']).tmpl(
+            {'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
+             'dateDay': '1', 'dateMonth': '2', 'dateYear': '2010'
+             }
+                    )
             rule.addClass(date_class);
 
             // remove rule action
