@@ -13,8 +13,16 @@
     margin: 0;
 }
 
+
+.recurrenceinput ul.freq {
+    border-right: 1px solid #000;
+    display: block;
+    float: left;
+    padding-right: 1em;
+}
+
 .recurrenceinput ul li {
-    margin: 0;
+    margin: 5px 0;
     padding: 0;
 }
 
@@ -43,11 +51,6 @@
     -moz-border-radius: 5px;
     background: #eee;
     padding: 10px;
-}
-
-.recurrenceinput .freq {
-    border-right: 1px solid #000;
-    margin-top: 10px;
 }
 
 .recurrenceinput .freq-options {
