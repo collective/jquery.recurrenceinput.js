@@ -48,21 +48,21 @@
 
         function add_date(date_class, data) {
             var rule = $(conf['date-tmpl']).tmpl(
-            {'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
-             'dateDay': '1', 'dateMonth': '2', 'dateYear': '2010'
-             }
-                    )
+                {'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
+                    'dateDay': '1', 'dateMonth': '2', 'dateYear': '2010'
+                }
+            )
             rule.addClass(date_class);
 
             // remove rule action
             $('a.remove', rule).unbind("click").click(function () {
-                $(this).closest("li.rule").slideUp(function() { $(this).remove() });
+                $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
             // append rule to ruleset
             rule.hide();
             $('.recurrenceinput-' + date_class + " ul.ruleset", widget).append(rule);
-            rule.slideDown();
+            rule.slideDown("fast");
         }
 
         function add_rule (rule_class, data) {
@@ -100,13 +100,13 @@
 
             // remove rrule action
             rule.find('a.remove').unbind("click").click(function () {
-                    $(this).closest("li.rule").slideUp(function() { $(this).remove() });
+                    $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
             // append rrule to ruleset
             rule.hide();
             $('.recurrenceinput-' + rule_class + " ul.ruleset", widget).append(rule);
-            rule.slideDown();
+            rule.slideDown("fast");
         }
 
 
