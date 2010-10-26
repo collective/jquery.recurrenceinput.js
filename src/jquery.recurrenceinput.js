@@ -47,7 +47,7 @@
 
 
         function add_date(date_class, data) {
-            var rule = $(conf['rule-tmpl']).tmpl()
+            var rule = $(conf['date-tmpl']).tmpl()
             rule.addClass(date_class);
 
             // remove rule action
@@ -94,7 +94,7 @@
 
             // remove rrule action
             rule.find('a.remove').unbind("click").click(function () {
-                $(this).closest("div.rule").remove();
+                $(this).closest("li.rule").remove();
             });
 
             // append rrule to ruleset

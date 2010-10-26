@@ -10,27 +10,27 @@
 
     <script id="jquery-recurrenceinput-widget-tmpl" type="text/x-jquery-tmpl">
         <div class="recurrenceinput">
-            <div class="recurrenceinput-rrule">
+            <div class="recurrenceinput-rrule" style="clear: both">
                 <ul class="ruleset"></ul>
-                <p class="button">
+                <p class="button" style="clear: both">
                     <a href="#" class="button-add-rrule">Add RRULE</a>
                 </p>
             </div>
-            <div class="recurrenceinput-rdate">
+            <div class="recurrenceinput-rdate" style="clear: both">
                 <ul class="ruleset"></ul>
-                <p class="button">
+                <p class="button" style="clear: both">
                     <a href="#" class="button-add-rdate">Add RDATE</a>
                 </p>
             </div>
-            <div class="recurrenceinput-exrule">
+            <div class="recurrenceinput-exrule" style="clear: both">
                 <ul class="ruleset"></ul>
-                <p class="button">
+                <p class="button" style="clear: both">
                     <a href="#" class="button-add-exrule">Add EXRULE</a>
                 </p>
             </div>
-            <div class="recurrenceinput-exdate">
+            <div class="recurrenceinput-exdate" style="clear: both">
                 <ul class="ruleset"></ul>
-                <p class="button">
+                <p class="button" style="clear: both">
                     <a href="#" class="button-add-exdate">ADD EXDATE</a>
                 </p>
             </div>
@@ -38,14 +38,22 @@
     </script>
 
     <script id="jquery-recurrenceinput-rule-tmpl" type="text/x-jquery-tmpl">
-        <li class="rule">
-            <a href="#" class="remove">Remove</a>
+        <li class="rule" style="clear:both;">
+            <a href="#" class="remove" style="clear:both;">Remove</a>
             <div style="clear:both;"><!-- --></div>
             <ul class="freq" style="list-style:none; margin: 0; padding: 0 1em 0 0; display: block; float: left;">
-                <li style="margin: 0;"><input type="radio" name="freq" value="DAILY" /><label>'+_('Daily')+'</label></li>
-                <li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" /><label>'+_('Weekly')+'</label></li>
-                <li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" /><label>'+_('Monthly')+'</label></li>
-                <li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" /><label>'+_('Yearly')+'</label></li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="DAILY" />
+                <label>Daily</label>
+                </li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" />
+                <label>Weekly</label>
+                </li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" />
+                <label>Monthly</label>
+                </li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" />
+                <label>Yearly</label>
+                </li>
             </ul>
             <div class="freq-options">
                 <div class="daily" style="margin: 0 0 0 1em;">DAILY OPTIONS</div>
@@ -58,8 +66,8 @@
     </script>
 
     <script id="jquery-recurrenceinput-date-tmpl" type="text/x-jquery-tmpl">
-        <li class="rule">
-            <a href="#" class="remove">Remove</a>
+        <li class="rule" style="clear:both;">
+            <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
             <input type="input" name="date" value="" />
         </li>
