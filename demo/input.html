@@ -40,29 +40,36 @@
 
     <script id="jquery-recurrenceinput-rule-tmpl" type="text/x-jquery-tmpl">
         <li class="rule" style="clear:both;">
-            <a href="#" class="remove" style="clear:both;">Remove</a>
+            <a href="#" class="remove">Remove</a>
             <div style="clear:both;"><!-- --></div>
-            <ul class="freq" style="list-style:none; margin: 0; padding: 0 1em 0 0; display: block; float: left;">
-                <li style="margin: 0;"><input type="radio" name="freq" value="DAILY" />
+            <ul class="freq">
+                <li>
+                <input type="radio" name="freq" value="DAILY" />
                 <label>Daily</label>
                 </li>
-                <li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" />
+                <li>
+                <input type="radio" name="freq" value="WEEKLY" />
                 <label>Weekly</label>
                 </li>
-                <li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" />
+                <li>
+                <input type="radio" name="freq" value="MONTHLY" />
                 <label>Monthly</label>
                 </li>
-                <li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" />
+                <li>
+                <input type="radio" name="freq" value="YEARLY" />
                 <label>Yearly</label>
                 </li>
             </ul>
+
             <div class="freq-options">
-                <div class="daily" style="margin: 0 0 0 1em;">DAILY OPTIONS</div>
-                <div class="weekly" style="margin: 0 0 0 1em;">WEEKLY OPTIONS</div>
-                <div class="monthly" style="margin: 0 0 0 1em;">MONTHLY OPTIONS</div>
-                <div class="yearly" style="margin: 0 0 0 1em;">YEARLY OPTIONS</div>
+                <div class="daily">DAILY OPTIONS</div>
+                <div class="weekly">WEEKLY OPTIONS</div>
+                <div class="monthly">MONTHLY OPTIONS</div>
+                <div class="yearly">YEARLY OPTIONS</div>
             </div>
+
             <!-- TODO: Range part still missing -->
+            <div style="clear:both;"><!-- --></div>
         </li>
     </script>
 

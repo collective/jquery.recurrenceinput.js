@@ -1,20 +1,72 @@
 .recurrenceinput {
     width: 600px;
-    border: 1px solid #000;
+    border: 2px solid #ccc;
     margin: 1em;
-}
-.recurrenceinput .buttons a {
-    background: #000;
-    color: #FFF;
-    text-decoration: none;
+    font-family: Helvetica;
     padding: 0.5em;
-    margin: 1em;
+    -moz-border-radius: 5px;
+}
+
+.recurrenceinput ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.recurrenceinput ul.freq {
+    border-right: 1px solid #000;
     display: block;
     float: left;
+    padding-right: 1em;
 }
+
+.recurrenceinput ul li {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.recurrenceinput .button a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 0.5em;
+    background: #eee;
+    -moz-border-radius: 3px;
+}
+
+.recurrenceinput .button a:hover {
+    background: #ccc;
+}
+
+.recurrenceinput .button {
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+
+}
+
 .recurrenceinput .rule {
     margin: 1em;
+    -moz-border-radius: 5px;
+    background: #eee;
+    padding: 10px;
 }
-.recurrenceinput .freq {
-    border-right: 1px solid #000;
+
+.recurrenceinput .freq-options {
+    margin: 0;
+}
+
+a.remove {
+    display: block;
+    float: right;
+    background: #FF9B9B;
+    color: black;
+    padding: 10px;
+    margin-top: -10px;
+    margin-right: -10px;
+    -moz-border-radius: 0 5px 0 5px;
+}
+a.remove:hover {
+    background: red;
 }

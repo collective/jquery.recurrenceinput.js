@@ -56,11 +56,13 @@
 
             // remove rule action
             $('a.remove', rule).unbind("click").click(function () {
-                $(this).closest("li.rule").remove();
+                $(this).closest("li.rule").slideUp(function() { $(this).remove() });
             });
 
             // append rule to ruleset
+            rule.hide();
             $('.recurrenceinput-' + date_class + " ul.ruleset", widget).append(rule);
+            rule.slideDown();
         }
 
         function add_rule (rule_class, data) {
@@ -92,17 +94,19 @@
                 font_size = parent_list.css('font-size').replace('px', '').replace('em','');
 
                 rule.find('.freq-options .' + el.val().toLowerCase())
-                        .show()
-                        .css('margin-left', + (parent_list.width() + 2*font_size));
+                        .css('margin-left', + (parent_list.width() + 2*font_size))
+                        .show();
             });
 
             // remove rrule action
             rule.find('a.remove').unbind("click").click(function () {
-                $(this).closest("li.rule").remove();
+                    $(this).closest("li.rule").slideUp(function() { $(this).remove() });
             });
 
             // append rrule to ruleset
+            rule.hide();
             $('.recurrenceinput-' + rule_class + " ul.ruleset", widget).append(rule);
+            rule.slideDown();
         }
 
 
