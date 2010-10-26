@@ -19,17 +19,11 @@
 
     // private
 
-    // helper translation function
-    function _(str, args) { 
-        return $.i18n('jquery-recurrenceinput', str, args); 
-    }
-
     function Recurrenceinput (textarea, conf) {
 
 
         var self = this;
-        var widget = $(widget_str);
-        var widget_ruleset = widget.find('.ruleset');
+        var widget = $("#jquery-recurrenceinput-widget-tmpl" ).tmpl();
 
         /*
          * Initial steps to activate widget
@@ -160,7 +154,7 @@
 
                 var textarea = $(this);
                 var form = textarea.closest("form");
-                var recurrenceinput = new Recurrenceinput($.extend(true, {}, default_conf, conf));
+                var recurrenceinput = new Recurrenceinput(textarea, $.extend(true, {}, default_conf, conf));
 
                 //textarea.hide();
 
