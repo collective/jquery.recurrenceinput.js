@@ -25,7 +25,6 @@
 
     function Recurrenceinput (textarea, conf) {
 
-
         var self = this;
         var widget = $(conf['widget-tmpl']).tmpl();
 
@@ -34,33 +33,34 @@
          */
 
         // add actions to widget buttons
-        widget.find('.buttons > a')
+        widget.find('p.button > a')
             .unbind('click')
             .click(function (e) {
                 e.preventDefault();
 
                 var class_name = $(this).attr('class');
-                if (class_name == 'add_rrule') { add_rule('rrule') }
-                else if (class_name == 'add_exrule') { add_rule('exrule') }
-                else if (class_name == 'add_rdate') { add_date('rdate') }
-                else if (class_name == 'add_exdate') { add_date('exdate') }
+                if (class_name == 'button-add-rrule') { add_rule('rrule') }
+                else if (class_name == 'button-add-exrule') { add_rule('exrule') }
+                else if (class_name == 'button-add-rdate') { add_date('rdate') }
+                else if (class_name == 'button-add-exdate') { add_date('exdate') }
             });
 
 
         function add_date(date_class, data) {
-            var rule = $(date_str.replace('DATE_CLASS', date_class));
+            var rule = $(conf['rule-tmpl']).tmpl()
+            rule.addClass(date_class);
 
-            // remove rrule action
-            rule.find('a.remove').unbind("click").click(function () {
-                $(this).closest("div.rule").remove();
+            // remove rule action
+            $('a.remove', rule).unbind("click").click(function () {
+                $(this).closest("li.rule").remove();
             });
 
-            // append rrule to ruleset
-            widget_ruleset.append(rule);
+            // append rule to ruleset
+            $('.recurrenceinput-' + date_class + " ul.ruleset", widget).append(rule);
         }
 
         function add_rule (rule_class, data) {
-            var rule = $(rule_str);
+            var rule = $("#jquery-recurrenceinput-rule-tmpl" ).tmpl();
             rule.addClass(rule_class);
 
             // hide options of frequencies
@@ -98,7 +98,7 @@
             });
 
             // append rrule to ruleset
-            widget_ruleset.append(rule);
+            $('.recurrenceinput-' + rule_class + " ul.ruleset", widget).append(rule);
         }
 
 
@@ -131,7 +131,6 @@
 
         $.extend(self, {
             widget: widget,
-            widget_ruleset: widget_ruleset,
             initial_structure: function () { add_rule('rrule') },
             parse_rrule: function (el) { return 'RRULE: '+parse_rule(el) },
             parse_exrule: function (el) { return 'EXRULE: '+parse_rule(el) },
@@ -178,7 +177,7 @@
                     var f = function(pf, el) {
                         ruleset_str += pf($(el)) + "\n";
                     }
-                    var widgets = recurrenceinput.widget_ruleset
+                    var widgets = recurrenceinput.widget;
                     $('div.rrule', widgets).each( function() { f(recurrenceinput.parse_rrule, this) });
                     $('div.exrule', widgets).each(function() { f(recurrenceinput.parse_exdate, this) });
                     $('div.rdate', widgets).each( function() { f(recurrenceinput.parse_rdate, this) });
