@@ -26,6 +26,7 @@
 
     function Recurrenceinput (textarea, conf) {
 
+
         var self = this;
         var widget = $(widget_str);
         var widget_ruleset = widget.find('.ruleset');
