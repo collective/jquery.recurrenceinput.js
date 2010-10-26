@@ -31,12 +31,12 @@
     color: #000;
     display: block;
     padding: 0.5em;
-    background: #eee;
+    background: #6FFFA2;
     -moz-border-radius: 3px;
 }
 
 .recurrenceinput .button a:hover {
-    background: #ccc;
+    background: #2AFF31;
 }
 
 .recurrenceinput .button {
