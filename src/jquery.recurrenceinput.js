@@ -15,7 +15,11 @@
      *  - reuse start date from other fields
      *
      */
-    var default_conf = {};
+    var default_conf = {
+        'widget-tmpl': '#jquery-recurrenceinput-widget-tmpl',
+        'rule_tmpl': '#jquery-recurrenceinput-rule-tmpl',
+        'date_tmpl': '#jquery-recurrenceinput-date-tmpl'
+    };
 
     // private
 
@@ -23,7 +27,7 @@
 
 
         var self = this;
-        var widget = $("#jquery-recurrenceinput-widget-tmpl" ).tmpl();
+        var widget = $(conf['widget-tmpl']).tmpl();
 
         /*
          * Initial steps to activate widget
