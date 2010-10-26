@@ -8,6 +8,65 @@
     <script type="text/javascript" src="../lib/jquery.utils.i18n-0.8.5.js"></script>
     <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
 
+    <script id="jquery-recurrenceinput-widget-tmpl" type="text/x-jquery-tmpl">
+        <div class="recurrenceinput">
+            <div class="recurrenceinput-rrule">
+                <ul class="ruleset"></ul>
+                <p class="button">
+                    <a href="#" class="button-add-rrule">${button.add-rrule.label}</a>
+                </p>
+            </div>
+            <div class="recurrenceinput-rdate">
+                <ul class="ruleset"></ul>
+                <p class="button">
+                    <a href="#" class="button-add-rdate">${button.add-rdate.label}</a>
+                </p>
+            </div>
+            <div class="recurrenceinput-exrule">
+                <ul class="ruleset"></ul>
+                <p class="button">
+                    <a href="#" class="button-add-exrule">${button.add-exrule.label}</a>
+                </p>
+            </div>
+            <div class="recurrenceinput-exdate">
+                <ul class="ruleset"></ul>
+                <p class="button">
+                    <a href="#" class="button-add-exdate">${button.add-exdate.label}</a>
+                </p>
+            </div>
+        </div>
+    </script>
+
+    <script id="jquery-recurrenceinput-rule-tmpl" type="text/x-jquery-tmpl">
+        <li class="rule">
+            <a href="#" class="remove">${button.remove.label}</a>
+            <div style="clear:both;"><!-- --></div>
+            <ul class="freq" style="list-style:none; margin: 0; padding: 0 1em 0 0; display: block; float: left;">
+                <li style="margin: 0;"><input type="radio" name="freq" value="DAILY" /><label>'+_('Daily')+'</label></li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" /><label>'+_('Weekly')+'</label></li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" /><label>'+_('Monthly')+'</label></li>
+                <li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" /><label>'+_('Yearly')+'</label></li>
+            </ul>
+            <div class="freq-options">
+                <div class="daily" style="margin: 0 0 0 1em;">DAILY OPTIONS</div>
+                <div class="weekly" style="margin: 0 0 0 1em;">WEEKLY OPTIONS</div>
+                <div class="monthly" style="margin: 0 0 0 1em;">MONTHLY OPTIONS</div>
+                <div class="yearly" style="margin: 0 0 0 1em;">YEARLY OPTIONS</div>
+            </div>
+            <!-- TODO: Range part still missing -->
+        </li>
+    </script>
+
+    <script id="jquery-recurrenceinput-date-tmpl" type="text/x-jquery-tmpl">
+        <li class="rule">
+            <a href="#" class="remove">${button.remove.label}</a>
+            <br />
+            <input type="input" name="date" value="" />
+        </li>
+    </script>
+
+
+
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {

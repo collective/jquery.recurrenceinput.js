@@ -26,17 +26,9 @@
 
     function Recurrenceinput (textarea, conf) {
 
-        var widget_str = '<div class="recurrenceinput"><div class="ruleset"></div><div class="buttons"><a href="#" class="add_rrule">'+_('Add RRULE')+'</a><a href="#" class="add_exrule">'+_('Add EXRULE')+'</a><a href="#" class="add_rdate">'+_('Add RDATE')+'</a><a href="#" class="add_exdate">'+_('Add EXDATE')+'</a></div><div style="clear:both;"><!-- --></div></div>'; 
-
-        var rule_str = '<div class="rule"><form><a href="#" class="remove">'+_('Remove RULE')+'</a><div style="clear:both;"><!-- --></div><ul class="freq" style="list-style:none; margin: 0; padding: 0 1em 0 0; display: block; float: left;"><li style="margin: 0;"><input type="radio" name="freq" value="DAILY" /><label>'+_('Daily')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="WEEKLY" /><label>'+_('Weekly')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="MONTHLY" /><label>'+_('Monthly')+'</label></li><li style="margin: 0;"><input type="radio" name="freq" value="YEARLY" /><label>'+_('Yearly')+'</label></li></ul><div class="freq-options"><div class="daily" style="margin: 0 0 0 1em;">DAILY OPTIONS</div><div class="weekly" style="margin: 0 0 0 1em;">WEEKLY OPTIONS</div><div class="monthly" style="margin: 0 0 0 1em;">MONTHLY OPTIONS</div><div class="yearly" style="margin: 0 0 0 1em;">YEARLY OPTIONS</div></div><div style="clear:both;"><!-- --></div></form></div>';
-
-        var date_str = '<div class="rule DATE_CLASS"><form><a href="#" class="remove">'+_('Remove DATE')+'</a><br /><input type="input" name="date" value="" /></form></div>';
-
         var self = this;
         var widget = $(widget_str);
         var widget_ruleset = widget.find('.ruleset');
-
-
 
         /*
          * Initial steps to activate widget
