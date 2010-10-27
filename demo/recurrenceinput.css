@@ -70,3 +70,11 @@ a.remove {
 a.remove:hover {
     background: red;
 }
+a.caltrigger {
+}
+                    .css("background","url(popup_calendar.gif")
+                    .css("height", "16px")' \
+                          '.css("width", "16px")' \
+                          '.css("display", "inline-block")' \
+                          '.css("vertical-align", "middle")'
+                    //.next()%(popup_calendar_icon)s;

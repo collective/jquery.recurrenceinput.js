@@ -81,7 +81,7 @@
         <li class="rule" style="clear:both;">
             <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
-            <input type="text" name="date-day" size="2" maxlength="2" value="${dateDay}"/> /
+            <input type="text" name="date-day" size="2" maxlength="2" value="${dateDay}" /> /
             <select name="date-month">
                 {{each months}}
                     <option value="${$index+1}"
@@ -89,7 +89,8 @@
                         ${$value}</option>
                 {{/each}}
             </select> /
-            <input type="text" name="date-year" size="4" maxlength="4" value="${dateYear}"/>
+            <input type="text" name="date-year" size="4" maxlength="4" value="${dateYear}" />
+            <input type="hidden" name="date-calendar" value="" />
         </li>
     </script>
 

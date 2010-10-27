@@ -47,15 +47,41 @@
 
 
         function add_date(date_class, data) {
+
+            // 2010-02-01
+            dateDay = '1'
+            dateMonth = '2'
+            dateYear = '2010'
+
             var rule = $(conf['date-tmpl']).tmpl(
                 { 'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
-                  'dateDay': '1', 'dateMonth': '2', 'dateYear': '2010' })
+                  'dateDay': dateDay, 'dateMonth': dateMonth, 'dateYear': dateYear })
             rule.addClass(date_class);
 
             // remove rule action
             $('a.remove', rule).unbind("click").click(function () {
                 $(this).closest("li.rule").slideUp(function() { $(this).remove() });
             });
+
+            // activate dateinput calendar
+            rule.find('input[name=date-calendar]')
+                    .dateinput({
+                        value: new Date(dateYear, dateMonth, dateDay),
+                        change: function() {
+                            var value = this.getValue("yyyy-mm-dd").split("-");
+                            rule.find('input[name=date-year]').val(value[0]);
+                            rule.find('input[name=date-month]').val(value[1]);
+                            rule.find('input[name=date-day]').val(value[2]); },
+                        selectors: true,
+                        trigger: true,
+                        yearRange: [-10, 10] })
+                    .unbind('change')
+                    .bind('onShow', function (event) {
+                        var trigger_offset = $(this).next().offset();
+                        $(this).data('dateinput').getCalendar().offset(
+                            {top: trigger_offset.top+20, left: trigger_offset.left}
+                        );
+                    })
 
             // append rule to ruleset
             rule.hide();
