@@ -52,7 +52,17 @@
     background: #eee;
     padding: 10px;
 }
-
+.recurrenceinput .recurrenceinput-rdate input,
+.recurrenceinput .recurrenceinput-exdate input,
+.recurrenceinput .recurrenceinput-rdate select,
+.recurrenceinput .recurrenceinput-exdate select {
+    border:1px solid #ccc;
+    font-size:18px;
+    padding:4px;
+    text-align:center;
+    -moz-box-shadow:0 0 10px #eee inset;
+    font-size: 14px;
+}
 .recurrenceinput .freq-options {
     margin: 0;
 }
@@ -71,10 +81,14 @@ a.remove:hover {
     background: red;
 }
 a.caltrigger {
+    background: url(cal_icon.jpg);
+    height: 33px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
 }
-                    .css("background","url(popup_calendar.gif")
-                    .css("height", "16px")' \
-                          '.css("width", "16px")' \
-                          '.css("display", "inline-block")' \
-                          '.css("vertical-align", "middle")'
-                    //.next()%(popup_calendar_icon)s;
+a.caltrigger {
+    background-position: 0 32px;
+    margin-top: -5px;
+    margin-left: 5px;
+}

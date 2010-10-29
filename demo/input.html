@@ -3,6 +3,7 @@
 <head>
 
     <link type="text/css" href="recurrenceinput.css" rel="stylesheet">
+    <link type="text/css" href="jquery.tools.dateinput.css" rel="stylesheet">
 
     <script type="text/javascript" src="../lib/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
@@ -365,7 +366,7 @@
                 {{/each}}
             </select> /
             <input type="text" name="recurrence_date_year" size="4" maxlength="4" value="${dateYear}"/>
-            <input type="text" value="2010" maxlength="4" size="4" name="recurrence_date_calendar">
+            <input type="hidden" name="recurrence_date_calendar">
         </li>
     </script>
 
