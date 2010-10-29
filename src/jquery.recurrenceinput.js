@@ -194,7 +194,7 @@
                     result += ";BYDAY=" + index + day;
                 }
                 else if (day == "DAY") {
-                    result += ";BYDAY=1";
+                    result += ";BYDAY=" + index;
                 }
                 else if (day == "WEEKDAY") {
                     alert("Cannot see how to support WEEKDAY in RFC2445");
@@ -211,11 +211,41 @@
         }
 
         function parse_yearly(el) {
+            result = "FREQ=YEARLY"
 
+            yearly_type = $("input[name=recurrence_yearly_type]:checked", el).val();
+            
+            switch (yearly_type) {
+            case "dayofmonth":
+                var month = $("select[name=recurrence_yearly_dayofmonth_month]", el).val();
+                var day = $("select[name=recurrence_yearly_dayofmonth_day]", el).val();
 
-            return {
-                frequency: "YEARLY"
+                result += ";BYMONTH=" + month;
+                result += ";BYMONTHDAY=" + day;
+                break;
+            case "dayofweek":
+                var index = $("select[name=recurrence_yearly_dayofweek_index]", el).val();
+                var day = $("select[name=recurrence_yearly_dayofweek_day]", el).val();
+                var month = $("select[name=recurrence_yearly_dayofweek_month]", el).val();
+
+                result += ";BYMONTH=" + month;
+
+                if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                    result += ";BYDAY=" + index + day;
+                }
+                else if (day == "DAY") {
+                    result += ";BYDAY=" + index;
+                }
+                else if (day == "WEEKDAY") {
+                    alert("Cannot see how to support WEEKDAY in RFC2445");
+                }
+                else if (day == "WEEKEND_DAY") {
+                    alert("Cannot see how to support WEEKEND_DAY in RFC2445");
+                }
+                break;
             }
+
+            return result;
         }
 
 
