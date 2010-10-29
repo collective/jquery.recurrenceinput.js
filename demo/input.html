@@ -67,12 +67,12 @@
                     DAILY OPTIONS
                     <ul>
                         <li>
-                        <input type="radio" name="daily-type" value="DAILY" class="daily"/> Every 
-                        <input type="text" name="daily-days-quantity" value="1" />
+                        <input type="radio" name="recurrence_daily_type" value="DAILY" class="daily"/> Every 
+                        <input type="text" name="recurrence_daily_interval" value="1" />
                         days.
                         </li>
                         <li>
-                        <input type="radio" name="daily-type" value="WEEKDAYS" class="daily"/> Weekdays
+                        <input type="radio" name="recurrence_daily_type" value="WEEKDAYS" class="daily"/> Weekdays
                         </li>
                     </ul>
                 </div>
@@ -83,45 +83,47 @@
 
                     <label for="recurrence_weekly_interval_number">
                         Every
-                        <input originalvalue="1" class="blurrable centered" 
+                        <input originalvalue="1" 
                         size="2" id="recurrence_weekly_interval_number" 
                         value="1" name="recurrence_weekly_interval_number" type="text">
                         week(s) on:
                         <br>
 
-                        <input originalvalue="6" class="blurrable" 
-                        id="recurrence_weekly_interval:list_6" value="6" 
-                        name="recurrence_weekly_interval:list" type="checkbox">
+                        <input 
+                        id="recurrence_weekly_days_su" value="SU" 
+                        name="recurrence_weekly_days_su" type="checkbox">
+                        <label for="recurrence_weekly_days_su">Sunday</label>
 
-                        <label for="recurrence_weekly_interval:list_6">Sunday</label>
-                        <input originalvalue="0" class="blurrable" 
-                        id="recurrence_weekly_interval:list_0" value="0" 
-                        name="recurrence_weekly_interval:list" type="checkbox">
-                        <label for="recurrence_weekly_interval:list_0">Monday</label>
+                        <input
+                        id="recurrence_weekly_days_mo" value="MO" 
+                        name="recurrence_weekly_days_mo" type="checkbox">
+                        <label for="recurrence_weekly_days_mo">Monday</label>
 
-                        <input originalvalue="1" class="blurrable" 
-                        id="recurrence_weekly_interval:list_1" value="1" 
-                        name="recurrence_weekly_interval:list" type="checkbox">
-                        <label for="recurrence_weekly_interval:list_1">Tuesday</label>
+                        <input
+                        id="recurrence_weekly_days_tu" value="TU" 
+                        name="recurrence_weekly_days_tu" type="checkbox">
+                        <label for="recurrence_weekly_days_tu">Tuesday</label>
 
-                        <input originalvalue="2" class="blurrable"
-                        id="recurrence_weekly_interval:list_2" value="2" 
-                        name="recurrence_weekly_interval:list" type="checkbox">
-                        <label for="recurrence_weekly_interval:list_2">Wednesday</label>
+                        <input
+                        id="recurrence_weekly_days_we" value="WE" 
+                        name="recurrence_weekly_days_we" type="checkbox">
+                        <label for="recurrence_weekly_days_we">Wednesday</label>
                         <br>
 
-                        <input originalvalue="3" class="blurrable"
-                        id="recurrence_weekly_interval:list_3" value="3" 
-                        name="recurrence_weekly_interval:list" type="checkbox">
-                        <label for="recurrence_weekly_interval:list_3">Thursday</label>
-                        <input originalvalue="4" class="blurrable" 
-                        id="recurrence_weekly_interval:list_4" value="4" 
-                        name="recurrence_weekly_interval:list" type="checkbox">
-                        <label for="recurrence_weekly_interval:list_4">Friday</label>
-                        <input originalvalue="5" class="blurrable"
-                        id="recurrence_weekly_interval:list_5" value="5"
-                        name="recurrence_weekly_interval:list" type="checkbox">
-                        <label for="recurrence_weekly_interval:list_5">Saturday</label>
+                        <input
+                        id="recurrence_weekly_days_th" value="TH" 
+                        name="recurrence_weekly_days_th" type="checkbox">
+                        <label for="recurrence_weekly_days_th">Thursday</label>
+                        
+                        <input
+                        id="recurrence_weekly_days_fr" value="FR" 
+                        name="recurrence_weekly_days_fr" type="checkbox">
+                        <label for="recurrence_weekly_days_fr">Friday</label>
+
+                        <input
+                        id="recurrence_weekly_days_fr" value="SA"
+                        name="recurrence_weekly_days_fr" type="checkbox">
+                        <label for="recurrence_weekly_days_fr">Saturday</label>
                     </label>
 
                     </p>

@@ -63,11 +63,12 @@
             rule.slideDown("fast");
         }
 
-        function add_rule (rule_class, data) {
+
+        function add_rule(rule_class, data) {
             var rule = $("#jquery-recurrenceinput-rule-tmpl" ).tmpl();
             rule.addClass(rule_class);
 
-            // hide options of frequencies
+            // hide options for frequencies
             $('.freq-options > div', rule).hide();
 
             // make label of freq option active for selection
@@ -95,7 +96,7 @@
                         .show();
             });
 
-            // remove rrule action
+            // remove rule action
             rule.find('a.remove').unbind("click").click(function () {
                     $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
@@ -116,20 +117,74 @@
         function parse_rule(el) {
             var str_ = '';
             frequency = el.find('input.freq.active').val();
+            var result = ""
             switch (frequency) {
             case "DAILY":
+                result = parse_daily(el);
                 break;
             case "WEEKLY":
+                result = parse_weekly(el);
                 break;
             case "MONTHLY":
+                result = parse_monthly(el);
                 break;
             case "YEARLY":
+                result = parse_yearly(el);
                 break;
             }
             
-            // TODO: parse other options
-            str_ += 'FREQ=' + frequency;
-            return str_;
+            return result
+        }
+
+        function parse_daily(el) {
+            result = 'FREQ=DAILY'
+
+            daily_type = $('input[name=recurrence_daily_type]:checked', el).val();
+
+            switch (daily_type) {
+            case "DAILY":
+                interval = $('input[name=recurrence_daily_interval]', el).val();
+                result += ";INTERVAL=" + interval;
+                break;
+            case "WEEKDAYS":
+                result = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+                break;
+            }
+
+            return result
+        }
+
+        function parse_weekly(el) {
+            result = "FREQ=WEEKLY"
+
+            interval = $('input[name=recurrence_weekly_interval_number]', el).val();
+            result += ";INTERVAL=" + interval
+
+            days = []
+            $('input[name^=recurrence_weekly_days_]:checked', el).each(function() {
+                    days[days.length] = $(this).val();
+                });
+
+            if (days.length) {
+                result += ";BYDAY=" + days
+            }
+
+            return result
+        }
+
+        function parse_monthly(el) {
+
+            return {
+                frequency: "MONTHLY"
+            }
+        }
+
+        function parse_yearly(el) {
+
+
+            return {
+                frequency: "YEARLY"
+            }
         }
 
 
@@ -149,10 +204,10 @@
         $.extend(self, {
             widget: widget,
             initial_structure: function () { add_rule('rrule') },
-            parse_rrule: function (el) { return 'RRULE: '+parse_rule(el) },
-            parse_exrule: function (el) { return 'EXRULE: '+parse_rule(el) },
-            parse_rdate: function (el) { return 'RDATE: '+parse_date(el) },
-            parse_exdate: function (el) { return 'EXDATE: '+parse_date(el) }
+            parse_rrule: function (el) { return 'RRULE:'+parse_rule(el) },
+            parse_exrule: function (el) { return 'EXRULE:'+parse_rule(el) },
+            parse_rdate: function (el) { return 'RDATE:'+parse_date(el) },
+            parse_exdate: function (el) { return 'EXDATE:'+parse_date(el) }
         });
 
     }
