@@ -60,7 +60,7 @@
 
             // remove rule action
             $('a.remove', rule).unbind("click").click(function () {
-                $(this).closest("li.rule").slideUp(function() { $(this).remove() });
+                $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
             // activate dateinput calendar
@@ -86,7 +86,7 @@
             // append rule to ruleset
             rule.hide();
             $('.recurrenceinput-' + date_class + " ul.ruleset", widget).append(rule);
-            rule.slideDown();
+            rule.slideDown("fast");
         }
 
         function add_rule (rule_class, data) {
@@ -103,7 +103,6 @@
                 input.change();
             });
 
-
             // select 
             rule.find('.freq input[name=freq]').removeClass("active");
             rule.find('.freq input[name=freq]').unbind("change").change(function() {
@@ -117,20 +116,20 @@
                 parent_list = el.closest("ul");
                 font_size = parent_list.css('font-size').replace('px', '').replace('em','');
 
-                rule.find('.freq-options .' + el.val().toLowerCase())
+                rule.find('.freq-options div.' + el.val().toLowerCase())
                         .css('margin-left', + (parent_list.width() + 2*font_size))
                         .show();
             });
 
             // remove rrule action
             rule.find('a.remove').unbind("click").click(function () {
-                    $(this).closest("li.rule").slideUp(function() { $(this).remove() });
+                    $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
             // append rrule to ruleset
             rule.hide();
             $('.recurrenceinput-' + rule_class + " ul.ruleset", widget).append(rule);
-            rule.slideDown();
+            rule.slideDown("fast");
         }
 
 
@@ -142,9 +141,20 @@
         // method for parsing rules (rrule and exrule)
         function parse_rule(el) {
             var str_ = '';
-            freq = el.find('input.active').val();
-            str_ += 'FREQ=' + freq;
+            frequency = el.find('input.freq.active').val();
+            switch (frequency) {
+            case "DAILY":
+                break;
+            case "WEEKLY":
+                break;
+            case "MONTHLY":
+                break;
+            case "YEARLY":
+                break;
+            }
+            
             // TODO: parse other options
+            str_ += 'FREQ=' + frequency;
             return str_;
         }
 
@@ -189,7 +199,9 @@
 
                 var textarea = $(this);
                 var form = textarea.closest("form");
-                var recurrenceinput = new Recurrenceinput(textarea, $.extend(true, {}, default_conf, conf));
+                var recurrenceinput = new Recurrenceinput(
+                    textarea, 
+                    $.extend(true, {}, default_conf, conf));
 
                 //textarea.hide();
 
@@ -210,10 +222,18 @@
                         ruleset_str += pf($(el)) + "\n";
                     }
                     var widgets = recurrenceinput.widget;
-                    $('div.rrule', widgets).each( function() { f(recurrenceinput.parse_rrule, this) });
-                    $('div.exrule', widgets).each(function() { f(recurrenceinput.parse_exdate, this) });
-                    $('div.rdate', widgets).each( function() { f(recurrenceinput.parse_rdate, this) });
-                    $('div.exdate', widgets).each(function() { f(recurrenceinput.parse_exdate, this) })
+                    $('div.recurrenceinput-rrule li.rule', widgets).each( function() { 
+                            f(recurrenceinput.parse_rrule, this) 
+                        });
+                    $('div.recurrenceinput-exrule li.rule', widgets).each(function() { 
+                            f(recurrenceinput.parse_exdate, this) 
+                        });
+                    $('div.recurrenceinput-rdate li.rule', widgets).each( function() { 
+                            f(recurrenceinput.parse_rdate, this)
+                        });
+                    $('div.recurrenceinput-exdate li.rule', widgets).each(function() {
+                            f(recurrenceinput.parse_exdate, this)
+                        })
 
                     // insert string generated form above to textarea
                     textarea.val(ruleset_str);

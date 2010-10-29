@@ -39,38 +39,57 @@
     </script>
 
     <script id="jquery-recurrenceinput-rule-tmpl" type="text/x-jquery-tmpl">
-        <li class="rule" style="clear:both;">
+        <li class="rule" style="clear:both;"><form>
             <a href="#" class="remove">Remove</a>
             <div style="clear:both;"><!-- --></div>
+
             <ul class="freq">
                 <li>
-                <input type="radio" name="freq" value="DAILY" />
+                <input type="radio" name="freq" value="DAILY" class="freq" />
                 <label>Daily</label>
                 </li>
                 <li>
-                <input type="radio" name="freq" value="WEEKLY" />
+                <input type="radio" name="freq" value="WEEKLY" class="freq" />
                 <label>Weekly</label>
                 </li>
                 <li>
-                <input type="radio" name="freq" value="MONTHLY" />
+                <input type="radio" name="freq" value="MONTHLY" class="freq" />
                 <label>Monthly</label>
                 </li>
                 <li>
-                <input type="radio" name="freq" value="YEARLY" />
+                <input type="radio" name="freq" value="YEARLY" class="freq" />
                 <label>Yearly</label>
                 </li>
             </ul>
 
             <div class="freq-options">
-                <div class="daily">DAILY OPTIONS</div>
-                <div class="weekly">WEEKLY OPTIONS</div>
-                <div class="monthly">MONTHLY OPTIONS</div>
-                <div class="yearly">YEARLY OPTIONS</div>
+                <div class="daily">
+                    DAILY OPTIONS
+                    <ul>
+                        <li>
+                        <input type="radio" name="daily-type" value="DAILY" class="daily"/> Every 
+                        <input type="text" name="daily-days-quantity" value="1" />
+                        days.
+                        </li>
+                        <li>
+                        <input type="radio" name="daily-type" value="WEEKDAYS" class="daily"/> Weekdays
+                        </li>
+                    </ul>
+                </div>
+                <div class="weekly">
+                    WEEKLY OPTIONS
+                </div>
+                <div class="monthly">
+                    MONTHLY OPTIONS
+                </div>
+                <div class="yearly">
+                    YEARLY OPTIONS
+                </div>
             </div>
 
             <!-- TODO: Range part still missing -->
             <div style="clear:both;"><!-- --></div>
-        </li>
+        </form></li>
     </script>
 
     <!--
@@ -109,16 +128,18 @@
 <body>
 
     <form>
+        <input type="submit" />
         <div>
             <label>Demo 1</label>
             <div>
-                <textarea name="demo1"></textarea>
+                <textarea name="demo1" rows="5" cols="50"></textarea>
             </div>
         </div>
+        <input type="submit" />
         <div>
             <label>Demo 2</label>
             <div>
-                <textarea name="demo2"></textarea>
+                <textarea name="demo2" rows="5" cols="50"></textarea>
             </div>
         </div>
         <input type="submit" />
