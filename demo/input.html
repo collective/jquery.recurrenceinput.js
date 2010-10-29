@@ -356,15 +356,16 @@
         <li class="rule" style="clear:both;">
             <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
-            <input type="text" name="recurrence_exdate_day" size="2" maxlength="2" value="${dateDay}"/> /
-            <select name="recurrence_exdate_month">
+            <input type="text" name="recurrence_date_day" size="2" maxlength="2" value="${dateDay}"/> /
+            <select name="recurrence_date_month">
                 {{each months}}
                     <option value="${$index+1}"
                             {{if $index+1==dateMonth}}selected="selected"{{/if}}>
                         ${$value}</option>
                 {{/each}}
             </select> /
-            <input type="text" name="recurrence_exdate_year" size="4" maxlength="4" value="${dateYear}"/>
+            <input type="text" name="recurrence_date_year" size="4" maxlength="4" value="${dateYear}"/>
+            <input type="text" value="2010" maxlength="4" size="4" name="recurrence_date_calendar">
         </li>
     </script>
 
@@ -394,7 +395,9 @@
         <div>
             <label>Demo 2</label>
             <div>
-                <textarea name="demo2" rows="5" cols="50"></textarea>
+                <textarea name="demo2" rows="5" cols="50">RRULE:FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1
+RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY=SU,MO
+RDATE:20100201</textarea>
             </div>
         </div>
         <input type="submit" />

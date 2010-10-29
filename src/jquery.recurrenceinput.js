@@ -277,9 +277,9 @@
 
         // function for parsing dates (rdate and exdate)
         function parse_date(el) {
-            var day = $("input[name=recurrence_exdate_day]", el).val();
-            var month = $("select[name=recurrence_exdate_month]", el).val();
-            var year = $("input[name=recurrence_exdate_year]", el).val();
+            var day = $("input[name=recurrence_date_day]", el).val();
+            var month = $("select[name=recurrence_date_month]", el).val();
+            var year = $("input[name=recurrence_date_year]", el).val();
 
             f_day = parseInt(day) < 10 ? "0" + day : day;
             f_month = parseInt(month) < 10 ? "0" + month : month;
