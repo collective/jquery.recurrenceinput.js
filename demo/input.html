@@ -67,23 +67,279 @@
                     DAILY OPTIONS
                     <ul>
                         <li>
-                        <input type="radio" name="daily-type" value="DAILY" class="daily"/> Every 
-                        <input type="text" name="daily-days-quantity" value="1" />
-                        days.
+                        <input type="radio" 
+                        name="recurrence_daily_type" 
+                        id="recurrence_daily_type_daily" 
+                        value="DAILY"
+                        class="daily"
+                        checked="checked"/> 
+                        <label for="recurrence_daily_type_daily">Every 
+                        <input type="text" name="recurrence_daily_interval" value="1" size="2" />
+                        days.</label>
                         </li>
                         <li>
-                        <input type="radio" name="daily-type" value="WEEKDAYS" class="daily"/> Weekdays
+                        <input type="radio" 
+                        name="recurrence_daily_type" 
+                        id="recurrence_daily_type_weekdays" 
+                        value="WEEKDAYS" class="daily"/> 
+                        <label for="recurrence_daily_type_weekdays">Weekdays</label>
                         </li>
                     </ul>
                 </div>
                 <div class="weekly">
                     WEEKLY OPTIONS
+
+                    <p>
+
+                    <label for="recurrence_weekly_interval_number">
+                        Every
+                        <input originalvalue="1" 
+                        size="2" id="recurrence_weekly_interval_number" 
+                        value="1" name="recurrence_weekly_interval_number" type="text">
+                        week(s) on:
+                        <br>
+
+                        <input 
+                        id="recurrence_weekly_days_su" value="SU" 
+                        name="recurrence_weekly_days_su" type="checkbox">
+                        <label for="recurrence_weekly_days_su">Sunday</label>
+
+                        <input
+                        id="recurrence_weekly_days_mo" value="MO" 
+                        name="recurrence_weekly_days_mo" type="checkbox">
+                        <label for="recurrence_weekly_days_mo">Monday</label>
+
+                        <input
+                        id="recurrence_weekly_days_tu" value="TU" 
+                        name="recurrence_weekly_days_tu" type="checkbox">
+                        <label for="recurrence_weekly_days_tu">Tuesday</label>
+
+                        <input
+                        id="recurrence_weekly_days_we" value="WE" 
+                        name="recurrence_weekly_days_we" type="checkbox">
+                        <label for="recurrence_weekly_days_we">Wednesday</label>
+                        <br>
+
+                        <input
+                        id="recurrence_weekly_days_th" value="TH" 
+                        name="recurrence_weekly_days_th" type="checkbox">
+                        <label for="recurrence_weekly_days_th">Thursday</label>
+                        
+                        <input
+                        id="recurrence_weekly_days_fr" value="FR" 
+                        name="recurrence_weekly_days_fr" type="checkbox">
+                        <label for="recurrence_weekly_days_fr">Friday</label>
+
+                        <input
+                        id="recurrence_weekly_days_sa" value="SA"
+                        name="recurrence_weekly_days_sa" type="checkbox">
+                        <label for="recurrence_weekly_days_sa">Saturday</label>
+                    </label>
+
+                    </p>
+
+
                 </div>
                 <div class="monthly">
                     MONTHLY OPTIONS
+
+                    <p>
+                    <input value="dayofmonth" checked="checked" 
+                    name="recurrence_monthly_type"
+                    id="recurrence_monthly_dayofmonth"
+                    type="radio">
+                   
+                    <label for="recurrence_monthly_dayofmonth">
+                        Day
+                        <select name="recurrence_monthly_dayofmonth_day">
+
+                            <option selected="selected" value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+
+                        </select>
+                        of the month, every 
+                        <input type="text" size="2" value="1" 
+                        id="recurrence_monthly_dayofmonth_interval"
+                        name="recurrence_monthly_dayofmonth_interval"/>
+                        month(s).
+                    </label>
+                    <br>
+                    <input 
+                    value="dayofweek" 
+                    name="recurrence_monthly_type" 
+                    id="recurrence_monthly_dayofweek"
+                    type="radio">
+                    <label for="recurrence_monthly_dayofweek">
+                        The
+                        <select name="recurrence_monthly_dayofweek_index">
+
+                            <option selected="selected" value="1">First</option>
+                            <option value="2">Second</option>
+                            <option value="3">Third</option>
+                            <option value="4">Fourth</option>
+                            <option value="-1">Last</option>
+
+                        </select>
+                        <select name="recurrence_monthly_dayofweek_day">
+
+                            <option selected="selected" value="MO">Monday</option>
+                            <option value="TU">Tuesday</option>
+                            <option value="WE">Wednesday</option>
+                            <option value="TH">Thursday</option>
+                            <option value="FR">Friday</option>
+                            <option value="SA">Saturday</option>
+                            <option value="SU">Sunday</option>
+                            <option value="DAY">Day</option>
+                            <option value="WEEKDAY">Weekday</option>
+                            <option value="WEEKEND_DAY">Weekend Day</option>
+
+                        </select>, every
+                        <input type="text" size="2" value="1"
+                        id="recurrence_monthly_dayofweek_interval"
+                        name="recurrence_monthly_dayofweek_interval" /> month(s).
+                    </label>
+                    </p>
+
+                    
                 </div>
                 <div class="yearly">
                     YEARLY OPTIONS
+                    <p>
+
+                    <input value="dayofmonth" checked="checked" 
+                    name="recurrence_yearly_type" 
+                    id="recurrence_yearly_type_dayofmonth" type="radio">
+                    <label for="recurrence_yearly_type_dayofmonth">
+                        Every
+                        <select name="recurrence_yearly_dayofmonth_month">
+
+                            <option selected="selected" value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+
+                        </select>
+                        <select name="recurrence_yearly_dayofmonth_day">
+
+                            <option selected="selected" value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+
+                        </select>
+                    </label>
+                    <br>
+                    <input value="dayofweek" 
+                    name="recurrence_yearly_type" 
+                    id="recurrence_yearly_type_dayofweek" type="radio">
+                    <label for="recurrence_yearly_type_dayofweek">
+                        The
+                        <select name="recurrence_yearly_dayofweek_index">
+
+                            <option selected="selected" value="1">First</option>
+                            <option value="2">Second</option>
+                            <option value="3">Third</option>
+                            <option value="4">Fourth</option>
+                            <option value="-1">Last</option>
+
+                        </select>
+                        <select name="recurrence_yearly_dayofweek_day">
+
+                            <option selected="selected" value="MO">Monday</option>
+                            <option value="TU">Tuesday</option>
+                            <option value="WE">Wednesday</option>
+                            <option value="TH">Thursday</option>
+                            <option value="FR">Friday</option>
+                            <option value="SA">Saturday</option>
+                            <option value="SU">Sunday</option>
+                            <option value="DAY">Day</option>
+                            <option value="WEEKDAY">Weekday</option>
+                            <option value="WEEKEND_DAY">Weekend Day</option>
+
+                        </select>
+                        of
+                        <select name="recurrence_yearly_dayofweek_month">
+
+                            <option selected="selected" value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+
+                        </select>
+                    </label>
+                    </p>
                 </div>
             </div>
 
@@ -100,16 +356,15 @@
         <li class="rule" style="clear:both;">
             <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
-            <input type="text" name="date-day" size="2" maxlength="2" value="${dateDay}" /> /
-            <select name="date-month">
+            <input type="text" name="recurrence_exdate_day" size="2" maxlength="2" value="${dateDay}"/> /
+            <select name="recurrence_exdate_month">
                 {{each months}}
                     <option value="${$index+1}"
                             {{if $index+1==dateMonth}}selected="selected"{{/if}}>
                         ${$value}</option>
                 {{/each}}
             </select> /
-            <input type="text" name="date-year" size="4" maxlength="4" value="${dateYear}" />
-            <input type="hidden" name="date-calendar" value="" />
+            <input type="text" name="recurrence_exdate_year" size="4" maxlength="4" value="${dateYear}"/>
         </li>
     </script>
 

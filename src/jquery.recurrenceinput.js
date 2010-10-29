@@ -89,11 +89,12 @@
             rule.slideDown("fast");
         }
 
-        function add_rule (rule_class, data) {
+
+        function add_rule(rule_class, data) {
             var rule = $("#jquery-recurrenceinput-rule-tmpl" ).tmpl();
             rule.addClass(rule_class);
 
-            // hide options of frequencies
+            // hide options for frequencies
             $('.freq-options > div', rule).hide();
 
             // make label of freq option active for selection
@@ -121,7 +122,7 @@
                         .show();
             });
 
-            // remove rrule action
+            // remove rule action
             rule.find('a.remove').unbind("click").click(function () {
                     $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
@@ -135,34 +136,157 @@
 
 
         /*
-         * Parsing RDF2554 from widget
+         * Parsing RFC2554 from widget
          */
 
         // method for parsing rules (rrule and exrule)
         function parse_rule(el) {
             var str_ = '';
             frequency = el.find('input.freq.active').val();
+            var result = "NO RULE FOUND"
             switch (frequency) {
             case "DAILY":
+                result = parse_daily(el);
                 break;
             case "WEEKLY":
+                result = parse_weekly(el);
                 break;
             case "MONTHLY":
+                result = parse_monthly(el);
                 break;
             case "YEARLY":
+                result = parse_yearly(el);
                 break;
             }
             
-            // TODO: parse other options
-            str_ += 'FREQ=' + frequency;
-            return str_;
+            return result
         }
+
+        function parse_daily(el) {
+            result = 'FREQ=DAILY'
+
+            daily_type = $('input[name=recurrence_daily_type]:checked', el).val();
+
+            switch (daily_type) {
+            case "DAILY":
+                interval = $('input[name=recurrence_daily_interval]', el).val();
+                result += ";INTERVAL=" + interval;
+                break;
+            case "WEEKDAYS":
+                result = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+                break;
+            }
+
+            return result
+        }
+
+        function parse_weekly(el) {
+            result = "FREQ=WEEKLY"
+
+            interval = $('input[name=recurrence_weekly_interval_number]', el).val();
+            result += ";INTERVAL=" + interval
+
+            days = []
+            $('input[name^=recurrence_weekly_days_]:checked', el).each(function() {
+                    days[days.length] = $(this).val();
+                });
+
+            if (days.length) {
+                result += ";BYDAY=" + days
+            }
+
+            return result;
+        }
+
+        function parse_monthly(el) {
+            result = "FREQ=MONTHLY";
+
+            monthly_type = $('input[name=recurrence_monthly_type]:checked', el).val();
+
+            switch (monthly_type) {
+            case "dayofmonth":
+                day = $("select[name=recurrence_monthly_dayofmonth_day]", el).val();
+                interval = $("input[name=recurrence_monthly_dayofmonth_interval]", el).val();
+
+                result += ";BYMONTHDAY=" + day;
+                result += ";INTERVAL=" + interval;
+                break;
+            case "dayofweek":
+                var index = $("select[name=recurrence_monthly_dayofweek_index]", el).val();
+                var day = $("select[name=recurrence_monthly_dayofweek_day]", el).val();
+                var interval = $("input[name=recurrence_monthly_dayofweek_interval]", el).val();
+
+                if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                    result += ";BYDAY=" + index + day;
+                }
+                else if (day == "DAY") {
+                    result += ";BYDAY=" + index;
+                }
+                else if (day == "WEEKDAY") {
+                    alert("Cannot see how to support WEEKDAY in RFC2445");
+                }
+                else if (day == "WEEKEND_DAY") {
+                    alert("Cannot see how to support WEEKEND_DAY in RFC2445");
+                }
+
+                result += ";INTERVAL=" + interval;
+                break;
+            }
+
+            return result;
+        }
+
+        function parse_yearly(el) {
+            result = "FREQ=YEARLY"
+
+            yearly_type = $("input[name=recurrence_yearly_type]:checked", el).val();
+            
+            switch (yearly_type) {
+            case "dayofmonth":
+                var month = $("select[name=recurrence_yearly_dayofmonth_month]", el).val();
+                var day = $("select[name=recurrence_yearly_dayofmonth_day]", el).val();
+
+                result += ";BYMONTH=" + month;
+                result += ";BYMONTHDAY=" + day;
+                break;
+            case "dayofweek":
+                var index = $("select[name=recurrence_yearly_dayofweek_index]", el).val();
+                var day = $("select[name=recurrence_yearly_dayofweek_day]", el).val();
+                var month = $("select[name=recurrence_yearly_dayofweek_month]", el).val();
+
+                result += ";BYMONTH=" + month;
+
+                if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                    result += ";BYDAY=" + index + day;
+                }
+                else if (day == "DAY") {
+                    result += ";BYDAY=" + index;
+                }
+                else if (day == "WEEKDAY") {
+                    alert("Cannot see how to support WEEKDAY in RFC2445");
+                }
+                else if (day == "WEEKEND_DAY") {
+                    alert("Cannot see how to support WEEKEND_DAY in RFC2445");
+                }
+                break;
+            }
+
+            return result;
+        }
+
 
         // function for parsing dates (rdate and exdate)
         function parse_date(el) {
-            var str_ = '';
-            // TODO: parse other options
-            return str_;
+            var day = $("input[name=recurrence_exdate_day]", el).val();
+            var month = $("select[name=recurrence_exdate_month]", el).val();
+            var year = $("input[name=recurrence_exdate_year]", el).val();
+
+            f_day = parseInt(day) < 10 ? "0" + day : day;
+            f_month = parseInt(month) < 10 ? "0" + month : month;
+
+            var formatted = year + f_month + f_day;
+
+            return formatted;
         }
 
 
@@ -174,10 +298,10 @@
         $.extend(self, {
             widget: widget,
             initial_structure: function () { add_rule('rrule') },
-            parse_rrule: function (el) { return 'RRULE: '+parse_rule(el) },
-            parse_exrule: function (el) { return 'EXRULE: '+parse_rule(el) },
-            parse_rdate: function (el) { return 'RDATE: '+parse_date(el) },
-            parse_exdate: function (el) { return 'EXDATE: '+parse_date(el) }
+            parse_rrule: function (el) { return 'RRULE:'+parse_rule(el) },
+            parse_exrule: function (el) { return 'EXRULE:'+parse_rule(el) },
+            parse_rdate: function (el) { return 'RDATE:'+parse_date(el) },
+            parse_exdate: function (el) { return 'EXDATE:'+parse_date(el) }
         });
 
     }
@@ -226,7 +350,7 @@
                             f(recurrenceinput.parse_rrule, this) 
                         });
                     $('div.recurrenceinput-exrule li.rule', widgets).each(function() { 
-                            f(recurrenceinput.parse_exdate, this) 
+                            f(recurrenceinput.parse_exrule, this) 
                         });
                     $('div.recurrenceinput-rdate li.rule', widgets).each( function() { 
                             f(recurrenceinput.parse_rdate, this)
