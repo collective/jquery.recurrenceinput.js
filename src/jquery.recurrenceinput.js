@@ -109,7 +109,7 @@
 
 
         /*
-         * Parsing RDF2554 from widget
+         * Parsing RFC2554 from widget
          */
 
         // method for parsing rules (rrule and exrule)
@@ -131,6 +131,7 @@
             str_ += 'FREQ=' + frequency;
             return str_;
         }
+
 
         // function for parsing dates (rdate and exdate)
         function parse_date(el) {
