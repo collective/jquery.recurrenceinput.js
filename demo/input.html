@@ -131,9 +131,9 @@
                         <label for="recurrence_weekly_days_fr">Friday</label>
 
                         <input
-                        id="recurrence_weekly_days_fr" value="SA"
-                        name="recurrence_weekly_days_fr" type="checkbox">
-                        <label for="recurrence_weekly_days_fr">Saturday</label>
+                        id="recurrence_weekly_days_sa" value="SA"
+                        name="recurrence_weekly_days_sa" type="checkbox">
+                        <label for="recurrence_weekly_days_sa">Saturday</label>
                     </label>
 
                     </p>
@@ -356,15 +356,15 @@
         <li class="rule" style="clear:both;">
             <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
-            <input type="text" name="date-day" size="2" maxlength="2" value="${dateDay}"/> /
-            <select name="date-month">
+            <input type="text" name="recurrence_exdate_day" size="2" maxlength="2" value="${dateDay}"/> /
+            <select name="recurrence_exdate_month">
                 {{each months}}
                     <option value="${$index+1}"
                             {{if $index+1==dateMonth}}selected="selected"{{/if}}>
                         ${$value}</option>
                 {{/each}}
             </select> /
-            <input type="text" name="date-year" size="4" maxlength="4" value="${dateYear}"/>
+            <input type="text" name="recurrence_exdate_year" size="4" maxlength="4" value="${dateYear}"/>
         </li>
     </script>
 

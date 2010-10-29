@@ -117,7 +117,7 @@
         function parse_rule(el) {
             var str_ = '';
             frequency = el.find('input.freq.active').val();
-            var result = ""
+            var result = "NO RULE FOUND"
             switch (frequency) {
             case "DAILY":
                 result = parse_daily(el);
@@ -251,9 +251,16 @@
 
         // function for parsing dates (rdate and exdate)
         function parse_date(el) {
-            var str_ = '';
-            // TODO: parse other options
-            return str_;
+            var day = $("input[name=recurrence_exdate_day]", el).val();
+            var month = $("select[name=recurrence_exdate_month]", el).val();
+            var year = $("input[name=recurrence_exdate_year]", el).val();
+
+            f_day = parseInt(day) < 10 ? "0" + day : day;
+            f_month = parseInt(month) < 10 ? "0" + month : month;
+
+            var formatted = year + f_month + f_day;
+
+            return formatted;
         }
 
 
@@ -317,7 +324,7 @@
                             f(recurrenceinput.parse_rrule, this) 
                         });
                     $('div.recurrenceinput-exrule li.rule', widgets).each(function() { 
-                            f(recurrenceinput.parse_exdate, this) 
+                            f(recurrenceinput.parse_exrule, this) 
                         });
                     $('div.recurrenceinput-rdate li.rule', widgets).each( function() { 
                             f(recurrenceinput.parse_rdate, this)
