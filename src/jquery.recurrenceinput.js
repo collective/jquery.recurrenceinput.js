@@ -9,16 +9,16 @@
 
     /**
      * TODO:
-     *  - options for each freq
      *  - start date, end date and number of recurrences for each rule
-     *  - add c.datetimewidget like widget with dateinput calendar 
      *  - reuse start date from other fields
      *
      */
     var default_conf = {
         'widget-tmpl': '#jquery-recurrenceinput-widget-tmpl',
         'rule-tmpl': '#jquery-recurrenceinput-rule-tmpl',
-        'date-tmpl': '#jquery-recurrenceinput-date-tmpl'
+        'date-tmpl': '#jquery-recurrenceinput-date-tmpl',
+        'months': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
     };
 
     // private
@@ -60,9 +60,9 @@
                 dateDay = initial_data.substring(6,8);
             }
 
-            var rule = $(conf['date-tmpl']).tmpl(
-                { 'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
-                  'dateDay': dateDay, 'dateMonth': dateMonth, 'dateYear': dateYear })
+            var rule = $(conf['date-tmpl']).tmpl({
+                months: conf.months, dateDay: dateDay, 
+                dateMonth: dateMonth, dateYear: dateYear })
             rule.addClass(date_class);
 
             // remove rule action
