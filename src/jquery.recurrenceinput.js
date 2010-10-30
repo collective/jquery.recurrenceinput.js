@@ -50,9 +50,10 @@
             /* initial_data is expected to be a date of the format yyyymmdd */
 
             // A default: 2010-02-01
-            dateDay = '1'
-            dateMonth = '2'
-            dateYear = '2010'
+            var today = new Date();
+            dateDay = today.getDate();
+            dateMonth = today.getMonth();
+            dateYear = today.getYear();
 
             if (initial_data) {
                 dateYear = initial_data.substring(0,4);
