@@ -151,16 +151,6 @@
             // what's the frequency?
             matches = initial_data.match("^FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)");
             frequency = matches[1];
-            switch (frequency) {
-            case "DAILY":
-                break;
-            case "WEEKLY":
-                break;
-            case "MONTHLY":
-                break;
-            case "YEARLY":
-                break;
-            }
 
             interval = null;
             matches = initial_data.match("INTERVAL=([0-9]+);?");
@@ -186,7 +176,53 @@
                 bymonth = matches[1].split(",");
             }
 
+            bysetpos = null;
+            matches = initial_data.match("BYSETPOS=([^;]+);?");
+            if (matches) {
+                bysetpos = matches[1].split(",");
+            }
 
+            switch (frequency) {
+            case "DAILY":
+            case "WEEKLY":
+            case "MONTHLY":
+            case "YEARLY":
+                $("ul.freq input", el).val([frequency]);
+                $("ul.freq input[value="+frequency+"]", el).change();
+                break;
+            }
+
+            switch (frequency) {
+            case "DAILY":
+                if (interval) {
+                    $("input[name=recurrence_daily_interval]", el).val(interval);
+                }
+                else {
+                    alert("Cannot parse! " + initial_data);
+                }
+                break;
+            case "WEEKLY":
+                if (interval) {
+                    $("input[name=recurrence_weekly_interval_number]", el).val(interval);
+                }
+                if (byday) { 
+                    // TODO: if this is weekdays and interval=null, select DAILY#weekdays?
+                    $('input[name^=recurrence_weekly_days_]', el).val(byday);
+                }
+                if (!interval) {
+                    $("input[name=recurrence_weekly_interval_number]", el).val("1");
+                }
+                if (!byday) {
+                    alert("Cannot parse! " + initial_data);
+                }
+                break;
+            case "MONTHLY":
+                break;
+            case "YEARLY":
+                $("ul.freq input", el).val([frequency]);
+                $("ul.freq input[value="+frequency+"]", el).change();
+                break;
+            }
         }
 
 
