@@ -162,11 +162,30 @@
                 break;
             }
 
-            matches = initial_data.match("^INTERVAL=(\n+)");
+            interval = null;
+            matches = initial_data.match("INTERVAL=([0-9]+);?");
             if (matches) {
                 interval = matches[1];
-                alert(interval);
             }
+
+            byday = null;
+            matches = initial_data.match("BYDAY=([^;]+);?");
+            if (matches) {
+                byday = matches[1].split(",");
+            }
+
+            bymonthday = null;
+            matches = initial_data.match("BYMONTHDAY=([^;]+);?");
+            if (matches) {
+                bymonthday = matches[1].split(",");
+            }
+
+            bymonth = null;
+            matches = initial_data.match("BYMONTH=([^;]+);?");
+            if (matches) {
+                bymonth = matches[1].split(",");
+            }
+
 
         }
 
