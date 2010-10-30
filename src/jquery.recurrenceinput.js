@@ -46,12 +46,19 @@
             });
 
 
-        function add_date(date_class, data) {
+        function add_date(date_class, initial_data) {
+            /* initial_data is expected to be a date of the format yyyymmdd */
 
-            // 2010-02-01
+            // A default: 2010-02-01
             dateDay = '1'
             dateMonth = '2'
             dateYear = '2010'
+
+            if (initial_data) {
+                dateYear = initial_data.substring(0,4);
+                dateMonth = initial_data.substring(4,6);
+                dateDay = initial_data.substring(6,8);
+            }
 
             var rule = $(conf['date-tmpl']).tmpl(
                 { 'months': 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec'.split('|'),
@@ -81,7 +88,7 @@
                         $(this).data('dateinput').getCalendar().offset(
                             {top: trigger_offset.top+33, left: trigger_offset.left}
                         );
-                    })
+                    });
 
             // append rule to ruleset
             rule.hide();
@@ -90,7 +97,7 @@
         }
 
 
-        function add_rule(rule_class, data) {
+        function add_rule(rule_class, initial_data) {
             var rule = $("#jquery-recurrenceinput-rule-tmpl" ).tmpl();
             rule.addClass(rule_class);
 
@@ -301,7 +308,9 @@
             parse_rrule: function (el) { return 'RRULE:'+parse_rule(el) },
             parse_exrule: function (el) { return 'EXRULE:'+parse_rule(el) },
             parse_rdate: function (el) { return 'RDATE:'+parse_date(el) },
-            parse_exdate: function (el) { return 'EXDATE:'+parse_date(el) }
+            parse_exdate: function (el) { return 'EXDATE:'+parse_date(el) },
+            add_rule: function(rule_class, rule) { return add_rule(rule_class, rule) },
+            add_date: function(date_class, rule) { return add_date(date_class, rule) },
         });
 
     }
@@ -333,7 +342,23 @@
                 if (textarea.val() == '') {
                     recurrenceinput.initial_structure();
                 } else {
-                    // TODO: populate data from existing relations
+                    // Populate data from existing relations
+                    rules = textarea.val().split('\n');
+                    for (i = 0; i < rules.length; i++) {
+                        rule = rules[i];
+                        if (rule.search("^RRULE") >= 0) {
+                            recurrenceinput.add_rule('rrule', rule.substring(6));
+                        }
+                        else if (rule.search("^RDATE") >= 0) {
+                            recurrenceinput.add_date('rdate', rule.substring(6));
+                        }
+                        else if (rule.search("^EXRULE") >= 0) {
+                            recurrenceinput.add_rule('exrule', rule.substring(7));
+                        }
+                        else if (rule.search("^EXDATE") >= 0) {
+                            recurrenceinput.add_date('exdate', rule.substring(7));
+                        }
+                    }
                 }
 
                 // on form submit we write to textarea
