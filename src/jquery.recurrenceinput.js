@@ -279,10 +279,10 @@
                     result += ";BYDAY=" + index;
                 }
                 else if (day == "WEEKDAY") {
-                    alert("Cannot see how to support WEEKDAY in RFC2445");
+                    result += ";BYDAY=MO,TU,WE,TH,FR;BYSETPOS=" + index;
                 }
                 else if (day == "WEEKEND_DAY") {
-                    alert("Cannot see how to support WEEKEND_DAY in RFC2445");
+                    result += ";BYDAY=SA,SU;BYSETPOS=" + index;
                 }
 
                 result += ";INTERVAL=" + interval;
@@ -319,10 +319,10 @@
                     result += ";BYDAY=" + index;
                 }
                 else if (day == "WEEKDAY") {
-                    alert("Cannot see how to support WEEKDAY in RFC2445");
+                    result += ";BYDAY=MO,TU,WE,TH,FR;BYSETPOS=" + index;
                 }
                 else if (day == "WEEKEND_DAY") {
-                    alert("Cannot see how to support WEEKEND_DAY in RFC2445");
+                    result += ";BYDAY=SA,SU;BYSETPOS=" + index;
                 }
                 break;
             }
