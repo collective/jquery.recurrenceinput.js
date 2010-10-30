@@ -53,7 +53,7 @@
             var today = new Date();
             dateDay = today.getDate();
             dateMonth = today.getMonth();
-            dateYear = today.getYear();
+            dateYear = today.getFullYear();
 
             if (initial_data) {
                 dateYear = initial_data.substring(0,4);

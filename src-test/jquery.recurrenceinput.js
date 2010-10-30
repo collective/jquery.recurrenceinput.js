@@ -1,6 +1,6 @@
-TestCase("MyTestCase", {
+TestCase("Recurrenceinput.add_date", {
     testA: function() {
-        assertEquals("ping", "ping");
+        assertEquals("ping", "pong");
     }
 });
 
