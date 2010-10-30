@@ -134,10 +134,39 @@
                     $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
+            // parse the initial data if it exists
+            if (initial_data) {
+                widget_load_from_rfc2445(rule, initial_data);
+            }
+
             // append rrule to ruleset
             rule.hide();
             $('.recurrenceinput-' + rule_class + " ul.ruleset", widget).append(rule);
             rule.slideDown("fast");
+        }
+
+        function widget_load_from_rfc2445(el, initial_data) {
+            /* At this point, el is a fully constructed rule div */
+            // what's the frequency?
+            matches = initial_data.match("^FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)");
+            frequency = matches[1];
+            switch (frequency) {
+            case "DAILY":
+                break;
+            case "WEEKLY":
+                break;
+            case "MONTHLY":
+                break;
+            case "YEARLY":
+                break;
+            }
+
+            matches = initial_data.match("^INTERVAL=(\n+)");
+            if (matches) {
+                interval = matches[1];
+                alert(interval);
+            }
+
         }
 
 
