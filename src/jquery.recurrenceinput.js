@@ -28,6 +28,11 @@
         var self = this;
         var widget = $(conf['widget-tmpl']).tmpl();
 
+        var today = new Date();
+        var dateDay = today.getDate();
+        var dateMonth = today.getMonth();
+        var dateYear = today.getFullYear();
+
         /*
          * Initial steps to activate widget
          */
@@ -46,25 +51,12 @@
             });
 
 
-        function add_date(date_class, initial_data) {
-            /* initial_data is expected to be a date of the format yyyymmdd */
+        function init_data(class, tmpl_id) {
 
-            // A default: 2010-02-01
-            var today = new Date();
-            dateDay = today.getDate();
-            dateMonth = today.getMonth();
-            dateYear = today.getFullYear();
-
-            if (initial_data) {
-                dateYear = initial_data.substring(0,4);
-                dateMonth = initial_data.substring(4,6);
-                dateDay = initial_data.substring(6,8);
-            }
-
-            var rule = $(conf['date-tmpl']).tmpl({
+            var rule = $(conf[tmpl_id]).tmpl({
                 months: conf.months, dateDay: dateDay, 
-                dateMonth: dateMonth, dateYear: dateYear })
-            rule.addClass(date_class);
+                dateMonth: dateMonth, dateYear: dateYear });
+            rule.addClass(class);
 
             // remove rule action
             $('a.remove', rule).unbind("click").click(function () {
@@ -72,14 +64,14 @@
             });
 
             // activate dateinput calendar
-            rule.find('input[name=recurrence_date_calendar]')
+            rule.find('input[class=recurrence_calendar]')
                     .dateinput({
                         value: new Date(dateYear, dateMonth, dateDay),
                         change: function() {
                             var value = this.getValue("yyyy-m-d").split("-");
-                            rule.find('input[name=recurrence_date_year]').val(value[0]);
-                            rule.find('select[name=recurrence_date_month]').val(value[1]);
-                            rule.find('input[name=recurrence_date_day]').val(value[2]); },
+                            this.getInput().parent().find('input=[name$=_year]').val(value[0]);
+                            this.getInput().parent().find('select=[name$=_month]').val(value[1]);
+                            this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
                         selectors: true,
                         trigger: true,
                         yearRange: [-10, 10] })
@@ -93,14 +85,27 @@
 
             // append rule to ruleset
             rule.hide();
-            $('.recurrenceinput-' + date_class + " ul.ruleset", widget).append(rule);
+            $('.recurrenceinput-' + class + " ul.ruleset", widget).append(rule);
             rule.slideDown("fast");
+
+            return rule;
+        }
+
+        function add_date(date_class, initial_data) {
+    
+            if (initial_data) {
+                dateYear = initial_data.substring(0,4);
+                dateMonth = initial_data.substring(4,6);
+                dateDay = initial_data.substring(6,8);
+            }
+
+            init_data(date_class, 'date-tmpl');
         }
 
 
         function add_rule(rule_class, initial_data) {
-            var rule = $("#jquery-recurrenceinput-rule-tmpl" ).tmpl();
-            rule.addClass(rule_class);
+
+            var rule = init_data(rule_class, 'rule-tmpl');
 
             // hide options for frequencies
             $('.freq-options > div', rule).hide();
@@ -130,20 +135,10 @@
                         .show();
             });
 
-            // remove rule action
-            rule.find('a.remove').unbind("click").click(function () {
-                    $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
-            });
-
             // parse the initial data if it exists
             if (initial_data) {
                 widget_load_from_rfc2445(rule, initial_data);
             }
-
-            // append rrule to ruleset
-            rule.hide();
-            $('.recurrenceinput-' + rule_class + " ul.ruleset", widget).append(rule);
-            rule.slideDown("fast");
         }
 
         function widget_load_from_rfc2445(el, initial_data) {

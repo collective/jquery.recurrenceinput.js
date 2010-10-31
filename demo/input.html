@@ -336,11 +336,59 @@
                     </label>
                     </p>
                 </div>
-            </div>
 
-            <!-- TODO: Range part still missing -->
+            </div>
             <div style="clear:both;"><!-- --></div>
+
+            <div class="range">
+                <div class="range_start">
+                    <label>Start:</label>
+                    <p>
+                        {{tmpl(null, {dateId: 'recurrence_range_date', months: months}) "#jquery-tools-dateinput-tmpl"}}
+                    </p>
+                </div>
+                <ul class="range_end">
+                    <li>
+                        <input type="radio" name="recurrence_range_end_type" value="no_end" />
+                        <div class="label">No end date</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="recurrence_range_end_type" value="by_recurrences" />
+                        <div class="label">
+                            <span>End after</span>
+                            <input type="text" name="recurrance_range_by_recurrences" value="" />
+                            <span>occurence(s)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="recurrence_range_end_type" value="by_end_date" />
+                        <div class="label">
+                            <span>End by:</span>
+                            {{tmpl({dateId: 'recurrence_range_end_date',
+                                    months: months,
+                                    dateDay: dateDay,
+                                    dateMonth: dateMonth,
+                                    dateYear: dateYear}) "#jquery-tools-dateinput-tmpl"}}
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            <div style="clear:both;"><!-- --></div>
+
         </form></li>
+    </script>
+
+    <script id="jquery-tools-dateinput-tmpl" type="text/x-jquery-tmpl">
+        <input type="text" name="${dateId}_day" size="2" maxlength="2" value="${dateDay}"/> /
+        <select name="${dateId}_month">
+        {{each months}}
+            <option value="${$index+1}"
+                {{if $index+1==dateMonth}}selected="selected"{{/if}}>${$value}</option>
+        {{/each}}
+        </select> /
+        <input type="text" name="${dateId}_year" size="4" maxlength="4" value="${dateYear}"/>
+        <input type="hidden" class="recurrence_calendar" name="${dateId}_calendar" />
     </script>
 
     <!--
@@ -351,16 +399,7 @@
         <li class="rule" style="clear:both;">
             <a href="#" class="remove" style="clear:both;">Remove</a>
             <br />
-            <input type="text" name="recurrence_date_day" size="2" maxlength="2" value="${dateDay}"/> /
-            <select name="recurrence_date_month">
-                {{each months}}
-                    <option value="${$index+1}"
-                            {{if $index+1==dateMonth}}selected="selected"{{/if}}>
-                        ${$value}</option>
-                {{/each}}
-            </select> /
-            <input type="text" name="recurrence_date_year" size="4" maxlength="4" value="${dateYear}"/>
-            <input type="hidden" name="recurrence_date_calendar">
+            {{tmpl(null, {dateId: 'recurrence_date', months: months}) "#jquery-tools-dateinput-tmpl"}}
         </li>
     </script>
 
