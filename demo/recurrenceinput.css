@@ -67,6 +67,27 @@
     margin: 0;
 }
 
+.recurrenceinput .range {
+    margin-top: 20px;
+}
+.recurrenceinput .range_start label,
+.recurrenceinput .range_end input[type=radio] {
+    float: left;
+    line-height: 33px;
+    margin-right: 5px;
+}
+.recurrenceinput .range_start {
+    float: left;
+    width: 48%;
+}
+.recurrenceinput .range_end {
+    float: right;
+    width: 52%;
+}
+.recurrenceinput .range_start p {
+    margin: 0;
+}
+
 a.remove {
     display: block;
     float: right;
