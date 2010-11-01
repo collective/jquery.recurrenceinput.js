@@ -150,31 +150,31 @@
             var able_to_parse = false;
 
             interval = null;
-            matches = initial_data.match("INTERVAL=([0-9]+);?");
+            matches = /INTERVAL=([0-9]+);?/.exec(initial_data);
             if (matches) {
                 interval = matches[1];
             }
 
             byday = null;
-            matches = initial_data.match("BYDAY=([^;]+);?");
+            matches = /BYDAY=([^;]+);?/.exec(initial_data);
             if (matches) {
                 byday = matches[1].split(",");
             }
 
             bymonthday = null;
-            matches = initial_data.match("BYMONTHDAY=([^;]+);?");
+            matches = /BYMONTHDAY=([^;]+);?/.exec(initial_data);
             if (matches) {
                 bymonthday = matches[1].split(",");
             }
 
             bymonth = null;
-            matches = initial_data.match("BYMONTH=([^;]+);?");
+            matches = /BYMONTH=([^;]+);?/.exec(initial_data);
             if (matches) {
                 bymonth = matches[1].split(",");
             }
 
             bysetpos = null;
-            matches = initial_data.match("BYSETPOS=([^;]+);?");
+            matches = /BYSETPOS=([^;]+);?/.exec(initial_data);
             if (matches) {
                 bysetpos = matches[1].split(",");
             }
@@ -220,7 +220,7 @@
                 else if (byday && interval) { // The Nth X of the month, every Y months
                     $("input[name=recurrence_monthly_type]", el).val(['dayofweek']);
                     $("input[name=recurrence_monthly_dayofweek_interval]", el).val(interval);
-                    matches = /(-?[0-9]+)([A-Z]{1,2})/.exec(byday); // we expect this to be -1TH
+                    matches = /^(-?[0-9]+)([A-Z]{1,2}$)/.exec(byday); // we expect this to be -1TH
                     if (!matches || matches.length != 3) {
                         break; // don't understand the format
                     }
@@ -241,7 +241,7 @@
                 else if (bymonth && byday) {
                     $("input[name=recurrence_yearly_type]", el).val(['dayofweek']);
                     $("select[name=recurrence_yearly_dayofweek_month]", el).val(bymonth);
-                    matches = /(-?[0-9]+)([A-Z]{1,2})/.exec(byday); // we expect this to be -1TH
+                    matches = /^(-?[0-9]+)([A-Z]{1,2})$/.exec(byday); // we expect this to be -1TH
                     if (!matches || matches.length != 3) {
                         break; // don't understand the format
                     }
