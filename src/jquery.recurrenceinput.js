@@ -59,7 +59,8 @@
             rule.addClass(class);
 
             // remove rule action
-            $('a.remove', rule).unbind("click").click(function () {
+            $('a.remove', rule).unbind("click").click(function (e) {
+                e.preventDefault();
                 $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
@@ -214,8 +215,6 @@
             case "MONTHLY":
                 break;
             case "YEARLY":
-                $("ul.freq input", el).val([frequency]);
-                $("ul.freq input[value="+frequency+"]", el).change();
                 break;
             }
         }
