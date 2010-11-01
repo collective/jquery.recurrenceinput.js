@@ -225,12 +225,31 @@
                         break; // don't understand the format
                     }
                     $("select[name=recurrence_monthly_dayofweek_index]", el).val(matches[1]);
-                    $("select[name=recurrence_monthly_dayofweek_day]", el).val(matches[2])
+                    $("select[name=recurrence_monthly_dayofweek_day]", el).val(matches[2]);
 
                     able_to_parse = true;
                 }
                 break;
             case "YEARLY":
+                if (bymonth && bymonthday) { // Every [January] [1]
+                    $("input[name=recurrence_yearly_type]", el).val(['dayofmonth']);
+                    $("select[name=recurrence_yearly_dayofmonth_month]", el).val(bymonth);
+                    $("select[name=recurrence_yearly_dayofmonth_day]", el).val(bymonthday);
+                    
+                    able_to_parse = true;
+                }
+                else if (bymonth && byday) {
+                    $("input[name=recurrence_yearly_type]", el).val(['dayofweek']);
+                    $("select[name=recurrence_yearly_dayofweek_month]", el).val(bymonth);
+                    matches = /(-?[0-9]+)([A-Z]{1,2})/.exec(byday); // we expect this to be -1TH
+                    if (!matches || matches.length != 3) {
+                        break; // don't understand the format
+                    }
+                    $("select[name=recurrence_yearly_dayofweek_index]", el).val(matches[1]);
+                    $("select[name=recurrence_yearly_dayofweek_day]", el).val(matches[2]);
+
+                    able_to_parse = true;
+                }
                 break;
             }
 
