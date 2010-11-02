@@ -93,8 +93,24 @@ test('isEven()', function() {
 
 // Now move onto our tests.
 
+function is_active_freq(el, frequency) {
+    return $("input[name=recurrenceinput_freq]", el).val() === "DAILY";
+}
+
+
 test('rfc2445 DAILY', function() {
         el = rule_el();
         ok(el, "We created the rule element successfully!");
+
+        widget_load_from_rfc2445(el, "FREQ=DAILY;INTERVAL=17");
+        ok(is_active_freq(el, "DAILY"), "Daily should be active");
+
+        ok(
+            $("input[name=recurrenceinput_daily_type]", el).val() === "DAILY", 
+            "Set to 'every X days'");
+        ok(
+            $("input[name=recurrenceinput_daily_interval]", el).val() === "17",
+            "Interval set to 17");
+
     })
 

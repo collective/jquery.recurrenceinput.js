@@ -49,61 +49,61 @@ function widget_load_from_rfc2445(el, initial_data) {
     switch (frequency) {
     case "DAILY":
         if (interval) {
-            $("input[name=recurrence_daily_interval]", el).val(interval);
+            $("input[name=recurrenceinput_daily_interval]", el).val(interval);
             able_to_parse = true;
         }
         break;
     case "WEEKLY":
         if (interval) {
-            $("input[name=recurrence_weekly_interval_number]", el).val(interval);
+            $("input[name=recurrenceinput_weekly_interval_number]", el).val(interval);
             able_to_parse = true;
         }
         else {
-            $("input[name=recurrence_weekly_interval_number]", el).val("1");
+            $("input[name=recurrenceinput_weekly_interval_number]", el).val("1");
         }
         if (byday) { 
             // TODO: if this is weekdays and interval=null, select DAILY#weekdays?
-            $('input[name^=recurrence_weekly_days_]', el).val(byday);
+            $('input[name^=recurrenceinput_weekly_days_]', el).val(byday);
             able_to_parse = true;
         }
         break;
     case "MONTHLY":
         if (bymonthday && interval) { // Day X of the month, every Y months
-            $("input[name=recurrence_monthly_type]", el).val(['dayofmonth']);
-            $("input[name=recurrence_monthly_dayofmonth_interval]", el).val(interval);
-            $("select[name=recurrence_monthly_dayofmonth_day]", el).val(bymonthday);
+            $("input[name=recurrenceinput_monthly_type]", el).val(['dayofmonth']);
+            $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(interval);
+            $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val(bymonthday);
             able_to_parse = true;
         }
         else if (byday && interval) { // The Nth X of the month, every Y months
-            $("input[name=recurrence_monthly_type]", el).val(['dayofweek']);
-            $("input[name=recurrence_monthly_dayofweek_interval]", el).val(interval);
+            $("input[name=recurrenceinput_monthly_type]", el).val(['dayofweek']);
+            $("input[name=recurrenceinput_monthly_dayofweek_interval]", el).val(interval);
             matches = /^(-?[0-9]+)([A-Z]{1,2}$)/.exec(byday); // we expect this to be -1TH
             if (!matches || matches.length != 3) {
                 break; // don't understand the format
             }
-            $("select[name=recurrence_monthly_dayofweek_index]", el).val(matches[1]);
-            $("select[name=recurrence_monthly_dayofweek_day]", el).val(matches[2]);
+            $("select[name=recurrenceinput_monthly_dayofweek_index]", el).val(matches[1]);
+            $("select[name=recurrenceinput_monthly_dayofweek_day]", el).val(matches[2]);
 
             able_to_parse = true;
         }
         break;
     case "YEARLY":
         if (bymonth && bymonthday) { // Every [January] [1]
-            $("input[name=recurrence_yearly_type]", el).val(['dayofmonth']);
-            $("select[name=recurrence_yearly_dayofmonth_month]", el).val(bymonth);
-            $("select[name=recurrence_yearly_dayofmonth_day]", el).val(bymonthday);
+            $("input[name=recurrenceinput_yearly_type]", el).val(['dayofmonth']);
+            $("select[name=recurrenceinput_yearly_dayofmonth_month]", el).val(bymonth);
+            $("select[name=recurrenceinput_yearly_dayofmonth_day]", el).val(bymonthday);
 
             able_to_parse = true;
         }
         else if (bymonth && byday) {
-            $("input[name=recurrence_yearly_type]", el).val(['dayofweek']);
-            $("select[name=recurrence_yearly_dayofweek_month]", el).val(bymonth);
+            $("input[name=recurrenceinput_yearly_type]", el).val(['dayofweek']);
+            $("select[name=recurrenceinput_yearly_dayofweek_month]", el).val(bymonth);
             matches = /^(-?[0-9]+)([A-Z]{1,2})$/.exec(byday); // we expect this to be -1TH
             if (!matches || matches.length != 3) {
                 break; // don't understand the format
             }
-            $("select[name=recurrence_yearly_dayofweek_index]", el).val(matches[1]);
-            $("select[name=recurrence_yearly_dayofweek_day]", el).val(matches[2]);
+            $("select[name=recurrenceinput_yearly_dayofweek_index]", el).val(matches[1]);
+            $("select[name=recurrenceinput_yearly_dayofweek_day]", el).val(matches[2]);
 
             able_to_parse = true;
         }
