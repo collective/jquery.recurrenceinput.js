@@ -134,9 +134,7 @@ test('rfc2445 WEEKLY weekdays every 3 weeks', function() {
             days.length === expected.length,
             "Right number of days for weekdays selected");
 
-        jQuery.each(expected, function(index, value) {
-                ok(jQuery.inArray(value, days) >= 0, value + " in array");
-            });
+        same(days, expected, "Days are as expected");
 
         ok(
             $("input[name=recurrenceinput_weekly_interval]", el).val() === "3",
