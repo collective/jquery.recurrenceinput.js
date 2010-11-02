@@ -46,11 +46,20 @@
         classname_yearly_weekdayofweek_day: 'yearly_weekdayofweek_day',
         classname_yearly_weekdayofweek_months: 'yearly_weekdayofweek_months',
 
+        classname_range: 'range',
+        classname_range_start: 'range_start',
+        classname_range_end: 'range_end',
+        classname_range_end_type: 'range_end_type',
+        classname_range_end_by_ocurrences: 'range_end_by_ocurrences',
+        classname_range_end_by_end_date: 'range_end_by_end_date',
+
+        classname_z3cform_dateinput: 'z3cform_dateinput',
+
         template: {
             widget: '#jquery-recurrenceinput-widget-tmpl',
             form: '#jquery-recurrenceinput-form-tmpl',
             rule: '#jquery-recurrenceinput-rule-tmpl',
-            date: '#jquery-recurrenceinput-date-tmpl' },
+            date: '#collective-z3cform-dateinput-tmpl' },
 
         months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -74,7 +83,10 @@
          *  - add checkbox repeat button (with action)
          */
         var self = this;
-        var today = new Date();
+        var today = new Date()
+        conf.dateDay = today.getDay();
+        conf.dateMonth = today.getMonth();
+        conf.dateYear = today.getFullYear();
 
         var classname_activate = conf.classname+conf.classname_activate;
         var classname_form = conf.classname+conf.classname_form;

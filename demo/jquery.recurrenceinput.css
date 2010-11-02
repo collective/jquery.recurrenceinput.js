@@ -1,0 +1,40 @@
+div.recurrenceinput_form {
+    border: 1px solid #000000;
+    width: 450px;
+    height: 400px;
+}
+.recurrenceinput_freq {
+    list-style: none;
+    margin: 1em 0.5em 0.5em 0.5em;
+    padding: 0 1em 0 0;
+    border-right: 1px solid;
+    float: left;
+}
+.recurrenceinput_freq_options > div {
+    display: none;
+}
+.recurrenceinput_range {
+    margin: 0.5em;
+}
+.recurrenceinput_range_start {
+    float: left;
+    width: 45%;
+}
+.recurrenceinput_range_start > p {
+    margin: 0;
+}
+.recurrenceinput_range_end {
+    float: right;
+    width: 55%;
+}
+.recurrenceinput_range_end > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.recurrenceinput_range_end > ul > li > input {
+    float: left;
+}
+.recurrenceinput_range_end > ul > li > div.label > p {
+    margin: 0 0 0 1em;
+}

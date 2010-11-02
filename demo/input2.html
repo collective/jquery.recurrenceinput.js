@@ -198,6 +198,47 @@
 
                 </div>
 
+                <div style="clear:both;"><!-- --></div>
+
+                <div class="${classname}${classname_range}">
+
+                    <div class="${classname}${classname_range_start}">
+                        <label>Start</label>
+                        <p>{{tmpl(null, {dateId: classname+classname_range_start}) template.date}}</p>
+                    </div>
+
+                    <div class="${classname}${classname_range_end}">
+                        <label>End</label>
+                        <ul>
+                            <li>
+                                <input type="radio" value="NO_END_DATE"
+                                       name="${classname}${classname_range_end_type}" />
+                                <div class="label">No end date</div>
+                            </li>
+                            <li>
+                                <input type="radio" value="BY_OCURRENCES"
+                                       name="${classname}${classname_range_end_type}" />
+                                <div class="label">
+                                    <span>End after</span>
+                                    <input type="text" size="3" value=""
+                                        name="by_ocurrences" />
+                                    <span>occurence(s)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="radio" value="BY_END_DATE"
+                                       name="${classname}${classname_range_end_type}" />
+                                <div class="label">
+                                    <span>End by:</span>
+                                    <p>{{tmpl(null, {dateId: classname+classname_range_end_by_end_date}) template.date}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div style="clear:both;"><!-- --></div>
+
             </form>
         </div>
     </script>
