@@ -84,12 +84,12 @@ function isEven(val) {
 }  
   
 test('isEven()', function() { 
-    ok(isEven(0), 'Zero is an even number'); 
-    ok(isEven(2), 'So is two'); 
-    ok(isEven(-4), 'So is negative four'); 
-    ok(!isEven(1), 'One is not an even number'); 
-    ok(!isEven(-7), 'Neither is negative seven');  
-}) 
+        ok(isEven(0), 'Zero is an even number'); 
+        ok(isEven(2), 'So is two'); 
+        ok(isEven(-4), 'So is negative four'); 
+        ok(!isEven(1), 'One is not an even number'); 
+        ok(!isEven(-7), 'Neither is negative seven');  
+    }); 
 
 // Now move onto our tests.
 
@@ -103,7 +103,7 @@ test('rfc2445 DAILY', function() {
         ok(el, "We created the rule element successfully!");
 
         widget_load_from_rfc2445(el, "FREQ=DAILY;INTERVAL=17");
-        ok(is_active_freq(el, "DAILY"), "Daily should be active");
+        ok(is_active_freq(el, "DAILY"), "Daily options should be active");
 
         ok(
             $("input[name=recurrenceinput_daily_type]", el).val() === "DAILY", 
@@ -112,5 +112,39 @@ test('rfc2445 DAILY', function() {
             $("input[name=recurrenceinput_daily_interval]", el).val() === "17",
             "Interval set to 17");
 
-    })
+        ok(
+            $(".recurrenceinput_daily_interval:visible", el).length === 1,
+            "Daily options div visible");
+
+    });
+
+test('rfc2445 WEEKLY weekdays every 3 weeks', function() {
+        el = rule_el();
+
+        widget_load_from_rfc2445(el, "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;INTERVAL=3");
+        ok(is_active_freq(el, "WEEKLY"), "Weekly options should be active");
+
+        days = []
+        $('input[name=recurrenceinput_weekly_weekdays]:checked', el).each(function() {
+                days[days.length] = $(this).val();
+            });
+        expected = ["MO","TU","WE","TH","FR"];
+
+        ok(
+            days.length === expected.length,
+            "Right number of days for weekdays selected");
+
+        jQuery.each(expected, function(index, value) {
+                ok(jQuery.inArray(value, days) >= 0, value + " in array");
+            });
+
+        ok(
+            $("input[name=recurrenceinput_weekly_interval]", el).val() === "3",
+            "Interval set to 3");
+
+        ok(
+            $(".recurrenceinput_weekly_interval:visible", el).length === 1,
+            "Weekly options div visible");
+
+    });
 

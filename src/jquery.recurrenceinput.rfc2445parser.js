@@ -55,15 +55,15 @@ function widget_load_from_rfc2445(el, initial_data) {
         break;
     case "WEEKLY":
         if (interval) {
-            $("input[name=recurrenceinput_weekly_interval_number]", el).val(interval);
+            $("input[name=recurrenceinput_weekly_interval]", el).val(interval);
             able_to_parse = true;
         }
         else {
-            $("input[name=recurrenceinput_weekly_interval_number]", el).val("1");
+            $("input[name=recurrenceinput_weekly_interval]", el).val("1");
         }
         if (byday) { 
             // TODO: if this is weekdays and interval=null, select DAILY#weekdays?
-            $('input[name^=recurrenceinput_weekly_days_]', el).val(byday);
+            $('input[name=recurrenceinput_weekly_weekdays]', el).val(byday);
             able_to_parse = true;
         }
         break;
