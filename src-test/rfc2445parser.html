@@ -1,0 +1,292 @@
+<html>
+
+<head>
+
+    <title>QUnit Test Suite</title>  
+    <link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" 
+    type="text/css" media="screen">  
+    <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js">
+    </script>  
+
+    
+
+    <link type="text/css" href="jquery.tools.dateinput.css" rel="stylesheet">
+    <link type="text/css" href="jquery.recurrenceinput.css" rel="stylesheet">
+    <link type="text/css" href="overlays.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../lib/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
+    <!--script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.5.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.toolbox.expose-1.2.5.js"></script>
+    <script type="text/javascript" src="../src/jquery.recurrenceinput2.js"></script-->
+
+    <script id="jquery-recurrenceinput-widget-tmpl" type="text/x-jquery-tmpl">
+        <div class="${classname}">
+            <div class="${classname}${classname_activate}">
+                <input type="checkbox" name="${classname}${classname_activate}" />
+                <label>Repeat...</label>
+                <span class="${classname}${classname_form}">
+                    <label>Repeat:</label>
+                    <span></span>
+                </span>
+            </div>
+        </div>
+    </script>
+
+    <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl">
+        <div class="${classname}${classname_form}">
+            <form>
+
+                <ul class="${classname}${classname_freq}">
+                    <li>
+                        <input type="radio" name="${classname}${classname_freq}"
+                               value="DAILY" class="freq" />
+                        <label>Daily</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="${classname}${classname_freq}"
+                               value="WEEKLY" class="freq" />
+                        <label>Weekly</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="${classname}${classname_freq}"
+                               value="MONTHLY" class="freq" />
+                        <label>Monthly</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="${classname}${classname_freq}"
+                               value="YEARLY" class="freq" />
+                        <label>Yearly</label>
+                    </li>
+                </ul>
+
+                <div class="${classname}${classname_freq_options}">
+
+                    <div class="${classname}${classname_freq_daily}">
+                        <ul>
+                            <li>
+                                <input type="radio" value="DAILY" checked="checked"
+                                       name="${classname}${classname_daily_type}" />
+                                <label>Every <input type="text" value="1" size="2"
+                                       name="${classname}${classname_daily_interval}"/>
+                                       days.</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="WEEKDAYS" checked="checked"
+                                       name="${classname}${classname_daily_type}" />
+                                <label>Weekdays</label>
+                                <ul class="${classname}${classname_daily_weekdays}">
+                                {{each weekdays}}
+                                    <li>
+                                        <input type="checkbox"
+                                               id="${classname}${classname_daily_weekdays}_${$value.id}"
+                                               name="${classname}${classname_daily_weekdays}"
+                                               value="${$value.id}" />
+                                        <label for="${classname}${classname_daily_weekdays}_${$value.id}">
+                                            ${$value.title}
+                                        </label>
+                                    </li>
+                                {{/each}}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="${classname}${classname_freq_weekly}">
+                        <span>Every</span>
+                        <input type="text" size="2" value="1" originalvalue="1"
+                            name="${classname}${classname_weekly_interval}" />
+                        <span>week(s) on:</span>
+
+                        <ul class="${classname}${classname_weekly_weekdays}">
+                        {{each weekdays}}
+                            <li>
+                                <input type="checkbox"
+                                       id="${classname}${classname_weekly_weekdays}_${$value.id}"
+                                       name="${classname}${classname_weekly_weekdays}"
+                                       value="${$value.id}" />
+                                <label for="${classname}${classname_weekly_weekdays}_${$value.id}">
+                                    ${$value.title}
+                                </label>
+                            </li>
+                        {{/each}}
+                        </ul>
+                    </div>
+
+                    <div class="${classname}${classname_freq_monthly}">
+                        <ul>
+                            <li>
+                                <input type="radio" value="DAY_OF_MONTH"
+                                    name="${classname}${classname_monthly_type}" />
+                                <span>Day</span>
+                                <select name="${classname}${classname_monthly_dayofmonth_day}">
+                                {{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,
+                                        18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}
+                                    <option value="${$value}">${$value}</option>
+                                {{/each}}
+                                </select>
+                                <span>of the month, every</span>
+                                <input type="text" size="2" value="1" 
+                                    name="${classname}${classname_monthly_dayofmonth_interval}"/>
+                                <span>month(s).</span>
+                            </li>
+                            <li>
+                                <input type="radio" value="WEEKDAY_OF_MONTH" 
+                                    name="${classname}${classname_monthly_type}" />
+                                <span>The</span>
+                                <select name="${classname}${classname_monthly_weekdayofmonth_index}">
+                                    <option selected="selected" value="1">First</option>
+                                    <option value="2">Second</option>
+                                    <option value="3">Third</option>
+                                    <option value="4">Fourth</option>
+                                    <option value="-1">Last</option>
+                                </select>
+                                <select name="${classname}${classname_monthly_weekdayofmonth}">
+                                {{each weekdays}}
+                                    <option value="${$value.id}">${$value.title}</option>
+                                {{/each}}
+                                    <option value="WEEKDAY">Weekday</option>
+                                    <option value="WEEKEND_DAY">Weekend Day</option>
+                                </select>
+                                <span>, every</span>
+                                <input type="text" size="2" value="1"
+                                    name="${classname}${classname_monthly_weekdayofmonth_interval}" />
+                                <span>month(s).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="${classname}${classname_freq_yearly}">
+                        <ul>
+                            <li>
+                                <input type="radio" value="DAY_OF_MONTH"
+                                    name="${classname}${classname_yearly_type}" />
+                                <span>Every</span>
+                                <select name="${classname}${classname_yearly_dayofmonth_month}">
+                                {{each months}}
+                                    <option value="${$index+1}">${$value}</option>
+                                {{/each}}
+                                </select>
+                                <select name="${classname}${classname_yearly_dayofmonth_day}">
+                                {{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,
+                                        18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}
+                                    <option value="${$value}">${$value}</option>
+                                {{/each}}
+                                </select>
+                            </li>
+                            <li>
+                                <input type="radio" value="WEEKDAY_OF_MONTH"
+                                    name="${classname}${classname_yearly_type}" />
+                                <span>The</span>
+                                <select name="${classname}${classname_yearly_weekdayofweek_index}">
+                                    <option selected="selected" value="1">First</option>
+                                    <option value="2">Second</option>
+                                    <option value="3">Third</option>
+                                    <option value="4">Fourth</option>
+                                    <option value="-1">Last</option>
+                                </select>
+                                <select name="${classname}${classname_yearly_weekdayofweek_day}">
+                                {{each weekdays}}
+                                    <option value="${$value.id}">${$value.title}</option>
+                                {{/each}}
+                                    <option value="WEEKDAY">Weekday</option>
+                                    <option value="WEEKEND_DAY">Weekend Day</option>
+                                </select>
+                                <span>of</span>
+                                <select name="${classname}${classname_yearly_weekdayofweek_months}">
+                                {{each months}}
+                                    <option value="${$index+1}">${$value}</option>
+                                {{/each}}
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div style="clear:both;"><!-- --></div>
+
+                <div class="${classname}${classname_range}">
+
+                    <div class="${classname}${classname_range_start}">
+                        <label>Start</label>
+                        <p>{{tmpl(null, {dateId: classname+classname_range_start}) template.date}}</p>
+                    </div>
+
+                    <div class="${classname}${classname_range_end}">
+                        <label>End</label>
+                        <ul>
+                            <li>
+                                <input type="radio" value="NO_END_DATE"
+                                       name="${classname}${classname_range_end_type}" />
+                                <div class="label">No end date</div>
+                            </li>
+                            <li>
+                                <input type="radio" value="BY_OCURRENCES"
+                                       name="${classname}${classname_range_end_type}" />
+                                <div class="label">
+                                    <span>End after</span>
+                                    <input type="text" size="3" value=""
+                                        name="by_ocurrences" />
+                                    <span>occurence(s)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="radio" value="BY_END_DATE"
+                                       name="${classname}${classname_range_end_type}" />
+                                <div class="label">
+                                    <span>End by:</span>
+                                    <p>{{tmpl(null, {dateId: classname+classname_range_end_by_end_date}) template.date}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div style="clear:both;"><!-- --></div>
+
+            </form>
+        </div>
+    </script>
+
+    <!--
+        `collective.z3cform.dateinput` like template.
+         Example data you need to pass:
+            { dateId: 'some-unique-per-site-name-for-nameing-classes',
+              dateDay: '1', dateMonth: '2', dateYear: '2010' }
+    -->
+    <script id="collective-z3cform-dateinput-tmpl" type="text/x-jquery-tmpl">
+        <input type="text" name="${dateId}_day" size="2" maxlength="2" value="${dateDay}"/> /
+        <select name="${dateId}_month">
+        {{each months}}
+            <option value="${$index+1}"
+                {{if $index+1==dateMonth}}selected="selected"{{/if}}>${$value}</option>
+        {{/each}}
+        </select> /
+        <input type="text" name="${dateId}_year" size="4" maxlength="4" value="${dateYear}"/>
+        <input type="hidden" class="recurrence_calendar" name="${dateId}_calendar" />
+    </script>
+
+
+    <!-- Design Under Test -->  
+    <script type="text/javascript" src="../src/jquery.recurrenceinput.rfc2445parser.js"></script>
+
+    <!-- The tests file -->  
+    <script type="text/javascript" src="rfc2445parser.js"></script> 
+
+
+</head>
+
+<body>
+
+    <h1 id="qunit-header">QUnit Test Suite</h1>  
+    <h2 id="qunit-banner"></h2>  
+    <div id="qunit-testrunner-toolbar"></div>  
+    <h2 id="qunit-userAgent"></h2>  
+    <ol id="qunit-tests"></ol> 
+
+</body>
+
+</html>
+
