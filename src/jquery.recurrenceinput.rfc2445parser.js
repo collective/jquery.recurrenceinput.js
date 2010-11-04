@@ -69,9 +69,9 @@ function widget_load_from_rfc2445(el, initial_data) {
         break;
     case "MONTHLY":
         if (bymonthday && interval) { // Day X of the month, every Y months
-            $("input[name=recurrenceinput_monthly_type]", el).val(['dayofmonth']);
-            $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(interval);
+            $("input[name=recurrenceinput_monthly_type]", el).val(['DAY_OF_MONTH']);
             $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val(bymonthday);
+            $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(interval);
             able_to_parse = true;
         }
         else if (byday && interval) { // The Nth X of the month, every Y months
