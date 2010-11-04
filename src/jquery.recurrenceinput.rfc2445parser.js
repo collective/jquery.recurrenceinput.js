@@ -69,20 +69,20 @@ function widget_load_from_rfc2445(el, initial_data) {
         break;
     case "MONTHLY":
         if (bymonthday && interval) { // Day X of the month, every Y months
-            $("input[name=recurrenceinput_monthly_type]", el).val(['DAY_OF_MONTH']);
+            $("input[name=recurrenceinput_monthly_type]", el).val('DAY_OF_MONTH');
             $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val(bymonthday);
             $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(interval);
             able_to_parse = true;
         }
         else if (byday && interval) { // The Nth X of the month, every Y months
-            $("input[name=recurrenceinput_monthly_type]", el).val(['dayofweek']);
-            $("input[name=recurrenceinput_monthly_dayofweek_interval]", el).val(interval);
+            $("input[name=recurrenceinput_monthly_type]", el).val('WEEKDAY_OF_MONTH');
+            $("input[name=recurrenceinput_monthly_weekdayofmonth_interval]", el).val(interval);
             matches = /^(-?[0-9]+)([A-Z]{1,2}$)/.exec(byday); // we expect this to be -1TH
             if (!matches || matches.length != 3) {
                 break; // don't understand the format
             }
-            $("select[name=recurrenceinput_monthly_dayofweek_index]", el).val(matches[1]);
-            $("select[name=recurrenceinput_monthly_dayofweek_day]", el).val(matches[2]);
+            $("select[name=recurrenceinput_monthly_weekdayofmonth_index]", el).val(matches[1]);
+            $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val(matches[2]);
 
             able_to_parse = true;
         }
