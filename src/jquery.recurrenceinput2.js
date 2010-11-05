@@ -101,35 +101,39 @@
             input.change();
         });
         form.find('input[name='+conf.classname_freq+']').change(function(e) {
-                form.find('div.'+conf.classname_freq_options+' > div').hide();
-                parent_list = $(this).closest("ul");
-                font_size = parent_list.css('font-size').replace('px', '').replace('em','');
-                form.find('div.'+conf.classname_freq+'_' + $(this).val().toLowerCase())
-                        .css('margin-left', + (parent_list.width() + 2*font_size))
-                        .show();
-            });
+            form.find('div.'+conf.classname_freq_options+' > div').hide();
+            parent_list = $(this).closest("ul");
+            font_size = parent_list.css('font-size').replace('px', '').replace('em','');
+            form.find('div.'+conf.classname_freq+'_' + $(this).val().toLowerCase())
+                .css('margin-left', + (parent_list.width() + 2*font_size)).show();
+        });
         form.find('input[class=dateinput_calendar]')
-                    .dateinput({
-                        value: new Date(conf.dateYear, conf.dateMonth, conf.dateDay),
-                        change: function() {
-                            var value = this.getValue("yyyy-m-d").split("-");
-                            this.getInput().parent().find('input=[name$=_year]').val(value[0]);
-                            this.getInput().parent().find('select=[name$=_month]').val(value[1]);
-                            this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
-                        selectors: true,
-                        trigger: true,
-                        yearRange: [-10, 10] })
-                    .unbind('change')
-                    .bind('onShow', function (event) {
-                        var trigger_offset = $(this).next().offset();
-                        $(this).data('dateinput').getCalendar().offset(
-                            {top: trigger_offset.top+33, left: trigger_offset.left}
-                        );
-                    });
+            .dateinput({
+                value: new Date(conf.dateYear, conf.dateMonth, conf.dateDay),
+                change: function() {
+                    var value = this.getValue("yyyy-m-d").split("-");
+                    this.getInput().parent().find('input=[name$=_year]').val(value[0]);
+                    this.getInput().parent().find('select=[name$=_month]').val(value[1]);
+                    this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
+                selectors: true,
+                trigger: true,
+                yearRange: [-10, 10] })
+            .unbind('change')
+            .bind('onShow', function (event) {
+                var trigger_offset = $(this).next().offset();
+                $(this).data('dateinput').getCalendar().offset(
+                    {top: trigger_offset.top+33, left: trigger_offset.left}
+                    );
+            });
+        form.find('input[type=submit && class=cancel]').click(function(e) {
+            form.overlay().close();
+        });
+        form.find('input[type=submit && class=save]').click(function(e) {
+            form.overlay().close();
+        });
 
 
         // add checkbox repeat button (with action)
-        var overlay = null
         var widget = $(conf.template.widget).tmpl(conf);
         widget.find('.'+conf.classname_form).hide();
         widget.find('label').click(function() {
@@ -167,7 +171,6 @@
                                     }
                                 },
                                 speed: 'fast',
-                                closeOnClick: false,
                                 load: true
                             });
                         }
