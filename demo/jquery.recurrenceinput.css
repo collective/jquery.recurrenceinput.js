@@ -62,28 +62,42 @@ div.recurrenceinput_freq_yearly > ul {
     padding: 0;
 }
 
-.recurrenceinput_range {
+div.recurrenceinput_range {
     margin: 0.5em;
 }
-.recurrenceinput_range_start {
+div.recurrenceinput_range_start {
     float: left;
     width: 45%;
 }
-.recurrenceinput_range_start > p {
+div.recurrenceinput_range_start > p {
     margin: 0;
 }
-.recurrenceinput_range_end {
+div.recurrenceinput_range_end {
     float: right;
     width: 55%;
 }
-.recurrenceinput_range_end > ul {
+div.recurrenceinput_range_end > ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.recurrenceinput_range_end > ul > li > input {
+div.recurrenceinput_range_end > ul > li > input {
     float: left;
 }
-.recurrenceinput_range_end > ul > li > div.label > p {
+div.recurrenceinput_range_end > ul > li > div.label > p {
     margin: 0 0 0 1em;
+}
+a.caltrigger {
+    background: url(calendar_icon.gif);
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+a.caltrigger {
+    background-position: 0 32px;
+    margin: 0;
+}
+#calroot {
+    z-index: 10000;
 }

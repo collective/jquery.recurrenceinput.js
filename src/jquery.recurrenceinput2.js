@@ -108,6 +108,24 @@
                         .css('margin-left', + (parent_list.width() + 2*font_size))
                         .show();
             });
+        form.find('input[class=dateinput_calendar]')
+                    .dateinput({
+                        value: new Date(conf.dateYear, conf.dateMonth, conf.dateDay),
+                        change: function() {
+                            var value = this.getValue("yyyy-m-d").split("-");
+                            this.getInput().parent().find('input=[name$=_year]').val(value[0]);
+                            this.getInput().parent().find('select=[name$=_month]').val(value[1]);
+                            this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
+                        selectors: true,
+                        trigger: true,
+                        yearRange: [-10, 10] })
+                    .unbind('change')
+                    .bind('onShow', function (event) {
+                        var trigger_offset = $(this).next().offset();
+                        $(this).data('dateinput').getCalendar().offset(
+                            {top: trigger_offset.top+33, left: trigger_offset.left}
+                        );
+                    });
 
 
         // add checkbox repeat button (with action)

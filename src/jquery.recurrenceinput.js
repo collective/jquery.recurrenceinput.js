@@ -65,7 +65,7 @@
             });
 
             // activate dateinput calendar
-            rule.find('input[class=recurrence_calendar]')
+            rule.find('input[class=dateinput_calendar]')
                     .dateinput({
                         value: new Date(dateYear, dateMonth, dateDay),
                         change: function() {
