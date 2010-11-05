@@ -257,3 +257,92 @@ test('rfc2445 MONTHLY on the last weekend-day of every 12th month', function(){
     });
 
 
+/***
+ * YEARLY
+ */
+
+test('rfc2445 YEARLY on the third day of each year', function(){
+        el = rule_el();
+        widget_load_from_rfc2445(el, "FREQ=YEARLY;INTERVAL=1;BYMONTHDAY=3");
+        ok(is_active_freq(el, "MONTHLY"), "Monthly options should be active");
+
+        equal(
+            $("input[name=recurrenceinput_monthly_type]", el).val(), "DAY_OF_MONTH", 
+            "Set to 'the X day every Y months'");
+        equal(
+            $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val(), "3",
+            "Day of month is 3");
+        equal(
+            $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(), "1",
+            "Repeat every month");
+
+        ok(
+            $(".recurrenceinput_freq_monthly:visible", el).length === 1,
+            "Monthly options div visible");
+    });
+
+test('rfc2445 YEARLY on the twelth day of every twenty-fifth year', function(){
+        el = rule_el();
+        widget_load_from_rfc2445(el, "FREQ=YEARLY;INTERVAL=25;BYMONTHDAY=12");
+        ok(is_active_freq(el, "MONTHLY"), "Monthly options should be active");
+
+        equal(
+            $("input[name=recurrenceinput_monthly_type]", el).val(), "DAY_OF_MONTH", 
+            "Set to 'the X day every Y months'");
+        equal(
+            $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val(), "12",
+            "Day of month is 12");
+        equal(
+            $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(), "25",
+            "Repeat every 25 months");
+
+        ok(
+            $(".recurrenceinput_freq_monthly:visible", el).length === 1,
+            "Monthly options div visible");
+    });
+
+test('rfc2445 YEARLY on the last Friday of every 12 year', function(){
+        el = rule_el();
+        widget_load_from_rfc2445(el, "FREQ=YEARLY;BYDAY=-1FR;INTERVAL=12");
+        ok(is_active_freq(el, "MONTHLY"), "Monthly options should be active");
+
+        equal(
+            $("input[name=recurrenceinput_monthly_type]", el).val(), "WEEKDAY_OF_MONTH", 
+            "Set to 'the X day every Y months'");
+
+        equal(
+            $("select[name=recurrenceinput_monthly_weekdayofmonth_index]", el).val(), "-1",
+            "Weekday index");
+        equal(
+            $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val(), "FR",
+            "Weekday of the month");
+        equal(
+            $("input[name=recurrenceinput_monthly_weekdayofmonth_interval]", el).val(), "12",
+            "Every X months");
+
+        ok(
+            $(".recurrenceinput_freq_monthly:visible", el).length === 1,
+            "Monthly options div visible");
+    });
+
+test('rfc2445 YEARLY on the last weekday of every 12th year', function(){
+        el = rule_el();
+        widget_load_from_rfc2445(el, 
+            "FREQ=YEARLY;BYDAY=MO,TU,WE,TH,FR;BYSETPOS=-1;INTERVAL=12");
+        equal(
+            $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val(), 
+            "WEEKDAY",
+            "Weekday of the month");
+    });
+
+test('rfc2445 YEARLY on the last weekend-day of every 12th year', function(){
+        el = rule_el();
+        widget_load_from_rfc2445(el, "FREQ=YEARLY;BYDAY=SA,SU;BYSETPOS=-1;INTERVAL=12");
+        equal(
+            $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val(), 
+            "WEEKEND_DAY",
+            "Weekday of the month");
+    });
+
+
+
