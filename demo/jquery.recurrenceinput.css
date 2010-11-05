@@ -3,16 +3,65 @@ div.recurrenceinput_form {
     width: 450px;
     height: 400px;
 }
-.recurrenceinput_freq {
+ul.recurrenceinput_freq {
     list-style: none;
     margin: 1em 0.5em 0.5em 0.5em;
     padding: 0 1em 0 0;
     border-right: 1px solid;
     float: left;
 }
-.recurrenceinput_freq_options > div {
+div.recurrenceinput_freq_options > div {
     display: none;
 }
+
+div.recurrenceinput_freq_daily {
+    padding: 1em 0px 0.5em;
+}
+div.recurrenceinput_freq_daily > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.recurrenceinput_daily_weekdays {
+    list-style: none;
+    padding-left: 10px;
+}
+ul.recurrenceinput_daily_weekdays > li {
+    float: left;
+    margin-right: 5px;
+}
+
+div.recurrenceinput_freq_weekly {
+    padding: 1em 0px 0.5em;
+}
+ul.recurrenceinput_weekly_weekdays {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.recurrenceinput_weekly_weekdays > li {
+    float: left;
+    margin-right: 5px;
+}
+
+div.recurrenceinput_freq_monthly {
+    padding: 1em 0px 0.5em;
+}
+div.recurrenceinput_freq_monthly > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.recurrenceinput_freq_yearly {
+    padding: 1em 0px 0.5em;
+}
+div.recurrenceinput_freq_yearly > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .recurrenceinput_range {
     margin: 0.5em;
 }

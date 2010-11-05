@@ -13,7 +13,7 @@
      *  - reuse start date from other fields
      *
      */
-    var basename = 'recurrence';
+    var basename = 'recurrenceinput';
     var default_conf = {
         classname: basename,
         classname_activate: basename+'_activate',
@@ -89,31 +89,47 @@
         conf.dateMonth = today.getMonth();
         conf.dateYear = today.getFullYear();
 
-        var classname_activate = conf.classname+conf.classname_activate;
-        var classname_form = conf.classname+conf.classname_form;
-
         // hide textarea 
         textarea.hide();
         
         // widget form
         var form = $(conf.template.form).tmpl(conf);
         form.hide().appendTo('body');
+        form.find('ul.'+conf.classname_freq+' label').click(function() {
+            var input = $(this).parent().find('input');
+            input.click();
+            input.change();
+        });
+        form.find('input[name='+conf.classname_freq+']').change(function(e) {
+                form.find('div.'+conf.classname_freq_options+' > div').hide();
+                parent_list = $(this).closest("ul");
+                font_size = parent_list.css('font-size').replace('px', '').replace('em','');
+                form.find('div.'+conf.classname_freq+'_' + $(this).val().toLowerCase())
+                        .css('margin-left', + (parent_list.width() + 2*font_size))
+                        .show();
+            });
+
 
         // add checkbox repeat button (with action)
         var overlay = null
         var widget = $(conf.template.widget).tmpl(conf);
-        widget.find('.'+classname_form).hide();
-        widget.find('input[name='+classname_activate+']')
+        widget.find('.'+conf.classname_form).hide();
+        widget.find('label').click(function() {
+            var input = $(this).parent().find('input');
+            input.click();
+            input.change();
+        });
+        widget.find('input[name='+conf.classname_activate+']')
                 .change(function(e) {
-                    var widget_label = widget.find('.'+classname_activate+' > label');
-                    var widget_form = widget.find('.'+classname_form);
+                    var widget_label = widget.find('.'+conf.classname_activate+' > label');
+                    var widget_form = widget.find('.'+conf.classname_form);
 
                     if ($(this).is(':checked')) {
                         widget_label.hide();
                         if (widget_form) {
                             widget_form.show();
                         } else {
-                            widget_form = widget.find('.'+classname_form);
+                            widget_form = widget.find('.'+conf.classname_form);
                         }
 
                         if (form.data().overlay) {
@@ -128,7 +144,7 @@
                                     onClose: function (e) {
                                         widget_label.show();
                                         widget_form.hide();
-                                        widget.find('input[name='+classname_activate+']')
+                                        widget.find('input[name='+conf.classname_activate+']')
                                                 .attr('checked', false);
                                     }
                                 },
@@ -143,7 +159,7 @@
                         widget_form.hide();
                     }
                 });
-        
+       
 
         //
         // add actions to widget buttons
