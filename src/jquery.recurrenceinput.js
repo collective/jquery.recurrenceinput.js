@@ -38,11 +38,11 @@
         classname_monthly_weekdayofmonth_interval: basename+'_monthly_weekdayofmonth_interval',
 
         classname_yearly_type: basename+'_yearly_type',
-        classname_yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month:',
-        classname_yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day:',
-        classname_yearly_weekdayofweek_index: basename+'_yearly_weekdayofweek_index',
-        classname_yearly_weekdayofweek_day: basename+'_yearly_weekdayofweek_day',
-        classname_yearly_weekdayofweek_months: basename+'_yearly_weekdayofweek_months',
+        classname_yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month',
+        classname_yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day',
+        classname_yearly_weekdayofweek_index: basename+'_yearly_weekdayofmonth_index',
+        classname_yearly_weekdayofweek_day: basename+'_yearly_weekdayofmonth_day',
+        classname_yearly_weekdayofweek_months: basename+'_yearly_weekdayofmonth_months',
 
         classname_range: basename+'_range',
         classname_range_start: basename+'_range_start',

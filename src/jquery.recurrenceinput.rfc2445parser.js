@@ -41,8 +41,8 @@ function widget_load_from_rfc2445(el, initial_data) {
     case "WEEKLY":
     case "MONTHLY":
     case "YEARLY":
-        $("ul.freq input", el).val([frequency]);
-        $("ul.freq input[value="+frequency+"]", el).change();
+        $("input[name=recurrenceinput_freq]", el).val([frequency]);
+        $("input[value="+frequency+"]", el).change();
         break;
     }
 
@@ -108,7 +108,7 @@ function widget_load_from_rfc2445(el, initial_data) {
             able_to_parse = true;
         }
         else if (byday && bysetpos && bymonth) {
-            $("select[name=recurrenceinput_yearly_weekdayofmonth_month]", el).val(bymonth);
+            $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val(bymonth);
                 $("select[name=recurrenceinput_yearly_weekdayofmonth_index]", el).val(bysetpos);
             if (byday === "MO,TU,WE,TH,FR") {
                 $("select[name=recurrenceinput_yearly_weekdayofmonth_day]", el).val("WEEKDAY");
@@ -121,7 +121,7 @@ function widget_load_from_rfc2445(el, initial_data) {
         }
         else if (bymonth && byday) {
             $("input[name=recurrenceinput_yearly_type]", el).val('WEEKDAY_OF_MONTH');
-            $("select[name=recurrenceinput_yearly_weekdayofmonth_month]", el).val(bymonth);
+            $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val(bymonth);
             matches = /^(-?[0-9]+)([A-Z]{1,2})$/.exec(byday); // we expect this to be -1TH
             if (matches && matches.length == 3) {
                 $("select[name=recurrenceinput_yearly_weekdayofmonth_index]", el).val(matches[1]);

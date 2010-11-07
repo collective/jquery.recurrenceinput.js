@@ -1,46 +1,50 @@
 
 // TODO: DRY!!! ARG...
+/**
+ * Configurable values
+ */
+var basename = 'recurrenceinput';
 var default_conf = {
-    classname: 'recurrenceinput_',
-    classname_activate: 'activate',
-    classname_form: 'form',
-    classname_freq: 'freq',
+    classname: basename,
+    classname_activate: basename+'_activate',
+    classname_form: basename+'_form',
+    classname_freq: basename+'_freq',
 
-    classname_freq_options: 'freq_options',
-    classname_freq_daily: 'freq_daily',
-    classname_freq_weekly: 'freq_weekly',
-    classname_freq_monthly: 'freq_monthly',
-    classname_freq_yearly: 'freq_yearly',
+    classname_freq_options: basename+'_freq_options',
+    classname_freq_daily: basename+'_freq_daily',
+    classname_freq_weekly: basename+'_freq_weekly',
+    classname_freq_monthly: basename+'_freq_monthly',
+    classname_freq_yearly: basename+'_freq_yearly',
 
-    classname_daily_type: 'daily_type',
-    classname_daily_interval: 'daily_interval',
-    classname_daily_weekdays: 'daily_weekdays',
+    classname_daily_type: basename+'_daily_type',
+    classname_daily_interval: basename+'_daily_interval',
+    classname_daily_weekdays: basename+'_daily_weekdays',
 
-    classname_weekly_interval: 'weekly_interval',
-    classname_weekly_weekdays: 'weekly_weekdays',
+    classname_weekly_interval: basename+'_weekly_interval',
+    classname_weekly_weekdays: basename+'_weekly_weekdays',
 
-    classname_monthly_type: 'monthly_type',
-    classname_monthly_dayofmonth_day: 'monthly_dayofmonth_day',
-    classname_monthly_dayofmonth_interval: 'monthly_dayofmonth_interval',
-    classname_monthly_weekdayofmonth_index: 'monthly_weekdayofmonth_index',
-    classname_monthly_weekdayofmonth: 'monthly_weekdayofmonth',
-    classname_monthly_weekdayofmonth_interval: 'monthly_weekdayofmonth_interval',
+    classname_monthly_type: basename+'_monthly_type',
+    classname_monthly_dayofmonth_day: basename+'_monthly_dayofmonth_day',
+    classname_monthly_dayofmonth_interval: basename+'_monthly_dayofmonth_interval',
+    classname_monthly_weekdayofmonth_index: basename+'_monthly_weekdayofmonth_index',
+    classname_monthly_weekdayofmonth: basename+'_monthly_weekdayofmonth',
+    classname_monthly_weekdayofmonth_interval: basename+'_monthly_weekdayofmonth_interval',
 
-    classname_yearly_type: 'yearly_type',
-    classname_yearly_dayofmonth_month: 'yearly_dayofmonth_month',
-    classname_yearly_dayofmonth_day: 'yearly_dayofmonth_day',
-    classname_yearly_weekdayofweek_index: 'yearly_weekdayofmonth_index',
-    classname_yearly_weekdayofweek_day: 'yearly_weekdayofmonth_day',
-    classname_yearly_weekdayofweek_months: 'yearly_weekdayofmonth_month',
+    classname_yearly_type: basename+'_yearly_type',
+    classname_yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month',
+    classname_yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day',
+    classname_yearly_weekdayofweek_index: basename+'_yearly_weekdayofmonth_index',
+    classname_yearly_weekdayofweek_day: basename+'_yearly_weekdayofmonth_day',
+    classname_yearly_weekdayofweek_months: basename+'_yearly_weekdayofmonth_months',
 
-    classname_range: 'range',
-    classname_range_start: 'range_start',
-    classname_range_end: 'range_end',
-    classname_range_end_type: 'range_end_type',
-    classname_range_end_by_ocurrences: 'range_end_by_ocurrences',
-    classname_range_end_by_end_date: 'range_end_by_end_date',
+    classname_range: basename+'_range',
+    classname_range_start: basename+'_range_start',
+    classname_range_end: basename+'_range_end',
+    classname_range_end_type: basename+'_range_end_type',
+    classname_range_end_by_ocurrences: basename+'_range_end_by_ocurrences',
+    classname_range_end_by_end_date: basename+'_range_end_by_end_date',
 
-    classname_z3cform_dateinput: 'z3cform_dateinput',
+    classname_z3cform_dateinput: basename+'_z3cform_dateinput',
 
     template: {
         widget: '#jquery-recurrenceinput-widget-tmpl',
@@ -296,7 +300,7 @@ test('rfc2445 YEARLY on the fourth Tuesday of May', function(){
             $("select[name=recurrenceinput_yearly_weekdayofmonth_day]", el).val(), "TU",
             "On Tuesday");
         equal(
-            $("select[name=recurrenceinput_yearly_weekdayofmonth_month]", el).val(), "5",
+            $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val(), "5",
             "Of May");
 
         //ok(
@@ -320,7 +324,7 @@ test('rfc2445 YEARLY on the last Wednesday of December', function(){
             $("select[name=recurrenceinput_yearly_weekdayofmonth_day]", el).val(), "WE",
             "Weekday of the month");
         equal(
-            $("select[name=recurrenceinput_yearly_weekdayofmonth_month]", el).val(), "12",
+            $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val(), "12",
             "Every December");
 
         //ok(
