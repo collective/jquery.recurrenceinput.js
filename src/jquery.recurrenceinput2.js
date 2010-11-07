@@ -8,10 +8,7 @@
 (function($) {
 
     /**
-     * TODO:
-     *  - start date, end date and number of recurrences for each rule
-     *  - reuse start date from other fields
-     *
+     * Configurable values
      */
     var basename = 'recurrenceinput';
     var default_conf = {
@@ -75,19 +72,28 @@
             {id: 'SU', title: 'Sunday'}]
     };
 
-    // private
-
-    function Recurrenceinput (textarea, conf) {
-        /*
-         * Initial steps to activate widget:
+    /**
+     * RecurrenceInput widget
          *  - hide textarea
+         *  - build form with all actions/events
          *  - add checkbox repeat button (with action)
-         */
+     */
+
+    function RecurrenceInput (textarea, conf) {
+
         var self = this;
         var today = new Date()
+
+        /**
+         * By default all date input fields will point to today
+         * if needed otherwise it should be possible to configure them
+         */
         conf.dateDay = today.getDay();
         conf.dateMonth = today.getMonth();
         conf.dateYear = today.getFullYear();
+        // TODO: calculate default date for each of date fields
+        //       take date* as default value
+
 
         // hide textarea 
         textarea.hide();
@@ -115,6 +121,9 @@
                     this.getInput().parent().find('input=[name$=_year]').val(value[0]);
                     this.getInput().parent().find('select=[name$=_month]').val(value[1]);
                     this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
+                onClose: function () {
+                    // TODO: here is where we need to integrate RFC2554 parser thingy
+                    },
                 selectors: true,
                 trigger: true,
                 yearRange: [-10, 10] })
@@ -452,7 +461,7 @@
 
 
         /*
-         * Public API of Recurrenceinput
+         * Public API of RecurrenceInput
          */
 
         $.extend(self, {
@@ -484,7 +493,7 @@
 
                 var textarea = $(this);
                 var form = $(textarea.closest("form")[0]);
-                var recurrenceinput = new Recurrenceinput(
+                var recurrenceinput = new RecurrenceInput(
                         textarea, $.extend(true, {}, default_conf, conf));
 
                 // Populate data from existing relations
