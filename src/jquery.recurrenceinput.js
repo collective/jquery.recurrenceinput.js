@@ -8,36 +8,192 @@
 (function($) {
 
     /**
-     * TODO:
-     *  - start date, end date and number of recurrences for each rule
-     *  - reuse start date from other fields
-     *
+     * Configurable values
      */
+    var basename = 'recurrenceinput';
     var default_conf = {
-        'widget-tmpl': '#jquery-recurrenceinput-widget-tmpl',
-        'rule-tmpl': '#jquery-recurrenceinput-rule-tmpl',
-        'date-tmpl': '#jquery-recurrenceinput-date-tmpl',
-        'months': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+        classname: basename,
+        classname_activate: basename+'_activate',
+        classname_form: basename+'_form',
+        classname_freq: basename+'_freq',
+
+        classname_freq_options: basename+'_freq_options',
+        classname_freq_daily: basename+'_freq_daily',
+        classname_freq_weekly: basename+'_freq_weekly',
+        classname_freq_monthly: basename+'_freq_monthly',
+        classname_freq_yearly: basename+'_freq_yearly',
+
+        classname_daily_type: basename+'_daily_type',
+        classname_daily_interval: basename+'_daily_interval',
+        classname_daily_weekdays: basename+'_daily_weekdays',
+
+        classname_weekly_interval: basename+'_weekly_interval',
+        classname_weekly_weekdays: basename+'_weekly_weekdays',
+
+        classname_monthly_type: basename+'_monthly_type',
+        classname_monthly_dayofmonth_day: basename+'_monthly_dayofmonth_day',
+        classname_monthly_dayofmonth_interval: basename+'_monthly_dayofmonth_interval',
+        classname_monthly_weekdayofmonth_index: basename+'_monthly_weekdayofmonth_index',
+        classname_monthly_weekdayofmonth: basename+'_monthly_weekdayofmonth',
+        classname_monthly_weekdayofmonth_interval: basename+'_monthly_weekdayofmonth_interval',
+
+        classname_yearly_type: basename+'_yearly_type',
+        classname_yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month:',
+        classname_yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day:',
+        classname_yearly_weekdayofweek_index: basename+'_yearly_weekdayofweek_index',
+        classname_yearly_weekdayofweek_day: basename+'_yearly_weekdayofweek_day',
+        classname_yearly_weekdayofweek_months: basename+'_yearly_weekdayofweek_months',
+
+        classname_range: basename+'_range',
+        classname_range_start: basename+'_range_start',
+        classname_range_end: basename+'_range_end',
+        classname_range_end_type: basename+'_range_end_type',
+        classname_range_end_by_ocurrences: basename+'_range_end_by_ocurrences',
+        classname_range_end_by_end_date: basename+'_range_end_by_end_date',
+
+        classname_z3cform_dateinput: basename+'_z3cform_dateinput',
+
+        template: {
+            widget: '#jquery-recurrenceinput-widget-tmpl',
+            form: '#jquery-recurrenceinput-form-tmpl',
+            rule: '#jquery-recurrenceinput-rule-tmpl',
+            date: '#collective-z3cform-dateinput-tmpl' },
+
+        months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+
+        weekdays: [
+            {id: 'MO', title: 'Monday'},
+            {id: 'TU', title: 'Tuesday'},
+            {id: 'WE', title: 'Wednesday'},
+            {id: 'TH', title: 'Thursday'},
+            {id: 'FR', title: 'Friday'},
+            {id: 'SA', title: 'Saturday'},
+            {id: 'SU', title: 'Sunday'}]
     };
 
-    // private
+    /**
+     * RecurrenceInput widget
+         *  - hide textarea
+         *  - build form with all actions/events
+         *  - add checkbox repeat button (with action)
+     */
 
-    function Recurrenceinput (textarea, conf) {
+    function RecurrenceInput (textarea, conf) {
 
         var self = this;
-        var widget = $(conf['widget-tmpl']).tmpl();
+        var today = new Date()
 
-        var today = new Date();
-        var dateDay = today.getDate();
-        var dateMonth = today.getMonth();
-        var dateYear = today.getFullYear();
-
-        /*
-         * Initial steps to activate widget
+        /**
+         * By default all date input fields will point to today
+         * if needed otherwise it should be possible to configure them
          */
+        conf.dateDay = today.getDay();
+        conf.dateMonth = today.getMonth();
+        conf.dateYear = today.getFullYear();
+        // TODO: calculate default date for each of date fields
+        //       take date* as default value
 
+
+        // hide textarea 
+        textarea.hide();
+        
+        // widget form
+        var form = $(conf.template.form).tmpl(conf);
+        form.hide().appendTo('body');
+        form.find('ul.'+conf.classname_freq+' label').click(function() {
+            var input = $(this).parent().find('input');
+            input.click();
+            input.change();
+        });
+        form.find('input[name='+conf.classname_freq+']').change(function(e) {
+            form.find('div.'+conf.classname_freq_options+' > div').hide();
+            parent_list = $(this).closest("ul");
+            font_size = parent_list.css('font-size').replace('px', '').replace('em','');
+            form.find('div.'+conf.classname_freq+'_' + $(this).val().toLowerCase())
+                .css('margin-left', + (parent_list.width() + 2*font_size)).show();
+        });
+        form.find('input[class=dateinput_calendar]')
+            .dateinput({
+                value: new Date(conf.dateYear, conf.dateMonth, conf.dateDay),
+                change: function() {
+                    var value = this.getValue("yyyy-m-d").split("-");
+                    this.getInput().parent().find('input=[name$=_year]').val(value[0]);
+                    this.getInput().parent().find('select=[name$=_month]').val(value[1]);
+                    this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
+                onClose: function () {
+                    // TODO: here is where we need to integrate RFC2554 parser thingy
+                    },
+                selectors: true,
+                trigger: true,
+                yearRange: [-10, 10] })
+            .unbind('change')
+            .bind('onShow', function (event) {
+                var trigger_offset = $(this).next().offset();
+                $(this).data('dateinput').getCalendar().offset(
+                    {top: trigger_offset.top+33, left: trigger_offset.left}
+                    );
+            });
+        form.find('input[type=submit && class=cancel]').click(function(e) {
+            form.overlay().close();
+        });
+        form.find('input[type=submit && class=save]').click(function(e) {
+            form.overlay().close();
+        });
+
+
+        // add checkbox repeat button (with action)
+        var widget = $(conf.template.widget).tmpl(conf);
+        widget.find('.'+conf.classname_form).hide();
+        widget.find('label').click(function() {
+            var input = $(this).parent().find('input');
+            input.click();
+            input.change();
+        });
+        widget.find('input[name='+conf.classname_activate+']')
+                .change(function(e) {
+                    var widget_label = widget.find('.'+conf.classname_activate+' > label');
+                    var widget_form = widget.find('.'+conf.classname_form);
+
+                    if ($(this).is(':checked')) {
+                        widget_label.hide();
+                        if (widget_form) {
+                            widget_form.show();
+                        } else {
+                            widget_form = widget.find('.'+conf.classname_form);
+                        }
+
+                        if (form.data().overlay) {
+                            form.overlay().load();
+                        } else {
+                            form.overlay({
+                                mask: {
+                                    color: '#ebecff',
+                                    loadSpeed: 'fast',
+                                    closeSpeed: 'fast',
+                                    opacity: 0.5,
+                                    onClose: function (e) {
+                                        widget_label.show();
+                                        widget_form.hide();
+                                        widget.find('input[name='+conf.classname_activate+']')
+                                                .attr('checked', false);
+                                    }
+                                },
+                                speed: 'fast',
+                                load: true
+                            });
+                        }
+
+                    } else {
+                        widget_label.show();
+                        widget_form.hide();
+                    }
+                });
+       
+
+        //
         // add actions to widget buttons
+        /*
         widget.find('p.button > a')
             .unbind('click')
             .click(function (e) {
@@ -51,7 +207,8 @@
             });
 
 
-        function init_data(class, tmpl_id) {
+        // 
+        function init_data(class, templateId, dateDay, dateMonth, dateYear) {
 
             var rule = $(conf[tmpl_id]).tmpl({
                 months: conf.months, dateDay: dateDay, 
@@ -59,13 +216,12 @@
             rule.addClass(class);
 
             // remove rule action
-            $('a.remove', rule).unbind("click").click(function (e) {
-                e.preventDefault();
+            $('a.remove', rule).unbind("click").click(function () {
                 $(this).closest("li.rule").slideUp("fast", function() { $(this).remove() });
             });
 
             // activate dateinput calendar
-            rule.find('input[class=dateinput_calendar]')
+            rule.find('input[class=recurrence_calendar]')
                     .dateinput({
                         value: new Date(dateYear, dateMonth, dateDay),
                         change: function() {
@@ -141,6 +297,11 @@
                 widget_load_from_rfc2445(rule, initial_data);
             }
         }
+
+
+
+        */
+
 
 
         /*
@@ -300,18 +461,17 @@
 
 
         /*
-         * Public API of Recurrenceinput
+         * Public API of RecurrenceInput
          */
 
         $.extend(self, {
-            widget: widget,
-            initial_structure: function () { add_rule('rrule') },
+            widget: widget,/*
             parse_rrule: function (el) { return 'RRULE:'+parse_rule(el) },
             parse_exrule: function (el) { return 'EXRULE:'+parse_rule(el) },
             parse_rdate: function (el) { return 'RDATE:'+parse_date(el) },
             parse_exdate: function (el) { return 'EXDATE:'+parse_date(el) },
             add_rule: function(rule_class, rule) { return add_rule(rule_class, rule) },
-            add_date: function(date_class, rule) { return add_date(date_class, rule) },
+            add_date: function(date_class, rule) { return add_date(date_class, rule) },*/
         });
 
     }
@@ -332,18 +492,12 @@
             if (this.tagName == 'TEXTAREA') {
 
                 var textarea = $(this);
-                var form = textarea.closest("form");
-                var recurrenceinput = new Recurrenceinput(
-                    textarea, 
-                    $.extend(true, {}, default_conf, conf));
+                var form = $(textarea.closest("form")[0]);
+                var recurrenceinput = new RecurrenceInput(
+                        textarea, $.extend(true, {}, default_conf, conf));
 
-                //textarea.hide();
-
-                // initialize widget
-                if (textarea.val() == '') {
-                    recurrenceinput.initial_structure();
-                } else {
-                    // Populate data from existing relations
+                // Populate data from existing relations
+                if (textarea.val() != '') {
                     rules = textarea.val().split('\n');
                     for (i = 0; i < rules.length; i++) {
                         rule = rules[i];
@@ -389,7 +543,7 @@
                     textarea.val(ruleset_str);
 
                     // remove widget
-                    //recurrenceinput.widget.remove();
+                    recurrenceinput.widget.remove();
                 });
 
                 // insert recurrance widget right after textarea 
