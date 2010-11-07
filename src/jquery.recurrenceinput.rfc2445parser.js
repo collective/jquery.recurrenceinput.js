@@ -49,6 +49,7 @@ function widget_load_from_rfc2445(el, initial_data) {
     switch (frequency) {
     case "DAILY":
         if (interval) {
+            $("input[name=recurrenceinput_daily_type]", el).val(["DAILY"]);
             $("input[name=recurrenceinput_daily_interval]", el).val(interval);
             able_to_parse = true;
         }
@@ -69,7 +70,7 @@ function widget_load_from_rfc2445(el, initial_data) {
         break;
     case "MONTHLY":
         if (bymonthday && interval) { // Day X of the month, every Y months
-            $("input[name=recurrenceinput_monthly_type]", el).val('DAY_OF_MONTH');
+            $("input[name=recurrenceinput_monthly_type]", el).val(['DAY_OF_MONTH']);
             $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val(bymonthday);
             $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val(interval);
             able_to_parse = true;
@@ -87,7 +88,7 @@ function widget_load_from_rfc2445(el, initial_data) {
             }
         }
         else if (byday && interval) { // The Nth X of the month, every Y months
-            $("input[name=recurrenceinput_monthly_type]", el).val('WEEKDAY_OF_MONTH');
+            $("input[name=recurrenceinput_monthly_type]", el).val(['WEEKDAY_OF_MONTH']);
             $("input[name=recurrenceinput_monthly_weekdayofmonth_interval]", el).val(interval);
             matches = /^(-?[0-9]+)([A-Z]{1,2}$)/.exec(byday); // we expect this to be -1TH
             if (!matches || matches.length != 3) {
@@ -101,7 +102,7 @@ function widget_load_from_rfc2445(el, initial_data) {
         break;
     case "YEARLY":
         if (bymonth && bymonthday) { // Every [January] [1]
-            $("input[name=recurrenceinput_yearly_type]", el).val('DAY_OF_MONTH');
+            $("input[name=recurrenceinput_yearly_type]", el).val(['DAY_OF_MONTH']);
             $("select[name=recurrenceinput_yearly_dayofmonth_month]", el).val(bymonth);
             $("select[name=recurrenceinput_yearly_dayofmonth_day]", el).val(bymonthday);
 
@@ -120,7 +121,7 @@ function widget_load_from_rfc2445(el, initial_data) {
             }
         }
         else if (bymonth && byday) {
-            $("input[name=recurrenceinput_yearly_type]", el).val('WEEKDAY_OF_MONTH');
+            $("input[name=recurrenceinput_yearly_type]", el).val(['WEEKDAY_OF_MONTH']);
             $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val(bymonth);
             matches = /^(-?[0-9]+)([A-Z]{1,2})$/.exec(byday); // we expect this to be -1TH
             if (matches && matches.length == 3) {

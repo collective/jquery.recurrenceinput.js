@@ -96,7 +96,7 @@
 
 
         // hide textarea 
-        textarea.hide();
+        //textarea.hide();
         
         // widget form
         var form = $(conf.template.form).tmpl(conf);
@@ -122,7 +122,6 @@
                     this.getInput().parent().find('select=[name$=_month]').val(value[1]);
                     this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
                 onClose: function () {
-                    // TODO: here is where we need to integrate RFC2554 parser thingy
                     },
                 selectors: true,
                 trigger: true,
@@ -134,13 +133,16 @@
                     {top: trigger_offset.top+33, left: trigger_offset.left}
                     );
             });
-        form.find('input[type=submit && class=cancel]').click(function(e) {
-            form.overlay().close();
-        });
-        form.find('input[type=submit && class=save]').click(function(e) {
-            form.overlay().close();
-        });
 
+        $('form', form).submit(function(e) {
+                e.preventDefault();
+                // TODO need to check "Save" was selected.
+
+                // Write the rfc2445 code which has been set in the widget to the text area
+                textarea.val(parse_rule(form));
+                
+                form.overlay().close();
+            });
 
         // add checkbox repeat button (with action)
         var widget = $(conf.template.widget).tmpl(conf);
@@ -156,6 +158,12 @@
                     var widget_form = widget.find('.'+conf.classname_form);
 
                     if ($(this).is(':checked')) {
+                        // First parse rfc2445 from text area to form
+                        var initial_data = textarea.val();
+                        if (initial_data) {
+                            widget_load_from_rfc2445(form, initial_data);
+                        }
+
                         widget_label.hide();
                         if (widget_form) {
                             widget_form.show();
@@ -311,7 +319,7 @@
         // method for parsing rules (rrule and exrule)
         function parse_rule(el) {
             var str_ = '';
-            frequency = el.find('input.freq.active').val();
+            frequency = el.find('input[name=recurrenceinput_freq]:checked').val();
             var result = "NO RULE FOUND"
             switch (frequency) {
             case "DAILY":
@@ -334,15 +342,20 @@
         function parse_daily(el) {
             result = 'FREQ=DAILY'
 
-            daily_type = $('input[name=recurrence_daily_type]:checked', el).val();
+            daily_type = $('input[name=recurrenceinput_daily_type]:checked', el).val();
 
             switch (daily_type) {
             case "DAILY":
-                interval = $('input[name=recurrence_daily_interval]', el).val();
+                var interval = $('input[name=recurrenceinput_daily_interval]', el).val();
                 result += ";INTERVAL=" + interval;
                 break;
             case "WEEKDAYS":
-                result = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+
+                days = []
+                $('input[name=recurrenceinput_daily_weekdays]:checked', el).each(function() {
+                        days[days.length] = $(this).val();
+                    });
+                result = "FREQ=WEEKLY;BYDAY=" + days;
                 break;
             }
 
@@ -352,11 +365,11 @@
         function parse_weekly(el) {
             result = "FREQ=WEEKLY"
 
-            interval = $('input[name=recurrence_weekly_interval_number]', el).val();
+            interval = $('input[name=recurrenceinput_weekly_interval]', el).val();
             result += ";INTERVAL=" + interval
 
             days = []
-            $('input[name^=recurrence_weekly_days_]:checked', el).each(function() {
+            $('input[name=recurrenceinput_weekly_weekdays]:checked', el).each(function() {
                     days[days.length] = $(this).val();
                 });
 
@@ -370,20 +383,20 @@
         function parse_monthly(el) {
             result = "FREQ=MONTHLY";
 
-            monthly_type = $('input[name=recurrence_monthly_type]:checked', el).val();
+            monthly_type = $('input[name=recurrenceinput_monthly_type]:checked', el).val();
 
             switch (monthly_type) {
-            case "dayofmonth":
-                day = $("select[name=recurrence_monthly_dayofmonth_day]", el).val();
-                interval = $("input[name=recurrence_monthly_dayofmonth_interval]", el).val();
+            case "DAY_OF_MONTH":
+                day = $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val();
+                interval = $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val();
 
                 result += ";BYMONTHDAY=" + day;
                 result += ";INTERVAL=" + interval;
                 break;
-            case "dayofweek":
-                var index = $("select[name=recurrence_monthly_dayofweek_index]", el).val();
-                var day = $("select[name=recurrence_monthly_dayofweek_day]", el).val();
-                var interval = $("input[name=recurrence_monthly_dayofweek_interval]", el).val();
+            case "WEEKDAY_OF_MONTH":
+                var index = $("select[name=recurrenceinput_monthly_weekdayofmonth_index]", el).val();
+                var day = $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val();
+                var interval = $("input[name=recurrenceinput_monthly_weekdayofmonth_interval]", el).val();
 
                 if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
                     result += ";BYDAY=" + index + day;
@@ -408,20 +421,20 @@
         function parse_yearly(el) {
             result = "FREQ=YEARLY"
 
-            yearly_type = $("input[name=recurrence_yearly_type]:checked", el).val();
+            yearly_type = $("input[name=recurrenceinput_yearly_type]:checked", el).val();
             
             switch (yearly_type) {
-            case "dayofmonth":
-                var month = $("select[name=recurrence_yearly_dayofmonth_month]", el).val();
-                var day = $("select[name=recurrence_yearly_dayofmonth_day]", el).val();
+            case "DAY_OF_MONTH":
+                var month = $("select[name=recurrenceinput_yearly_dayofmonth_month]", el).val();
+                var day = $("select[name=recurrenceinput_yearly_dayofmonth_day]", el).val();
 
                 result += ";BYMONTH=" + month;
                 result += ";BYMONTHDAY=" + day;
                 break;
-            case "dayofweek":
-                var index = $("select[name=recurrence_yearly_dayofweek_index]", el).val();
-                var day = $("select[name=recurrence_yearly_dayofweek_day]", el).val();
-                var month = $("select[name=recurrence_yearly_dayofweek_month]", el).val();
+            case "WEEKDAY_OF_MONTH":
+                var index = $("select[name=recurrenceinput_yearly_weekdayofmonth_index]", el).val();
+                var day = $("select[name=recurrenceinput_yearly_weekdayofmonth_day]", el).val();
+                var month = $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val();
 
                 result += ";BYMONTH=" + month;
 
@@ -446,9 +459,9 @@
 
         // function for parsing dates (rdate and exdate)
         function parse_date(el) {
-            var day = $("input[name=recurrence_date_day]", el).val();
-            var month = $("select[name=recurrence_date_month]", el).val();
-            var year = $("input[name=recurrence_date_year]", el).val();
+            var day = $("input[name=recurrenceinput_date_day]", el).val();
+            var month = $("select[name=recurrenceinput_date_month]", el).val();
+            var year = $("input[name=recurrenceinput_date_year]", el).val();
 
             f_day = parseInt(day) < 10 ? "0" + day : day;
             f_month = parseInt(month) < 10 ? "0" + month : month;
