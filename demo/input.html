@@ -57,33 +57,9 @@
                 <div class="${classname_freq_options}">
 
                     <div class="${classname_freq_daily}">
-                        <ul>
-                            <li>
-                                <input type="radio" value="DAILY" checked="checked"
-                                       name="${classname_daily_type}" />
-                                <label>Every <input type="text" value="1" size="2"
-                                       name="${classname_daily_interval}"/>
-                                       days.</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="WEEKDAYS" checked="checked"
-                                       name="${classname_daily_type}" />
-                                <label>Weekdays</label>
-                                <ul class="${classname_daily_weekdays}">
-                                {{each weekdays}}
-                                    <li>
-                                        <input type="checkbox"
-                                               id="${classname_daily_weekdays}_${$value.id}"
-                                               name="${classname_daily_weekdays}"
-                                               value="${$value.id}" />
-                                        <label for="${classname_daily_weekdays}_${$value.id}">
-                                            ${$value.title}
-                                        </label>
-                                    </li>
-                                {{/each}}
-                                </ul>
-                            </li>
-                        </ul>
+                        <label>Every <input type="text" value="1" size="2"
+                            name="${classname_daily_interval}"/>
+                            days.</label>
                     </div>
 
                     <div class="${classname_freq_weekly}">
