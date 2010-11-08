@@ -70,6 +70,9 @@
             {id: 'SU', title: 'Sunday'}]
     };
 
+    /**
+     * Loading (populating) widget from RFC2554 string
+     */
     function load_from_rfc2445(el, data, conf) {
         var matches = /^FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)/.exec(data);
         var frequency = matches[1];
@@ -207,6 +210,107 @@
     }
 
     /**
+     * Parsing RFC2554 from widget
+     */
+    function saverule_to_rfc2445(widget, conf) {
+        var result = "";
+        var frequency = $('input[name='+conf.classname_freq+']:checked', widget).val();
+        switch (frequency) {
+            case "DAILY":
+                result = 'FREQ=DAILY';
+                daily_type = $('input[name='+conf.classname_daily_type+']:checked', el).val();
+                switch (daily_type) {
+                    case "DAILY":
+                        var interval = $('input[name='+conf.classname_daily_interval+']', el).val();
+                        result += ";INTERVAL=" + interval;
+                        break;
+                    case "WEEKDAYS":
+                        days = [];
+                        $('input[name=recurrenceinput_daily_weekdays]:checked', el).each(function() {
+                            days[days.length] = $(this).val();
+                        });
+                        result = "FREQ=WEEKLY;BYDAY=" + days;
+                        break;
+                }
+                break;
+            case "WEEKLY":
+                result = "FREQ=WEEKLY";
+                interval = $('input[name=recurrenceinput_weekly_interval]', el).val();
+                result += ";INTERVAL=" + interval;
+                days = [];
+                $('input[name=recurrenceinput_weekly_weekdays]:checked', el).each(function() {
+                    days[days.length] = $(this).val();
+                });
+                if (days.length) {
+                    result += ";BYDAY=" + days;
+                }
+                break;
+            case "MONTHLY":
+                result = "FREQ=MONTHLY";
+                monthly_type = $('input[name=recurrenceinput_monthly_type]:checked', el).val();
+                switch (monthly_type) {
+                    case "DAY_OF_MONTH":
+                        day = $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val();
+                        interval = $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val();
+                        result += ";BYMONTHDAY=" + day;
+                        result += ";INTERVAL=" + interval;
+                        break;
+                    case "WEEKDAY_OF_MONTH":
+                        var index = $("select[name=recurrenceinput_monthly_weekdayofmonth_index]", el).val();
+                        var day = $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val();
+                        var interval = $("input[name=recurrenceinput_monthly_weekdayofmonth_interval]", el).val();
+                        if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                            result += ";BYDAY=" + index + day;
+                        }
+                        else if (day == "DAY") {
+                            result += ";BYDAY=" + index;
+                        }
+                        else if (day == "WEEKDAY") {
+                            result += ";BYDAY=MO,TU,WE,TH,FR;BYSETPOS=" + index;
+                        }
+                        else if (day == "WEEKEND_DAY") {
+                            result += ";BYDAY=SA,SU;BYSETPOS=" + index;
+                        }
+                        result += ";INTERVAL=" + interval;
+                        break;
+                }
+                break;
+            case "YEARLY":
+                result = "FREQ=YEARLY";
+                yearly_type = $("input[name=recurrenceinput_yearly_type]:checked", el).val();
+                switch (yearly_type) {
+                    case "DAY_OF_MONTH":
+                        var month = $("select[name=recurrenceinput_yearly_dayofmonth_month]", el).val();
+                        var day = $("select[name=recurrenceinput_yearly_dayofmonth_day]", el).val();
+                        result += ";BYMONTH=" + month;
+                        result += ";BYMONTHDAY=" + day;
+                        break;
+                    case "WEEKDAY_OF_MONTH":
+                        var index = $("select[name=recurrenceinput_yearly_weekdayofmonth_index]", el).val();
+                        var day = $("select[name=recurrenceinput_yearly_weekdayofmonth_day]", el).val();
+                        var month = $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val();
+                        result += ";BYMONTH=" + month;
+                        if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                            result += ";BYDAY=" + index + day;
+                        }
+                        else if (day == "DAY") {
+                            result += ";BYDAY=" + index;
+                        }
+                        else if (day == "WEEKDAY") {
+                            result += ";BYDAY=MO,TU,WE,TH,FR;BYSETPOS=" + index;
+                        }
+                        else if (day == "WEEKEND_DAY") {
+                            result += ";BYDAY=SA,SU;BYSETPOS=" + index;
+                        }
+                        break;
+                }
+                break;
+        }
+        // TODO: also parse range
+        return result
+    }
+
+    /**
      * RecurrenceInput widget
          *  - hide textarea
          *  - build form with all actions/events
@@ -331,151 +435,6 @@
                         widget_form.hide();
                     }
                 });
-       
-        /*
-         * Parsing RFC2554 from widget
-         */
-
-        // method for parsing rules (rrule and exrule)
-        function parse_rule(el) {
-            var str_ = '';
-            frequency = el.find('input[name=recurrenceinput_freq]:checked').val();
-            var result = "NO RULE FOUND"
-            switch (frequency) {
-            case "DAILY":
-                result = parse_daily(el);
-                break;
-            case "WEEKLY":
-                result = parse_weekly(el);
-                break;
-            case "MONTHLY":
-                result = parse_monthly(el);
-                break;
-            case "YEARLY":
-                result = parse_yearly(el);
-                break;
-            }
-            
-            return result
-        }
-
-        function parse_daily(el) {
-            result = 'FREQ=DAILY'
-
-            daily_type = $('input[name=recurrenceinput_daily_type]:checked', el).val();
-
-            switch (daily_type) {
-            case "DAILY":
-                var interval = $('input[name=recurrenceinput_daily_interval]', el).val();
-                result += ";INTERVAL=" + interval;
-                break;
-            case "WEEKDAYS":
-
-                days = []
-                $('input[name=recurrenceinput_daily_weekdays]:checked', el).each(function() {
-                        days[days.length] = $(this).val();
-                    });
-                result = "FREQ=WEEKLY;BYDAY=" + days;
-                break;
-            }
-
-            return result
-        }
-
-        function parse_weekly(el) {
-            result = "FREQ=WEEKLY"
-
-            interval = $('input[name=recurrenceinput_weekly_interval]', el).val();
-            result += ";INTERVAL=" + interval
-
-            days = []
-            $('input[name=recurrenceinput_weekly_weekdays]:checked', el).each(function() {
-                    days[days.length] = $(this).val();
-                });
-
-            if (days.length) {
-                result += ";BYDAY=" + days
-            }
-
-            return result;
-        }
-
-        function parse_monthly(el) {
-            result = "FREQ=MONTHLY";
-
-            monthly_type = $('input[name=recurrenceinput_monthly_type]:checked', el).val();
-
-            switch (monthly_type) {
-            case "DAY_OF_MONTH":
-                day = $("select[name=recurrenceinput_monthly_dayofmonth_day]", el).val();
-                interval = $("input[name=recurrenceinput_monthly_dayofmonth_interval]", el).val();
-
-                result += ";BYMONTHDAY=" + day;
-                result += ";INTERVAL=" + interval;
-                break;
-            case "WEEKDAY_OF_MONTH":
-                var index = $("select[name=recurrenceinput_monthly_weekdayofmonth_index]", el).val();
-                var day = $("select[name=recurrenceinput_monthly_weekdayofmonth]", el).val();
-                var interval = $("input[name=recurrenceinput_monthly_weekdayofmonth_interval]", el).val();
-
-                if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
-                    result += ";BYDAY=" + index + day;
-                }
-                else if (day == "DAY") {
-                    result += ";BYDAY=" + index;
-                }
-                else if (day == "WEEKDAY") {
-                    result += ";BYDAY=MO,TU,WE,TH,FR;BYSETPOS=" + index;
-                }
-                else if (day == "WEEKEND_DAY") {
-                    result += ";BYDAY=SA,SU;BYSETPOS=" + index;
-                }
-
-                result += ";INTERVAL=" + interval;
-                break;
-            }
-
-            return result;
-        }
-
-        function parse_yearly(el) {
-            result = "FREQ=YEARLY"
-
-            yearly_type = $("input[name=recurrenceinput_yearly_type]:checked", el).val();
-            
-            switch (yearly_type) {
-            case "DAY_OF_MONTH":
-                var month = $("select[name=recurrenceinput_yearly_dayofmonth_month]", el).val();
-                var day = $("select[name=recurrenceinput_yearly_dayofmonth_day]", el).val();
-
-                result += ";BYMONTH=" + month;
-                result += ";BYMONTHDAY=" + day;
-                break;
-            case "WEEKDAY_OF_MONTH":
-                var index = $("select[name=recurrenceinput_yearly_weekdayofmonth_index]", el).val();
-                var day = $("select[name=recurrenceinput_yearly_weekdayofmonth_day]", el).val();
-                var month = $("select[name=recurrenceinput_yearly_weekdayofmonth_months]", el).val();
-
-                result += ";BYMONTH=" + month;
-
-                if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
-                    result += ";BYDAY=" + index + day;
-                }
-                else if (day == "DAY") {
-                    result += ";BYDAY=" + index;
-                }
-                else if (day == "WEEKDAY") {
-                    result += ";BYDAY=MO,TU,WE,TH,FR;BYSETPOS=" + index;
-                }
-                else if (day == "WEEKEND_DAY") {
-                    result += ";BYDAY=SA,SU;BYSETPOS=" + index;
-                }
-                break;
-            }
-
-            return result;
-        }
-
 
         // function for parsing dates (rdate and exdate)
         function parse_date(el) {
