@@ -16,17 +16,15 @@
         classname_activate: basename+'_activate',
         classname_form: basename+'_form',
         classname_freq: basename+'_freq',
-
         classname_freq_options: basename+'_freq_options',
-        classname_freq_daily: basename+'_freq_daily',
-        classname_freq_weekly: basename+'_freq_weekly',
+
         classname_freq_monthly: basename+'_freq_monthly',
         classname_freq_yearly: basename+'_freq_yearly',
 
-        classname_daily_type: basename+'_daily_type',
+        classname_freq_daily: basename+'_freq_daily',
         classname_daily_interval: basename+'_daily_interval',
-        classname_daily_weekdays: basename+'_daily_weekdays',
 
+        classname_freq_weekly: basename+'_freq_weekly',
         classname_weekly_interval: basename+'_weekly_interval',
         classname_weekly_weekdays: basename+'_weekly_weekdays',
 
