@@ -72,37 +72,37 @@
             {id: 'SU', title: 'Sunday'}]
     };
 
-    function load_from_rfc2445(el, initial_data) {
-        var matches = /^FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)/.exec(initial_data);
+    function load_from_rfc2445(el, data, conf) {
+        var matches = /^FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)/.exec(data);
         var frequency = matches[1];
         var able_to_parse = false;
 
         interval = null;
-        matches = /INTERVAL=([0-9]+);?/.exec(initial_data);
+        matches = /INTERVAL=([0-9]+);?/.exec(data);
         if (matches) {
             interval = matches[1];
         }
 
         byday = null;
-        matches = /BYDAY=([^;]+);?/.exec(initial_data);
+        matches = /BYDAY=([^;]+);?/.exec(data);
         if (matches) {
             byday = matches[1];
         }
 
         bymonthday = null;
-        matches = /BYMONTHDAY=([^;]+);?/.exec(initial_data);
+        matches = /BYMONTHDAY=([^;]+);?/.exec(data);
         if (matches) {
             bymonthday = matches[1].split(",");
         }
 
         bymonth = null;
-        matches = /BYMONTH=([^;]+);?/.exec(initial_data);
+        matches = /BYMONTH=([^;]+);?/.exec(data);
         if (matches) {
             bymonth = matches[1].split(",");
         }
 
         bysetpos = null;
-        matches = /BYSETPOS=([^;]+);?/.exec(initial_data);
+        matches = /BYSETPOS=([^;]+);?/.exec(data);
         if (matches) {
             bysetpos = matches[1];
         }
@@ -204,7 +204,7 @@
 
         if (!able_to_parse) {
             // TODO: Probably want to throw and exception here
-            //alert("Cannot parse! " + initial_data);
+            //alert("Cannot parse! " + data);
         }
     }
 
@@ -297,7 +297,7 @@
                         // First parse rfc2445 from text area to form
                         var initial_data = textarea.val();
                         if (initial_data) {
-                            widget_load_from_rfc2445(form, initial_data);
+                            load_from_rfc2445(form, initial_data, conf);
                         }
 
                         widget_label.hide();
