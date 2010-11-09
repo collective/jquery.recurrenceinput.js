@@ -212,9 +212,9 @@
     /**
      * Parsing RFC2554 from widget
      */
-    function saverule_to_rfc2445(widget, conf) {
+    function saverule_to_rfc2445(el, conf) {
         var result = "";
-        var frequency = $('input[name='+conf.classname_freq+']:checked', widget).val();
+        var frequency = $('input[name='+conf.classname_freq+']:checked', el).val();
         switch (frequency) {
             case "DAILY":
                 result = 'FREQ=DAILY';
@@ -377,7 +377,7 @@
                 // TODO need to check "Save" was selected.
 
                 // Write the rfc2445 code which has been set in the widget to the text area
-                textarea.val(parse_rule(form));
+                textarea.val(saverule_to_rfc2445(form, conf));
                 
                 form.overlay().close();
             });
