@@ -201,6 +201,34 @@
                 break;
         }
 
+        count = null;
+        matches = /COUNT=([^;]+);?/.exec(data);
+        if (matches) {
+            count = matches[1];
+        }
+
+        until = null;
+        matches = /UNTIL=([^;]+);?/.exec(data);
+        if (matches) {
+            until = matches[1];
+        }
+
+        // RANGE
+        if (count) {
+            $('input[name='+conf.classname_range_type+']', el).val(['BY_OCURRENCES']);
+            $('input[name='+conf.classname_range_by_ocurrences+']', el).val(count);
+        }
+        else if (until) {
+            $('input[name='+conf.classname_range_type+']', el).val(['BY_END_DATE']);
+            until = new Date(until.slice(0,4), until.slice(4,6), until.slice(6,8));
+            $('input[name='+conf.classname_range+'_year]', el).val(until.getFullYear());
+            $('select[name='+conf.classname_range+'_month]', el).val(until.getMonth());
+            $('input[name='+conf.classname_range+'_day]', el).val(until.getDate());
+        }
+        else {
+            $('input[name='+conf.classname_range_type+']', el).val(['NO_END_DATE']);
+        }
+
         if (!able_to_parse) {
             // TODO: Probably want to throw and exception here
             //alert('Cannot parse! ' + data);
@@ -297,11 +325,16 @@
                 result += ';COUNT=' + $('input[name='+conf.classname_range_by_ocurrences+']').val();
                 break;
             case 'BY_END_DATE':
-                result += ';UNTIL=';
-                result += $('input[name='+conf.classname_range+'_year]').val();
-                result += $('select[name='+conf.classname_range+'_month]').val();
-                result += $('input[name='+conf.classname_range+'_day]').val();
-                result += 'T000000';
+                var year = $('input[name='+conf.classname_range+'_year]').val();
+                var month = $('select[name='+conf.classname_range+'_month]').val();
+                var day = $('input[name='+conf.classname_range+'_day]').val();
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                if (day < 10) {
+                    day = '0' + day;
+                }
+                result += ';UNTIL='+year+month+day+'T000000';
                 break;
         }
 
@@ -325,7 +358,7 @@
          * By default all date input fields will point to today
          * if needed otherwise it should be possible to configure them
          */
-        conf.dateDay = today.getDay();
+        conf.dateDay = today.getDate();
         conf.dateMonth = today.getMonth();
         conf.dateYear = today.getFullYear();
         // TODO: calculate default date for each of date fields
