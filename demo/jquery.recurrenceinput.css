@@ -65,28 +65,18 @@ div.recurrenceinput_freq_yearly > ul {
 div.recurrenceinput_range {
     margin: 0.5em;
 }
-div.recurrenceinput_range_start {
-    float: left;
-    width: 45%;
-}
-div.recurrenceinput_range_start > p {
-    margin: 0;
-}
-div.recurrenceinput_range_end {
-    float: right;
-    width: 55%;
-}
-div.recurrenceinput_range_end > ul {
+div.recurrenceinput_range > ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-div.recurrenceinput_range_end > ul > li > input {
+div.recurrenceinput_range > ul > li > input {
     float: left;
 }
-div.recurrenceinput_range_end > ul > li > div.label > p {
+div.recurrenceinput_range > ul > li > div.label > p {
     margin: 0 0 0 1em;
 }
+
 a.caltrigger {
     background: url(calendar_icon.gif);
     height: 16px;

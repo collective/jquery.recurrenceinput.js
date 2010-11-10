@@ -105,10 +105,10 @@
                                     name="${classname_monthly_type}" />
                                 <span>The</span>
                                 <select name="${classname_monthly_weekdayofmonth_index}">
-                                    <option selected="selected" value="1">First</option>
-                                    <option value="2">Second</option>
-                                    <option value="3">Third</option>
-                                    <option value="4">Fourth</option>
+                                    <option selected="selected" value="+1">First</option>
+                                    <option value="+2">Second</option>
+                                    <option value="+3">Third</option>
+                                    <option value="+4">Fourth</option>
                                     <option value="-1">Last</option>
                                 </select>
                                 <select name="${classname_monthly_weekdayofmonth}">
@@ -148,14 +148,14 @@
                                 <input type="radio" value="WEEKDAY_OF_MONTH"
                                     name="${classname_yearly_type}" />
                                 <span>The</span>
-                                <select name="${classname_yearly_weekdayofweek_index}">
-                                    <option selected="selected" value="1">First</option>
-                                    <option value="2">Second</option>
-                                    <option value="3">Third</option>
-                                    <option value="4">Fourth</option>
+                                <select name="${classname_yearly_weekdayofmonth_index}">
+                                    <option selected="selected" value="+1">First</option>
+                                    <option value="+2">Second</option>
+                                    <option value="+3">Third</option>
+                                    <option value="+4">Fourth</option>
                                     <option value="-1">Last</option>
                                 </select>
-                                <select name="${classname_yearly_weekdayofweek_day}">
+                                <select name="${classname_yearly_weekdayofmonth_day}">
                                 {{each weekdays}}
                                     <option value="${$value.id}">${$value.title}</option>
                                 {{/each}}
@@ -163,7 +163,7 @@
                                     <option value="WEEKEND_DAY">Weekend Day</option>
                                 </select>
                                 <span>of</span>
-                                <select name="${classname_yearly_weekdayofweek_months}">
+                                <select name="${classname_yearly_weekdayofmonth_months}">
                                 {{each months}}
                                     <option value="${$index+1}">${$value}</option>
                                 {{/each}}
@@ -177,42 +177,35 @@
                 <div style="clear:both;"><!-- --></div>
 
                 <div class="${classname_range}">
-
-                    <div class="${classname_range_start}">
-                        <label>Start</label>
-                        <p>{{tmpl(null, {dateId: classname+classname_range_start}) template.date}}</p>
-                    </div>
-
-                    <div class="${classname_range_end}">
-                        <label>End</label>
-                        <ul>
-                            <li>
-                                <input type="radio" value="NO_END_DATE"
-                                       name="${classname_range_end_type}" />
-                                <div class="label">No end date</div>
-                            </li>
-                            <li>
-                                <input type="radio" value="BY_OCURRENCES"
-                                       name="${classname_range_end_type}" />
-                                <div class="label">
-                                    <span>End after</span>
-                                    <input type="text" size="3" value=""
-                                        name="by_ocurrences" />
-                                    <span>occurence(s)</span>
-                                </div>
-                            </li>
-                            <li>
-                                <input type="radio" value="BY_END_DATE"
-                                       name="${classname_range_end_type}" />
-                                <div class="label">
-                                    <span>End by:</span>
-                                    <p>{{tmpl(null, {dateId: classname+classname_range_end_by_end_date}) template.date}}</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
+                    <label>End recurrance</label>
+                    <ul>
+                        <li>
+                            <input type="radio" value="NO_END_DATE"
+                                   name="${classname_range_type}" />
+                            <div class="label">No end</div>
+                        </li>
+                        <li>
+                            <input type="radio" value="BY_OCURRENCES"
+                                   name="${classname_range_type}" />
+                            <div class="label">
+                                <span>End after</span>
+                                <input type="text" size="3" value=""
+                                    name="${classname_range_by_ocurrences}" />
+                                <span>occurence(s)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" value="BY_END_DATE"
+                                   name="${classname_range_type}" />
+                            <div class="label">
+                                <span>End by:</span>
+                                <p>{{tmpl({dateId: classname_range, dateYear: dateYear, months: months,
+                                    dateDay: dateDay, dateMonth: dateMonth, }) template.date}}</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+
                 <div style="clear:both;"><!-- --></div>
 
                 <div>
@@ -251,16 +244,44 @@
         <div class="field">
             <div class="fieldname_start">
                 <label>Start:</label>
-                <input type="text" name="start" />
+                <span class="time"> - 
+                    <input type="input" name="fieldname_start_hour" value="10" size="1" /> :
+                    <input type="input" name="fieldname_start_min" value="15" size="1" />
+                </span>
             </div>
             <div class="fieldname_end">
                 <label>End:</label>
-                <input type="text" name="end" />
+                <span class="time"> - 
+                    <input type="input" name="fieldname_end_hour" value="21" size="1" /> :
+                    <input type="input" name="fieldname_end_min" value="20" size="1" />
+                </span>
             </div>
+            <script type="text/javascript">
+                var conf = {
+                    months: ['Jan','Feb','Mar','Apr','May','Jun',
+                             'Jul','Aug','Sep','Oct','Nov','Dec'],
+                    dateDay: '1', dateMonth: '2', dateYear: '2010'};
+                $('div.fieldname_start > label').after(
+                    $('#collective-z3cform-dateinput-tmpl').tmpl(
+                        $.extend(conf, {dateId: 'fieldname_start'})));
+                $('div.fieldname_end > label').after(
+                    $('#collective-z3cform-dateinput-tmpl').tmpl(
+                        $.extend(conf, {dateId: 'fieldname_end'})));
+            </script>
             <div class="fieldname_all_day">
                 <input type="checkbox" name="all_day" />
                 <label>All Day</label>
             </div>
+            <script type="text/javascript">
+                $('div.fieldname_all_day > label').click(function() {
+                    var input = $(this).parent().find('input');
+                    input.click(); input.change();
+                });
+                $('input[name=all_day]').change(function(e) {
+                    if ($(this).is(':checked')) { $('span.time').hide(); }
+                    else { $('span.time').show(); }
+                });
+            </script>
         </div>
 
         <div class="field fieldname_repeat">
