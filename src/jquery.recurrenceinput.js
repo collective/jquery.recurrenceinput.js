@@ -343,12 +343,11 @@
 
     /**
      * RecurrenceInput widget
-         *  - hide textarea
-         *  - build form with all actions/events
-         *  - add checkbox repeat button
-         *  - create form for repeat button to show in overlay
+     *  - hide textarea
+     *  - build form with all actions/events
+     *  - add checkbox repeat button
+     *  - create form for repeat button to show in overlay
      */
-
     function RecurrenceInput (textarea, conf) {
 
         var self = this;
@@ -468,28 +467,12 @@
                     }
                 });
 
-        // function for parsing dates (rdate and exdate)
-        function parse_date(el) {
-            var day = $('input[name=recurrenceinput_date_day]', el).val();
-            var month = $('select[name=recurrenceinput_date_month]', el).val();
-            var year = $('input[name=recurrenceinput_date_year]', el).val();
-
-            f_day = parseInt(day) < 10 ? '0' + day : day;
-            f_month = parseInt(month) < 10 ? '0' + month : month;
-
-            var formatted = year + f_month + f_day;
-
-            return formatted;
-        }
-
-
-
         /*
          * Public API of RecurrenceInput
          */
-
         $.extend(self, {
             widget: widget
+            // TODO: here will come options to make RecurrenceInput form reusable
         });
 
     }
