@@ -343,7 +343,6 @@
 
     /**
      * RecurrenceInput widget
-     *  - hide textarea
      *  - build form with all actions/events
      *  - add checkbox repeat button
      *  - create form for repeat button to show in overlay
@@ -364,9 +363,6 @@
         //       take date* as default value
 
 
-        // hide textarea 
-        //textarea.hide();
-        
         // widget form
         var form = $(conf.template.form).tmpl(conf);
         form.hide().appendTo('body');
