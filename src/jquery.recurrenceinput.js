@@ -466,7 +466,7 @@
          * Public API of RecurrenceInput
          */
         $.extend(self, {
-            widget: widget
+            display_widget: display_widget
             // TODO: here will come options to make RecurrenceInput form reusable
         });
 
@@ -486,9 +486,11 @@
         this.each(function() {
             var textarea = $(this)
             if (textarea[0].type == 'textarea') {
+                // our recurrenceinput widget instance
                 var recurrenceinput = new RecurrenceInput($.extend(default_conf, conf));
-                textarea.hide();
-                textarea.after(recurrenceinput.widget);
+
+                // hide textarea and place display_widget after textarea
+                textarea.hide().after(recurrenceinput.display_widget);
             };
         });
     };
