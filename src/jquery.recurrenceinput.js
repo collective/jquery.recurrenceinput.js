@@ -484,10 +484,11 @@
 
         // apply this for every textarea
         this.each(function() {
-            var el = $(this)
-            if (el[0].type == 'textarea') {
-                var recurrenceinput = new RecurrenceInput(el, $.extend(default_conf, conf));
-                el.after(recurrenceinput.widget)
+            var textarea = $(this)
+            if (textarea[0].type == 'textarea') {
+                var recurrenceinput = new RecurrenceInput($.extend(default_conf, conf));
+                textarea.hide();
+                textarea.after(recurrenceinput.widget);
             };
         });
     };
