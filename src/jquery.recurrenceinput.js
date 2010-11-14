@@ -35,6 +35,7 @@
 
         // FIELD VALUES
         field: {
+            display_name: basename+'_display',
             display_text: null,
 
             freq_daily: 'DAILY',
@@ -63,47 +64,46 @@
         },
 
         // CLASS NAMES
-        classname: basename,
+        class: {
+            main: basename,
 
-        classname_display: basename+'_display',
-        classname_display_text: basename+'_display_text',
+            display: basename+'_display',
+            display_text: basename+'_display_text',
 
-        classname_form: basename+'_form',
-        classname_freq: basename+'_freq',
-        classname_freq_options: basename+'_freq_options',
+            form: basename+'_form',
+            freq: basename+'_freq',
+            freq_options: basename+'_freq_options',
+            freq_daily: basename+'_freq_daily',
+            freq_weekly: basename+'_freq_weekly',
+            freq_monthly: basename+'_freq_monthly',
+            freq_yearly: basename+'_freq_yearly',
 
-        classname_freq_monthly: basename+'_freq_monthly',
-        classname_freq_yearly: basename+'_freq_yearly',
+            daily_interval: basename+'_daily_interval',
 
-        classname_freq_daily: basename+'_freq_daily',
-        classname_daily_interval: basename+'_daily_interval',
+            weekly_interval: basename+'_weekly_interval',
+            weekly_weekdays: basename+'_weekly_weekdays',
 
-        classname_freq_weekly: basename+'_freq_weekly',
-        classname_weekly_interval: basename+'_weekly_interval',
-        classname_weekly_weekdays: basename+'_weekly_weekdays',
+            monthly_type: basename+'_monthly_type',
+            monthly_dayofmonth_day: basename+'_monthly_dayofmonth_day',
+            monthly_dayofmonth_interval: basename+'_monthly_dayofmonth_interval',
+            monthly_weekdayofmonth_index: basename+'_monthly_weekdayofmonth_index',
+            monthly_weekdayofmonth: basename+'_monthly_weekdayofmonth',
+            monthly_weekdayofmonth_interval: basename+'_monthly_weekdayofmonth_interval',
 
-        classname_monthly_type: basename+'_monthly_type',
-        classname_monthly_dayofmonth_day: basename+'_monthly_dayofmonth_day',
-        classname_monthly_dayofmonth_interval: basename+'_monthly_dayofmonth_interval',
-        classname_monthly_weekdayofmonth_index: basename+'_monthly_weekdayofmonth_index',
-        classname_monthly_weekdayofmonth: basename+'_monthly_weekdayofmonth',
-        classname_monthly_weekdayofmonth_interval: basename+'_monthly_weekdayofmonth_interval',
+            yearly_type: basename+'_yearly_type',
+            yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month',
+            yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day',
+            yearly_weekdayofmonth_index: basename+'_yearly_weekdayofmonth_index',
+            yearly_weekdayofmonth_day: basename+'_yearly_weekdayofmonth_day',
+            yearly_weekdayofmonth_months: basename+'_yearly_weekdayofmonth_months',
 
-        classname_yearly_type: basename+'_yearly_type',
-        classname_yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month',
-        classname_yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day',
-        classname_yearly_weekdayofmonth_index: basename+'_yearly_weekdayofmonth_index',
-        classname_yearly_weekdayofmonth_day: basename+'_yearly_weekdayofmonth_day',
-        classname_yearly_weekdayofmonth_months: basename+'_yearly_weekdayofmonth_months',
+            range: basename+'_range',
+            range_type: basename+'_range_type',
+            range_by_ocurrences: basename+'_range_by_ocurrences',
+            range_by_end_date: basename+'_range_by_end_date',
 
-        classname_range: basename+'_range',
-        classname_range_type: basename+'_range_type',
-        classname_range_by_ocurrences: basename+'_range_by_ocurrences',
-        classname_range_by_end_date: basename+'_range_by_end_date',
-
-        classname_z3cform_dateinput: basename+'_z3cform_dateinput'
-
-
+            z3cform_dateinput: basename+'_z3cform_dateinput'
+        }
     };
 
     /**
@@ -390,10 +390,11 @@
         var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
 
 
-        form.find('ul.'+conf.classname_freq+' label').click(function() {        // make labels of options clickable
+        function labelClicable() {                                              // TODO: check if this could be solved with $.closest
             $(this).parent().find('input[type=radio]').click().change();        //  and on click select radion button
-                                                                                // TODO: check if this could be solved with $.closest
-        });
+        }
+        form.find('ul.'+conf.class.freq+' label').click(labelClickable);
+        display.find('label').click(labelClickable);
 
 
         form.find('input[name='+conf.classname_freq+']').change(function(e) {   // TODO: should be done with CSS
@@ -414,86 +415,72 @@
             change: function() {
                 var value = this.getValue('yyyy-m-d').split('-');
                 var el = this.getInput().parent();                              // TODO: check if this could be solved with $.closest
-                el.find('input=[name$=_year]').val(value[0]);
+                el.find('input=[name$=_year]').val(value[0]);                   // populate calendar fields
                 el.find('select=[name$=_month]').val(value[1]);
                 el.find('input=[name$=_day]').val(value[2]);
             },
             onShow: function () {
                 var trigger_offset = $(this).next().offset();
-                $(this).data('dateinput').getCalendar().offset(
-                    {top: trigger_offset.top+33, left: trigger_offset.left}
-                    );
+                $(this).data('dateinput').getCalendar().offset({                // position calendar dateinput widget
+                    top: trigger_offset.top+33,
+                    left: trigger_offset.left
+                });
             },
             yearRange: [-10, 10],                                               // TODO: this should be configurable
             selectors: true,
             trigger: true
         });
 
-        $('form', form).submit(function(e) {
-            e.preventDefault();
-            form.overlay().close();
-            widget_label.show();
-            widget.find('input[name='+conf.classname_activate+']').attr('checked', false);
+
+       form.overlay({                                                           // create ovelay from forcreate ovelay from form
+           mask: {                                                              // TODO: this needs to be configurable
+               color: '#ebecff',
+               loadSpeed: 'fast',
+               closeSpeed: 'fast',
+               opacity: 0.5
+           },
+           speed: 'fast',
+       });
+
+
+        widget.find('input[name='+conf.display_name+']').change(function(e) {  // show form overlay on change of display radio box 
+            if ($(this).is(':checked')) { form.overlay().load(); }
         });
 
-        // add checkbox repeat button (with action)
-        var widget = $(conf.template.widget).tmpl(conf);
-        widget.find('.'+conf.classname_form).hide();
-        widget.find('label').click(function() {
-            var input = $(this).parent().find('input');
-            input.click();
-            input.change();
-        });
-        widget.find('input[name='+conf.classname_activate+']').change(function(e) {
-            var widget_label = widget.find('.'+conf.classname_activate+' > label');
-            var widget_form = widget.find('.'+conf.classname_form);
 
-            if ($(this).is(':checked')) {
-                // First parse rfc2445 from text area to form
-                var initial_data = textarea.val();
-                if (initial_data) {
-                    load_from_rfc2445(form, initial_data, conf);
-                }
+        /**
+         * Saving data selected in form and returning RFC2554 string
+         */
+        function save(data) {
+            form.overlay().close();                                             // close overlay
 
-                widget_label.hide();
-                if (widget_form) {
-                    widget_form.show();
-                } else {
-                    widget_form = widget.find('.'+conf.classname_form);
-                }
+            alert('saverule_to_rfc2445 should be moved here!');                 // FIXME:
 
-                if (form.data().overlay) {
-                    form.overlay().load();
-                } else {
-                    form.overlay({
-                        mask: {
-                            // TODO: this needs to be configurable
-                            color: '#ebecff',
-                            loadSpeed: 'fast',
-                            closeSpeed: 'fast',
-                            opacity: 0.5,
-                            onClose: function (e) {
-                                textarea.val(saverule_to_rfc2445(form, conf));
-                                widget_form.hide();
-                            }
-                        },
-                        speed: 'fast',
-                        load: true
-                    });
-                }
+                                                                                // TODO: only do below when save button is pressed
+            display.find('input[name='+field.display_name+']')                  // mark radio butto as 
+                   .attr('checked', false);
 
-            } else {
-                widget_label.show();
-                widget_form.hide();
+            return RFC2554
+        }
+
+
+        /**
+         * Loading (populating) display and form widget with
+         * passed RFC2554 string (data)
+         */
+        function load(data) {
+            if (data) {
+                alert('load_from_rfc2445 should be moved here!');               // FIXME:
             }
-        });
+        }
+
 
         /*
          * Public API of RecurrenceInput
          */
         $.extend(self, {
+            display: display,
             form: form, 
-            display: display
             load: load,
             save: save
         });
@@ -513,7 +500,11 @@
             if (textarea[0].type == 'textarea') {
                 var recurrenceinput = new RecurrenceInput(conf);                // our recurrenceinput widget instance
                 recurrenceinput.load(textarea.val());                           // load data provided by textarea
-                recurrenceinput.form.hide().appendTo('body');                   // place widget at the bottom (its overlay anyway)
+                //recurrenceinput.form.appendTo('body');                          // FIXME: is this actually needed? ... place widget at the bottom (its overlay anyway)
+                textarea.closest('form').submit(function(e) {                   //
+                    e.preventDefault();
+                    textarea.val(recurrenceinput.save());
+                });
                 textarea.hide().after(recurrenceinput.display);                 // hide textarea and place display_widget after textarea
             };
         });

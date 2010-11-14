@@ -15,12 +15,12 @@
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
 
     <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl">
-        <div class="${classname}">
-            <div class="${classname_display}">
-                <input type="checkbox" name="${classname_display}" />
+        <div class="${class.main}">
+            <div class="${class.display}">
+                <input type="checkbox" name="${field.display_name}" />
                 {{if field.display_text != null}}
                 <label>${field.display_label_activate}</label>
-                <span class="${classname_display_text}">
+                <span class="${class.display_text}">
                     ${field.display_text}
                 </span>
                 {{else}}
