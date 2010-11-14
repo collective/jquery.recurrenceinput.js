@@ -38,12 +38,13 @@
             display_text: null,
 
             freq_daily: 'DAILY',
-            freq_daily_name: basename+'_freq_daily',
             freq_weekly: 'WEEKLY',
-            freq_weekly_name: basename+'_freq_weekly',
             freq_monthly: 'MONTHLY',
-            freq_monthly_name: basename+'_freq_monthly',
             freq_yearly: 'YEARLY',
+
+            freq_daily_name: basename+'_freq_daily',
+            freq_weekly_name: basename+'_freq_weekly',
+            freq_monthly_name: basename+'_freq_monthly',
             freq_yearly_name: basename+'_freq_yearly',
 
             end_by_date_year: today.getFullYear(),
@@ -51,20 +52,21 @@
             end_by_date_day: today.getDate(),
 
             weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
-            },
+        },
 
         // TEMPATE NAMES
         template: {
             widget: '#jquery-recurrenceinput-display-tmpl',
             form: '#jquery-recurrenceinput-form-tmpl',
             rule: '#jquery-recurrenceinput-rule-tmpl',
-            date: '#collective-z3cform-dateinput-tmpl' },
+            date: '#collective-z3cform-dateinput-tmpl'
+        },
 
         // CLASS NAMES
         classname: basename,
 
         classname_display: basename+'_display',
-        classname_display_text: basename+'_display_text'
+        classname_display_text: basename+'_display_text',
 
         classname_form: basename+'_form',
         classname_freq: basename+'_freq',
@@ -384,40 +386,48 @@
     function RecurrenceInput(conf) {
 
         var self = this;
-        var form = $(conf.template.form).tmpl(conf);
-        var display = $(conf.template.widget).tmpl(conf);
+        var display = $(conf.template.widget).tmpl(conf);                       // display part of the widget
+        var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
 
-        // widget form
-        form.find('ul.'+conf.classname_freq+' label').click(function() {
-            $(this).parent().find('input').click().change();
+
+        form.find('ul.'+conf.classname_freq+' label').click(function() {        // make labels of options clickable
+            $(this).parent().find('input[type=radio]').click().change();        //  and on click select radion button
+                                                                                // TODO: check if this could be solved with $.closest
         });
-        form.find('input[name='+conf.classname_freq+']').change(function(e) {
+
+
+        form.find('input[name='+conf.classname_freq+']').change(function(e) {   // TODO: should be done with CSS
             form.find('div.'+conf.classname_freq_options+' > div').hide();
             parent_list = $(this).closest('ul');
             font_size = parent_list.css('font-size').replace('px', '').replace('em','');
             form.find('div.'+conf.classname_freq+'_' + $(this).val().toLowerCase())
                 .css('margin-left', + (parent_list.width() + 2*font_size)).show();
         });
-        form.find('input[class=dateinput_calendar]')
-            .dateinput({
-                value: new Date(conf.field., conf.dateMonth, conf.dateDay),
-                change: function() {
-                    var value = this.getValue('yyyy-m-d').split('-');
-                    this.getInput().parent().find('input=[name$=_year]').val(value[0]);
-                    this.getInput().parent().find('select=[name$=_month]').val(value[1]);
-                    this.getInput().parent().find('input=[name$=_day]').val(value[2]); },
-                onClose: function () {
-                    },
-                selectors: true,
-                trigger: true,
-                yearRange: [-10, 10] })
-            .unbind('change')
-            .bind('onShow', function (event) {
+
+
+        form.find('input[name='+field.end_by_date_name+']').dateinput({         // activate Datetime input for c.z3cform.datetimewidget like widget
+            value: new Date(
+                conf.field.end_by_date_year,
+                conf.field.end_by_date_month,
+                conf.field.end_by_date_day
+            ),
+            change: function() {
+                var value = this.getValue('yyyy-m-d').split('-');
+                var el = this.getInput().parent();                              // TODO: check if this could be solved with $.closest
+                el.find('input=[name$=_year]').val(value[0]);
+                el.find('select=[name$=_month]').val(value[1]);
+                el.find('input=[name$=_day]').val(value[2]);
+            },
+            onShow: function () {
                 var trigger_offset = $(this).next().offset();
                 $(this).data('dateinput').getCalendar().offset(
                     {top: trigger_offset.top+33, left: trigger_offset.left}
                     );
-            });
+            },
+            yearRange: [-10, 10],                                               // TODO: this should be configurable
+            selectors: true,
+            trigger: true
+        });
 
         $('form', form).submit(function(e) {
             e.preventDefault();
