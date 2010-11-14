@@ -7,13 +7,65 @@
  */
 (function($) {
 
+    var today = new Date()
+    var basename = 'recurrenceinput';
+
     /**
      * Configurable values
      */
-    var basename = 'recurrenceinput';
     var default_conf = {
+        base_id: basename,
+
+        i18n: {
+            display_label_unactivate: 'Repeat...',
+            display_label_activate: 'Repeat: ',
+
+            freq_daily: 'Daily',
+            freq_weekly: 'Weekly',
+            freq_monthly: 'Monthly',
+            freq_yearly: 'Yearly',
+
+            months: [
+                'Januar', 'Februar', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'],
+            weekdays: [
+                'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                'Friday', 'Saturday', 'Sunday']
+        },
+
+        // FIELD VALUES
+        field: {
+            display_text: null,
+
+            freq_daily: 'DAILY',
+            freq_daily_name: basename+'_freq_daily',
+            freq_weekly: 'WEEKLY',
+            freq_weekly_name: basename+'_freq_weekly',
+            freq_monthly: 'MONTHLY',
+            freq_monthly_name: basename+'_freq_monthly',
+            freq_yearly: 'YEARLY',
+            freq_yearly_name: basename+'_freq_yearly',
+
+            end_by_date_year: today.getFullYear(),
+            end_by_date_month: today.getMonth(),
+            end_by_date_day: today.getDate(),
+
+            weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
+            },
+
+        // TEMPATE NAMES
+        template: {
+            widget: '#jquery-recurrenceinput-display-tmpl',
+            form: '#jquery-recurrenceinput-form-tmpl',
+            rule: '#jquery-recurrenceinput-rule-tmpl',
+            date: '#collective-z3cform-dateinput-tmpl' },
+
+        // CLASS NAMES
         classname: basename,
-        classname_activate: basename+'_activate',
+
+        classname_display: basename+'_display',
+        classname_display_text: basename+'_display_text'
+
         classname_form: basename+'_form',
         classname_freq: basename+'_freq',
         classname_freq_options: basename+'_freq_options',
@@ -47,25 +99,9 @@
         classname_range_by_ocurrences: basename+'_range_by_ocurrences',
         classname_range_by_end_date: basename+'_range_by_end_date',
 
-        classname_z3cform_dateinput: basename+'_z3cform_dateinput',
+        classname_z3cform_dateinput: basename+'_z3cform_dateinput'
 
-        template: {
-            widget: '#jquery-recurrenceinput-widget-tmpl',
-            form: '#jquery-recurrenceinput-form-tmpl',
-            rule: '#jquery-recurrenceinput-rule-tmpl',
-            date: '#collective-z3cform-dateinput-tmpl' },
 
-        months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-
-        weekdays: [
-            {id: 'MO', title: 'Monday'},
-            {id: 'TU', title: 'Tuesday'},
-            {id: 'WE', title: 'Wednesday'},
-            {id: 'TH', title: 'Thursday'},
-            {id: 'FR', title: 'Friday'},
-            {id: 'SA', title: 'Saturday'},
-            {id: 'SU', title: 'Sunday'}]
     };
 
     /**
@@ -343,33 +379,17 @@
 
     /**
      * RecurrenceInput widget
-     *  - build form with all actions/events
-     *  - add checkbox repeat button
-     *  - create form for repeat button to show in overlay
+     *   |-> build form and display widget
      */
-    function RecurrenceInput(textarea, conf) {
+    function RecurrenceInput(conf) {
 
         var self = this;
-        var today = new Date()
-
-        /**
-         * By default all date input fields will point to today
-         * if needed otherwise it should be possible to configure them
-         */
-        conf.dateDay = today.getDate();
-        conf.dateMonth = today.getMonth();
-        conf.dateYear = today.getFullYear();
-        // TODO: calculate default date for each of date fields
-        //       take date* as default value
-
+        var form = $(conf.template.form).tmpl(conf);
+        var display = $(conf.template.widget).tmpl(conf);
 
         // widget form
-        var form = $(conf.template.form).tmpl(conf);
-        form.hide().appendTo('body');
         form.find('ul.'+conf.classname_freq+' label').click(function() {
-            var input = $(this).parent().find('input');
-            input.click();
-            input.change();
+            $(this).parent().find('input').click().change();
         });
         form.find('input[name='+conf.classname_freq+']').change(function(e) {
             form.find('div.'+conf.classname_freq_options+' > div').hide();
@@ -380,7 +400,7 @@
         });
         form.find('input[class=dateinput_calendar]')
             .dateinput({
-                value: new Date(conf.dateYear, conf.dateMonth, conf.dateDay),
+                value: new Date(conf.field., conf.dateMonth, conf.dateDay),
                 change: function() {
                     var value = this.getValue('yyyy-m-d').split('-');
                     this.getInput().parent().find('input=[name$=_year]').val(value[0]);
@@ -462,8 +482,10 @@
          * Public API of RecurrenceInput
          */
         $.extend(self, {
-            display_widget: display_widget
-            // TODO: here will come options to make RecurrenceInput form reusable
+            form: form, 
+            display: display
+            load: load,
+            save: save
         });
 
     }
@@ -474,19 +496,15 @@
      * jQuery plugin implementation
      */
     $.fn.recurrenceinput = function(conf) {
-
-        // plugin already installed
-        if (this.data('recurrenceinput')) { return this; } 
-
-        // apply this for every textarea
-        this.each(function() {
-            var textarea = $(this)
+        if (this.data('recurrenceinput')) { return this; }                      // plugin already installed
+        var conf = $.extend(default_conf, conf)                                 // "compile" configuration for widget
+        this.each(function() {                                                  // apply this for every textarea
+            var textarea = $(this);
             if (textarea[0].type == 'textarea') {
-                // our recurrenceinput widget instance
-                var recurrenceinput = new RecurrenceInput($.extend(default_conf, conf));
-
-                // hide textarea and place display_widget after textarea
-                textarea.hide().after(recurrenceinput.display_widget);
+                var recurrenceinput = new RecurrenceInput(conf);                // our recurrenceinput widget instance
+                recurrenceinput.load(textarea.val());                           // load data provided by textarea
+                recurrenceinput.form.hide().appendTo('body');                   // place widget at the bottom (its overlay anyway)
+                textarea.hide().after(recurrenceinput.display);                 // hide textarea and place display_widget after textarea
             };
         });
     };

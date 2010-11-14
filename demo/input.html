@@ -14,15 +14,18 @@
     <script type="text/javascript" src="../lib/jquery.tools.toolbox.expose-1.2.5.js"></script>
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
 
-    <script id="jquery-recurrenceinput-widget-tmpl" type="text/x-jquery-tmpl">
+    <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl">
         <div class="${classname}">
-            <div class="${classname_activate}">
-                <input type="checkbox" name="${classname_activate}" />
-                <label>Repeat...</label>
-                <span class="${classname_form}">
-                    <label>Repeat:</label>
-                    <span></span>
+            <div class="${classname_display}">
+                <input type="checkbox" name="${classname_display}" />
+                {{if field.display_text != null}}
+                <label>${field.display_label_activate}</label>
+                <span class="${classname_display_text}">
+                    ${field.display_text}
                 </span>
+                {{else}}
+                <label>${field.display_label_unactivate}</label>
+                {{/if}}
             </div>
         </div>
     </script>
@@ -33,24 +36,32 @@
 
                 <ul class="${classname_freq}">
                     <li>
-                        <input type="radio" name="${classname_freq}"
-                               value="DAILY" class="freq" />
-                        <label>Daily</label>
+                        <input type="radio" class="freq"
+                               id="${field.freq_daily_id}"
+                               name="${field.freq_daily_name}"
+                               value="{field.freq_daily}" />
+                        <label>${i18n.freq_daily}</label>
                     </li>
                     <li>
-                        <input type="radio" name="${classname_freq}"
-                               value="WEEKLY" class="freq" />
-                        <label>Weekly</label>
+                        <input type="radio" class="freq"
+                               id="${field.freq_weekly_id}"
+                               name="${field.freq_weekly_name}"
+                               value="{field.freq_weekly}" />
+                        <label>${i18n.freq_weekly}</label>
                     </li>
                     <li>
-                        <input type="radio" name="${classname_freq}"
-                               value="MONTHLY" class="freq" />
-                        <label>Monthly</label>
+                        <input type="radio" class="freq"
+                               id="${field.freq_monthly_id}"
+                               name="${field.freq_monthly_name}"
+                               value="{field.freq_monthly}" />
+                        <label>${i18n.freq_monthly}</label>
                     </li>
                     <li>
-                        <input type="radio" name="${classname_freq}"
-                               value="YEARLY" class="freq" />
-                        <label>Yearly</label>
+                        <input type="radio" class="freq"
+                               id="${field.freq_yearly_id}"
+                               name="${field.freq_yearly_name}"
+                               value="{field.freq_yearly}" />
+                        <label>${i18n.freq_yearly}</label>
                     </li>
                 </ul>
 
