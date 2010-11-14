@@ -348,7 +348,7 @@
      *  - add checkbox repeat button
      *  - create form for repeat button to show in overlay
      */
-    function RecurrenceInput (textarea, conf) {
+    function RecurrenceInput(textarea, conf) {
 
         var self = this;
         var today = new Date()
@@ -404,14 +404,11 @@
             });
 
         $('form', form).submit(function(e) {
-                e.preventDefault();
-                // TODO need to check 'Save' was selected.
-
-                // Write the rfc2445 code which has been set in the widget to the text area
-                textarea.val(saverule_to_rfc2445(form, conf));
-                
-                form.overlay().close();
-            });
+            e.preventDefault();
+            form.overlay().close();
+            widget_label.show();
+            widget.find('input[name='+conf.classname_activate+']').attr('checked', false);
+        });
 
         // add checkbox repeat button (with action)
         var widget = $(conf.template.widget).tmpl(conf);
@@ -421,51 +418,49 @@
             input.click();
             input.change();
         });
-        widget.find('input[name='+conf.classname_activate+']')
-                .change(function(e) {
-                    var widget_label = widget.find('.'+conf.classname_activate+' > label');
-                    var widget_form = widget.find('.'+conf.classname_form);
+        widget.find('input[name='+conf.classname_activate+']').change(function(e) {
+            var widget_label = widget.find('.'+conf.classname_activate+' > label');
+            var widget_form = widget.find('.'+conf.classname_form);
 
-                    if ($(this).is(':checked')) {
-                        // First parse rfc2445 from text area to form
-                        var initial_data = textarea.val();
-                        if (initial_data) {
-                            load_from_rfc2445(form, initial_data, conf);
-                        }
+            if ($(this).is(':checked')) {
+                // First parse rfc2445 from text area to form
+                var initial_data = textarea.val();
+                if (initial_data) {
+                    load_from_rfc2445(form, initial_data, conf);
+                }
 
-                        widget_label.hide();
-                        if (widget_form) {
-                            widget_form.show();
-                        } else {
-                            widget_form = widget.find('.'+conf.classname_form);
-                        }
+                widget_label.hide();
+                if (widget_form) {
+                    widget_form.show();
+                } else {
+                    widget_form = widget.find('.'+conf.classname_form);
+                }
 
-                        if (form.data().overlay) {
-                            form.overlay().load();
-                        } else {
-                            form.overlay({
-                                mask: {
-                                    color: '#ebecff',
-                                    loadSpeed: 'fast',
-                                    closeSpeed: 'fast',
-                                    opacity: 0.5,
-                                    onClose: function (e) {
-                                        widget_label.show();
-                                        widget_form.hide();
-                                        widget.find('input[name='+conf.classname_activate+']')
-                                                .attr('checked', false);
-                                    }
-                                },
-                                speed: 'fast',
-                                load: true
-                            });
-                        }
+                if (form.data().overlay) {
+                    form.overlay().load();
+                } else {
+                    form.overlay({
+                        mask: {
+                            // TODO: this needs to be configurable
+                            color: '#ebecff',
+                            loadSpeed: 'fast',
+                            closeSpeed: 'fast',
+                            opacity: 0.5,
+                            onClose: function (e) {
+                                textarea.val(saverule_to_rfc2445(form, conf));
+                                widget_form.hide();
+                            }
+                        },
+                        speed: 'fast',
+                        load: true
+                    });
+                }
 
-                    } else {
-                        widget_label.show();
-                        widget_form.hide();
-                    }
-                });
+            } else {
+                widget_label.show();
+                widget_form.hide();
+            }
+        });
 
         /*
          * Public API of RecurrenceInput
@@ -482,73 +477,17 @@
     /*
      * jQuery plugin implementation
      */
-
     $.fn.recurrenceinput = function(conf) {
 
-        // already installed
+        // plugin already installed
         if (this.data('recurrenceinput')) { return this; } 
 
-        // apply this for every textarea we can match
+        // apply this for every textarea
         this.each(function() {
-            if (this.tagName == 'TEXTAREA') {
-
-                var textarea = $(this);
-                var form = $(textarea.closest('form')[0]);
-                var recurrenceinput = new RecurrenceInput(
-                        textarea, $.extend(true, {}, default_conf, conf));
-
-                // Populate data from existing relations
-                if (textarea.val() != '') {
-                    rules = textarea.val().split('\n');
-                    for (i = 0; i < rules.length; i++) {
-                        rule = rules[i];
-                        if (rule.search('^RRULE') >= 0) {
-                            recurrenceinput.add_rule('rrule', rule.substring(6));
-                        }
-                        else if (rule.search('^RDATE') >= 0) {
-                            recurrenceinput.add_date('rdate', rule.substring(6));
-                        }
-                        else if (rule.search('^EXRULE') >= 0) {
-                            recurrenceinput.add_rule('exrule', rule.substring(7));
-                        }
-                        else if (rule.search('^EXDATE') >= 0) {
-                            recurrenceinput.add_date('exdate', rule.substring(7));
-                        }
-                    }
-                }
-
-                // on form submit we write to textarea
-                form.submit(function(e) {
-                    e.preventDefault();
-
-                    // create string for rule widget
-                    var ruleset_str = '';
-                    var f = function(pf, el) {
-                        ruleset_str += pf($(el)) + '\n';
-                    }
-                    var widgets = recurrenceinput.widget;
-                    $('div.recurrenceinput-rrule li.rule', widgets).each( function() { 
-                            f(recurrenceinput.parse_rrule, this) 
-                        });
-                    $('div.recurrenceinput-exrule li.rule', widgets).each(function() { 
-                            f(recurrenceinput.parse_exrule, this) 
-                        });
-                    $('div.recurrenceinput-rdate li.rule', widgets).each( function() { 
-                            f(recurrenceinput.parse_rdate, this)
-                        });
-                    $('div.recurrenceinput-exdate li.rule', widgets).each(function() {
-                            f(recurrenceinput.parse_exdate, this)
-                        })
-
-                    // insert string generated form above to textarea
-                    textarea.val(ruleset_str);
-
-                    // remove widget
-                    recurrenceinput.widget.remove();
-                });
-
-                // insert recurrance widget right after textarea 
-                textarea.after(recurrenceinput.widget)
+            var el = $(this)
+            if (el[0].type == 'textarea') {
+                var recurrenceinput = new RecurrenceInput(el, $.extend(default_conf, conf));
+                el.after(recurrenceinput.widget)
             };
         });
     };
