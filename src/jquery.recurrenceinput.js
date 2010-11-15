@@ -64,6 +64,12 @@
            }
         },
 
+        range_by_end_date_calendar: {
+            yearRange: [-10, 10],
+            selectors: true,
+            trigger: true
+        },
+
         order_indexes: ['+1', '+2', '+3', '+4', '-1'],
         weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'],
 
@@ -110,6 +116,7 @@
             range_by_end_date_year_name: basename+'_range_by_end_date_year',
             range_by_end_date_month_name: basename+'_range_by_end_date_month',
             range_by_end_date_day_name: basename+'_range_by_end_date_day',
+            range_by_end_date_calendar_name: basename+'_range_by_end_date_calendar',
             range_no_end: 'NO_END_DATE',
             range_by_ocurrences: 'BY_OCURRENCES',
             range_by_end_date: 'BY_END_DATE',
@@ -468,35 +475,29 @@
                     .addClass(conf.klass.freq_option_active);
         });
 
-
-        form.find('input[name='+conf.field.end_by_date_name+']').dateinput({    // activate Datetime input for c.z3cform.datetimewidget like widget
-            value: new Date(
-                conf.field.end_by_date_year,
-                conf.field.end_by_date_month,
-                conf.field.end_by_date_day
-            ),
-            change: function() {
-                var value = this.getValue('yyyy-m-d').split('-');
-                var el = this.getInput().parent();                              // TODO: check if this could be solved with $.closest
-                el.find('input=[name$=_year]').val(value[0]);                   // populate calendar fields
-                el.find('select=[name$=_month]').val(value[1]);
-                el.find('input=[name$=_day]').val(value[2]);
-            },
-            onShow: function () {
-                var trigger_offset = $(this).next().offset();
-                $(this).data('dateinput').getCalendar().offset({                // position calendar dateinput widget
-                    top: trigger_offset.top+33,
-                    left: trigger_offset.left
-                });
-            },
-            yearRange: [-10, 10],                                               // TODO: this should be configurable
-            selectors: true,
-            trigger: true
-        });
-
-
-
-
+        form.find('input[name='+conf.field.range_by_end_date_calendar_name+']') // activate Datetime input for c.z3cform.datetimewidget like widget
+            .dateinput($.extend(conf.range_by_end_date_calendar, {
+                value: new Date(
+                    conf.field.range_by_end_date_year_value,
+                    conf.field.range_by_end_date_month_value,
+                    conf.field.range_by_end_date_day_value
+                ),
+                change: function() {
+                    var value = this.getValue('yyyy-m-d').split('-');
+                    var el = this.getInput().parent();
+                    el.find('input=[name='+conf.field.range_by_end_date_year_name+']').val(value[0]);                   // populate calendar fields
+                    el.find('select=[name='+conf.field.range_by_end_date_month_name+']').val(value[1]);
+                    el.find('input=[name='+conf.field.range_by_end_date_day_name+']').val(value[2]);
+                },
+                onShow: function () {
+                    var trigger_offset = $(this).next().offset();
+                    $(this).data('dateinput').getCalendar()                     // position calendar dateinput widget
+                        .offset({
+                            top: trigger_offset.top+33,
+                            left: trigger_offset.left
+                        });
+                },
+            }));
 
 
         /**
