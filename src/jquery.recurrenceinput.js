@@ -523,6 +523,8 @@
         function load(data) {
             if (data) {
                 alert('load_from_rfc2445 should be moved here!');               // FIXME:
+            } else {
+                alert('we should load default values. FREQ')
             }
         }
 
