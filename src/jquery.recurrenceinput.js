@@ -24,6 +24,18 @@
             freq_monthly: 'Monthly',
             freq_yearly: 'Yearly',
 
+            daily_interval: 'Every [INPUT] days.',
+
+            weekly_interval: 'Every [INPUT1] week(s) on:',
+
+            monthly_day_of_month: 'Day [INPUT1] of the month, every [INPUT2] month(s).',
+            monthly_weekday_of_month: 'The [INPUT1] [INPUT2], every [INPUT3] month(s)',
+
+            yearly_day_of_month: 'Every [INPUT1] [INPUT2]',
+            yearly_weekday_of_month: 'The [INPUT1] [INPUT2] of [INPUT3]',
+            yearly_weekday_of_month_weekday: 'Weekday',
+            yearly_weekday_of_month_weekend_day: 'Weekend Day',
+
             range_label: 'End recurrance',
             range_no_end_label: 'No end',
             range_by_occurences_label: 'End after [INPUT] occurence(s)',
@@ -32,6 +44,7 @@
             cancel_button_label: 'Cancel',
             save_button_label: 'Save',
 
+            order_indexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
             months: [
                 'Januar', 'Februar', 'March', 'April', 'May', 'June',
                 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -51,6 +64,9 @@
            }
         },
 
+        order_indexes: ['+1', '+2', '+3', '+4', '-1'],
+        weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'],
+
         // FIELD VALUES
         field: {
             display_name: basename+'_display',
@@ -61,6 +77,34 @@
             freq_weekly_value: 'WEEKLY',
             freq_monthly_value: 'MONTHLY',
             freq_yearly_value: 'YEARLY',
+
+            daily_interval_name: basename+'_daily_interval',
+            daily_interval_value: '1',
+
+            weekly_interval_name: basename+'_weekly_interval',
+            weekly_interval_value: '1',
+            weekly_weekdays_name: basename+'_weekly_weekdays',
+
+            monthly_type_name: basename+'_monthly_type',
+            monthly_day_of_month_value: 'DAY_OF_MONTH',
+            monthly_day_of_month_interval_value: '1',
+            monthly_day_of_month_interval_name: '_monthly_day_of_month_interval',
+            monthly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
+            monthly_weekday_of_month_index_name: basename+'_monthly_weekday_of_month_index',
+            monthly_weekday_of_month_name: basename+'_monthly_weekday_of_month',
+            monthly_weekday_of_month_interval_name: basename+'_monthly_weekday_of_month_interval',
+            monthly_weekday_of_month_interval_value: '1',
+
+            yearly_type_name: basename+'_yearly_type',
+            yearly_day_of_month_name: basename+'_yearly_day_of_month',
+            yearly_day_of_month_index_name: basename+'_yearly_day_of_month_index',
+            yearly_day_of_month_value: 'DAY_OF_MONTH',
+            yearly_weekday_of_month_index_name: basename+'_yearly_weekday_of_month_index',
+            yearly_weekday_of_month_name: basename+'_yearly_weekday_of_month',
+            yearly_weekday_of_month_month_name: basename+'_yearly_weekday_of_month_month',
+            yearly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
+            yearly_weekday_of_month_weekday_value: 'WEEKDAY',
+            yearly_weekday_of_month_weekend_day_value: 'WEEKEND_DAY',
 
             range_type_name: basename+'_range_type',
             range_by_end_date_year_name: basename+'_range_by_end_date_year',
@@ -92,29 +136,14 @@
             form: basename+'_form',
             freq: basename+'_freq',
             freq_options: basename+'_freq_options',
+            freq_option_active: basename+'_freq_option_active',
             freq_daily: basename+'_freq_daily',
             freq_weekly: basename+'_freq_weekly',
             freq_monthly: basename+'_freq_monthly',
             freq_yearly: basename+'_freq_yearly',
 
-            daily_interval: basename+'_daily_interval',
-
             weekly_interval: basename+'_weekly_interval',
             weekly_weekdays: basename+'_weekly_weekdays',
-
-            monthly_type: basename+'_monthly_type',
-            monthly_dayofmonth_day: basename+'_monthly_dayofmonth_day',
-            monthly_dayofmonth_interval: basename+'_monthly_dayofmonth_interval',
-            monthly_weekdayofmonth_index: basename+'_monthly_weekdayofmonth_index',
-            monthly_weekdayofmonth: basename+'_monthly_weekdayofmonth',
-            monthly_weekdayofmonth_interval: basename+'_monthly_weekdayofmonth_interval',
-
-            yearly_type: basename+'_yearly_type',
-            yearly_dayofmonth_month: basename+'_yearly_dayofmonth_month',
-            yearly_dayofmonth_day: basename+'_yearly_dayofmonth_day',
-            yearly_weekdayofmonth_index: basename+'_yearly_weekdayofmonth_index',
-            yearly_weekdayofmonth_day: basename+'_yearly_weekdayofmonth_day',
-            yearly_weekdayofmonth_months: basename+'_yearly_weekdayofmonth_months',
 
             range: basename+'_range',
             range_type: basename+'_range_type',
@@ -432,17 +461,15 @@
         });
 
 
-        form.find('input[name='+conf.field.freq_name+']')
-            .change(function(e) {  // TODO: should be done with CSS
-            form.find('div.'+conf.klass.freq_options+' > div').hide();
-            parent_list = $(this).closest('ul');
-            font_size = parent_list.css('font-size').replace('px', '').replace('em','');
-            form.find('div.'+conf.klassname_freq+'_' + $(this).val().toLowerCase())
-                .css('margin-left', + (parent_list.width() + 2*font_size)).show();
+        form.find('input[name='+conf.field.freq_name+']')                       // frequency options 
+            .change(function(e) {
+                form.find('div.'+conf.klass.freq_options+' > div').hide();
+                form.find($(this).attr('ref')).show()
+                    .addClass(conf.klass.freq_option_active);
         });
 
 
-        form.find('input[name='+conf.field.end_by_date_name+']').dateinput({         // activate Datetime input for c.z3cform.datetimewidget like widget
+        form.find('input[name='+conf.field.end_by_date_name+']').dateinput({    // activate Datetime input for c.z3cform.datetimewidget like widget
             value: new Date(
                 conf.field.end_by_date_year,
                 conf.field.end_by_date_month,
