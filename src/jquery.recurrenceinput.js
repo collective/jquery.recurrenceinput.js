@@ -14,8 +14,7 @@
      * Configurable values
      */
     var default_conf = {
-        base_id: basename,
-
+        // STRING TO BE TRANSLATED
         i18n: {
             display_label_unactivate: 'Repeat...',
             display_label_activate: 'Repeat: ',
@@ -25,6 +24,14 @@
             freq_monthly: 'Monthly',
             freq_yearly: 'Yearly',
 
+            range_label: 'End recurrance',
+            range_no_end_label: 'No end',
+            range_by_occurences_label: 'End after [INPUT] occurence(s)',
+            range_by_end_date_label: 'End by: ',
+
+            cancel_button_label: 'Cancel',
+            save_button_label: 'Save',
+
             months: [
                 'Januar', 'Februar', 'March', 'April', 'May', 'June',
                 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -33,39 +40,51 @@
                 'Friday', 'Saturday', 'Sunday']
         },
 
+        // FORM OVERLAY
+        form_overlay: {
+           speed: 'fast',
+           mask: {
+               color: '#ebecff',
+               loadSpeed: 'fast',
+               closeSpeed: 'fast',
+               opacity: 0.5
+           }
+        },
+
         // FIELD VALUES
         field: {
             display_name: basename+'_display',
             display_text: null,
 
-            freq_daily: 'DAILY',
-            freq_weekly: 'WEEKLY',
-            freq_monthly: 'MONTHLY',
-            freq_yearly: 'YEARLY',
+            freq_name: basename+'_freq',
+            freq_daily_value: 'DAILY',
+            freq_weekly_value: 'WEEKLY',
+            freq_monthly_value: 'MONTHLY',
+            freq_yearly_value: 'YEARLY',
 
-            freq_daily_name: basename+'_freq_daily',
-            freq_weekly_name: basename+'_freq_weekly',
-            freq_monthly_name: basename+'_freq_monthly',
-            freq_yearly_name: basename+'_freq_yearly',
-
-            end_by_date_year: today.getFullYear(),
-            end_by_date_month: today.getMonth(),
-            end_by_date_day: today.getDate(),
-
-            weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
+            range_type_name: basename+'_range_type',
+            range_by_end_date_year_name: basename+'_range_by_end_date_year',
+            range_by_end_date_month_name: basename+'_range_by_end_date_month',
+            range_by_end_date_day_name: basename+'_range_by_end_date_day',
+            range_no_end: 'NO_END_DATE',
+            range_by_ocurrences: 'BY_OCURRENCES',
+            range_by_end_date: 'BY_END_DATE',
+            range_by_ocurrences_value: '10',
+            range_by_end_date_year_value: today.getFullYear(),
+            range_by_end_date_month_value: today.getMonth(),
+            range_by_end_date_day_value: today.getDate(),
         },
 
         // TEMPATE NAMES
         template: {
-            widget: '#jquery-recurrenceinput-display-tmpl',
             form: '#jquery-recurrenceinput-form-tmpl',
-            rule: '#jquery-recurrenceinput-rule-tmpl',
-            date: '#collective-z3cform-dateinput-tmpl'
+            display: '#jquery-recurrenceinput-display-tmpl',
+            dateinput: '#collective-z3cform-dateinput-tmpl'
         },
 
         // CLASS NAMES
-        class: {
-            main: basename,
+        klass: {
+            clear: basename+'_clear',
 
             display: basename+'_display',
             display_text: basename+'_display_text',
@@ -102,7 +121,8 @@
             range_by_ocurrences: basename+'_range_by_ocurrences',
             range_by_end_date: basename+'_range_by_end_date',
 
-            z3cform_dateinput: basename+'_z3cform_dateinput'
+            cancel_button: basename+'_cancel_button',
+            save_button: basename+'_save_button'
         }
     };
 
@@ -380,33 +400,49 @@
     }
 
     /**
-     * RecurrenceInput widget
-     *   |-> build form and display widget
+     * RecurrenceInput - form, display and tools for recurrenceinput widget
      */
     function RecurrenceInput(conf) {
 
         var self = this;
-        var display = $(conf.template.widget).tmpl(conf);                       // display part of the widget
+        var display = $(conf.template.display).tmpl(conf);                      // display part of the widget
         var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
 
 
-        function labelClicable() {                                              // TODO: check if this could be solved with $.closest
-            $(this).parent().find('input[type=radio]').click().change();        //  and on click select radion button
+        function clickableLabel() {                                             //  and on click select radion button
+            $(this).parent().find('> input').click().change();
         }
-        form.find('ul.'+conf.class.freq+' label').click(labelClickable);
-        display.find('label').click(labelClickable);
+        form.find('ul.'+conf.klass.freq+' label').click(clickableLabel);
+        display.find('label').click(clickableLabel);
 
 
-        form.find('input[name='+conf.classname_freq+']').change(function(e) {   // TODO: should be done with CSS
-            form.find('div.'+conf.classname_freq_options+' > div').hide();
+        overlay_conf = $.extend(conf.form_overlay, {                            // on close of overlay we make sure display checbox is unchecked
+            onClose: function(e) {
+                display.find('> input').attr('checked', false); 
+            }
+        });
+        form.hide().overlay(overlay_conf);                                      // create ovelay from forcreate ovelay from form
+
+
+        display.find('input[name='+conf.field.display_name+']')                 // show form overlay on change of display radio box 
+            .change(function(e) {
+                if ($(this).is(':checked')) {
+                    form.overlay().load();
+                }
+        });
+
+
+        form.find('input[name='+conf.field.freq_name+']')
+            .change(function(e) {  // TODO: should be done with CSS
+            form.find('div.'+conf.klass.freq_options+' > div').hide();
             parent_list = $(this).closest('ul');
             font_size = parent_list.css('font-size').replace('px', '').replace('em','');
-            form.find('div.'+conf.classname_freq+'_' + $(this).val().toLowerCase())
+            form.find('div.'+conf.klassname_freq+'_' + $(this).val().toLowerCase())
                 .css('margin-left', + (parent_list.width() + 2*font_size)).show();
         });
 
 
-        form.find('input[name='+field.end_by_date_name+']').dateinput({         // activate Datetime input for c.z3cform.datetimewidget like widget
+        form.find('input[name='+conf.field.end_by_date_name+']').dateinput({         // activate Datetime input for c.z3cform.datetimewidget like widget
             value: new Date(
                 conf.field.end_by_date_year,
                 conf.field.end_by_date_month,
@@ -432,20 +468,8 @@
         });
 
 
-       form.overlay({                                                           // create ovelay from forcreate ovelay from form
-           mask: {                                                              // TODO: this needs to be configurable
-               color: '#ebecff',
-               loadSpeed: 'fast',
-               closeSpeed: 'fast',
-               opacity: 0.5
-           },
-           speed: 'fast',
-       });
 
 
-        widget.find('input[name='+conf.display_name+']').change(function(e) {  // show form overlay on change of display radio box 
-            if ($(this).is(':checked')) { form.overlay().load(); }
-        });
 
 
         /**
@@ -499,13 +523,15 @@
             var textarea = $(this);
             if (textarea[0].type == 'textarea') {
                 var recurrenceinput = new RecurrenceInput(conf);                // our recurrenceinput widget instance
+                recurrenceinput.form.appendTo('body');                          // hide textarea and place display_widget after textarea
                 recurrenceinput.load(textarea.val());                           // load data provided by textarea
                 //recurrenceinput.form.appendTo('body');                          // FIXME: is this actually needed? ... place widget at the bottom (its overlay anyway)
                 textarea.closest('form').submit(function(e) {                   //
                     e.preventDefault();
                     textarea.val(recurrenceinput.save());
                 });
-                textarea.hide().after(recurrenceinput.display);                 // hide textarea and place display_widget after textarea
+                textarea.hide();
+                textarea.after(recurrenceinput.display);                 // hide textarea and place display_widget after textarea
             };
         });
     };

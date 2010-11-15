@@ -15,57 +15,20 @@
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
 
     <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl">
-        <div class="${class.main}">
-            <div class="${class.display}">
-                <input type="checkbox" name="${field.display_name}" />
-                {{if field.display_text != null}}
-                <label>${field.display_label_activate}</label>
-                <span class="${class.display_text}">
-                    ${field.display_text}
-                </span>
-                {{else}}
-                <label>${field.display_label_unactivate}</label>
-                {{/if}}
-            </div>
+        <div class="${klass.display}">
+            <input type="checkbox" name="${field.display_name}" />
+            {{if field.display_text}}
+            <label>${i18n.display_label_activate}</label>
+            {{else}}
+            <span class="${klass.display_text}">
+                ${field.display_text}
+            </span>
+            <label>${i18n.display_label_unactivate}</label>
+            {{/if}}
         </div>
     </script>
 
-    <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl">
-        <div class="${classname_form}">
-            <form>
-
-                <ul class="${classname_freq}">
-                    <li>
-                        <input type="radio" class="freq"
-                               id="${field.freq_daily_id}"
-                               name="${field.freq_daily_name}"
-                               value="{field.freq_daily}" />
-                        <label>${i18n.freq_daily}</label>
-                    </li>
-                    <li>
-                        <input type="radio" class="freq"
-                               id="${field.freq_weekly_id}"
-                               name="${field.freq_weekly_name}"
-                               value="{field.freq_weekly}" />
-                        <label>${i18n.freq_weekly}</label>
-                    </li>
-                    <li>
-                        <input type="radio" class="freq"
-                               id="${field.freq_monthly_id}"
-                               name="${field.freq_monthly_name}"
-                               value="{field.freq_monthly}" />
-                        <label>${i18n.freq_monthly}</label>
-                    </li>
-                    <li>
-                        <input type="radio" class="freq"
-                               id="${field.freq_yearly_id}"
-                               name="${field.freq_yearly_name}"
-                               value="{field.freq_yearly}" />
-                        <label>${i18n.freq_yearly}</label>
-                    </li>
-                </ul>
-
-                <div class="${classname_freq_options}">
+    <!--
 
                     <div class="${classname_freq_daily}">
                         <label>Every <input type="text" value="1" size="2"
@@ -184,65 +147,116 @@
                     </div>
 
                 </div>
+    -->
 
-                <div style="clear:both;"><!-- --></div>
+    <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl">
+        <div class="${klass.form}">
+            <form>
 
-                <div class="${classname_range}">
-                    <label>End recurrance</label>
+                <ul class="${klass.freq}">
+                    <li>
+                        <input type="radio"
+                               ref=".${klass.freq_daily}"
+                               name="${field.freq_name}"
+                               value="${field.freq_daily_value}" />
+                        <label>${i18n.freq_daily}</label>
+                    </li>
+                    <li>
+                        <input type="radio"
+                               ref=".${klass.freq_weekly}"
+                               name="${field.freq_name}"
+                               value="${field.freq_weekly_value}" />
+                        <label>${i18n.freq_weekly}</label>
+                    </li>
+                    <li>
+                        <input type="radio"
+                               ref=".${klass.freq_monthly}"
+                               name="${field.freq_name}"
+                               value="${field.freq_monthly_value}" />
+                        <label>${i18n.freq_monthly}</label>
+                    </li>
+                    <li>
+                        <input type="radio"
+                               ref=".${klass.freq_yearly}"
+                               name="${field.freq_name}"
+                               value="${field.freq_yearly_value}" />
+                        <label>${i18n.freq_yearly}</label>
+                    </li>
+                </ul>
+
+                <div class="${klass.freq_options}">
+                </div>
+
+                <div class="${klass.clear}"><!-- --></div>
+
+                <div class="${klass.range}">
+                    <label>${i18n.range_label}</label>
                     <ul>
                         <li>
-                            <input type="radio" value="NO_END_DATE"
-                                   name="${classname_range_type}" />
-                            <div class="label">No end</div>
+                            <input
+                                type="radio"
+                                value="${field.range_no_end}"
+                                name="${field.range_type}" />
+                            <div>${i18n.range_no_end_label}</div>
                         </li>
                         <li>
-                            <input type="radio" value="BY_OCURRENCES"
-                                   name="${classname_range_type}" />
-                            <div class="label">
-                                <span>End after</span>
-                                <input type="text" size="3" value=""
-                                    name="${classname_range_by_ocurrences}" />
-                                <span>occurence(s)</span>
+                            <input
+                                type="radio"
+                                value="${field.range_by_ocurrences}"
+                                name="${field.range_type}" />
+                            <div>
+                                <span>${i18n.range_by_occurences_label}</span>
+                                <input
+                                    type="text" size="3"
+                                    value="${field.range_by_ocurrences_value}"
+                                    name="{field.range_type" />
                             </div>
                         </li>
                         <li>
-                            <input type="radio" value="BY_END_DATE"
-                                   name="${classname_range_type}" />
-                            <div class="label">
-                                <span>End by:</span>
-                                <p>{{tmpl({dateId: classname_range, dateYear: dateYear, months: months,
-                                    dateDay: dateDay, dateMonth: dateMonth, }) template.date}}</p>
+                            <input
+                                type="radio"
+                                value="${field.range_by_end_date}"
+                                name="${field.range_type}" />
+                            <div>
+                                <span>${i18n.range_by_end_date}</span>
+                                {{tmpl({day_name: field.range_by_end_date_day_name,
+                                        day_value: field.range_by_end_date_day_value,
+                                        month_name: field.range_by_end_date_month_name,
+                                        month_value: field.range_by_end_date_month_value,
+                                        year_name: field.range_by_end_date_year_name,
+                                        year_value: field.range_by_end_date_year_value,
+                                        months: i18n.months}) template.dateinput}}
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div style="clear:both;"><!-- --></div>
+                <div class="${klass.clear}"><!-- --></div>
 
-                <div>
-                    <input type="submit" value="Cancel" class="cancel" />
-                    <input type="submit" value="Save" class="save" />
+                <div class="${klass.buttons}">
+                    <input
+                        type="submit"
+                        class="${klass.cancel_button}"
+                        value="${i18n.cancel_button_label}" />
+                    <input
+                        type="submit"
+                        class="${klass.save_button}"
+                        value="${i18n.save_button_label}" />
                 </div>
             </form>
         </div>
     </script>
 
-    <!--
-        `collective.z3cform.dateinput` like template.
-         Example data you need to pass:
-            { dateId: 'some-unique-per-site-name-for-nameing-classes',
-              dateDay: '1', dateMonth: '2', dateYear: '2010' }
-    -->
     <script id="collective-z3cform-dateinput-tmpl" type="text/x-jquery-tmpl">
-        <input type="text" name="${dateId}_day" size="2" maxlength="2" value="${dateDay}"/> /
-        <select name="${dateId}_month">
+        <input type="text" name="${day_name}" size="2" maxlength="2" value="${day_value}"/> /
+        <select name="${month_name}">
         {{each months}}
             <option value="${$index+1}"
-                {{if $index+1==dateMonth}}selected="selected"{{/if}}>${$value}</option>
+                {{if $index+1==month_value}}selected="selected"{{/if}}>${$value}</option>
         {{/each}}
         </select> /
-        <input type="text" name="${dateId}_year" size="4" maxlength="4" value="${dateYear}"/>
-        <input type="hidden" class="dateinput_calendar" name="${dateId}_calendar" />
+        <input type="text" name="${year_name}" size="4" maxlength="4" value="${year_value}"/>
+        <input type="hidden" name="${calendar_name}" />
     </script>
 
 
@@ -268,16 +282,23 @@
                 </span>
             </div>
             <script type="text/javascript">
-                var conf = {
-                    months: ['Jan','Feb','Mar','Apr','May','Jun',
-                             'Jul','Aug','Sep','Oct','Nov','Dec'],
-                    dateDay: '1', dateMonth: '2', dateYear: '2010'};
+                var start = new Date();
+                var end = new Date(start.getFullYear(), start.getMonth(), start.getDate()+10);
+                var months = [
+                    'Januar', 'Februar', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'];
+
                 $('div.fieldname_start > label').after(
-                    $('#collective-z3cform-dateinput-tmpl').tmpl(
-                        $.extend(conf, {dateId: 'fieldname_start'})));
+                    $('#collective-z3cform-dateinput-tmpl').tmpl({
+                    day_name: 'start_day', month_name: 'start_month', year_name: 'start_year',
+                    day_value: start.getDate(), month_value: start.getMonth(), year_value: start.getFullYear(),
+                    months: months}));
+
                 $('div.fieldname_end > label').after(
-                    $('#collective-z3cform-dateinput-tmpl').tmpl(
-                        $.extend(conf, {dateId: 'fieldname_end'})));
+                    $('#collective-z3cform-dateinput-tmpl').tmpl({
+                    day_name: 'end_day', month_name: 'end_month', year_name: 'end_year',
+                    day_value: end.getDate(), month_value: end.getMonth(), year_value: end.getFullYear(),
+                    months: months}));
             </script>
             <div class="fieldname_all_day">
                 <input type="checkbox" name="all_day" />
