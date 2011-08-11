@@ -139,3 +139,109 @@ function widget_load_from_rfc2445(el, initial_data) {
     }
 }
 
+
+/**
+ * Parsing RFC2554 from widget
+ */
+function widget_save_to_rfc2445(el, conf) {
+    var result = '';
+    var frequency = $('input[name='+conf.field.freq_name+']:checked', el).val();
+    switch (frequency) {
+        case 'DAILY':
+            result = 'FREQ=DAILY';
+            result += ';INTERVAL=' + $('input[name='+conf.field.daily_interval_name+']', el).val();;
+            break;
+        case 'WEEKLY':
+            result = 'FREQ=WEEKLY';
+            result += ';INTERVAL=' + $('input[name='+conf.field.weekly_interval_name+']', el).val();
+            days = [];
+            $('input[name='+conf.field.weekly_weekdays_name+']:checked', el).each(function() {
+                days[days.length] = $(this).val();
+            });
+            if (days.length) {
+                result += ';BYDAY=' + days;
+            }
+            break;
+        case 'MONTHLY':
+            result = 'FREQ=MONTHLY';
+            monthly_type = $('input[name='+conf.field.monthly_type_name+']:checked', el).val();
+            switch (monthly_type) {
+                case 'DAY_OF_MONTH':
+                    day = $('select[name='+conf.field.monthly_dayofmonth_day_name+']', el).val();
+                    interval = $('input[name='+conf.field.monthly_dayofmonth_interval_name+']', el).val();
+                    result += ';BYMONTHDAY=' + day;
+                    result += ';INTERVAL=' + interval;
+                    break;
+                case 'WEEKDAY_OF_MONTH':
+                    var index = $('select[name='+conf.field.monthly_weekdayofmonth_index_name+']', el).val();
+                    var day = $('select[name='+conf.field.monthly_weekdayofmonth_name+']', el).val();
+                    var interval = $('input[name='+conf.field.monthly_weekdayofmonth_interval_name+']', el).val();
+                    if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                        result += ';BYDAY=' + index + day;
+                    }
+                    else if (day == 'DAY') {
+                        result += ';BYDAY=' + index;
+                    }
+                    else if (day == 'WEEKDAY') {
+                        result += ';BYDAY=MO,TU,WE,TH,FR;BYSETPOS=' + index;
+                    }
+                    else if (day == 'WEEKEND_DAY') {
+                        result += ';BYDAY=SA,SU;BYSETPOS=' + index;
+                    }
+                    result += ';INTERVAL=' + interval;
+                    break;
+            }
+            break;
+        case 'YEARLY':
+            result = 'FREQ=YEARLY';
+            yearly_type = $('input[name='+conf.field.yearly_type_name+']:checked', el).val();
+            switch (yearly_type) {
+                case 'DAY_OF_MONTH':
+                    var month = $('select[name='+conf.field.yearly_dayofmonth_month_name+']', el).val();
+                    var day = $('select[name='+conf.field.yearly_dayofmonth_day_name+']', el).val();
+                    result += ';BYMONTH=' + month;
+                    result += ';BYMONTHDAY=' + day;
+                    break;
+                case 'WEEKDAY_OF_MONTH':
+                    var index = $('select[name='+conf.field.yearly_weekdayofmonth_index_name+']', el).val();
+                    var day = $('select[name='+conf.field.yearly_weekdayofmonth_day_name+']', el).val();
+                    var month = $('select[name='+conf.field.yearly_weekdayofmonth_months_name+']', el).val();
+                    result += ';BYMONTH=' + month;
+                    if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                        result += ';BYDAY=' + index + day;
+                    }
+                    else if (day == 'DAY') {
+                        result += ';BYDAY=' + index;
+                    }
+                    else if (day == 'WEEKDAY') {
+                        result += ';BYDAY=MO,TU,WE,TH,FR;BYSETPOS=' + index;
+                    }
+                    else if (day == 'WEEKEND_DAY') {
+                        result += ';BYDAY=SA,SU;BYSETPOS=' + index;
+                    }
+                    break;
+            }
+            break;
+    }
+
+    var range_type = $('input[name='+conf.field.range_type_name+']:checked', el).val();
+    switch (range_type) {
+        case 'BY_OCURRENCES':
+            result += ';COUNT=' + $('input[name='+conf.field.range_by_ocurrences_name+']').val();
+            break;
+        case 'BY_END_DATE':
+            var year = $('input[name='+conf.field.range_name+'_year]').val();
+            var month = $('select[name='+conf.field.range_name+'_month]').val();
+            var day = $('input[name='+conf.field.range_name+'_day]').val();
+            if (month < 10) {
+                month = '0' + month;
+            }
+            if (day < 10) {
+                day = '0' + day;
+            }
+            result += ';UNTIL='+year+month+day+'T000000';
+            break;
+    }
+
+    return result
+}
