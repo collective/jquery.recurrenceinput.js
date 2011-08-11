@@ -77,6 +77,8 @@
         field: {
             display_name: basename+'_display',
             display_text: null,
+            
+            checkbox_name: basename+'_checkbox',
 
             freq_name: basename+'_freq',
             freq_daily_value: 'DAILY',
@@ -441,9 +443,32 @@
     function RecurrenceInput(conf) {
 
         var self = this;
+        $.ajax({
+            url: $(conf.template.display)[0].src,
+            async: false,
+            success: function (data) {
+                conf.template.display = data;
+            }
+        });
+        
+        $.ajax({
+            url: $(conf.template.form)[0].src,
+            async: false,
+            success: function (data) {
+                conf.template.form = data;
+            }
+        });
+                
+        $.ajax({
+            url: $(conf.template.dateinput)[0].src,
+            async: false,
+            success: function (data) {
+                conf.template.dateinput = data;
+            }
+        });
+        
         var display = $(conf.template.display).tmpl(conf);                      // display part of the widget
         var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
-
 
         function clickableLabel() {                                             //  and on click select radion button
             $(this).parent().find('> input').click().change();
