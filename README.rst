@@ -19,9 +19,11 @@ High priority:
 * All [INPUTx] should be fixed.
 * Parsing/Generating should include all fields.
 * Prettify the CSS.
+* There should be a human-readable printout of the rule.
 
 Medium priority:
 
+* Support for recurrence "templates" that are selectable (see mockup).
 * We need to be able to display the occurrences in the widget.
 * Occurrences should be able to be "skipped" (by using EXDATE).
 * User should be able to add occurrences (RDATE).
