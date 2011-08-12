@@ -4,10 +4,8 @@
 /* the input field */
 .date {
 	border:1px solid #ccc;
-	font-size:18px;
 	padding:4px;
 	text-align:center;
-	width:194px;		
 	-moz-box-shadow:0 0 10px #eee inset;
 }
 

@@ -193,20 +193,26 @@
         
         var display = $(conf.template.display).tmpl(conf);                      // display part of the widget
         var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
+        overlay_conf = $.extend(conf.form_overlay, {});                         // create overlay from form
+        form.hide().overlay(overlay_conf);                                      
+
         display.find('input[name='+conf.field.range_by_end_date_calendar_name+']').dateinput({
             selectors: true,
         });
-        
-        // This is never called
-        overlay_conf = $.extend(conf.form_overlay, {                            // on close of overlay we make sure display checbox is unchecked
-            onClose: function(e) {
-                display.find('> input').attr('checked', false); 
+
+        function toggleRecurrence(e) {
+            var checkbox = display.find('input[name='+conf.field.checkbox_name+']');
+            if (checkbox.is(':checked')) {
+                display.find('div[class='+conf.klass.range+']').show();
+            } else {
+                display.find('div[class='+conf.klass.range+']').hide();
             }
-        });
-        form.hide().overlay(overlay_conf);                                      // create ovelay from forcreate ovelay from form
-
-
-        display.find('a[name='+conf.field.edit_name+']')                 // show form overlay on change of display radio box 
+        };
+        toggleRecurrence();
+        
+        display.find('input[name='+conf.field.checkbox_name+']').click(toggleRecurrence);
+        
+        display.find('a[name='+conf.field.edit_name+']')                        // show form overlay on change of display radio box 
             .click(function(e) {
                 e.preventDefault();
                 form.overlay().load();
@@ -226,6 +232,7 @@
                     .addClass(conf.klass.freq_option_active);
         });
 
+        
         /**
          * Saving data selected in form and returning RFC2554 string
          */
@@ -265,7 +272,6 @@
         form.find('.'+conf.klass.save_button).click(save);
 
     }
-
 
 
     /*
