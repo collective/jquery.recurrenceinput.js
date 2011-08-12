@@ -49,8 +49,7 @@ var default_conf = {
     template: {
         widget: '#jquery-recurrenceinput-widget-tmpl',
         form: '#jquery-recurrenceinput-form-tmpl',
-        rule: '#jquery-recurrenceinput-rule-tmpl',
-        date: '#collective-z3cform-dateinput-tmpl' },
+        rule: '#jquery-recurrenceinput-rule-tmpl' },
 
     months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

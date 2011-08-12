@@ -16,8 +16,8 @@
     var default_conf = {
         // STRING TO BE TRANSLATED
         i18n: {
-            display_label_unactivate: 'Repeat...',
-            display_label_activate: 'Repeat: ',
+            display_label_unactivate: 'Does not repeat',
+            display_label_activate: 'Repeats ',
 
             freq_daily: 'Daily',
             freq_weekly: 'Weekly',
@@ -116,29 +116,33 @@
             yearly_weekday_of_month_weekend_day_value: 'WEEKEND_DAY',
 
             range_type_name: basename+'_range_type',
+            range_no_end_name: basename+'_range_no_end',
+            range_no_end: 'NO_END_DATE',
+            range_by_ocurrences_name: basename+'_range_by_ocurrences',
+            range_by_ocurrences: 'BY_OCURRENCES',
+            range_by_ocurrences_value_name: basename+'_range_by_ocurrences_value',
+            range_by_ocurrences_value: '10',            
+            range_by_end_date_name: basename+'_range_by_end_date',
+            range_by_end_date: 'BY_END_DATE',
+            range_by_end_date_year_value: today.getFullYear(),
+            range_by_end_date_month_value: today.getMonth(),
+            range_by_end_date_day_value: today.getDate(),
             range_by_end_date_year_name: basename+'_range_by_end_date_year',
             range_by_end_date_month_name: basename+'_range_by_end_date_month',
             range_by_end_date_day_name: basename+'_range_by_end_date_day',
             range_by_end_date_calendar_name: basename+'_range_by_end_date_calendar',
-            range_no_end: 'NO_END_DATE',
-            range_by_ocurrences: 'BY_OCURRENCES',
-            range_by_end_date: 'BY_END_DATE',
-            range_by_ocurrences_value: '10',
-            range_by_end_date_year_value: today.getFullYear(),
-            range_by_end_date_month_value: today.getMonth(),
-            range_by_end_date_day_value: today.getDate(),
         },
 
         // TEMPATE NAMES
         template: {
             form: '#jquery-recurrenceinput-form-tmpl',
             display: '#jquery-recurrenceinput-display-tmpl',
-            dateinput: '#collective-z3cform-dateinput-tmpl'
         },
 
         // CLASS NAMES
         klass: {
             clear: basename+'_clear',
+            main: basename+'_main',
 
             display: basename+'_display',
             display_text: basename+'_display_text',
@@ -186,18 +190,13 @@
                 conf.template.form = data;
             }
         });
-                
-        $.ajax({
-            url: $(conf.template.dateinput)[0].src,
-            async: false,
-            success: function (data) {
-                conf.template.dateinput = data;
-            }
-        });
         
         var display = $(conf.template.display).tmpl(conf);                      // display part of the widget
         var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
-
+        display.find('input[name='+conf.field.range_by_end_date_calendar_name+']').dateinput({
+            selectors: true,
+        });
+        
         // This is never called
         overlay_conf = $.extend(conf.form_overlay, {                            // on close of overlay we make sure display checbox is unchecked
             onClose: function(e) {
@@ -226,31 +225,6 @@
                 form.find($(this).attr('ref')).show()
                     .addClass(conf.klass.freq_option_active);
         });
-
-        form.find('input[name='+conf.field.range_by_end_date_calendar_name+']') // activate Datetime input for c.z3cform.datetimewidget like widget
-            .dateinput($.extend(conf.range_by_end_date_calendar, {
-                value: new Date(
-                    conf.field.range_by_end_date_year_value,
-                    conf.field.range_by_end_date_month_value,
-                    conf.field.range_by_end_date_day_value
-                ),
-                change: function() {
-                    var value = this.getValue('yyyy-m-d').split('-');
-                    var el = this.getInput().parent();
-                    el.find('input=[name='+conf.field.range_by_end_date_year_name+']').val(value[0]);                   // populate calendar fields
-                    el.find('select=[name='+conf.field.range_by_end_date_month_name+']').val(value[1]);
-                    el.find('input=[name='+conf.field.range_by_end_date_day_name+']').val(value[2]);
-                },
-                onShow: function () {
-                    var trigger_offset = $(this).next().offset();
-                    $(this).data('dateinput').getCalendar()                     // position calendar dateinput widget
-                        .offset({
-                            top: trigger_offset.top+33,
-                            left: trigger_offset.left
-                        });
-                },
-            }));
-
 
         /**
          * Saving data selected in form and returning RFC2554 string

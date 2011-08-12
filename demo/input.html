@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../src/jquery.recurrenceinput.rfc2445parser.js"></script>
     <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.display.js" ></script>
     <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.form.js" ></script>
-    <script id="collective-z3cform-dateinput-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.dateinput.js" ></script>
 
 </head>
 
@@ -26,36 +25,14 @@
         <div class="field">
             <div class="fieldname_start">
                 <label>Start:</label>
-                <span class="time"> - 
-                    <input type="input" name="fieldname_start_hour" value="10" size="1" /> :
-                    <input type="input" name="fieldname_start_min" value="15" size="1" />
-                </span>
+                <input type="date" />
             </div>
             <div class="fieldname_end">
                 <label>End:</label>
-                <span class="time"> - 
-                    <input type="input" name="fieldname_end_hour" value="21" size="1" /> :
-                    <input type="input" name="fieldname_end_min" value="20" size="1" />
-                </span>
+                <input type="date" />
             </div>
             <script type="text/javascript">
-                var start = new Date();
-                var end = new Date(start.getFullYear(), start.getMonth(), start.getDate()+10);
-                var months = [
-                    'Januar', 'Februar', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'];
-
-                $('div.fieldname_start > label').after(
-                    $('#collective-z3cform-dateinput-tmpl').tmpl({
-                    day_name: 'start_day', month_name: 'start_month', year_name: 'start_year',
-                    day_value: start.getDate(), month_value: start.getMonth(), year_value: start.getFullYear(),
-                    months: months}));
-
-                $('div.fieldname_end > label').after(
-                    $('#collective-z3cform-dateinput-tmpl').tmpl({
-                    day_name: 'end_day', month_name: 'end_month', year_name: 'end_year',
-                    day_value: end.getDate(), month_value: end.getMonth(), year_value: end.getFullYear(),
-                    months: months}));
+              $(':date').dateinput();
             </script>
             <div class="fieldname_all_day">
                 <input type="checkbox" name="all_day" />

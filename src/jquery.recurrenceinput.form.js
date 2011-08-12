@@ -156,52 +156,7 @@
                 </div>
     
             </div>
-    
-            <div class="${klass.clear}"><!-- --></div>
-    
-            <div class="${klass.range}">
-                <label>${i18n.range_label}</label>
-                <ul>
-                    <li>
-                        <input
-                            type="radio"
-                            value="${field.range_no_end}"
-                            name="${field.range_type}" />
-                        <div>${i18n.range_no_end_label}</div>
-                    </li>
-                    <li>
-                        <input
-                            type="radio"
-                            value="${field.range_by_ocurrences}"
-                            name="${field.range_type}" />
-                        <div>
-                            <span>${i18n.range_by_occurences_label}</span>
-                            <input
-                                type="text" size="3"
-                                value="${field.range_by_ocurrences_value}"
-                                name="{field.range_type" />
-                        </div>
-                    </li>
-                    <li>
-                        <input
-                            type="radio"
-                            value="${field.range_by_end_date}"
-                            name="${field.range_type}" />
-                        <div>
-                            <span>${i18n.range_by_end_date}</span>
-                            {{tmpl({day_name: field.range_by_end_date_day_name,
-                                    day_value: field.range_by_end_date_day_value,
-                                    month_name: field.range_by_end_date_month_name,
-                                    month_value: field.range_by_end_date_month_value,
-                                    year_name: field.range_by_end_date_year_name,
-                                    year_value: field.range_by_end_date_year_value,
-                                    calendar_name: field.range_by_end_date_calendar_name,
-                                    months: i18n.months}) template.dateinput}}
-                        </div>
-                    </li>
-                </ul>
-            </div>
-    
+        
             <div class="${klass.clear}"><!-- --></div>
     
             <div class="${klass.buttons}">
