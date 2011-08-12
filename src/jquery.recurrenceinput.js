@@ -79,6 +79,7 @@
             display_text: null,
             
             checkbox_name: basename+'_checkbox',
+            edit_name: basename+'_button',
 
             freq_name: basename+'_freq',
             freq_daily_value: 'DAILY',
@@ -206,12 +207,10 @@
         form.hide().overlay(overlay_conf);                                      // create ovelay from forcreate ovelay from form
 
 
-        // TODO: Move to button.
-        display.find('input[name='+conf.field.display_name+']')                 // show form overlay on change of display radio box 
-            .change(function(e) {
-                if ($(this).is(':checked')) {
-                    form.overlay().load();
-                }
+        display.find('a[name='+conf.field.edit_name+']')                 // show form overlay on change of display radio box 
+            .click(function(e) {
+                e.preventDefault();
+                form.overlay().load();
         });
 
 
@@ -262,7 +261,6 @@
             RFC2554 = widget_save_to_rfc2445(form, conf);
             display.find('input[name='+conf.field.display_name+']')             // mark radio button as checked
                    .attr('checked', false);
-            alert(RFC2554);
             display.closest('form').find('textarea').val(RFC2554);
         }
 
@@ -275,7 +273,7 @@
             if (data) {
                 widget_load_from_rfc2445(form, data);               // FIXME:
             } //else {
-                //alert('we should load default values. FREQ') // What default values?
+                //alert('we should load default values. FREQ') 
             //}
         }
 
@@ -308,8 +306,9 @@
                 var recurrenceinput = new RecurrenceInput(conf);                // our recurrenceinput widget instance
                 recurrenceinput.form.appendTo('body');                          // hide textarea and place display_widget after textarea
                 recurrenceinput.load(textarea.val());                           // load data provided by textarea
-                textarea.hide();
-                textarea.after(recurrenceinput.display);                 // hide textarea and place display_widget after textarea
+                // Uncommented while developing:
+                //textarea.hide();                                                // hide the textarea
+                textarea.after(recurrenceinput.display);                        // place display_widget after textarea
             };
         });
     };
