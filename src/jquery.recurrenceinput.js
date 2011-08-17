@@ -265,13 +265,22 @@
         }
 
 
+        function load(event) {
+            event.preventDefault();
+            // close overlay
+            form.overlay().close();
+            // Reload the old data
+            rfc2445 = display.closest('form').find('textarea').val();
+            loadData(rfc2445);
+        }
+
         /**
          * Loading (populating) display and form widget with
          * passed RFC2554 string (data)
          */
-        function load(data) {
-            if (data) {
-                widget_load_from_rfc2445(form, data);
+        function loadData(rfc2445) {
+            if (rfc2445) {
+                widget_load_from_rfc2445(form, rfc2445);
                 // check checkbox
                 display.find('input[name='+conf.field.checkbox_name+']')
                     .attr('checked', true);
@@ -289,11 +298,12 @@
             display: display,
             form: form,
             load: load,
+            loadData: loadData,
             save: save
         });
 
-        // This is necessary, but I don't understand why.
         form.find('.'+conf.klass.save_button).click(save);
+        form.find('.'+conf.klass.cancel_button).click(load);
     }
 
 
@@ -314,7 +324,7 @@
                 recurrenceinput.form.appendTo('body');
                 textarea.after(recurrenceinput.display);
                 // load data provided by textarea
-                recurrenceinput.load(textarea.val());
+                recurrenceinput.loadData(textarea.val());
                 // hide the textarea
                 //textarea.hide(); Commented while developing
             };
