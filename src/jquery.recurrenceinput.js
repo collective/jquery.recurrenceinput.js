@@ -133,7 +133,7 @@
             range_by_end_date_calendar_name: basename+'_range_by_end_date_calendar',
         },
 
-        // TEMPATE NAMES
+        // TEMPLATE NAMES
         template: {
             form: '#jquery-recurrenceinput-form-tmpl',
             display: '#jquery-recurrenceinput-display-tmpl',
@@ -200,12 +200,25 @@
             selectors: true,
         });
 
+        function recurrenceOn() {
+            display.find('div[class='+conf.klass.range+']').show();
+            RFC2554 = widget_save_to_rfc2445(form, conf);
+            display.closest('form').find('textarea').val(RFC2554);
+        };
+        
+        function recurrenceOff() {
+            display.find('div[class='+conf.klass.range+']').hide();
+            display.closest('form').find('textarea').val('');
+        };
+        
         function toggleRecurrence(e) {
             var checkbox = display.find('input[name='+conf.field.checkbox_name+']');
             if (checkbox.is(':checked')) {
-                display.find('div[class='+conf.klass.range+']').show();
+                recurrenceOn();
             } else {
                 display.find('div[class='+conf.klass.range+']').hide();
+                display.closest('form').find('textarea').val('');
+                recurrenceOff();                
             }
         };
         toggleRecurrence();
@@ -239,10 +252,9 @@
         function save(event) {
             event.preventDefault();
             form.overlay().close();                                             // close overlay
-            RFC2554 = widget_save_to_rfc2445(form, conf);
             display.find('input[name='+conf.field.checkbox_name+']')            // check checkbox
                    .attr('checked', true);
-            display.closest('form').find('textarea').val(RFC2554);
+            recurrenceOn();
         }
 
 
