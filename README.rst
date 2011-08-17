@@ -20,7 +20,9 @@ High priority:
 * All [INPUTx] should be fixed.
 * Parsing/Generating should include all fields.
 * Prettify the CSS.
-* There should be a human-readable printout of the rule.
+* There should be a human-readable printout of the rule, ie 
+  "Repeats every second week on thursdays for five times until 2/12/2012."
+  This should replace the "Does not repeat" text.
 
 Medium priority:
 
