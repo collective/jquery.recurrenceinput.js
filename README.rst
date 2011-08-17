@@ -14,7 +14,6 @@ TODO:
 High priority:
 
 * Tests.
-* Should load rule from box when opening.
 * Cancel should close without modifying.
 * All [INPUTx] should be fixed.
 * Parsing/Generating should include all fields.

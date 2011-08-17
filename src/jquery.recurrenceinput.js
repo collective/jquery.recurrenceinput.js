@@ -77,7 +77,7 @@
         field: {
             display_name: basename+'_display',
             display_text: null,
-            
+
             checkbox_name: basename+'_checkbox',
             edit_name: basename+'_button',
 
@@ -121,7 +121,7 @@
             range_by_ocurrences_name: basename+'_range_by_ocurrences',
             range_by_ocurrences: 'BY_OCURRENCES',
             range_by_ocurrences_value_name: basename+'_range_by_ocurrences_value',
-            range_by_ocurrences_value: '10',            
+            range_by_ocurrences_value: '10',
             range_by_end_date_name: basename+'_range_by_end_date',
             range_by_end_date: 'BY_END_DATE',
             range_by_end_date_year_value: today.getFullYear(),
@@ -182,7 +182,7 @@
                 conf.template.display = data;
             }
         });
-        
+
         $.ajax({
             url: $(conf.template.form)[0].src,
             async: false,
@@ -190,11 +190,13 @@
                 conf.template.form = data;
             }
         });
-        
-        var display = $(conf.template.display).tmpl(conf);                      // display part of the widget
-        var form = $(conf.template.form).tmpl(conf);                            // recurrance form (will be displayed in overlay
-        overlay_conf = $.extend(conf.form_overlay, {});                         // create overlay from form
-        form.hide().overlay(overlay_conf);                                      
+
+        // The display part of the widget
+        var display = $(conf.template.display).tmpl(conf);
+        // recurrance form in an overlay
+        var form = $(conf.template.form).tmpl(conf);
+        overlay_conf = $.extend(conf.form_overlay, {});
+        form.hide().overlay(overlay_conf);
 
         display.find('input[name='+conf.field.range_by_end_date_calendar_name+']').dateinput({
             selectors: true,
@@ -205,12 +207,12 @@
             RFC2554 = widget_save_to_rfc2445(form, conf);
             display.closest('form').find('textarea').val(RFC2554);
         };
-        
+
         function recurrenceOff() {
             display.find('div[class='+conf.klass.range+']').hide();
             display.closest('form').find('textarea').val('');
         };
-        
+
         function toggleRecurrence(e) {
             var checkbox = display.find('input[name='+conf.field.checkbox_name+']');
             if (checkbox.is(':checked')) {
@@ -218,42 +220,47 @@
             } else {
                 display.find('div[class='+conf.klass.range+']').hide();
                 display.closest('form').find('textarea').val('');
-                recurrenceOff();                
+                recurrenceOff();
             }
         };
         toggleRecurrence();
-        
+
         display.find('input[name='+conf.field.checkbox_name+']').click(toggleRecurrence);
-        
-        display.find('a[name='+conf.field.edit_name+']')                        // show form overlay on change of display radio box 
+
+        // show form overlay on change of display radio box 
+        display.find('a[name='+conf.field.edit_name+']')
             .click(function(e) {
                 e.preventDefault();
                 form.overlay().load();
         });
 
 
-        function clickableLabel() {                                             //  make labels clickable (XXX: Seriously? You need JS for that?)
+        //  make labels clickable (XXX: Seriously? You need JS for that?)
+        function clickableLabel() {
             $(this).parent().find('> input').click().change();
         }
         form.find('ul.'+conf.klass.freq+' label').click(clickableLabel);
         display.find('label').click(clickableLabel);
 
-        form.find('input[name='+conf.field.freq_name+']')                       // frequency options
+        // frequency options
+        form.find('input[name='+conf.field.freq_name+']')
             .change(function(e) {
                 form.find('div.'+conf.klass.freq_options+' > div').hide();
                 form.find($(this).attr('ref')).show()
                     .addClass(conf.klass.freq_option_active);
         });
 
-        
+
         /**
          * Saving data selected in form and returning RFC2554 string
          */
         function save(event) {
             event.preventDefault();
-            form.overlay().close();                                             // close overlay
-            display.find('input[name='+conf.field.checkbox_name+']')            // check checkbox
-                   .attr('checked', true);
+            // close overlay
+            form.overlay().close();
+            // check checkbox
+            display.find('input[name='+conf.field.checkbox_name+']')
+                    .attr('checked', true);
             recurrenceOn();
         }
 
@@ -264,9 +271,13 @@
          */
         function load(data) {
             if (data) {
-                widget_load_from_rfc2445(form, data);               // FIXME:
+                widget_load_from_rfc2445(form, data);
+                // check checkbox
+                display.find('input[name='+conf.field.checkbox_name+']')
+                    .attr('checked', true);
+                recurrenceOn();
             } //else {
-                //alert('we should load default values. FREQ') 
+                //alert('we should load default values. FREQ')
             //}
         }
 
@@ -276,13 +287,13 @@
          */
         $.extend(self, {
             display: display,
-            form: form, 
+            form: form,
             load: load,
             save: save
         });
-        
-        form.find('.'+conf.klass.save_button).click(save);
 
+        // This is necessary, but I don't understand why.
+        form.find('.'+conf.klass.save_button).click(save);
     }
 
 
@@ -290,17 +301,22 @@
      * jQuery plugin implementation
      */
     $.fn.recurrenceinput = function(conf) {
-        if (this.data('recurrenceinput')) { return this; }                      // plugin already installed
-        var conf = $.extend(default_conf, conf)                                 // "compile" configuration for widget
-        this.each(function() {                                                  // apply this for every textarea
+        if (this.data('recurrenceinput')) { return this; } // plugin already installed
+        // "compile" configuration for widget
+        var conf = $.extend(default_conf, conf)
+
+        this.each(function() { // apply this for every textarea
             var textarea = $(this);
             if (textarea[0].type == 'textarea') {
-                var recurrenceinput = new RecurrenceInput(conf);                // our recurrenceinput widget instance
-                recurrenceinput.form.appendTo('body');                          // hide textarea and place display_widget after textarea
-                recurrenceinput.load(textarea.val());                           // load data provided by textarea
-                // Uncommented while developing:
-                //textarea.hide();                                                // hide the textarea
-                textarea.after(recurrenceinput.display);                        // place display_widget after textarea
+                // our recurrenceinput widget instance
+                var recurrenceinput = new RecurrenceInput(conf);
+                // hide textarea and place display_widget after textarea
+                recurrenceinput.form.appendTo('body');
+                textarea.after(recurrenceinput.display);
+                // load data provided by textarea
+                recurrenceinput.load(textarea.val());
+                // hide the textarea
+                //textarea.hide(); Commented while developing
             };
         });
     };
