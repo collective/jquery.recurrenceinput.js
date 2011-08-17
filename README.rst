@@ -16,7 +16,6 @@ High priority:
 * Tests.
 * Should load rule from box when opening.
 * Cancel should close without modifying.
-* Unchecking should empty textarea.
 * All [INPUTx] should be fixed.
 * Parsing/Generating should include all fields.
 * Prettify the CSS.
