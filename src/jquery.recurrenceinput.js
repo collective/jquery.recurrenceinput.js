@@ -46,7 +46,7 @@
 
             order_indexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
             months: [
-                'Januar', 'Februar', 'March', 'April', 'May', 'June',
+                'Januar', 'February', 'March', 'April', 'May', 'June',
                 'July', 'August', 'September', 'October', 'November', 'December'],
             weekdays: [
                 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
@@ -240,8 +240,8 @@
             event.preventDefault();
             form.overlay().close();                                             // close overlay
             RFC2554 = widget_save_to_rfc2445(form, conf);
-            display.find('input[name='+conf.field.display_name+']')             // mark radio button as checked
-                   .attr('checked', false);
+            display.find('input[name='+conf.field.checkbox_name+']')            // check checkbox
+                   .attr('checked', true);
             display.closest('form').find('textarea').val(RFC2554);
         }
 

@@ -13,8 +13,9 @@ TODO:
 
 High priority:
 
+* Tests.
 * Should load rule from box when opening.
-* Cancel should close without modifying
+* Cancel should close without modifying.
 * Unchecking should empty textarea.
 * All [INPUTx] should be fixed.
 * Parsing/Generating should include all fields.
@@ -27,6 +28,7 @@ Medium priority:
 * We need to be able to display the occurrences in the widget.
 * Occurrences should be able to be "skipped" (by using EXDATE).
 * User should be able to add occurrences (RDATE).
+* Make more examples in the demo.html: i18n, templates etc.
 
 Low priority:
 
