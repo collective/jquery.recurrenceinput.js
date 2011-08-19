@@ -7,174 +7,14 @@
  */
 (function($) {
 
-    var today = new Date()
-    var basename = 'recurrenceinput';
-
-    /**
-     * Configurable values
-     */
-    var default_conf = {
-        // STRING TO BE TRANSLATED
-        i18n: {
-            display_label_unactivate: 'Does not repeat',
-            display_label_activate: 'Repeats ',
-
-            freq_daily: 'Daily',
-            freq_weekly: 'Weekly',
-            freq_monthly: 'Monthly',
-            freq_yearly: 'Yearly',
-
-            daily_interval: 'Every [INPUT] days.',
-
-            weekly_interval: 'Every [INPUT1] week(s) on:',
-
-            monthly_day_of_month: 'Day [INPUT1] of the month, every [INPUT2] month(s).',
-            monthly_weekday_of_month: 'The [INPUT1] [INPUT2], every [INPUT3] month(s)',
-
-            yearly_day_of_month: 'Every [INPUT1] [INPUT2]',
-            yearly_weekday_of_month: 'The [INPUT1] [INPUT2] of [INPUT3]',
-            yearly_weekday_of_month_weekday: 'Weekday',
-            yearly_weekday_of_month_weekend_day: 'Weekend Day',
-
-            range_label: 'End recurrance',
-            range_no_end_label: 'No end',
-            range_by_occurences_label: 'End after [INPUT] occurence(s)',
-            range_by_end_date_label: 'End by: ',
-
-            cancel_button_label: 'Cancel',
-            save_button_label: 'Save',
-
-            order_indexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
-            months: [
-                'Januar', 'February', 'March', 'April', 'May', 'June',
-                'July', 'August', 'September', 'October', 'November', 'December'],
-            weekdays: [
-                'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-                'Friday', 'Saturday', 'Sunday']
-        },
-
-        // FORM OVERLAY
-        form_overlay: {
-           speed: 'fast',
-           mask: {
-               color: '#ebecff',
-               loadSpeed: 'fast',
-               closeSpeed: 'fast',
-               opacity: 0.5
-           }
-        },
-
-        range_by_end_date_calendar: {
-            yearRange: [-10, 10],
-            selectors: true,
-            trigger: true
-        },
-
-        order_indexes: ['+1', '+2', '+3', '+4', '-1'],
-        weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'],
-
-        // FIELD VALUES
-        field: {
-            display_name: basename+'_display',
-            display_text: null,
-
-            checkbox_name: basename+'_checkbox',
-            edit_name: basename+'_button',
-
-            freq_name: basename+'_freq',
-            freq_daily_value: 'DAILY',
-            freq_weekly_value: 'WEEKLY',
-            freq_monthly_value: 'MONTHLY',
-            freq_yearly_value: 'YEARLY',
-
-            daily_interval_name: basename+'_daily_interval',
-            daily_interval_value: '1',
-
-            weekly_interval_name: basename+'_weekly_interval',
-            weekly_interval_value: '1',
-            weekly_weekdays_name: basename+'_weekly_weekdays',
-
-            monthly_type_name: basename+'_monthly_type',
-            monthly_day_of_month_value: 'DAY_OF_MONTH',
-            monthly_day_of_month_interval_value: '1',
-            monthly_day_of_month_interval_name: '_monthly_day_of_month_interval',
-            monthly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
-            monthly_weekday_of_month_index_name: basename+'_monthly_weekday_of_month_index',
-            monthly_weekday_of_month_name: basename+'_monthly_weekday_of_month',
-            monthly_weekday_of_month_interval_name: basename+'_monthly_weekday_of_month_interval',
-            monthly_weekday_of_month_interval_value: '1',
-
-            yearly_type_name: basename+'_yearly_type',
-            yearly_day_of_month_name: basename+'_yearly_day_of_month',
-            yearly_day_of_month_index_name: basename+'_yearly_day_of_month_index',
-            yearly_day_of_month_value: 'DAY_OF_MONTH',
-            yearly_weekday_of_month_index_name: basename+'_yearly_weekday_of_month_index',
-            yearly_weekday_of_month_name: basename+'_yearly_weekday_of_month',
-            yearly_weekday_of_month_month_name: basename+'_yearly_weekday_of_month_month',
-            yearly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
-            yearly_weekday_of_month_weekday_value: 'WEEKDAY',
-            yearly_weekday_of_month_weekend_day_value: 'WEEKEND_DAY',
-
-            range_type_name: basename+'_range_type',
-            range_no_end_name: basename+'_range_no_end',
-            range_no_end: 'NO_END_DATE',
-            range_by_ocurrences_name: basename+'_range_by_ocurrences',
-            range_by_ocurrences: 'BY_OCURRENCES',
-            range_by_ocurrences_value_name: basename+'_range_by_ocurrences_value',
-            range_by_ocurrences_value: '10',
-            range_by_end_date_name: basename+'_range_by_end_date',
-            range_by_end_date: 'BY_END_DATE',
-            range_by_end_date_year_value: today.getFullYear(),
-            range_by_end_date_month_value: today.getMonth(),
-            range_by_end_date_day_value: today.getDate(),
-            range_by_end_date_year_name: basename+'_range_by_end_date_year',
-            range_by_end_date_month_name: basename+'_range_by_end_date_month',
-            range_by_end_date_day_name: basename+'_range_by_end_date_day',
-            range_by_end_date_calendar_name: basename+'_range_by_end_date_calendar',
-        },
-
-        // TEMPLATE NAMES
-        template: {
-            form: '#jquery-recurrenceinput-form-tmpl',
-            display: '#jquery-recurrenceinput-display-tmpl',
-        },
-
-        // CLASS NAMES
-        klass: {
-            clear: basename+'_clear',
-            main: basename+'_main',
-
-            display: basename+'_display',
-            display_text: basename+'_display_text',
-
-            form: basename+'_form',
-            freq: basename+'_freq',
-            freq_options: basename+'_freq_options',
-            freq_option_active: basename+'_freq_option_active',
-            freq_daily: basename+'_freq_daily',
-            freq_weekly: basename+'_freq_weekly',
-            freq_monthly: basename+'_freq_monthly',
-            freq_yearly: basename+'_freq_yearly',
-
-            weekly_interval: basename+'_weekly_interval',
-            weekly_weekdays: basename+'_weekly_weekdays',
-
-            range: basename+'_range',
-            range_type: basename+'_range_type',
-            range_by_ocurrences: basename+'_range_by_ocurrences',
-            range_by_end_date: basename+'_range_by_end_date',
-
-            cancel_button: basename+'_cancel_button',
-            save_button: basename+'_save_button'
-        }
-    };
-
     /**
      * RecurrenceInput - form, display and tools for recurrenceinput widget
      */
-    function RecurrenceInput(conf) {
+    function RecurrenceInput(conf, textarea) {
 
         var self = this;
+        var textarea = textarea;
+        
         $.ajax({
             url: $(conf.template.display)[0].src,
             async: false,
@@ -211,12 +51,12 @@
         function recurrenceOn() {
             display.find('div[class='+conf.klass.range+']').show();
             RFC2554 = widget_save_to_rfc2445(form, conf);
-            display.closest('form').find('textarea').val(RFC2554);
+            textarea.val(RFC2554);
         };
 
         function recurrenceOff() {
             display.find('div[class='+conf.klass.range+']').hide();
-            display.closest('form').find('textarea').val('');
+            textarea.val('');
         };
 
         function toggleRecurrence(e) {
@@ -225,7 +65,6 @@
                 recurrenceOn();
             } else {
                 display.find('div[class='+conf.klass.range+']').hide();
-                display.closest('form').find('textarea').val('');
                 recurrenceOff();
             }
         };
@@ -237,6 +76,7 @@
         display.find('a[name='+conf.field.edit_name+']')
             .click(function(e) {
                 e.preventDefault();
+                loadData(textarea.val());
                 form.overlay().load();
         });
 
@@ -276,8 +116,7 @@
             // close overlay
             form.overlay().close();
             // Reload the old data
-            rfc2445 = display.closest('form').find('textarea').val();
-            loadData(rfc2445);
+            loadData(textarea.val());
         }
 
         /**
@@ -325,7 +164,7 @@
             var textarea = $(this);
             if (textarea[0].type == 'textarea') {
                 // our recurrenceinput widget instance
-                var recurrenceinput = new RecurrenceInput(conf);
+                var recurrenceinput = new RecurrenceInput(conf, textarea);
                 // hide textarea and place display_widget after textarea
                 recurrenceinput.form.appendTo('body');
                 textarea.after(recurrenceinput.display);
