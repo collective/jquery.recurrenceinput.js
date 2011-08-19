@@ -180,7 +180,10 @@
             async: false,
             success: function (data) {
                 conf.template.display = data;
-            }
+            },
+            error: function (request, status, error) {
+                alert(error.message + ": " + error.filename);
+            },
         });
 
         $.ajax({
@@ -188,7 +191,10 @@
             async: false,
             success: function (data) {
                 conf.template.form = data;
-            }
+            },
+            error: function (request, status, error) {
+                alert(error.message + ": " + error.filename);
+            },
         });
 
         // The display part of the widget

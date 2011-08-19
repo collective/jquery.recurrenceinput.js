@@ -20,8 +20,35 @@
 
 <body>
 
-    <form action="." method="get">
+    <h1>Welcome to the jquery.recurrenceinput demos!</h1>
+    
+    <p>For these to work you either need to have them on a webserver, or you need
+    to tell your web-browser to allow Ajax loading from your local hard drive.</p>
+    
+    <p><strong>In Firefox</strong> you allow this by going to <a href="about:config">
+    about:config</a> and setting <code>security.fileuri.strict_origin_policy</code>
+    to <code>false</code>.</p>
+    
+    <p><strong>In Chrome and Chromium</strong> you allow this by starting Chrome with
+    <code>--allow-file-access-from-files</code> as a parameter.</p>
 
+
+    <h2>Minimal setup</h2>
+    
+    <!-- Make a text area for the RRULE, which also works as a
+         non-javascript fallback -->
+    <textarea name="repeat"></textarea>
+    <!-- Make the text area a recurrenceinput -->
+    <script type="text/javascript">
+        $("textarea[name=repeat]").recurrenceinput();
+    </script>
+
+
+    <!-- Not yet implemented 
+    <h2>Setup with connected start and end fields</h2>
+    
+    <form action="." method="get">
+    
         <div class="field">
             <div class="fieldname_start">
                 <label>Start:</label>
@@ -49,7 +76,7 @@
                 });
             </script>
         </div>
-
+    
         <div class="field fieldname_repeat">
             <textarea name="repeat"></textarea>
             <script type="text/javascript">
@@ -62,7 +89,10 @@
         </div>
 
     </form>
+    
+    -->
 
+    
 </body>
 
 </html>
