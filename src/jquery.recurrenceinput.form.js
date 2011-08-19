@@ -1,65 +1,40 @@
 <script>
     <div class="${klass.form}">
         <form>
-    
-            <ul class="${klass.freq}">
-                <li>
-                    <input type="radio"
-                           ref=".${klass.freq_daily}"
-                           name="${field.freq_name}"
-                           value="${field.freq_daily_value}" />
-                    <label>${i18n.freq_daily}</label>
-                </li>
-                <li>
-                    <input type="radio"
-                           ref=".${klass.freq_weekly}"
-                           name="${field.freq_name}"
-                           value="${field.freq_weekly_value}" />
-                    <label>${i18n.freq_weekly}</label>
-                </li>
-                <li>
-                    <input type="radio"
-                           ref=".${klass.freq_monthly}"
-                           name="${field.freq_name}"
-                           value="${field.freq_monthly_value}" />
-                    <label>${i18n.freq_monthly}</label>
-                </li>
-                <li>
-                    <input type="radio"
-                           ref=".${klass.freq_yearly}"
-                           name="${field.freq_name}"
-                           value="${field.freq_yearly_value}" />
-                    <label>${i18n.freq_yearly}</label>
-                </li>
-            </ul>
-    
-            <div class="${klass.freq_options}">
-    
-                <div class="${klass.freq_daily}">
-                    <span>${i18n.daily_interval}<span>
-                    <input type="text" size="2"
-                        value="${field.daily_interval_value}"
-                        name="${field.daily_interval_name}"/>
-                </div>
-    
-                <div class="${klass.freq_weekly}">
-                    <span>${i18n.weekly_interval}<span>
-                    <input type="text" size="2"
-                        value="${field.weekly_interval_value}"
-                        name="${field.weekly_interval_name}" />
-                    <ul>
-                    {{each i18n.weekdays}}
-                        <li>
-                            <input type="checkbox"
-                                   name="${field.weekly_weekdays_name}_${weekdays[$index]}"
-                                   value="${weekdays[$index]}" />
-                            <label>${$value}</label>
-                        </li>
+
+            <div id="${field.rtemplate_name}">
+                <select name="${field.rtemplate_name}">
+                    {{each rtemplate}}
+                        <option value="${$index}">${$value.title}</value>
                     {{/each}}
-                    </ul>
-                </div>
+                </select>
+            <div>
+        
+            <div id="${field.daily_interval_name}" class="recurrenceinput_field">
+                <span>${i18n.daily_interval}<span>
+                <input type="text" size="2"
+                    value="${field.daily_interval_value}"
+                    name="${field.daily_interval_name}"/>
+            </div>
+
+            <div id="${field.weekly_interval_name}" class="recurrenceinput_field">
+                <span>${i18n.weekly_interval}<span>
+                <input type="text" size="2"
+                    value="${field.weekly_interval_value}"
+                    name="${field.weekly_interval_name}" />
+                <ul>
+            </div>
+            <div id="${klass.weekly_weekdays}" class="recurrenceinput_field">
+                {{each i18n.weekdays}}
+                    <input type="checkbox"
+                        name="${field.weekly_weekdays_name}_${weekdays[$index]}"
+                        value="${weekdays[$index]}" />
+                    <label>${$value}</label>
+                {{/each}}
+                </ul>
+            </div>
     
-                <div class="${klass.freq_monthly}">
+                <div class="${klass.freq_monthly} recurrenceinput_field">
                     <ul>
                         <li>
                             <input
@@ -106,7 +81,7 @@
                     </ul>
                 </div>
     
-                <div class="${klass.freq_yearly}">
+                <div class="${klass.freq_yearly} recurrenceinput_field">
                     <ul>
                         <li>
                             <input
@@ -154,8 +129,40 @@
                         </li>
                     </ul>
                 </div>
-    
-            </div>
+                
+                <div class="${klass.range} recurrenceinput_field">
+                    <label>${i18n.range_label}</label>
+                    <ul>
+                        <li>
+                            <input
+                                type="radio"
+                                value="${field.range_no_end}"
+                                name="${field.range_type_name}" />
+                            <label>${i18n.range_no_end_label}</label>
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                value="${field.range_by_ocurrences}"
+                                name="${field.range_type_name}" />
+                            <label>${i18n.range_by_occurences_label}</label>
+                            <input
+                                type="text" size="3"
+                                value="${field.range_by_ocurrences_value}"
+                                name="${field.range_by_ocurrences_value_name}" />
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                value="${field.range_by_end_date}"
+                                name="${field.range_type_name}" />
+                            <label>${i18n.range_by_end_date_label}</label>
+                            <input
+                                type="date" 
+                                name="${field.range_by_end_date_calendar_name}" />
+                        </li>
+                    </ul>
+                </div>
         
             <div class="${klass.clear}"><!-- --></div>
     

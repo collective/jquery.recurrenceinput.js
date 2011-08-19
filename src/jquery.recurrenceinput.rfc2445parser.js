@@ -143,10 +143,51 @@ function widget_load_from_rfc2445(el, initial_data) {
 /**
  * Parsing RFC2554 from widget
  */
-function widget_save_to_rfc2445(el, conf) {
+function widget_save_to_rfc2445(form, conf) {
     var result = '';
-    var frequency = $('input[name='+conf.field.freq_name+']:checked', el).val();
-    switch (frequency) {
+    selector = form.find('select[name='+conf.field.rtemplate_name+']').val();
+    rtemplate = conf.rtemplate[value];
+    result = rtemplate.rrule;
+    
+    for (i in rtemplate.fields) {
+        field = form.find('#'+rtemplate.fields[i]);
+        
+        switch (field.attr('id')) {
+        
+            case conf.field.daily_interval_name:
+                // TODO: Assert that this is a number.
+                input = field.find('input[name='+conf.field.daily_interval_name+']')
+                result += ';INTERVAL=' + input.val();
+                break;
+                
+            case conf.field.weekly_interval_name:
+                // TODO: Assert that this is a number.
+                input = field.find('input[name='+conf.field.weekly_interval_name+']')
+                result += ';INTERVAL=' + input.val();
+                break;
+                
+            case conf.field.weekly_weekdays_name:
+                weekdays = ''
+                for (i in conf.i18n.weekdays) {
+                    input = field.find('input[name='+conf.field.weekly_weekdays_name+'_'+conf.weekdays[i]+']');
+                    if (input.is(':checked')) {
+                        if (weekdays) {
+                            weekdays += ','
+                        }
+                        weekdays += conf.weekdays[i]
+                    }
+                }
+                if (weekdays) {
+                    result += ';BYDAY=' + weekdays
+                }
+                break;
+        };
+    };
+    
+    return result
+}
+    
+/*    switch (frequency) {
         case 'DAILY':
             result = 'FREQ=DAILY';
             result += ';INTERVAL=' + $('input[name='+conf.field.daily_interval_name+']', el).val();;
@@ -242,6 +283,5 @@ function widget_save_to_rfc2445(el, conf) {
             result += ';UNTIL='+year+month+day+'T000000';
             break;
     }
+*/
 
-    return result
-}

@@ -1,12 +1,5 @@
-/**
- * http://garbas.github.com/jquery.recurrenceinput.js
- *
- * Author: Rok Garbas <rok@garbas.si>
- * Since: Sep 2010
- * Date: XX-XX-XXXX
- */
 (function($) {
-
+    
     /**
      * RecurrenceInput - form, display and tools for recurrenceinput widget
      */
@@ -14,7 +7,12 @@
 
         var self = this;
         var textarea = textarea;
-        
+
+        /* 
+          Load the templates
+        */
+
+        // The widget
         $.ajax({
             url: $(conf.template.display)[0].src,
             async: false,
@@ -25,7 +23,9 @@
                 alert(error.message + ": " + error.filename);
             },
         });
+        var display = $(conf.template.display).tmpl(conf);
 
+        // The overlay = form popup
         $.ajax({
             url: $(conf.template.form)[0].src,
             async: false,
@@ -36,26 +36,80 @@
                 alert(error.message + ": " + error.filename);
             },
         });
-
-        // The display part of the widget
-        var display = $(conf.template.display).tmpl(conf);
-        // recurrance form in an overlay
         var form = $(conf.template.form).tmpl(conf);
+        // Make an overlay
         overlay_conf = $.extend(conf.form_overlay, {});
-        form.hide().overlay(overlay_conf);
+        // Hide it
+        form.hide().overlay(overlay_conf); 
 
+        /* 
+          Do all the GUI stuff:
+        */
+        
+        // The date dropdown should have selectors.
         display.find('input[name='+conf.field.range_by_end_date_calendar_name+']').dateinput({
             selectors: true,
         });
 
+        // When you click on the checkbox, recurrence should toggle on/off.
+        display.find('input[name='+conf.field.checkbox_name+']').click(toggleRecurrence);
+
+        // Show form overlay when you click on the "Edit..." link
+        display.find('a[name='+conf.field.edit_name+']').click(
+            function(e) {
+                e.preventDefault();
+                loadData(textarea.val());
+                selector = form.find('select[name='+conf.field.rtemplate_name+']')
+                display_fields(selector);
+                form.overlay().load();
+        });
+
+        
+        // The recurrence type dropdown should show certain fields depending
+        // on selection:
+        
+        function display_fields(selector) {
+            // First hide all the fields
+            form.find('.recurrenceinput_field').hide();
+            // Then show the ones that should be shown.
+            value = selector.val();
+            if (value) {
+                rtemplate = conf.rtemplate[value]
+                for (i in rtemplate.fields) {
+                    form.find('#'+rtemplate.fields[i]).show();
+                };
+            };
+        };
+        
+        form.find('select[name='+conf.field.rtemplate_name+']').change(
+            function(e) {
+                display_fields($(this));
+            }
+        );
+        
+
+        ////  make labels clickable (XXX: Seriously? You need JS for that?)
+        //function clickableLabel() {
+            //$(this).parent().find('> input').click().change();
+        //}
+        //form.find('ul.'+conf.klass.freq+' label').click(clickableLabel);
+        //display.find('label').click(clickableLabel);
+
+        //// frequency options
+        //form.find('input[name='+conf.field.freq_name+']')
+            //.change(function(e) {
+                //form.find('div.'+conf.klass.freq_options+' > div').hide();
+                //form.find($(this).attr('ref')).show()
+                    //.addClass(conf.klass.freq_option_active);
+        //});
+
+
         function recurrenceOn() {
-            display.find('div[class='+conf.klass.range+']').show();
             RFC2554 = widget_save_to_rfc2445(form, conf);
             textarea.val(RFC2554);
         };
 
         function recurrenceOff() {
-            display.find('div[class='+conf.klass.range+']').hide();
             textarea.val('');
         };
 
@@ -70,36 +124,6 @@
         };
         toggleRecurrence();
 
-        display.find('input[name='+conf.field.checkbox_name+']').click(toggleRecurrence);
-
-        // show form overlay on change of display radio box 
-        display.find('a[name='+conf.field.edit_name+']')
-            .click(function(e) {
-                e.preventDefault();
-                loadData(textarea.val());
-                form.overlay().load();
-        });
-
-
-        //  make labels clickable (XXX: Seriously? You need JS for that?)
-        function clickableLabel() {
-            $(this).parent().find('> input').click().change();
-        }
-        form.find('ul.'+conf.klass.freq+' label').click(clickableLabel);
-        display.find('label').click(clickableLabel);
-
-        // frequency options
-        form.find('input[name='+conf.field.freq_name+']')
-            .change(function(e) {
-                form.find('div.'+conf.klass.freq_options+' > div').hide();
-                form.find($(this).attr('ref')).show()
-                    .addClass(conf.klass.freq_option_active);
-        });
-
-
-        /**
-         * Saving data selected in form and returning RFC2554 string
-         */
         function save(event) {
             event.preventDefault();
             // close overlay
@@ -111,7 +135,7 @@
         }
 
 
-        function load(event) {
+        function cancel(event) {
             event.preventDefault();
             // close overlay
             form.overlay().close();
@@ -130,9 +154,10 @@
                 display.find('input[name='+conf.field.checkbox_name+']')
                     .attr('checked', true);
                 recurrenceOn();
-            } //else {
+            } else {
+                selector = form.find('select[name='+conf.field.rtemplate_name+']');
                 //alert('we should load default values. FREQ')
-            //}
+            }
         }
 
 
@@ -142,13 +167,13 @@
         $.extend(self, {
             display: display,
             form: form,
-            load: load,
+            cancel: cancel,
+            save: save,
             loadData: loadData,
-            save: save
         });
 
         form.find('.'+conf.klass.save_button).click(save);
-        form.find('.'+conf.klass.cancel_button).click(load);
+        form.find('.'+conf.klass.cancel_button).click(cancel);
     }
 
 
@@ -168,8 +193,6 @@
                 // hide textarea and place display_widget after textarea
                 recurrenceinput.form.appendTo('body');
                 textarea.after(recurrenceinput.display);
-                // load data provided by textarea
-                recurrenceinput.loadData(textarea.val());
                 // hide the textarea
                 //textarea.hide(); Commented while developing
             };

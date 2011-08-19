@@ -9,7 +9,8 @@ in ics calendar files. It was developed for the plone.event PLIP10886 and is
 used there to define python-dateutil rrulestr instances.
 
 
-TODO:
+TODO
+----
 
 High priority:
 
@@ -38,4 +39,10 @@ Low priority:
 
 * The X next occurrences + the last occurrence could be displayed when
   editing the rule. 
+
   
+Contributors
+------------
+
+This project was originally started by Rok Garbas.
+
