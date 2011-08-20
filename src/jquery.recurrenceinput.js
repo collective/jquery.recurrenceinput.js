@@ -47,7 +47,7 @@
         */
         
         // The date dropdown should have selectors.
-        display.find('input[name='+conf.field.range_by_end_date_calendar_name+']').dateinput({
+        form.find('input[name='+conf.field.range_by_end_date_calendar_name+']').dateinput({
             selectors: true,
         });
 

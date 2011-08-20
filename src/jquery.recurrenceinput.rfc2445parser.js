@@ -246,16 +246,9 @@ function widget_save_to_rfc2445(form, conf) {
                         result += ';COUNT=' + $('input[name='+conf.field.range_by_ocurrences_value_name+']').val();
                         break;
                     case 'BY_END_DATE':
-                        var year = $('input[name='+conf.field.range_by_end_date_year_name+']').val();
-                        var month = $('select[name='+conf.field.range_by_end_date_month_name+']').val();
-                        var day = $('input[name='+conf.field.range_by_end_date_day_name+']').val();
-                        if (month < 10) {
-                            month = '0' + month;
-                        }
-                        if (day < 10) {
-                            day = '0' + day;
-                        }
-                        result += ';UNTIL='+year+month+day+'T000000';
+                        field = $('input[name='+conf.field.range_by_end_date_calendar_name+']')
+                        date = field.data('dateinput').getValue('yyyymmdd');
+                        result += ';UNTIL='+date+'T000000';
                         break;
                 }
         };
