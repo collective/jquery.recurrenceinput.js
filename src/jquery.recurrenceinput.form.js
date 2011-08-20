@@ -86,8 +86,8 @@
                         value="${field.yearly_day_of_month_value}"
                         name="${field.yearly_type_name}" />
                     <span>${i18n.yearly_day_of_month}</span>
-                    <select name="${field.yearly_day_of_month_name}">
-                    {{each months}}
+                    <select name="${field.yearly_day_of_month_month_name}">
+                    {{each i18n.months}}
                         <option value="${$index+1}">${$value}</option>
                     {{/each}}
                     </select>
@@ -109,7 +109,7 @@
                         <option value="${order_indexes[$index]}">${$value}</option>
                     {{/each}}
                     </select>
-                    <select name="${field.yearly_weekday_of_month_name}">
+                    <select name="${field.yearly_weekday_of_month_day_name}">
                     {{each i18n.weekdays}}
                         <option value="${weekdays[$index]}">${$value}</option>
                     {{/each}}
@@ -119,7 +119,7 @@
                             ${i18n.yearly_weekday_of_month_weekend_day}</option>
                     </select>
                     <select name="${field.yearly_weekday_of_month_month_name}">
-                    {{each months}}
+                    {{each i18n.months}}
                         <option value="${$index+1}">${$value}</option>
                     {{/each}}
                     </select>

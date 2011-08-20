@@ -21,6 +21,9 @@ High priority:
 * There should be a human-readable printout of the rule, ie 
   "Repeats every second week on thursdays for five times until 2/12/2012."
   This should replace the "Does not repeat" text.
+* We need parameters to specify start and end widgets.
+* When start widget is specified, the day of month and similar parameters
+  should be automatically calculated, filled in and made read only.
 
 Medium priority:
 
@@ -29,8 +32,7 @@ Medium priority:
   with a drop down showing the templates. The "Edit..." link creates and 
   selects a new rule with the human readable rule as title.
 * We need to be able to display the occurrences in the widget.
-  This will likely require parameters to locate the datetime widgets and a
-  callback JSON API (or we need to do rrule iteration in JS).
+  This will likely a callback JSON API (or we need to do rrule iteration in JS).
 * Occurrences should be able to be "skipped" (by using EXDATE).
 * User should be able to add occurrences (RDATE).
 * Make more examples in the demo.html: i18n, templates etc.
