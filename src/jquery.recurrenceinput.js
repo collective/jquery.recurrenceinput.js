@@ -328,6 +328,42 @@ function widget_save_to_rfc2445(form, conf) {
 
 function widget_load_from_rfc2445(form, conf, rrule) {
     var result = '';
+    var unsupported_features = false;
+
+    matches = /INTERVAL=([0-9]+);?/.exec(rrule);
+    if (matches) {
+        interval = matches[1];
+    } else {
+        interval = '1';
+    }
+
+    matches = /BYDAY=([^;]+);?/.exec(rrule);
+    if (matches) {
+        byday = matches[1];
+    } else {
+        byday = '';
+    }
+    
+    matches = /BYMONTHDAY=([^;]+);?/.exec(rrule);
+    if (matches) {
+        bymonthday = matches[1].split(",");
+    } else {
+        bymonthday = null;
+    }
+
+    matches = /BYMONTH=([^;]+);?/.exec(rrule);
+    if (matches) {
+        bymonth = matches[1].split(",");
+    } else {
+        bymonth = null;
+    }
+
+    matches = /BYSETPOS=([^;]+);?/.exec(rrule);
+    if (matches) {
+        bysetpos = matches[1];
+    } else {
+        bysetpos = null;
+    }
     
     // Find the best rule:
     match = '';
@@ -349,41 +385,107 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         selector = form.find('select[name='+conf.field.rtemplate_name+']').val(match_index);
     } else {
         rtemplate = conf.rtemplate[0];
-        alert(conf.i18n.no_template_match);
+        unsupported_features = true;
     }
     
     for (i in rtemplate.fields) {
-        field = form.find('#'+rtemplate.fields[i]);
-        
+        field = form.find('#'+rtemplate.fields[i]);        
         switch (field.attr('id')) {
         
             case conf.field.daily_interval_name:
-                input = field.find('input[name='+conf.field.daily_interval_name+']')
-                matches = /INTERVAL=([0-9]+);?/.exec(rrule);
-                if (matches) {
-                    input.val(matches[1]);
-                }
+                field.find('input[name='+conf.field.daily_interval_name+']').val(interval);
                 break;
+                
             case conf.field.weekly_interval_name:
-                input = field.find('input[name='+conf.field.weekly_interval_name+']')
-                matches = /INTERVAL=([0-9]+);?/.exec(rrule);
-                if (matches) {
-                    input.val(matches[1]);
-                }
+                field.find('input[name='+conf.field.weekly_interval_name+']').val(interval);
                 break;
+                
             case conf.field.weekly_weekdays_name:
-                matches = /BYDAY=([^;]+);?/.exec(rrule);
-                if (matches) {
-                    days = matches[1];
-                } else {
-                    days = '';
-                }
                 for (d in conf.weekdays) {
                     day = conf.weekdays[d];
                     input = field.find('input[name='+conf.field.weekly_weekdays_name+'_'+day+']');
-                    input.attr('checked', matches[1].indexOf(day) !== -1);
+                    input.attr('checked', byday.indexOf(day) !== -1);
                 }
                 break;
+                
+            case conf.field.monthly_options_name:
+                var monthly_type = conf.field.monthly_day_of_month_value; // Default to using BYMONTHDAY
+                
+                if (bymonthday) {
+                    monthly_type = conf.field.monthly_day_of_month_value;
+                    if (bymonthday.indexOf(',') !== -1) {
+                        // No support for multiple days in one month
+                        unsupported_features = true;
+                        // Just keep the first
+                        bymonthday = bymonthday.split(",")[0];
+                    }
+                    field.find('select[name='+conf.field.monthly_day_of_month_day_name+']').val(bymonthday);
+                    field.find('input[name='+conf.field.monthly_day_of_month_interval_name+']').val(interval);
+                }
+
+                if (byday) {
+                    monthly_type = conf.field.monthly_weekday_of_month_value;
+                    
+                    if (byday.indexOf(',') !== -1) {
+                        // No support for multiple days in one month
+                        unsupported_features = true;
+                        byday = byday.split(",")[0];
+                    }
+                    index = byday.slice(0, -2);
+                    weekday = byday.slice(-2);
+                    field.find('select[name='+conf.field.monthly_weekday_of_month_index_name+']').val(index);
+                    field.find('select[name='+conf.field.monthly_weekday_of_month_name+']').val(weekday);
+                    field.find('input[name='+conf.field.monthly_weekday_of_month_interval_name+']').val(interval);
+                }
+                
+                selectors = $('input[name='+conf.field.monthly_type_name+']', form);
+                for (index=0; index<selectors.length; index++) {
+                    radiobutton = selectors[index];
+                    $(radiobutton).attr('checked', radiobutton.value == monthly_type);
+                }
+                break;
+
+            case conf.field.yearly_options_name:
+                var yearly_type = conf.field.yearly_day_of_month_value; // Default to using BYMONTHDAY
+                
+                if (bymonthday) {
+                    yearly_type = conf.field.yearly_day_of_month_value;
+                    if (bymonthday.indexOf(',') !== -1) {
+                        // No support for multiple days in one month
+                        unsupported_features = true;
+                        bymonthday = bymonthday.split(",")[0];
+                    }
+                    field.find('select[name='+conf.field.yearly_day_of_month_month_name+']').val(bymonth);                    
+                    field.find('select[name='+conf.field.yearly_day_of_month_index_name+']').val(bymonthday);                    
+                }
+
+                if (byday) {
+                    yearly_type = conf.field.yearly_weekday_of_month_value;
+                    
+                    if (byday.indexOf(',') !== -1) {
+                        // No support for multiple days in one month
+                        unsupported_features = true;
+                        byday = byday.split(",")[0];
+                    }
+                    index = byday.slice(0, -2);
+                    weekday = byday.slice(-2);
+                    field.find('select[name='+conf.field.yearly_weekday_of_month_index_name+']').val(index);
+                    field.find('select[name='+conf.field.yearly_weekday_of_month_day_name+']').val(weekday);
+                    field.find('select[name='+conf.field.yearly_weekday_of_month_month_name+']').val(bymonth);
+                }
+                
+                selectors = $('input[name='+conf.field.yearly_type_name+']', form);
+                for (index=0; index<selectors.length; index++) {
+                    radiobutton = selectors[index];
+                    $(radiobutton).attr('checked', radiobutton.value == yearly_type);
+                }
+                break;
+                
         }
     }
+    
+    if (unsupported_features) {
+        alert(conf.i18n.no_template_match);
+    };
+
 }
