@@ -40,7 +40,9 @@
         // Make an overlay
         overlay_conf = $.extend(conf.form_overlay, {});
         // Hide it
-        form.hide().overlay(overlay_conf); 
+        form.hide().overlay(overlay_conf);
+        
+        
 
         /* 
           Do all the GUI stuff:
@@ -122,7 +124,6 @@
                 recurrenceOff();
             }
         };
-        toggleRecurrence();
 
         function save(event) {
             event.preventDefault();
@@ -139,8 +140,6 @@
             event.preventDefault();
             // close overlay
             form.overlay().close();
-            // Reload the old data
-            loadData(textarea.val());
         }
 
         /**
@@ -149,11 +148,10 @@
          */
         function loadData(rfc2445) {
             if (rfc2445) {
-                widget_load_from_rfc2445(form, rfc2445);
+                widget_load_from_rfc2445(form, conf, rfc2445);
                 // check checkbox
                 display.find('input[name='+conf.field.checkbox_name+']')
                     .attr('checked', true);
-                recurrenceOn();
             } else {
                 selector = form.find('select[name='+conf.field.rtemplate_name+']');
                 //alert('we should load default values. FREQ')
@@ -193,6 +191,13 @@
                 // hide textarea and place display_widget after textarea
                 recurrenceinput.form.appendTo('body');
                 textarea.after(recurrenceinput.display);
+                
+                if (textarea.val()) {
+                    recurrenceinput.display.find(
+                        'input[name='+conf.field.checkbox_name+']')
+                        .attr('checked', true);
+                }
+                
                 // hide the textarea
                 //textarea.hide(); Commented while developing
             };
@@ -200,3 +205,185 @@
     };
 
 })(jQuery);
+
+
+
+/**
+ * Parsing RFC2554 from widget
+ */
+function widget_save_to_rfc2445(form, conf) {
+    var result = '';
+    selector = form.find('select[name='+conf.field.rtemplate_name+']').val();
+    rtemplate = conf.rtemplate[value];
+    result = rtemplate.rrule;
+    
+    for (i in rtemplate.fields) {
+        field = form.find('#'+rtemplate.fields[i]);
+        
+        switch (field.attr('id')) {
+        
+            case conf.field.daily_interval_name:
+                // TODO: Assert that this is a number.
+                input = field.find('input[name='+conf.field.daily_interval_name+']')
+                result += ';INTERVAL=' + input.val();
+                break;
+                
+            case conf.field.weekly_interval_name:
+                // TODO: Assert that this is a number.
+                input = field.find('input[name='+conf.field.weekly_interval_name+']')
+                result += ';INTERVAL=' + input.val();
+                break;
+                
+            case conf.field.weekly_weekdays_name:
+                weekdays = ''
+                for (i in conf.weekdays) {
+                    input = field.find('input[name='+conf.field.weekly_weekdays_name+'_'+conf.weekdays[i]+']');
+                    if (input.is(':checked')) {
+                        if (weekdays) {
+                            weekdays += ','
+                        }
+                        weekdays += conf.weekdays[i]
+                    }
+                }
+                if (weekdays) {
+                    result += ';BYDAY=' + weekdays
+                }
+                break;
+                
+            case conf.field.monthly_options_name:
+                monthly_type = $('input[name='+conf.field.monthly_type_name+']:checked', form).val();
+                switch (monthly_type) {
+                    case 'DAY_OF_MONTH':
+                        day = $('select[name='+conf.field.monthly_day_of_month_day_name+']', form).val();
+                        interval = $('input[name='+conf.field.monthly_day_of_month_interval_name+']', form).val();
+                        result += ';BYMONTHDAY=' + day;
+                        result += ';INTERVAL=' + interval;
+                        break;
+                    case 'WEEKDAY_OF_MONTH':
+                        index = $('select[name='+conf.field.monthly_weekday_of_month_index_name+']', form).val();
+                        day = $('select[name='+conf.field.monthly_weekday_of_month_name+']', form).val();
+                        interval = $('input[name='+conf.field.monthly_weekday_of_month_interval_name+']', form).val();
+                        if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                            result += ';BYDAY=' + index + day;
+                        }
+                        else if (day == 'WEEKDAY') {
+                            result += ';BYDAY=MO,TU,WE,TH,FR;BYSETPOS=' + index;
+                        }
+                        else if (day == 'WEEKEND_DAY') {
+                            result += ';BYDAY=SA,SU;BYSETPOS=' + index;
+                        }
+                        result += ';INTERVAL=' + interval;
+                        break;
+                }
+                break;
+                
+            case conf.field.yearly_options_name:
+                yearly_type = $('input[name='+conf.field.yearly_type_name+']:checked', form).val();
+                switch (yearly_type) {
+                    case 'DAY_OF_MONTH':
+                        var month = $('select[name='+conf.field.yearly_day_of_month_month_name+']', form).val();
+                        var day = $('select[name='+conf.field.yearly_day_of_month_index_name+']', form).val();
+                        result += ';BYMONTH=' + month;
+                        result += ';BYMONTHDAY=' + day;
+                        break;
+                    case 'WEEKDAY_OF_MONTH':
+                        var index = $('select[name='+conf.field.yearly_weekday_of_month_index_name+']', form).val();
+                        var day = $('select[name='+conf.field.yearly_weekday_of_month_day_name+']', form).val();
+                        var month = $('select[name='+conf.field.yearly_weekday_of_month_month_name+']', form).val();
+                        result += ';BYMONTH=' + month;
+                        if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
+                            result += ';BYDAY=' + index + day;
+                        }
+                        else if (day == 'DAY') {
+                            result += ';BYDAY=' + index;
+                        }
+                        else if (day == 'WEEKDAY') {
+                            result += ';BYDAY=MO,TU,WE,TH,FR;BYSETPOS=' + index;
+                        }
+                        else if (day == 'WEEKEND_DAY') {
+                            result += ';BYDAY=SA,SU;BYSETPOS=' + index;
+                        }
+                        break;
+                }
+                break;
+                
+            case conf.field.range_options_name:
+                var range_type = $('input[name='+conf.field.range_type_name+']:checked', form).val();
+                switch (range_type) {
+                    case 'BY_OCURRENCES':
+                        result += ';COUNT=' + $('input[name='+conf.field.range_by_ocurrences_value_name+']').val();
+                        break;
+                    case 'BY_END_DATE':
+                        field = $('input[name='+conf.field.range_by_end_date_calendar_name+']')
+                        date = field.data('dateinput').getValue('yyyymmdd');
+                        result += ';UNTIL='+date+'T000000';
+                        break;
+                }
+        };
+    };
+    
+    return result
+}
+
+
+function widget_load_from_rfc2445(form, conf, rrule) {
+    var result = '';
+    
+    // Find the best rule:
+    match = '';
+    match_index = null;
+    for (i in conf.rtemplate) {
+        rtemplate = conf.rtemplate[i];
+        if (rrule.indexOf(rtemplate.rrule) === 0) {
+            if (rrule.length > match.length){
+                // This is the best match so far
+                match = rrule;
+                match_index = i;
+            }
+        }
+    }
+    
+    if (match) {
+        rtemplate = conf.rtemplate[match_index];
+        // Set the selector:
+        selector = form.find('select[name='+conf.field.rtemplate_name+']').val(match_index);
+    } else {
+        rtemplate = conf.rtemplate[0];
+        alert(conf.i18n.no_template_match);
+    }
+    
+    for (i in rtemplate.fields) {
+        field = form.find('#'+rtemplate.fields[i]);
+        
+        switch (field.attr('id')) {
+        
+            case conf.field.daily_interval_name:
+                input = field.find('input[name='+conf.field.daily_interval_name+']')
+                matches = /INTERVAL=([0-9]+);?/.exec(rrule);
+                if (matches) {
+                    input.val(matches[1]);
+                }
+                break;
+            case conf.field.weekly_interval_name:
+                input = field.find('input[name='+conf.field.weekly_interval_name+']')
+                matches = /INTERVAL=([0-9]+);?/.exec(rrule);
+                if (matches) {
+                    input.val(matches[1]);
+                }
+                break;
+            case conf.field.weekly_weekdays_name:
+                matches = /BYDAY=([^;]+);?/.exec(rrule);
+                if (matches) {
+                    days = matches[1];
+                } else {
+                    days = '';
+                }
+                for (d in conf.weekdays) {
+                    day = conf.weekdays[d];
+                    input = field.find('input[name='+conf.field.weekly_weekdays_name+'_'+day+']');
+                    input.attr('checked', matches[1].indexOf(day) !== -1);
+                }
+                break;
+        }
+    }
+}
