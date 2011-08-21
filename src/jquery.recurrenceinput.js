@@ -365,6 +365,20 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         bysetpos = null;
     }
     
+    matches = /COUNT=([0-9]+);?/.exec(rrule);
+    if (matches) {
+        count = matches[1];
+    } else {
+        count = null;
+    }
+    
+    matches = /UNTIL=([0-9T]+);?/.exec(rrule);
+    if (matches) {
+        until = matches[1];
+    } else {
+        until = null;
+    }
+    
     // Find the best rule:
     match = '';
     match_index = null;
@@ -438,7 +452,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
                     field.find('input[name='+conf.field.monthly_weekday_of_month_interval_name+']').val(interval);
                 }
                 
-                selectors = $('input[name='+conf.field.monthly_type_name+']', form);
+                selectors = field.find('input[name='+conf.field.monthly_type_name+']');
                 for (index=0; index<selectors.length; index++) {
                     radiobutton = selectors[index];
                     $(radiobutton).attr('checked', radiobutton.value == monthly_type);
@@ -474,13 +488,40 @@ function widget_load_from_rfc2445(form, conf, rrule) {
                     field.find('select[name='+conf.field.yearly_weekday_of_month_month_name+']').val(bymonth);
                 }
                 
-                selectors = $('input[name='+conf.field.yearly_type_name+']', form);
+                selectors = field.find('input[name='+conf.field.yearly_type_name+']');
                 for (index=0; index<selectors.length; index++) {
                     radiobutton = selectors[index];
                     $(radiobutton).attr('checked', radiobutton.value == yearly_type);
                 }
                 break;
                 
+            case conf.field.range_options_name:
+                var range_type = conf.field.range_no_end;
+                
+                if (count) {
+                    range_type = conf.field.range_by_ocurrences;
+                    field.find('input[name='+conf.field.range_by_ocurrences_value_name+']').val(count);
+                }
+                
+                if (until) {
+                    range_type = conf.field.range_by_end_date;
+                    input = field.find('input[name='+conf.field.range_by_end_date_calendar_name+']')
+                    year = until.slice(0,4);
+                    month = until.slice(4,6);
+                    if (month[0] == '0') {
+                        month = month[1]; //parseInt fails on leading zeroes. 
+                    }
+                    month = parseInt(month) -1;
+                    day = until.slice(6,8);
+                    input.data('dateinput').setValue(year, month, day);
+                }
+                
+                selectors = field.find('input[name='+conf.field.range_type_name+']');
+                for (index=0; index<selectors.length; index++) {
+                    radiobutton = selectors[index];
+                    $(radiobutton).attr('checked', radiobutton.value == range_type);
+                }
+                break;
         }
     }
     
