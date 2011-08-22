@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>JQuery.RecurrenceInput Demo</title>
+
+    <link type="text/css" href="jquery.tools.dateinput.css" rel="stylesheet"></link>
+    <link type="text/css" href="jquery.recurrenceinput.css" rel="stylesheet"></link>
+    <link type="text/css" href="overlays.css" rel="stylesheet"></link>
+    <link type="text/css" href="qunit.css" rel="stylesheet"></link>
+    
+    <script type="text/javascript" src="../lib/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.5.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.toolbox.expose-1.2.5.js"></script>
+    <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
+    <script type="text/javascript" src="../src/jquery.recurrenceinput.rfc2445parser.js"></script>
+    <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.display.js" ></script>
+    <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.form.js" ></script>
+    <script type="text/javascript" src="qunit.js"></script>
+
+</head>
+
+<body>
+    
+<script type="text/javascript">
+    
+module("jquery.recurrenceinput widget");
+ 
+test("Widget setup", function() {
+  expect(1);
+  // Make sure that the overlay for the popup exists and is hidden
+  form = jQuery('.recurrenceinput_form');
+  ok(!form.is(':visible'));
+});
+
+test("Open and cancel", function() {
+  expect(6);
+  // Open the form by clicking on the checkbox.
+  
+});
+
+
+</script>
+
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    
+    <!-- Test form -->
+        <form action="." method="get">
+
+        <div class="field">
+            <div class="fieldname_start">
+                <label>Start:</label>
+                <input type="date" />
+            </div>
+            <div class="fieldname_end">
+                <label>End:</label>
+                <input type="date" />
+            </div>
+            <script type="text/javascript">
+              $(':date').dateinput();
+            </script>
+            <div class="fieldname_all_day">
+                <input type="checkbox" name="all_day" />
+                <label>All Day</label>
+            </div>
+            <script type="text/javascript">
+                $('div.fieldname_all_day > label').click(function() {
+                    var input = $(this).parent().find('input');
+                    input.click(); input.change();
+                });
+                $('input[name=all_day]').change(function(e) {
+                    if ($(this).is(':checked')) { $('span.time').hide(); }
+                    else { $('span.time').show(); }
+                });
+            </script>
+        </div>
+
+        <div class="field fieldname_repeat">
+            <textarea name="repeat"></textarea>
+            <script type="text/javascript">
+                $("textarea[name=repeat]").recurrenceinput();
+            </script>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" name="" value="Submit" />
+        </div>
+
+    </form>
+    
+</body>
+
+</html>
+

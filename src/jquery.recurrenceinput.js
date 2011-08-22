@@ -89,23 +89,6 @@
             }
         );
         
-
-        ////  make labels clickable (XXX: Seriously? You need JS for that?)
-        //function clickableLabel() {
-            //$(this).parent().find('> input').click().change();
-        //}
-        //form.find('ul.'+conf.klass.freq+' label').click(clickableLabel);
-        //display.find('label').click(clickableLabel);
-
-        //// frequency options
-        //form.find('input[name='+conf.field.freq_name+']')
-            //.change(function(e) {
-                //form.find('div.'+conf.klass.freq_options+' > div').hide();
-                //form.find($(this).attr('ref')).show()
-                    //.addClass(conf.klass.freq_option_active);
-        //});
-
-
         function recurrenceOn() {
             RFC2554 = widget_save_to_rfc2445(form, conf);
             textarea.val(RFC2554);
@@ -120,7 +103,6 @@
             if (checkbox.is(':checked')) {
                 recurrenceOn();
             } else {
-                display.find('div[class='+conf.klass.range+']').hide();
                 recurrenceOff();
             }
         };

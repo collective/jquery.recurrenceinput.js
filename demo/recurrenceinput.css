@@ -67,9 +67,6 @@
     margin: 0;
 }
 
-.recurrenceinput .range {
-    margin-top: 20px;
-}
 .recurrenceinput .range_start label,
 .recurrenceinput .range_end input[type=radio] {
     float: left;

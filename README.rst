@@ -16,7 +16,6 @@ High priority:
 
 * Tests.
 * All [INPUTx] should be fixed. (Possibly use gettext.js?)
-* Parsing/Generating should include all fields.
 * Prettify the CSS.
 * There should be a human-readable printout of the rule, ie 
   "Repeats every second week on thursdays for five times until 2/12/2012."
@@ -27,10 +26,6 @@ High priority:
 
 Medium priority:
 
-* Support for recurrence "templates" that are selectable (see mockup).
-  Basically, if there are templates, the "Repeats every day" label is replaced
-  with a drop down showing the templates. The "Edit..." link creates and 
-  selects a new rule with the human readable rule as title.
 * We need to be able to display the occurrences in the widget.
   This will likely a callback JSON API (or we need to do rrule iteration in JS).
 * Occurrences should be able to be "skipped" (by using EXDATE).
@@ -48,3 +43,6 @@ Contributors
 
 This project was originally started by Rok Garbas.
 
+Authors:
+  Rok Garbas
+  Lennart Regebro
