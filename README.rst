@@ -15,7 +15,6 @@ TODO
 High priority:
 
 * Tests.
-* All [INPUTx] should be fixed. (Possibly use gettext.js?)
 * Prettify the CSS.
 * There should be a human-readable printout of the rule, ie 
   "Repeats every second week on thursdays for five times until 2/12/2012."
@@ -34,8 +33,8 @@ Medium priority:
 
 Low priority:
 
-* The X next occurrences + the last occurrence could be displayed when
-  editing the rule. 
+* The X next occurrences + the last occurrence could be displayed in the
+  popup when editing the rule. 
 
   
 Contributors
