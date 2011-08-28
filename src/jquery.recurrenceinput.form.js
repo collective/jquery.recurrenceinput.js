@@ -57,13 +57,13 @@
                     {{/each}}
                     </select>
                     <label for="${field.monthly_type_name}:${field.monthly_day_of_month_value}">
-                        ${i18n.monthly_day_of_month_2}
+                        ${i18n.monthly_day_of_month_2}${i18n.monthly_day_of_month_3}
                     </label>
                     <input type="text" size="2"
                         value="${field.monthly_day_of_month_interval_value}" 
                         name="${field.monthly_day_of_month_interval_name}"/>
                     <label for="${field.monthly_type_name}:${field.monthly_day_of_month_value}">
-                        ${i18n.monthly_day_of_month_3}
+                        ${i18n.monthly_day_of_month_4}
                     </label>
                 </div>
                 <div>
@@ -88,10 +88,6 @@
                     {{each i18n.weekdays}}
                         <option value="${weekdays[$index]}">${$value}</option>
                     {{/each}}
-                        <option value="${field.yearly_weekday_of_month_weekday_value}">
-                            ${i18n.yearly_weekday_of_month_weekday}</option>
-                        <option value="${field.yearly_weekday_of_month_weekend_day_value}">
-                            ${i18n.yearly_weekday_of_month_weekend_day}</option>
                     </select>
                     <label for="${field.monthly_type_name}:${field.monthly_weekday_of_month_value}">
                         ${i18n.monthly_weekday_of_month_3}
@@ -154,10 +150,6 @@
                     {{each i18n.weekdays}}
                         <option value="${weekdays[$index]}">${$value}</option>
                     {{/each}}
-                        <option value="${field.yearly_weekday_of_month_weekday_value}">
-                            ${i18n.yearly_weekday_of_month_weekday}</option>
-                        <option value="${field.yearly_weekday_of_month_weekend_day_value}">
-                            ${i18n.yearly_weekday_of_month_weekend_day}</option>
                     </select>
                     <label for="${field.yearly_type_name}:${field.yearly_weekday_of_month_value}">
                         ${i18n.yearly_weekday_of_month_3}

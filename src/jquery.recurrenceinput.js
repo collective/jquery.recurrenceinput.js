@@ -91,11 +91,15 @@
         
         function recurrenceOn() {
             RFC2554 = widget_save_to_rfc2445(form, conf);
-            textarea.val(RFC2554);
+            textarea.val(RFC2554.result);
+            label = display.find('label[class='+conf.klass.display_label+']');
+            label.text(conf.i18n.display_label_activate + ' ' + RFC2554.description);
         };
 
         function recurrenceOff() {
             textarea.val('');
+            label = display.find('label[class='+conf.klass.display_label+']');
+            label.text(conf.i18n.display_label_unactivate);
         };
 
         function toggleRecurrence(e) {
@@ -198,6 +202,7 @@ function widget_save_to_rfc2445(form, conf) {
     selector = form.find('select[name='+conf.field.rtemplate_name+']').val();
     rtemplate = conf.rtemplate[value];
     result = rtemplate.rrule;
+    human = rtemplate.title;
     
     for (i in rtemplate.fields) {
         field = form.find('#'+rtemplate.fields[i]);
@@ -206,29 +211,35 @@ function widget_save_to_rfc2445(form, conf) {
         
             case conf.field.daily_interval_name:
                 // TODO: Assert that this is a number.
-                input = field.find('input[name='+conf.field.daily_interval_name+']')
+                input = field.find('input[name='+conf.field.daily_interval_name+']');
                 result += ';INTERVAL=' + input.val();
+                human = conf.i18n.daily_interval_1 + ' ' + input.val() + ' ' + conf.i18n.daily_interval_2;
                 break;
                 
             case conf.field.weekly_interval_name:
                 // TODO: Assert that this is a number.
-                input = field.find('input[name='+conf.field.weekly_interval_name+']')
+                input = field.find('input[name='+conf.field.weekly_interval_name+']');
                 result += ';INTERVAL=' + input.val();
+                human = conf.i18n.weekly_interval_1 + ' ' + input.val() + ' ' + conf.i18n.weekly_interval_2;
                 break;
                 
             case conf.field.weekly_weekdays_name:
-                weekdays = ''
+                weekdays = '';
+                i18nweekdays = '';
                 for (i in conf.weekdays) {
                     input = field.find('input[name='+conf.field.weekly_weekdays_name+'_'+conf.weekdays[i]+']');
                     if (input.is(':checked')) {
                         if (weekdays) {
-                            weekdays += ','
+                            weekdays += ',';
+                            i18nweekdays += ', ';
                         }
-                        weekdays += conf.weekdays[i]
+                        weekdays += conf.weekdays[i];
+                        i18nweekdays += conf.i18n.weekdays[i];
                     }
                 }
                 if (weekdays) {
-                    result += ';BYDAY=' + weekdays
+                    result += ';BYDAY=' + weekdays;
+                    human += ' ' + conf.i18n.weekly_weekdays + ' ' + i18nweekdays;
                 }
                 break;
                 
@@ -239,7 +250,11 @@ function widget_save_to_rfc2445(form, conf) {
                         day = $('select[name='+conf.field.monthly_day_of_month_day_name+']', form).val();
                         interval = $('input[name='+conf.field.monthly_day_of_month_interval_name+']', form).val();
                         result += ';BYMONTHDAY=' + day;
-                        result += ';INTERVAL=' + interval;
+                        result += ';INTERVAL=' + interval;                        
+                        human += ', ' + conf.i18n.monthly_day_of_month_1 + ' ' + day + ' ' + conf.i18n.monthly_day_of_month_2;
+                        if(interval != 1) {
+                            human += conf.i18n.monthly_day_of_month_3 + ' ' + interval + ' ' + conf.i18n.monthly_day_of_month_4;
+                        }
                         break;
                     case 'WEEKDAY_OF_MONTH':
                         index = $('select[name='+conf.field.monthly_weekday_of_month_index_name+']', form).val();
@@ -247,14 +262,15 @@ function widget_save_to_rfc2445(form, conf) {
                         interval = $('input[name='+conf.field.monthly_weekday_of_month_interval_name+']', form).val();
                         if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
                             result += ';BYDAY=' + index + day;
-                        }
-                        else if (day == 'WEEKDAY') {
-                            result += ';BYDAY=MO,TU,WE,TH,FR;BYSETPOS=' + index;
-                        }
-                        else if (day == 'WEEKEND_DAY') {
-                            result += ';BYDAY=SA,SU;BYSETPOS=' + index;
+                            human += ', ' + conf.i18n.monthly_weekday_of_month_1 + ' ';
+                            human += ' ' + conf.i18n.order_indexes[conf.order_indexes.indexOf(index)];
+                            human += ' ' + conf.i18n.monthly_weekday_of_month_2;
+                            human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
                         }
                         result += ';INTERVAL=' + interval;
+                        if (interval != 1) {
+                            human += ' ' + conf.i18n.monthly_weekday_of_month_3 + ' ' + interval + ' ' + conf.i18n.monthly_weekday_of_month_4;
+                        }
                         break;
                 }
                 break;
@@ -267,6 +283,7 @@ function widget_save_to_rfc2445(form, conf) {
                         var day = $('select[name='+conf.field.yearly_day_of_month_index_name+']', form).val();
                         result += ';BYMONTH=' + month;
                         result += ';BYMONTHDAY=' + day;
+                        human += ', ' + conf.i18n.months[month-1] + ' ' + day;
                         break;
                     case 'WEEKDAY_OF_MONTH':
                         var index = $('select[name='+conf.field.yearly_weekday_of_month_index_name+']', form).val();
@@ -275,15 +292,13 @@ function widget_save_to_rfc2445(form, conf) {
                         result += ';BYMONTH=' + month;
                         if ($.inArray(day, ['MO','TU','WE','TH','FR','SA','SU']) > -1) {
                             result += ';BYDAY=' + index + day;
-                        }
-                        else if (day == 'DAY') {
-                            result += ';BYDAY=' + index;
-                        }
-                        else if (day == 'WEEKDAY') {
-                            result += ';BYDAY=MO,TU,WE,TH,FR;BYSETPOS=' + index;
-                        }
-                        else if (day == 'WEEKEND_DAY') {
-                            result += ';BYDAY=SA,SU;BYSETPOS=' + index;
+                            human += ', ' + conf.i18n.yearly_weekday_of_month_1;
+                            human += ' ' + conf.i18n.order_indexes[conf.order_indexes.indexOf(index)];
+                            human += ' ' + conf.i18n.yearly_weekday_of_month_2;
+                            human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
+                            human += ' ' + conf.i18n.yearly_weekday_of_month_3;
+                            human += ' ' + conf.i18n.months[month-1];
+                            human += ' ' + conf.i18n.yearly_weekday_of_month_4;
                         }
                         break;
                 }
@@ -304,7 +319,7 @@ function widget_save_to_rfc2445(form, conf) {
         };
     };
     
-    return result
+    return {result:result, description: human}
 }
 
 

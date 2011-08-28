@@ -12,15 +12,16 @@ var default_conf = {
         display_label_activate: 'Repeats ',
 
         daily_interval_1: 'Every',
-        daily_interval_2: 'days.',
+        daily_interval_2: 'days',
 
         weekly_interval_1: 'Every',
         weekly_interval_2: 'week(s)',
         weekly_weekdays: 'On:',
 
         monthly_day_of_month_1: 'Day',
-        monthly_day_of_month_2: 'of the month, every',
-        monthly_day_of_month_3: 'month(s).',
+        monthly_day_of_month_2: 'of the month',
+        monthly_day_of_month_3: ', every',
+        monthly_day_of_month_4: 'month(s)',
         monthly_weekday_of_month_1: 'The',
         monthly_weekday_of_month_2: '',
         monthly_weekday_of_month_3: ', every',
@@ -34,9 +35,6 @@ var default_conf = {
         yearly_weekday_of_month_3: 'of',
         yearly_weekday_of_month_4: '',
         
-        yearly_weekday_of_month_weekday: 'Weekday',
-        yearly_weekday_of_month_weekend_day: 'Weekend Day',
-
         range_label: 'End recurrance',
         range_no_end_label: 'No end',
         range_by_occurences_label_1: 'End after',
@@ -110,8 +108,6 @@ var default_conf = {
         yearly_weekday_of_month_day_name: basename+'_yearly_weekday_of_month_day',
         yearly_weekday_of_month_month_name: basename+'_yearly_weekday_of_month_month',
         yearly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
-        yearly_weekday_of_month_weekday_value: 'WEEKDAY',
-        yearly_weekday_of_month_weekend_day_value: 'WEEKEND_DAY',
 
         range_options_name: basename+'_range_options',
         range_type_name: basename+'_range_type',
@@ -135,6 +131,7 @@ var default_conf = {
 
         display: basename+'_display',
         display_text: basename+'_display_text',
+        display_label: basename+'_display_label',
 
         form: basename+'_form',
 
