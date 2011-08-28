@@ -41,8 +41,12 @@
         overlay_conf = $.extend(conf.form_overlay, {});
         // Hide it
         form.hide().overlay(overlay_conf);
-        
-        
+
+        // Load the form.
+        loadData(textarea.val());
+        if (textarea.val()) {
+            recurrenceOn();
+        }
 
         /* 
           Do all the GUI stuff:
@@ -60,7 +64,6 @@
         display.find('a[name='+conf.field.edit_name+']').click(
             function(e) {
                 e.preventDefault();
-                loadData(textarea.val());
                 selector = form.find('select[name='+conf.field.rtemplate_name+']')
                 display_fields(selector);
                 form.overlay().load();
@@ -140,7 +143,6 @@
                     .attr('checked', true);
             } else {
                 selector = form.find('select[name='+conf.field.rtemplate_name+']');
-                //alert('we should load default values. FREQ')
             }
         }
 
@@ -185,7 +187,7 @@
                 }
                 
                 // hide the textarea
-                //textarea.hide(); Commented while developing
+                textarea.hide();
             };
         });
     };
@@ -199,7 +201,7 @@
  */
 function widget_save_to_rfc2445(form, conf) {
     var result = '';
-    selector = form.find('select[name='+conf.field.rtemplate_name+']').val();
+    value = form.find('select[name='+conf.field.rtemplate_name+']').val();
     rtemplate = conf.rtemplate[value];
     result = rtemplate.rrule;
     human = rtemplate.title;
@@ -308,12 +310,18 @@ function widget_save_to_rfc2445(form, conf) {
                 var range_type = $('input[name='+conf.field.range_type_name+']:checked', form).val();
                 switch (range_type) {
                     case 'BY_OCURRENCES':
-                        result += ';COUNT=' + $('input[name='+conf.field.range_by_ocurrences_value_name+']').val();
+                        occurrences = $('input[name='+conf.field.range_by_ocurrences_value_name+']').val();
+                        result += ';COUNT=' + occurrences;
+                        human += ', ' + conf.i18n.range_by_occurences_label_1;
+                        human += ' ' + occurrences;
+                        human += ' ' + conf.i18n.range_by_occurences_label_2;
                         break;
                     case 'BY_END_DATE':
                         field = $('input[name='+conf.field.range_by_end_date_calendar_name+']')
                         date = field.data('dateinput').getValue('yyyymmdd');
                         result += ';UNTIL='+date+'T000000';
+                        human += ', ' + conf.i18n.range_by_end_date_label 
+                        human += ' ' + field.data('dateinput').getValue(conf.i18n.long_date_format);
                         break;
                 }
         };

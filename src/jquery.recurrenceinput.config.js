@@ -37,9 +37,9 @@ var default_conf = {
         
         range_label: 'End recurrance',
         range_no_end_label: 'No end',
-        range_by_occurences_label_1: 'End after',
+        range_by_occurences_label_1: 'Ending after',
         range_by_occurences_label_2: 'occurence(s)',
-        range_by_end_date_label: 'End by: ',
+        range_by_end_date_label: 'Until ',
 
         cancel_button_label: 'Cancel',	
         save_button_label: 'Save',
@@ -51,6 +51,8 @@ var default_conf = {
         weekdays: [
             'Monday', 'Tuesday', 'Wednesday', 'Thursday',
             'Friday', 'Saturday', 'Sunday'],
+            
+        long_date_format: 'mmmm dd, yyyy',
             
         no_template_match: 'Warning: This event uses recurrence features not ' +
                            'supported by this widget. Saving the recurrence ' +
