@@ -35,6 +35,9 @@ Low priority:
 
 * The X next occurrences + the last occurrence could be displayed in the
   popup when editing the rule. 
+* Support more obscure RFC options.
+* The human readable output should probably be done directly from the RRULE and
+  not by using the form i18n, to improve the grammar and rule support.
 
   
 Contributors
