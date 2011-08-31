@@ -1,4 +1,6 @@
-var today = new Date()
+/*jslint indent: 4 */
+
+var today = new Date();
 var basename = 'recurrenceinput';
 
 /**
@@ -56,18 +58,18 @@ var default_conf = {
             
         no_template_match: 'Warning: This event uses recurrence features not ' +
                            'supported by this widget. Saving the recurrence ' +
-                           'may change the recurrence in unintended ways.',
+                           'may change the recurrence in unintended ways.'
     },
 
     // FORM OVERLAY
     form_overlay: {
-       speed: 'fast',
-       mask: {
-           color: '#ebecff',
-           loadSpeed: 'fast',
-           closeSpeed: 'fast',
-           opacity: 0.5
-       }
+        speed: 'fast',
+        mask: {
+            color: '#ebecff',
+            loadSpeed: 'fast',
+            closeSpeed: 'fast',
+            opacity: 0.5
+        }
     },
 
     order_indexes: ['+1', '+2', '+3', '+4', '-1'],
@@ -77,70 +79,70 @@ var default_conf = {
     field: {
         display_text: null,
 
-        checkbox_name: basename+'_checkbox',
-        edit_name: basename+'_button',
+        checkbox_name: basename + '_checkbox',
+        edit_name: basename + '_button',
         
-        rtemplate_name: basename+'_rtemplate',
+        rtemplate_name: basename + '_rtemplate',
         
-        daily_interval_name: basename+'_daily_interval',
+        daily_interval_name: basename + '_daily_interval',
         daily_interval_value: '1',
 
-        weekly_interval_name: basename+'_weekly_interval',
+        weekly_interval_name: basename + '_weekly_interval',
         weekly_interval_value: '1',
-        weekly_weekdays_name: basename+'_weekly_weekdays',
+        weekly_weekdays_name: basename + '_weekly_weekdays',
 
-        monthly_options_name: basename+'_monthly_options',
-        monthly_type_name: basename+'_monthly_type',
+        monthly_options_name: basename + '_monthly_options',
+        monthly_type_name: basename + '_monthly_type',
         monthly_day_of_month_value: 'DAY_OF_MONTH',
-        monthly_day_of_month_day_name: basename+'_monthly_day_of_month_day_name',
-        monthly_day_of_month_interval_name: basename+'_monthly_day_of_month_interval',
+        monthly_day_of_month_day_name: basename + '_monthly_day_of_month_day_name',
+        monthly_day_of_month_interval_name: basename + '_monthly_day_of_month_interval',
         monthly_day_of_month_interval_value: '1',
         monthly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
-        monthly_weekday_of_month_index_name: basename+'_monthly_weekday_of_month_index',
-        monthly_weekday_of_month_name: basename+'_monthly_weekday_of_month',
-        monthly_weekday_of_month_interval_name: basename+'_monthly_weekday_of_month_interval',
+        monthly_weekday_of_month_index_name: basename + '_monthly_weekday_of_month_index',
+        monthly_weekday_of_month_name: basename + '_monthly_weekday_of_month',
+        monthly_weekday_of_month_interval_name: basename + '_monthly_weekday_of_month_interval',
         monthly_weekday_of_month_interval_value: '1',
 
-        yearly_options_name: basename+'_yearly_options',
-        yearly_type_name: basename+'_yearly_type',
-        yearly_day_of_month_month_name: basename+'_yearly_day_of_month',
-        yearly_day_of_month_index_name: basename+'_yearly_day_of_month_index',
+        yearly_options_name: basename + '_yearly_options',
+        yearly_type_name: basename + '_yearly_type',
+        yearly_day_of_month_month_name: basename + '_yearly_day_of_month',
+        yearly_day_of_month_index_name: basename + '_yearly_day_of_month_index',
         yearly_day_of_month_value: 'DAY_OF_MONTH',
-        yearly_weekday_of_month_index_name: basename+'_yearly_weekday_of_month_index',
-        yearly_weekday_of_month_day_name: basename+'_yearly_weekday_of_month_day',
-        yearly_weekday_of_month_month_name: basename+'_yearly_weekday_of_month_month',
+        yearly_weekday_of_month_index_name: basename + '_yearly_weekday_of_month_index',
+        yearly_weekday_of_month_day_name: basename + '_yearly_weekday_of_month_day',
+        yearly_weekday_of_month_month_name: basename + '_yearly_weekday_of_month_month',
         yearly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
 
-        range_options_name: basename+'_range_options',
-        range_type_name: basename+'_range_type',
+        range_options_name: basename + '_range_options',
+        range_type_name: basename + '_range_type',
         range_no_end: 'NO_END_DATE',
         range_by_ocurrences: 'BY_OCURRENCES',
-        range_by_ocurrences_value_name: basename+'_range_by_ocurrences_value',
+        range_by_ocurrences_value_name: basename + '_range_by_ocurrences_value',
         range_by_ocurrences_value: '10',
         range_by_end_date: 'BY_END_DATE',
-        range_by_end_date_calendar_name: basename+'_range_by_end_date_calendar',
+        range_by_end_date_calendar_name: basename + '_range_by_end_date_calendar'
     },
 
     // TEMPLATE NAMES
     template: {
         form: '#jquery-recurrenceinput-form-tmpl',
-        display: '#jquery-recurrenceinput-display-tmpl',
+        display: '#jquery-recurrenceinput-display-tmpl'
     },
 
     // CLASS NAMES
     klass: {
-        main: basename+'_main',
+        main: basename + '_main',
 
-        display: basename+'_display',
-        display_text: basename+'_display_text',
-        display_label: basename+'_display_label',
+        display: basename + '_display',
+        display_text: basename + '_display_text',
+        display_label: basename + '_display_label',
 
-        form: basename+'_form',
+        form: basename + '_form',
 
-        cancel_button: basename+'_cancel_button',
-        save_button: basename+'_save_button'
+        cancel_button: basename + '_cancel_button',
+        save_button: basename + '_save_button'
         
-    },
+    }
     
 };
 
@@ -153,21 +155,21 @@ var rtemplate = {
         fields: [
             default_conf.field.daily_interval_name,
             default_conf.field.range_options_name
-        ],
+        ]
     },
     mondayfriday: {
         title: 'Mondays and Fridays',
         rrule: 'FREQ=WEEKLY;BYDAY=MO,FR',
         fields: [
             default_conf.field.range_options_name
-        ],
+        ]
     },
     weekdays: {
         title: 'Weekdays',
         rrule: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
         fields: [
             default_conf.field.range_options_name
-        ],
+        ]
     },
     weekly: {
         title: 'Weekly',
@@ -176,7 +178,7 @@ var rtemplate = {
             default_conf.field.weekly_interval_name,
             default_conf.field.weekly_weekdays_name,
             default_conf.field.range_options_name
-        ],
+        ]
     },
     monthly: {
         title: 'Monthly',
@@ -184,7 +186,7 @@ var rtemplate = {
         fields: [
             default_conf.field.monthly_options_name,
             default_conf.field.range_options_name
-        ],
+        ]
     },
     yearly: {
         title: 'Yearly',
@@ -192,10 +194,10 @@ var rtemplate = {
         fields: [
             default_conf.field.yearly_options_name,
             default_conf.field.range_options_name
-        ],
-    },
+        ]
+    }
     
-}
+};
 
 // And then we stick it in the default_conf.
 default_conf.rtemplate = rtemplate;
