@@ -3,6 +3,7 @@
         <form>
 
             <div id="${field.rtemplate_name}">
+                <label for="${field.rtemplate_name}">${i18n.reccurrence_type}</span></label>
                 <select name="${field.rtemplate_name}">
                     {{each rtemplate}}
                         <option value="${$index}">${$value.title}</value>
@@ -11,30 +12,30 @@
             <div>
         
             <div id="${field.daily_interval_name}" class="recurrenceinput_field">
-                <label for="${field.daily_interval_name}">${i18n.daily_interval_1}</span>
+                <label for="${field.daily_interval_name}">${i18n.daily_interval_1}</span></label>
                 <input type="text" size="2"
                     value="${field.daily_interval_value}"
                     name="${field.daily_interval_name}"
                     id="${field.daily_interval_name}" />
-                <label for="${field.daily_interval_name}">${i18n.daily_interval_2}</span>
+                <label for="${field.daily_interval_name}">${i18n.daily_interval_2}</span></label>
                 <span>
             </div>
 
             <div id="${field.weekly_interval_name}" class="recurrenceinput_field">
-                <label for="${field.weekly_interval_name}">${i18n.weekly_interval_1}<label>
+                <label for="${field.weekly_interval_name}">${i18n.weekly_interval_1}</label>
                 <input type="text" size="2"
                     value="${field.weekly_interval_value}"
                     name="${field.weekly_interval_name}"
                     id="${field.weekly_interval_name}"/>
-                <label for="${field.weekly_interval_name}">${i18n.weekly_interval_2}<label>
+                <label for="${field.weekly_interval_name}">${i18n.weekly_interval_2}</label>
             </div>
             <div id="${field.weekly_weekdays_name}" class="recurrenceinput_field">
-                <label for="${field.weekly_interval_name}">${i18n.weekly_weekdays}<label>
+                <label for="${field.weekly_interval_name}">${i18n.weekly_weekdays}</label>
                 {{each i18n.weekdays}}
                     <input type="checkbox"
                         name="${field.weekly_weekdays_name}_${weekdays[$index]}"
                         value="${weekdays[$index]}" />
-                    <label>${$value}</label>
+                    <label for="${field.weekly_weekdays_name}_${weekdays[$index]}">${$value}</label>
                 {{/each}}
                 </ul>
             </div>

@@ -12,6 +12,8 @@ var default_conf = {
     i18n: {
         display_label_unactivate: 'Does not repeat',
         display_label_activate: 'Repeats ',
+        
+        reccurrence_type: 'Recurrence type:',
 
         daily_interval_1: 'Every',
         daily_interval_2: 'days',
@@ -37,7 +39,7 @@ var default_conf = {
         yearly_weekday_of_month_3: 'of',
         yearly_weekday_of_month_4: '',
         
-        range_label: 'End recurrance',
+        range_label: 'End recurrance:',
         range_no_end_label: 'No end',
         range_by_occurences_label_1: 'Ending after',
         range_by_occurences_label_2: 'occurence(s)',
