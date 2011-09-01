@@ -116,18 +116,18 @@ function widget_save_to_rfc2445(form, conf) {
             break;
             
         case conf.field.range_options_name:
-            var range_type = $('input[name=' + conf.field.range_type_name + ']:checked', form).val();
+            var range_type = form.find('input[name=' + conf.field.range_type_name + ']:checked', form).val();
             switch (range_type) {
             
             case 'BY_OCURRENCES':
-                occurrences = $('input[name=' + conf.field.range_by_ocurrences_value_name + ']').val();
+                occurrences = form.find('input[name=' + conf.field.range_by_ocurrences_value_name + ']').val();
                 result += ';COUNT=' + occurrences;
                 human += ', ' + conf.i18n.range_by_occurences_label_1;
                 human += ' ' + occurrences;
                 human += ' ' + conf.i18n.range_by_occurences_label_2;
                 break;
             case 'BY_END_DATE':
-                field = $('input[name=' + conf.field.range_by_end_date_calendar_name + ']');
+                field = form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']');
                 date = field.data('dateinput').getValue('yyyymmdd');
                 result += ';UNTIL=' + date + 'T000000';
                 human += ', ' + conf.i18n.range_by_end_date_label;
@@ -471,6 +471,11 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         overlay_conf = $.extend(conf.form_overlay, {});
         // Hide it
         form.hide().overlay(overlay_conf);
+        
+        // Make the date input into a calendar dateinput()
+        form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']').dateinput({
+            selectors: true
+        });
 
         // Load the form.
         loadData(textarea.val());
@@ -482,11 +487,6 @@ function widget_load_from_rfc2445(form, conf, rrule) {
           Do all the GUI stuff:
         */
         
-        // The date dropdown should have selectors.
-        form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']').dateinput({
-            selectors: true
-        });
-
         // When you click on the checkbox, recurrence should toggle on/off.
         display.find('input[name=' + conf.field.checkbox_name + ']').click(toggleRecurrence);
 
