@@ -28,25 +28,24 @@
 module("jquery.recurrenceinput widget");
  
 test("Widget setup", function() {
-  expect(4);
-  // Make sure that the overlay for the popup exists and is hidden
-  form = $('.recurrenceinput_form');
-  ok(form[0] !== undefined);
-  ok(!form.is(':visible'));
+    expect(2);
+    // Make sure that the overlay for the popup exists and is hidden
+    form = $('.recurrenceinput_form');
+    ok(form[0] !== undefined);
+    ok(!form.is(':visible'));
   
-  input = $("textarea[name=repeat]").recurrenceinput();
-  input.form.overlay().load();
-  ok(form.is(':visible'));
-  
-  input.form.hide().overlay();
-  ok(!form.is(':visible'));
 });
 
-test("Open and cancel", function() {
-  expect(1);
-  // Open the form by clicking on the checkbox.
-  
-  
+test("Open and close", function() {
+    expect(2);
+    // Open the form by clicking on the checkbox.
+    input = $("textarea[name=repeat]").recurrenceinput();
+    input.form.overlay().load();
+    ok(form.is(':visible'));
+    
+    input.form.hide().overlay();
+    ok(!form.is(':visible'));  
+
 });
 
 
