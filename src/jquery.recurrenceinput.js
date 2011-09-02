@@ -35,7 +35,7 @@ function widget_save_to_rfc2445(form, conf) {
         case conf.field.weekly_weekdays_name:
             weekdays = '';
             i18nweekdays = '';
-            for (j = 0; i < conf.weekdays.length; j++) {
+            for (j = 0; j < conf.weekdays.length; j++) {
                 input = field.find('input[name=' + conf.field.weekly_weekdays_name + '_' + conf.weekdays[j] + ']');
                 if (input.is(':checked')) {
                     if (weekdays) {
@@ -367,10 +367,24 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         var self = this;
         var form, display, overlay_conf;
 
-        /**
-         * Loading (populating) display and form widget with
-         * passed RFC2554 string (data)
-         */
+        // The recurrence type dropdown should show certain fields depending
+        // on selection:        
+        function display_fields(selector) {
+            var i;
+            // First hide all the fields
+            form.find('.recurrenceinput_field').hide();
+            // Then show the ones that should be shown.
+            var value = selector.val();
+            if (value) {
+                var rtemplate = conf.rtemplate[value];
+                for (i = 0; i < rtemplate.fields.length; i++) {
+                    form.find('#' + rtemplate.fields[i]).show();
+                }
+            }
+        }
+        
+        // Loading (populating) display and form widget with
+        // passed RFC2554 string (data)
         function loadData(rfc2445) {
             var selector;
             
@@ -379,9 +393,10 @@ function widget_load_from_rfc2445(form, conf, rrule) {
                 // check checkbox
                 display.find('input[name=' + conf.field.checkbox_name + ']')
                     .attr('checked', true);
-            } else {
-                selector = form.find('select[name=' + conf.field.rtemplate_name + ']');
             }
+            
+            selector = form.find('select[name=' + conf.field.rtemplate_name + ']');
+            display_fields(selector);            
         }
         
         function recurrenceOn() {
@@ -423,21 +438,6 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             form.overlay().close();
         }
 
-        // The recurrence type dropdown should show certain fields depending
-        // on selection:        
-        function display_fields(selector) {
-            var i;
-            // First hide all the fields
-            form.find('.recurrenceinput_field').hide();
-            // Then show the ones that should be shown.
-            var value = selector.val();
-            if (value) {
-                var rtemplate = conf.rtemplate[value];
-                for (i = 0; i < rtemplate.fields.length; i++) {
-                    form.find('#' + rtemplate.fields[i]).show();
-                }
-            }
-        }
         /* 
           Load the templates
         */
@@ -470,7 +470,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         // Make an overlay
         overlay_conf = $.extend(conf.form_overlay, {});
         // Hide it
-        form.hide().overlay(overlay_conf);
+        form.overlay().hide();
         
         // Make the date input into a calendar dateinput()
         form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']').dateinput({
@@ -494,8 +494,6 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         display.find('a[name=' + conf.field.edit_name + ']').click(
             function (e) {
                 e.preventDefault();
-                var selector = form.find('select[name=' + conf.field.rtemplate_name + ']');
-                display_fields(selector);
                 form.overlay().load();
             }
         );
@@ -516,7 +514,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             form: form,
             cancel: cancel,
             save: save,
-            loadData: loadData
+            loadData: loadData,
         });
 
         form.find('.' + conf.klass.save_button).click(save);
@@ -528,29 +526,31 @@ function widget_load_from_rfc2445(form, conf, rrule) {
      * jQuery plugin implementation
      */
     $.fn.recurrenceinput = function (conf) {
-        if (this.data('recurrenceinput')) { return this; } // plugin already installed
+        if (this.data('recurrenceinput')) {
+            // plugin already installed
+            return this.data('recurrenceinput'); 
+        }
         // "compile" configuration for widget
         conf = $.extend(default_conf, conf);
 
-        this.each(function () { // apply this for every textarea
-            var textarea = $(this);
-            if (textarea[0].type === 'textarea') {
-                // our recurrenceinput widget instance
-                var recurrenceinput = new RecurrenceInput(conf, textarea);
-                // hide textarea and place display_widget after textarea
-                recurrenceinput.form.appendTo('body');
-                textarea.after(recurrenceinput.display);
-                
-                if (textarea.val()) {
-                    recurrenceinput.display.find(
-                        'input[name=' + conf.field.checkbox_name + ']'
-                    ).attr('checked', true);
-                }
-                
-                // hide the textarea
-                textarea.hide();
-            }
-        });
+        // our recurrenceinput widget instance
+        var recurrenceinput = new RecurrenceInput(conf, this);
+        // hide textarea and place display_widget after textarea
+        recurrenceinput.form.appendTo('body');
+        this.after(recurrenceinput.display);
+        
+        if (this.val()) {
+            recurrenceinput.display.find(
+                'input[name=' + conf.field.checkbox_name + ']'
+            ).attr('checked', true);
+        }
+        
+        // hide the textarea
+        this.hide();
+        
+        // save the data for next call
+        this.data('recurrenceinput', recurrenceinput);
+        return recurrenceinput;
     };
 
 }(jQuery));
