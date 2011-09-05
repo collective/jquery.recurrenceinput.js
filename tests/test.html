@@ -18,39 +18,12 @@
     <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.display.js" ></script>
     <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.form.js" ></script>
     <script type="text/javascript" src="qunit.js"></script>
+    <script type="text/javascript" src="tests.js"></script>
 
 </head>
 
 <body>
     
-<script type="text/javascript">
-    
-module("jquery.recurrenceinput widget");
- 
-test("Widget setup", function() {
-    expect(2);
-    // Make sure that the overlay for the popup exists and is hidden
-    form = $('.recurrenceinput_form');
-    ok(form[0] !== undefined);
-    ok(!form.is(':visible'));
-  
-});
-
-test("Open and close", function() {
-    expect(2);
-    // Open the form by clicking on the checkbox.
-    input = $("textarea[name=repeat]").recurrenceinput();
-    input.form.overlay().load();
-    ok(form.is(':visible'));
-    
-    input.form.hide().overlay();
-    ok(!form.is(':visible'));  
-
-});
-
-
-</script>
-
     <h1 id="qunit-header">QUnit example</h1>
     <h2 id="qunit-banner"></h2>
     <h2 id="qunit-userAgent"></h2>

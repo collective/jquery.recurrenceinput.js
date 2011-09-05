@@ -14,22 +14,20 @@ TODO
 
 High priority:
 
-* Tests.
-* Prettify the CSS.
-* There should be a human-readable printout of the rule, ie 
-  "Repeats every second week on thursdays for five times until 2/12/2012."
-  This should replace the "Does not repeat" text.
 * We need parameters to specify start and end widgets.
 * When start widget is specified, the day of month and similar parameters
   should be automatically calculated, filled in and made read only.
+* Make more examples in the demo.html: i18n, templates etc.
+* Coverage running, and extend tests to 100%.
 
 Medium priority:
 
 * We need to be able to display the occurrences in the widget.
   This will likely a callback JSON API (or we need to do rrule iteration in JS).
-* Occurrences should be able to be "skipped" (by using EXDATE).
-* User should be able to add occurrences (RDATE).
-* Make more examples in the demo.html: i18n, templates etc.
+* Occurrences should be able to be "skipped" (EXDATE). This should be
+  implemented by having a trashcan or (x) button besides the occurrences.
+* User should be able to add occurrences (RDATE) with an "Add..." link close
+  to the list of occurrences.
 
 Low priority:
 
