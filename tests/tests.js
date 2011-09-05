@@ -1,30 +1,33 @@
+/*jslint indent: 4 */
+/*global $: false, ok: false, module: false, test: false, expect */
+
 module("jquery.recurrenceinput widget");
  
-test("Widget setup", function() {
+test("Widget setup", function () {
     expect(2);
     // Make sure that the overlay for the popup exists and is hidden
-    form = $('.recurrenceinput_form');
+    var form = $('.recurrenceinput_form');
     ok(form[0] !== undefined);
     ok(!form.is(':visible'));
   
 });
 
-test("Open and close", function() {
+test("Open and close", function () {
     expect(2);
     // Open the form by clicking on the checkbox.
-    input = $("textarea[name=repeat]").recurrenceinput();
+    var input = $("textarea[name=repeat]").recurrenceinput();
     input.form.overlay().load();
-    ok(form.is(':visible'));
+    ok(input.form.is(':visible'));
     
     input.form.hide().overlay();
-    ok(!form.is(':visible'));  
+    ok(!input.form.is(':visible'));  
 
 });
 
-test("Daily recurrence with count", function() {
+test("Daily recurrence with count", function () {
     expect(4);
     // Open the form by clicking on the checkbox.
-    input = $("textarea[name=repeat]").recurrenceinput();
+    var input = $("textarea[name=repeat]").recurrenceinput();
     input.loadData("FREQ=DAILY;INTERVAL=5;COUNT=8");
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'daily');
@@ -33,10 +36,10 @@ test("Daily recurrence with count", function() {
     ok(input.form.find('input[name=recurrenceinput_range_by_ocurrences_value]').val() === '8');
 });
 
-test("Weekly recurrence with days and end", function() {
+test("Weekly recurrence with days and end", function () {
     expect(11);
     // Open the form by clicking on the checkbox.
-    input = $("textarea[name=repeat]").recurrenceinput();
+    var input = $("textarea[name=repeat]").recurrenceinput();
     input.loadData("FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000");
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'weekly');
@@ -52,10 +55,10 @@ test("Weekly recurrence with days and end", function() {
     ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '09/22/12');
 });
 
-test("Yearly recurrence without end", function() {
+test("Yearly recurrence without end", function () {
     expect(5);
     // Open the form by clicking on the checkbox.
-    input = $("textarea[name=repeat]").recurrenceinput();
+    var input = $("textarea[name=repeat]").recurrenceinput();
     // The second wednesday of April, forevah.
     input.loadData("FREQ=YEARLY;BYMONTH=3;BYDAY=+2WE");
     

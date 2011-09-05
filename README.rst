@@ -9,8 +9,8 @@ in ics calendar files. It was developed for the plone.event PLIP10886 and is
 used there to define python-dateutil rrulestr instances.
 
 
-TODO
-----
+To Do
+-----
 
 High priority:
 
@@ -37,7 +37,39 @@ Low priority:
 * The human readable output should probably be done directly from the RRULE and
   not by using the form i18n, to improve the grammar and rule support.
 
+
+Developer information
+---------------------
+
+The demo/input.html document contains basic usecases and can be used when
+developing on this widget. For these to work you either need to have them on a
+webserver, or you need to tell your web-browser to allow Ajax loading from your
+local hard drive.
+
+In Firefox you allow this by going to about:config and setting 
+`security.fileuri.strict_origin_policy` to `false`.
+
+In Chrome and Chromium you allow this by starting Chrome with
+`--allow-file-access-from-files` as a parameter.
+
+You also need to run the tests. These are located in tests/tests.js, and use
+the QUnit test framework. You run them by opening tests/test.html in the
+browser. The same issue with allowing Ajax from the local hard drive is in
+effect for the tests as well.
+
+In the `tests` directory there is also a copy of jslint.js, for easy access.
+To run these you need to install a JavaScript engine, such as
+Rhino or SpiderMonkey. You then run it with
+
+    $ js tests/jslint.js <file>
+ 
+The following files should be jslinted:
+
+    src/jquery.recurrenceinput.config.js
+    src/jquery.recurrenceinput.js
+    src/tests.js
   
+    
 Contributors
 ------------
 
