@@ -14,7 +14,7 @@ var default_conf = {
         display_label_unactivate: 'Does not repeat',
         display_label_activate: 'Repeats ',
         
-        reccurrence_type: 'Recurrence type:',
+        recurrence_type: 'Recurrence type:',
 
         daily_interval_1: 'Every',
         daily_interval_2: 'days',
@@ -42,8 +42,8 @@ var default_conf = {
         
         range_label: 'End recurrance:',
         range_no_end_label: 'No end',
-        range_by_occurences_label_1: 'Ending after',
-        range_by_occurences_label_2: 'occurence(s)',
+        range_by_occurrences_label_1: 'Ending after',
+        range_by_occurrences_label_2: 'occurrence(s)',
         range_by_end_date_label: 'Until ',
 
         cancel_button_label: 'Cancel',	
@@ -120,9 +120,9 @@ var default_conf = {
         range_options_name: basename + '_range_options',
         range_type_name: basename + '_range_type',
         range_no_end: 'NO_END_DATE',
-        range_by_ocurrences: 'BY_OCURRENCES',
-        range_by_ocurrences_value_name: basename + '_range_by_ocurrences_value',
-        range_by_ocurrences_value: '10',
+        range_by_occurrences: 'BY_OCCURRENCES',
+        range_by_occurrences_value_name: basename + '_range_by_occurrences_value',
+        range_by_occurrences_value: '10',
         range_by_end_date: 'BY_END_DATE',
         range_by_end_date_calendar_name: basename + '_range_by_end_date_calendar'
     },

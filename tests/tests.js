@@ -32,8 +32,8 @@ test("Daily recurrence with count", function () {
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'daily');
     ok(input.form.find('input[name=recurrenceinput_daily_interval]').val() === '5');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_OCURRENCES');
-    ok(input.form.find('input[name=recurrenceinput_range_by_ocurrences_value]').val() === '8');
+    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_OCCURRENCES');
+    ok(input.form.find('input[name=recurrenceinput_range_by_occurrences_value]').val() === '8');
 });
 
 test("Weekly recurrence with days and end", function () {

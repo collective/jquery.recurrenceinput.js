@@ -3,7 +3,7 @@
         <form>
 
             <div id="${field.rtemplate_name}">
-                <label for="${field.rtemplate_name}">${i18n.reccurrence_type}</span></label>
+                <label for="${field.rtemplate_name}">${i18n.recurrence_type}</span></label>
                 <select name="${field.rtemplate_name}">
                     {{each rtemplate}}
                         <option value="${$index}">${$value.title}</value>
@@ -181,18 +181,18 @@
                 <div>
                     <input
                         type="radio"
-                        value="${field.range_by_ocurrences}"
+                        value="${field.range_by_occurrences}"
                         name="${field.range_type_name}"
-                        id="${field.range_type_name}:${field.range_by_ocurrences}"/>
-                    <label for="${field.range_type_name}:${field.range_by_ocurrences}">
-                        ${i18n.range_by_occurences_label_1}
+                        id="${field.range_type_name}:${field.range_by_occurrences}"/>
+                    <label for="${field.range_type_name}:${field.range_by_occurrences}">
+                        ${i18n.range_by_occurrences_label_1}
                     </label>                    
                     <input
                         type="text" size="3"
-                        value="${field.range_by_ocurrences_value}"
-                        name="${field.range_by_ocurrences_value_name}" />
-                    <label for="${field.range_type_name}:${field.range_by_ocurrences}">
-                        ${i18n.range_by_occurences_label_2}
+                        value="${field.range_by_occurrences_value}"
+                        name="${field.range_by_occurrences_value_name}" />
+                    <label for="${field.range_type_name}:${field.range_by_occurrences}">
+                        ${i18n.range_by_occurrences_label_2}
                     </label>                    
                 </div>
                 <div>

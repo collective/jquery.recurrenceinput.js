@@ -119,12 +119,12 @@ function widget_save_to_rfc2445(form, conf) {
             var range_type = form.find('input[name=' + conf.field.range_type_name + ']:checked', form).val();
             switch (range_type) {
             
-            case 'BY_OCURRENCES':
-                occurrences = form.find('input[name=' + conf.field.range_by_ocurrences_value_name + ']').val();
+            case 'BY_OCCURRENCES':
+                occurrences = form.find('input[name=' + conf.field.range_by_occurrences_value_name + ']').val();
                 result += ';COUNT=' + occurrences;
-                human += ', ' + conf.i18n.range_by_occurences_label_1;
+                human += ', ' + conf.i18n.range_by_occurrences_label_1;
                 human += ' ' + occurrences;
-                human += ' ' + conf.i18n.range_by_occurences_label_2;
+                human += ' ' + conf.i18n.range_by_occurrences_label_2;
                 break;
             case 'BY_END_DATE':
                 field = form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']');
@@ -325,8 +325,8 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             var range_type = conf.field.range_no_end;
             
             if (count) {
-                range_type = conf.field.range_by_ocurrences;
-                field.find('input[name=' + conf.field.range_by_ocurrences_value_name + ']').val(count);
+                range_type = conf.field.range_by_occurrences;
+                field.find('input[name=' + conf.field.range_by_occurrences_value_name + ']').val(count);
             }
             
             if (until) {
