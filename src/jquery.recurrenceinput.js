@@ -474,7 +474,8 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         
         // Make the date input into a calendar dateinput()
         form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']').dateinput({
-            selectors: true
+            selectors: true,
+            format: conf.i18n.short_date_format,
         });
 
         // Load the form.
