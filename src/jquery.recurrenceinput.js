@@ -443,30 +443,36 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         */
 
         // The widget
-        $.ajax({
-            url: $(conf.template.display)[0].src,
-            async: false,
-            success: function (data) {
-                conf.template.display = data;
-            },
-            error: function (request, status, error) {
-                alert(error.message + ": " + error.filename);
-            }
-        });
-        display = $(conf.template.display).tmpl(conf);
+        if ($.template.recurrenceinput_display === undefined) {
+            $.ajax({
+                url: $(conf.template.display)[0].src,
+                async: false,
+                success: function (data) {
+                    conf.template.display = data;
+                },
+                error: function (request, status, error) {
+                    alert(error.message + ": " + error.filename);
+                }
+            });
+            $(conf.template.display).template('recurrenceinput_display');
+        }
+        display = $.tmpl('recurrenceinput_display', conf);
 
         // The overlay = form popup
-        $.ajax({
-            url: $(conf.template.form)[0].src,
-            async: false,
-            success: function (data) {
-                conf.template.form = data;
-            },
-            error: function (request, status, error) {
-                alert(error.message + ": " + error.filename);
-            }
-        });
-        form = $(conf.template.form).tmpl(conf);
+        if ($.template.recurrenceinput_form === undefined) {
+            $.ajax({
+                url: $(conf.template.form)[0].src,
+                async: false,
+                success: function (data) {
+                    conf.template.form = data;
+                },
+                error: function (request, status, error) {
+                    alert(error.message + ": " + error.filename);
+                }
+            });
+            $(conf.template.form).template('recurrenceinput_form');
+        }
+        form = $.tmpl('recurrenceinput_form', conf);
         // Make an overlay
         overlay_conf = $.extend(conf.form_overlay, {});
         // Hide it
@@ -475,7 +481,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         // Make the date input into a calendar dateinput()
         form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']').dateinput({
             selectors: true,
-            format: conf.i18n.short_date_format,
+            format: conf.i18n.short_date_format
         });
 
         // Load the form.
@@ -515,7 +521,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             form: form,
             cancel: cancel,
             save: save,
-            loadData: loadData,
+            loadData: loadData
         });
 
         form.find('.' + conf.klass.save_button).click(save);

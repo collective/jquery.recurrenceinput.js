@@ -14,7 +14,6 @@
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
     <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.display.js" ></script>
     <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.form.js" ></script>
-
 </head>
 
 <body>
@@ -36,12 +35,22 @@
     
     <!-- Make a text area for the RRULE, which also works as a
          non-javascript fallback -->
-    <textarea name="repeat">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <textarea name="repeat"></textarea>
     <!-- Make the text area a recurrenceinput -->
     <script type="text/javascript">
         $("textarea[name=repeat]").recurrenceinput();
     </script>
 
+
+    <h2>With data in the textarea</h2>
+    
+    <!-- Make a text area for the RRULE, which also works as a
+         non-javascript fallback -->
+    <textarea name="repeat2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <!-- Make the text area a recurrenceinput -->
+    <script type="text/javascript">
+        $("textarea[name=repeat2]").recurrenceinput();
+    </script>
 
     <!-- Not yet implemented 
     <h2>Setup with connected start and end fields</h2>

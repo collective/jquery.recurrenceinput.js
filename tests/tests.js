@@ -52,7 +52,7 @@ test("Weekly recurrence with days and end", function () {
     ok(!input.form.find('input[name=recurrenceinput_weekly_weekdays_SA]').attr('checked'));
     ok(!input.form.find('input[name=recurrenceinput_weekly_weekdays_SU]').attr('checked'));
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_END_DATE');
-    ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '09/22/12');
+    ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '09/22/2012');
 });
 
 test("Yearly recurrence without end", function () {
