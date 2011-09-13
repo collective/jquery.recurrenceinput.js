@@ -6,7 +6,7 @@
  * Parsing RFC2554 from widget
  */
 function widget_save_to_rfc2445(form, conf) {
-    var value = form.find('select[name=' + conf.field.rtemplate_name + ']').val();
+    var value = form.find('select[name=recurrenceinput_rtemplate]').val();
     var rtemplate = conf.rtemplate[value];
     var result = rtemplate.rrule;
     var human = rtemplate.title;
@@ -18,25 +18,25 @@ function widget_save_to_rfc2445(form, conf) {
         
         switch (field.attr('id')) {
         
-        case conf.field.daily_interval_name:
+        case 'recurrenceinput_daily_interval':
             // TODO: Assert that this is a number.
-            input = field.find('input[name=' + conf.field.daily_interval_name + ']');
+            input = field.find('input[name=recurrenceinput_daily_interval]');
             result += ';INTERVAL=' + input.val();
             human = conf.i18n.daily_interval_1 + ' ' + input.val() + ' ' + conf.i18n.daily_interval_2;
             break;
             
-        case conf.field.weekly_interval_name:
+        case 'recurrenceinput_weekly_interval':
             // TODO: Assert that this is a number.
-            input = field.find('input[name=' + conf.field.weekly_interval_name + ']');
+            input = field.find('input[name=recurrenceinput_weekly_interval]');
             result += ';INTERVAL=' + input.val();
             human = conf.i18n.weekly_interval_1 + ' ' + input.val() + ' ' + conf.i18n.weekly_interval_2;
             break;
             
-        case conf.field.weekly_weekdays_name:
+        case 'recurrenceinput_weekly_weekdays':
             weekdays = '';
             i18nweekdays = '';
             for (j = 0; j < conf.weekdays.length; j++) {
-                input = field.find('input[name=' + conf.field.weekly_weekdays_name + '_' + conf.weekdays[j] + ']');
+                input = field.find('input[name=recurrenceinput_weekly_weekdays_' + conf.weekdays[j] + ']');
                 if (input.is(':checked')) {
                     if (weekdays) {
                         weekdays += ',';
@@ -52,13 +52,13 @@ function widget_save_to_rfc2445(form, conf) {
             }
             break;
             
-        case conf.field.monthly_options_name:
-            var monthly_type = $('input[name=' + conf.field.monthly_type_name + ']:checked', form).val();
+        case 'recurrenceinput_monthly_options':
+            var monthly_type = $('input[name=recurrenceinput_monthly_type]:checked', form).val();
             switch (monthly_type) {
             
             case 'DAY_OF_MONTH':
-                day = $('select[name=' + conf.field.monthly_day_of_month_day_name + ']', form).val();
-                interval = $('input[name=' + conf.field.monthly_day_of_month_interval_name + ']', form).val();
+                day = $('select[name=recurrenceinput_monthly_day_of_month_day]', form).val();
+                interval = $('input[name=recurrenceinput_monthly_day_of_month_interval]', form).val();
                 result += ';BYMONTHDAY=' + day;
                 result += ';INTERVAL=' + interval;                        
                 human += ', ' + conf.i18n.monthly_day_of_month_1 + ' ' + day + ' ' + conf.i18n.monthly_day_of_month_2;
@@ -67,9 +67,9 @@ function widget_save_to_rfc2445(form, conf) {
                 }
                 break;
             case 'WEEKDAY_OF_MONTH':
-                index = $('select[name=' + conf.field.monthly_weekday_of_month_index_name + ']', form).val();
-                day = $('select[name=' + conf.field.monthly_weekday_of_month_name + ']', form).val();
-                interval = $('input[name=' + conf.field.monthly_weekday_of_month_interval_name + ']', form).val();
+                index = $('select[name=recurrenceinput_monthly_weekday_of_month_index]', form).val();
+                day = $('select[name=recurrenceinput_monthly_weekday_of_month]', form).val();
+                interval = $('input[name=recurrenceinput_monthly_weekday_of_month_interval]', form).val();
                 if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                     result += ';BYDAY=' + index + day;
                     human += ', ' + conf.i18n.monthly_weekday_of_month_1 + ' ';
@@ -85,21 +85,21 @@ function widget_save_to_rfc2445(form, conf) {
             }
             break;
             
-        case conf.field.yearly_options_name:
-            yearly_type = $('input[name=' + conf.field.yearly_type_name + ']:checked', form).val();
+        case 'recurrenceinput_yearly_options':
+            yearly_type = $('input[name=recurrenceinput_yearly_type]:checked', form).val();
             switch (yearly_type) {
             
             case 'DAY_OF_MONTH':
-                month = $('select[name=' + conf.field.yearly_day_of_month_month_name + ']', form).val();
-                day = $('select[name=' + conf.field.yearly_day_of_month_index_name + ']', form).val();
+                month = $('select[name=recurrenceinput_yearly_day_of_month]', form).val();
+                day = $('select[name=recurrenceinput_yearly_day_of_month_index]', form).val();
                 result += ';BYMONTH=' + month;
                 result += ';BYMONTHDAY=' + day;
                 human += ', ' + conf.i18n.months[month - 1] + ' ' + day;
                 break;
             case 'WEEKDAY_OF_MONTH':
-                index = $('select[name=' + conf.field.yearly_weekday_of_month_index_name + ']', form).val();
-                day = $('select[name=' + conf.field.yearly_weekday_of_month_day_name + ']', form).val();
-                month = $('select[name=' + conf.field.yearly_weekday_of_month_month_name + ']', form).val();
+                index = $('select[name=recurrenceinput_yearly_weekday_of_month_index]', form).val();
+                day = $('select[name=recurrenceinput_yearly_weekday_of_month_day]', form).val();
+                month = $('select[name=recurrenceinput_yearly_weekday_of_month_month]', form).val();
                 result += ';BYMONTH=' + month;
                 if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                     result += ';BYDAY=' + index + day;
@@ -115,19 +115,19 @@ function widget_save_to_rfc2445(form, conf) {
             }
             break;
             
-        case conf.field.range_options_name:
-            var range_type = form.find('input[name=' + conf.field.range_type_name + ']:checked', form).val();
+        case 'recurrenceinput_range_options':
+            var range_type = form.find('input[name=recurrenceinput_range_type]:checked').val();
             switch (range_type) {
             
             case 'BY_OCCURRENCES':
-                occurrences = form.find('input[name=' + conf.field.range_by_occurrences_value_name + ']').val();
+                occurrences = form.find('input[name=recurrenceinput_range_by_occurrences_value]').val();
                 result += ';COUNT=' + occurrences;
                 human += ', ' + conf.i18n.range_by_occurrences_label_1;
                 human += ' ' + occurrences;
                 human += ' ' + conf.i18n.range_by_occurrences_label_2;
                 break;
             case 'BY_END_DATE':
-                field = form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']');
+                field = form.find('input[name=recurrenceinput_range_by_end_date_calendar]');
                 date = field.data('dateinput').getValue('yyyymmdd');
                 result += ';UNTIL=' + date + 'T000000';
                 human += ', ' + conf.i18n.range_by_end_date_label;
@@ -217,7 +217,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
     if (match) {
         rtemplate = conf.rtemplate[match_index];
         // Set the selector:
-        selector = form.find('select[name=' + conf.field.rtemplate_name + ']').val(match_index);
+        selector = form.find('select[name=recurrenceinput_rtemplate]').val(match_index);
     } else {
         for (rtemplate in conf.rtemplate) {
             if (conf.rtemplate.hasOwnProperty(rtemplate)) {
@@ -232,39 +232,39 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         field = form.find('#' + rtemplate.fields[i]);
         switch (field.attr('id')) {
         
-        case conf.field.daily_interval_name:
-            field.find('input[name=' + conf.field.daily_interval_name + ']').val(interval);
+        case 'recurrenceinput_daily_interval':
+            field.find('input[name=recurrenceinput_daily_interval]').val(interval);
             break;
             
-        case conf.field.weekly_interval_name:
-            field.find('input[name=' + conf.field.weekly_interval_name + ']').val(interval);
+        case 'recurrenceinput_weekly_interval':
+            field.find('input[name=recurrenceinput_weekly_interval]').val(interval);
             break;
             
-        case conf.field.weekly_weekdays_name:
+        case 'recurrenceinput_weekly_weekdays':
             for (d = 0; d < conf.weekdays.length; d++) {
                 day = conf.weekdays[d];
-                input = field.find('input[name=' + conf.field.weekly_weekdays_name + '_' + day + ']');
+                input = field.find('input[name=recurrenceinput_weekly_weekdays_' + day + ']');
                 input.attr('checked', byday.indexOf(day) !== -1);
             }
             break;
             
-        case conf.field.monthly_options_name:
-            var monthly_type = conf.field.monthly_day_of_month_value; // Default to using BYMONTHDAY
+        case 'recurrenceinput_monthly_options':
+            var monthly_type ='DAY_OF_MONTH'; // Default to using BYMONTHDAY
             
             if (bymonthday) {
-                monthly_type = conf.field.monthly_day_of_month_value;
+                monthly_type = 'DAY_OF_MONTH';
                 if (bymonthday.indexOf(',') !== -1) {
                     // No support for multiple days in one month
                     unsupported_features = true;
                     // Just keep the first
                     bymonthday = bymonthday.split(",")[0];
                 }
-                field.find('select[name=' + conf.field.monthly_day_of_month_day_name + ']').val(bymonthday);
-                field.find('input[name=' + conf.field.monthly_day_of_month_interval_name + ']').val(interval);
+                field.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(bymonthday);
+                field.find('input[name=recurrenceinput_monthly_day_of_month_interval]').val(interval);
             }
 
             if (byday) {
-                monthly_type = conf.field.monthly_weekday_of_month_value;
+                monthly_type = 'WEEKDAY_OF_MONTH';
                 
                 if (byday.indexOf(',') !== -1) {
                     // No support for multiple days in one month
@@ -273,34 +273,34 @@ function widget_load_from_rfc2445(form, conf, rrule) {
                 }
                 index = byday.slice(0, -2);
                 weekday = byday.slice(-2);
-                field.find('select[name=' + conf.field.monthly_weekday_of_month_index_name + ']').val(index);
-                field.find('select[name=' + conf.field.monthly_weekday_of_month_name + ']').val(weekday);
-                field.find('input[name=' + conf.field.monthly_weekday_of_month_interval_name + ']').val(interval);
+                field.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val(index);
+                field.find('select[name=recurrenceinput_monthly_weekday_of_month]').val(weekday);
+                field.find('input[name=recurrenceinput_monthly_weekday_of_month_interval]').val(interval);
             }
             
-            selectors = field.find('input[name=' + conf.field.monthly_type_name + ']');
+            selectors = field.find('input[name=recurrenceinput_monthly_type]');
             for (index = 0; index < selectors.length; index++) {
                 radiobutton = selectors[index];
                 $(radiobutton).attr('checked', radiobutton.value === monthly_type);
             }
             break;
 
-        case conf.field.yearly_options_name:
-            var yearly_type = conf.field.yearly_day_of_month_value; // Default to using BYMONTHDAY
+        case 'recurrenceinput_yearly_options':
+            var yearly_type = 'DAY_OF_MONTH'; // Default to using BYMONTHDAY
             
             if (bymonthday) {
-                yearly_type = conf.field.yearly_day_of_month_value;
+                yearly_type = 'DAY_OF_MONTH';
                 if (bymonthday.indexOf(',') !== -1) {
                     // No support for multiple days in one month
                     unsupported_features = true;
                     bymonthday = bymonthday.split(",")[0];
                 }
-                field.find('select[name=' + conf.field.yearly_day_of_month_month_name + ']').val(bymonth);                    
-                field.find('select[name=' + conf.field.yearly_day_of_month_index_name + ']').val(bymonthday);                    
+                field.find('select[name=recurrenceinput_yearly_day_of_month]').val(bymonth);                    
+                field.find('select[name=recurrenceinput_yearly_day_of_month_index]').val(bymonthday);                    
             }
 
             if (byday) {
-                yearly_type = conf.field.yearly_weekday_of_month_value;
+                yearly_type = 'WEEKDAY_OF_MONTH';
                 
                 if (byday.indexOf(',') !== -1) {
                     // No support for multiple days in one month
@@ -309,29 +309,29 @@ function widget_load_from_rfc2445(form, conf, rrule) {
                 }
                 index = byday.slice(0, -2);
                 weekday = byday.slice(-2);
-                field.find('select[name=' + conf.field.yearly_weekday_of_month_index_name + ']').val(index);
-                field.find('select[name=' + conf.field.yearly_weekday_of_month_day_name + ']').val(weekday);
-                field.find('select[name=' + conf.field.yearly_weekday_of_month_month_name + ']').val(bymonth);
+                field.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(index);
+                field.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(weekday);
+                field.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(bymonth);
             }
             
-            selectors = field.find('input[name=' + conf.field.yearly_type_name + ']');
+            selectors = field.find('input[name=recurrenceinput_yearly_type]');
             for (index = 0; index < selectors.length; index++) {
                 radiobutton = selectors[index];
                 $(radiobutton).attr('checked', radiobutton.value === yearly_type);
             }
             break;
             
-        case conf.field.range_options_name:
-            var range_type = conf.field.range_no_end;
+        case 'recurrenceinput_range_options':
+            var range_type = 'NO_END_DATE';
             
             if (count) {
-                range_type = conf.field.range_by_occurrences;
-                field.find('input[name=' + conf.field.range_by_occurrences_value_name + ']').val(count);
+                range_type = 'BY_OCCURRENCES';
+                field.find('input[name=recurrenceinput_range_by_occurrences_value]').val(count);
             }
             
             if (until) {
-                range_type = conf.field.range_by_end_date;
-                input = field.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']');
+                range_type = 'BY_END_DATE';
+                input = field.find('input[name=recurrenceinput_range_by_end_date_calendar]');
                 year = until.slice(0, 4);
                 month = until.slice(4, 6);
                 if (month[0] === '0') {
@@ -342,7 +342,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
                 input.data('dateinput').setValue(year, month, day);
             }
             
-            selectors = field.find('input[name=' + conf.field.range_type_name + ']');
+            selectors = field.find('input[name=recurrenceinput_range_type]');
             for (index = 0; index <  selectors.length; index++) {
                 radiobutton = selectors[index];
                 $(radiobutton).attr('checked', radiobutton.value === range_type);
@@ -391,29 +391,29 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             if (rfc2445) {
                 widget_load_from_rfc2445(form, conf, rfc2445);
                 // check checkbox
-                display.find('input[name=' + conf.field.checkbox_name + ']')
+                display.find('input[name=recurrenceinput_checkbox]')
                     .attr('checked', true);
             }
             
-            selector = form.find('select[name=' + conf.field.rtemplate_name + ']');
+            selector = form.find('select[name=recurrenceinput_rtemplate]');
             display_fields(selector);            
         }
         
         function recurrenceOn() {
             var RFC2554 = widget_save_to_rfc2445(form, conf);
-            var label = display.find('label[class=' + conf.klass.display_label + ']');
+            var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_activate + ' ' + RFC2554.description);
             textarea.val(RFC2554.result);
         }
 
         function recurrenceOff() {
-            var label = display.find('label[class=' + conf.klass.display_label + ']');
+            var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_unactivate);
             textarea.val('');
         }
 
         function toggleRecurrence(e) {
-            var checkbox = display.find('input[name=' + conf.field.checkbox_name + ']');
+            var checkbox = display.find('input[name=recurrenceinput_checkbox]');
             if (checkbox.is(':checked')) {
                 recurrenceOn();
             } else {
@@ -426,7 +426,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             // close overlay
             form.overlay().close();
             // check checkbox
-            display.find('input[name=' + conf.field.checkbox_name + ']')
+            display.find('input[name=recurrenceinput_checkbox]')
                 .attr('checked', true);
             recurrenceOn();
         }
@@ -479,7 +479,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         form.overlay().hide();
         
         // Make the date input into a calendar dateinput()
-        form.find('input[name=' + conf.field.range_by_end_date_calendar_name + ']').dateinput({
+        form.find('input[name=recurrenceinput_range_by_end_date_calendar]').dateinput({
             selectors: true,
             format: conf.i18n.short_date_format
         });
@@ -495,10 +495,10 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         */
         
         // When you click on the checkbox, recurrence should toggle on/off.
-        display.find('input[name=' + conf.field.checkbox_name + ']').click(toggleRecurrence);
+        display.find('input[name=recurrenceinput_checkbox]').click(toggleRecurrence);
 
         // Show form overlay when you click on the "Edit..." link
-        display.find('a[name=' + conf.field.edit_name + ']').click(
+        display.find('a[name=recurrenceinput_edit]').click(
             function (e) {
                 e.preventDefault();
                 form.overlay().load();
@@ -506,7 +506,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         );
 
                 
-        form.find('select[name=' + conf.field.rtemplate_name + ']').change(
+        form.find('select[name=recurrenceinput_rtemplate]').change(
             function (e) {
                 display_fields($(this));
             }
@@ -524,8 +524,8 @@ function widget_load_from_rfc2445(form, conf, rrule) {
             loadData: loadData
         });
 
-        form.find('.' + conf.klass.save_button).click(save);
-        form.find('.' + conf.klass.cancel_button).click(cancel);
+        form.find('.recurrenceinput_cancel_button').click(cancel);
+        form.find('.recurrenceinput_save_button').click(save);
     }
 
 
@@ -548,7 +548,7 @@ function widget_load_from_rfc2445(form, conf, rrule) {
         
         if (this.val()) {
             recurrenceinput.display.find(
-                'input[name=' + conf.field.checkbox_name + ']'
+                'input[name=recurrenceinput_checkbox]'
             ).attr('checked', true);
         }
         

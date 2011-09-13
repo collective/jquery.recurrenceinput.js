@@ -79,75 +79,12 @@ var default_conf = {
     order_indexes: ['+1', '+2', '+3', '+4', '-1'],
     weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'],
 
-    // FIELD VALUES
-    field: {
-        display_text: null,
-
-        checkbox_name: basename + '_checkbox',
-        edit_name: basename + '_button',
-        
-        rtemplate_name: basename + '_rtemplate',
-        
-        daily_interval_name: basename + '_daily_interval',
-        daily_interval_value: '1',
-
-        weekly_interval_name: basename + '_weekly_interval',
-        weekly_interval_value: '1',
-        weekly_weekdays_name: basename + '_weekly_weekdays',
-
-        monthly_options_name: basename + '_monthly_options',
-        monthly_type_name: basename + '_monthly_type',
-        monthly_day_of_month_value: 'DAY_OF_MONTH',
-        monthly_day_of_month_day_name: basename + '_monthly_day_of_month_day_name',
-        monthly_day_of_month_interval_name: basename + '_monthly_day_of_month_interval',
-        monthly_day_of_month_interval_value: '1',
-        monthly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
-        monthly_weekday_of_month_index_name: basename + '_monthly_weekday_of_month_index',
-        monthly_weekday_of_month_name: basename + '_monthly_weekday_of_month',
-        monthly_weekday_of_month_interval_name: basename + '_monthly_weekday_of_month_interval',
-        monthly_weekday_of_month_interval_value: '1',
-
-        yearly_options_name: basename + '_yearly_options',
-        yearly_type_name: basename + '_yearly_type',
-        yearly_day_of_month_month_name: basename + '_yearly_day_of_month',
-        yearly_day_of_month_index_name: basename + '_yearly_day_of_month_index',
-        yearly_day_of_month_value: 'DAY_OF_MONTH',
-        yearly_weekday_of_month_index_name: basename + '_yearly_weekday_of_month_index',
-        yearly_weekday_of_month_day_name: basename + '_yearly_weekday_of_month_day',
-        yearly_weekday_of_month_month_name: basename + '_yearly_weekday_of_month_month',
-        yearly_weekday_of_month_value: 'WEEKDAY_OF_MONTH',
-
-        range_options_name: basename + '_range_options',
-        range_type_name: basename + '_range_type',
-        range_no_end: 'NO_END_DATE',
-        range_by_occurrences: 'BY_OCCURRENCES',
-        range_by_occurrences_value_name: basename + '_range_by_occurrences_value',
-        range_by_occurrences_value: '10',
-        range_by_end_date: 'BY_END_DATE',
-        range_by_end_date_calendar_name: basename + '_range_by_end_date_calendar'
-    },
-
     // TEMPLATE NAMES
     template: {
         form: '#jquery-recurrenceinput-form-tmpl',
         display: '#jquery-recurrenceinput-display-tmpl'
     },
 
-    // CLASS NAMES
-    klass: {
-        main: basename + '_main',
-
-        display: basename + '_display',
-        display_text: basename + '_display_text',
-        display_label: basename + '_display_label',
-
-        form: basename + '_form',
-
-        cancel_button: basename + '_cancel_button',
-        save_button: basename + '_save_button'
-        
-    }
-    
 };
 
 // RECURRENCE TEMPLATES
@@ -157,47 +94,47 @@ var rtemplate = {
         title: 'Daily',
         rrule: 'FREQ=DAILY',
         fields: [
-            default_conf.field.daily_interval_name,
-            default_conf.field.range_options_name
+            'recurrenceinput_daily_interval',
+            'recurrenceinput_range_options'
         ]
     },
     mondayfriday: {
         title: 'Mondays and Fridays',
         rrule: 'FREQ=WEEKLY;BYDAY=MO,FR',
         fields: [
-            default_conf.field.range_options_name
+            'recurrenceinput_range_options'
         ]
     },
     weekdays: {
         title: 'Weekdays',
         rrule: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
         fields: [
-            default_conf.field.range_options_name
+            'recurrenceinput_range_options'
         ]
     },
     weekly: {
         title: 'Weekly',
         rrule: 'FREQ=WEEKLY',
         fields: [
-            default_conf.field.weekly_interval_name,
-            default_conf.field.weekly_weekdays_name,
-            default_conf.field.range_options_name
+            'recurrenceinput_weekly_interval',
+            'recurrenceinput_weekly_weekdays',
+            'recurrenceinput_range_options'
         ]
     },
     monthly: {
         title: 'Monthly',
         rrule: 'FREQ=MONTHLY',
         fields: [
-            default_conf.field.monthly_options_name,
-            default_conf.field.range_options_name
+            'recurrenceinput_monthly_options',
+            'recurrenceinput_range_options'
         ]
     },
     yearly: {
         title: 'Yearly',
         rrule: 'FREQ=YEARLY',
         fields: [
-            default_conf.field.yearly_options_name,
-            default_conf.field.range_options_name
+            'recurrenceinput_yearly_options',
+            'recurrenceinput_range_options'
         ]
     }
     
