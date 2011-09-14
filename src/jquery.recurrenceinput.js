@@ -154,7 +154,7 @@
         var value = form.find('select[name=recurrenceinput_rtemplate]').val();
         var rtemplate = conf.rtemplate[value];
         var result = rtemplate.rrule;
-        var human = rtemplate.title;
+        var human = conf.i18n.rtemplate[value];
         var field, input, weekdays, i18nweekdays, i, j, index;
         var day, month, interval, yearly_type, occurrences, date;
         
@@ -580,7 +580,6 @@
             recurrenceOn();
         }
 
-
         function cancel(event) {
             event.preventDefault();
             // close overlay
@@ -661,20 +660,20 @@
             }
         );
         
-
+	// Save and cancel methods:
+        form.find('.recurrenceinput_cancel_button').click(cancel);
+        form.find('.recurrenceinput_save_button').click(save);
+	
         /*
          * Public API of RecurrenceInput
          */
+	 
         $.extend(self, {
             display: display,
             form: form,
-            cancel: cancel,
-            save: save,
-            loadData: loadData
+            loadData: loadData //Used by tests.
         });
 
-        form.find('.recurrenceinput_cancel_button').click(cancel);
-        form.find('.recurrenceinput_save_button').click(save);
     }
 
 
