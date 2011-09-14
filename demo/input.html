@@ -43,14 +43,77 @@
 
     <h2>With data in the textarea</h2>
     
-    <!-- Make a text area for the RRULE, which also works as a
-         non-javascript fallback -->
+    <!-- This also works as a test that both empty (above) and non-empty works -->
     <textarea name="repeat2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
-    <!-- Make the text area a recurrenceinput -->
     <script type="text/javascript">
         $("textarea[name=repeat2]").recurrenceinput();
     </script>
 
+    <h2>Translated to Swedish</h2>
+    
+    <!-- This also works as a test that both empty (above) and non-empty works -->
+    <textarea name="swedish"></textarea>
+    <script type="text/javascript">
+        $.tools.recurrenceinput.localize("sv", {
+            display_label_unactivate: '&Aring;terkommer inte',
+            display_label_activate: '&Aring;terkommer',
+            
+            recurrence_type: 'Typ av &aring;terkomst:',
+    
+            daily_interval_1: 'Varje',
+            daily_interval_2: 'dag(ar)',
+    
+            weekly_interval_1: 'Varje',
+            weekly_interval_2: 'vecka/veckor',
+            weekly_weekdays: 'P&aring;:',
+    
+            monthly_day_of_month_1: 'Den',
+            monthly_day_of_month_2: 'dagen i m&aring;naden',
+            monthly_day_of_month_3: ', var',
+            monthly_day_of_month_4: 'm&aring;nad',
+            monthly_weekday_of_month_1: '',
+            monthly_weekday_of_month_2: '',
+            monthly_weekday_of_month_3: ', varje',
+            monthly_weekday_of_month_4: 'm&aring;nad',
+    
+            yearly_day_of_month_1: 'Varje',
+            yearly_day_of_month_2: '',
+            yearly_day_of_month_3: '',
+            yearly_weekday_of_month_1: '',
+            yearly_weekday_of_month_2: '',
+            yearly_weekday_of_month_3: '',
+            yearly_weekday_of_month_4: '',
+            
+            range_label: '&Aring;terkomsten stoppar:',
+            range_no_end_label: 'Inte',
+            range_by_occurrences_label_1: 'Stoppar efter',
+            range_by_occurrences_label_2: '&aring;terkomster',
+            range_by_end_date_label: 'Till och med',
+    
+            cancel_button_label: 'Avbryt',        
+            save_button_label: 'Spara',
+    
+            order_indexes: ['F&ouml;rsta', 'Andra', 'Tredje', 'Fj&auml;rde', 'Sista'],
+            months: [
+                'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
+                'Juli', 'Augusti', 'September', 'October', 'November', 'December'],
+            weekdays: [
+                'M&aring;ndag', 'Tisdag', 'Onsdag', 'Torsdag',
+                'Fredag', 'L&ouml;rdag', 'S&ouml;ndag'],
+                
+            long_date_format: 'dd mmmm yyyy',
+            short_date_format: 'yyyy-mm-dd',
+                
+            no_template_match: 'Varning: Denna h&auml;ndelse anv&auml;nder funktionalitet ' +
+                               'som denna dialog inte st&ouml;djer. Om du sparar kan ' +
+                               'detta &auml;ndra n&auml;r h&auml;ndelsen &aring;terkommer.'
+
+        });
+
+        $("textarea[name=swedish]").recurrenceinput('sv');
+    </script>
+
+    
     <!-- Not yet implemented 
     <h2>Setup with connected start and end fields</h2>
     

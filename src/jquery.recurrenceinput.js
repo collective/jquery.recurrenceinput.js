@@ -675,7 +675,7 @@
     /*
      * jQuery plugin implementation
      */
-    $.fn.recurrenceinput = function (conf, lang) {
+    $.fn.recurrenceinput = function (lang, conf) {
         if (this.data('recurrenceinput')) {
             // plugin already installed
             return this.data('recurrenceinput'); 
