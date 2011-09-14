@@ -9,7 +9,10 @@
     var LABELS = {};
     
     tool = $.tools.recurrenceinput = {
-        conf: { 
+        conf: {
+        
+	    lang: 'en',
+        
             // FORM OVERLAY
             form_overlay: {
                 speed: 'fast',
@@ -675,23 +678,19 @@
     /*
      * jQuery plugin implementation
      */
-    $.fn.recurrenceinput = function (lang, conf) {
+    $.fn.recurrenceinput = function (conf) {
         if (this.data('recurrenceinput')) {
             // plugin already installed
             return this.data('recurrenceinput'); 
         }
+	
         // "compile" configuration for widget
-        conf = $.extend(tool.conf, conf);
-
-        // Add the selected language:
-        if (lang === undefined) {
-            lang = 'en';
-        }
-        
-        $.extend(conf, {i18n: LABELS[lang]});
+	var config = $.extend({}, tool.conf);
+        $.extend(config, conf);
+        $.extend(config, {i18n: LABELS[config.lang]});
 
         // our recurrenceinput widget instance
-        var recurrenceinput = new RecurrenceInput(conf, this);
+        var recurrenceinput = new RecurrenceInput(config, this);
         // hide textarea and place display_widget after textarea
         recurrenceinput.form.appendTo('body');
         this.after(recurrenceinput.display);

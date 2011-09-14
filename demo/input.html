@@ -54,6 +54,7 @@
     <!-- This also works as a test that both empty (above) and non-empty works -->
     <textarea name="swedish"></textarea>
     <script type="text/javascript">
+        // You set up the translation with the localize method:
         $.tools.recurrenceinput.localize("sv", {
             display_label_unactivate: '\u00C5terkommer inte',
             display_label_activate: '\u00C5terkommer',
@@ -109,11 +110,15 @@
                                'detta \u00E4ndra n\u00E4r h\u00E4ndelsen \u00E5terkommer.'
 
         });
-
-        $("textarea[name=swedish]").recurrenceinput('sv');
+        // You select the language with one of two methods:
+        // Either you set the defauly language in the tool config, which 
+        // will change the language for all subsequent recurrenceinputs:
+        //   $.tools.recurrenceinput.conf.lang = 'sv';
+        // Or you pass it in as a custom config parameter which changes only
+        // this input:
+        $("textarea[name=swedish]").recurrenceinput({lang:'sv'});
     </script>
 
-    
     <!-- Not yet implemented 
     <h2>Setup with connected start and end fields</h2>
     
