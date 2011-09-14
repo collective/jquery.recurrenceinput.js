@@ -148,9 +148,9 @@
 
 
     /**
-     * Parsing RFC2554 from widget
+     * Parsing RFC5545 from widget
      */
-    function widget_save_to_rfc2445(form, conf) {
+    function widget_save_to_rfc5545(form, conf) {
         var value = form.find('select[name=recurrenceinput_rtemplate]').val();
         var rtemplate = conf.rtemplate[value];
         var result = rtemplate.rrule;
@@ -287,7 +287,7 @@
     }
     
     
-    function widget_load_from_rfc2445(form, conf, rrule) {
+    function widget_load_from_rfc5545(form, conf, rrule) {
         var unsupported_features = false;
         var i, matches, match, match_index, rtemplate, d, input, index;
         var selector, selectors, field, radiobutton;
@@ -533,12 +533,12 @@
         }
         
         // Loading (populating) display and form widget with
-        // passed RFC2554 string (data)
-        function loadData(rfc2445) {
+        // passed RFC5545 string (data)
+        function loadData(rfc5545) {
             var selector;
             
-            if (rfc2445) {
-                widget_load_from_rfc2445(form, conf, rfc2445);
+            if (rfc5545) {
+                widget_load_from_rfc5545(form, conf, rfc5545);
                 // check checkbox
                 display.find('input[name=recurrenceinput_checkbox]')
                     .attr('checked', true);
@@ -549,10 +549,10 @@
         }
         
         function recurrenceOn() {
-            var RFC2554 = widget_save_to_rfc2445(form, conf);
+            var RFC5545 = widget_save_to_rfc5545(form, conf);
             var label = display.find('label[class=recurrenceinput_display]');
-            label.text(conf.i18n.display_label_activate + ' ' + RFC2554.description);
-            textarea.val(RFC2554.result);
+            label.text(conf.i18n.display_label_activate + ' ' + RFC5545.description);
+            textarea.val(RFC5545.result);
         }
 
         function recurrenceOff() {
