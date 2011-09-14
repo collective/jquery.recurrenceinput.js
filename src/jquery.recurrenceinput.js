@@ -33,7 +33,6 @@
             // RECURRENCE TEMPLATES
             rtemplate: {
                 daily: {
-                    title: 'Daily',
                     rrule: 'FREQ=DAILY',
                     fields: [
                         'recurrenceinput_daily_interval',
@@ -41,21 +40,18 @@
                     ]
                 },
                 mondayfriday: {
-                    title: 'Mondays and Fridays',
                     rrule: 'FREQ=WEEKLY;BYDAY=MO,FR',
                     fields: [
                         'recurrenceinput_range_options'
                     ]
                 },
                 weekdays: {
-                    title: 'Weekdays',
                     rrule: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
                     fields: [
                         'recurrenceinput_range_options'
                     ]
                 },
                 weekly: {
-                    title: 'Weekly',
                     rrule: 'FREQ=WEEKLY',
                     fields: [
                         'recurrenceinput_weekly_interval',
@@ -64,7 +60,6 @@
                     ]
                 },
                 monthly: {
-                    title: 'Monthly',
                     rrule: 'FREQ=MONTHLY',
                     fields: [
                         'recurrenceinput_monthly_options',
@@ -72,7 +67,6 @@
                     ]
                 },
                 yearly: {
-                    title: 'Yearly',
                     rrule: 'FREQ=YEARLY',
                     fields: [
                         'recurrenceinput_yearly_options',
@@ -140,7 +134,16 @@
             
         no_template_match: 'Warning: This event uses recurrence features not ' +
                            'supported by this widget. Saving the recurrence ' +
-                           'may change the recurrence in unintended ways.'
+                           'may change the recurrence in unintended ways.',
+			   
+	rtemplate: {
+	    daily: 'Daily',
+	    mondayfriday: 'Mondays and Fridays',
+	    weekdays: 'Weekdays',
+	    weekly: 'Weekly',
+	    monthly: 'Monthly',
+	    yearly: 'Yearly',
+	}
     });
 
 

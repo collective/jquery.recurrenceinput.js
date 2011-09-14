@@ -6,7 +6,7 @@
                 <label for="recurrenceinput_rtemplate">${i18n.recurrence_type}</span></label>
                 <select name="recurrenceinput_rtemplate">
                     {{each rtemplate}}
-                        <option value="${$index}">${$value.title}</value>
+                        <option value="${$index}">${i18n.rtemplate[$index]}</value>
                     {{/each}}
                 </select>
             <div>
