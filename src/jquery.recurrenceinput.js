@@ -11,7 +11,7 @@
     tool = $.tools.recurrenceinput = {
         conf: {
         
-	    lang: 'en',
+            lang: 'en',
         
             // FORM OVERLAY
             form_overlay: {
@@ -78,6 +78,16 @@
         
         localize: function (language, labels) {
             LABELS[language] = labels;        
+        },
+        
+        setTemplates: function (templates, titles) {
+            var lang;
+            tool.conf.rtemplate = templates;
+            for (lang in titles) {
+                if (titles.hasOwnProperty(lang)) {
+                    LABELS[lang].rtemplate = titles[lang];
+                }
+            }
         }
         
     };
@@ -135,15 +145,15 @@
         no_template_match: 'Warning: This event uses recurrence features not ' +
                            'supported by this widget. Saving the recurrence ' +
                            'may change the recurrence in unintended ways.',
-			   
-	rtemplate: {
-	    daily: 'Daily',
-	    mondayfriday: 'Mondays and Fridays',
-	    weekdays: 'Weekdays',
-	    weekly: 'Weekly',
-	    monthly: 'Monthly',
-	    yearly: 'Yearly',
-	}
+                           
+        rtemplate: {
+            daily: 'Daily',
+            mondayfriday: 'Mondays and Fridays',
+            weekdays: 'Weekdays',
+            weekly: 'Weekly',
+            monthly: 'Monthly',
+            yearly: 'Yearly'
+        }
     });
 
 
@@ -379,7 +389,7 @@
             
             case 'recurrenceinput_daily_interval':
                 field.find('input[name=recurrenceinput_daily_interval]').val(interval);
-                break;
+                break;  
                 
             case 'recurrenceinput_weekly_interval':
                 field.find('input[name=recurrenceinput_weekly_interval]').val(interval);
@@ -660,14 +670,14 @@
             }
         );
         
-	// Save and cancel methods:
+        // Save and cancel methods:
         form.find('.recurrenceinput_cancel_button').click(cancel);
         form.find('.recurrenceinput_save_button').click(save);
-	
+        
         /*
          * Public API of RecurrenceInput
          */
-	 
+         
         $.extend(self, {
             display: display,
             form: form,
@@ -685,9 +695,9 @@
             // plugin already installed
             return this.data('recurrenceinput'); 
         }
-	
+        
         // "compile" configuration for widget
-	var config = $.extend({}, tool.conf);
+        var config = $.extend({}, tool.conf);
         $.extend(config, conf);
         $.extend(config, {i18n: LABELS[config.lang]});
 
