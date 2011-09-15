@@ -14,10 +14,6 @@ To Do
 
 High priority:
 
-* We need parameters to specify start and end widgets.
-* When start widget is specified, the day of month and similar parameters
-  should be automatically calculated, filled in and made read only.
-* Make more examples in the demo.html: i18n, templates etc.
 * Coverage running, and extend tests to 100%.
 
 Medium priority:

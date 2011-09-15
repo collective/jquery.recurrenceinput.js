@@ -11,8 +11,8 @@
     <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
     <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.5.js"></script>
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
-    <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.display.html" ></script>
-    <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.form.html" ></script>
+    <script id="jquery-recurrenceinput-display-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.display.js" ></script>
+    <script id="jquery-recurrenceinput-form-tmpl" type="text/x-jquery-tmpl" src="../src/jquery.recurrenceinput.form.js" ></script>
 </head>
 
 <body>
@@ -47,6 +47,25 @@
     <textarea name="repeat2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
     <script type="text/javascript">
         $("textarea[name=repeat2]").recurrenceinput();
+    </script>
+    
+    <h2>Setup with connected start and end fields</h2>
+    
+    <div class="fieldname_start">
+        <label>Start:</label>
+        <input id="connected_start" type="date" />
+    </div>
+    <div class="fieldname_end">
+        <label>End:</label>
+        <input id="connected_end" type="date" />
+    </div>
+    <script type="text/javascript">
+      $(':date').dateinput();
+    </script>
+    
+    <textarea name="connected"></textarea>
+    <script type="text/javascript">
+        $("textarea[name=connected]").recurrenceinput({startField: "connected_start"});
     </script>
 
     <h2>Translated to Swedish</h2>
@@ -173,54 +192,6 @@
         $("textarea[name=custom_en]").recurrenceinput();
         $("textarea[name=custom_sv]").recurrenceinput({lang:'sv'});
     </script>
-
-    <!-- Not yet implemented 
-    <h2>Setup with connected start and end fields</h2>
-    
-    <form action="." method="get">
-    
-        <div class="field">
-            <div class="fieldname_start">
-                <label>Start:</label>
-                <input type="date" />
-            </div>
-            <div class="fieldname_end">
-                <label>End:</label>
-                <input type="date" />
-            </div>
-            <script type="text/javascript">
-              $(':date').dateinput();
-            </script>
-            <div class="fieldname_all_day">
-                <input type="checkbox" name="all_day" />
-                <label>All Day</label>
-            </div>
-            <script type="text/javascript">
-                $('div.fieldname_all_day > label').click(function() {
-                    var input = $(this).parent().find('input');
-                    input.click(); input.change();
-                });
-                $('input[name=all_day]').change(function(e) {
-                    if ($(this).is(':checked')) { $('span.time').hide(); }
-                    else { $('span.time').show(); }
-                });
-            </script>
-        </div>
-    
-        <div class="field fieldname_repeat">
-            <textarea name="repeat"></textarea>
-            <script type="text/javascript">
-                $("textarea[name=repeat]").recurrenceinput();
-            </script>
-        </div>
-
-        <div class="buttons">
-            <input type="submit" name="" value="Submit" />
-        </div>
-
-    </form>
-    
-    -->
 
     
 </body>

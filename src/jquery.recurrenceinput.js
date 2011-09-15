@@ -12,6 +12,9 @@
         conf: {
         
             lang: 'en',
+            
+            // "REMOTE" FIELD
+            startField: null,
         
             // FORM OVERLAY
             form_overlay: {
@@ -545,7 +548,44 @@
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
-            var selector;
+            var selector, format, start_date, dayindex, day;
+
+            // Find the default byday and bymonthday from the start date, if any:
+            if (conf.startField) {
+                // Se if it is a field already
+                start_field = $(conf.startField);
+                if (!start_field.length) {
+                    // Otherwise, we assume it's an id:
+                    start_field = $('input[id=' + conf.startField + ']');
+                }
+                
+                // Now we have a field, see if it is a dateinput field:
+                start_date = start_field.data('dateinput');
+                if (start_date === null) {
+                    //No, it wasn't, just try to interpret it with Date()
+                    start_date = start_field.val();
+                } else {
+                    // Yes it was, get the date:
+                    start_date = start_date.getValue();
+                }
+                start_date = new Date(start_date);
+            }
+            
+            // If the date is a real date, set the defaults in the form
+            if (!isNaN(start_date)) {
+                form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(start_date.getDate());
+                dayindex = conf.order_indexes[Math.floor((start_date.getDate()-1)/7)]
+                day = conf.weekdays[start_date.getDay()-1]
+                form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val(dayindex);
+                form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val(day);
+
+                form.find('select[name=recurrenceinput_yearly_day_of_month]').val(start_date.getMonth()+1);
+                form.find('select[name=recurrenceinput_yearly_day_of_month_index]').val(start_date.getDate());                    
+                form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(dayindex);
+                form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(day);
+                form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth()+1);
+            }
+            
             
             if (rfc5545) {
                 widget_load_from_rfc5545(form, conf, rfc5545);
@@ -642,8 +682,6 @@
             format: conf.i18n.short_date_format
         });
 
-        // Load the form.
-        loadData(textarea.val());
         if (textarea.val()) {
             recurrenceOn();
         }
@@ -658,6 +696,8 @@
         // Show form overlay when you click on the "Edit..." link
         display.find('a[name=recurrenceinput_edit]').click(
             function (e) {
+                // Load the form to set up the right fields to show, etc.
+                loadData(textarea.val());
                 e.preventDefault();
                 form.overlay().load();
             }
