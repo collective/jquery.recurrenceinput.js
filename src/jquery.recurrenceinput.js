@@ -743,7 +743,7 @@
         // "compile" configuration for widget
         var config = $.extend({}, tool.conf);
         $.extend(config, conf);
-        $.extend(config, {i18n: LABELS[config.lang]});
+        $.extend(config, {i18n: LABELS[config.lang], name: this.attr('name')});
 
         // our recurrenceinput widget instance
         var recurrenceinput = new RecurrenceInput(config, this);
