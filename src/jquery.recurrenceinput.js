@@ -102,6 +102,7 @@
     tool.localize("en", {
         display_label_unactivate: 'Does not repeat',
         display_label_activate: 'Repeats ',
+        edit: 'Edit...',
         
         recurrence_type: 'Recurrence type:',
 
