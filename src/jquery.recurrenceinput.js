@@ -84,7 +84,7 @@
         },
         
         setTemplates: function (templates, titles) {
-            var lang;
+            var lang, template;
             tool.conf.rtemplate = templates;
             for (lang in titles) {
                 if (titles.hasOwnProperty(lang)) {
@@ -552,7 +552,7 @@
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
-            var selector, format, start_date, dayindex, day;
+            var selector, format, start_field, start_date, dayindex, day;
 
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
@@ -578,16 +578,16 @@
             // If the date is a real date, set the defaults in the form
             if (!isNaN(start_date)) {
                 form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(start_date.getDate());
-                dayindex = conf.order_indexes[Math.floor((start_date.getDate()-1)/7)]
-                day = conf.weekdays[start_date.getDay()-1]
+                dayindex = conf.order_indexes[Math.floor((start_date.getDate() - 1) / 7)];
+                day = conf.weekdays[start_date.getDay() - 1];
                 form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val(dayindex);
                 form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val(day);
 
-                form.find('select[name=recurrenceinput_yearly_day_of_month]').val(start_date.getMonth()+1);
+                form.find('select[name=recurrenceinput_yearly_day_of_month]').val(start_date.getMonth() + 1);
                 form.find('select[name=recurrenceinput_yearly_day_of_month_index]').val(start_date.getDate());                    
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(dayindex);
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(day);
-                form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth()+1);
+                form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
             }
             
             
