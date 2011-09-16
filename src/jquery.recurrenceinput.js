@@ -707,14 +707,23 @@
             }
         );
 
-                
+        // When selecting template, update what fieldsets are visible.
         form.find('select[name=recurrenceinput_rtemplate]').change(
             function (e) {
                 display_fields($(this));
             }
         );
+
+        // When focus goes to a drop-down, select the relevant radiobutton.
+        form.find('select').change(
+            function (e) {
+                $(this).parent().find('> input').click().change();
+            }
+        );
         
-        // Save and cancel methods:
+        /*
+          Save and cancel methods:
+        */
         form.find('.recurrenceinput_cancel_button').click(cancel);
         form.find('.recurrenceinput_save_button').click(save);
         
