@@ -88,7 +88,11 @@
             tool.conf.rtemplate = templates;
             for (lang in titles) {
                 if (titles.hasOwnProperty(lang)) {
-                    LABELS[lang].rtemplate = titles[lang];
+                    for (template in titles[lang]) {
+                        if (titles[lang].hasOwnProperty(template)) {
+                            LABELS[lang].rtemplate[template] = titles[lang][template];
+                        }
+                    }
                 }
             }
         }

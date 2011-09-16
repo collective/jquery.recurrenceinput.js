@@ -151,9 +151,15 @@
     <textarea name="custom_en"></textarea>
     <textarea name="custom_sv"></textarea>
     <script type="text/javascript">
+    
         // When you define up your own templates, you provide two objects,
         // one containing the template definition, and one providing the titles
         // in the languages you are using.
+        // It's notable that the title translation will override the translation
+        // For all templates with that name on the page. So if you have widgets
+        // with different templates on the same page, you should either make
+        // sure they have the same title, or give them different names.
+        
         $.tools.recurrenceinput.setTemplates(
             {
                 daily: {
@@ -192,7 +198,6 @@
         $("textarea[name=custom_en]").recurrenceinput();
         $("textarea[name=custom_sv]").recurrenceinput({lang:'sv'});
     </script>
-
     
 </body>
 
