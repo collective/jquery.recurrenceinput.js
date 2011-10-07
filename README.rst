@@ -27,15 +27,30 @@ Medium priority:
 
 Low priority:
 
-* The X next occurrences + the last occurrence could be displayed in the
-  popup when editing the rule. 
 * Support more obscure RFC options.
 * The human readable output should probably be done directly from the RRULE and
   not by using the form i18n, to improve the grammar and rule support.
+* Make it possible to change the order of the fields as a part of the i18n.
+  (jQuery templates)?
   
 
 Developer information
 ---------------------
+
+To test, demo or develop jquery.recurrenceinput locally you need to run a
+local XML-RPC server, in the test_server.py script.
+
+This server requires the dateutil module, so you must install it first.
+Here are some examples of how to do this, depending on your platform:
+
+Debian/Ubuntu:
+
+    $ sudo apt-get install python-dateutil
+    
+A non-system Python 2 with setuptools or distribute installed:
+
+    $ <pathtopython>/easy_install python-dateutil==1.5
+    
 
 The demo/input.html document contains basic usecases and can be used when
 developing on this widget. For these to work you either need to have them on a
@@ -64,6 +79,7 @@ The following files should be jslinted:
     src/jquery.recurrenceinput.config.js
     src/jquery.recurrenceinput.js
     src/tests.js
+    
   
     
 Contributors
