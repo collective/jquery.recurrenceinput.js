@@ -16,6 +16,7 @@
             
             // "REMOTE" FIELD
             startField: null,
+            ajaxURL: null,
         
             // FORM OVERLAY
             form_overlay: {
@@ -166,6 +167,14 @@
     });
 
 
+    var OCCURRENCE_TMPL = '    <!-- Occurrences -->\
+    {{each occurrences}}\
+        <div>${occurrences[$index]}</div>\
+    {{/each}}\
+    ';
+    
+    $.template('occurrence_tmpl', OCCURRENCE_TMPL)
+    
     /**
      * Parsing RFC5545 from widget
      */
@@ -550,7 +559,30 @@
                 }
             }
         }
-        
+
+        function loadOccurrences(start_date, rfc5545) {
+            if (conf.ajaxURL === null) {
+                return;
+            }
+            
+            $.ajax({
+                url: conf.ajaxURL,
+                async: true,
+                type: 'post',
+                dataType: 'json',
+                data: {year: start_date.getFullYear(),
+                       month: start_date.getMonth()+1, // Sending January as 0? I think not.
+                       day: start_date.getDate(),
+                       rrule: rfc5545},
+                success: function (data, status, jqXHR) {
+                    result = $.tmpl('occurrence_tmpl', data);
+                    occurrence_div = form.find('.recurrenceinput_occurrences');
+                    occurrence_div.append(result);
+                    occurrence_div.show();
+                    
+                },
+            })        
+        }
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
@@ -590,22 +622,9 @@
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(dayindex);
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(day);
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
-                    
-              
+                
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
-                alert(start_date);
-                $.ajax({
-                    url: 'http://localhost:8000/',
-                    async: true, // This should be made async later
-                    type: 'post',
-                    data: {year: start_date.getFullYear(),
-                           month: start_date.getMonth()+1, // Sending January as 0? I think not.
-                           day: start_date.getDate(),
-                           rrule: rfc5545},
-                    success: function (data) {
-                        alert(data);
-                    },
-                })
+                loadOccurrences(start_date, rfc5545);
                                 
             }            
             

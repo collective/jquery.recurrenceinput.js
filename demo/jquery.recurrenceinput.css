@@ -22,3 +22,7 @@ div.recurrenceinput_form input.recurrenceinput_cancel_button {
     height: 30px;
     width: 30px;
 }
+
+div.recurrenceinput_occurrences {
+    display: none; /* Off by default, display when there is something to show */
+}

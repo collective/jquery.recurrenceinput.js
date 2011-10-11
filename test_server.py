@@ -29,7 +29,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             rule = rrule.rrulestr(data['rrule'][0], dtstart=start_date)
             occurrences = [x.strftime('%Y-%m-%d') for x in rule]
         
-        result = json.dumps(occurrences)
+        result = json.dumps({'occurrences': occurrences})
         self.wfile.write(result)
 
 

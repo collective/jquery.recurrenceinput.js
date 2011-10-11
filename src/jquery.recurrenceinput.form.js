@@ -195,7 +195,11 @@
                         name="recurrenceinput_range_by_end_date_calendar" />
                 </div>
             </div>
+            
+            <div class="recurrenceinput_occurrences">
         
+            </div>
+            
             <div class="recurrenceinput_buttons">
                 <input
                     type="submit"

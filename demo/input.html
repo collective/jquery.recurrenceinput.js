@@ -50,6 +50,28 @@
     </script>
 
 
+    <h2>Maximal setup</h2>
+    <p>Has a connected start field and an Ajax server to calculate occurrences.
+    This enables support for EXDATE and RDATE in the rules.</p>
+    
+    <div class="fieldname_start">
+        <label>Start:</label>
+        <input id="connected_start2" type="date" value="2012-12-12" />
+    </div>
+    <div class="fieldname_end">
+        <label>End:</label>
+        <input id="connected_end2" type="date" />
+    </div>
+    <script type="text/javascript">
+      $(':date').dateinput();
+    </script>
+    
+    <textarea name="connected2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <script type="text/javascript">
+        $("textarea[name=connected2]").recurrenceinput({startField: "connected_start2",  ajaxURL: 'http://localhost:8000/'});
+    </script>
+
+    
     <h2>With data in the textarea</h2>
     
     <!-- This also works as a test that both empty (above) and non-empty works -->
@@ -162,25 +184,6 @@
     <textarea name="connected"></textarea>
     <script type="text/javascript">
         $("textarea[name=connected]").recurrenceinput({startField: "connected_start"});
-    </script>
-
-    <h2>Setup with connected start field and Ajax server</h2>
-    
-    <div class="fieldname_start">
-        <label>Start:</label>
-        <input id="connected_start2" type="date" value="2012-12-12" />
-    </div>
-    <div class="fieldname_end">
-        <label>End:</label>
-        <input id="connected_end2" type="date" />
-    </div>
-    <script type="text/javascript">
-      $(':date').dateinput();
-    </script>
-    
-    <textarea name="connected2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
-    <script type="text/javascript">
-        $("textarea[name=connected2]").recurrenceinput({startField: "connected_start2"});
     </script>
 
     <h2>Custom set of recurrence templates</h2>
