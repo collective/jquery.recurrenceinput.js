@@ -66,25 +66,6 @@
         $("textarea[name=repeat3]").recurrenceinput({readOnly: true});
     </script>
     
-    <h2>Setup with connected start and end fields</h2>
-    
-    <div class="fieldname_start">
-        <label>Start:</label>
-        <input id="connected_start" type="date" />
-    </div>
-    <div class="fieldname_end">
-        <label>End:</label>
-        <input id="connected_end" type="date" />
-    </div>
-    <script type="text/javascript">
-      $(':date').dateinput();
-    </script>
-    
-    <textarea name="connected"></textarea>
-    <script type="text/javascript">
-        $("textarea[name=connected]").recurrenceinput({startField: "connected_start"});
-    </script>
-
     <h2>Translated to Swedish</h2>
     
     <textarea name="swedish"></textarea>
@@ -163,6 +144,44 @@
         // this input:
         $("textarea[name=swedish]").recurrenceinput({lang:'sv'});
     </script>
+    
+    <h2>Setup with connected start field</h2>
+    
+    <div class="fieldname_start">
+        <label>Start:</label>
+        <input id="connected_start" type="date" />
+    </div>
+    <div class="fieldname_end">
+        <label>End:</label>
+        <input id="connected_end" type="date" />
+    </div>
+    <script type="text/javascript">
+      $(':date').dateinput();
+    </script>
+    
+    <textarea name="connected"></textarea>
+    <script type="text/javascript">
+        $("textarea[name=connected]").recurrenceinput({startField: "connected_start"});
+    </script>
+
+    <h2>Setup with connected start field and Ajax server</h2>
+    
+    <div class="fieldname_start">
+        <label>Start:</label>
+        <input id="connected_start2" type="date" value="2012-12-12" />
+    </div>
+    <div class="fieldname_end">
+        <label>End:</label>
+        <input id="connected_end2" type="date" />
+    </div>
+    <script type="text/javascript">
+      $(':date').dateinput();
+    </script>
+    
+    <textarea name="connected2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <script type="text/javascript">
+        $("textarea[name=connected2]").recurrenceinput({startField: "connected_start2"});
+    </script>
 
     <h2>Custom set of recurrence templates</h2>
     
@@ -216,8 +235,9 @@
         $("textarea[name=custom_en]").recurrenceinput();
         $("textarea[name=custom_sv]").recurrenceinput({lang:'sv'});
     </script>
-    
+
 </body>
 
 </html>
+
 

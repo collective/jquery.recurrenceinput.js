@@ -3,6 +3,10 @@
 import sys
 import SimpleHTTPServer
 import SocketServer
+import urlparse
+import datetime
+from dateutil import rrule
+import json
 
 if len(sys.argv) > 1:
     port = int(sys.argv[1])
@@ -14,17 +18,21 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         """Handle a post request by returning the square of the number."""
-        import pdb;pdb.set_trace()
-        length = int(self.headers.getheader('content-length'))        
+        occurrences = []
+        length = int(self.headers.getheader('content-length'))
         data_string = self.rfile.read(length)
-        try:
-            result = int(data_string) ** 2
-        except:
-            result = 'error'
+        data = urlparse.parse_qs(data_string)
+        if 'year' in data and 'month' in data and 'day' in data and 'rrule' in data:
+            start_date = datetime.datetime(int(data['year'][0]),
+                                           int(data['month'][0]),
+                                           int(data['day'][0]))
+            rule = rrule.rrulestr(data['rrule'][0], dtstart=start_date)
+            occurrences = [x.strftime('%Y-%m-%d') for x in rule]
+        
+        result = json.dumps(occurrences)
         self.wfile.write(result)
 
 
 httpd = SocketServer.TCPServer(("", port), Handler)
-
 print "serving at port", port
 httpd.serve_forever()
