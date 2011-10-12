@@ -26,3 +26,15 @@ div.recurrenceinput_form input.recurrenceinput_cancel_button {
 div.recurrenceinput_occurrences {
     display: none; /* Off by default, display when there is something to show */
 }
+
+div.recurrenceinput_occurrences span.action {
+    float: right;
+}
+
+div.recurrenceinput_occurrences div.batching {
+    font-size: 70%;
+}
+
+div.recurrenceinput_occurrences span.current {
+    font-weight: bold;
+}

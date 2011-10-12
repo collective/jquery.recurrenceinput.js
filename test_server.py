@@ -14,9 +14,9 @@ if len(sys.argv) > 1:
 else:
     port = 8000
     
-# Translations from dateinput formatting to Python formatting
-import re
+BATCH_DELTA = 3 # How many batches to show before + after current batch
 
+# Translations from dateinput formatting to Python formatting
 DATEFORMAT_XLATE = [
     (re.compile(pattern), replacement) for (pattern, replacement) in (
         ('dddd', '%A'),
@@ -57,16 +57,27 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                                        int(data['day'][0]))
         rule = rrule.rrulestr(data['rrule'][0], dtstart=start_date)
         iterator = iter(rule)
-        #import pdb;pdb.set_trace()
+
+        if 'batch_size' in data:
+            batch_size = int(data['batch_size'][0])
+        else:
+            batch_size = 10        
+            
         if 'start' in data:
-            for x in range(data):
-                try:
-                    iterator.next()
-                except StopIteration:
-                    break
+            start = int(data['start'][0])
+        else:
+            start = 0
+        cur_batch = start // batch_size
+        start = cur_batch * batch_size # Avoid stupid start-values
+        
+        for x in range(start):
+            try:
+                iterator.next()
+            except StopIteration:
+                break
         
         occurrences = []
-        for x in range(10):
+        for x in range(batch_size):
             try:
                 date = iterator.next()
             except StopIteration:
@@ -76,10 +87,42 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                                 'formatted_date': date.strftime(date_format),
                                 'status': 'rule',})
         
-        # TODO: Calculate no of occurrences (unless infinite)
+        # Calculate no of occurrences, but only to a max of three times
+        # the batch size. This will support infinite recurrance in a
+        # useable way, as there will always be more batches.        
+        first_batch = max(0, cur_batch - BATCH_DELTA)
+        last_batch = max(BATCH_DELTA * 2, cur_batch + BATCH_DELTA)
+        maxcount = (batch_size * last_batch) - start
+        
+        num_occurrences = 0
+        while True:
+            try:
+                iterator.next()
+                num_occurrences += 1
+            except StopIteration:
+                break
+            if num_occurrences >= maxcount:
+                break
+        
+        # Total number of occurrences:
+        num_occurrences += batch_size + start
+        
+        max_batch = (num_occurrences - 1)//batch_size
+        if last_batch > max_batch:
+            last_batch = max_batch
+            first_batch = max(0, max_batch - (BATCH_DELTA * 2))
+                
+        batches = [((x * batch_size) + 1, (x + 1) * batch_size) for x in range(first_batch, last_batch + 1)]
+        batch_data = {'start': start,
+                      'end': num_occurrences,
+                      'batch_size': batch_size,
+                      'batches': batches,
+                      'current_batch': cur_batch - first_batch,
+                      }
+                
         # TODO: Add exdates
             
-        result = {'occurrences': occurrences}
+        result = {'occurrences': occurrences, 'batch': batch_data}
         self.wfile.write(json.dumps(result))
 
 

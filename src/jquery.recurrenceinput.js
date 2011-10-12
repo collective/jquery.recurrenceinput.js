@@ -167,10 +167,20 @@
     });
 
 
-    var OCCURRENCE_TMPL = '    <!-- Occurrences -->\
+    var OCCURRENCE_TMPL = '<div class="recurrenceinput_occurrences">\
     {{each occurrences}}\
-        <div>${occurrences[$index].formatted_date}</div>\
+        <div class="occurrence>\
+            <span class="date">${occurrences[$index].formatted_date}</span>\
+            <span class="action">${occurrences[$index].status}</span>\
+        </div>\
     {{/each}}\
+    <div class="batching">\
+        {{each batch.batches}}\
+            {{if $index === batch.current_batch}}<span class="current">{{/if}}\
+                <a href="#" start="${batch.batches[$index][0]}">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>\
+            {{if $index === batch.current_batch}}</span>{{/if}}\
+        {{/each}}\
+    </div></div>\
     ';
     
     $.template('occurrence_tmpl', OCCURRENCE_TMPL)
@@ -560,12 +570,16 @@
             }
         }
 
-        function loadOccurrences(start_date, rfc5545) {
+        function loadOccurrences(start_date, rfc5545, start) {
             var date;
             
             if (conf.ajaxURL === null) {
                 return;
             }
+            
+            occurrence_div = form.find('.recurrenceinput_occurrences');
+            occurrence_div.hide();
+            
             
             $.ajax({
                 url: conf.ajaxURL,
@@ -576,14 +590,25 @@
                        month: start_date.getMonth()+1, // Sending January as 0? I think not.
                        day: start_date.getDate(),
                        rrule: rfc5545,
-                       format: conf.i18n.long_date_format},
+                       format: conf.i18n.long_date_format,
+                       start: start},
                 success: function (data, status, jqXHR) {
                     result = $.tmpl('occurrence_tmpl', data);
                     occurrence_div = form.find('.recurrenceinput_occurrences');
-                    occurrence_div.append(result);
-                    occurrence_div.show();
-                    
+                    occurrence_div.replaceWith(result);
+                    form.find('.recurrenceinput_occurrences .batching a').click(
+                        function (event) {
+                            event.preventDefault();
+                            loadOccurrences(start_date, rfc5545, this.attributes.start.value);
+                            //alert(this.attributes.start.value);
+                        }
+                    );
+                    // Show the new div
+                    form.find('.recurrenceinput_occurrences').show();
                 },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
             })        
         }
         // Loading (populating) display and form widget with
@@ -627,7 +652,7 @@
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
-                loadOccurrences(start_date, rfc5545);
+                loadOccurrences(start_date, rfc5545, 0);
                                 
             }            
             
