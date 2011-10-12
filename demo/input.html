@@ -72,21 +72,14 @@
     </script>
 
     
-    <h2>With data in the textarea</h2>
-    
-    <!-- This also works as a test that both empty (above) and non-empty works -->
-    <textarea name="repeat2">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
-    <script type="text/javascript">
-        $("textarea[name=repeat2]").recurrenceinput();
-    </script>
-    
     <h2>Read only mode</h2>
     
     <!-- This also works as a test that both empty (above) and non-empty works -->
-    <textarea name="repeat3">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <textarea name="repeat3">FREQ=DAILY;INTERVAL=5;COUNT=800</textarea>
     <script type="text/javascript">
         $("textarea[name=repeat3]").recurrenceinput({readOnly: true});
     </script>
+
     
     <h2>Translated to Swedish</h2>
     
@@ -167,24 +160,6 @@
         $("textarea[name=swedish]").recurrenceinput({lang:'sv'});
     </script>
     
-    <h2>Setup with connected start field</h2>
-    
-    <div class="fieldname_start">
-        <label>Start:</label>
-        <input id="connected_start" type="date" />
-    </div>
-    <div class="fieldname_end">
-        <label>End:</label>
-        <input id="connected_end" type="date" />
-    </div>
-    <script type="text/javascript">
-      $(':date').dateinput();
-    </script>
-    
-    <textarea name="connected"></textarea>
-    <script type="text/javascript">
-        $("textarea[name=connected]").recurrenceinput({startField: "connected_start"});
-    </script>
 
     <h2>Custom set of recurrence templates</h2>
     

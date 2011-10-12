@@ -169,7 +169,7 @@
 
     var OCCURRENCE_TMPL = '    <!-- Occurrences -->\
     {{each occurrences}}\
-        <div>${occurrences[$index]}</div>\
+        <div>${occurrences[$index].formatted_date}</div>\
     {{/each}}\
     ';
     
@@ -561,6 +561,8 @@
         }
 
         function loadOccurrences(start_date, rfc5545) {
+            var date;
+            
             if (conf.ajaxURL === null) {
                 return;
             }
@@ -573,7 +575,8 @@
                 data: {year: start_date.getFullYear(),
                        month: start_date.getMonth()+1, // Sending January as 0? I think not.
                        day: start_date.getDate(),
-                       rrule: rfc5545},
+                       rrule: rfc5545,
+                       format: conf.i18n.long_date_format},
                 success: function (data, status, jqXHR) {
                     result = $.tmpl('occurrence_tmpl', data);
                     occurrence_div = form.find('.recurrenceinput_occurrences');
