@@ -66,7 +66,7 @@
       $(':date').dateinput();
     </script>
     
-    <textarea name="connected2">FREQ=DAILY;INTERVAL=5;COUNT=100</textarea>
+    <textarea name="connected2">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=100</textarea>
     <script type="text/javascript">
         $("textarea[name=connected2]").recurrenceinput({startField: "connected_start2",  ajaxURL: document.URL});
     </script>
@@ -75,7 +75,7 @@
     <h2>Read only mode</h2>
     
     <!-- This also works as a test that both empty (above) and non-empty works -->
-    <textarea name="repeat3">FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <textarea name="repeat3">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
     <script type="text/javascript">
         $("textarea[name=repeat3]").recurrenceinput({readOnly: true});
     </script>

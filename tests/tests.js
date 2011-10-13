@@ -28,7 +28,7 @@ test("Daily recurrence with count", function () {
     expect(4);
     // Open the form by clicking on the checkbox.
     var input = $("textarea[name=repeat]").recurrenceinput();
-    input.loadData("FREQ=DAILY;INTERVAL=5;COUNT=8");
+    input.loadData("RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8");
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'daily');
     ok(input.form.find('input[name=recurrenceinput_daily_interval]').val() === '5');
@@ -40,7 +40,7 @@ test("Weekly recurrence with days and end", function () {
     expect(11);
     // Open the form by clicking on the checkbox.
     var input = $("textarea[name=repeat]").recurrenceinput();
-    input.loadData("FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000");
+    input.loadData("RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000");
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'weekly');
     ok(input.form.find('input[name=recurrenceinput_weekly_interval]').val() === '4');
@@ -60,7 +60,7 @@ test("Yearly recurrence without end", function () {
     // Open the form by clicking on the checkbox.
     var input = $("textarea[name=repeat]").recurrenceinput();
     // The second wednesday of April, forevah.
-    input.loadData("FREQ=YEARLY;BYMONTH=3;BYDAY=+2WE");
+    input.loadData("RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=+2WE");
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');

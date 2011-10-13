@@ -10,6 +10,15 @@ div.recurrenceinput_form div {
     padding: 0.3em;
 }
 
+div.recurrenceinput_form form {
+    margin-bottom: 0;
+}
+
+div#recurrenceinput_formfields {
+    height: 13em;
+    width: 25em;
+}
+
 div.recurrenceinput_form input.recurrenceinput_cancel_button {
     background-image: url(pb_close.png);
     background-color: transparent;

@@ -167,7 +167,7 @@
     });
 
 
-    var OCCURRENCE_TMPL = '<div class="recurrenceinput_occurrences">\
+    var OCCURRENCE_TMPL = '<div class="recurrenceinput_occurrences"><hr/>\
         {{each occurrences}}\
             <div class="occurrence>\
                 <span class="date ${occurrences[$index].type}">\
@@ -341,60 +341,90 @@
             }
         }
         
-        return {result: result, description: human};
+        return {result: 'RRULE:' + result, description: human};
+    }
+
+    
+    function parseIcal(icaldata) {
+        var lines = new Array();
+        var result = new Object();
+        var line = '';
+        var nextline, pos;
+        
+        lines = icaldata.split('\n');
+        lines.reverse();
+        while (lines.length != 0) {
+            nextline = lines.pop();
+            if (nextline.charAt(0) === ' ' | nextline.charAt(0) === '\t') {
+                // Line continuation:
+                line = line + nextline;
+            } else {
+                // New line; the current one is finished.
+                if (line !== '') {
+                    pos = line.indexOf(':');
+                    result[line.substring(0, pos)] = line.substring(pos + 1)
+                }
+                line = nextline;
+            }
+        }
+        // And push the last line:
+        pos = line.indexOf(':');
+        result[line.substring(0, pos)] = line.substring(pos + 1)
+        return result;
     }
     
-    
-    function widget_load_from_rfc5545(form, conf, rrule) {
+    function widget_load_from_rfc5545(form, conf, icaldata) {
         var unsupported_features = false;
         var i, matches, match, match_index, rtemplate, d, input, index;
-        var selector, selectors, field, radiobutton;
-        var interval, byday, bymonth, bymonthday, bysetpos, count, until, weekday;
-        var day, month, year;
-    
-        matches = /INTERVAL=([0-9]+);?/.exec(rrule);
+        var selector, selectors, field, radiobutton, start, end;
+        var interval, byday, bymonth, bymonthday, bysetpos, count, until;
+        var day, month, year, weekday, ical;
+
+        ical = parseIcal(icaldata);
+        
+        matches = /INTERVAL=([0-9]+);?/.exec(ical.RRULE);
         if (matches) {
             interval = matches[1];
         } else {
             interval = '1';
         }
     
-        matches = /BYDAY=([^;]+);?/.exec(rrule);
+        matches = /BYDAY=([^;]+);?/.exec(ical.RRULE);
         if (matches) {
             byday = matches[1];
         } else {
             byday = '';
         }
         
-        matches = /BYMONTHDAY=([^;]+);?/.exec(rrule);
+        matches = /BYMONTHDAY=([^;]+);?/.exec(ical.RRULE);
         if (matches) {
             bymonthday = matches[1].split(",");
         } else {
             bymonthday = null;
         }
     
-        matches = /BYMONTH=([^;]+);?/.exec(rrule);
+        matches = /BYMONTH=([^;]+);?/.exec(ical.RRULE);
         if (matches) {
             bymonth = matches[1].split(",");
         } else {
             bymonth = null;
         }
     
-        matches = /BYSETPOS=([^;]+);?/.exec(rrule);
+        matches = /BYSETPOS=([^;]+);?/.exec(ical.RRULE);
         if (matches) {
             bysetpos = matches[1];
         } else {
             bysetpos = null;
         }
         
-        matches = /COUNT=([0-9]+);?/.exec(rrule);
+        matches = /COUNT=([0-9]+);?/.exec(ical.RRULE);
         if (matches) {
             count = matches[1];
         } else {
             count = null;
         }
         
-        matches = /UNTIL=([0-9T]+);?/.exec(rrule);
+        matches = /UNTIL=([0-9T]+);?/.exec(ical.RRULE);
         if (matches) {
             until = matches[1];
         } else {
@@ -407,10 +437,10 @@
         for (i in conf.rtemplate) {
             if (conf.rtemplate.hasOwnProperty(i)) {
                 rtemplate = conf.rtemplate[i];
-                if (rrule.indexOf(rtemplate.rrule) === 0) {
-                    if (rrule.length > match.length) {
+                if (ical.RRULE.indexOf(rtemplate.rrule) === 0) {
+                    if (ical.RRULE.length > match.length) {
                         // This is the best match so far
-                        match = rrule;
+                        match = ical.RRULE;
                         match_index = i;
                     }
                 }  
