@@ -168,20 +168,40 @@
 
 
     var OCCURRENCE_TMPL = '<div class="recurrenceinput_occurrences">\
-    {{each occurrences}}\
-        <div class="occurrence>\
-            <span class="date">${occurrences[$index].formatted_date}</span>\
-            <span class="action">${occurrences[$index].status}</span>\
-        </div>\
-    {{/each}}\
-    <div class="batching">\
-        {{each batch.batches}}\
-            {{if $index === batch.current_batch}}<span class="current">{{/if}}\
-                <a href="#" start="${batch.batches[$index][0]}">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>\
-            {{if $index === batch.current_batch}}</span>{{/if}}\
+        {{each occurrences}}\
+            <div class="occurrence>\
+                <span class="date ${occurrences[$index].type}">\
+                    ${occurrences[$index].formatted_date}\
+                </span>\
+                <span class="action">\
+                    {{if occurrences[$index].type === "rrule"}}\
+                        <a date="${occurrences[$index].date}" href="#"\
+                           class="${occurrences[$index].type}" >\
+                            Exclude\
+                        </a>\
+                    {{/if}}\
+                    {{if occurrences[$index].type === "exdate"}}\
+                        <a date="${occurrences[$index].date}" href="#"\
+                           class="${occurrences[$index].type}" >\
+                            Include\
+                        </a>\
+                    {{/if}}\
+                    {{if occurrences[$index].type === "exdate"}}\
+                        <a date="${occurrences[$index].date}" href="#"\
+                           class="${occurrences[$index].type}" >\
+                            Remove\
+                        </a>\
+                    {{/if}}\
+                </span>\
+            </div>\
         {{/each}}\
-    </div></div>\
-    ';
+        <div class="batching">\
+            {{each batch.batches}}\
+                {{if $index === batch.current_batch}}<span class="current">{{/if}}\
+                    <a href="#" start="${batch.batches[$index][0]}">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>\
+                {{if $index === batch.current_batch}}</span>{{/if}}\
+            {{/each}}\
+        </div></div>';
     
     $.template('occurrence_tmpl', OCCURRENCE_TMPL)
     

@@ -38,3 +38,16 @@ div.recurrenceinput_occurrences div.batching {
 div.recurrenceinput_occurrences span.current {
     font-weight: bold;
 }
+
+div.recurrenceinput_occurrences span.action {
+    height: 19px;
+    width: 19px;
+    overflow: hidden;
+    box-shadow: 1px 1px 4px black;
+    -webkit-box-shadow: 1px 1px 4px black;
+}
+
+div.recurrenceinput_occurrences a.rrule {
+    background-image: url(delete.png);
+    color: transparent;
+}

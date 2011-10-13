@@ -85,7 +85,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             # TODO: change status if it's an RDATE
             occurrences.append({'date': date.strftime('%Y-%m-%d'),
                                 'formatted_date': date.strftime(date_format),
-                                'status': 'rule',})
+                                'type': 'rrule',})
         
         # Calculate no of occurrences, but only to a max of three times
         # the batch size. This will support infinite recurrance in a
