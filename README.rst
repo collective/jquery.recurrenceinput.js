@@ -15,6 +15,9 @@ To Do
 High priority:
 
 * Coverage running, and extend tests to 100%.
+* Add RDATE and EXDATE data to the human readable output.
+* Add the resulting dates in widget (maybe only in the read-only mode?).
+* Refresh the occurrence list when you have changed the recurrence.
 
 Medium priority:
 

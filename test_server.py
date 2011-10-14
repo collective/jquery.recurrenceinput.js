@@ -89,7 +89,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                 occurrence_type = 'rdate'
             else:
                 occurrence_type = 'rrule'
-            occurrences.append({'date': date.strftime('%Y%m%dT%h%m%s'),
+            occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),
                                 'formatted_date': date.strftime(date_format),
                                 'type': occurrence_type,})
         
@@ -128,7 +128,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                 
         # TODO: Add exdates
         for date in rule._exdate:
-            occurrences.append({'date': date.strftime('%Y%m%dT%h%m%s'),
+            occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),
                                 'formatted_date': date.strftime(date_format),
                                 'type': 'exdate',})
             

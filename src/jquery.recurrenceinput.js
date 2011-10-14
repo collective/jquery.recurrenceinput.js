@@ -371,7 +371,7 @@
         
         for (date in split_dates) {
             if (split_dates[date].indexOf('Z') != -1) {
-                result.push(split_dates[date].substring(0,13));
+                result.push(split_dates[date].substring(0,15));
             } else {
                 result.push(split_dates[date]);
             }
@@ -666,6 +666,29 @@
             }
         }
 
+        function occurrenceExclude(event) {
+            event.preventDefault();
+            this.className = 'exdate';
+            form.ical.EXDATE.push(this.attributes['date'].value);
+            $(this).unbind(event);
+            $(this).click(occurrenceInclude);
+        }
+
+        function occurrenceInclude(event) {
+            event.preventDefault();
+            this.className = 'rrule';
+            form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes['date'].value),1);
+            $(this).unbind(event);
+            $(this).click(occurrenceExclude);
+        }
+        
+        function occurrenceDelete(event) {
+            event.preventDefault();
+            this.className = 'exdate';
+            form.ical.RDATE.splice(form.ical.EXDATE.indexOf(this.attributes['date'].value),1);
+            $(this).parent().parent().hide('slow');
+        }
+        
         function loadOccurrences(start_date, rfc5545, start) {
             var date;
             
@@ -683,7 +706,7 @@
                 type: 'post',
                 dataType: 'json',
                 data: {year: start_date.getFullYear(),
-                       month: start_date.getMonth()+1, // Sending January as 0? I think not.
+                       month: start_date.getMonth() + 1, // Sending January as 0? I think not.
                        day: start_date.getDate(),
                        rrule: rfc5545,
                        format: conf.i18n.long_date_format,
@@ -692,13 +715,20 @@
                     result = $.tmpl('occurrence_tmpl', data);
                     occurrence_div = form.find('.recurrenceinput_occurrences');
                     occurrence_div.replaceWith(result);
+                    
+                    // Add the batch actions:
                     form.find('.recurrenceinput_occurrences .batching a').click(
                         function (event) {
                             event.preventDefault();
                             loadOccurrences(start_date, rfc5545, this.attributes.start.value);
-                            //alert(this.attributes.start.value);
                         }
                     );
+
+                    // Add the delete/undelete actions:
+                    form.find('.recurrenceinput_occurrences .action a.rrule').click(occurrenceExclude);
+                    form.find('.recurrenceinput_occurrences .action a.exdate').click(occurrenceInclude);
+                    form.find('.recurrenceinput_occurrences .action a.rdate').click(occurrenceDelete);
+                    
                     // Show the new div
                     form.find('.recurrenceinput_occurrences').show();
                 },
