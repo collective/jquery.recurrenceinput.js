@@ -9,8 +9,7 @@ in ics calendar files. It was developed for the plone.event PLIP10886 and is
 used there to define python-dateutil rrulestr instances.
 
 .. image:: http://github.com/collective/jquery.recurrenceinput.js/raw/master/Screenshot.png
-   :height: 249px
-   :width: 162px
+   :align: right
    :target: http://github.com/collective/jquery.recurrenceinput.js/raw/master/Screenshot.png
 
 Features
