@@ -18,6 +18,7 @@ High priority:
 * Add RDATE and EXDATE data to the human readable output.
 * Add the resulting dates in widget (maybe only in the read-only mode?).
 * Refresh the occurrence list when you have changed the recurrence.
+* Add a way to add RDATES.
 
 Medium priority:
 
