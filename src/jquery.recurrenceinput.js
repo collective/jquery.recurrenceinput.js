@@ -167,43 +167,43 @@
     });
 
 
-    var OCCURRENCE_TMPL = '<div class="recurrenceinput_occurrences"><hr/>\
-        {{each occurrences}}\
-            <div class="occurrence>\
-                <span class="date ${occurrences[$index].type}">\
-                    ${occurrences[$index].formatted_date}\
-                </span>\
-                <span class="action">\
-                    {{if occurrences[$index].type === "rrule"}}\
-                        <a date="${occurrences[$index].date}" href="#"\
-                           class="${occurrences[$index].type}" >\
-                            Exclude\
-                        </a>\
-                    {{/if}}\
-                    {{if occurrences[$index].type === "rdate"}}\
-                        <a date="${occurrences[$index].date}" href="#"\
-                           class="${occurrences[$index].type}" >\
-                            Remove\
-                        </a>\
-                    {{/if}}\
-                    {{if occurrences[$index].type === "exdate"}}\
-                        <a date="${occurrences[$index].date}" href="#"\
-                           class="${occurrences[$index].type}" >\
-                            Include\
-                        </a>\
-                    {{/if}}\
-                </span>\
-            </div>\
-        {{/each}}\
-        <div class="batching">\
-            {{each batch.batches}}\
-                {{if $index === batch.current_batch}}<span class="current">{{/if}}\
-                    <a href="#" start="${batch.batches[$index][0]}">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>\
-                {{if $index === batch.current_batch}}</span>{{/if}}\
-            {{/each}}\
-        </div></div>';
+    var OCCURRENCE_TMPL = ['<div class="recurrenceinput_occurrences"><hr/>',
+        '{{each occurrences}}',
+            '<div class="occurrence>',
+                '<span class="date ${occurrences[$index].type}">',
+                    '${occurrences[$index].formatted_date}',
+                '</span>',
+                '<span class="action">',
+                    '{{if occurrences[$index].type === "rrule"}}',
+                        '<a date="${occurrences[$index].date}" href="#"',
+                           'class="${occurrences[$index].type}" >',
+                            'Exclude',
+                        '</a>',
+                    '{{/if}}',
+                    '{{if occurrences[$index].type === "rdate"}}',
+                        '<a date="${occurrences[$index].date}" href="#"',
+                           'class="${occurrences[$index].type}" >',
+                            'Remove',
+                        '</a>',
+                    '{{/if}}',
+                    '{{if occurrences[$index].type === "exdate"}}',
+                        '<a date="${occurrences[$index].date}" href="#"',
+                           'class="${occurrences[$index].type}" >',
+                            'Include',
+                        '</a>',
+                    '{{/if}}',
+                '</span>',
+            '</div>',
+        '{{/each}}',
+        '<div class="batching">',
+            '{{each batch.batches}}',
+                '{{if $index === batch.current_batch}}<span class="current">{{/if}}',
+                    '<a href="#" start="${batch.batches[$index][0]}">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>',
+                '{{if $index === batch.current_batch}}</span>{{/if}}',
+            '{{/each}}',
+        '</div></div>'].join('\n');
     
-    $.template('occurrence_tmpl', OCCURRENCE_TMPL)
+    $.template('occurrence_tmpl', OCCURRENCE_TMPL);
     
     /**
      * Parsing RFC5545 from widget
@@ -346,43 +346,45 @@
     }
 
     function parseLine(icalline) {
-        var result = new Object();
+        var result = {};
         var pos = icalline.indexOf(':');
         var property = icalline.substring(0, pos);
         result.value = icalline.substring(pos + 1);
         
-        if (property.indexOf(';') != -1) {
+        if (property.indexOf(';') !== -1) {
             pos = property.indexOf(';');
             result.parameters = property.substring(pos + 1);
             result.property = property.substring(0, pos);
         } else {
             result.parameters = null;
             result.property = property;
-        };
+        }
         return result;
     }
     
     function cleanDates(dates) {
         // Get rid of timezones
         // TODO: We could parse dates and range here, maybe?
-        var result = new Array();
+        var result = [];
         var split_dates = dates.split(',');
         var date;
         
         for (date in split_dates) {
-            if (split_dates[date].indexOf('Z') != -1) {
-                result.push(split_dates[date].substring(0,15));
-            } else {
-                result.push(split_dates[date]);
+            if (split_dates.hasOwnProperty(date)) {
+                if (split_dates[date].indexOf('Z') !== -1) {
+                    result.push(split_dates[date].substring(0, 15));
+                } else {
+                    result.push(split_dates[date]);
+                }
             }
         }
         return result;
     }
     
     function parseIcal(icaldata) {
-        var lines = new Array();
-        var result = new Object();
-        var propAndValue = new Array();
+        var lines = [];
+        var result = {};
+        var propAndValue = [];
         var line = null;
         var nextline;
         
@@ -391,7 +393,7 @@
         while (true) {
             if (lines.length > 0) {
                 nextline = lines.pop();
-                if (nextline.charAt(0) === ' ' | nextline.charAt(0) === '\t') {
+                if (nextline.charAt(0) === ' ' || nextline.charAt(0) === '\t') {
                     // Line continuation:
                     line = line + nextline;
                     continue;
@@ -404,15 +406,15 @@
             if (line !== null) { 
                 line = parseLine(line);
                  // We ignore properties for now
-                if (line.property === 'RDATE' | line.property === 'EXDATE') {
+                if (line.property === 'RDATE' || line.property === 'EXDATE') {
                     result[line.property] = cleanDates(line.value);
                 } else {
                     result[line.property] = line.value;
                 }
-            };
+            }
             
             line = nextline;
-            if (line == '') {
+            if (line === '') {
                 break;
             }
         }
@@ -669,7 +671,7 @@
         function occurrenceExclude(event) {
             event.preventDefault();
             this.className = 'exdate';
-            form.ical.EXDATE.push(this.attributes['date'].value);
+            form.ical.EXDATE.push(this.attributes.date.value);
             $(this).unbind(event);
             $(this).click(occurrenceInclude);
         }
@@ -677,7 +679,7 @@
         function occurrenceInclude(event) {
             event.preventDefault();
             this.className = 'rrule';
-            form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes['date'].value),1);
+            form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
             $(this).unbind(event);
             $(this).click(occurrenceExclude);
         }
@@ -685,12 +687,12 @@
         function occurrenceDelete(event) {
             event.preventDefault();
             this.className = 'exdate';
-            form.ical.RDATE.splice(form.ical.EXDATE.indexOf(this.attributes['date'].value),1);
+            form.ical.RDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
             $(this).parent().parent().hide('slow');
         }
         
         function loadOccurrences(start_date, rfc5545, start) {
-            var date;
+            var date, occurrence_div;
             
             if (conf.ajaxURL === null) {
                 return;
@@ -712,6 +714,7 @@
                        format: conf.i18n.long_date_format,
                        start: start},
                 success: function (data, status, jqXHR) {
+                    var result;
                     result = $.tmpl('occurrence_tmpl', data);
                     occurrence_div = form.find('.recurrenceinput_occurrences');
                     occurrence_div.replaceWith(result);
@@ -735,7 +738,7 @@
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert(textStatus);
                 }
-            })        
+            });
         }
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
@@ -878,7 +881,7 @@
         });
 
         if (textarea.val()) {
-            widget_load_from_rfc5545(form, conf, textarea.val())
+            widget_load_from_rfc5545(form, conf, textarea.val());
             recurrenceOn();
         }
 
