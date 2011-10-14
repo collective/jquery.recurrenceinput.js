@@ -362,32 +362,60 @@
         return result;
     }
     
+    function cleanDates(dates) {
+        // Get rid of timezones
+        // TODO: We could parse dates and range here, maybe?
+        var result = new Array();
+        var split_dates = dates.split(',');
+        var date;
+        
+        for (date in split_dates) {
+            if (split_dates[date].indexOf('Z') != -1) {
+                result.push(split_dates[date].substring(0,13));
+            } else {
+                result.push(split_dates[date]);
+            }
+        }
+        return result;
+    }
+    
     function parseIcal(icaldata) {
         var lines = new Array();
         var result = new Object();
         var propAndValue = new Array();
-        var line = '';
+        var line = null;
         var nextline;
         
         lines = icaldata.split('\n');
         lines.reverse();
-        while (lines.length != 0) {
-            nextline = lines.pop();
-            if (nextline.charAt(0) === ' ' | nextline.charAt(0) === '\t') {
-                // Line continuation:
-                line = line + nextline;
-            } else {
-                // New line; the current one is finished.
-                if (line !== '') {
-                    line = parseLine(line)
-                    result[line.property] = line.value; // We ignore properties for now
+        while (true) {
+            if (lines.length > 0) {
+                nextline = lines.pop();
+                if (nextline.charAt(0) === ' ' | nextline.charAt(0) === '\t') {
+                    // Line continuation:
+                    line = line + nextline;
+                    continue;
                 }
-                line = nextline;
+            } else {
+                nextline = '';
+            }
+            
+            // New line; the current one is finished, add it to the result.
+            if (line !== null) { 
+                line = parseLine(line);
+                 // We ignore properties for now
+                if (line.property === 'RDATE' | line.property === 'EXDATE') {
+                    result[line.property] = cleanDates(line.value);
+                } else {
+                    result[line.property] = line.value;
+                }
+            };
+            
+            line = nextline;
+            if (line == '') {
+                break;
             }
         }
-        // And push the last line:
-        line = parseLine(line)
-        result[line.property] = line.value; // We ignore properties for now
         return result;
     }
     

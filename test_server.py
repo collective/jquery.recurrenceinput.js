@@ -47,6 +47,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         length = int(self.headers.getheader('content-length'))
         data_string = self.rfile.read(length)
         data = urlparse.parse_qs(data_string)
+        print "Recieved data:", data
         # Check for required parameters:
         for x in ('year', 'month', 'day', 'rrule', 'format'):
             assert x in data
@@ -88,7 +89,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                 occurrence_type = 'rdate'
             else:
                 occurrence_type = 'rrule'
-            occurrences.append({'date': date.strftime('%Y-%m-%d'),
+            occurrences.append({'date': date.strftime('%Y%m%dT%h%m%s'),
                                 'formatted_date': date.strftime(date_format),
                                 'type': occurrence_type,})
         
@@ -127,7 +128,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                 
         # TODO: Add exdates
         for date in rule._exdate:
-            occurrences.append({'date': date.strftime('%Y-%m-%d'),
+            occurrences.append({'date': date.strftime('%Y%m%dT%h%m%s'),
                                 'formatted_date': date.strftime(date_format),
                                 'type': 'exdate',})
             
