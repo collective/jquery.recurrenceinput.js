@@ -15,9 +15,13 @@ To Do
 High priority:
 
 * Coverage running, and extend tests to 100%.
-* Add RDATE and EXDATE data to the human readable output.
-* Add the resulting dates in widget (maybe only in the read-only mode?).
-* Refresh the occurrence list when you have changed the recurrence.
+* Add RDATE and EXDATE data to the human readable output (at the moment the 
+  description of the recurrence doesn't include them).
+* The list of occurrences should be shown in the field itself, and not just
+  in the popup (possibly just in read-only mode?)
+* The occurrence list should be refreshed when you have changed the recurrence
+  rules. A refresh-button might be enough, but doing it automatically would
+  be cool too.
 
 Medium priority:
 
