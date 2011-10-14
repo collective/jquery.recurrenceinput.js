@@ -18,20 +18,15 @@ High priority:
 * Add RDATE and EXDATE data to the human readable output.
 * Add the resulting dates in widget (maybe only in the read-only mode?).
 * Refresh the occurrence list when you have changed the recurrence.
-* Add a way to add RDATES.
 
 Medium priority:
 
-* We need to be able to display the occurrences in the widget.
-  This will likely a callback JSON API (or we need to do rrule iteration in JS).
-* Occurrences should be able to be "skipped" (EXDATE). This should be
-  implemented by having a trashcan or (x) button besides the occurrences.
 * User should be able to add occurrences (RDATE) with an "Add..." link close
   to the list of occurrences.
 
 Low priority:
 
-* Support more obscure RFC options.
+* Support more obscure RFC5545 options.
 * The human readable output should probably be done directly from the RRULE and
   not by using the form i18n, to improve the grammar and rule support.
 * Make it possible to change the order of the fields as a part of the i18n.
