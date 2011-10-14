@@ -60,3 +60,13 @@ div.recurrenceinput_occurrences a.rrule {
     background-image: url(delete.png);
     color: transparent;
 }
+
+div.recurrenceinput_occurrences a.rdate {
+    background-image: url(delete.png);
+    color: transparent;
+}
+
+div.recurrenceinput_occurrences a.exdate {
+    background-image: url(undelete.png);
+    color: transparent;
+}

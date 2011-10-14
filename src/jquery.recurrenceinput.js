@@ -180,16 +180,16 @@
                             Exclude\
                         </a>\
                     {{/if}}\
-                    {{if occurrences[$index].type === "exdate"}}\
+                    {{if occurrences[$index].type === "rdate"}}\
                         <a date="${occurrences[$index].date}" href="#"\
                            class="${occurrences[$index].type}" >\
-                            Include\
+                            Remove\
                         </a>\
                     {{/if}}\
                     {{if occurrences[$index].type === "exdate"}}\
                         <a date="${occurrences[$index].date}" href="#"\
                            class="${occurrences[$index].type}" >\
-                            Remove\
+                            Include\
                         </a>\
                     {{/if}}\
                 </span>\
@@ -341,15 +341,33 @@
             }
         }
         
-        return {result: 'RRULE:' + result, description: human};
+        return {result: 'RRULE:' + result + '\nEXDATE:' + form.ical.EXDATE + '\nRDATE:' + form.ical.RDATE,
+                description: human};
     }
 
+    function parseLine(icalline) {
+        var result = new Object();
+        var pos = icalline.indexOf(':');
+        var property = icalline.substring(0, pos);
+        result.value = icalline.substring(pos + 1);
+        
+        if (property.indexOf(';') != -1) {
+            pos = property.indexOf(';');
+            result.parameters = property.substring(pos + 1);
+            result.property = property.substring(0, pos);
+        } else {
+            result.parameters = null;
+            result.property = property;
+        };
+        return result;
+    }
     
     function parseIcal(icaldata) {
         var lines = new Array();
         var result = new Object();
+        var propAndValue = new Array();
         var line = '';
-        var nextline, pos;
+        var nextline;
         
         lines = icaldata.split('\n');
         lines.reverse();
@@ -361,15 +379,15 @@
             } else {
                 // New line; the current one is finished.
                 if (line !== '') {
-                    pos = line.indexOf(':');
-                    result[line.substring(0, pos)] = line.substring(pos + 1)
+                    line = parseLine(line)
+                    result[line.property] = line.value; // We ignore properties for now
                 }
                 line = nextline;
             }
         }
         // And push the last line:
-        pos = line.indexOf(':');
-        result[line.substring(0, pos)] = line.substring(pos + 1)
+        line = parseLine(line)
+        result[line.property] = line.value; // We ignore properties for now
         return result;
     }
     
@@ -380,51 +398,51 @@
         var interval, byday, bymonth, bymonthday, bysetpos, count, until;
         var day, month, year, weekday, ical;
 
-        ical = parseIcal(icaldata);
+        form.ical = parseIcal(icaldata);
         
-        matches = /INTERVAL=([0-9]+);?/.exec(ical.RRULE);
+        matches = /INTERVAL=([0-9]+);?/.exec(form.ical.RRULE);
         if (matches) {
             interval = matches[1];
         } else {
             interval = '1';
         }
     
-        matches = /BYDAY=([^;]+);?/.exec(ical.RRULE);
+        matches = /BYDAY=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
             byday = matches[1];
         } else {
             byday = '';
         }
         
-        matches = /BYMONTHDAY=([^;]+);?/.exec(ical.RRULE);
+        matches = /BYMONTHDAY=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
             bymonthday = matches[1].split(",");
         } else {
             bymonthday = null;
         }
     
-        matches = /BYMONTH=([^;]+);?/.exec(ical.RRULE);
+        matches = /BYMONTH=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
             bymonth = matches[1].split(",");
         } else {
             bymonth = null;
         }
     
-        matches = /BYSETPOS=([^;]+);?/.exec(ical.RRULE);
+        matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
             bysetpos = matches[1];
         } else {
             bysetpos = null;
         }
         
-        matches = /COUNT=([0-9]+);?/.exec(ical.RRULE);
+        matches = /COUNT=([0-9]+);?/.exec(form.ical.RRULE);
         if (matches) {
             count = matches[1];
         } else {
             count = null;
         }
         
-        matches = /UNTIL=([0-9T]+);?/.exec(ical.RRULE);
+        matches = /UNTIL=([0-9T]+);?/.exec(form.ical.RRULE);
         if (matches) {
             until = matches[1];
         } else {
@@ -437,10 +455,10 @@
         for (i in conf.rtemplate) {
             if (conf.rtemplate.hasOwnProperty(i)) {
                 rtemplate = conf.rtemplate[i];
-                if (ical.RRULE.indexOf(rtemplate.rrule) === 0) {
-                    if (ical.RRULE.length > match.length) {
+                if (form.ical.RRULE.indexOf(rtemplate.rrule) === 0) {
+                    if (form.ical.RRULE.length > match.length) {
                         // This is the best match so far
-                        match = ical.RRULE;
+                        match = form.ical.RRULE;
                         match_index = i;
                     }
                 }  

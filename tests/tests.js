@@ -68,3 +68,13 @@ test("Yearly recurrence without end", function () {
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '3');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
 });
+
+//test("RDATE and EXDATE", function () {
+    //expect(5);
+    //// Open the form by clicking on the checkbox.
+    //var input = $("textarea[name=repeat]").recurrenceinput();
+    //// The second wednesday of April, forevah.
+    //input.loadData("RRULE:FREQ=WEEKLY\nEXDATE:20120402T010000Z,20120403T010000Z\nRDATE:20120404T010000Z");
+    
+    //ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
+//});

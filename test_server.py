@@ -67,6 +67,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             start = int(data['start'][0])
         else:
             start = 0
+            
         cur_batch = start // batch_size
         start = cur_batch * batch_size # Avoid stupid start-values
         
@@ -83,9 +84,13 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             except StopIteration:
                 break
             # TODO: change status if it's an RDATE
+            if date in rule._rdate:
+                occurrence_type = 'rdate'
+            else:
+                occurrence_type = 'rrule'
             occurrences.append({'date': date.strftime('%Y-%m-%d'),
                                 'formatted_date': date.strftime(date_format),
-                                'type': 'rrule',})
+                                'type': occurrence_type,})
         
         # Calculate no of occurrences, but only to a max of three times
         # the batch size. This will support infinite recurrance in a
@@ -121,6 +126,13 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                       }
                 
         # TODO: Add exdates
+        for date in rule._exdate:
+            occurrences.append({'date': date.strftime('%Y-%m-%d'),
+                                'formatted_date': date.strftime(date_format),
+                                'type': 'exdate',})
+            
+        # Put the EXDATES in order:
+        occurrences.sort(key=lambda x: x['date'])
             
         result = {'occurrences': occurrences, 'batch': batch_data}
         self.wfile.write(json.dumps(result))

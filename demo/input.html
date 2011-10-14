@@ -66,7 +66,9 @@
       $(':date').dateinput();
     </script>
     
-    <textarea name="connected2">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=100</textarea>
+    <textarea name="connected2">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=100
+EXDATE:20121217T0000,20121227T0000
+RDATE:20121214T0000,20121215T0000,20121216T0000</textarea>
     <script type="text/javascript">
         $("textarea[name=connected2]").recurrenceinput({startField: "connected_start2",  ajaxURL: document.URL});
     </script>
