@@ -40,7 +40,7 @@ test("Weekly recurrence with days and end", function () {
     expect(11);
     // Open the form by clicking on the checkbox.
     var input = $("textarea[name=repeat]").recurrenceinput();
-    input.loadData("RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000");
+    input.loadData("RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000Z");
     
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'weekly');
     ok(input.form.find('input[name=recurrenceinput_weekly_interval]').val() === '4');

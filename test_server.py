@@ -85,7 +85,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             except StopIteration:
                 break
             # TODO: change status if it's an RDATE
-            if date in rule._rdate:
+            if date in getattr(rule, '_rdate', []):
                 occurrence_type = 'rdate'
             else:
                 occurrence_type = 'rrule'
@@ -127,7 +127,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                       }
                 
         # TODO: Add exdates
-        for date in rule._exdate:
+        for date in getattr(rule, '_exdate', []):
             occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),
                                 'formatted_date': date.strftime(date_format),
                                 'type': 'exdate',})

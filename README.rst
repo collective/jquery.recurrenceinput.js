@@ -23,10 +23,15 @@ Features
 Non-Features
 ------------
 
-* It currently ignores most things regarding timezones. It is therefore not
-  possible to have an event recur in a different timezone than it is created
-  in, for example.
+This widget does not support all features of RRULE's. For example:
+
 * It does not support recurrence on smaller than daily basis.
+* In RRULE'se end-dates can end either be in local time or in UTC. This widget
+  only supports UTC, which means the start and end dates of the event as a
+  whole, when exported may not be in local time. They must either specify
+  a timezone or be in UTC. If the RRULE fed to the widget is in local time,
+  this will be made into UTC with no timezone translation.
+* Any parameters will be ignored and stripped on saving the rule.
 
 To Do
 -----
@@ -34,8 +39,6 @@ To Do
 High priority:
 
 * Coverage running, and extend tests to 100%.
-* Add RDATE and EXDATE data to the human readable output (at the moment the 
-  description of the recurrence doesn't include them).
 * The list of occurrences should be shown in the field itself, and not just
   in the popup (possibly just in read-only mode?)
 * The occurrence list should be refreshed when you have changed the recurrence

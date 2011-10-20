@@ -137,6 +137,9 @@
         range_by_occurrences_label_1: 'Ending after',
         range_by_occurrences_label_2: 'occurrence(s)',
         range_by_end_date_label: 'Until ',
+        
+        including_label: ',and also ',
+        except_label: ', except for',
 
         cancel_button_label: 'Cancel',        
         save_button_label: 'Save',
@@ -145,9 +148,14 @@
         months: [
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'],
+	short_months: [
+            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         weekdays: [
             'Monday', 'Tuesday', 'Wednesday', 'Thursday',
             'Friday', 'Saturday', 'Sunday'],
+        short_weekdays: [
+            'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             
         long_date_format: 'mmmm dd, yyyy',
         short_date_format: 'mm/dd/yyyy',
@@ -204,6 +212,45 @@
         '</div></div>'].join('\n');
     
     $.template('occurrence_tmpl', OCCURRENCE_TMPL);
+
+    
+    // Formatting function (mostly) from jQueryTools dateinput
+    var Re = /d{1,4}|m{1,4}|yy(?:yy)?|"[^"]*"|'[^']*'/g;
+    
+    function zeropad(val, len) {
+	    val = '' + val;
+	    len = len || 2;
+	    while (val.length < len) { val = "0" + val; }
+	    return val;
+    }  
+    
+    function format(date, fmt, conf) {
+	    
+      var d = date.getDate(),
+		    D = date.getDay(),
+		    m = date.getMonth(),
+		    y = date.getFullYear(),
+
+		    flags = {
+			    d:    d,
+			    dd:   zeropad(d),
+			    ddd:  conf.i18n.short_weekdays[D],
+			    dddd: conf.i18n.weekdays[D],
+			    m:    m + 1,
+			    mm:   zeropad(m + 1),
+			    mmm:  conf.i18n.short_months[m],
+			    mmmm: conf.i18n.months[m],
+			    yy:   String(y).slice(2),
+			    yyyy: y
+		    };
+
+	    var result = fmt.replace(Re, function ($0) {
+		    return $0 in flags ? flags[$0] : $0.slice(1, $0.length - 1);
+	    });
+	    
+	    return result
+	    
+    }
     
     /**
      * Parsing RFC5545 from widget
@@ -213,8 +260,8 @@
         var rtemplate = conf.rtemplate[value];
         var result = rtemplate.rrule;
         var human = conf.i18n.rtemplate[value];
-        var field, input, weekdays, i18nweekdays, i, j, index;
-        var day, month, interval, yearly_type, occurrences, date;
+        var field, input, weekdays, i18nweekdays, i, j, index, tmp;
+        var day, month, year, interval, yearly_type, occurrences, date;
         
         for (i = 0; i < rtemplate.fields.length; i++) {
             field = form.find('#' + rtemplate.fields[i]);
@@ -332,7 +379,7 @@
                 case 'BY_END_DATE':
                     field = form.find('input[name=recurrenceinput_range_by_end_date_calendar]');
                     date = field.data('dateinput').getValue('yyyymmdd');
-                    result += ';UNTIL=' + date + 'T000000';
+                    result += ';UNTIL=' + date + 'T000000Z';
                     human += ', ' + conf.i18n.range_by_end_date_label;
                     human += ' ' + field.data('dateinput').getValue(conf.i18n.long_date_format);
                     break;
@@ -341,8 +388,43 @@
             }
         }
         
-        return {result: 'RRULE:' + result + '\nEXDATE:' + form.ical.EXDATE + '\nRDATE:' + form.ical.RDATE,
-                description: human};
+        if (form.ical.RDATE !== undefined && form.ical.RDATE.length > 0) {
+            tmp = [];
+	    for (i = 0; i < form.ical.RDATE.length; i++) {
+		if (form.ical.RDATE[i] != '') {
+		    year = parseInt(form.ical.RDATE[i].substring(0, 4), 10);
+		    month = parseInt(form.ical.RDATE[i].substring(4, 6), 10) - 1;
+		    day = parseInt(form.ical.RDATE[i].substring(6, 8), 10);
+		    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
+		}
+	    }
+	    if (tmp.length !== 0) {
+                human = human + conf.i18n.including_label + ' ' + tmp.join('; ');
+	    }
+        }
+	
+        if (form.ical.EXDATE !== undefined && form.ical.EXDATE.length > 0) {
+            tmp = [];
+	    for (i = 0; i < form.ical.EXDATE.length; i++) {
+		if (form.ical.EXDATE[i] != '') {
+		    year = parseInt(form.ical.EXDATE[i].substring(0, 4), 10);
+		    month = parseInt(form.ical.EXDATE[i].substring(4, 6), 10) - 1;
+		    day = parseInt(form.ical.EXDATE[i].substring(6, 8), 10);
+		    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
+		}
+	    }
+	    if (tmp.length !== 0) {
+                human = human + conf.i18n.except_label + ' ' + tmp.join('; ');
+	    }
+        }
+	result = 'RRULE:' + result;
+	if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
+	    result = result + '\nEXDATE:' + form.ical.EXDATE;
+	}
+	if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
+	    result = result + '\nRDATE:' + form.ical.RDATE;
+	}
+        return {result: result, description: human};
     }
 
     function parseLine(icalline) {
