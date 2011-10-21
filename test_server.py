@@ -71,20 +71,42 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             
         cur_batch = start // batch_size
         start = cur_batch * batch_size # Avoid stupid start-values
+
+        exdates = sorted(rule._exdate)
         
-        for x in range(start):
-            try:
-                iterator.next()
-            except StopIteration:
-                break
-        
+        # Loop through the start first dates, to skip them:
+        i = 0
         occurrences = []
-        for x in range(batch_size):
+        while True:
             try:
+                # Get a date
                 date = iterator.next()
             except StopIteration:
+                # No more dates
                 break
-            # TODO: change status if it's an RDATE
+            while exdates and date > exdates[0]:
+                # There are exdates that appear before this date:
+                if i < start:
+                    # Skip them
+                    exdates.pop(0)
+                    i += 1
+                else:
+                    # include them
+                    exdate = exdates.pop(0)
+                    occurrences.append({'date': exdate.strftime('%Y%m%dT%H%M%S'),
+                                        'formatted_date': exdate.strftime(date_format),
+                                        'type': 'exdate',})
+                    i += 1
+
+            if i >= batch_size + start:
+                break # We are done!
+            
+            i += 1
+            if i <= start:
+                # We are still iterating up to the first event, so skip this:
+                continue
+            
+            # Add it to the results
             if date in getattr(rule, '_rdate', []):
                 occurrence_type = 'rdate'
             else:
@@ -125,16 +147,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                       'batches': batches,
                       'current_batch': cur_batch - first_batch,
                       }
-                
-        # TODO: Add exdates
-        for date in getattr(rule, '_exdate', []):
-            occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),
-                                'formatted_date': date.strftime(date_format),
-                                'type': 'exdate',})
-            
-        # Put the EXDATES in order:
-        occurrences.sort(key=lambda x: x['date'])
-            
+                            
         result = {'occurrences': occurrences, 'batch': batch_data}
         self.wfile.write(json.dumps(result))
 

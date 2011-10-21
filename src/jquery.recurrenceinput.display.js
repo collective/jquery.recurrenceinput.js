@@ -9,5 +9,8 @@
                 <a href="#" name="recurrenceinput_edit">${i18n.edit}</a>
             {{/if}}
         </div>
+        <div class="recurrenceinput_occurrences">Whaggawagaga
+        </div>
+        
     </div>
 </script>

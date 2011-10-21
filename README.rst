@@ -39,8 +39,6 @@ To Do
 High priority:
 
 * Coverage running, and extend tests to 100%.
-* The list of occurrences should be shown in the field itself, and not just
-  in the popup (possibly just in read-only mode?)
 
 Medium priority:
 

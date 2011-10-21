@@ -181,26 +181,28 @@
                 '<span class="date ${occurrences[$index].type}">',
                     '${occurrences[$index].formatted_date}',
                 '</span>',
-                '<span class="action">',
-                    '{{if occurrences[$index].type === "rrule"}}',
-                        '<a date="${occurrences[$index].date}" href="#"',
-                           'class="${occurrences[$index].type}" >',
-                            'Exclude',
-                        '</a>',
-                    '{{/if}}',
-                    '{{if occurrences[$index].type === "rdate"}}',
-                        '<a date="${occurrences[$index].date}" href="#"',
-                           'class="${occurrences[$index].type}" >',
-                            'Remove',
-                        '</a>',
-                    '{{/if}}',
-                    '{{if occurrences[$index].type === "exdate"}}',
-                        '<a date="${occurrences[$index].date}" href="#"',
-                           'class="${occurrences[$index].type}" >',
-                            'Include',
-                        '</a>',
-                    '{{/if}}',
-                '</span>',
+		'{{if !readOnly}}',
+		    '<span class="action">',
+			'{{if occurrences[$index].type === "rrule"}}',
+			    '<a date="${occurrences[$index].date}" href="#"',
+			       'class="${occurrences[$index].type}" >',
+				'Exclude',
+			    '</a>',
+			'{{/if}}',
+			'{{if occurrences[$index].type === "rdate"}}',
+			    '<a date="${occurrences[$index].date}" href="#"',
+			       'class="${occurrences[$index].type}" >',
+				'Remove',
+			    '</a>',
+			'{{/if}}',
+			'{{if occurrences[$index].type === "exdate"}}',
+			    '<a date="${occurrences[$index].date}" href="#"',
+			       'class="${occurrences[$index].type}" >',
+				'Include',
+			    '</a>',
+			'{{/if}}',
+		    '</span>',
+		'{{/if}}',
             '</div>',
         '{{/each}}',
         '<div class="batching">',
@@ -777,14 +779,22 @@
             $(this).parent().parent().hide('slow');
         }
         
-        function loadOccurrences(start_date, rfc5545, start) {
+	// element is where to find the tag in question. Can be the form
+	// or the display widget. Defaults to the form.
+        function loadOccurrences(start_date, rfc5545, start, readonly) {
             var date, occurrence_div;
             
             if (conf.ajaxURL === null) {
                 return;
             }
             
-            occurrence_div = form.find('.recurrenceinput_occurrences');
+	    if (!readonly) {
+		element = form;
+	    } else {
+		element = display;
+	    }
+	    
+            occurrence_div = element.find('.recurrenceinput_occurrences');
             occurrence_div.hide();
             
             
@@ -800,37 +810,43 @@
                        format: conf.i18n.long_date_format,
                        start: start},
                 success: function (data, status, jqXHR) {
-                    var result;
+                    var result, element;
+		    
+		    if (!readonly) {
+			element = form;
+		    } else {
+			element = display;
+		    }
+		    data.readOnly = readonly;
                     result = $.tmpl('occurrence_tmpl', data);
-                    occurrence_div = form.find('.recurrenceinput_occurrences');
+                    occurrence_div = element.find('.recurrenceinput_occurrences');
                     occurrence_div.replaceWith(result);
                     
                     // Add the batch actions:
-                    form.find('.recurrenceinput_occurrences .batching a').click(
+                    element.find('.recurrenceinput_occurrences .batching a').click(
                         function (event) {
                             event.preventDefault();
-                            loadOccurrences(start_date, rfc5545, this.attributes.start.value);
+                            loadOccurrences(start_date, rfc5545, this.attributes.start.value, readonly);
                         }
                     );
 
                     // Add the delete/undelete actions:
-                    form.find('.recurrenceinput_occurrences .action a.rrule').click(occurrenceExclude);
-                    form.find('.recurrenceinput_occurrences .action a.exdate').click(occurrenceInclude);
-                    form.find('.recurrenceinput_occurrences .action a.rdate').click(occurrenceDelete);
-                    
+		    if (!readonly) {
+			element.find('.recurrenceinput_occurrences .action a.rrule').click(occurrenceExclude);
+			element.find('.recurrenceinput_occurrences .action a.exdate').click(occurrenceInclude);
+			element.find('.recurrenceinput_occurrences .action a.rdate').click(occurrenceDelete);
+                    }
                     // Show the new div
-                    form.find('.recurrenceinput_occurrences').show();
+                    element.find('.recurrenceinput_occurrences').show();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert(textStatus);
                 }
             });
         }
-        // Loading (populating) display and form widget with
-        // passed RFC5545 string (data)
-        function loadData(rfc5545) {
-            var selector, format, start_field, start_date, dayindex, day;
-
+	
+	function findStartDate() {
+	    var start_field, start_date;
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
                 // Se if it is a field already
@@ -850,9 +866,22 @@
                     start_date = start_date.getValue();
                 }
                 start_date = new Date(start_date);
+		
+		if (isNaN(start_date)) {
+		    return null;
+		}
+		return start_date;
             }
+	    return null;
+	}
+        // Loading (populating) display and form widget with
+        // passed RFC5545 string (data)
+        function loadData(rfc5545) {
+            var selector, format, start_field, start_date, dayindex, day;
             
-            if (!isNaN(start_date)) {
+	    start_date = findStartDate();
+	    
+            if (start_date !== null) {
                 // If the date is a real date, set the defaults in the form
                 form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(start_date.getDate());
                 dayindex = conf.order_indexes[Math.floor((start_date.getDate() - 1) / 7)];
@@ -867,7 +896,7 @@
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
-                loadOccurrences(start_date, rfc5545, 0);
+                loadOccurrences(start_date, rfc5545, 0, false);
 
 		// When the reload button is clicked, reload
 		form.find('a.recurrenceinput_refresh_button').click(
@@ -875,7 +904,8 @@
 			event.preventDefault();
 			loadOccurrences(start_date,
 			    widget_save_to_rfc5545(form, conf, false).result,
-			    0);
+			    0,
+			    false);
 		    }
 		);
 		
@@ -897,13 +927,18 @@
             var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_activate + ' ' + RFC5545.description);
             textarea.val(RFC5545.result);
+	    start_date = findStartDate();
+            if (start_date !== null) {
+		loadOccurrences(start_date, textarea.val(), 0, true);
+	    }
         }
 
         function recurrenceOff() {
             var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_unactivate);
             textarea.val('');
-        }
+            display.find('.recurrenceinput_occurrences').hide();
+	}
 
         function toggleRecurrence(e) {
             var checkbox = display.find('input[name=recurrenceinput_checkbox]');
