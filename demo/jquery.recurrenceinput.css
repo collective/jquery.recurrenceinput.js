@@ -36,10 +36,6 @@ div.recurrenceinput_occurrences {
     display: none; /* Off by default, display when there is something to show */
 }
 
-div.recurrenceinput_occurrences span.action {
-    float: right;
-}
-
 div.recurrenceinput_occurrences div.batching {
     font-size: 70%;
 }
@@ -48,12 +44,13 @@ div.recurrenceinput_occurrences span.current {
     font-weight: bold;
 }
 
-div.recurrenceinput_occurrences span.action {
+div.recurrenceinput_form span.action {
     height: 19px;
     width: 19px;
     overflow: hidden;
     box-shadow: 1px 1px 4px black;
     -webkit-box-shadow: 1px 1px 4px black;
+    float: right;
 }
 
 div.recurrenceinput_occurrences a.rrule {
@@ -68,5 +65,10 @@ div.recurrenceinput_occurrences a.rdate {
 
 div.recurrenceinput_occurrences a.exdate {
     background-image: url(undelete.png);
+    color: transparent;
+}
+
+div.recurrenceinput_occurrences_refresh a.recurrenceinput_refresh_button {
+    background-image: url(refresh.png);
     color: transparent;
 }

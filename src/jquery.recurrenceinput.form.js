@@ -200,8 +200,17 @@
                 
             </div>
             
+            <div class="recurrenceinput_occurrences_refresh">
+                <div>
+                    <span class="action">
+                        <a class="recurrenceinput_refresh_button" href="#" >
+                            Refresh
+                        </a>
+                    </span>
+                </div>
+            </div>
+
             <div class="recurrenceinput_occurrences">
-        
             </div>
             
             <div class="recurrenceinput_buttons">

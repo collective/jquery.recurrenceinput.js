@@ -255,7 +255,7 @@
     /**
      * Parsing RFC5545 from widget
      */
-    function widget_save_to_rfc5545(form, conf) {
+    function widget_save_to_rfc5545(form, conf, tz) {
         var value = form.find('select[name=recurrenceinput_rtemplate]').val();
         var rtemplate = conf.rtemplate[value];
         var result = rtemplate.rrule;
@@ -379,7 +379,11 @@
                 case 'BY_END_DATE':
                     field = form.find('input[name=recurrenceinput_range_by_end_date_calendar]');
                     date = field.data('dateinput').getValue('yyyymmdd');
-                    result += ';UNTIL=' + date + 'T000000Z';
+                    result += ';UNTIL=' + date + 'T000000';
+		    if (tz === true) {
+			// Make it UTC:
+			result += 'Z';
+		    }
                     human += ', ' + conf.i18n.range_by_end_date_label;
                     human += ' ' + field.data('dateinput').getValue(conf.i18n.long_date_format);
                     break;
@@ -864,7 +868,17 @@
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
                 loadOccurrences(start_date, rfc5545, 0);
-                                
+
+		// When the reload button is clicked, reload
+		form.find('a.recurrenceinput_refresh_button').click(
+		    function (event) {
+			event.preventDefault();
+			loadOccurrences(start_date,
+			    widget_save_to_rfc5545(form, conf, false).result,
+			    0);
+		    }
+		);
+		
             }            
             
             if (rfc5545) {
@@ -879,7 +893,7 @@
         }
         
         function recurrenceOn() {
-            var RFC5545 = widget_save_to_rfc5545(form, conf);
+            var RFC5545 = widget_save_to_rfc5545(form, conf, true);
             var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_activate + ' ' + RFC5545.description);
             textarea.val(RFC5545.result);

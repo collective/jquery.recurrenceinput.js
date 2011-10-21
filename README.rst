@@ -41,9 +41,6 @@ High priority:
 * Coverage running, and extend tests to 100%.
 * The list of occurrences should be shown in the field itself, and not just
   in the popup (possibly just in read-only mode?)
-* The occurrence list should be refreshed when you have changed the recurrence
-  rules. A refresh-button might be enough, but doing it automatically would
-  be cool too.
 
 Medium priority:
 
@@ -57,6 +54,9 @@ Low priority:
   not by using the form i18n, to improve the grammar and rule support.
 * Make it possible to change the order of the fields as a part of the i18n.
   (jQuery templates)?
+  
+Maybe priority: 
+* Automatically refresh the occurrence list after changing the recurrence.
   
 
 Developer information
