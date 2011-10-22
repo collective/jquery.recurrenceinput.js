@@ -38,7 +38,7 @@ To Do
 
 High priority:
 
-* Coverage running, and extend tests to 100%.
+* 100% code coverage from tests (currently 67%).
 
 Medium priority:
 
@@ -93,17 +93,24 @@ effect for the tests as well.
 
 In the `tests` directory there is also a copy of jslint.js, for easy access.
 To run these you need to install a JavaScript engine, such as
-Rhino or SpiderMonkey. You then run it with
+Rhino or SpiderMonkey. You then run it with::
 
     $ js tests/jslint.js <file>
  
-The following files should be jslinted:
+The following files should be jslinted::
 
-    src/jquery.recurrenceinput.config.js
     src/jquery.recurrenceinput.js
     src/tests.js
-    
-  
+
+To keep the Coverage tests updated you need to install jscoverage 
+( http://siliconforks.com/jscoverage/ ). You then keep the coverage code
+updated by running::
+
+    jscoverage src/ coverage/
+
+To run the coverage tests you go to
+http://localhost:8000/coverage/jscoverage.html?/tests/coveragetest.html
+
     
 Contributors
 ------------
