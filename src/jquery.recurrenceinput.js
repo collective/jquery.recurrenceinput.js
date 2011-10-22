@@ -271,14 +271,12 @@
             switch (field.attr('id')) {
             
             case 'recurrenceinput_daily_interval':
-                // TODO: Assert that this is a number.
                 input = field.find('input[name=recurrenceinput_daily_interval]');
                 result += ';INTERVAL=' + input.val();
                 human = conf.i18n.daily_interval_1 + ' ' + input.val() + ' ' + conf.i18n.daily_interval_2;
                 break;
                 
             case 'recurrenceinput_weekly_interval':
-                // TODO: Assert that this is a number.
                 input = field.find('input[name=recurrenceinput_weekly_interval]');
                 result += ';INTERVAL=' + input.val();
                 human = conf.i18n.weekly_interval_1 + ' ' + input.val() + ' ' + conf.i18n.weekly_interval_2;
@@ -1060,7 +1058,8 @@
         $.extend(self, {
             display: display,
             form: form,
-            loadData: loadData //Used by tests.
+            loadData: loadData, //Used by tests.
+	    save: save //Used by tests.
         });
 
     }
