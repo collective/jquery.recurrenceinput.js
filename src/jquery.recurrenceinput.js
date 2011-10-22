@@ -21,12 +21,7 @@
             // FORM OVERLAY
             form_overlay: {
                 speed: 'fast',
-                mask: {
-                    color: '#ebecff',
-                    loadSpeed: 'fast',
-                    closeSpeed: 'fast',
-                    opacity: 0.5
-                }
+		fixed: false,
             },
         
             // JQUERY TEMPLATE NAMES
@@ -105,6 +100,7 @@
         display_label_unactivate: 'Does not repeat',
         display_label_activate: 'Repeats ',
         edit: 'Edit...',
+	add:  'Add',
         
         recurrence_type: 'Recurrence type:',
 
@@ -138,7 +134,7 @@
         range_by_occurrences_label_2: 'occurrence(s)',
         range_by_end_date_label: 'Until ',
         
-        including_label: ',and also ',
+        including_label: ', and also ',
         except_label: ', except for',
 
         cancel_button_label: 'Cancel',        
@@ -175,7 +171,7 @@
     });
 
 
-    var OCCURRENCE_TMPL = ['<div class="recurrenceinput_occurrences"><hr/>',
+    var OCCURRENCE_TMPL = ['<div class="recurrenceinput_occurrences">',
         '{{each occurrences}}',
             '<div class="occurrence">',
                 '<span class="${occurrences[$index].type}">',
@@ -393,6 +389,7 @@
         }
         
         if (form.ical.RDATE !== undefined && form.ical.RDATE.length > 0) {
+	    form.ical.RDATE.sort();
             tmp = [];
 	    for (i = 0; i < form.ical.RDATE.length; i++) {
 		if (form.ical.RDATE[i] != '') {
@@ -408,6 +405,7 @@
         }
 	
         if (form.ical.EXDATE !== undefined && form.ical.EXDATE.length > 0) {
+	    form.ical.EXDATE.sort();
             tmp = [];
 	    for (i = 0; i < form.ical.EXDATE.length; i++) {
 		if (form.ical.EXDATE[i] != '') {
@@ -777,6 +775,28 @@
             $(this).parent().parent().hide('slow');
         }
         
+        function occurrenceAdd(event) {
+            event.preventDefault();
+	    var dateinput = form
+		.find('span.recurrenceinput_add_occurrence input#add_date')
+		.data('dateinput');
+	    var datevalue = dateinput.getValue('yyyymmddT000000');
+            this.className = 'exdate';
+            form.ical.RDATE.push(datevalue);
+	    var html = ['<div class="occurrence" style="display: none;">',
+		    '<span class="exdate">',
+			dateinput.getValue(conf.i18n.long_date_format),
+		    '</span>',
+		    '<span class="action">',
+			'<a date="' + datevalue + '" href="#" class="exdate" >',
+			    'Include',
+			'</a>',
+		    '</span>',
+		'</div>'].join('\n');
+            form.find('div.recurrenceinput_occurrences').prepend(html);
+	    $(form.find('div.recurrenceinput_occurrences div')[0]).slideDown();
+        }
+	
 	// element is where to find the tag in question. Can be the form
 	// or the display widget. Defaults to the form.
         function loadOccurrences(start_date, rfc5545, start, readonly) {
@@ -998,10 +1018,8 @@
             $(conf.template.form).template('recurrenceinput_form');
         }
         form = $.tmpl('recurrenceinput_form', conf);
-        // Make an overlay
-        overlay_conf = $.extend(conf.form_overlay, {});
-        // Hide it
-        form.overlay().hide();
+        // Make an overlay and hide it
+        form.overlay(conf.form_overlay).hide();
         
         // Make the date input into a calendar dateinput()
         form.find('input[name=recurrenceinput_range_by_end_date_calendar]').dateinput({
@@ -1031,6 +1049,10 @@
             }
         );
 
+	// Pop up the little add form when clicking "Add..."
+	form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput();
+        form.find('input#add_action').click(occurrenceAdd);
+	
         // When selecting template, update what fieldsets are visible.
         form.find('select[name=recurrenceinput_rtemplate]').change(
             function (e) {

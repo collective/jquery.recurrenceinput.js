@@ -39,19 +39,20 @@ To Do
 High priority:
 
 * 100% code coverage from tests (currently 67%).
+* Add and refresh button should only show when it makes sense.
+* Year/Month selectors for the dateinputs.
 
 Medium priority:
 
-* User should be able to add occurrences (RDATE) with an "Add..." link close
-  to the list of occurrences.
-
-Low priority:
-
-* Support more obscure RFC5545 options.
+* You should only be able to add dates after the start date.
 * The human readable output should probably be done directly from the RRULE and
   not by using the form i18n, to improve the grammar and rule support.
 * Make it possible to change the order of the fields as a part of the i18n.
   (jQuery templates)?
+
+Low priority:
+
+* Support more obscure RFC5545 options.
   
 Maybe priority: 
 * Automatically refresh the occurrence list after changing the recurrence.

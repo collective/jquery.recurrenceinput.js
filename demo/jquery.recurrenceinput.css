@@ -34,6 +34,7 @@ div.recurrenceinput_form input.recurrenceinput_cancel_button {
 
 div.recurrenceinput_occurrences {
     display: none; /* Off by default, display when there is something to show */
+    border-top: 1px solid gray;
 }
 
 div.recurrenceinput_occurrences div.batching {
@@ -68,7 +69,7 @@ div.recurrenceinput_occurrences a.exdate {
     color: transparent;
 }
 
-div.recurrenceinput_occurrences_refresh a.recurrenceinput_refresh_button {
+div.recurrenceinput_occurrences_actions a.recurrenceinput_refresh_button {
     background-image: url(refresh.png);
     color: transparent;
 }
