@@ -177,8 +177,8 @@
 
     var OCCURRENCE_TMPL = ['<div class="recurrenceinput_occurrences"><hr/>',
         '{{each occurrences}}',
-            '<div class="occurrence>',
-                '<span class="date ${occurrences[$index].type}">',
+            '<div class="occurrence">',
+                '<span class="${occurrences[$index].type}">',
                     '${occurrences[$index].formatted_date}',
                 '</span>',
 		'{{if !readOnly}}',
@@ -798,7 +798,7 @@
             
             $.ajax({
                 url: conf.ajaxURL,
-                async: true,
+                async: false, // Can't be tested if it's asynchronous, annoyingly.
                 type: 'post',
                 dataType: 'json',
                 data: {year: start_date.getFullYear(),
@@ -856,7 +856,7 @@
                 
                 // Now we have a field, see if it is a dateinput field:
                 start_date = start_field.data('dateinput');
-                if (start_date === null) {
+                if (start_date === undefined || start_date === null) {
                     //No, it wasn't, just try to interpret it with Date()
                     start_date = start_field.val();
                 } else {
@@ -876,7 +876,14 @@
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
             var selector, format, start_field, start_date, dayindex, day;
-            
+
+	    if (rfc5545) {
+                widget_load_from_rfc5545(form, conf, rfc5545);
+                // check checkbox
+                display.find('input[name=recurrenceinput_checkbox]')
+                    .attr('checked', true);
+            }
+
 	    start_date = findStartDate();
 	    
             if (start_date !== null) {
@@ -894,7 +901,7 @@
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
-                loadOccurrences(start_date, rfc5545, 0, false);
+                loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, false);
 
 		// When the reload button is clicked, reload
 		form.find('a.recurrenceinput_refresh_button').click(
@@ -909,13 +916,6 @@
 		
             }            
             
-            if (rfc5545) {
-                widget_load_from_rfc5545(form, conf, rfc5545);
-                // check checkbox
-                display.find('input[name=recurrenceinput_checkbox]')
-                    .attr('checked', true);
-            }
-            
             selector = form.find('select[name=recurrenceinput_rtemplate]');
             display_fields(selector);            
         }
@@ -927,7 +927,7 @@
             textarea.val(RFC5545.result);
 	    start_date = findStartDate();
             if (start_date !== null) {
-		loadOccurrences(start_date, textarea.val(), 0, true);
+		loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, true);
 	    }
         }
 

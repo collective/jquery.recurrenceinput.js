@@ -33,15 +33,8 @@
         <div class="field">
             <div class="fieldname_start">
                 <label>Start:</label>
-                <input type="date" />
+                <input type="date" id="start" name="start" />
             </div>
-            <div class="fieldname_end">
-                <label>End:</label>
-                <input type="date" />
-            </div>
-            <script type="text/javascript">
-              $(':date').dateinput();
-            </script>
             <div class="fieldname_all_day">
                 <input type="checkbox" name="all_day" />
                 <label>All Day</label>
@@ -61,7 +54,7 @@
         <div class="field fieldname_repeat">
             <textarea name="repeat"></textarea>
             <script type="text/javascript">
-                $("textarea[name=repeat]").recurrenceinput();
+                $("textarea[name=repeat]").recurrenceinput({startField: "start",  ajaxURL: document.URL});
             </script>
         </div>
 
@@ -74,4 +67,3 @@
 </body>
 
 </html>
-

@@ -72,7 +72,10 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         cur_batch = start // batch_size
         start = cur_batch * batch_size # Avoid stupid start-values
 
-        exdates = sorted(rule._exdate)
+        if hasattr(rule, '_exdate'):
+            exdates = sorted(rule._exdate)
+        else:
+            exdates = []
         
         # Loop through the start first dates, to skip them:
         i = 0

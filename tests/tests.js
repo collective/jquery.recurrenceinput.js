@@ -69,20 +69,28 @@ test("Weekly recurrence with days and end", function () {
 });
 
 test("Yearly recurrence without end", function () {
-    expect(6);
+    expect(7);
 
+    // Set the start date to test the XML javascript stuff.
+    $("input[name=start]").val('4/13/11');
+    //$("input[name=start]").data('dateinput').change();
+    
+    
     // The second wednesday of April, forevah.
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=+2WE";
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";    
     $("textarea[name=repeat]").val(rrule);
     $('a[name=recurrenceinput_edit]').click();
-    
-    var input = $("textarea[name=repeat]").recurrenceinput();
+        
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val() === 'WE');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '3');
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
-
+    
+    occurrences = input.form.find('div.occurrence');
+    ok(occurrences.length === 10);
+    
     $('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
