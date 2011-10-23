@@ -21,7 +21,7 @@
             // FORM OVERLAY
             form_overlay: {
                 speed: 'fast',
-		fixed: false,
+                fixed: false,
             },
         
             // JQUERY TEMPLATE NAMES
@@ -100,7 +100,7 @@
         display_label_unactivate: 'Does not repeat',
         display_label_activate: 'Repeats ',
         edit: 'Edit...',
-	add:  'Add',
+        add:  'Add',
         
         recurrence_type: 'Recurrence type:',
 
@@ -144,7 +144,7 @@
         months: [
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'],
-	short_months: [
+        short_months: [
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         weekdays: [
@@ -177,28 +177,28 @@
                 '<span class="${occurrences[$index].type}">',
                     '${occurrences[$index].formatted_date}',
                 '</span>',
-		'{{if !readOnly}}',
-		    '<span class="action">',
-			'{{if occurrences[$index].type === "rrule"}}',
-			    '<a date="${occurrences[$index].date}" href="#"',
-			       'class="${occurrences[$index].type}" >',
-				'Exclude',
-			    '</a>',
-			'{{/if}}',
-			'{{if occurrences[$index].type === "rdate"}}',
-			    '<a date="${occurrences[$index].date}" href="#"',
-			       'class="${occurrences[$index].type}" >',
-				'Remove',
-			    '</a>',
-			'{{/if}}',
-			'{{if occurrences[$index].type === "exdate"}}',
-			    '<a date="${occurrences[$index].date}" href="#"',
-			       'class="${occurrences[$index].type}" >',
-				'Include',
-			    '</a>',
-			'{{/if}}',
-		    '</span>',
-		'{{/if}}',
+                '{{if !readOnly}}',
+                    '<span class="action">',
+                        '{{if occurrences[$index].type === "rrule"}}',
+                            '<a date="${occurrences[$index].date}" href="#"',
+                               'class="${occurrences[$index].type}" >',
+                                'Exclude',
+                            '</a>',
+                        '{{/if}}',
+                        '{{if occurrences[$index].type === "rdate"}}',
+                            '<a date="${occurrences[$index].date}" href="#"',
+                               'class="${occurrences[$index].type}" >',
+                                'Remove',
+                            '</a>',
+                        '{{/if}}',
+                        '{{if occurrences[$index].type === "exdate"}}',
+                            '<a date="${occurrences[$index].date}" href="#"',
+                               'class="${occurrences[$index].type}" >',
+                                'Include',
+                            '</a>',
+                        '{{/if}}',
+                    '</span>',
+                '{{/if}}',
             '</div>',
         '{{/each}}',
         '<div class="batching">',
@@ -216,38 +216,38 @@
     var Re = /d{1,4}|m{1,4}|yy(?:yy)?|"[^"]*"|'[^']*'/g;
     
     function zeropad(val, len) {
-	    val = '' + val;
-	    len = len || 2;
-	    while (val.length < len) { val = "0" + val; }
-	    return val;
+            val = '' + val;
+            len = len || 2;
+            while (val.length < len) { val = "0" + val; }
+            return val;
     }  
     
     function format(date, fmt, conf) {
-	    
+            
       var d = date.getDate(),
-		    D = date.getDay(),
-		    m = date.getMonth(),
-		    y = date.getFullYear(),
+                    D = date.getDay(),
+                    m = date.getMonth(),
+                    y = date.getFullYear(),
 
-		    flags = {
-			    d:    d,
-			    dd:   zeropad(d),
-			    ddd:  conf.i18n.short_weekdays[D],
-			    dddd: conf.i18n.weekdays[D],
-			    m:    m + 1,
-			    mm:   zeropad(m + 1),
-			    mmm:  conf.i18n.short_months[m],
-			    mmmm: conf.i18n.months[m],
-			    yy:   String(y).slice(2),
-			    yyyy: y
-		    };
+                    flags = {
+                            d:    d,
+                            dd:   zeropad(d),
+                            ddd:  conf.i18n.short_weekdays[D],
+                            dddd: conf.i18n.weekdays[D],
+                            m:    m + 1,
+                            mm:   zeropad(m + 1),
+                            mmm:  conf.i18n.short_months[m],
+                            mmmm: conf.i18n.months[m],
+                            yy:   String(y).slice(2),
+                            yyyy: y
+                    };
 
-	    var result = fmt.replace(Re, function ($0) {
-		    return $0 in flags ? flags[$0] : $0.slice(1, $0.length - 1);
-	    });
-	    
-	    return result
-	    
+            var result = fmt.replace(Re, function ($0) {
+                    return $0 in flags ? flags[$0] : $0.slice(1, $0.length - 1);
+            });
+            
+            return result
+            
     }
     
     /**
@@ -376,10 +376,10 @@
                     field = form.find('input[name=recurrenceinput_range_by_end_date_calendar]');
                     date = field.data('dateinput').getValue('yyyymmdd');
                     result += ';UNTIL=' + date + 'T000000';
-		    if (tz === true) {
-			// Make it UTC:
-			result += 'Z';
-		    }
+                    if (tz === true) {
+                        // Make it UTC:
+                        result += 'Z';
+                    }
                     human += ', ' + conf.i18n.range_by_end_date_label;
                     human += ' ' + field.data('dateinput').getValue(conf.i18n.long_date_format);
                     break;
@@ -389,55 +389,55 @@
         }
         
         if (form.ical.RDATE !== undefined && form.ical.RDATE.length > 0) {
-	    form.ical.RDATE.sort();
+            form.ical.RDATE.sort();
             tmp = [];
-	    for (i = 0; i < form.ical.RDATE.length; i++) {
-		if (form.ical.RDATE[i] != '') {
-		    year = parseInt(form.ical.RDATE[i].substring(0, 4), 10);
-		    month = parseInt(form.ical.RDATE[i].substring(4, 6), 10) - 1;
-		    day = parseInt(form.ical.RDATE[i].substring(6, 8), 10);
-		    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
-		}
-	    }
-	    if (tmp.length !== 0) {
+            for (i = 0; i < form.ical.RDATE.length; i++) {
+                if (form.ical.RDATE[i] != '') {
+                    year = parseInt(form.ical.RDATE[i].substring(0, 4), 10);
+                    month = parseInt(form.ical.RDATE[i].substring(4, 6), 10) - 1;
+                    day = parseInt(form.ical.RDATE[i].substring(6, 8), 10);
+                    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
+                }
+            }
+            if (tmp.length !== 0) {
                 human = human + conf.i18n.including_label + ' ' + tmp.join('; ');
-	    }
+            }
         }
-	
+        
         if (form.ical.EXDATE !== undefined && form.ical.EXDATE.length > 0) {
-	    form.ical.EXDATE.sort();
+            form.ical.EXDATE.sort();
             tmp = [];
-	    for (i = 0; i < form.ical.EXDATE.length; i++) {
-		if (form.ical.EXDATE[i] != '') {
-		    year = parseInt(form.ical.EXDATE[i].substring(0, 4), 10);
-		    month = parseInt(form.ical.EXDATE[i].substring(4, 6), 10) - 1;
-		    day = parseInt(form.ical.EXDATE[i].substring(6, 8), 10);
-		    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
-		}
-	    }
-	    if (tmp.length !== 0) {
+            for (i = 0; i < form.ical.EXDATE.length; i++) {
+                if (form.ical.EXDATE[i] != '') {
+                    year = parseInt(form.ical.EXDATE[i].substring(0, 4), 10);
+                    month = parseInt(form.ical.EXDATE[i].substring(4, 6), 10) - 1;
+                    day = parseInt(form.ical.EXDATE[i].substring(6, 8), 10);
+                    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
+                }
+            }
+            if (tmp.length !== 0) {
                 human = human + conf.i18n.except_label + ' ' + tmp.join('; ');
-	    }
+            }
         }
-	result = 'RRULE:' + result;
-	if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
-	    if (tz === true) {
-		// Make it UTC:
-		tmp = form.ical.EXDATE.map(function (x) { return x + 'Z'; });
-	    } else {
-		tmp = form.ical.EXDATE;
-	    }
-	    result = result + '\nEXDATE:' + tmp;
-	}
-	if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
-	    if (tz === true) {
-		// Make it UTC:
-		tmp = form.ical.RDATE.map(function (x) { return x + 'Z'; });
-	    } else {
-		tmp = form.ical.RDATE;
-	    }
-	    result = result + '\nRDATE:' + tmp;
-	}
+        result = 'RRULE:' + result;
+        if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
+            if (tz === true) {
+                // Make it UTC:
+                tmp = form.ical.EXDATE.map(function (x) { return x + 'Z'; });
+            } else {
+                tmp = form.ical.EXDATE;
+            }
+            result = result + '\nEXDATE:' + tmp;
+        }
+        if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
+            if (tz === true) {
+                // Make it UTC:
+                tmp = form.ical.RDATE.map(function (x) { return x + 'Z'; });
+            } else {
+                tmp = form.ical.RDATE;
+            }
+            result = result + '\nRDATE:' + tmp;
+        }
         return {result: result, description: human};
     }
 
@@ -786,28 +786,28 @@
         
         function occurrenceAdd(event) {
             event.preventDefault();
-	    var dateinput = form
-		.find('span.recurrenceinput_add_occurrence input#add_date')
-		.data('dateinput');
-	    var datevalue = dateinput.getValue('yyyymmddT000000');
+            var dateinput = form
+                .find('span.recurrenceinput_add_occurrence input#add_date')
+                .data('dateinput');
+            var datevalue = dateinput.getValue('yyyymmddT000000');
             this.className = 'exdate';
             form.ical.RDATE.push(datevalue);
-	    var html = ['<div class="occurrence" style="display: none;">',
-		    '<span class="exdate">',
-			dateinput.getValue(conf.i18n.long_date_format),
-		    '</span>',
-		    '<span class="action">',
-			'<a date="' + datevalue + '" href="#" class="exdate" >',
-			    'Include',
-			'</a>',
-		    '</span>',
-		'</div>'].join('\n');
+            var html = ['<div class="occurrence" style="display: none;">',
+                    '<span class="exdate">',
+                        dateinput.getValue(conf.i18n.long_date_format),
+                    '</span>',
+                    '<span class="action">',
+                        '<a date="' + datevalue + '" href="#" class="exdate" >',
+                            'Include',
+                        '</a>',
+                    '</span>',
+                '</div>'].join('\n');
             form.find('div.recurrenceinput_occurrences').prepend(html);
-	    $(form.find('div.recurrenceinput_occurrences div')[0]).slideDown();
+            $(form.find('div.recurrenceinput_occurrences div')[0]).slideDown();
         }
-	
-	// element is where to find the tag in question. Can be the form
-	// or the display widget. Defaults to the form.
+        
+        // element is where to find the tag in question. Can be the form
+        // or the display widget. Defaults to the form.
         function loadOccurrences(start_date, rfc5545, start, readonly) {
             var date, occurrence_div;
             
@@ -815,12 +815,12 @@
                 return;
             }
             
-	    if (!readonly) {
-		element = form;
-	    } else {
-		element = display;
-	    }
-	    
+            if (!readonly) {
+                element = form;
+            } else {
+                element = display;
+            }
+            
             occurrence_div = element.find('.recurrenceinput_occurrences');
             occurrence_div.hide();
             
@@ -838,13 +838,13 @@
                        start: start},
                 success: function (data, status, jqXHR) {
                     var result, element;
-		    
-		    if (!readonly) {
-			element = form;
-		    } else {
-			element = display;
-		    }
-		    data.readOnly = readonly;
+                    
+                    if (!readonly) {
+                        element = form;
+                    } else {
+                        element = display;
+                    }
+                    data.readOnly = readonly;
                     result = $.tmpl('occurrence_tmpl', data);
                     occurrence_div = element.find('.recurrenceinput_occurrences');
                     occurrence_div.replaceWith(result);
@@ -858,10 +858,10 @@
                     );
 
                     // Add the delete/undelete actions:
-		    if (!readonly) {
-			element.find('.recurrenceinput_occurrences .action a.rrule').click(occurrenceExclude);
-			element.find('.recurrenceinput_occurrences .action a.exdate').click(occurrenceInclude);
-			element.find('.recurrenceinput_occurrences .action a.rdate').click(occurrenceDelete);
+                    if (!readonly) {
+                        element.find('.recurrenceinput_occurrences .action a.rrule').click(occurrenceExclude);
+                        element.find('.recurrenceinput_occurrences .action a.exdate').click(occurrenceInclude);
+                        element.find('.recurrenceinput_occurrences .action a.rdate').click(occurrenceDelete);
                     }
                     // Show the new div
                     element.find('.recurrenceinput_occurrences').show();
@@ -871,9 +871,9 @@
                 }
             });
         }
-	
-	function findStartDate() {
-	    var start_field, start_date;
+        
+        function findStartDate() {
+            var start_field, start_date;
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
                 // Se if it is a field already
@@ -893,28 +893,28 @@
                     start_date = start_date.getValue();
                 }
                 start_date = new Date(start_date);
-		
-		if (isNaN(start_date)) {
-		    return null;
-		}
-		return start_date;
+                
+                if (isNaN(start_date)) {
+                    return null;
+                }
+                return start_date;
             }
-	    return null;
-	}
+            return null;
+        }
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
             var selector, format, start_field, start_date, dayindex, day;
 
-	    if (rfc5545) {
+            if (rfc5545) {
                 widget_load_from_rfc5545(form, conf, rfc5545);
                 // check checkbox
                 display.find('input[name=recurrenceinput_checkbox]')
                     .attr('checked', true);
             }
 
-	    start_date = findStartDate();
-	    
+            start_date = findStartDate();
+            
             if (start_date !== null) {
                 // If the date is a real date, set the defaults in the form
                 form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(start_date.getDate());
@@ -931,14 +931,14 @@
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
                 loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, false);
-		
-		// Show the add and refresh buttons:
-		form.find('div.recurrenceinput_occurrences_actions').show();
-		
+                
+                // Show the add and refresh buttons:
+                form.find('div.recurrenceinput_occurrences_actions').show();
+                
             } else {
-		// No EXDATE/RDATE support
-		form.find('div.recurrenceinput_occurrences_actions').hide();
-	    }
+                // No EXDATE/RDATE support
+                form.find('div.recurrenceinput_occurrences_actions').hide();
+            }
 
             
             selector = form.find('select[name=recurrenceinput_rtemplate]');
@@ -950,10 +950,10 @@
             var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_activate + ' ' + RFC5545.description);
             textarea.val(RFC5545.result);
-	    start_date = findStartDate();
+            start_date = findStartDate();
             if (start_date !== null) {
-		loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, true);
-	    }
+                loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, true);
+            }
         }
 
         function recurrenceOff() {
@@ -961,7 +961,7 @@
             label.text(conf.i18n.display_label_unactivate);
             textarea.val('');
             display.find('.recurrenceinput_occurrences').hide();
-	}
+        }
 
         function toggleRecurrence(e) {
             var checkbox = display.find('input[name=recurrenceinput_checkbox]');
@@ -1030,7 +1030,7 @@
         form.find('input[name=recurrenceinput_range_by_end_date_calendar]').dateinput({
             selectors: true,
             format: conf.i18n.short_date_format,
-	    yearRange: [-5, 10]
+            yearRange: [-5, 10]
         });
 
         if (textarea.val()) {
@@ -1055,25 +1055,25 @@
             }
         );
 
-	// Pop up the little add form when clicking "Add..."
-	form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput({
+        // Pop up the little add form when clicking "Add..."
+        form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput({
             selectors: true,
             format: conf.i18n.short_date_format,
-	    yearRange: [-5, 10]
+            yearRange: [-5, 10]
         });
         form.find('input#add_action').click(occurrenceAdd);
 
-	// When the reload button is clicked, reload
-	form.find('a.recurrenceinput_refresh_button').click(
-	    function (event) {
-		event.preventDefault();
-		loadOccurrences(findStartDate(),
-		    widget_save_to_rfc5545(form, conf, false).result,
-		    0,
-		    false);
-	    }
-	);
-	
+        // When the reload button is clicked, reload
+        form.find('a.recurrenceinput_refresh_button').click(
+            function (event) {
+                event.preventDefault();
+                loadOccurrences(findStartDate(),
+                    widget_save_to_rfc5545(form, conf, false).result,
+                    0,
+                    false);
+            }
+        );
+        
         // When selecting template, update what fieldsets are visible.
         form.find('select[name=recurrenceinput_rtemplate]').change(
             function (e) {
@@ -1102,7 +1102,7 @@
             display: display,
             form: form,
             loadData: loadData, //Used by tests.
-	    save: save //Used by tests.
+            save: save //Used by tests.
         });
 
     }
