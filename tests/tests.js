@@ -191,7 +191,6 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     // We should force EXDATES and RDATES to by DATE's only.
     expect(1);
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000Z\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
     $("textarea[name=repeat]").val(rrule);
     $('a[name=recurrenceinput_edit]').click();
@@ -199,3 +198,4 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
     
 });
+

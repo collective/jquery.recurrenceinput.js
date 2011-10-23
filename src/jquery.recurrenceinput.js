@@ -577,7 +577,12 @@
         } else {
             until = null;
         }
-        
+
+        matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
+        if (matches) {
+            unsupported_features = true;
+        };
+
         // Find the best rule:
         match = '';
         match_index = null;
