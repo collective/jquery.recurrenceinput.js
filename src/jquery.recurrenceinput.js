@@ -922,19 +922,15 @@
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
                 loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, false);
-
-		// When the reload button is clicked, reload
-		form.find('a.recurrenceinput_refresh_button').click(
-		    function (event) {
-			event.preventDefault();
-			loadOccurrences(start_date,
-			    widget_save_to_rfc5545(form, conf, false).result,
-			    0,
-			    false);
-		    }
-		);
 		
-            }            
+		// Show the add and refresh buttons:
+		form.find('div.recurrenceinput_occurrences_actions').show();
+		
+            } else {
+		// No EXDATE/RDATE support
+		form.find('div.recurrenceinput_occurrences_actions').hide();
+	    }
+
             
             selector = form.find('select[name=recurrenceinput_rtemplate]');
             display_fields(selector);            
@@ -1050,8 +1046,22 @@
         );
 
 	// Pop up the little add form when clicking "Add..."
-	form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput();
+	form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput({
+            selectors: true,
+            format: conf.i18n.short_date_format
+        });
         form.find('input#add_action').click(occurrenceAdd);
+
+	// When the reload button is clicked, reload
+	form.find('a.recurrenceinput_refresh_button').click(
+	    function (event) {
+		event.preventDefault();
+		loadOccurrences(findStartDate(),
+		    widget_save_to_rfc5545(form, conf, false).result,
+		    0,
+		    false);
+	    }
+	);
 	
         // When selecting template, update what fieldsets are visible.
         form.find('select[name=recurrenceinput_rtemplate]').change(

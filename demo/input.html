@@ -56,30 +56,26 @@
     
     <div class="fieldname_start">
         <label>Start:</label>
-        <input id="connected_start2" type="date" value="2012-12-12" />
-    </div>
-    <div class="fieldname_end">
-        <label>End:</label>
-        <input id="connected_end2" type="date" />
+        <input id="connected_start" type="date" value="2012-12-12" />
     </div>
     <script type="text/javascript">
-      $(':date').dateinput();
+      $('input#connected_start').dateinput({selectors: true});
     </script>
     
-    <textarea name="connected2">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=100
+    <textarea name="connected">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=100
 EXDATE:20121217T000000,20121227T000000Z
 RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
     <script type="text/javascript">
-        $("textarea[name=connected2]").recurrenceinput({startField: "connected_start2",  ajaxURL: document.URL});
+        $("textarea[name=connected]").recurrenceinput({startField: "connected_start",  ajaxURL: document.URL});
     </script>
 
     
     <h2>Read only mode</h2>
     
     <!-- This also works as a test that both empty (above) and non-empty works -->
-    <textarea name="repeat3">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <textarea name="repeat2">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
     <script type="text/javascript">
-        $("textarea[name=repeat3]").recurrenceinput({readOnly: true});
+        $("textarea[name=repeat2]").recurrenceinput({readOnly: true});
     </script>
 
     
@@ -92,7 +88,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             display_label_unactivate: '\u00C5terkommer inte',
             display_label_activate: '\u00C5terkommer',
             edit: 'Redigera...',
-            add: 'Lägg till',
+            add: 'L\u00E4gg till',
             
             recurrence_type: 'Typ av \u00E5terkomst:',
     
@@ -127,7 +123,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             range_by_end_date_label: 'Till och med',
     
             including_label: ', samt den',
-            except_label: ', förutom den',
+            except_label: ', f\u00F6rutom den',
 
             cancel_button_label: 'Avbryt',        
             save_button_label: 'Spara',

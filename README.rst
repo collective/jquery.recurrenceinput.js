@@ -39,8 +39,6 @@ To Do
 High priority:
 
 * 100% code coverage from tests (currently 67%).
-* Add and refresh button should only show when it makes sense.
-* Year/Month selectors for the dateinputs.
 
 Medium priority:
 
