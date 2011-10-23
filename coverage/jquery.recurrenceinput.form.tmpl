@@ -109,13 +109,13 @@
                             id="${name}_yearly_type:DAY_OF_MONTH" />
                         <label for="${name}_yearly_type:DAY_OF_MONTH">
                             ${i18n.yearly_day_of_month_1}
-                            <select name="recurrenceinput_yearly_day_of_month">
+                            <select name="recurrenceinput_yearly_day_of_month_month">
                             {{each i18n.months}}
                                 <option value="${$index+1}">${$value}</option>
                             {{/each}}
                             </select>
                             ${i18n.yearly_day_of_month_2}
-                            <select name="recurrenceinput_yearly_day_of_month_index">
+                            <select name="recurrenceinput_yearly_day_of_month_day">
                             {{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,
                                     18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}
                                 <option value="${$value}">${$value}</option>

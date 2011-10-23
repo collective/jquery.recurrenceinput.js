@@ -336,8 +336,8 @@
                 switch (yearly_type) {
                 
                 case 'DAY_OF_MONTH':
-                    month = $('select[name=recurrenceinput_yearly_day_of_month]', form).val();
-                    day = $('select[name=recurrenceinput_yearly_day_of_month_index]', form).val();
+                    month = $('select[name=recurrenceinput_yearly_day_of_month_month]', form).val();
+                    day = $('select[name=recurrenceinput_yearly_day_of_month_day]', form).val();
                     result += ';BYMONTH=' + month;
                     result += ';BYMONTHDAY=' + day;
                     human += ', ' + conf.i18n.months[month - 1] + ' ' + day;
@@ -423,7 +423,12 @@
         if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
             if (tz === true) {
                 // Make it UTC:
-                tmp = form.ical.EXDATE.map(function (x) { return x + 'Z'; });
+                tmp = form.ical.EXDATE.map(function (x) {
+                    if (x.length === 8) { // DATE format. Make it DATE-TIME
+                        x += 'T000000';
+                    }
+                    return x + 'Z'; 
+                });
             } else {
                 tmp = form.ical.EXDATE;
             }
@@ -432,7 +437,12 @@
         if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
             if (tz === true) {
                 // Make it UTC:
-                tmp = form.ical.RDATE.map(function (x) { return x + 'Z'; });
+                tmp = form.ical.RDATE.map(function (x) {
+                    if (x.length === 8) { // DATE format. Make it DATE-TIME
+                        x += 'T000000';
+                    }
+                    return x + 'Z';
+                });
             } else {
                 tmp = form.ical.RDATE;
             }
@@ -521,7 +531,7 @@
         var unsupported_features = false;
         var i, matches, match, match_index, rtemplate, d, input, index;
         var selector, selectors, field, radiobutton, start, end;
-        var interval, byday, bymonth, bymonthday, bysetpos, count, until;
+        var interval, byday, bymonth, bymonthday, count, until;
         var day, month, year, weekday, ical;
 
         form.ical = parseIcal(icaldata);
@@ -554,13 +564,6 @@
             bymonth = null;
         }
     
-        matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            bysetpos = matches[1];
-        } else {
-            bysetpos = null;
-        }
-        
         matches = /COUNT=([0-9]+);?/.exec(form.ical.RRULE);
         if (matches) {
             count = matches[1];
@@ -672,8 +675,8 @@
                         unsupported_features = true;
                         bymonthday = bymonthday.split(",")[0];
                     }
-                    field.find('select[name=recurrenceinput_yearly_day_of_month]').val(bymonth);                    
-                    field.find('select[name=recurrenceinput_yearly_day_of_month_index]').val(bymonthday);                    
+                    field.find('select[name=recurrenceinput_yearly_day_of_month_month]').val(bymonth);                    
+                    field.find('select[name=recurrenceinput_yearly_day_of_month_day]').val(bymonthday);                    
                 }
     
                 if (byday) {
@@ -923,8 +926,8 @@
                 form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val(dayindex);
                 form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val(day);
 
-                form.find('select[name=recurrenceinput_yearly_day_of_month]').val(start_date.getMonth() + 1);
-                form.find('select[name=recurrenceinput_yearly_day_of_month_index]').val(start_date.getDate());                    
+                form.find('select[name=recurrenceinput_yearly_day_of_month_month]').val(start_date.getMonth() + 1);
+                form.find('select[name=recurrenceinput_yearly_day_of_month_day]').val(start_date.getDate());                    
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(dayindex);
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(day);
                 form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
