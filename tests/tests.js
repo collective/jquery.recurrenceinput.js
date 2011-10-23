@@ -12,17 +12,6 @@ test("Widget setup", function () {
   
 });
 
-test("Open and close", function () {
-    expect(2);
-    var input = $("textarea[name=repeat]").recurrenceinput();
-    input.form.overlay().load();
-    ok(input.form.is(':visible'));
-    
-    input.form.hide().overlay();
-    ok(!input.form.is(':visible'));  
-
-});
-
 test("Daily recurrence with count", function () {
     expect(5);
     
@@ -90,6 +79,35 @@ test("Yearly recurrence without end", function () {
     
     occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 10);
+    
+    $('.recurrenceinput_save_button').click();
+    ok($("textarea[name=repeat]").val() === rrule);
+    
+});
+
+test("RDATE and EXDATE", function () {
+    expect(8);
+
+    // Set the start date to test the XML javascript stuff.
+    $("input[name=start]").val('4/13/11');
+    //$("input[name=start]").data('dateinput').change();
+    
+    
+    // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    $("textarea[name=repeat]").val(rrule);
+    $('a[name=recurrenceinput_edit]').click();
+        
+    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val() === 'WE');
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
+    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_END_DATE');
+    ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '04/19/2018');
+    
+    occurrences = input.form.find('div.occurrence');
+    ok(occurrences.length === 9);
     
     $('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);

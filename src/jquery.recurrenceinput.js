@@ -421,10 +421,22 @@
         }
 	result = 'RRULE:' + result;
 	if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
-	    result = result + '\nEXDATE:' + form.ical.EXDATE;
+	    if (tz === true) {
+		// Make it UTC:
+		tmp = form.ical.EXDATE.map(function (x) { return x + 'Z'; });
+	    } else {
+		tmp = form.ical.EXDATE;
+	    }
+	    result = result + '\nEXDATE:' + tmp;
 	}
 	if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
-	    result = result + '\nRDATE:' + form.ical.RDATE;
+	    if (tz === true) {
+		// Make it UTC:
+		tmp = form.ical.RDATE.map(function (x) { return x + 'Z'; });
+	    } else {
+		tmp = form.ical.RDATE;
+	    }
+	    result = result + '\nRDATE:' + tmp;
 	}
         return {result: result, description: human};
     }
@@ -699,9 +711,6 @@
                     input = field.find('input[name=recurrenceinput_range_by_end_date_calendar]');
                     year = until.slice(0, 4);
                     month = until.slice(4, 6);
-                    if (month[0] === '0') {
-                        month = month[1]; //parseInt fails on leading zeroes. 
-                    }
                     month = parseInt(month, 10) - 1;
                     day = until.slice(6, 8);
                     input.data('dateinput').setValue(year, month, day);
@@ -1020,7 +1029,8 @@
         // Make the date input into a calendar dateinput()
         form.find('input[name=recurrenceinput_range_by_end_date_calendar]').dateinput({
             selectors: true,
-            format: conf.i18n.short_date_format
+            format: conf.i18n.short_date_format,
+	    yearRange: [-5, 10]
         });
 
         if (textarea.val()) {
@@ -1048,7 +1058,8 @@
 	// Pop up the little add form when clicking "Add..."
 	form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput({
             selectors: true,
-            format: conf.i18n.short_date_format
+            format: conf.i18n.short_date_format,
+	    yearRange: [-5, 10]
         });
         form.find('input#add_action').click(occurrenceAdd);
 

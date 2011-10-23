@@ -22,13 +22,15 @@
 
 <body>
     
-    <h1 id="qunit-header">QUnit example</h1>
-    <h2 id="qunit-banner"></h2>
-    <h2 id="qunit-userAgent"></h2>
-    <ol id="qunit-tests"></ol>
+    <div id="thetests">
+        <h1 id="qunit-header">QUnit example</h1>
+        <h2 id="qunit-banner"></h2>
+        <h2 id="qunit-userAgent"></h2>
+        <ol id="qunit-tests"></ol>
+    </div>
     
     <!-- Test form -->
-        <form action="." method="get">
+    <form action="." method="get">
 
         <div class="field">
             <div class="fieldname_start">
@@ -54,12 +56,147 @@
         <div class="field fieldname_repeat">
             <textarea name="repeat"></textarea>
             <script type="text/javascript">
+		$.tools.recurrenceinput.localize("sv", {
+		    display_label_unactivate: '\u00C5terkommer inte',
+		    display_label_activate: '\u00C5terkommer',
+		    edit: 'Redigera...',
+		    add: 'L\u00E4gg till',
+		    
+		    recurrence_type: 'Typ av \u00E5terkomst:',
+	    
+		    daily_interval_1: 'Varje',
+		    daily_interval_2: 'dag(ar)',
+	    
+		    weekly_interval_1: 'Varje',
+		    weekly_interval_2: 'vecka/veckor',
+		    weekly_weekdays: 'P\u00E5:',
+	    
+		    monthly_day_of_month_1: 'Den',
+		    monthly_day_of_month_2: 'dagen i m\u00E5naden',
+		    monthly_day_of_month_3: ', var',
+		    monthly_day_of_month_4: 'm\u00E5nad',
+		    monthly_weekday_of_month_1: '',
+		    monthly_weekday_of_month_2: '',
+		    monthly_weekday_of_month_3: ', varje',
+		    monthly_weekday_of_month_4: 'm\u00E5nad',
+	    
+		    yearly_day_of_month_1: 'Varje',
+		    yearly_day_of_month_2: '',
+		    yearly_day_of_month_3: '',
+		    yearly_weekday_of_month_1: '',
+		    yearly_weekday_of_month_2: '',
+		    yearly_weekday_of_month_3: '',
+		    yearly_weekday_of_month_4: '',
+		    
+		    range_label: '\u00C5terkomsten stoppar:',
+		    range_no_end_label: 'Inte',
+		    range_by_occurrences_label_1: 'Stoppar efter',
+		    range_by_occurrences_label_2: '\u00E5terkomster',
+		    range_by_end_date_label: 'Till och med',
+	    
+		    including_label: ', samt den',
+		    except_label: ', f\u00F6rutom den',
+	
+		    cancel_button_label: 'Avbryt',        
+		    save_button_label: 'Spara',
+	    
+		    order_indexes: ['F\u00F6rsta', 'Andra', 'Tredje', 'Fj\u00E4rde', 'Sista'],
+		    months: [
+			'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
+			'Juli', 'Augusti', 'September', 'October', 'November', 'December'],
+		    short_months: [
+			'Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun',
+			'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+		    weekdays: [
+			'M\u00E5ndag', 'Tisdag', 'Onsdag', 'Torsdag',
+			'Fredag', 'L\u00F6rdag', 'S\u00F6ndag'],
+		    short_weekdays: [
+			'M\u00E5n', 'Tis', 'Ons', 'Tor','Fre', 'L\u00F6r', 'S\u00F6n'],
+			
+		    long_date_format: 'dd mmmm yyyy',
+		    short_date_format: 'yyyy-mm-dd',
+			
+		    no_template_match: 'Varning: Denna h\u00E4ndelse anv\u00E4nder funktionalitet ' +
+				       'som denna dialog inte st\u00F6djer. Om du sparar kan ' +
+				       'detta \u00E4ndra n\u00E4r h\u00E4ndelsen \u00E5terkommer.',
+				       
+		    rtemplate: {
+			daily: 'Varje dag',
+			mondayfriday: 'M\u00E5ndagar och Fredagar',
+			weekdays: 'Veckodagar',
+			weekly: 'Varje vecka',
+			monthly: 'Varje m\u00E5nad',
+			yearly: 'Varje \u00E5r',
+		    }
+	
+		});
+		
+		$.tools.recurrenceinput.setTemplates(
+		    {
+			daily: {
+			    rrule: 'FREQ=DAILY',
+			    fields: [
+				'recurrenceinput_daily_interval',
+				'recurrenceinput_range_options'
+			    ]
+			},
+			mondayfriday: {
+			    rrule: 'FREQ=WEEKLY;BYDAY=MO,FR',
+			    fields: [
+				'recurrenceinput_range_options'
+			    ]
+			},
+			weekdays: {
+			    rrule: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
+			    fields: [
+				'recurrenceinput_range_options'
+			    ]
+			},
+			weekly: {
+			    rrule: 'FREQ=WEEKLY',
+			    fields: [
+				'recurrenceinput_weekly_interval',
+				'recurrenceinput_weekly_weekdays',
+				'recurrenceinput_range_options'
+			    ]
+			},
+			monthly: {
+			    rrule: 'FREQ=MONTHLY',
+			    fields: [
+				'recurrenceinput_monthly_options',
+				'recurrenceinput_range_options'
+			    ]
+			},
+			yearly: {
+			    rrule: 'FREQ=YEARLY',
+			    fields: [
+				'recurrenceinput_yearly_options',
+				'recurrenceinput_range_options'
+			    ]
+			}
+		    }, 
+		    {
+			en: {
+			    daily: 'Daily',
+			    mondayfriday: 'Monday and Friday',
+			    weekdays: 'Weekdays',
+			    weekly: 'Weekly',
+			    monthly: 'Monthly',
+			    yearly: 'Yearly',
+			},
+			sv: {
+			    daily: 'Dagligen',
+			    mondayfriday: 'M\u00E5ndagar och Fredagar',
+			    weekdays: 'Veckodagar',
+			    weekly: 'Varje vecka',
+			    monthly: 'Varje m\u00E5nad',
+			    yearly: 'Varje \u00E5r',
+			}
+		    }        
+		);
+		
                 $("textarea[name=repeat]").recurrenceinput({startField: "start",  ajaxURL: document.URL});
             </script>
-        </div>
-
-        <div class="buttons">
-            <input type="submit" name="" value="Submit" />
         </div>
 
     </form>
