@@ -21,7 +21,7 @@
             // FORM OVERLAY
             form_overlay: {
                 speed: 'fast',
-                fixed: false,
+                fixed: false
             },
         
             // JQUERY TEMPLATE NAMES
@@ -216,37 +216,37 @@
     var Re = /d{1,4}|m{1,4}|yy(?:yy)?|"[^"]*"|'[^']*'/g;
     
     function zeropad(val, len) {
-            val = '' + val;
-            len = len || 2;
-            while (val.length < len) { val = "0" + val; }
-            return val;
+        val = val.toString();
+        len = len || 2;
+        while (val.length < len) { val = "0" + val; }
+        return val;
     }  
     
     function format(date, fmt, conf) {
             
-      var d = date.getDate(),
-                    D = date.getDay(),
-                    m = date.getMonth(),
-                    y = date.getFullYear(),
+        var d = date.getDate(),
+            D = date.getDay(),
+            m = date.getMonth(),
+            y = date.getFullYear(),
 
-                    flags = {
-                            d:    d,
-                            dd:   zeropad(d),
-                            ddd:  conf.i18n.short_weekdays[D],
-                            dddd: conf.i18n.weekdays[D],
-                            m:    m + 1,
-                            mm:   zeropad(m + 1),
-                            mmm:  conf.i18n.short_months[m],
-                            mmmm: conf.i18n.months[m],
-                            yy:   String(y).slice(2),
-                            yyyy: y
-                    };
+            flags = {
+                d:    d,
+                dd:   zeropad(d),
+                ddd:  conf.i18n.short_weekdays[D],
+                dddd: conf.i18n.weekdays[D],
+                m:    m + 1,
+                mm:   zeropad(m + 1),
+                mmm:  conf.i18n.short_months[m],
+                mmmm: conf.i18n.months[m],
+                yy:   String(y).slice(2),
+                yyyy: y
+            };
 
-            var result = fmt.replace(Re, function ($0) {
-                    return $0 in flags ? flags[$0] : $0.slice(1, $0.length - 1);
-            });
-            
-            return result
+        var result = fmt.replace(Re, function ($0) {
+            return flags.hasOwnProperty($0) ? flags[$0] : $0.slice(1, $0.length - 1);
+        });
+        
+        return result;
             
     }
     
@@ -392,7 +392,7 @@
             form.ical.RDATE.sort();
             tmp = [];
             for (i = 0; i < form.ical.RDATE.length; i++) {
-                if (form.ical.RDATE[i] != '') {
+                if (form.ical.RDATE[i] !== '') {
                     year = parseInt(form.ical.RDATE[i].substring(0, 4), 10);
                     month = parseInt(form.ical.RDATE[i].substring(4, 6), 10) - 1;
                     day = parseInt(form.ical.RDATE[i].substring(6, 8), 10);
@@ -408,7 +408,7 @@
             form.ical.EXDATE.sort();
             tmp = [];
             for (i = 0; i < form.ical.EXDATE.length; i++) {
-                if (form.ical.EXDATE[i] != '') {
+                if (form.ical.EXDATE[i] !== '') {
                     year = parseInt(form.ical.EXDATE[i].substring(0, 4), 10);
                     month = parseInt(form.ical.EXDATE[i].substring(4, 6), 10) - 1;
                     day = parseInt(form.ical.EXDATE[i].substring(6, 8), 10);
@@ -801,7 +801,7 @@
                             'Include',
                         '</a>',
                     '</span>',
-                '</div>'].join('\n');
+                    '</div>'].join('\n');
             form.find('div.recurrenceinput_occurrences').prepend(html);
             $(form.find('div.recurrenceinput_occurrences div')[0]).slideDown();
         }
@@ -809,7 +809,7 @@
         // element is where to find the tag in question. Can be the form
         // or the display widget. Defaults to the form.
         function loadOccurrences(start_date, rfc5545, start, readonly) {
-            var date, occurrence_div;
+            var element, occurrence_div;
             
             if (conf.ajaxURL === null) {
                 return;
@@ -950,7 +950,7 @@
             var label = display.find('label[class=recurrenceinput_display]');
             label.text(conf.i18n.display_label_activate + ' ' + RFC5545.description);
             textarea.val(RFC5545.result);
-            start_date = findStartDate();
+            var start_date = findStartDate();
             if (start_date !== null) {
                 loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, true);
             }

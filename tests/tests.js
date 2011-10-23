@@ -77,7 +77,7 @@ test("Yearly recurrence without end", function () {
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
     
-    occurrences = input.form.find('div.occurrence');
+    var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 10);
     
     $('.recurrenceinput_save_button').click();
@@ -106,7 +106,7 @@ test("RDATE and EXDATE", function () {
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_END_DATE');
     ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '04/19/2018');
     
-    occurrences = input.form.find('div.occurrence');
+    var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 9);
     
     $('.recurrenceinput_save_button').click();
