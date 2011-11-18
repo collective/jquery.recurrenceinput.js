@@ -771,7 +771,6 @@
 
         function occurrenceExclude(event) {
             event.preventDefault();
-            this.className = 'exdate';
             form.ical.EXDATE.push(this.attributes.date.value);
             $(this).unbind(event);
             $(this).click(occurrenceInclude);
@@ -779,7 +778,6 @@
 
         function occurrenceInclude(event) {
             event.preventDefault();
-            this.className = 'rrule';
             form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
             $(this).unbind(event);
             $(this).click(occurrenceExclude);
@@ -787,9 +785,10 @@
         
         function occurrenceDelete(event) {
             event.preventDefault();
-            this.className = 'exdate';
-            form.ical.RDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
-            $(this).parent().parent().hide('slow');
+            form.ical.RDATE.splice(form.ical.RDATE.indexOf(this.attributes.date.value), 1);
+            $(this).parent().parent().hide('slow', function () {
+                $(this).remove();
+            });
         }
         
         function occurrenceAdd(event) {
@@ -798,20 +797,20 @@
                 .find('span.recurrenceinput_add_occurrence input#add_date')
                 .data('dateinput');
             var datevalue = dateinput.getValue('yyyymmddT000000');
-            this.className = 'exdate';
             form.ical.RDATE.push(datevalue);
             var html = ['<div class="occurrence" style="display: none;">',
-                    '<span class="exdate">',
+                    '<span class="rdate">',
                         dateinput.getValue(conf.i18n.long_date_format),
                     '</span>',
                     '<span class="action">',
-                        '<a date="' + datevalue + '" href="#" class="exdate" >',
+                        '<a date="' + datevalue + '" href="#" class="rdate" >',
                             'Include',
                         '</a>',
                     '</span>',
                     '</div>'].join('\n');
             form.find('div.recurrenceinput_occurrences').prepend(html);
             $(form.find('div.recurrenceinput_occurrences div')[0]).slideDown();
+            $(form.find('div.recurrenceinput_occurrences .action a.rdate')[0]).click(occurrenceDelete);
         }
         
         // element is where to find the tag in question. Can be the form

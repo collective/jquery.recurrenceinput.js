@@ -160,10 +160,8 @@ test("Test of connected start field and showing of occurrences", function () {
 test("RDATE and EXDATE", function () {
     expect(8);
 
-    // Set the start date to test the XML javascript stuff.
-    $("input[name=start]").val('4/13/11');
-    //$("input[name=start]").data('dateinput').change();
-    
+    // Set the start date to test the Ajax request stuff.
+    $("input[name=start]").val('04/13/11');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -186,6 +184,48 @@ test("RDATE and EXDATE", function () {
     
 });
 
+test("Adding RDATE", function () {
+    expect(4);
+    
+    // Set the start date to test the Ajax request stuff.
+    $("input[name=start]").val('04/13/11');    
+    
+    // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    $("textarea[name=repeat]").val(rrule);
+    $('a[name=recurrenceinput_edit]').click();
+
+    // Add a new date as an RDATE
+    input.form.find('#add_date').data('dateinput').setValue(2011, 5, 13);
+    input.form.find('#add_action').click();
+    // Check that it's added properly
+    var entity = input.form.find('.recurrenceinput_occurrences .occurrence span')[0];
+    ok(entity.attributes.class.value == "rdate");
+    
+    // Delete it
+    entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[0];
+    ok(entity.attributes.date.value == "20110613T000000");
+    $(entity).click();
+    
+    // Delay 1 second
+    stop();
+    setTimeout(function () {
+        // Check that it is gone:
+        entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[0];
+        ok(entity.attributes.date.value !== "20110613T000000");
+        start();
+    }, 1000);
+
+    // And add another one:
+    input.form.find('#add_date').data('dateinput').setValue(2011, 5, 14);
+    input.form.find('#add_action').click();
+    
+    $('.recurrenceinput_save_button').click();
+    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20110614T000000Z,20120606T000000Z");
+    
+});
+
 test("Parameters get stripped, dates converted to date times, multiple row lines merged.", function () {
     // XXX: I suspect, but I have to verify this, that it should be the other way around.
     // We should force EXDATES and RDATES to by DATE's only.
@@ -198,4 +238,3 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
     
 });
-
