@@ -38,7 +38,7 @@ To Do
 
 High priority:
 
-* 100% code coverage from tests (currently 87%).
+* 100% code coverage from tests (currently 90%).
 
 Medium priority:
 

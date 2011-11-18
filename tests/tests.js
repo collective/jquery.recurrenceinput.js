@@ -158,13 +158,24 @@ test("Test of connected start field and showing of occurrences", function () {
 });
 
 test("RDATE and EXDATE", function () {
-    expect(8);
+    expect(12);
 
     // Set the start date to test the Ajax request stuff.
     $("input[name=start]").val('04/13/11');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
+    
+    // Verify the list of dates    
+    stop(); // Delay this 1 second so the Ajax request can finish.
+    setTimeout(function () {
+        var occurrences = input.display.find('.recurrenceinput_occurrences .occurrence span');
+        ok(occurrences[0].firstChild.data === " April 13, 2011 ");
+        ok(occurrences[8].firstChild.data === " April 11, 2018 ");
+        start();
+    }, 1000);
+
+    
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
     $("textarea[name=repeat]").val(rrule);
     $('a[name=recurrenceinput_edit]').click();
@@ -181,6 +192,16 @@ test("RDATE and EXDATE", function () {
     
     $('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
+    
+    // Verify the list of dates    
+    stop(); // Delay this 1 second so the Ajax request can finish.
+    setTimeout(function () {
+        var occurrences = input.display.find('.recurrenceinput_occurrences .occurrence span');
+        ok(occurrences[0].firstChild.data === " April 13, 2011 ");
+        ok(occurrences[8].firstChild.data === " April 11, 2018 ");
+        start();
+    }, 1000);
+
     
 });
 
@@ -210,7 +231,7 @@ test("Adding RDATE", function () {
     
     // Delay 1 second
     stop();
-    setTimeout(function () {
+    setTimeout(function () { // In jQuery 1.6 this can be replaced by a .promise().done() call.
         // Check that it is gone:
         entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[0];
         ok(entity.attributes.date.value !== "20110613T000000");
