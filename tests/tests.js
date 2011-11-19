@@ -259,3 +259,16 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
     
 });
+
+test("Unsupported features (incomplete)", function () {
+
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    // No support for BYSETPOS (how would you do something like that in a UI!?)
+    var rrule = "RRULE:FREQ=MONTHLY;COUNT=3;BYDAY=TU,WE,TH;BYSETPOS=3";
+    $("textarea[name=repeat]").val(rrule);
+    $('a[name=recurrenceinput_edit]').click();
+    
+    ok($('#message_area').text().indexOf('BYSETPOS') !== -1);
+    $('.recurrenceinput_save_button').click();
+
+});

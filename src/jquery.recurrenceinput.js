@@ -156,9 +156,12 @@
         long_date_format: 'mmmm dd, yyyy',
         short_date_format: 'mm/dd/yyyy',
             
-        no_template_match: 'Warning: This event uses recurrence features not ' +
-                           'supported by this widget. Saving the recurrence ' +
-                           'may change the recurrence in unintended ways.',
+        unsupported_features: 'Warning: This event uses recurrence features not ' +
+                              'supported by this widget. Saving the recurrence ' +
+                              'may change the recurrence in unintended ways:',
+        no_template_match: 'No matching recurrence template',
+        multiple_day_of_month: 'This widget does not support multiple days in monthly recurrence',
+        bysetpos_unsupported: 'BYSETPOS is not supported',
                            
         rtemplate: {
             daily: 'Daily',
@@ -528,7 +531,7 @@
     }
     
     function widget_load_from_rfc5545(form, conf, icaldata) {
-        var unsupported_features = false;
+        var unsupported_features = [];
         var i, matches, match, match_index, rtemplate, d, input, index;
         var selector, selectors, field, radiobutton, start, end;
         var interval, byday, bymonth, bymonthday, count, until;
@@ -580,7 +583,7 @@
 
         matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
-            unsupported_features = true;
+            unsupported_features.push(conf.i18n.bysetpos_unsupported);
         };
 
         // Find the best rule:
@@ -610,7 +613,7 @@
                     break;
                 }
             }
-            unsupported_features = true;
+            unsupported_features.push(conf.i18n.no_template_match);
         }
         
         for (i = 0; i < rtemplate.fields.length; i++) {
@@ -640,7 +643,7 @@
                     monthly_type = 'DAY_OF_MONTH';
                     if (bymonthday.indexOf(',') !== -1) {
                         // No support for multiple days in one month
-                        unsupported_features = true;
+                        unsupported_features.push(conf.i18n.multiple_day_of_month);
                         // Just keep the first
                         bymonthday = bymonthday.split(",")[0];
                     }
@@ -653,7 +656,7 @@
                     
                     if (byday.indexOf(',') !== -1) {
                         // No support for multiple days in one month
-                        unsupported_features = true;
+                        unsupported_features.push(conf.i18n.multiple_day_of_month);
                         byday = byday.split(",")[0];
                     }
                     index = byday.slice(0, -2);
@@ -677,7 +680,7 @@
                     yearly_type = 'DAY_OF_MONTH';
                     if (bymonthday.indexOf(',') !== -1) {
                         // No support for multiple days in one month
-                        unsupported_features = true;
+                        unsupported_features.push(conf.i18n.multiple_day_of_month);
                         bymonthday = bymonthday.split(",")[0];
                     }
                     field.find('select[name=recurrenceinput_yearly_day_of_month_month]').val(bymonth);                    
@@ -689,7 +692,7 @@
                     
                     if (byday.indexOf(',') !== -1) {
                         // No support for multiple days in one month
-                        unsupported_features = true;
+                        unsupported_features.push(conf.i18n.multiple_day_of_month);
                         byday = byday.split(",")[0];
                     }
                     index = byday.slice(0, -2);
@@ -733,8 +736,13 @@
             }
         }
         
-        if (unsupported_features) {
-            alert(conf.i18n.no_template_match);
+        var message_area = form.find('#message_area');
+        if (unsupported_features.length !== 0) {
+            message_area.text(conf.i18n.unsupported_features + unsupported_features.join('; '));
+            message_area.show();
+        } else {
+            message_area.text('');
+            message_area.hide();
         }
     
     }

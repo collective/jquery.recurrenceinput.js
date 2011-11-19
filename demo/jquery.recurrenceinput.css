@@ -72,3 +72,10 @@ div.recurrenceinput_occurrences_actions a.recurrenceinput_refresh_button {
     background-image: url(refresh.png);
     color: transparent;
 }
+
+div#message_area {
+    background-color: red;
+    font-weight: bold;
+    width: 24em;
+    padding: 1em;
+}
