@@ -117,5 +117,8 @@ Contributors
 This project was originally started by Rok Garbas.
 
 Authors:
-  * Rok Garbas
   * Lennart Regebro
+  * Rok Garbas
+  
+Thanks to Hexagon IT, http://www.hexagonit.fi/, who funded the main body
+of work, done by Lennart Regebro.
