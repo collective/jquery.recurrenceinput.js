@@ -3,6 +3,31 @@
 
 module("jquery.recurrenceinput widget");
 
+test("Basics", function () {
+    expect(3);
+    
+    // This sets the text area rule, and opens the dialog box.
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
+    $("textarea[name=repeat]").val(rrule);
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+
+    // And this saves it.
+    input.form.find('.recurrenceinput_save_button').click();
+    ok($("textarea[name=repeat]").val() === rrule);
+    
+    // And now we toggle it off.
+    $('.fieldname_repeat input[name=recurrenceinput_checkbox]')[0].checked = false;
+    $('.fieldname_repeat input[name=recurrenceinput_checkbox]').click();
+    ok($("textarea[name=repeat]").val() === '');    
+    
+    // And on again.
+    $('.fieldname_repeat input[name=recurrenceinput_checkbox]')[0].checked = true;
+    $('.fieldname_repeat input[name=recurrenceinput_checkbox]').click();
+    ok($("textarea[name=repeat]").val() === rrule);
+    
+});
+
 test("Daily recurrence with count", function () {
     expect(5);
     
