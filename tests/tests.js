@@ -1,5 +1,5 @@
 /*jslint indent: 4 */
-/*global $: false, ok: false, module: false, test: false, expect */
+/*global $, ok, module, test, stop, start, expect */
 
 module("jquery.recurrenceinput widget");
 
@@ -238,11 +238,11 @@ test("Adding RDATE", function () {
     input.form.find('#add_action').click();
     // Check that it's added properly
     var entity = input.form.find('.recurrenceinput_occurrences .occurrence span')[0];
-    ok(entity.attributes.class.value == "rdate");
+    ok(entity.attributes['class'].value === "rdate");
     
     // Delete it
     entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[0];
-    ok(entity.attributes.date.value == "20110613T000000");
+    ok(entity.attributes.date.value === "20110613T000000");
     $(entity).click();
     
     // Delay 1 second
@@ -276,13 +276,13 @@ test("Adding EXDATE", function () {
     $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
 
     // Reinclude the one in the original rrule.
-    entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[1];
-    ok(entity.attributes.date.value == "20120411T000000");
+    var entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[1];
+    ok(entity.attributes.date.value === "20120411T000000");
     $(entity).click();
 
     // Exclude another one
     entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[3];
-    ok(entity.attributes.date.value == "20130410T000000");
+    ok(entity.attributes.date.value === "20130410T000000");
     $(entity).click();
     
     // Check the batching

@@ -1,6 +1,5 @@
-
-/*jslint regexp: false, indent: 4 */
-/*global $: false, alert: false, default_conf: false, jQuery: false */
+/*jslint regexp: false, continue: true, indent: 4 */
+/*global $, alert, default_conf, jQuery */
 
 (function ($) {
     $.tools = $.tools || {version: '@VERSION'};
@@ -584,7 +583,7 @@
         matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
             unsupported_features.push(conf.i18n.bysetpos_unsupported);
-        };
+        }
 
         // Find the best rule:
         match = '';
