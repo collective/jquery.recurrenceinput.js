@@ -2,15 +2,6 @@
 /*global $: false, ok: false, module: false, test: false, expect */
 
 module("jquery.recurrenceinput widget");
- 
-test("Widget setup", function () {
-    expect(2);
-    // Make sure that the overlay for the popup exists and is hidden
-    var form = $('.recurrenceinput_form');
-    ok(form[0] !== undefined);
-    ok(!form.is(':visible'));
-  
-});
 
 test("Daily recurrence with count", function () {
     expect(5);
@@ -263,23 +254,50 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
 
 test("Unsupported features (incomplete)", function () {
 
+    expect(13);
+    
     var input = $("textarea[name=custom]").recurrenceinput();
 
     // No matching template
-    var rrule = "RRULE:FREQ=MONTHLY;COUNT=3;BYDAY=TU,WE,TH";
-    $("textarea[name=custom]").val(rrule);
+    $("textarea[name=custom]").val("RRULE:FREQ=MONTHLY;COUNT=3");
     $('.fieldname_custom a[name=recurrenceinput_edit]').click();
     ok(input.form.find('#message_area').text().indexOf('No matching recurrence template') !== -1);
     input.form.find('.recurrenceinput_save_button').click();
     
     input = $("textarea[name=repeat]").recurrenceinput();
     // No support for BYSETPOS (how would you do something like that in a UI!?)
-    var rrule = "RRULE:FREQ=MONTHLY;COUNT=3;BYDAY=TU,WE,TH;BYSETPOS=3";
-    $("textarea[name=repeat]").val(rrule);
+    $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;COUNT=3;BYSETPOS=3");
     $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    
     ok(input.form.find('#message_area').text().indexOf('BYSETPOS') !== -1);
     input.form.find('.recurrenceinput_save_button').click();
 
-    
+    // Can't have multiple recurrences in a month with MONTHLY recurrence
+    $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;BYMONTHDAY=2,3,9");
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    ok(input.form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val() === "2");
+    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
+    input.form.find('.recurrenceinput_save_button').click();
+
+    $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;BYDAY=+2WE,+3TH");
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    ok(input.form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val() === '+2');
+    ok(input.form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val() === 'WE');
+    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
+    input.form.find('.recurrenceinput_save_button').click();
+
+    $("textarea[name=repeat]").val("RRULE:FREQ=YEARLY;BYMONTH=12;BYMONTHDAY=2,3,9");
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    ok(input.form.find('select[name=recurrenceinput_yearly_day_of_month_day]').val() === "2");
+    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
+    input.form.find('.recurrenceinput_save_button').click();
+
+    $("textarea[name=repeat]").val("RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE,+3TH");
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val() === 'WE');
+    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
+    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
+    input.form.find('.recurrenceinput_save_button').click();
+
+
 });

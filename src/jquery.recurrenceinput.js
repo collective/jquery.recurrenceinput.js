@@ -160,7 +160,7 @@
                               'supported by this widget. Saving the recurrence ' +
                               'may change the recurrence in unintended ways:',
         no_template_match: 'No matching recurrence template',
-        multiple_day_of_month: 'This widget does not support multiple days in monthly recurrence',
+        multiple_day_of_month: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos_unsupported: 'BYSETPOS is not supported',
                            
         rtemplate: {
@@ -641,11 +641,11 @@
                 
                 if (bymonthday) {
                     monthly_type = 'DAY_OF_MONTH';
-                    if (bymonthday.indexOf(',') !== -1) {
+                    if (bymonthday.length > 1) {
                         // No support for multiple days in one month
                         unsupported_features.push(conf.i18n.multiple_day_of_month);
                         // Just keep the first
-                        bymonthday = bymonthday.split(",")[0];
+                        bymonthday = bymonthday[0];
                     }
                     field.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(bymonthday);
                     field.find('input[name=recurrenceinput_monthly_day_of_month_interval]').val(interval);
@@ -678,10 +678,10 @@
                 
                 if (bymonthday) {
                     yearly_type = 'DAY_OF_MONTH';
-                    if (bymonthday.indexOf(',') !== -1) {
+                    if (bymonthday.length > 1) {
                         // No support for multiple days in one month
                         unsupported_features.push(conf.i18n.multiple_day_of_month);
-                        bymonthday = bymonthday.split(",")[0];
+                        bymonthday = bymonthday[0];
                     }
                     field.find('select[name=recurrenceinput_yearly_day_of_month_month]').val(bymonth);                    
                     field.find('select[name=recurrenceinput_yearly_day_of_month_day]').val(bymonthday);                    
