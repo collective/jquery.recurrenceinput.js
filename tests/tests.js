@@ -238,6 +238,33 @@ test("Adding RDATE", function () {
     
 });
 
+test("Adding EXDATE", function () {
+    expect(3);
+    
+    // Set the start date to test the Ajax request stuff.
+    $("input[name=start]").val('04/13/11');    
+    
+    // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    $("textarea[name=repeat]").val(rrule);
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+
+    // Reinclude the one in the original rrule.
+    entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[1];
+    ok(entity.attributes.date.value == "20120411T000000");
+    $(entity).click();
+
+    // Exclude another one
+    entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[3];
+    ok(entity.attributes.date.value == "20130410T000000");
+    $(entity).click();
+        
+    input.form.find('.recurrenceinput_save_button').click();
+    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20130410T000000Z\nRDATE:20120606T000000Z");
+    
+});
+
 test("Parameters get stripped, dates converted to date times, multiple row lines merged.", function () {
     // XXX: I suspect, but I have to verify this, that it should be the other way around.
     // We should force EXDATES and RDATES to by DATE's only.
