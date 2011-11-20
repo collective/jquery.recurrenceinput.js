@@ -199,6 +199,49 @@
             </script>
         </div>
 
+        <div class="field fieldname_custom">
+            <textarea name="custom"></textarea>
+            <script type="text/javascript">
+		$.tools.recurrenceinput.setTemplates(
+		    {
+			daily: {
+			    rrule: 'FREQ=DAILY',
+			    fields: [
+				'recurrenceinput_daily_interval',
+				'recurrenceinput_range_options'
+			    ]
+			},
+			mowefr: {
+			    rrule: 'FREQ=WEEKLY;BYDAY=MO,WE,FR',
+			    fields: [
+				'recurrenceinput_range_options'
+			    ]
+			},
+			weekends: {
+			    rrule: 'FREQ=WEEKLY;BYDAY=SA,SU',
+			    fields: [
+				'recurrenceinput_range_options'
+			    ]
+			}
+		    }, 
+		    {
+			en: {
+			    daily: 'Daily',
+			    mowefr: 'Mondays, Wednesdays, Fridays',
+			    weekends: 'Weekends'
+			},
+			sv: {
+			    daily: 'Dagligen',
+			    mowefr: 'M\u00E5ndagar, Onsdagar, Fredagar',
+			    weekends: 'Veckoslut'
+			}
+		    }        
+		);
+		
+                $("textarea[name=custom]").recurrenceinput({startField: "start",  ajaxURL: document.URL, form_overlay: {speed: 1}});
+            </script>
+        </div>
+
     </form>
     
 </body>

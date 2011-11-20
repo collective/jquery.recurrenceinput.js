@@ -18,7 +18,7 @@ test("Daily recurrence with count", function () {
     // This sets the text area rule, and opens the dialog box.
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'daily');
@@ -27,7 +27,7 @@ test("Daily recurrence with count", function () {
     ok(input.form.find('input[name=recurrenceinput_range_by_occurrences_value]').val() === '8');
         
     // And this saves it.
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
 });
 
@@ -37,7 +37,7 @@ test("Weekly recurrence with days and end", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000Z";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'weekly');
@@ -52,7 +52,7 @@ test("Weekly recurrence with days and end", function () {
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_END_DATE');
     ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '09/22/2012');
 
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -63,7 +63,7 @@ test("Bimonthly recurrence by month day", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;BYMONTHDAY=12;INTERVAL=2";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'monthly');
@@ -71,7 +71,7 @@ test("Bimonthly recurrence by month day", function () {
     ok(input.form.find('input[name=recurrenceinput_monthly_day_of_month_interval]').val() === '2');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
     
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -82,7 +82,7 @@ test("Trimonthly recurrence by day", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;BYDAY=+3TH;INTERVAL=3";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'monthly');
@@ -92,7 +92,7 @@ test("Trimonthly recurrence by day", function () {
     ok(input.form.find('input[name=recurrenceinput_monthly_weekday_of_month_interval]').val() === '3');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
     
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -103,7 +103,7 @@ test("Yearly by month day recurrence without end", function () {
     // The second wednesday of April, forevah.
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYMONTHDAY=11";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
         
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
@@ -112,7 +112,7 @@ test("Yearly by month day recurrence without end", function () {
     ok(input.form.find('select[name=recurrenceinput_yearly_day_of_month_day]').val() === '11');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
         
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -124,7 +124,7 @@ test("Yearly byday recurrence without end", function () {
     // The second wednesday of April, forevah.
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";    
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
         
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
@@ -133,7 +133,7 @@ test("Yearly byday recurrence without end", function () {
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
     ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
         
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -149,11 +149,11 @@ test("Test of connected start field and showing of occurrences", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";    
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
     var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 10);
     
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     
 });
 
@@ -178,7 +178,7 @@ test("RDATE and EXDATE", function () {
     
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
         
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
     ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
@@ -190,7 +190,7 @@ test("RDATE and EXDATE", function () {
     var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 9);
     
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
     // Verify the list of dates    
@@ -215,7 +215,7 @@ test("Adding RDATE", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
 
     // Add a new date as an RDATE
     input.form.find('#add_date').data('dateinput').setValue(2011, 5, 13);
@@ -242,7 +242,7 @@ test("Adding RDATE", function () {
     input.form.find('#add_date').data('dateinput').setValue(2011, 5, 14);
     input.form.find('#add_action').click();
     
-    $('.recurrenceinput_save_button').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20110614T000000Z,20120606T000000Z");
     
 });
@@ -252,23 +252,34 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     // We should force EXDATES and RDATES to by DATE's only.
     expect(1);
 
+    var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000Z\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
-    $('.recurrenceinput_save_button').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    input.form.find('.recurrenceinput_save_button').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
     
 });
 
 test("Unsupported features (incomplete)", function () {
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = $("textarea[name=custom]").recurrenceinput();
+
+    // No matching template
+    var rrule = "RRULE:FREQ=MONTHLY;COUNT=3;BYDAY=TU,WE,TH";
+    $("textarea[name=custom]").val(rrule);
+    $('.fieldname_custom a[name=recurrenceinput_edit]').click();
+    ok(input.form.find('#message_area').text().indexOf('No matching recurrence template') !== -1);
+    input.form.find('.recurrenceinput_save_button').click();
+    
+    input = $("textarea[name=repeat]").recurrenceinput();
     // No support for BYSETPOS (how would you do something like that in a UI!?)
     var rrule = "RRULE:FREQ=MONTHLY;COUNT=3;BYDAY=TU,WE,TH;BYSETPOS=3";
     $("textarea[name=repeat]").val(rrule);
-    $('a[name=recurrenceinput_edit]').click();
+    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
     
-    ok($('#message_area').text().indexOf('BYSETPOS') !== -1);
-    $('.recurrenceinput_save_button').click();
+    ok(input.form.find('#message_area').text().indexOf('BYSETPOS') !== -1);
+    input.form.find('.recurrenceinput_save_button').click();
 
+    
 });

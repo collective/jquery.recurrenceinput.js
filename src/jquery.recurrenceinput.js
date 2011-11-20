@@ -738,7 +738,7 @@
         
         var message_area = form.find('#message_area');
         if (unsupported_features.length !== 0) {
-            message_area.text(conf.i18n.unsupported_features + unsupported_features.join('; '));
+            message_area.text(conf.i18n.unsupported_features + ' ' + unsupported_features.join('; '));
             message_area.show();
         } else {
             message_area.text('');
