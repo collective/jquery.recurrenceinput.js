@@ -239,14 +239,14 @@ test("Adding RDATE", function () {
 });
 
 test("Adding EXDATE", function () {
-    expect(3);
+    expect(4);
     
     // Set the start date to test the Ajax request stuff.
     $("input[name=start]").val('04/13/11');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
     $("textarea[name=repeat]").val(rrule);
     $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
 
@@ -259,9 +259,20 @@ test("Adding EXDATE", function () {
     entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[3];
     ok(entity.attributes.date.value == "20130410T000000");
     $(entity).click();
+    
+    // Check the batching
+    $(input.form.find('.recurrenceinput_occurrences .batching a')[1]).click();
+    // Delay 1 second
+    stop();
+    setTimeout(function () { // In jQuery 1.6 this can be replaced by a .promise().done() call.
+        // Check that it is gone:
+        entity = input.form.find('.recurrenceinput_occurrences .batching .current a')[0];
+        ok(entity.attributes.start.value === "11");
+        start();
+    }, 1000);
         
     input.form.find('.recurrenceinput_save_button').click();
-    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20130410T000000Z\nRDATE:20120606T000000Z");
+    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000Z\nEXDATE:20130410T000000Z\nRDATE:20120606T000000Z");
     
 });
 

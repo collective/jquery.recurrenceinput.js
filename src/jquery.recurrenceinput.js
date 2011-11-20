@@ -826,10 +826,6 @@
         function loadOccurrences(start_date, rfc5545, start, readonly) {
             var element, occurrence_div;
             
-            if (conf.ajaxURL === null) {
-                return;
-            }
-            
             if (!readonly) {
                 element = form;
             } else {
