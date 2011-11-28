@@ -44,7 +44,7 @@ div.rioccurrences span.current {
     font-weight: bold;
 }
 
-div.riform span.action {
+div.riform span.action a {
     height: 19px;
     width: 19px;
     overflow: hidden;

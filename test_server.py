@@ -112,6 +112,8 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             # Add it to the results
             if date in getattr(rule, '_rdate', []):
                 occurrence_type = 'rdate'
+            elif date == start_date:
+                occurrence_type = 'start'                
             else:
                 occurrence_type = 'rrule'
             occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),

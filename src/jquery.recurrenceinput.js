@@ -779,6 +779,7 @@
         function occurrenceExclude(event) {
             event.preventDefault();
             form.ical.EXDATE.push(this.attributes.date.value);
+            this.attributes.class.value = 'exdate';
             $(this).unbind(event);
             $(this).click(occurrenceInclude);
         }
@@ -786,6 +787,7 @@
         function occurrenceInclude(event) {
             event.preventDefault();
             form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
+            this.attributes.class.value = 'rrule';
             $(this).unbind(event);
             $(this).click(occurrenceExclude);
         }
