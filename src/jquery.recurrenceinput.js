@@ -1,5 +1,5 @@
 /*jslint regexp: false, continue: true, indent: 4 */
-/*global $, alert, default_conf, jQuery */
+/*global $, alert, jQuery */
 
 (function ($) {
     $.tools = $.tools || {version: '@VERSION'};
@@ -18,7 +18,7 @@
             ajaxURL: null,
         
             // FORM OVERLAY
-            form_overlay: {
+            formOverlay: {
                 speed: 'fast',
                 fixed: false
             },
@@ -34,42 +34,42 @@
                 daily: {
                     rrule: 'FREQ=DAILY',
                     fields: [
-                        'recurrenceinput_daily_interval',
-                        'recurrenceinput_range_options'
+                        'ridailyinterval',
+                        'rirangeoptions'
                     ]
                 },
                 mondayfriday: {
                     rrule: 'FREQ=WEEKLY;BYDAY=MO,FR',
                     fields: [
-                        'recurrenceinput_range_options'
+                        'rirangeoptions'
                     ]
                 },
                 weekdays: {
                     rrule: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
                     fields: [
-                        'recurrenceinput_range_options'
+                        'rirangeoptions'
                     ]
                 },
                 weekly: {
                     rrule: 'FREQ=WEEKLY',
                     fields: [
-                        'recurrenceinput_weekly_interval',
-                        'recurrenceinput_weekly_weekdays',
-                        'recurrenceinput_range_options'
+                        'riweeklyinterval',
+                        'riweeklyweekdays',
+                        'rirangeoptions'
                     ]
                 },
                 monthly: {
                     rrule: 'FREQ=MONTHLY',
                     fields: [
-                        'recurrenceinput_monthly_options',
-                        'recurrenceinput_range_options'
+                        'rimonthlyoptions',
+                        'rirangeoptions'
                     ]
                 },
                 yearly: {
                     rrule: 'FREQ=YEARLY',
                     fields: [
-                        'recurrenceinput_yearly_options',
-                        'recurrenceinput_range_options'
+                        'riyearlyoptions',
+                        'rirangeoptions'
                     ]
                 }
             }
@@ -96,71 +96,71 @@
     };
     
     tool.localize("en", {
-        display_label_unactivate: 'Does not repeat',
-        display_label_activate: 'Repeats ',
+        displayUnactivate: 'Does not repeat',
+        displayActivate: 'Repeats ',
         edit: 'Edit...',
         add:  'Add',
         
-        recurrence_type: 'Recurrence type:',
+        recurrenceType: 'Recurrence type:',
 
-        daily_interval_1: 'Every',
-        daily_interval_2: 'days',
+        dailyInterval1: 'Every',
+        dailyInterval2: 'days',
 
-        weekly_interval_1: 'Every',
-        weekly_interval_2: 'week(s)',
-        weekly_weekdays: 'On:',
+        weeklyInterval1: 'Every',
+        weeklyInterval2: 'week(s)',
+        weeklyWeekdays: 'On:',
 
-        monthly_day_of_month_1: 'Day',
-        monthly_day_of_month_2: 'of the month',
-        monthly_day_of_month_3: ', every',
-        monthly_day_of_month_4: 'month(s)',
-        monthly_weekday_of_month_1: 'The',
-        monthly_weekday_of_month_2: '',
-        monthly_weekday_of_month_3: ', every',
-        monthly_weekday_of_month_4: 'month(s)',
+        monthlyDayOfMonth1: 'Day',
+        monthlyDayOfMonth2: 'of the month',
+        monthlyDayOfMonth3: ', every',
+        monthlyDayOfMonth4: 'month(s)',
+        monthlyWeekdayOfMonth1: 'The',
+        monthlyWeekdayOfMonth2: '',
+        monthlyWeekdayOfMonth3: ', every',
+        monthlyWeekdayOfMonth4: 'month(s)',
 
-        yearly_day_of_month_1: 'Every',
-        yearly_day_of_month_2: '',
-        yearly_day_of_month_3: '',
-        yearly_weekday_of_month_1: 'The',
-        yearly_weekday_of_month_2: '',
-        yearly_weekday_of_month_3: 'of',
-        yearly_weekday_of_month_4: '',
+        yearlyDayOfMonth1: 'Every',
+        yearlyDayOfMonth2: '',
+        yearlyDayOfMonth3: '',
+        yearlyWeekdayOfMonth1: 'The',
+        yearlyWeekdayOfMonth2: '',
+        yearlyWeekdayOfMonth3: 'of',
+        yearlyWeekdayOfMonth4: '',
         
-        range_label: 'End recurrance:',
-        range_no_end_label: 'No end',
-        range_by_occurrences_label_1: 'Ending after',
-        range_by_occurrences_label_2: 'occurrence(s)',
-        range_by_end_date_label: 'Until ',
+        range: 'End recurrance:',
+        rangeNoEnd: 'No end',
+        rangeByOccurrences1: 'Ending after',
+        rangeByOccurrences2: 'occurrence(s)',
+        rangeByEndDate: 'Until ',
         
-        including_label: ', and also ',
-        except_label: ', except for',
+        including: ', and also ',
+        except: ', except for',
 
-        cancel_button_label: 'Cancel',        
-        save_button_label: 'Save',
+        cancel: 'Cancel',        
+        save: 'Save',
 
-        order_indexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
+        orderIndexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
         months: [
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'],
-        short_months: [
+        shortMonths: [
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         weekdays: [
             'Monday', 'Tuesday', 'Wednesday', 'Thursday',
             'Friday', 'Saturday', 'Sunday'],
-        short_weekdays: [
+        shortWeekdays: [
             'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             
-        long_date_format: 'mmmm dd, yyyy',
-        short_date_format: 'mm/dd/yyyy',
+        longDateFormat: 'mmmm dd, yyyy',
+        shortDateFormat: 'mm/dd/yyyy',
             
-        unsupported_features: 'Warning: This event uses recurrence features not ' +
+        unsupportedFeatures: 'Warning: This event uses recurrence features not ' +
                               'supported by this widget. Saving the recurrence ' +
                               'may change the recurrence in unintended ways:',
-        no_template_match: 'No matching recurrence template',
-        multiple_day_of_month: 'This widget does not support multiple days in monthly or yearly recurrence',
-        bysetpos_unsupported: 'BYSETPOS is not supported',
+        noTemplateMatch: 'No matching recurrence template',
+        multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
+        bysetpos: 'BYSETPOS is not supported',
                            
         rtemplate: {
             daily: 'Daily',
@@ -173,11 +173,11 @@
     });
 
 
-    var OCCURRENCE_TMPL = ['<div class="recurrenceinput_occurrences">',
+    var OCCURRENCETMPL = ['<div class="rioccurrences">',
         '{{each occurrences}}',
             '<div class="occurrence">',
                 '<span class="${occurrences[$index].type}">',
-                    '${occurrences[$index].formatted_date}',
+                    '${occurrences[$index].formattedDate}',
                 '</span>',
                 '{{if !readOnly}}',
                     '<span class="action">',
@@ -205,13 +205,13 @@
         '{{/each}}',
         '<div class="batching">',
             '{{each batch.batches}}',
-                '{{if $index === batch.current_batch}}<span class="current">{{/if}}',
+                '{{if $index === batch.currentBatch}}<span class="current">{{/if}}',
                     '<a href="#" start="${batch.batches[$index][0]}">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>',
-                '{{if $index === batch.current_batch}}</span>{{/if}}',
+                '{{if $index === batch.currentBatch}}</span>{{/if}}',
             '{{/each}}',
         '</div></div>'].join('\n');
     
-    $.template('occurrence_tmpl', OCCURRENCE_TMPL);
+    $.template('occurrenceTmpl', OCCURRENCETMPL);
 
     
     // Formatting function (mostly) from jQueryTools dateinput
@@ -234,11 +234,11 @@
             flags = {
                 d:    d,
                 dd:   zeropad(d),
-                ddd:  conf.i18n.short_weekdays[D],
+                ddd:  conf.i18n.shortWeekdays[D],
                 dddd: conf.i18n.weekdays[D],
                 m:    m + 1,
                 mm:   zeropad(m + 1),
-                mmm:  conf.i18n.short_months[m],
+                mmm:  conf.i18n.shortMonths[m],
                 mmmm: conf.i18n.months[m],
                 yy:   String(y).slice(2),
                 yyyy: y
@@ -255,36 +255,36 @@
     /**
      * Parsing RFC5545 from widget
      */
-    function widget_save_to_rfc5545(form, conf, tz) {
-        var value = form.find('select[name=recurrenceinput_rtemplate]').val();
+    function widgetSaveToRfc5545(form, conf, tz) {
+        var value = form.find('select[name=rirtemplate]').val();
         var rtemplate = conf.rtemplate[value];
         var result = rtemplate.rrule;
         var human = conf.i18n.rtemplate[value];
         var field, input, weekdays, i18nweekdays, i, j, index, tmp;
-        var day, month, year, interval, yearly_type, occurrences, date;
+        var day, month, year, interval, yearlyType, occurrences, date;
         
         for (i = 0; i < rtemplate.fields.length; i++) {
             field = form.find('#' + rtemplate.fields[i]);
             
             switch (field.attr('id')) {
             
-            case 'recurrenceinput_daily_interval':
-                input = field.find('input[name=recurrenceinput_daily_interval]');
+            case 'ridailyinterval':
+                input = field.find('input[name=ridailyinterval]');
                 result += ';INTERVAL=' + input.val();
-                human = conf.i18n.daily_interval_1 + ' ' + input.val() + ' ' + conf.i18n.daily_interval_2;
+                human = conf.i18n.dailyInterval1 + ' ' + input.val() + ' ' + conf.i18n.dailyInterval2;
                 break;
                 
-            case 'recurrenceinput_weekly_interval':
-                input = field.find('input[name=recurrenceinput_weekly_interval]');
+            case 'riweeklyinterval':
+                input = field.find('input[name=riweeklyinterval]');
                 result += ';INTERVAL=' + input.val();
-                human = conf.i18n.weekly_interval_1 + ' ' + input.val() + ' ' + conf.i18n.weekly_interval_2;
+                human = conf.i18n.weeklyInterval1 + ' ' + input.val() + ' ' + conf.i18n.weeklyInterval2;
                 break;
                 
-            case 'recurrenceinput_weekly_weekdays':
+            case 'riweeklyweekdays':
                 weekdays = '';
                 i18nweekdays = '';
                 for (j = 0; j < conf.weekdays.length; j++) {
-                    input = field.find('input[name=recurrenceinput_weekly_weekdays_' + conf.weekdays[j] + ']');
+                    input = field.find('input[name=riweeklyweekdays' + conf.weekdays[j] + ']');
                     if (input.is(':checked')) {
                         if (weekdays) {
                             weekdays += ',';
@@ -296,94 +296,94 @@
                 }
                 if (weekdays) {
                     result += ';BYDAY=' + weekdays;
-                    human += ' ' + conf.i18n.weekly_weekdays + ' ' + i18nweekdays;
+                    human += ' ' + conf.i18n.weeklyWeekdays + ' ' + i18nweekdays;
                 }
                 break;
                 
-            case 'recurrenceinput_monthly_options':
-                var monthly_type = $('input[name=recurrenceinput_monthly_type]:checked', form).val();
-                switch (monthly_type) {
+            case 'rimonthlyoptions':
+                var monthlyType = $('input[name=rimonthlytype]:checked', form).val();
+                switch (monthlyType) {
                 
-                case 'DAY_OF_MONTH':
-                    day = $('select[name=recurrenceinput_monthly_day_of_month_day]', form).val();
-                    interval = $('input[name=recurrenceinput_monthly_day_of_month_interval]', form).val();
+                case 'DAYOFMONTH':
+                    day = $('select[name=rimonthlydayofmonthday]', form).val();
+                    interval = $('input[name=rimonthlydayofmonthinterval]', form).val();
                     result += ';BYMONTHDAY=' + day;
                     result += ';INTERVAL=' + interval;                        
-                    human += ', ' + conf.i18n.monthly_day_of_month_1 + ' ' + day + ' ' + conf.i18n.monthly_day_of_month_2;
+                    human += ', ' + conf.i18n.monthlyDayOfMonth1 + ' ' + day + ' ' + conf.i18n.monthlyDayOfMonth2;
                     if (interval !== 1) {
-                        human += conf.i18n.monthly_day_of_month_3 + ' ' + interval + ' ' + conf.i18n.monthly_day_of_month_4;
+                        human += conf.i18n.monthlyDayOfMonth3 + ' ' + interval + ' ' + conf.i18n.monthlyDayOfMonth4;
                     }
                     break;
-                case 'WEEKDAY_OF_MONTH':
-                    index = $('select[name=recurrenceinput_monthly_weekday_of_month_index]', form).val();
-                    day = $('select[name=recurrenceinput_monthly_weekday_of_month]', form).val();
-                    interval = $('input[name=recurrenceinput_monthly_weekday_of_month_interval]', form).val();
+                case 'WEEKDAYOFMONTH':
+                    index = $('select[name=rimonthlyweekdayofmonthindex]', form).val();
+                    day = $('select[name=rimonthlyweekdayofmonth]', form).val();
+                    interval = $('input[name=rimonthlyweekdayofmonthinterval]', form).val();
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
-                        human += ', ' + conf.i18n.monthly_weekday_of_month_1 + ' ';
-                        human += ' ' + conf.i18n.order_indexes[conf.order_indexes.indexOf(index)];
-                        human += ' ' + conf.i18n.monthly_weekday_of_month_2;
+                        human += ', ' + conf.i18n.monthlyWeekdayOfMonth1 + ' ';
+                        human += ' ' + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)];
+                        human += ' ' + conf.i18n.monthlyWeekdayOfMonth2;
                         human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
                     }
                     result += ';INTERVAL=' + interval;
                     if (interval !== 1) {
-                        human += ' ' + conf.i18n.monthly_weekday_of_month_3 + ' ' + interval + ' ' + conf.i18n.monthly_weekday_of_month_4;
+                        human += ' ' + conf.i18n.monthlyWeekdayOfMonth3 + ' ' + interval + ' ' + conf.i18n.monthlyWeekdayOfMonth4;
                     }
                     break;
                 }
                 break;
                 
-            case 'recurrenceinput_yearly_options':
-                yearly_type = $('input[name=recurrenceinput_yearly_type]:checked', form).val();
-                switch (yearly_type) {
+            case 'riyearlyoptions':
+                yearlyType = $('input[name=riyearlyType]:checked', form).val();
+                switch (yearlyType) {
                 
-                case 'DAY_OF_MONTH':
-                    month = $('select[name=recurrenceinput_yearly_day_of_month_month]', form).val();
-                    day = $('select[name=recurrenceinput_yearly_day_of_month_day]', form).val();
+                case 'DAYOFMONTH':
+                    month = $('select[name=riyearlydayofmonthmonth]', form).val();
+                    day = $('select[name=riyearlydayofmonthday]', form).val();
                     result += ';BYMONTH=' + month;
                     result += ';BYMONTHDAY=' + day;
                     human += ', ' + conf.i18n.months[month - 1] + ' ' + day;
                     break;
-                case 'WEEKDAY_OF_MONTH':
-                    index = $('select[name=recurrenceinput_yearly_weekday_of_month_index]', form).val();
-                    day = $('select[name=recurrenceinput_yearly_weekday_of_month_day]', form).val();
-                    month = $('select[name=recurrenceinput_yearly_weekday_of_month_month]', form).val();
+                case 'WEEKDAYOFMONTH':
+                    index = $('select[name=riyearlyweekdayofmonthindex]', form).val();
+                    day = $('select[name=riyearlyweekdayofmonthday]', form).val();
+                    month = $('select[name=riyearlyweekdayofmonthmonth]', form).val();
                     result += ';BYMONTH=' + month;
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
-                        human += ', ' + conf.i18n.yearly_weekday_of_month_1;
-                        human += ' ' + conf.i18n.order_indexes[conf.order_indexes.indexOf(index)];
-                        human += ' ' + conf.i18n.yearly_weekday_of_month_2;
+                        human += ', ' + conf.i18n.yearlyWeekdayOfMonth1;
+                        human += ' ' + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)];
+                        human += ' ' + conf.i18n.yearlyWeekdayOfMonth2;
                         human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
-                        human += ' ' + conf.i18n.yearly_weekday_of_month_3;
+                        human += ' ' + conf.i18n.yearlyWeekdayOfMonth3;
                         human += ' ' + conf.i18n.months[month - 1];
-                        human += ' ' + conf.i18n.yearly_weekday_of_month_4;
+                        human += ' ' + conf.i18n.yearlyWeekdayOfMonth4;
                     }
                     break;
                 }
                 break;
                 
-            case 'recurrenceinput_range_options':
-                var range_type = form.find('input[name=recurrenceinput_range_type]:checked').val();
-                switch (range_type) {
+            case 'rirangeoptions':
+                var rangeType = form.find('input[name=rirangetype]:checked').val();
+                switch (rangeType) {
                 
-                case 'BY_OCCURRENCES':
-                    occurrences = form.find('input[name=recurrenceinput_range_by_occurrences_value]').val();
+                case 'BYOCCURRENCES':
+                    occurrences = form.find('input[name=rirangebyoccurrencesvalue]').val();
                     result += ';COUNT=' + occurrences;
-                    human += ', ' + conf.i18n.range_by_occurrences_label_1;
+                    human += ', ' + conf.i18n.rangeByOccurrences1;
                     human += ' ' + occurrences;
-                    human += ' ' + conf.i18n.range_by_occurrences_label_2;
+                    human += ' ' + conf.i18n.rangeByOccurrences2;
                     break;
-                case 'BY_END_DATE':
-                    field = form.find('input[name=recurrenceinput_range_by_end_date_calendar]');
+                case 'BYENDDATE':
+                    field = form.find('input[name=rirangebyenddatecalendar]');
                     date = field.data('dateinput').getValue('yyyymmdd');
                     result += ';UNTIL=' + date + 'T000000';
                     if (tz === true) {
                         // Make it UTC:
                         result += 'Z';
                     }
-                    human += ', ' + conf.i18n.range_by_end_date_label;
-                    human += ' ' + field.data('dateinput').getValue(conf.i18n.long_date_format);
+                    human += ', ' + conf.i18n.rangeByEndDate;
+                    human += ' ' + field.data('dateinput').getValue(conf.i18n.longDateFormat);
                     break;
                 }
                 break;
@@ -398,11 +398,11 @@
                     year = parseInt(form.ical.RDATE[i].substring(0, 4), 10);
                     month = parseInt(form.ical.RDATE[i].substring(4, 6), 10) - 1;
                     day = parseInt(form.ical.RDATE[i].substring(6, 8), 10);
-                    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
+                    tmp.push(format(new Date(year, month, day), conf.i18n.longDateFormat, conf));
                 }
             }
             if (tmp.length !== 0) {
-                human = human + conf.i18n.including_label + ' ' + tmp.join('; ');
+                human = human + conf.i18n.including + ' ' + tmp.join('; ');
             }
         }
         
@@ -414,11 +414,11 @@
                     year = parseInt(form.ical.EXDATE[i].substring(0, 4), 10);
                     month = parseInt(form.ical.EXDATE[i].substring(4, 6), 10) - 1;
                     day = parseInt(form.ical.EXDATE[i].substring(6, 8), 10);
-                    tmp.push(format(new Date(year, month, day), conf.i18n.long_date_format, conf));
+                    tmp.push(format(new Date(year, month, day), conf.i18n.longDateFormat, conf));
                 }
             }
             if (tmp.length !== 0) {
-                human = human + conf.i18n.except_label + ' ' + tmp.join('; ');
+                human = human + conf.i18n.except + ' ' + tmp.join('; ');
             }
         }
         result = 'RRULE:' + result;
@@ -474,15 +474,15 @@
         // Get rid of timezones
         // TODO: We could parse dates and range here, maybe?
         var result = [];
-        var split_dates = dates.split(',');
+        var splitDates = dates.split(',');
         var date;
         
-        for (date in split_dates) {
-            if (split_dates.hasOwnProperty(date)) {
-                if (split_dates[date].indexOf('Z') !== -1) {
-                    result.push(split_dates[date].substring(0, 15));
+        for (date in splitDates) {
+            if (splitDates.hasOwnProperty(date)) {
+                if (splitDates[date].indexOf('Z') !== -1) {
+                    result.push(splitDates[date].substring(0, 15));
                 } else {
-                    result.push(split_dates[date]);
+                    result.push(splitDates[date]);
                 }
             }
         }
@@ -529,9 +529,9 @@
         return result;
     }
     
-    function widget_load_from_rfc5545(form, conf, icaldata) {
-        var unsupported_features = [];
-        var i, matches, match, match_index, rtemplate, d, input, index;
+    function widgetLoadFromRfc5545(form, conf, icaldata) {
+        var unsupportedFeatures = [];
+        var i, matches, match, matchIndex, rtemplate, d, input, index;
         var selector, selectors, field, radiobutton, start, end;
         var interval, byday, bymonth, bymonthday, count, until;
         var day, month, year, weekday, ical;
@@ -582,12 +582,12 @@
 
         matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
         if (matches) {
-            unsupported_features.push(conf.i18n.bysetpos_unsupported);
+            unsupportedFeatures.push(conf.i18n.bysetpos);
         }
 
         // Find the best rule:
         match = '';
-        match_index = null;
+        matchIndex = null;
         for (i in conf.rtemplate) {
             if (conf.rtemplate.hasOwnProperty(i)) {
                 rtemplate = conf.rtemplate[i];
@@ -595,16 +595,16 @@
                     if (form.ical.RRULE.length > match.length) {
                         // This is the best match so far
                         match = form.ical.RRULE;
-                        match_index = i;
+                        matchIndex = i;
                     }
                 }  
             }
         }
         
         if (match) {
-            rtemplate = conf.rtemplate[match_index];
+            rtemplate = conf.rtemplate[matchIndex];
             // Set the selector:
-            selector = form.find('select[name=recurrenceinput_rtemplate]').val(match_index);
+            selector = form.find('select[name=rirtemplate]').val(matchIndex);
         } else {
             for (rtemplate in conf.rtemplate) {
                 if (conf.rtemplate.hasOwnProperty(rtemplate)) {
@@ -612,113 +612,113 @@
                     break;
                 }
             }
-            unsupported_features.push(conf.i18n.no_template_match);
+            unsupportedFeatures.push(conf.i18n.noTemplateMatch);
         }
         
         for (i = 0; i < rtemplate.fields.length; i++) {
             field = form.find('#' + rtemplate.fields[i]);
             switch (field.attr('id')) {
             
-            case 'recurrenceinput_daily_interval':
-                field.find('input[name=recurrenceinput_daily_interval]').val(interval);
+            case 'ridailyinterval':
+                field.find('input[name=ridailyinterval]').val(interval);
                 break;  
                 
-            case 'recurrenceinput_weekly_interval':
-                field.find('input[name=recurrenceinput_weekly_interval]').val(interval);
+            case 'riweeklyinterval':
+                field.find('input[name=riweeklyinterval]').val(interval);
                 break;
                 
-            case 'recurrenceinput_weekly_weekdays':
+            case 'riweeklyweekdays':
                 for (d = 0; d < conf.weekdays.length; d++) {
                     day = conf.weekdays[d];
-                    input = field.find('input[name=recurrenceinput_weekly_weekdays_' + day + ']');
+                    input = field.find('input[name=riweeklyweekdays' + day + ']');
                     input.attr('checked', byday.indexOf(day) !== -1);
                 }
                 break;
                 
-            case 'recurrenceinput_monthly_options':
-                var monthly_type = 'DAY_OF_MONTH'; // Default to using BYMONTHDAY
+            case 'rimonthlyoptions':
+                var monthlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
                 
                 if (bymonthday) {
-                    monthly_type = 'DAY_OF_MONTH';
+                    monthlyType = 'DAYOFMONTH';
                     if (bymonthday.length > 1) {
                         // No support for multiple days in one month
-                        unsupported_features.push(conf.i18n.multiple_day_of_month);
+                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                         // Just keep the first
                         bymonthday = bymonthday[0];
                     }
-                    field.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(bymonthday);
-                    field.find('input[name=recurrenceinput_monthly_day_of_month_interval]').val(interval);
+                    field.find('select[name=rimonthlydayofmonthday]').val(bymonthday);
+                    field.find('input[name=rimonthlydayofmonthinterval]').val(interval);
                 }
     
                 if (byday) {
-                    monthly_type = 'WEEKDAY_OF_MONTH';
+                    monthlyType = 'WEEKDAYOFMONTH';
                     
                     if (byday.indexOf(',') !== -1) {
                         // No support for multiple days in one month
-                        unsupported_features.push(conf.i18n.multiple_day_of_month);
+                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                         byday = byday.split(",")[0];
                     }
                     index = byday.slice(0, -2);
                     weekday = byday.slice(-2);
-                    field.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val(index);
-                    field.find('select[name=recurrenceinput_monthly_weekday_of_month]').val(weekday);
-                    field.find('input[name=recurrenceinput_monthly_weekday_of_month_interval]').val(interval);
+                    field.find('select[name=rimonthlyweekdayofmonthindex]').val(index);
+                    field.find('select[name=rimonthlyweekdayofmonth]').val(weekday);
+                    field.find('input[name=rimonthlyweekdayofmonthinterval]').val(interval);
                 }
                 
-                selectors = field.find('input[name=recurrenceinput_monthly_type]');
+                selectors = field.find('input[name=rimonthlytype]');
                 for (index = 0; index < selectors.length; index++) {
                     radiobutton = selectors[index];
-                    $(radiobutton).attr('checked', radiobutton.value === monthly_type);
+                    $(radiobutton).attr('checked', radiobutton.value === monthlyType);
                 }
                 break;
     
-            case 'recurrenceinput_yearly_options':
-                var yearly_type = 'DAY_OF_MONTH'; // Default to using BYMONTHDAY
+            case 'riyearlyoptions':
+                var yearlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
                 
                 if (bymonthday) {
-                    yearly_type = 'DAY_OF_MONTH';
+                    yearlyType = 'DAYOFMONTH';
                     if (bymonthday.length > 1) {
                         // No support for multiple days in one month
-                        unsupported_features.push(conf.i18n.multiple_day_of_month);
+                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                         bymonthday = bymonthday[0];
                     }
-                    field.find('select[name=recurrenceinput_yearly_day_of_month_month]').val(bymonth);                    
-                    field.find('select[name=recurrenceinput_yearly_day_of_month_day]').val(bymonthday);                    
+                    field.find('select[name=riyearlydayofmonthmonth]').val(bymonth);                    
+                    field.find('select[name=riyearlydayofmonthday]').val(bymonthday);                    
                 }
     
                 if (byday) {
-                    yearly_type = 'WEEKDAY_OF_MONTH';
+                    yearlyType = 'WEEKDAYOFMONTH';
                     
                     if (byday.indexOf(',') !== -1) {
                         // No support for multiple days in one month
-                        unsupported_features.push(conf.i18n.multiple_day_of_month);
+                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                         byday = byday.split(",")[0];
                     }
                     index = byday.slice(0, -2);
                     weekday = byday.slice(-2);
-                    field.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(index);
-                    field.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(weekday);
-                    field.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(bymonth);
+                    field.find('select[name=riyearlyweekdayofmonthindex]').val(index);
+                    field.find('select[name=riyearlyweekdayofmonthday]').val(weekday);
+                    field.find('select[name=riyearlyweekdayofmonthmonth]').val(bymonth);
                 }
                 
-                selectors = field.find('input[name=recurrenceinput_yearly_type]');
+                selectors = field.find('input[name=riyearlyType]');
                 for (index = 0; index < selectors.length; index++) {
                     radiobutton = selectors[index];
-                    $(radiobutton).attr('checked', radiobutton.value === yearly_type);
+                    $(radiobutton).attr('checked', radiobutton.value === yearlyType);
                 }
                 break;
                 
-            case 'recurrenceinput_range_options':
-                var range_type = 'NO_END_DATE';
+            case 'rirangeoptions':
+                var rangeType = 'NOENDDATE';
                 
                 if (count) {
-                    range_type = 'BY_OCCURRENCES';
-                    field.find('input[name=recurrenceinput_range_by_occurrences_value]').val(count);
+                    rangeType = 'BYOCCURRENCES';
+                    field.find('input[name=rirangebyoccurrencesvalue]').val(count);
                 }
                 
                 if (until) {
-                    range_type = 'BY_END_DATE';
-                    input = field.find('input[name=recurrenceinput_range_by_end_date_calendar]');
+                    rangeType = 'BYENDDATE';
+                    input = field.find('input[name=rirangebyenddatecalendar]');
                     year = until.slice(0, 4);
                     month = until.slice(4, 6);
                     month = parseInt(month, 10) - 1;
@@ -726,22 +726,22 @@
                     input.data('dateinput').setValue(year, month, day);
                 }
                 
-                selectors = field.find('input[name=recurrenceinput_range_type]');
+                selectors = field.find('input[name=rirangetype]');
                 for (index = 0; index <  selectors.length; index++) {
                     radiobutton = selectors[index];
-                    $(radiobutton).attr('checked', radiobutton.value === range_type);
+                    $(radiobutton).attr('checked', radiobutton.value === rangeType);
                 }
                 break;
             }
         }
         
-        var message_area = form.find('#message_area');
-        if (unsupported_features.length !== 0) {
-            message_area.text(conf.i18n.unsupported_features + ' ' + unsupported_features.join('; '));
-            message_area.show();
+        var messagearea = form.find('#messagearea');
+        if (unsupportedFeatures.length !== 0) {
+            messagearea.text(conf.i18n.unsupportedFeatures + ' ' + unsupportedFeatures.join('; '));
+            messagearea.show();
         } else {
-            message_area.text('');
-            message_area.hide();
+            messagearea.text('');
+            messagearea.hide();
         }
     
     }
@@ -752,20 +752,20 @@
     function RecurrenceInput(conf, textarea) {
 
         var self = this;
-        var form, display, overlay_conf;
+        var form, display;
 
         // Extend conf with non-configurable data used by templates.
         $.extend(conf, {
-            order_indexes: ['+1', '+2', '+3', '+4', '-1'],
+            orderIndexes: ['+1', '+2', '+3', '+4', '-1'],
             weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
         });
         
         // The recurrence type dropdown should show certain fields depending
         // on selection:        
-        function display_fields(selector) {
+        function displayFields(selector) {
             var i;
             // First hide all the fields
-            form.find('.recurrenceinput_field').hide();
+            form.find('.rifield').hide();
             // Then show the ones that should be shown.
             var value = selector.val();
             if (value) {
@@ -801,13 +801,13 @@
         function occurrenceAdd(event) {
             event.preventDefault();
             var dateinput = form
-                .find('span.recurrenceinput_add_occurrence input#add_date')
+                .find('span.riaddoccurrence input#adddate')
                 .data('dateinput');
             var datevalue = dateinput.getValue('yyyymmddT000000');
             form.ical.RDATE.push(datevalue);
             var html = ['<div class="occurrence" style="display: none;">',
                     '<span class="rdate">',
-                        dateinput.getValue(conf.i18n.long_date_format),
+                        dateinput.getValue(conf.i18n.longDateFormat),
                     '</span>',
                     '<span class="action">',
                         '<a date="' + datevalue + '" href="#" class="rdate" >',
@@ -815,15 +815,15 @@
                         '</a>',
                     '</span>',
                     '</div>'].join('\n');
-            form.find('div.recurrenceinput_occurrences').prepend(html);
-            $(form.find('div.recurrenceinput_occurrences div')[0]).slideDown();
-            $(form.find('div.recurrenceinput_occurrences .action a.rdate')[0]).click(occurrenceDelete);
+            form.find('div.rioccurrences').prepend(html);
+            $(form.find('div.rioccurrences div')[0]).slideDown();
+            $(form.find('div.rioccurrences .action a.rdate')[0]).click(occurrenceDelete);
         }
         
         // element is where to find the tag in question. Can be the form
         // or the display widget. Defaults to the form.
-        function loadOccurrences(start_date, rfc5545, start, readonly) {
-            var element, occurrence_div;
+        function loadOccurrences(startdate, rfc5545, start, readonly) {
+            var element, occurrenceDiv;
             
             if (!readonly) {
                 element = form;
@@ -831,8 +831,8 @@
                 element = display;
             }
             
-            occurrence_div = element.find('.recurrenceinput_occurrences');
-            occurrence_div.hide();
+            occurrenceDiv = element.find('.rioccurrences');
+            occurrenceDiv.hide();
             
             
             $.ajax({
@@ -840,11 +840,11 @@
                 async: false, // Can't be tested if it's asynchronous, annoyingly.
                 type: 'post',
                 dataType: 'json',
-                data: {year: start_date.getFullYear(),
-                       month: start_date.getMonth() + 1, // Sending January as 0? I think not.
-                       day: start_date.getDate(),
+                data: {year: startdate.getFullYear(),
+                       month: startdate.getMonth() + 1, // Sending January as 0? I think not.
+                       day: startdate.getDate(),
                        rrule: rfc5545,
-                       format: conf.i18n.long_date_format,
+                       format: conf.i18n.longDateFormat,
                        start: start},
                 success: function (data, status, jqXHR) {
                     var result, element;
@@ -855,26 +855,26 @@
                         element = display;
                     }
                     data.readOnly = readonly;
-                    result = $.tmpl('occurrence_tmpl', data);
-                    occurrence_div = element.find('.recurrenceinput_occurrences');
-                    occurrence_div.replaceWith(result);
+                    result = $.tmpl('occurrenceTmpl', data);
+                    occurrenceDiv = element.find('.rioccurrences');
+                    occurrenceDiv.replaceWith(result);
                     
                     // Add the batch actions:
-                    element.find('.recurrenceinput_occurrences .batching a').click(
+                    element.find('.rioccurrences .batching a').click(
                         function (event) {
                             event.preventDefault();
-                            loadOccurrences(start_date, rfc5545, this.attributes.start.value, readonly);
+                            loadOccurrences(startdate, rfc5545, this.attributes.start.value, readonly);
                         }
                     );
 
                     // Add the delete/undelete actions:
                     if (!readonly) {
-                        element.find('.recurrenceinput_occurrences .action a.rrule').click(occurrenceExclude);
-                        element.find('.recurrenceinput_occurrences .action a.exdate').click(occurrenceInclude);
-                        element.find('.recurrenceinput_occurrences .action a.rdate').click(occurrenceDelete);
+                        element.find('.rioccurrences .action a.rrule').click(occurrenceExclude);
+                        element.find('.rioccurrences .action a.exdate').click(occurrenceInclude);
+                        element.find('.rioccurrences .action a.rdate').click(occurrenceDelete);
                     }
                     // Show the new div
-                    element.find('.recurrenceinput_occurrences').show();
+                    element.find('.rioccurrences').show();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert(textStatus);
@@ -883,98 +883,98 @@
         }
         
         function findStartDate() {
-            var start_field, start_date;
+            var startField, startdate;
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
                 // Se if it is a field already
-                start_field = $(conf.startField);
-                if (!start_field.length) {
+                startField = $(conf.startField);
+                if (!startField.length) {
                     // Otherwise, we assume it's an id:
-                    start_field = $('input[id=' + conf.startField + ']');
+                    startField = $('input[id=' + conf.startField + ']');
                 }
                 
                 // Now we have a field, see if it is a dateinput field:
-                start_date = start_field.data('dateinput');
-                if (start_date === undefined || start_date === null) {
+                startdate = startField.data('dateinput');
+                if (startdate === undefined || startdate === null) {
                     //No, it wasn't, just try to interpret it with Date()
-                    start_date = start_field.val();
+                    startdate = startField.val();
                 } else {
                     // Yes it was, get the date:
-                    start_date = start_date.getValue();
+                    startdate = startdate.getValue();
                 }
-                start_date = new Date(start_date);
+                startdate = new Date(startdate);
                 
-                if (isNaN(start_date)) {
+                if (isNaN(startdate)) {
                     return null;
                 }
-                return start_date;
+                return startdate;
             }
             return null;
         }
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
-            var selector, format, start_field, start_date, dayindex, day;
+            var selector, format, startField, startdate, dayindex, day;
 
             if (rfc5545) {
-                widget_load_from_rfc5545(form, conf, rfc5545);
+                widgetLoadFromRfc5545(form, conf, rfc5545);
                 // check checkbox
-                display.find('input[name=recurrenceinput_checkbox]')
+                display.find('input[name=richeckbox]')
                     .attr('checked', true);
             }
 
-            start_date = findStartDate();
+            startdate = findStartDate();
             
-            if (start_date !== null) {
+            if (startdate !== null) {
                 // If the date is a real date, set the defaults in the form
-                form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val(start_date.getDate());
-                dayindex = conf.order_indexes[Math.floor((start_date.getDate() - 1) / 7)];
-                day = conf.weekdays[start_date.getDay() - 1];
-                form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val(dayindex);
-                form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val(day);
+                form.find('select[name=rimonthlydayofmonthday]').val(startdate.getDate());
+                dayindex = conf.orderIndexes[Math.floor((startdate.getDate() - 1) / 7)];
+                day = conf.weekdays[startdate.getDay() - 1];
+                form.find('select[name=rimonthlyweekdayofmonthindex]').val(dayindex);
+                form.find('select[name=rimonthlyweekdayofmonth]').val(day);
 
-                form.find('select[name=recurrenceinput_yearly_day_of_month_month]').val(start_date.getMonth() + 1);
-                form.find('select[name=recurrenceinput_yearly_day_of_month_day]').val(start_date.getDate());                    
-                form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val(dayindex);
-                form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val(day);
-                form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val(start_date.getMonth() + 1);
+                form.find('select[name=riyearlydayofmonthmonth]').val(startdate.getMonth() + 1);
+                form.find('select[name=riyearlydayofmonthday]').val(startdate.getDate());                    
+                form.find('select[name=riyearlyweekdayofmonthindex]').val(dayindex);
+                form.find('select[name=riyearlyweekdayofmonthday]').val(day);
+                form.find('select[name=riyearlyweekdayofmonthmonth]').val(startdate.getMonth() + 1);
                 
                 // Now when we have a start date, we can also do an ajax call to calculate occurrences:
-                loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, false);
+                loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, false);
                 
                 // Show the add and refresh buttons:
-                form.find('div.recurrenceinput_occurrences_actions').show();
+                form.find('div.rioccurrencesactions').show();
                 
             } else {
                 // No EXDATE/RDATE support
-                form.find('div.recurrenceinput_occurrences_actions').hide();
+                form.find('div.rioccurrencesactions').hide();
             }
 
             
-            selector = form.find('select[name=recurrenceinput_rtemplate]');
-            display_fields(selector);            
+            selector = form.find('select[name=rirtemplate]');
+            displayFields(selector);            
         }
         
         function recurrenceOn() {
-            var RFC5545 = widget_save_to_rfc5545(form, conf, true);
-            var label = display.find('label[class=recurrenceinput_display]');
-            label.text(conf.i18n.display_label_activate + ' ' + RFC5545.description);
+            var RFC5545 = widgetSaveToRfc5545(form, conf, true);
+            var label = display.find('label[class=ridisplay]');
+            label.text(conf.i18n.displayActivate + ' ' + RFC5545.description);
             textarea.val(RFC5545.result);
-            var start_date = findStartDate();
-            if (start_date !== null) {
-                loadOccurrences(start_date, widget_save_to_rfc5545(form, conf, false).result, 0, true);
+            var startdate = findStartDate();
+            if (startdate !== null) {
+                loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, true);
             }
         }
 
         function recurrenceOff() {
-            var label = display.find('label[class=recurrenceinput_display]');
-            label.text(conf.i18n.display_label_unactivate);
+            var label = display.find('label[class=ridisplay]');
+            label.text(conf.i18n.displayUnactivate);
             textarea.val('');
-            display.find('.recurrenceinput_occurrences').hide();
+            display.find('.rioccurrences').hide();
         }
 
         function toggleRecurrence(e) {
-            var checkbox = display.find('input[name=recurrenceinput_checkbox]');
+            var checkbox = display.find('input[name=richeckbox]');
             if (checkbox.is(':checked')) {
                 recurrenceOn();
             } else {
@@ -987,7 +987,7 @@
             // close overlay
             form.overlay().close();
             // check checkbox
-            display.find('input[name=recurrenceinput_checkbox]')
+            display.find('input[name=richeckbox]')
                 .attr('checked', true);
             recurrenceOn();
         }
@@ -1003,7 +1003,7 @@
         */
 
         // The widget
-        if ($.template.recurrenceinput_display === undefined) {
+        if ($.template.ridisplay === undefined) {
             $.ajax({
                 url: $(conf.template.display)[0].src,
                 async: false,
@@ -1014,12 +1014,12 @@
                     alert(error.message + ": " + error.filename);
                 }
             });
-            $(conf.template.display).template('recurrenceinput_display');
+            $(conf.template.display).template('ridisplay');
         }
-        display = $.tmpl('recurrenceinput_display', conf);
+        display = $.tmpl('ridisplay', conf);
 
         // The overlay = form popup
-        if ($.template.recurrenceinput_form === undefined) {
+        if ($.template.riform === undefined) {
             $.ajax({
                 url: $(conf.template.form)[0].src,
                 async: false,
@@ -1030,21 +1030,22 @@
                     alert(error.message + ": " + error.filename);
                 }
             });
-            $(conf.template.form).template('recurrenceinput_form');
+            $(conf.template.form).template('riform');
         }
-        form = $.tmpl('recurrenceinput_form', conf);
+        form = $.tmpl('riform', conf);
         // Make an overlay and hide it
-        form.overlay(conf.form_overlay).hide();
+        form.overlay(conf.formOverlay).hide();
+        form.ical = {};
         
         // Make the date input into a calendar dateinput()
-        form.find('input[name=recurrenceinput_range_by_end_date_calendar]').dateinput({
+        form.find('input[name=rirangebyenddatecalendar]').dateinput({
             selectors: true,
-            format: conf.i18n.short_date_format,
+            format: conf.i18n.shortDateFormat,
             yearRange: [-5, 10]
         });
 
         if (textarea.val()) {
-            widget_load_from_rfc5545(form, conf, textarea.val());
+            widgetLoadFromRfc5545(form, conf, textarea.val());
             recurrenceOn();
         }
 
@@ -1053,10 +1054,10 @@
         */
         
         // When you click on the checkbox, recurrence should toggle on/off.
-        display.find('input[name=recurrenceinput_checkbox]').click(toggleRecurrence);
+        display.find('input[name=richeckbox]').click(toggleRecurrence);
 
         // Show form overlay when you click on the "Edit..." link
-        display.find('a[name=recurrenceinput_edit]').click(
+        display.find('a[name=riedit]').click(
             function (e) {
                 // Load the form to set up the right fields to show, etc.
                 loadData(textarea.val());
@@ -1066,28 +1067,28 @@
         );
 
         // Pop up the little add form when clicking "Add..."
-        form.find('span.recurrenceinput_add_occurrence input#add_date').dateinput({
+        form.find('span.riaddoccurrence input#adddate').dateinput({
             selectors: true,
-            format: conf.i18n.short_date_format,
+            format: conf.i18n.shortDateFormat,
             yearRange: [-5, 10]
         });
-        form.find('input#add_action').click(occurrenceAdd);
+        form.find('input#addaction').click(occurrenceAdd);
 
         // When the reload button is clicked, reload
-        form.find('a.recurrenceinput_refresh_button').click(
+        form.find('a.rirefreshbutton').click(
             function (event) {
                 event.preventDefault();
                 loadOccurrences(findStartDate(),
-                    widget_save_to_rfc5545(form, conf, false).result,
+                    widgetSaveToRfc5545(form, conf, false).result,
                     0,
                     false);
             }
         );
         
         // When selecting template, update what fieldsets are visible.
-        form.find('select[name=recurrenceinput_rtemplate]').change(
+        form.find('select[name=rirtemplate]').change(
             function (e) {
-                display_fields($(this));
+                displayFields($(this));
             }
         );
 
@@ -1101,8 +1102,8 @@
         /*
           Save and cancel methods:
         */
-        form.find('.recurrenceinput_cancel_button').click(cancel);
-        form.find('.recurrenceinput_save_button').click(save);
+        form.find('.ricancelbutton').click(cancel);
+        form.find('.risavebutton').click(save);
         
         /*
          * Public API of RecurrenceInput
@@ -1134,13 +1135,13 @@
 
         // our recurrenceinput widget instance
         var recurrenceinput = new RecurrenceInput(config, this);
-        // hide textarea and place display_widget after textarea
+        // hide textarea and place display widget after textarea
         recurrenceinput.form.appendTo('body');
         this.after(recurrenceinput.display);
         
         if (this.val()) {
             recurrenceinput.display.find(
-                'input[name=recurrenceinput_checkbox]'
+                'input[name=richeckbox]'
             ).attr('checked', true);
         }
         

@@ -1,15 +1,15 @@
 <script>
-    <div class="recurrenceinput_display">
-        <div class="recurrenceinput_main">
+    <div class="ridisplay">
+        <div class="rimain">
             {{if !readOnly}}
-                <input type="checkbox" name="recurrenceinput_checkbox" />
+                <input type="checkbox" name="richeckbox" />
             {{/if}}            
-            <label class="recurrenceinput_display">${i18n.display_label_unactivate}</label>
+            <label class="ridisplay">${i18n.displayUnactivate}</label>
             {{if !readOnly}}
-                <a href="#" name="recurrenceinput_edit">${i18n.edit}</a>
+                <a href="#" name="riedit">${i18n.edit}</a>
             {{/if}}
         </div>
-        <div class="recurrenceinput_occurrences" style="display:none" />
+        <div class="rioccurrences" style="display:none" />
         
     </div>
 </script>

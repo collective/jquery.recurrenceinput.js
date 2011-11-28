@@ -10,20 +10,20 @@ test("Basics", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
 
     // And this saves it.
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
     // And now we toggle it off.
-    $('.fieldname_repeat input[name=recurrenceinput_checkbox]')[0].checked = false;
-    $('.fieldname_repeat input[name=recurrenceinput_checkbox]').click();
+    $('.repeatfield input[name=richeckbox]')[0].checked = false;
+    $('.repeatfield input[name=richeckbox]').click();
     ok($("textarea[name=repeat]").val() === '');    
     
     // And on again.
-    $('.fieldname_repeat input[name=recurrenceinput_checkbox]')[0].checked = true;
-    $('.fieldname_repeat input[name=recurrenceinput_checkbox]').click();
+    $('.repeatfield input[name=richeckbox]')[0].checked = true;
+    $('.repeatfield input[name=richeckbox]').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -34,16 +34,16 @@ test("Daily recurrence with count", function () {
     // This sets the text area rule, and opens the dialog box.
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'daily');
-    ok(input.form.find('input[name=recurrenceinput_daily_interval]').val() === '5');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_OCCURRENCES');
-    ok(input.form.find('input[name=recurrenceinput_range_by_occurrences_value]').val() === '8');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'daily');
+    ok(input.form.find('input[name=ridailyinterval]').val() === '5');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
+    ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '8');
         
     // And this saves it.
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 });
 
@@ -53,22 +53,22 @@ test("Weekly recurrence with days and end", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000Z";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'weekly');
-    ok(input.form.find('input[name=recurrenceinput_weekly_interval]').val() === '4');
-    ok(!input.form.find('input[name=recurrenceinput_weekly_weekdays_MO]').attr('checked'));
-    ok(input.form.find('input[name=recurrenceinput_weekly_weekdays_TU]').attr('checked'));
-    ok(!input.form.find('input[name=recurrenceinput_weekly_weekdays_WE]').attr('checked'));
-    ok(input.form.find('input[name=recurrenceinput_weekly_weekdays_TH]').attr('checked'));
-    ok(input.form.find('input[name=recurrenceinput_weekly_weekdays_FR]').attr('checked'));
-    ok(!input.form.find('input[name=recurrenceinput_weekly_weekdays_SA]').attr('checked'));
-    ok(!input.form.find('input[name=recurrenceinput_weekly_weekdays_SU]').attr('checked'));
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_END_DATE');
-    ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '09/22/2012');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'weekly');
+    ok(input.form.find('input[name=riweeklyinterval]').val() === '4');
+    ok(!input.form.find('input[name=riweeklyweekdaysMO]').attr('checked'));
+    ok(input.form.find('input[name=riweeklyweekdaysTU]').attr('checked'));
+    ok(!input.form.find('input[name=riweeklyweekdaysWE]').attr('checked'));
+    ok(input.form.find('input[name=riweeklyweekdaysTH]').attr('checked'));
+    ok(input.form.find('input[name=riweeklyweekdaysFR]').attr('checked'));
+    ok(!input.form.find('input[name=riweeklyweekdaysSA]').attr('checked'));
+    ok(!input.form.find('input[name=riweeklyweekdaysSU]').attr('checked'));
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '09/22/2012');
 
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -79,15 +79,15 @@ test("Bimonthly recurrence by month day", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;BYMONTHDAY=12;INTERVAL=2";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'monthly');
-    ok(input.form.find('input[name=recurrenceinput_monthly_type]:checked').val() === 'DAY_OF_MONTH');
-    ok(input.form.find('input[name=recurrenceinput_monthly_day_of_month_interval]').val() === '2');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
+    ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'DAYOFMONTH');
+    ok(input.form.find('input[name=rimonthlydayofmonthinterval]').val() === '2');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
     
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -98,17 +98,17 @@ test("Trimonthly recurrence by day", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;BYDAY=+3TH;INTERVAL=3";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'monthly');
-    ok(input.form.find('input[name=recurrenceinput_monthly_type]:checked').val() === 'WEEKDAY_OF_MONTH');
-    ok(input.form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val() === '+3');
-    ok(input.form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val() === 'TH');
-    ok(input.form.find('input[name=recurrenceinput_monthly_weekday_of_month_interval]').val() === '3');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
+    ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'WEEKDAYOFMONTH');
+    ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+3');
+    ok(input.form.find('select[name=rimonthlyweekdayofmonth]').val() === 'TH');
+    ok(input.form.find('input[name=rimonthlyweekdayofmonthinterval]').val() === '3');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
     
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -119,16 +119,16 @@ test("Yearly by month day recurrence without end", function () {
     // The second wednesday of April, forevah.
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYMONTHDAY=11";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
         
     var input = $("textarea[name=repeat]").recurrenceinput();
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
-    ok(input.form.find('input[name=recurrenceinput_yearly_type]:checked').val() === 'DAY_OF_MONTH');
-    ok(input.form.find('select[name=recurrenceinput_yearly_day_of_month_month]').val() === '4');
-    ok(input.form.find('select[name=recurrenceinput_yearly_day_of_month_day]').val() === '11');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
+    ok(input.form.find('input[name=riyearlyType]:checked').val() === 'DAYOFMONTH');
+    ok(input.form.find('select[name=riyearlydayofmonthmonth]').val() === '4');
+    ok(input.form.find('select[name=riyearlydayofmonthday]').val() === '11');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
         
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -140,16 +140,16 @@ test("Yearly byday recurrence without end", function () {
     // The second wednesday of April, forevah.
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";    
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
         
     var input = $("textarea[name=repeat]").recurrenceinput();
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val() === 'WE');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'NO_END_DATE');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthindex]').val() === '+2');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthday]').val() === 'WE');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthmonth]').val() === '4');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
         
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
 });
@@ -165,11 +165,11 @@ test("Test of connected start field and showing of occurrences", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";    
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
     var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 10);
     
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     
 });
 
@@ -187,32 +187,32 @@ test("RDATE and EXDATE", function () {
     // Verify the list of dates    
     stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
-        var occurrences = input.display.find('.recurrenceinput_occurrences .occurrence span');
+        var occurrences = input.display.find('.rioccurrences .occurrence span');
         ok(occurrences[0].firstChild.data === " April 13, 2011 ");
         ok(occurrences[8].firstChild.data === " April 11, 2018 ");
         start();
     }, 1000);
 
     
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
         
-    ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val() === 'WE');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
-    ok(input.form.find('input[name=recurrenceinput_range_type]:checked').val() === 'BY_END_DATE');
-    ok(input.form.find('input[name=recurrenceinput_range_by_end_date_calendar]').val() === '04/19/2018');
+    ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthindex]').val() === '+2');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthday]').val() === 'WE');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthmonth]').val() === '4');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '04/19/2018');
     
     var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 9);
     
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
     // Verify the list of dates    
     stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
-        var occurrences = input.display.find('.recurrenceinput_occurrences .occurrence span');
+        var occurrences = input.display.find('.rioccurrences .occurrence span');
         ok(occurrences[0].firstChild.data === " April 13, 2011 ");
         ok(occurrences[8].firstChild.data === " April 11, 2018 ");
         start();
@@ -231,17 +231,17 @@ test("Adding RDATE", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
 
     // Add a new date as an RDATE
-    input.form.find('#add_date').data('dateinput').setValue(2011, 5, 13);
-    input.form.find('#add_action').click();
+    input.form.find('#adddate').data('dateinput').setValue(2011, 5, 13);
+    input.form.find('#addaction').click();
     // Check that it's added properly
-    var entity = input.form.find('.recurrenceinput_occurrences .occurrence span')[0];
+    var entity = input.form.find('.rioccurrences .occurrence span')[0];
     ok(entity.attributes['class'].value === "rdate");
     
     // Delete it
-    entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[0];
+    entity = input.form.find('.rioccurrences .occurrence span.action a')[0];
     ok(entity.attributes.date.value === "20110613T000000");
     $(entity).click();
     
@@ -249,16 +249,16 @@ test("Adding RDATE", function () {
     stop();
     setTimeout(function () { // In jQuery 1.6 this can be replaced by a .promise().done() call.
         // Check that it is gone:
-        entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[0];
+        entity = input.form.find('.rioccurrences .occurrence span.action a')[0];
         ok(entity.attributes.date.value !== "20110613T000000");
         start();
     }, 1000);
 
     // And add another one:
-    input.form.find('#add_date').data('dateinput').setValue(2011, 5, 14);
-    input.form.find('#add_action').click();
+    input.form.find('#adddate').data('dateinput').setValue(2011, 5, 14);
+    input.form.find('#addaction').click();
     
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20110614T000000Z,20120606T000000Z");
     
 });
@@ -273,30 +273,30 @@ test("Adding EXDATE", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
+    $('.repeatfield a[name=riedit]').click();
 
     // Reinclude the one in the original rrule.
-    var entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[1];
+    var entity = input.form.find('.rioccurrences .occurrence span.action a')[1];
     ok(entity.attributes.date.value === "20120411T000000");
     $(entity).click();
 
     // Exclude another one
-    entity = input.form.find('.recurrenceinput_occurrences .occurrence span.action a')[3];
+    entity = input.form.find('.rioccurrences .occurrence span.action a')[3];
     ok(entity.attributes.date.value === "20130410T000000");
     $(entity).click();
     
     // Check the batching
-    $(input.form.find('.recurrenceinput_occurrences .batching a')[1]).click();
+    $(input.form.find('.rioccurrences .batching a')[1]).click();
     // Delay 1 second
     stop();
     setTimeout(function () { // In jQuery 1.6 this can be replaced by a .promise().done() call.
         // Check that it is gone:
-        entity = input.form.find('.recurrenceinput_occurrences .batching .current a')[0];
+        entity = input.form.find('.rioccurrences .batching .current a')[0];
         ok(entity.attributes.start.value === "11");
         start();
     }, 1000);
         
-    input.form.find('.recurrenceinput_save_button').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000Z\nEXDATE:20130410T000000Z\nRDATE:20120606T000000Z");
     
 });
@@ -309,8 +309,8 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000Z\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
     $("textarea[name=repeat]").val(rrule);
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.repeatfield a[name=riedit]').click();
+    input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
     
 });
@@ -323,44 +323,44 @@ test("Unsupported features (incomplete)", function () {
 
     // No matching template
     $("textarea[name=custom]").val("RRULE:FREQ=MONTHLY;COUNT=3");
-    $('.fieldname_custom a[name=recurrenceinput_edit]').click();
-    ok(input.form.find('#message_area').text().indexOf('No matching recurrence template') !== -1);
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.customfield a[name=riedit]').click();
+    ok(input.form.find('#messagearea').text().indexOf('No matching recurrence template') !== -1);
+    input.form.find('.risavebutton').click();
     
     input = $("textarea[name=repeat]").recurrenceinput();
     // No support for BYSETPOS (how would you do something like that in a UI!?)
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;COUNT=3;BYSETPOS=3");
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    ok(input.form.find('#message_area').text().indexOf('BYSETPOS') !== -1);
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.repeatfield a[name=riedit]').click();
+    ok(input.form.find('#messagearea').text().indexOf('BYSETPOS') !== -1);
+    input.form.find('.risavebutton').click();
 
     // Can't have multiple recurrences in a month with MONTHLY recurrence
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;BYMONTHDAY=2,3,9");
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    ok(input.form.find('select[name=recurrenceinput_monthly_day_of_month_day]').val() === "2");
-    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.repeatfield a[name=riedit]').click();
+    ok(input.form.find('select[name=rimonthlydayofmonthday]').val() === "2");
+    ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
+    input.form.find('.risavebutton').click();
 
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;BYDAY=+2WE,+3TH");
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    ok(input.form.find('select[name=recurrenceinput_monthly_weekday_of_month_index]').val() === '+2');
-    ok(input.form.find('select[name=recurrenceinput_monthly_weekday_of_month]').val() === 'WE');
-    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.repeatfield a[name=riedit]').click();
+    ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+2');
+    ok(input.form.find('select[name=rimonthlyweekdayofmonth]').val() === 'WE');
+    ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
+    input.form.find('.risavebutton').click();
 
     $("textarea[name=repeat]").val("RRULE:FREQ=YEARLY;BYMONTH=12;BYMONTHDAY=2,3,9");
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    ok(input.form.find('select[name=recurrenceinput_yearly_day_of_month_day]').val() === "2");
-    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.repeatfield a[name=riedit]').click();
+    ok(input.form.find('select[name=riyearlydayofmonthday]').val() === "2");
+    ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
+    input.form.find('.risavebutton').click();
 
     $("textarea[name=repeat]").val("RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE,+3TH");
-    $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_index]').val() === '+2');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_day]').val() === 'WE');
-    ok(input.form.find('select[name=recurrenceinput_yearly_weekday_of_month_month]').val() === '4');
-    ok(input.form.find('#message_area').text().indexOf('multiple days in') !== -1);
-    input.form.find('.recurrenceinput_save_button').click();
+    $('.repeatfield a[name=riedit]').click();
+    ok(input.form.find('select[name=riyearlyweekdayofmonthindex]').val() === '+2');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthday]').val() === 'WE');
+    ok(input.form.find('select[name=riyearlyweekdayofmonthmonth]').val() === '4');
+    ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
+    input.form.find('.risavebutton').click();
 
 
 });

@@ -97,7 +97,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                     # include them
                     exdate = exdates.pop(0)
                     occurrences.append({'date': exdate.strftime('%Y%m%dT%H%M%S'),
-                                        'formatted_date': exdate.strftime(date_format),
+                                        'formattedDate': exdate.strftime(date_format),
                                         'type': 'exdate',})
                     i += 1
 
@@ -115,7 +115,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             else:
                 occurrence_type = 'rrule'
             occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),
-                                'formatted_date': date.strftime(date_format),
+                                'formattedDate': date.strftime(date_format),
                                 'type': occurrence_type,})
         
         # Calculate no of occurrences, but only to a max of three times
@@ -148,7 +148,7 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                       'end': num_occurrences,
                       'batch_size': batch_size,
                       'batches': batches,
-                      'current_batch': cur_batch - first_batch,
+                      'currentBatch': cur_batch - first_batch,
                       }
                             
         result = {'occurrences': occurrences, 'batch': batch_data}
