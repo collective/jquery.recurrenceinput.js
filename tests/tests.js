@@ -159,7 +159,7 @@ test("Test of connected start field and showing of occurrences", function () {
     expect(1);
 
     // Set the start date to test the XML javascript stuff.
-    $("input[name=start]").val('4/13/11');
+    $("input[name=start]").val('4/13/2011');
         
     // The second wednesday of April, forevah.
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -177,9 +177,11 @@ test("RDATE and EXDATE", function () {
     expect(12);
 
     // Set the start date to test the Ajax request stuff.
-    $("input[name=start]").val('04/13/11');    
+    $("input[name=start]").val('04/13/2011');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    $("textarea[name=repeat]").val(rrule);
     var input = $("textarea[name=repeat]").recurrenceinput();
     
     // Verify the list of dates    
@@ -192,8 +194,6 @@ test("RDATE and EXDATE", function () {
     }, 1000);
 
     
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
-    $("textarea[name=repeat]").val(rrule);
     $('.fieldname_repeat a[name=recurrenceinput_edit]').click();
         
     ok(input.form.find('select[name=recurrenceinput_rtemplate]').val() === 'yearly');
@@ -225,7 +225,7 @@ test("Adding RDATE", function () {
     expect(4);
     
     // Set the start date to test the Ajax request stuff.
-    $("input[name=start]").val('04/13/11');    
+    $("input[name=start]").val('04/13/2011');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -267,7 +267,7 @@ test("Adding EXDATE", function () {
     expect(4);
     
     // Set the start date to test the Ajax request stuff.
-    $("input[name=start]").val('04/13/11');    
+    $("input[name=start]").val('04/13/2011');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
