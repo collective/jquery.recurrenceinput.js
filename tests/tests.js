@@ -276,12 +276,12 @@ test("Adding EXDATE", function () {
     $('.repeatfield a[name=riedit]').click();
 
     // Reinclude the one in the original rrule.
-    var entity = input.form.find('.rioccurrences .occurrence span.action a')[1];
+    var entity = input.form.find('.rioccurrences .occurrence span.action a')[0];
     ok(entity.attributes.date.value === "20120411T000000");
     $(entity).click();
 
     // Exclude another one
-    entity = input.form.find('.rioccurrences .occurrence span.action a')[3];
+    entity = input.form.find('.rioccurrences .occurrence span.action a')[2];
     ok(entity.attributes.date.value === "20130410T000000");
     $(entity).click();
     
