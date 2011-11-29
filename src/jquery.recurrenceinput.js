@@ -446,10 +446,9 @@
                         'class="risavebutton"',
                         'value="${i18n.save}" />',
                 '</div>',
-            '</form>',
-        '</div>'].join('\n');
+            '</form></div>'].join('\n');
     
-    $.template('formTmpl',FORMTMPL);
+    $.template('formTmpl', FORMTMPL);
     
     // Formatting function (mostly) from jQueryTools dateinput
     var Re = /d{1,4}|m{1,4}|yy(?:yy)?|"[^"]*"|'[^']*'/g;
