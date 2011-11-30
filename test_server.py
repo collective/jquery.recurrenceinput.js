@@ -41,7 +41,6 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     """The test example handler."""
 
     def do_POST(self):
-        """Handle a post request by returning the square of the number."""
         # TODO: Return error on failure
         occurrences = []
         length = int(self.headers.getheader('content-length'))
