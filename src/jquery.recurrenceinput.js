@@ -161,7 +161,8 @@
         noTemplateMatch: 'No matching recurrence template',
         multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos: 'BYSETPOS is not supported',
-                           
+        noRule: 'No RRULE in RRULE data',
+        
         rtemplate: {
             daily: 'Daily',
             mondayfriday: 'Mondays and Fridays',
@@ -773,201 +774,206 @@
         var day, month, year, weekday, ical;
 
         form.ical = parseIcal(icaldata);
+        if (form.ical.RRULE === undefined) {
+            unsupportedFeatures.push(conf.i18n.noRule);
+        } else {
+  
         
-        matches = /INTERVAL=([0-9]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            interval = matches[1];
-        } else {
-            interval = '1';
-        }
-    
-        matches = /BYDAY=([^;]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            byday = matches[1];
-        } else {
-            byday = '';
-        }
-        
-        matches = /BYMONTHDAY=([^;]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            bymonthday = matches[1].split(",");
-        } else {
-            bymonthday = null;
-        }
-    
-        matches = /BYMONTH=([^;]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            bymonth = matches[1].split(",");
-        } else {
-            bymonth = null;
-        }
-    
-        matches = /COUNT=([0-9]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            count = matches[1];
-        } else {
-            count = null;
-        }
-        
-        matches = /UNTIL=([0-9T]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            until = matches[1];
-        } else {
-            until = null;
-        }
-
-        matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
-        if (matches) {
-            unsupportedFeatures.push(conf.i18n.bysetpos);
-        }
-
-        // Find the best rule:
-        match = '';
-        matchIndex = null;
-        for (i in conf.rtemplate) {
-            if (conf.rtemplate.hasOwnProperty(i)) {
-                rtemplate = conf.rtemplate[i];
-                if (form.ical.RRULE.indexOf(rtemplate.rrule) === 0) {
-                    if (form.ical.RRULE.length > match.length) {
-                        // This is the best match so far
-                        match = form.ical.RRULE;
-                        matchIndex = i;
-                    }
-                }  
+            matches = /INTERVAL=([0-9]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                interval = matches[1];
+            } else {
+                interval = '1';
             }
-        }
         
-        if (match) {
-            rtemplate = conf.rtemplate[matchIndex];
-            // Set the selector:
-            selector = form.find('select[name=rirtemplate]').val(matchIndex);
-        } else {
-            for (rtemplate in conf.rtemplate) {
-                if (conf.rtemplate.hasOwnProperty(rtemplate)) {
-                    rtemplate = conf.rtemplate[rtemplate];
+            matches = /BYDAY=([^;]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                byday = matches[1];
+            } else {
+                byday = '';
+            }
+            
+            matches = /BYMONTHDAY=([^;]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                bymonthday = matches[1].split(",");
+            } else {
+                bymonthday = null;
+            }
+        
+            matches = /BYMONTH=([^;]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                bymonth = matches[1].split(",");
+            } else {
+                bymonth = null;
+            }
+        
+            matches = /COUNT=([0-9]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                count = matches[1];
+            } else {
+                count = null;
+            }
+            
+            matches = /UNTIL=([0-9T]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                until = matches[1];
+            } else {
+                until = null;
+            }
+    
+            matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
+            if (matches) {
+                unsupportedFeatures.push(conf.i18n.bysetpos);
+            }
+    
+            // Find the best rule:
+            match = '';
+            matchIndex = null;
+            for (i in conf.rtemplate) {
+                if (conf.rtemplate.hasOwnProperty(i)) {
+                    rtemplate = conf.rtemplate[i];
+                    if (form.ical.RRULE.indexOf(rtemplate.rrule) === 0) {
+                        if (form.ical.RRULE.length > match.length) {
+                            // This is the best match so far
+                            match = form.ical.RRULE;
+                            matchIndex = i;
+                        }
+                    }  
+                }
+            }
+            
+            if (match) {
+                rtemplate = conf.rtemplate[matchIndex];
+                // Set the selector:
+                selector = form.find('select[name=rirtemplate]').val(matchIndex);
+            } else {
+                for (rtemplate in conf.rtemplate) {
+                    if (conf.rtemplate.hasOwnProperty(rtemplate)) {
+                        rtemplate = conf.rtemplate[rtemplate];
+                        break;
+                    }
+                }
+                unsupportedFeatures.push(conf.i18n.noTemplateMatch);
+            }
+            
+            for (i = 0; i < rtemplate.fields.length; i++) {
+                field = form.find('#' + rtemplate.fields[i]);
+                switch (field.attr('id')) {
+                
+                case 'ridailyinterval':
+                    field.find('input[name=ridailyinterval]').val(interval);
+                    break;  
+                    
+                case 'riweeklyinterval':
+                    field.find('input[name=riweeklyinterval]').val(interval);
+                    break;
+                    
+                case 'riweeklyweekdays':
+                    for (d = 0; d < conf.weekdays.length; d++) {
+                        day = conf.weekdays[d];
+                        input = field.find('input[name=riweeklyweekdays' + day + ']');
+                        input.attr('checked', byday.indexOf(day) !== -1);
+                    }
+                    break;
+                    
+                case 'rimonthlyoptions':
+                    var monthlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
+                    
+                    if (bymonthday) {
+                        monthlyType = 'DAYOFMONTH';
+                        if (bymonthday.length > 1) {
+                            // No support for multiple days in one month
+                            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+                            // Just keep the first
+                            bymonthday = bymonthday[0];
+                        }
+                        field.find('select[name=rimonthlydayofmonthday]').val(bymonthday);
+                        field.find('input[name=rimonthlydayofmonthinterval]').val(interval);
+                    }
+        
+                    if (byday) {
+                        monthlyType = 'WEEKDAYOFMONTH';
+                        
+                        if (byday.indexOf(',') !== -1) {
+                            // No support for multiple days in one month
+                            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+                            byday = byday.split(",")[0];
+                        }
+                        index = byday.slice(0, -2);
+                        weekday = byday.slice(-2);
+                        field.find('select[name=rimonthlyweekdayofmonthindex]').val(index);
+                        field.find('select[name=rimonthlyweekdayofmonth]').val(weekday);
+                        field.find('input[name=rimonthlyweekdayofmonthinterval]').val(interval);
+                    }
+                    
+                    selectors = field.find('input[name=rimonthlytype]');
+                    for (index = 0; index < selectors.length; index++) {
+                        radiobutton = selectors[index];
+                        $(radiobutton).attr('checked', radiobutton.value === monthlyType);
+                    }
+                    break;
+        
+                case 'riyearlyoptions':
+                    var yearlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
+                    
+                    if (bymonthday) {
+                        yearlyType = 'DAYOFMONTH';
+                        if (bymonthday.length > 1) {
+                            // No support for multiple days in one month
+                            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+                            bymonthday = bymonthday[0];
+                        }
+                        field.find('select[name=riyearlydayofmonthmonth]').val(bymonth);                    
+                        field.find('select[name=riyearlydayofmonthday]').val(bymonthday);                    
+                    }
+        
+                    if (byday) {
+                        yearlyType = 'WEEKDAYOFMONTH';
+                        
+                        if (byday.indexOf(',') !== -1) {
+                            // No support for multiple days in one month
+                            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+                            byday = byday.split(",")[0];
+                        }
+                        index = byday.slice(0, -2);
+                        weekday = byday.slice(-2);
+                        field.find('select[name=riyearlyweekdayofmonthindex]').val(index);
+                        field.find('select[name=riyearlyweekdayofmonthday]').val(weekday);
+                        field.find('select[name=riyearlyweekdayofmonthmonth]').val(bymonth);
+                    }
+                    
+                    selectors = field.find('input[name=riyearlyType]');
+                    for (index = 0; index < selectors.length; index++) {
+                        radiobutton = selectors[index];
+                        $(radiobutton).attr('checked', radiobutton.value === yearlyType);
+                    }
+                    break;
+                    
+                case 'rirangeoptions':
+                    var rangeType = 'NOENDDATE';
+                    
+                    if (count) {
+                        rangeType = 'BYOCCURRENCES';
+                        field.find('input[name=rirangebyoccurrencesvalue]').val(count);
+                    }
+                    
+                    if (until) {
+                        rangeType = 'BYENDDATE';
+                        input = field.find('input[name=rirangebyenddatecalendar]');
+                        year = until.slice(0, 4);
+                        month = until.slice(4, 6);
+                        month = parseInt(month, 10) - 1;
+                        day = until.slice(6, 8);
+                        input.data('dateinput').setValue(year, month, day);
+                    }
+                    
+                    selectors = field.find('input[name=rirangetype]');
+                    for (index = 0; index <  selectors.length; index++) {
+                        radiobutton = selectors[index];
+                        $(radiobutton).attr('checked', radiobutton.value === rangeType);
+                    }
                     break;
                 }
-            }
-            unsupportedFeatures.push(conf.i18n.noTemplateMatch);
-        }
-        
-        for (i = 0; i < rtemplate.fields.length; i++) {
-            field = form.find('#' + rtemplate.fields[i]);
-            switch (field.attr('id')) {
-            
-            case 'ridailyinterval':
-                field.find('input[name=ridailyinterval]').val(interval);
-                break;  
-                
-            case 'riweeklyinterval':
-                field.find('input[name=riweeklyinterval]').val(interval);
-                break;
-                
-            case 'riweeklyweekdays':
-                for (d = 0; d < conf.weekdays.length; d++) {
-                    day = conf.weekdays[d];
-                    input = field.find('input[name=riweeklyweekdays' + day + ']');
-                    input.attr('checked', byday.indexOf(day) !== -1);
-                }
-                break;
-                
-            case 'rimonthlyoptions':
-                var monthlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
-                
-                if (bymonthday) {
-                    monthlyType = 'DAYOFMONTH';
-                    if (bymonthday.length > 1) {
-                        // No support for multiple days in one month
-                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-                        // Just keep the first
-                        bymonthday = bymonthday[0];
-                    }
-                    field.find('select[name=rimonthlydayofmonthday]').val(bymonthday);
-                    field.find('input[name=rimonthlydayofmonthinterval]').val(interval);
-                }
-    
-                if (byday) {
-                    monthlyType = 'WEEKDAYOFMONTH';
-                    
-                    if (byday.indexOf(',') !== -1) {
-                        // No support for multiple days in one month
-                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-                        byday = byday.split(",")[0];
-                    }
-                    index = byday.slice(0, -2);
-                    weekday = byday.slice(-2);
-                    field.find('select[name=rimonthlyweekdayofmonthindex]').val(index);
-                    field.find('select[name=rimonthlyweekdayofmonth]').val(weekday);
-                    field.find('input[name=rimonthlyweekdayofmonthinterval]').val(interval);
-                }
-                
-                selectors = field.find('input[name=rimonthlytype]');
-                for (index = 0; index < selectors.length; index++) {
-                    radiobutton = selectors[index];
-                    $(radiobutton).attr('checked', radiobutton.value === monthlyType);
-                }
-                break;
-    
-            case 'riyearlyoptions':
-                var yearlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
-                
-                if (bymonthday) {
-                    yearlyType = 'DAYOFMONTH';
-                    if (bymonthday.length > 1) {
-                        // No support for multiple days in one month
-                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-                        bymonthday = bymonthday[0];
-                    }
-                    field.find('select[name=riyearlydayofmonthmonth]').val(bymonth);                    
-                    field.find('select[name=riyearlydayofmonthday]').val(bymonthday);                    
-                }
-    
-                if (byday) {
-                    yearlyType = 'WEEKDAYOFMONTH';
-                    
-                    if (byday.indexOf(',') !== -1) {
-                        // No support for multiple days in one month
-                        unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-                        byday = byday.split(",")[0];
-                    }
-                    index = byday.slice(0, -2);
-                    weekday = byday.slice(-2);
-                    field.find('select[name=riyearlyweekdayofmonthindex]').val(index);
-                    field.find('select[name=riyearlyweekdayofmonthday]').val(weekday);
-                    field.find('select[name=riyearlyweekdayofmonthmonth]').val(bymonth);
-                }
-                
-                selectors = field.find('input[name=riyearlyType]');
-                for (index = 0; index < selectors.length; index++) {
-                    radiobutton = selectors[index];
-                    $(radiobutton).attr('checked', radiobutton.value === yearlyType);
-                }
-                break;
-                
-            case 'rirangeoptions':
-                var rangeType = 'NOENDDATE';
-                
-                if (count) {
-                    rangeType = 'BYOCCURRENCES';
-                    field.find('input[name=rirangebyoccurrencesvalue]').val(count);
-                }
-                
-                if (until) {
-                    rangeType = 'BYENDDATE';
-                    input = field.find('input[name=rirangebyenddatecalendar]');
-                    year = until.slice(0, 4);
-                    month = until.slice(4, 6);
-                    month = parseInt(month, 10) - 1;
-                    day = until.slice(6, 8);
-                    input.data('dateinput').setValue(year, month, day);
-                }
-                
-                selectors = field.find('input[name=rirangetype]');
-                for (index = 0; index <  selectors.length; index++) {
-                    radiobutton = selectors[index];
-                    $(radiobutton).attr('checked', radiobutton.value === rangeType);
-                }
-                break;
             }
         }
         

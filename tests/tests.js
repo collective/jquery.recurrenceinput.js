@@ -28,6 +28,16 @@ test("Basics", function () {
     
 });
 
+test("Invalid ical data", function () {
+    var input = $("textarea[name=repeat]").recurrenceinput();
+
+    // Looks valid, but it doens't contain the RRULE data:
+    $("textarea[name=repeat]").val("FREQ=MONTHLY;COUNT=3");
+    $('.repeatfield a[name=riedit]').click();
+    ok(input.form.find('#messagearea').text().indexOf('No RRULE in RRULE data') !== -1);
+    input.form.find('.risavebutton').click();
+});
+
 test("Daily recurrence with count", function () {
     expect(5);
     
