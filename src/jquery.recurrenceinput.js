@@ -766,7 +766,7 @@
         return result;
     }
     
-    function widgetLoadFromRfc5545(form, conf, icaldata) {
+    function widgetLoadFromRfc5545(form, conf, icaldata, force) {
         var unsupportedFeatures = [];
         var i, matches, match, matchIndex, rtemplate, d, input, index;
         var selector, selectors, field, radiobutton, start, end;
@@ -776,6 +776,9 @@
         form.ical = parseIcal(icaldata);
         if (form.ical.RRULE === undefined) {
             unsupportedFeatures.push(conf.i18n.noRule);
+            if (!force) {
+                return -1; // Fail!
+            }
         } else {
   
         
@@ -981,9 +984,11 @@
         if (unsupportedFeatures.length !== 0) {
             messagearea.text(conf.i18n.unsupportedFeatures + ' ' + unsupportedFeatures.join('; '));
             messagearea.show();
+            return 1;
         } else {
             messagearea.text('');
             messagearea.hide();
+            return 0;
         }
     
     }
@@ -1161,7 +1166,7 @@
             var selector, format, startField, startdate, dayindex, day;
 
             if (rfc5545) {
-                widgetLoadFromRfc5545(form, conf, rfc5545);
+                widgetLoadFromRfc5545(form, conf, rfc5545, true);
                 // check checkbox
                 display.find('input[name=richeckbox]')
                     .attr('checked', true);
@@ -1249,21 +1254,6 @@
         display = $.tmpl('displayTmpl', conf);
         form = $.tmpl('formTmpl', conf);
 
-        //// The overlay = form popup
-        //if ($.template.riform === undefined) {
-            //$.ajax({
-                //url: $(conf.template.form)[0].src,
-                //async: false,
-                //success: function (data) {
-                    //conf.template.form = data;
-                //},
-                //error: function (request, status, error) {
-                    //alert(error.message + ": " + error.filename);
-                //}
-            //});
-            //$(conf.template.form).template('riform');
-        //}
-        //form = $.tmpl('riform', conf);
         // Make an overlay and hide it
         form.overlay(conf.formOverlay).hide();
         form.ical = {};
@@ -1276,8 +1266,13 @@
         });
 
         if (textarea.val()) {
-            widgetLoadFromRfc5545(form, conf, textarea.val());
-            recurrenceOn();
+            var result = widgetLoadFromRfc5545(form, conf, textarea.val(), false);
+            if (result === -1) {
+                var label = display.find('label[class=ridisplay]');
+                label.text(conf.i18n.noRule);
+            } else {
+                recurrenceOn();
+            }
         }
 
         /* 

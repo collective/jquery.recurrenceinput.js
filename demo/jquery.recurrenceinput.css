@@ -15,7 +15,7 @@ div.riform form {
 }
 
 div#riformfields {
-    height: 13em;
+    min-height: 13em;
     width: 25em;
 }
 
