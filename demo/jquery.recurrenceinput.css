@@ -79,3 +79,7 @@ div#messagearea {
     width: 24em;
     padding: 1em;
 }
+
+div#calroot {
+    z-index:10000;
+}
