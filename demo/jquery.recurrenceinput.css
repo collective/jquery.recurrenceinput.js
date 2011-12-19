@@ -43,7 +43,7 @@ div.riform #rirtemplate {
 }
 
 div#riformfields {
-    min-height: 13em;
+    min-height: 12em;
     min-width: 25em;
 }
 
@@ -83,12 +83,14 @@ div.rioccurrencesactions .riaddoccurrence #adddate {
     width: 75%;
 }
 
-div.rioccurrencesactions #rioccurancesheader {
+div.rioccurrencesactions .rioccurancesheader {
     border-bottom: 1px solid #DDDDDD;
     line-height: 1.5;
+    clear: both;
+    margin-top: 30px;
 }
 
-div.rioccurrencesactions #rioccurancesheader h2 {
+div.rioccurrencesactions .rioccurancesheader h2 {
     color: #888888;
     display: inline;
     font-size: 18px;
@@ -182,5 +184,5 @@ div#calroot {
 
 div.ributtons .risavebutton {
     display: block;
-    margin: 10px auto;
+    margin: 30px auto 0;
 }
