@@ -2,21 +2,68 @@ div.riform {
     padding: 1em;
     background-color: white;
     box-shadow: 0 0 3em 0.5em #666;
+    line-height: 2;
     -moz-box-shadow: 0 0 3em 0.5em #666;
     -webkit-box-shadow: 0 0 3em #666;
 }
 
-div.riform div {
-    padding: 0.3em;
+div.riform h1 {
+    color: #888888;
+    border-bottom: 1px solid #DDDDDD;
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-left: 5px;
 }
 
 div.riform form {
     margin-bottom: 0;
 }
 
+div.riform .rifield {
+    clear: both;
+}
+
+div.riform .rifield .field {
+    float:left;
+}
+
+div.riform .label {
+    display: block;
+    float: left;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: right;
+    width: 130px;
+}
+
+div.riform #rirtemplate {
+    margin-top: 6px;
+}
+
 div#riformfields {
     min-height: 13em;
-    width: 25em;
+    min-width: 25em;
+}
+
+div.riform #rirangeoptions input,
+div.riform #rimonthlyoptions input,
+div.riform #riyearlyoptions input {
+    margin: 0;
+}
+
+div.riform #riweeklyweekdays .riweeklyweekday input {
+    display:block;
+    margin: 8px auto 0;
+}
+div.riform #riweeklyweekdays .riweeklyweekday label {
+    display:block;
+}
+
+div.riform #riweeklyweekdays .riweeklyweekday {
+    margin-right: 15px;
+    float: left;
 }
 
 div.riform input.ricancelbutton {
