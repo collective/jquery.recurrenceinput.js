@@ -79,12 +79,27 @@ div.riform input.ricancelbutton {
     width: 30px;
 }
 
-div.rioccurrences {
-    border-top: 1px solid gray;
+div.rioccurrencesactions .riaddoccurrence #adddate {
+    width: 75%;
 }
+
+div.rioccurrencesactions #rioccurancesheader {
+    border-bottom: 1px solid #DDDDDD;
+    line-height: 1.5;
+}
+
+div.rioccurrencesactions #rioccurancesheader h2 {
+    color: #888888;
+    display: inline;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 0px 5px 5px;
+}
+
 
 div.rioccurrences div.batching {
     font-size: 70%;
+    text-align: center;
 }
 
 div.rioccurrences span.current {
@@ -95,29 +110,63 @@ div.riform span.action a {
     height: 19px;
     width: 19px;
     overflow: hidden;
-    box-shadow: 1px 1px 4px black;
-    -webkit-box-shadow: 1px 1px 4px black;
     float: right;
 }
 
+div.rioccurrences .occurrence {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+div.rioccurrences .occurrence:hover {
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+div.rioccurrences .occurrence .start span {
+    color: #9CBA9B;
+    margin: 0 5px;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+div.rioccurrences .occurrence.dimm {
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
+div.rioccurrences span.rrule,
+div.rioccurrences span.rdate,
+div.rioccurrences span.exdate {
+    margin-left: 5px;
+}
+
+div.rioccurrences a.rrule,
+div.rioccurrences a.rdate,
+div.rioccurrences a.exdate {
+    color: transparent;
+    margin-top: 6px;
+    margin-right: 5px;
+}
+
+
 div.rioccurrences a.rrule {
     background-image: url(delete.png);
-    color: transparent;
 }
 
 div.rioccurrences a.rdate {
     background-image: url(delete.png);
-    color: transparent;
 }
 
 div.rioccurrences a.exdate {
     background-image: url(undelete.png);
-    color: transparent;
 }
 
 div.rioccurrencesactions a.rirefreshbutton {
     background-image: url(refresh.png);
     color: transparent;
+    margin-top: 4px;
+    margin-right: 5px;
 }
 
 div#messagearea {
@@ -129,4 +178,9 @@ div#messagearea {
 
 div#calroot {
     z-index:10000;
+}
+
+div.ributtons .risavebutton {
+    display: block;
+    margin: 10px auto;
 }

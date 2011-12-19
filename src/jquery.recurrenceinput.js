@@ -101,8 +101,10 @@
         displayActivate: 'Repeats ',
         edit: 'Edit...',
         add:  'Add',
+        refresh: 'Refresh',
 
         title: 'Repeat',
+        preview: 'Preview',
 
         recurrenceType: 'Repeats:',
 
@@ -184,6 +186,9 @@
         '{{each occurrences}}',
             '<div class="occurrence">',
                 '<span class="${occurrences[$index].type}">',
+                    '{{if occurrences[$index].type === "start"}}',
+                        '<span>Start:</span>',
+                    '{{/if}}',
                     '${occurrences[$index].formattedDate}',
                 '</span>',
                 '{{if !readOnly}}',
@@ -444,16 +449,17 @@
                     '</div>',
                 '</div>',
                 '<div class="rioccurrencesactions">',
-                    '<div>',
-                        '<span class="riaddoccurrence">',
-                            '<input type="date" name="adddate" id="adddate" />',
-                            '<input type="button" name="addaction" id="addaction" value="${i18n.add}">',
-                        '</span>',
+                    '<div id="rioccurancesheader">',
+                        '<h2>${i18n.preview}</h2>',
                         '<span class="refreshbutton action">',
-                            '<a class="rirefreshbutton" href="#" >',
-                                'Refresh',
+                            '<a class="rirefreshbutton" href="#" title="${i18n.refresh}">',
+                                '${i18n.refresh}',
                             '</a>',
                         '</span>',
+                    '</div>',
+                    '<div class="riaddoccurrence">',
+                        '<input type="date" name="adddate" id="adddate" />',
+                        '<input type="button" name="addaction" id="addaction" value="${i18n.add}">',
                     '</div>',
                 '</div>',
                 '<div class="rioccurrences">',
@@ -1047,17 +1053,21 @@
         function occurrenceExclude(event) {
             event.preventDefault();
             form.ical.EXDATE.push(this.attributes.date.value);
-            this.attributes['class'].value = 'exdate';
-            $(this).unbind(event);
-            $(this).click(occurrenceInclude);
+            $this = $(this);
+            $this.attr('class', 'exdate');
+            $this.parent().parent().addClass('dimm');
+            $this.unbind(event);
+            $this.click(occurrenceInclude);
         }
 
         function occurrenceInclude(event) {
             event.preventDefault();
             form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
-            this.attributes['class'].value = 'rrule';
-            $(this).unbind(event);
-            $(this).click(occurrenceExclude);
+            $this = $(this);
+            $this.attr('class', 'rrule');
+            $this.parent().parent().removeClass('dimm');
+            $this.unbind(event);
+            $this.click(occurrenceExclude);
         }
         
         function occurrenceDelete(event) {
@@ -1071,7 +1081,7 @@
         function occurrenceAdd(event) {
             event.preventDefault();
             var dateinput = form
-                .find('span.riaddoccurrence input#adddate')
+                .find('div.riaddoccurrence input#adddate')
                 .data('dateinput');
             var datevalue = dateinput.getValue('yyyymmddT000000');
             form.ical.RDATE.push(datevalue);
@@ -1314,7 +1324,7 @@
         );
 
         // Pop up the little add form when clicking "Add..."
-        form.find('span.riaddoccurrence input#adddate').dateinput({
+        form.find('div.riaddoccurrence input#adddate').dateinput({
             selectors: true,
             format: conf.i18n.shortDateFormat,
             yearRange: [-5, 10]
