@@ -125,7 +125,8 @@ div.rioccurrences .occurrence:hover {
     border-bottom: 1px solid #DDDDDD;
 }
 
-div.rioccurrences .occurrence .start span {
+div.rioccurrences .occurrence .start span,
+div.rioccurrences .occurrence .rdate span {
     color: #9CBA9B;
     margin: 0 5px;
     font-size: 70%;
@@ -137,6 +138,11 @@ div.rioccurrences .occurrence.dimm {
     filter:alpha(opacity=40);
 }
 
+div.rioccurrences .occurrence.exc {
+    background: #FFFFE0;
+}
+
+div.rioccurrences span.start,
 div.rioccurrences span.rrule,
 div.rioccurrences span.rdate,
 div.rioccurrences span.exdate {
