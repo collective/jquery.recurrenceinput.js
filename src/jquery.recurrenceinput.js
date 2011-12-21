@@ -61,7 +61,7 @@
                 monthly: {
                     rrule: 'FREQ=MONTHLY',
                     fields: [
-                        'rimonthlyeverymonths',
+                        'rimonthlyinterval',
                         'rimonthlyoptions',
                         'rirangeoptions'
                     ]
@@ -69,6 +69,7 @@
                 yearly: {
                     rrule: 'FREQ=YEARLY',
                     fields: [
+                        'riyearlyinterval',
                         'riyearlyoptions',
                         'rirangeoptions'
                     ]
@@ -98,7 +99,7 @@
     
     tool.localize("en", {
         displayUnactivate: 'Does not repeat',
-        displayActivate: 'Repeats ',
+        displayActivate: 'Repeats every',
         edit: 'Edit...',
         add:  'Add',
         refresh: 'Refresh',
@@ -116,7 +117,7 @@
         weeklyInterval2: 'week(s)',
         weeklyWeekdays: 'Repeat on:',
 
-        monthlyMonths: 'Repeat every:',
+        monthlyInterval: 'Repeat every:',
         monthlyDayOfMonth1: 'Day',
         monthlyDayOfMonth2: 'of the month',
         monthlyDayOfMonth3: ', every',
@@ -127,6 +128,8 @@
         monthlyWeekdayOfMonth4: 'month(s)',
         monthlyRepeatOn: 'Repeat on:',
 
+        yearlyInterval1: 'Repeat every:',
+        yearlyInterval2: 'year(s)',
         yearlyDayOfMonth1: 'Every',
         yearlyDayOfMonth2: '',
         yearlyDayOfMonth3: '',
@@ -303,12 +306,12 @@
                             '{{/each}}',
                         '</div>',
                     '</div>',
-                    '<div id="rimonthlyeverymonths" class="rifield">',
-                        '<label for="rimonthlyeverymonthinterval" class="label">${i18n.monthlyMonths}</label>',
+                    '<div id="rimonthlyinterval" class="rifield">',
+                        '<label for="rimonthlyinterval" class="label">${i18n.monthlyInterval}</label>',
                         '<div class="field">',
                             '<input type="text" size="2"',
                                 'value="1" ',
-                                'name="rimonthlyeverymonthinterval"/>',
+                                'name="rimonthlyinterval"/>',
                             '${i18n.monthlyDayOfMonth4}',
                         '</div>',
                     '</div>',
@@ -354,6 +357,15 @@
                                     '{{/each}}',
                                 '</select>',
                             '</div>',
+                        '</div>',
+                    '</div>',
+                    '<div id="riyearlyinterval" class="rifield">',
+                        '<label for="riyearlyinterval" class="label">${i18n.yearlyInterval1}</label>',
+                        '<div class="field">',
+                            '<input type="text" size="2"',
+                                'value="1" ',
+                                'name="riyearlyinterval"/>',
+                            '${i18n.yearlyInterval2}',
                         '</div>',
                     '</div>',
                     '<div id="riyearlyoptions" class="rifield">',
@@ -549,15 +561,19 @@
             switch (field.attr('id')) {
             
             case 'ridailyinterval':
-                input = field.find('input[name=ridailyinterval]');
-                result += ';INTERVAL=' + input.val();
-                human = conf.i18n.dailyInterval1 + ' ' + input.val() + ' ' + conf.i18n.dailyInterval2;
+                interval = field.find('input[name=ridailyinterval]').val();
+                if (interval != '1') {
+                    result += ';INTERVAL=' + interval;
+                }
+                human = interval + ' ' + conf.i18n.dailyInterval2;
                 break;
                 
             case 'riweeklyinterval':
-                input = field.find('input[name=riweeklyinterval]');
-                result += ';INTERVAL=' + input.val();
-                human = conf.i18n.weeklyInterval1 + ' ' + input.val() + ' ' + conf.i18n.weeklyInterval2;
+                interval = field.find('input[name=riweeklyinterval]').val();
+                if (interval != '1') {
+                    result += ';INTERVAL=' + interval;
+                }
+                human = interval + ' ' + conf.i18n.weeklyInterval2;
                 break;
                 
             case 'riweeklyweekdays':
@@ -580,24 +596,26 @@
                 }
                 break;
                 
+            case 'rimonthlyinterval':
+                interval = field.find('input[name=rimonthlyinterval]').val();
+                if (interval != '1') {
+                    result += ';INTERVAL=' + interval;
+                }
+                human = interval + ' ' + conf.i18n.monthlyInterval2;
+                break;
+                
             case 'rimonthlyoptions':
                 var monthlyType = $('input[name=rimonthlytype]:checked', form).val();
                 switch (monthlyType) {
                 
                 case 'DAYOFMONTH':
                     day = $('select[name=rimonthlydayofmonthday]', form).val();
-                    interval = $('input[name=rimonthlyeverymonthinterval]', form).val();
                     result += ';BYMONTHDAY=' + day;
-                    result += ';INTERVAL=' + interval;                        
                     human += ', ' + conf.i18n.monthlyDayOfMonth1 + ' ' + day + ' ' + conf.i18n.monthlyDayOfMonth2;
-                    if (interval !== 1) {
-                        human += conf.i18n.monthlyDayOfMonth3 + ' ' + interval + ' ' + conf.i18n.monthlyDayOfMonth4;
-                    }
                     break;
                 case 'WEEKDAYOFMONTH':
                     index = $('select[name=rimonthlyweekdayofmonthindex]', form).val();
                     day = $('select[name=rimonthlyweekdayofmonth]', form).val();
-                    interval = $('input[name=rimonthlyeverymonthinterval]', form).val();
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
                         human += ', ' + conf.i18n.monthlyWeekdayOfMonth1 + ' ';
@@ -605,12 +623,16 @@
                         human += ' ' + conf.i18n.monthlyWeekdayOfMonth2;
                         human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
                     }
-                    result += ';INTERVAL=' + interval;
-                    if (interval !== 1) {
-                        human += ' ' + conf.i18n.monthlyWeekdayOfMonth3 + ' ' + interval + ' ' + conf.i18n.monthlyWeekdayOfMonth4;
-                    }
                     break;
                 }
+                break;
+                
+            case 'riyearlyinterval':
+                interval = field.find('input[name=riyearlyinterval]').val();
+                if (interval != '1') {
+                    result += ';INTERVAL=' + interval;
+                }
+                human = interval + ' ' + conf.i18n.yearlyInterval2;
                 break;
                 
             case 'riyearlyoptions':
@@ -921,6 +943,10 @@
                         input.attr('checked', byday.indexOf(day) !== -1);
                     }
                     break;
+
+                case 'rimonthlyinterval':
+                    field.find('input[name=rimonthlyinterval]').val(interval);
+                    break;
                     
                 case 'rimonthlyoptions':
                     var monthlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
@@ -934,7 +960,6 @@
                             bymonthday = bymonthday[0];
                         }
                         field.find('select[name=rimonthlydayofmonthday]').val(bymonthday);
-                        field.find('input[name=rimonthlyeverymonthinterval]').val(interval);
                     }
         
                     if (byday) {
@@ -949,7 +974,6 @@
                         weekday = byday.slice(-2);
                         field.find('select[name=rimonthlyweekdayofmonthindex]').val(index);
                         field.find('select[name=rimonthlyweekdayofmonth]').val(weekday);
-                        field.find('input[name=rimonthlyeverymonthinterval]').val(interval);
                     }
                     
                     selectors = field.find('input[name=rimonthlytype]');
@@ -959,6 +983,10 @@
                     }
                     break;
         
+                case 'riyearlyinterval':
+                    field.find('input[name=riyearlyinterval]').val(interval);
+                    break;
+                    
                 case 'riyearlyoptions':
                     var yearlyType = 'DAYOFMONTH'; // Default to using BYMONTHDAY
                     

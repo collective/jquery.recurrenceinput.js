@@ -87,14 +87,14 @@ test("Bimonthly recurrence by month day", function () {
     expect(5);
     
     // Set a recurrence rule and open the dialog box.
-    var rrule = "RRULE:FREQ=MONTHLY;BYMONTHDAY=12;INTERVAL=2";
+    var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=12";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
     
     var input = $("textarea[name=repeat]").recurrenceinput();   
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
     ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'DAYOFMONTH');
-    ok(input.form.find('input[name=rimonthlydayofmonthinterval]').val() === '2');
+    ok(input.form.find('input[name=rimonthlyinterval]').val() === '2');
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
     
     input.form.find('.risavebutton').click();
@@ -106,7 +106,7 @@ test("Trimonthly recurrence by day", function () {
     expect(7);
     
     // Set a recurrence rule and open the dialog box.
-    var rrule = "RRULE:FREQ=MONTHLY;BYDAY=+3TH;INTERVAL=3";
+    var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
     
@@ -115,7 +115,7 @@ test("Trimonthly recurrence by day", function () {
     ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'WEEKDAYOFMONTH');
     ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+3');
     ok(input.form.find('select[name=rimonthlyweekdayofmonth]').val() === 'TH');
-    ok(input.form.find('input[name=rimonthlyweekdayofmonthinterval]').val() === '3');
+    ok(input.form.find('input[name=rimonthlyinterval]').val() === '3');
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
     
     input.form.find('.risavebutton').click();
@@ -198,8 +198,8 @@ test("RDATE and EXDATE", function () {
     stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
         var occurrences = input.display.find('.rioccurrences .occurrence span');
-        ok(occurrences[0].firstChild.data === " April 13, 2011 ");
-        ok(occurrences[8].firstChild.data === " April 11, 2018 ");
+        ok(occurrences[0].firstChild.data === " April 13, 2011  ");
+        ok(occurrences[8].firstChild.data === " April 13, 2016   ");
         start();
     }, 1000);
 
@@ -223,8 +223,8 @@ test("RDATE and EXDATE", function () {
     stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
         var occurrences = input.display.find('.rioccurrences .occurrence span');
-        ok(occurrences[0].firstChild.data === " April 13, 2011 ");
-        ok(occurrences[8].firstChild.data === " April 11, 2018 ");
+        ok(occurrences[0].firstChild.data === " April 13, 2011  ");
+        ok(occurrences[8].firstChild.data === " April 13, 2016   ");
         start();
     }, 1000);
 
