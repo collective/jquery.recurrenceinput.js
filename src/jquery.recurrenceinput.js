@@ -105,7 +105,7 @@
 
         title: 'Repeat',
         preview: 'Selected dates',
-        addexception: 'Add exception',
+        addDate: 'Add date',
         
         recurrenceType: 'Repeats:',
 
@@ -148,6 +148,12 @@
         cancel: 'Cancel',        
         save: 'Save',
 
+        recurrenceStart: 'Start of the recurrence',
+        additionalDate: 'Additional date',
+        include: 'Include',
+        exclude: 'Exclude',
+        remove: 'Remove',
+        
         orderIndexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
         months: [
             'January', 'February', 'March', 'April', 'May', 'June',
@@ -189,30 +195,30 @@
                 '<span class="${occurrences[$index].type}">',
                     '${occurrences[$index].formattedDate}',
                     '{{if occurrences[$index].type === "start"}}',
-                        '<span>Start of the recurrence</span>',
+                        '<span>${i18n.recurrenceStart}</span>',
                     '{{/if}}',
                     '{{if occurrences[$index].type === "rdate"}}',
-                        '<span>Exception</span>',
+                        '<span>${i18n.additionalDate}</span>',
                     '{{/if}}',
                 '</span>',
                 '{{if !readOnly}}',
                     '<span class="action">',
                         '{{if occurrences[$index].type === "rrule"}}',
                             '<a date="${occurrences[$index].date}" href="#"',
-                               'class="${occurrences[$index].type}" title="Exclude">',
-                                'Exclude',
+                               'class="${occurrences[$index].type}" title="${i18n.exclude}">',
+                                '${i18n.exclude}',
                             '</a>',
                         '{{/if}}',
                         '{{if occurrences[$index].type === "rdate"}}',
                             '<a date="${occurrences[$index].date}" href="#"',
-                               'class="${occurrences[$index].type}" title="Remove" >',
-                                'Remove',
+                               'class="${occurrences[$index].type}" title="${i18n.remove}" >',
+                                '${i18n.remove}',
                             '</a>',
                         '{{/if}}',
                         '{{if occurrences[$index].type === "exdate"}}',
                             '<a date="${occurrences[$index].date}" href="#"',
-                               'class="${occurrences[$index].type}" title="Include">',
-                                'Include',
+                               'class="${occurrences[$index].type}" title="${i18n.include}">',
+                                '${i18n.include}',
                             '</a>',
                         '{{/if}}',
                     '</span>',
@@ -466,7 +472,7 @@
                 '</div>',
                 '<div class="rioccurrencesactions">',
                     '<div class="rioccurancesheader">',
-                        '<h2>${i18n.addexception}</h2>',
+                        '<h2>${i18n.addDate}</h2>',
                     '</div>',
                     '<div class="riaddoccurrence">',
                         '<input type="date" name="adddate" id="adddate" />',
@@ -1145,6 +1151,8 @@
                         element = display;
                     }
                     data.readOnly = readonly;
+                    data.i18n = conf.i18n;
+                    
                     result = $.tmpl('occurrenceTmpl', data);
                     occurrenceDiv = element.find('.rioccurrences');
                     occurrenceDiv.replaceWith(result);
@@ -1297,7 +1305,7 @@
 
         // Make an overlay and hide it
         form.overlay(conf.formOverlay).hide();
-        form.ical = {};
+        form.ical = {RDATE: [], EXDATE: []};
         
         // Make the date input into a calendar dateinput()
         form.find('input[name=rirangebyenddatecalendar]').dateinput({

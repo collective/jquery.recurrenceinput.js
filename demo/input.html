@@ -87,7 +87,12 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             displayLabelActivate: '\u00C5terkommer',
             edit: 'Redigera...',
             add: 'L\u00E4gg till',
+            refresh: 'Ladda om',
             
+	    title: '\u00C5terkomster',
+	    preview: 'Valda datum',
+	    addDate: 'L\u00E4gg till',
+	
             recurrenceType: 'Typ av \u00E5terkomst:',
     
             dailyInterval1: 'Varje',
@@ -97,6 +102,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             weeklyInterval2: 'vecka/veckor',
             weeklyWeekdays: 'P\u00E5:',
     
+            monthlyMonths: '\u00C5terkom varje:',
             monthlyDayOfMonth1: 'Den',
             monthlyDayOfMonth2: 'dagen i m\u00E5naden',
             monthlyDayOfMonth3: ', var',
@@ -105,6 +111,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             monthlyWeekdayOfMonth2: '',
             monthlyWeekdayOfMonth3: ', varje',
             monthlyWeekdayOfMonth4: 'm\u00E5nad',
+            monthlyRepeatOn: '\u00C5terkom p\u00E5:',
     
             yearlyDayOfMonth1: 'Varje',
             yearlyDayOfMonth2: '',
@@ -113,6 +120,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             yearlyWeekdayOfMonth2: '',
             yearlyWeekdayOfMonth3: '',
             yearlyWeekdayOfMonth4: '',
+	    yearlyRepeatOn: '\u00C5terkom p\u00E5:',
             
             range: '\u00C5terkomsten stoppar:',
             rangeNoEnd: 'Inte',
@@ -126,6 +134,12 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             cancel: 'Avbryt',        
             save: 'Spara',
     
+            recurrenceStart: 'F\u00F6rsta g\u00E5ngen',
+            additionalDate: 'Tillagt datum',
+            include: 'Inkludera',
+            exclude: 'Exkludera',
+            remove: 'Ta bort',
+
             orderIndexes: ['F\u00F6rsta', 'Andra', 'Tredje', 'Fj\u00E4rde', 'Sista'],
             months: [
                 'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
@@ -162,7 +176,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
         //   $.tools.recurrenceinput.conf.lang = 'sv';
         // Or you pass it in as a custom config parameter which changes only
         // this input:
-        $("textarea[name=swedish]").recurrenceinput({lang:'sv'});
+        $("textarea[name=swedish]").recurrenceinput({lang:'sv', startField: "connected_start",  ajaxURL: document.URL});
     </script>
     
 
