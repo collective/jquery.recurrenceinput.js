@@ -37,8 +37,6 @@ This widget does not support all features of RRULE's. For example:
 Known bugs
 ----------
 
-* Does not work on IE
-
 * If a disabled item is the last on the list it will become invisible.
 
 * Some human readable labels are no longer working.
@@ -137,6 +135,7 @@ This project was originally started by Rok Garbas.
 Authors:
   * Lennart Regebro
   * Rok Garbas
+  * Vilmos Somogyi
   
 Thanks to Hexagon IT, http://www.hexagonit.fi/, who funded the main body
 of work, done by Lennart Regebro.
