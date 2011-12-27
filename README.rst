@@ -33,16 +33,34 @@ This widget does not support all features of RRULE's. For example:
   this will be made into UTC with no timezone translation.
 * Any parameters will be ignored and stripped on saving the rule.
 
+
+Known bugs
+----------
+
+* Does not work on IE
+
+* If a disabled item is the last on the list it will become invisible.
+
+* Some human readable labels are no longer working.
+
+* The date picker is missing arrows.
+
+
 To Do
 -----
 
 High priority:
 
 * 100% code coverage from tests (currently 97%).
+* You should only be able to add dates after the start date, and you should not 
+  be able to input an end date before the start-date.
+* There should be validation of all input fields where you can type, and also
+  legnth limits, etc.
+* The automatic selection of radio-buttons depending on field selections have
+  stopped working.
 
 Medium priority:
 
-* You should only be able to add dates after the start date.
 * The human readable output should probably be done directly from the RRULE and
   not by using the form i18n, to improve the grammar and rule support.
 * Make it possible to change the order of the fields as a part of the i18n.
