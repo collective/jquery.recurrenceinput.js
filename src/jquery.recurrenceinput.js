@@ -619,9 +619,9 @@
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
                         human += ', ' + conf.i18n.monthlyWeekdayOfMonth1 + ' ';
-                        human += ' ' + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)];
+                        human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.monthlyWeekdayOfMonth2;
-                        human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
+                        human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
                     }
                     break;
                 }
@@ -654,9 +654,9 @@
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
                         human += ', ' + conf.i18n.yearlyWeekdayOfMonth1;
-                        human += ' ' + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)];
+                        human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth2;
-                        human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
+                        human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth3;
                         human += ' ' + conf.i18n.months[month - 1];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth4;
@@ -727,7 +727,7 @@
         if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
             if (tz === true) {
                 // Make it UTC:
-                tmp = form.ical.EXDATE.map(function (x) {
+                tmp = $.map(form.ical.EXDATE, function (x) {
                     if (x.length === 8) { // DATE format. Make it DATE-TIME
                         x += 'T000000';
                     }
@@ -741,7 +741,7 @@
         if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
             if (tz === true) {
                 // Make it UTC:
-                tmp = form.ical.RDATE.map(function (x) {
+                tmp = $.map(form.ical.RDATE, function (x) {
                     if (x.length === 8) { // DATE format. Make it DATE-TIME
                         x += 'T000000';
                     }
@@ -757,12 +757,12 @@
 
     function parseLine(icalline) {
         var result = {};
-        var pos = icalline.indexOf(':');
+        var pos = $.inArray(':', icalline);
         var property = icalline.substring(0, pos);
         result.value = icalline.substring(pos + 1);
         
-        if (property.indexOf(';') !== -1) {
-            pos = property.indexOf(';');
+        if ($.inArray(';', property) !== -1) {
+            pos = $.inArray(';', property);
             result.parameters = property.substring(pos + 1);
             result.property = property.substring(0, pos);
         } else {
@@ -781,7 +781,7 @@
         
         for (date in splitDates) {
             if (splitDates.hasOwnProperty(date)) {
-                if (splitDates[date].indexOf('Z') !== -1) {
+                if ($.inArray('Z', splitDates[date]) !== -1) {
                     result.push(splitDates[date].substring(0, 15));
                 } else {
                     result.push(splitDates[date]);
@@ -940,7 +940,7 @@
                     for (d = 0; d < conf.weekdays.length; d++) {
                         day = conf.weekdays[d];
                         input = field.find('input[name=riweeklyweekdays' + day + ']');
-                        input.attr('checked', byday.indexOf(day) !== -1);
+                        input.attr('checked', $.inArray(day, byday) !== -1);
                     }
                     break;
 
@@ -965,7 +965,7 @@
                     if (byday) {
                         monthlyType = 'WEEKDAYOFMONTH';
                         
-                        if (byday.indexOf(',') !== -1) {
+                        if (form.ical.RRULE.indexOf(rtemplate.rrule) === 0) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1004,7 +1004,7 @@
                     if (byday) {
                         yearlyType = 'WEEKDAYOFMONTH';
                         
-                        if (byday.indexOf(',') !== -1) {
+                        if ($.inArray(',', byday) !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1106,7 +1106,7 @@
 
         function occurrenceInclude(event) {
             event.preventDefault();
-            form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
+            form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
             $this = $(this);
             $this.attr('class', 'rrule');
             $this.parent().parent().removeClass('dimm');
@@ -1116,7 +1116,7 @@
         
         function occurrenceDelete(event) {
             event.preventDefault();
-            form.ical.RDATE.splice(form.ical.RDATE.indexOf(this.attributes.date.value), 1);
+            form.ical.RDATE.splice($.inArray(this.attributes.date.value, form.ical.RDATE), 1);
             $(this).parent().parent().hide('slow', function () {
                 $(this).remove();
             });
