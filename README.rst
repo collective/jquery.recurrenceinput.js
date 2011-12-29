@@ -51,8 +51,6 @@ To Do
 High priority:
 
 * 100% code coverage from tests (currently 97%).
-* The automatic selection of radio-buttons depending on field selections have
-  stopped working.
 
 Medium priority:
 

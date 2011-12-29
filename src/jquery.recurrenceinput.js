@@ -1542,7 +1542,17 @@
                 $(this).parent().find('> input').click().change();
             }
         );
-        
+        form.find('input[name=rirangebyoccurrencesvalue]').change(
+            function (e) {
+                $(this).parent().find('input[name=rirangetype]').click().change();
+            }
+        );
+        form.find('input[name=rirangebyenddatecalendar]').change(
+            function (e) {
+                $(this).parent().find('input[name=rirangetype]').click().change();
+            }
+        );
+                
         /*
           Save and cancel methods:
         */
