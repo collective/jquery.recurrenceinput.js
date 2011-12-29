@@ -42,8 +42,6 @@ Known bugs
 
 * Some human readable labels are no longer working.
 
-* The date picker is missing arrows.
-
 
 To Do
 -----
