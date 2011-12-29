@@ -1351,10 +1351,8 @@
 
         function save(event) {
             event.preventDefault();
-            startDate = findStartDate();
-            
             // if no field errors, process the request
-            if(checkFields(startDate, form)) {
+            if(checkFields(form)) {
                 // close overlay
                 form.overlay().close();
                 // check checkbox
@@ -1370,8 +1368,9 @@
             form.overlay().close();
         }
         
-        function checkFields(startDate, form) {
-            var endDate, num, messagearea;
+        function checkFields(form) {
+            var startDate, endDate, num, messagearea;
+            startDate = findStartDate();
             
             // Hide any error message from before
             messagearea = form.find('#messagearea');
@@ -1463,6 +1462,19 @@
             
             return true;
         }
+        
+        function updateOccurances() {
+            var startDate;
+            startDate = findStartDate();
+            
+            // if no field errors, process the request
+            if(checkFields(form)) {
+                loadOccurrences(startDate,
+                    widgetSaveToRfc5545(form, conf, false).result,
+                    0,
+                    false);
+            }
+        }
 
         /* 
           Load the templates
@@ -1521,16 +1533,7 @@
         form.find('a.rirefreshbutton').click(
             function (event) {
                 event.preventDefault();
-                var startDate;
-                startDate = findStartDate();
-                
-                // if no field errors, process the request
-                if(checkFields(startDate, form)) {
-                    loadOccurrences(startDate,
-                        widgetSaveToRfc5545(form, conf, false).result,
-                        0,
-                        false);
-                }
+                updateOccurances();
             }
         );
         
@@ -1555,6 +1558,12 @@
         form.find('input[name=rirangebyenddatecalendar]').change(
             function (e) {
                 $(this).parent().find('input[name=rirangetype]').click().change();
+            }
+        );
+        // Also update the selected dates section
+        form.find('input:radio, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
+            function (e) {
+                updateOccurances();
             }
         );
                 

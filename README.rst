@@ -62,10 +62,7 @@ Medium priority:
 Low priority:
 
 * Support more obscure RFC5545 options.
-  
-Maybe priority: 
-* Automatically refresh the occurrence list after changing the recurrence.
-  
+
 
 Developer information
 ---------------------
