@@ -180,6 +180,11 @@
         multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos: 'BYSETPOS is not supported',
         noRule: 'No RRULE in RRULE data',
+        noRepeatEvery: 'Error: Repeat every field must be a positive integer value (max. 1000)',
+        noEndDate: 'Error: End date is not set. Please set a correct value',
+        pastEndDate: 'Error: End date cannot be before start date',
+        noEndAfterNOccurrences: 'Error: After N occurrences field must be a positive integer value (max. 1000)',
+        noRepeatOn: 'Error: Repeat on value must be selected',
         
         rtemplate: {
             daily: 'Daily',
@@ -1237,6 +1242,42 @@
             }
             return null;
         }
+        function findEndDate(form) {
+            var endField, enddate;
+            
+            endField = form.find('input[name=rirangebyenddatecalendar]');
+            
+            // Now we have a field, see if it is a dateinput field:
+            enddate = endField.data('dateinput');
+            if (enddate === undefined || enddate === null) {
+                //No, it wasn't, just try to interpret it with Date()
+                enddate = endField.val();
+            } else {
+                // Yes it was, get the date:
+                enddate = enddate.getValue();
+            }
+            enddate = new Date(enddate);
+            
+            // if the end date is incorrect or the field is left empty
+            if (isNaN(enddate) || endField.val() === "") {
+                return null;
+            }
+            return enddate;
+        }
+        function findIntField(fieldName, form) {
+            var field, num, isInt;
+            
+            field = form.find('input[name=' + fieldName + ']');
+            
+            num = field.val();
+
+            // if it's not a number or the field is left empty
+            if (isNaN(num) || (num.toString().indexOf('.')!=-1) || field.val() === "") {
+                return null;
+            }
+            return num;
+        }
+        
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
@@ -1323,6 +1364,100 @@
             // close overlay
             form.overlay().close();
         }
+        
+        function checkFields(startDate, form) {
+            var endDate, num, messagearea;
+            
+            // Hide any error message from before
+            messagearea = form.find('#messagearea');
+            messagearea.text('');
+            messagearea.hide();
+            
+            // Repeats Dialy
+            if(form.find('#ridailyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('ridailyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+            }
+            
+            // Repeats Weekly
+            if(form.find('#riweeklyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('riweeklyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+                
+                // Check repeat on
+                if(form.find('.riweeklyweekday input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }
+            }
+            
+            // Repeats Monthly
+            if(form.find('#rimonthlyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('rimonthlyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+                
+                // Check repeat on
+                if(form.find('#rimonthlyoptions input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }
+            }
+            
+            // Repeats Yearly
+            if(form.find('#riyearlyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('riyearlyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+                
+                // Check repeat on
+                if(form.find('#riyearlyoptions input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }
+            }
+            
+            // End recurrence fields
+            
+            // If after N occurences is selected, check its value
+            if(form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
+                num = findIntField('rirangebyoccurrencesvalue', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
+                    return false;
+                }
+            }
+            
+            // If end date is selected, check its value
+            if(form.find('input[value="BYENDDATE"]:visible:checked').length > 0) {
+                endDate = findEndDate(form);
+                if (!endDate) {
+                    // if end date is null that means the field is empty
+                    messagearea.text(conf.i18n.noEndDate).show();
+                    return false;
+                } else if (endDate < startDate) {
+                    // the end date cannot be before start date
+                    messagearea.text(conf.i18n.pastEndDate).show();
+                    return false;
+                }
+            }
+            
+            return true;
+        }
 
         /* 
           Load the templates
@@ -1381,10 +1516,16 @@
         form.find('a.rirefreshbutton').click(
             function (event) {
                 event.preventDefault();
-                loadOccurrences(findStartDate(),
-                    widgetSaveToRfc5545(form, conf, false).result,
-                    0,
-                    false);
+                var startDate;
+                startDate = findStartDate();
+                
+                // if no field errors, process the request
+                if(checkFields(startDate, form)) {
+                    loadOccurrences(startDate,
+                        widgetSaveToRfc5545(form, conf, false).result,
+                        0,
+                        false);
+                }
             }
         );
         

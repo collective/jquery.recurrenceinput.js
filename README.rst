@@ -37,7 +37,8 @@ This widget does not support all features of RRULE's. For example:
 Known bugs
 ----------
 
-* If a disabled item is the last on the list it will become invisible.
+* If a disabled item is the last on the list it will become invisible. This is
+  only present with the test_server.py.
 
 * Some human readable labels are no longer working.
 
@@ -50,10 +51,6 @@ To Do
 High priority:
 
 * 100% code coverage from tests (currently 97%).
-* You should only be able to add dates after the start date, and you should not 
-  be able to input an end date before the start-date.
-* There should be validation of all input fields where you can type, and also
-  legnth limits, etc.
 * The automatic selection of radio-buttons depending on field selections have
   stopped working.
 
