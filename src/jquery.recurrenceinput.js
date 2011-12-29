@@ -1351,12 +1351,17 @@
 
         function save(event) {
             event.preventDefault();
-            // close overlay
-            form.overlay().close();
-            // check checkbox
-            display.find('input[name=richeckbox]')
-                .attr('checked', true);
-            recurrenceOn();
+            startDate = findStartDate();
+            
+            // if no field errors, process the request
+            if(checkFields(startDate, form)) {
+                // close overlay
+                form.overlay().close();
+                // check checkbox
+                display.find('input[name=richeckbox]')
+                    .attr('checked', true);
+                recurrenceOn();
+            }
         }
 
         function cancel(event) {
