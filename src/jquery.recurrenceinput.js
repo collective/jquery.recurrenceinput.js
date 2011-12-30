@@ -953,7 +953,7 @@
                     for (d = 0; d < conf.weekdays.length; d++) {
                         day = conf.weekdays[d];
                         input = field.find('input[name=riweeklyweekdays' + day + ']');
-                        input.attr('checked', $.inArray(day, byday) !== -1);
+                        input.attr('checked', byday.indexOf(day) !== -1);
                     }
                     break;
 
