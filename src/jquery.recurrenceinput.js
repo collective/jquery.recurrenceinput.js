@@ -116,13 +116,16 @@
         weeklyInterval1: 'Repeat every:',
         weeklyInterval2: 'week(s)',
         weeklyWeekdays: 'Repeat on:',
+        weeklyWeekdaysHuman: 'on: ',
 
         monthlyInterval: 'Repeat every:',
         monthlyDayOfMonth1: 'Day',
+        monthlyDayOfMonth1Human: 'on day',
         monthlyDayOfMonth2: 'of the month',
         monthlyDayOfMonth3: ', every',
         monthlyDayOfMonth4: 'month(s)',
         monthlyWeekdayOfMonth1: 'The',
+        monthlyWeekdayOfMonth1Human: 'on the',
         monthlyWeekdayOfMonth2: '',
         monthlyWeekdayOfMonth3: ', every',
         monthlyWeekdayOfMonth4: 'month(s)',
@@ -131,9 +134,11 @@
         yearlyInterval1: 'Repeat every:',
         yearlyInterval2: 'year(s)',
         yearlyDayOfMonth1: 'Every',
+        yearlyDayOfMonth1Human: 'on',
         yearlyDayOfMonth2: '',
         yearlyDayOfMonth3: '',
         yearlyWeekdayOfMonth1: 'The',
+        yearlyWeekdayOfMonth1Human: 'on the',
         yearlyWeekdayOfMonth2: '',
         yearlyWeekdayOfMonth3: 'of',
         yearlyWeekdayOfMonth4: '',
@@ -142,8 +147,10 @@
         range: 'End recurrence:',
         rangeNoEnd: 'Never',
         rangeByOccurrences1: 'After',
+        rangeByOccurrences1Human: 'ends after',
         rangeByOccurrences2: 'occurrence(s)',
         rangeByEndDate: 'On ',
+        rangeByEndDateHuman: 'ends on ',
         
         including: ', and also ',
         except: ', except for',
@@ -180,6 +187,11 @@
         multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos: 'BYSETPOS is not supported',
         noRule: 'No RRULE in RRULE data',
+        noRepeatEvery: 'Error: Repeat every field must be a positive integer value (max. 1000)',
+        noEndDate: 'Error: End date is not set. Please set a correct value',
+        pastEndDate: 'Error: End date cannot be before start date',
+        noEndAfterNOccurrences: 'Error: After N occurrences field must be a positive integer value (max. 1000)',
+        noRepeatOn: 'Error: Repeat on value must be selected',
         
         rtemplate: {
             daily: 'Daily',
@@ -592,7 +604,7 @@
                 }
                 if (weekdays) {
                     result += ';BYDAY=' + weekdays;
-                    human += ' ' + conf.i18n.weeklyWeekdays + ' ' + i18nweekdays;
+                    human += ' ' + conf.i18n.weeklyWeekdaysHuman + ' ' + i18nweekdays;
                 }
                 break;
                 
@@ -601,7 +613,7 @@
                 if (interval != '1') {
                     result += ';INTERVAL=' + interval;
                 }
-                human = interval + ' ' + conf.i18n.monthlyInterval2;
+                human = interval + ' ' + conf.i18n.monthlyDayOfMonth4;
                 break;
                 
             case 'rimonthlyoptions':
@@ -611,17 +623,18 @@
                 case 'DAYOFMONTH':
                     day = $('select[name=rimonthlydayofmonthday]', form).val();
                     result += ';BYMONTHDAY=' + day;
-                    human += ', ' + conf.i18n.monthlyDayOfMonth1 + ' ' + day + ' ' + conf.i18n.monthlyDayOfMonth2;
+                    human += ', ' + conf.i18n.monthlyDayOfMonth1Human + ' ' + day + ' ' + conf.i18n.monthlyDayOfMonth2;
                     break;
                 case 'WEEKDAYOFMONTH':
                     index = $('select[name=rimonthlyweekdayofmonthindex]', form).val();
                     day = $('select[name=rimonthlyweekdayofmonth]', form).val();
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
-                        human += ', ' + conf.i18n.monthlyWeekdayOfMonth1 + ' ';
-                        human += ' ' + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)];
+                        human += ', ' + conf.i18n.monthlyWeekdayOfMonth1Human + ' ';
+                        human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.monthlyWeekdayOfMonth2;
-                        human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
+                        human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
+                        human += ' ' + conf.i18n.monthlyDayOfMonth2;
                     }
                     break;
                 }
@@ -644,7 +657,7 @@
                     day = $('select[name=riyearlydayofmonthday]', form).val();
                     result += ';BYMONTH=' + month;
                     result += ';BYMONTHDAY=' + day;
-                    human += ', ' + conf.i18n.months[month - 1] + ' ' + day;
+                    human += ', ' + conf.i18n.yearlyDayOfMonth1Human + ' ' + conf.i18n.months[month - 1] + ' ' + day;
                     break;
                 case 'WEEKDAYOFMONTH':
                     index = $('select[name=riyearlyweekdayofmonthindex]', form).val();
@@ -653,10 +666,10 @@
                     result += ';BYMONTH=' + month;
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
-                        human += ', ' + conf.i18n.yearlyWeekdayOfMonth1;
-                        human += ' ' + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)];
+                        human += ', ' + conf.i18n.yearlyWeekdayOfMonth1Human;
+                        human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth2;
-                        human += ' ' + conf.i18n.weekdays[conf.weekdays.indexOf(day)];
+                        human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth3;
                         human += ' ' + conf.i18n.months[month - 1];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth4;
@@ -672,7 +685,7 @@
                 case 'BYOCCURRENCES':
                     occurrences = form.find('input[name=rirangebyoccurrencesvalue]').val();
                     result += ';COUNT=' + occurrences;
-                    human += ', ' + conf.i18n.rangeByOccurrences1;
+                    human += ', ' + conf.i18n.rangeByOccurrences1Human;
                     human += ' ' + occurrences;
                     human += ' ' + conf.i18n.rangeByOccurrences2;
                     break;
@@ -684,7 +697,7 @@
                         // Make it UTC:
                         result += 'Z';
                     }
-                    human += ', ' + conf.i18n.rangeByEndDate;
+                    human += ', ' + conf.i18n.rangeByEndDateHuman;
                     human += ' ' + field.data('dateinput').getValue(conf.i18n.longDateFormat);
                     break;
                 }
@@ -727,7 +740,7 @@
         if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
             if (tz === true) {
                 // Make it UTC:
-                tmp = form.ical.EXDATE.map(function (x) {
+                tmp = $.map(form.ical.EXDATE, function (x) {
                     if (x.length === 8) { // DATE format. Make it DATE-TIME
                         x += 'T000000';
                     }
@@ -741,7 +754,7 @@
         if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
             if (tz === true) {
                 // Make it UTC:
-                tmp = form.ical.RDATE.map(function (x) {
+                tmp = $.map(form.ical.RDATE, function (x) {
                     if (x.length === 8) { // DATE format. Make it DATE-TIME
                         x += 'T000000';
                     }
@@ -757,12 +770,12 @@
 
     function parseLine(icalline) {
         var result = {};
-        var pos = icalline.indexOf(':');
+        var pos = $.inArray(':', icalline);
         var property = icalline.substring(0, pos);
         result.value = icalline.substring(pos + 1);
         
-        if (property.indexOf(';') !== -1) {
-            pos = property.indexOf(';');
+        if ($.inArray(';', property) !== -1) {
+            pos = $.inArray(';', property);
             result.parameters = property.substring(pos + 1);
             result.property = property.substring(0, pos);
         } else {
@@ -781,7 +794,7 @@
         
         for (date in splitDates) {
             if (splitDates.hasOwnProperty(date)) {
-                if (splitDates[date].indexOf('Z') !== -1) {
+                if ($.inArray('Z', splitDates[date]) !== -1) {
                     result.push(splitDates[date].substring(0, 15));
                 } else {
                     result.push(splitDates[date]);
@@ -940,7 +953,7 @@
                     for (d = 0; d < conf.weekdays.length; d++) {
                         day = conf.weekdays[d];
                         input = field.find('input[name=riweeklyweekdays' + day + ']');
-                        input.attr('checked', byday.indexOf(day) !== -1);
+                        input.attr('checked', $.inArray(day, byday) !== -1);
                     }
                     break;
 
@@ -965,7 +978,7 @@
                     if (byday) {
                         monthlyType = 'WEEKDAYOFMONTH';
                         
-                        if (byday.indexOf(',') !== -1) {
+                        if (form.ical.RRULE.indexOf(rtemplate.rrule) === 0) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1004,7 +1017,7 @@
                     if (byday) {
                         yearlyType = 'WEEKDAYOFMONTH';
                         
-                        if (byday.indexOf(',') !== -1) {
+                        if ($.inArray(',', byday) !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1106,7 +1119,7 @@
 
         function occurrenceInclude(event) {
             event.preventDefault();
-            form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
+            form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
             $this = $(this);
             $this.attr('class', 'rrule');
             $this.parent().parent().removeClass('dimm');
@@ -1116,7 +1129,7 @@
         
         function occurrenceDelete(event) {
             event.preventDefault();
-            form.ical.RDATE.splice(form.ical.RDATE.indexOf(this.attributes.date.value), 1);
+            form.ical.RDATE.splice($.inArray(this.attributes.date.value, form.ical.RDATE), 1);
             $(this).parent().parent().hide('slow', function () {
                 $(this).remove();
             });
@@ -1237,6 +1250,42 @@
             }
             return null;
         }
+        function findEndDate(form) {
+            var endField, enddate;
+            
+            endField = form.find('input[name=rirangebyenddatecalendar]');
+            
+            // Now we have a field, see if it is a dateinput field:
+            enddate = endField.data('dateinput');
+            if (enddate === undefined || enddate === null) {
+                //No, it wasn't, just try to interpret it with Date()
+                enddate = endField.val();
+            } else {
+                // Yes it was, get the date:
+                enddate = enddate.getValue();
+            }
+            enddate = new Date(enddate);
+            
+            // if the end date is incorrect or the field is left empty
+            if (isNaN(enddate) || endField.val() === "") {
+                return null;
+            }
+            return enddate;
+        }
+        function findIntField(fieldName, form) {
+            var field, num, isInt;
+            
+            field = form.find('input[name=' + fieldName + ']');
+            
+            num = field.val();
+
+            // if it's not a number or the field is left empty
+            if (isNaN(num) || (num.toString().indexOf('.')!=-1) || field.val() === "") {
+                return null;
+            }
+            return num;
+        }
+        
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
@@ -1310,18 +1359,129 @@
 
         function save(event) {
             event.preventDefault();
-            // close overlay
-            form.overlay().close();
-            // check checkbox
-            display.find('input[name=richeckbox]')
-                .attr('checked', true);
-            recurrenceOn();
+            // if no field errors, process the request
+            if(checkFields(form)) {
+                // close overlay
+                form.overlay().close();
+                // check checkbox
+                display.find('input[name=richeckbox]')
+                    .attr('checked', true);
+                recurrenceOn();
+            }
         }
 
         function cancel(event) {
             event.preventDefault();
             // close overlay
             form.overlay().close();
+        }
+        
+        function checkFields(form) {
+            var startDate, endDate, num, messagearea;
+            startDate = findStartDate();
+            
+            // Hide any error message from before
+            messagearea = form.find('#messagearea');
+            messagearea.text('');
+            messagearea.hide();
+            
+            // Repeats Dialy
+            if(form.find('#ridailyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('ridailyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+            }
+            
+            // Repeats Weekly
+            if(form.find('#riweeklyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('riweeklyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+                
+                // Check repeat on
+                if(form.find('.riweeklyweekday input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }
+            }
+            
+            // Repeats Monthly
+            if(form.find('#rimonthlyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('rimonthlyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+                
+                // Check repeat on
+                if(form.find('#rimonthlyoptions input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }
+            }
+            
+            // Repeats Yearly
+            if(form.find('#riyearlyinterval').css('display') == 'block') {
+                // Check repeat every field
+                num = findIntField('riyearlyinterval', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noRepeatEvery).show();
+                    return false;
+                }
+                
+                // Check repeat on
+                if(form.find('#riyearlyoptions input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }
+            }
+            
+            // End recurrence fields
+            
+            // If after N occurences is selected, check its value
+            if(form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
+                num = findIntField('rirangebyoccurrencesvalue', form);
+                if(!num || num < 0 || num > 1000) {
+                    messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
+                    return false;
+                }
+            }
+            
+            // If end date is selected, check its value
+            if(form.find('input[value="BYENDDATE"]:visible:checked').length > 0) {
+                endDate = findEndDate(form);
+                if (!endDate) {
+                    // if end date is null that means the field is empty
+                    messagearea.text(conf.i18n.noEndDate).show();
+                    return false;
+                } else if (endDate < startDate) {
+                    // the end date cannot be before start date
+                    messagearea.text(conf.i18n.pastEndDate).show();
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        function updateOccurances() {
+            var startDate;
+            startDate = findStartDate();
+            
+            // if no field errors, process the request
+            if(checkFields(form)) {
+                loadOccurrences(startDate,
+                    widgetSaveToRfc5545(form, conf, false).result,
+                    0,
+                    false);
+            }
         }
 
         /* 
@@ -1381,10 +1541,7 @@
         form.find('a.rirefreshbutton').click(
             function (event) {
                 event.preventDefault();
-                loadOccurrences(findStartDate(),
-                    widgetSaveToRfc5545(form, conf, false).result,
-                    0,
-                    false);
+                updateOccurances();
             }
         );
         
@@ -1401,7 +1558,26 @@
                 $(this).parent().find('> input').click().change();
             }
         );
-        
+        form.find('input[name=rirangebyoccurrencesvalue]').change(
+            function (e) {
+                $(this).parent().find('input[name=rirangetype]').click().change();
+            }
+        );
+        form.find('input[name=rirangebyenddatecalendar]').change(
+            function (e) {
+                $(this).parent().find('input[name=rirangetype]').click().change();
+            }
+        );
+        // Also update the selected dates section
+        form.find('input:radio, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
+            function (e) {
+                // Update only if the occurances are shown
+                if(form.find('.rioccurrencesactions:visible').length != 0) {
+                    updateOccurances();
+                }
+            }
+        );
+                
         /*
           Save and cancel methods:
         */
