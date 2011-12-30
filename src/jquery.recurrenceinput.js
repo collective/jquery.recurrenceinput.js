@@ -116,13 +116,16 @@
         weeklyInterval1: 'Repeat every:',
         weeklyInterval2: 'week(s)',
         weeklyWeekdays: 'Repeat on:',
+        weeklyWeekdaysHuman: 'on: ',
 
         monthlyInterval: 'Repeat every:',
         monthlyDayOfMonth1: 'Day',
+        monthlyDayOfMonth1Human: 'on day',
         monthlyDayOfMonth2: 'of the month',
         monthlyDayOfMonth3: ', every',
         monthlyDayOfMonth4: 'month(s)',
         monthlyWeekdayOfMonth1: 'The',
+        monthlyWeekdayOfMonth1Human: 'on the',
         monthlyWeekdayOfMonth2: '',
         monthlyWeekdayOfMonth3: ', every',
         monthlyWeekdayOfMonth4: 'month(s)',
@@ -131,9 +134,11 @@
         yearlyInterval1: 'Repeat every:',
         yearlyInterval2: 'year(s)',
         yearlyDayOfMonth1: 'Every',
+        yearlyDayOfMonth1Human: 'on',
         yearlyDayOfMonth2: '',
         yearlyDayOfMonth3: '',
         yearlyWeekdayOfMonth1: 'The',
+        yearlyWeekdayOfMonth1Human: 'on the',
         yearlyWeekdayOfMonth2: '',
         yearlyWeekdayOfMonth3: 'of',
         yearlyWeekdayOfMonth4: '',
@@ -142,8 +147,10 @@
         range: 'End recurrence:',
         rangeNoEnd: 'Never',
         rangeByOccurrences1: 'After',
+        rangeByOccurrences1Human: 'ends after',
         rangeByOccurrences2: 'occurrence(s)',
         rangeByEndDate: 'On ',
+        rangeByEndDateHuman: 'ends on ',
         
         including: ', and also ',
         except: ', except for',
@@ -597,7 +604,7 @@
                 }
                 if (weekdays) {
                     result += ';BYDAY=' + weekdays;
-                    human += ' ' + conf.i18n.weeklyWeekdays + ' ' + i18nweekdays;
+                    human += ' ' + conf.i18n.weeklyWeekdaysHuman + ' ' + i18nweekdays;
                 }
                 break;
                 
@@ -606,7 +613,7 @@
                 if (interval != '1') {
                     result += ';INTERVAL=' + interval;
                 }
-                human = interval + ' ' + conf.i18n.monthlyInterval2;
+                human = interval + ' ' + conf.i18n.monthlyDayOfMonth4;
                 break;
                 
             case 'rimonthlyoptions':
@@ -616,17 +623,18 @@
                 case 'DAYOFMONTH':
                     day = $('select[name=rimonthlydayofmonthday]', form).val();
                     result += ';BYMONTHDAY=' + day;
-                    human += ', ' + conf.i18n.monthlyDayOfMonth1 + ' ' + day + ' ' + conf.i18n.monthlyDayOfMonth2;
+                    human += ', ' + conf.i18n.monthlyDayOfMonth1Human + ' ' + day + ' ' + conf.i18n.monthlyDayOfMonth2;
                     break;
                 case 'WEEKDAYOFMONTH':
                     index = $('select[name=rimonthlyweekdayofmonthindex]', form).val();
                     day = $('select[name=rimonthlyweekdayofmonth]', form).val();
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
-                        human += ', ' + conf.i18n.monthlyWeekdayOfMonth1 + ' ';
+                        human += ', ' + conf.i18n.monthlyWeekdayOfMonth1Human + ' ';
                         human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.monthlyWeekdayOfMonth2;
                         human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
+                        human += ' ' + conf.i18n.monthlyDayOfMonth2;
                     }
                     break;
                 }
@@ -649,7 +657,7 @@
                     day = $('select[name=riyearlydayofmonthday]', form).val();
                     result += ';BYMONTH=' + month;
                     result += ';BYMONTHDAY=' + day;
-                    human += ', ' + conf.i18n.months[month - 1] + ' ' + day;
+                    human += ', ' + conf.i18n.yearlyDayOfMonth1Human + ' ' + conf.i18n.months[month - 1] + ' ' + day;
                     break;
                 case 'WEEKDAYOFMONTH':
                     index = $('select[name=riyearlyweekdayofmonthindex]', form).val();
@@ -658,7 +666,7 @@
                     result += ';BYMONTH=' + month;
                     if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
-                        human += ', ' + conf.i18n.yearlyWeekdayOfMonth1;
+                        human += ', ' + conf.i18n.yearlyWeekdayOfMonth1Human;
                         human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth2;
                         human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
@@ -677,7 +685,7 @@
                 case 'BYOCCURRENCES':
                     occurrences = form.find('input[name=rirangebyoccurrencesvalue]').val();
                     result += ';COUNT=' + occurrences;
-                    human += ', ' + conf.i18n.rangeByOccurrences1;
+                    human += ', ' + conf.i18n.rangeByOccurrences1Human;
                     human += ' ' + occurrences;
                     human += ' ' + conf.i18n.rangeByOccurrences2;
                     break;
@@ -689,7 +697,7 @@
                         // Make it UTC:
                         result += 'Z';
                     }
-                    human += ', ' + conf.i18n.rangeByEndDate;
+                    human += ', ' + conf.i18n.rangeByEndDateHuman;
                     human += ' ' + field.data('dateinput').getValue(conf.i18n.longDateFormat);
                     break;
                 }
@@ -1563,7 +1571,10 @@
         // Also update the selected dates section
         form.find('input:radio, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
             function (e) {
-                updateOccurances();
+                // Update only if the occurances are shown
+                if(form.find('.rioccurrencesactions:visible').length != 0) {
+                    updateOccurances();
+                }
             }
         );
                 

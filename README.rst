@@ -40,8 +40,6 @@ Known bugs
 * If a disabled item is the last on the list it will become invisible. This is
   only present with the test_server.py.
 
-* Some human readable labels are no longer working.
-
 
 To Do
 -----
