@@ -431,7 +431,6 @@ test("Field validations", function () {
     input.form.find('input[name=rimonthlytype]').attr('checked', true);
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
-    //38
     
     // Empty Repeat every N days field
     input.form.find('input[name=rimonthlyinterval]').val('');
