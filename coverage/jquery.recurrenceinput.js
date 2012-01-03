@@ -44,128 +44,77 @@ if (! _$jscoverage['jquery.recurrenceinput.js']) {
   _$jscoverage['jquery.recurrenceinput.js'][7] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][8] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][10] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][79] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][83] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][84] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][81] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][85] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][86] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][87] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][88] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][89] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][98] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][176] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][214] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][216] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][228] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][230] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][451] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][454] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][456] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][457] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][458] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][459] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][460] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][463] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][465] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][483] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][484] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][487] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][494] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][495] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][496] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][497] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][498] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][499] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][500] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][502] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][503] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][505] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][508] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][509] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][510] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][511] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][514] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][515] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][516] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][517] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][520] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][521] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][90] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][91] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][100] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][207] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][251] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][253] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][265] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][267] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][519] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][522] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][523] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][524] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][525] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][526] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][527] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][529] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][530] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][528] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][531] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][533] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][534] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][535] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][537] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][540] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][541] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][544] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][545] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][546] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][547] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][548] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][549] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][550] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][551] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][552] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][554] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][555] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][556] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][557] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][558] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][559] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][560] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][561] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][562] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][563] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][564] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][565] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][566] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][567] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][568] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][570] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][571] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][573] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][574] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][576] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][577] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][578] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][579] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][580] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][581] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][582] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][584] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][585] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][586] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][587] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][588] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][589] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][590] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][591] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][592] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][593] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][594] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][595] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][596] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][597] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][598] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][600] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][603] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][604] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][599] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][601] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][602] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][605] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][606] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][607] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][608] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][609] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][610] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][611] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][612] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][613] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][614] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][615] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][616] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][617] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][619] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][620] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][621] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][622] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][623] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][624] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][625] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][626] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][627] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][629] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][630] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][631] = 0;
@@ -175,382 +124,534 @@ if (! _$jscoverage['jquery.recurrenceinput.js']) {
   _$jscoverage['jquery.recurrenceinput.js'][635] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][636] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][637] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][640] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][639] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][641] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][644] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][645] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][646] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][647] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][648] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][649] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][650] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][651] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][652] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][653] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][656] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][657] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][658] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][659] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][660] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][661] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][662] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][663] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][664] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][665] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][666] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][667] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][668] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][669] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][670] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][671] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][672] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][673] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][674] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][675] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][676] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][678] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][677] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][679] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][680] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][682] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][685] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][683] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][686] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][687] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][688] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][689] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][692] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][690] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][691] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][693] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][694] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][695] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][696] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][698] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][699] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][700] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][701] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][703] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][702] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][704] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][706] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][708] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][709] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][710] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][711] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][712] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][713] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][714] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][715] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][716] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][717] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][718] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][719] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][721] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][720] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][724] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][725] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][726] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][727] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][728] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][729] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][730] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][731] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][732] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][733] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][735] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][736] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][737] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][738] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][739] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][740] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][742] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][741] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][743] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][746] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][744] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][745] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][747] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][750] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][751] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][753] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][752] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][754] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][756] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][760] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][755] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][757] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][758] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][759] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][761] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][762] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][765] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][764] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][766] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][768] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][769] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][770] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][771] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][772] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][773] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][774] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][775] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][777] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][778] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][779] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][781] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][784] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][780] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][782] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][783] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][785] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][786] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][788] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][791] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][792] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][793] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][795] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][796] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][797] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][798] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][799] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][800] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][802] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][805] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][806] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][804] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][807] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][808] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][809] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][810] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][811] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][812] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][813] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][814] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][815] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][816] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][817] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][818] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][819] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][820] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][821] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][822] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][825] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][826] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][827] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][828] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][829] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][830] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][831] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][832] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][833] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][834] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][835] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][839] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][840] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][841] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][843] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][845] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][846] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][844] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][847] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][848] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][849] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][850] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][851] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][852] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][854] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][855] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][856] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][859] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][860] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][857] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][858] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][863] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][864] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][865] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][867] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][868] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][869] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][870] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][871] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][872] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][875] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][874] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][877] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][878] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][879] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][881] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][883] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][884] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][885] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][886] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][889] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][890] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][888] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][891] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][892] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][894] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][893] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][895] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][897] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][898] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][899] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][900] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][901] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][904] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][902] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][905] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][906] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][907] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][909] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][911] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][912] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][913] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][914] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][915] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][916] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][918] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][917] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][919] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][921] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][922] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][925] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][920] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][926] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][928] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][930] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][927] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][929] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][931] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][932] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][933] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][934] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][935] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][936] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][937] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][940] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][941] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][942] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][943] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][945] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][948] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][946] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][949] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][950] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][951] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][952] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][953] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][954] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][955] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][956] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][957] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][958] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][959] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][960] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][961] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][962] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][965] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][966] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][967] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][968] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][970] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][974] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][969] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][971] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][973] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][975] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][976] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][977] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][978] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][979] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][980] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][981] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][983] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][984] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][986] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][987] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][988] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][990] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][991] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][989] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][992] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][993] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][994] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][995] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][997] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1000] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1001] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1002] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1004] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1006] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1007] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1008] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1009] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1010] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1015] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1016] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1011] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1013] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1014] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1017] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1018] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1019] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1020] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1022] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1023] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1024] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1025] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1026] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1027] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1028] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1031] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1029] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1032] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1033] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1034] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1035] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1039] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1037] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1040] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1041] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1042] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1043] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1044] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1045] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1046] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1056] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1047] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1048] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1049] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1050] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1051] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1052] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1053] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1054] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1057] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1058] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1063] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1064] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1066] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1059] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1060] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1062] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1067] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1068] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1069] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1072] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1070] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1071] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1073] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1076] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1088] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1090] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1091] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1093] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1095] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1074] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1075] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1083] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1085] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1086] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1089] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1096] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1097] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1098] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1099] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1101] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1102] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1103] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1104] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1109] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1105] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1110] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1111] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1112] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1113] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1114] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1115] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1118] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1116] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1117] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1120] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1121] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1122] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1123] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1124] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1125] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1126] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1128] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1129] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1127] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1130] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1131] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1135] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1136] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1132] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1133] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1134] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1138] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1141] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1139] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1140] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1143] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1144] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1145] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1146] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1148] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1150] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1154] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1155] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1156] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1157] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1158] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1160] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1164] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1162] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1163] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1165] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1166] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1168] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1169] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1170] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1171] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1172] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1174] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1175] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1176] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1177] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1178] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1181] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1184] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1188] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1187] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1189] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1190] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1192] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1193] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1196] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1194] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1195] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1197] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1198] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1199] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1200] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1201] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1202] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1203] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1207] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1208] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1209] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1204] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1205] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1210] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1211] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1214] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1215] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1212] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1213] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1216] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1217] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1219] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1223] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1224] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1226] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1228] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1225] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1227] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1229] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1230] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1233] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1234] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1232] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1236] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1243] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1237] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1239] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1242] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1244] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1246] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1247] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1249] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1251] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1253] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1254] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1256] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1259] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1260] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1262] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1263] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1266] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1272] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1265] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1267] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1270] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1271] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1273] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1274] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1282] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1285] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1288] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1289] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1290] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1275] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1276] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1278] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1280] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1283] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1284] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1286] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1291] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1292] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1294] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1295] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1300] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1297] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1301] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1303] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1305] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1306] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1307] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1308] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1309] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1311] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1312] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1313] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1314] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1316] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1315] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1318] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1321] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1323] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1325] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1329] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1330] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1331] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1333] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1334] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1335] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1336] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1337] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1350] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1338] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1339] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1340] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1344] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1345] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1346] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1347] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1348] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1351] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1352] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1353] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1357] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1358] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1359] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1362] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1364] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1354] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1356] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1360] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1361] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1363] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1365] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1367] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1368] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1369] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1373] = 0;
   _$jscoverage['jquery.recurrenceinput.js'][1374] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1377] = 0;
-  _$jscoverage['jquery.recurrenceinput.js'][1378] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1376] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1379] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1380] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1381] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1384] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1385] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1386] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1389] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1391] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1392] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1393] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1394] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1399] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1401] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1402] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1403] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1404] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1408] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1409] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1410] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1415] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1417] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1418] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1419] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1420] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1424] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1425] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1426] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1431] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1433] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1434] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1435] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1436] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1440] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1441] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1442] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1449] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1450] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1451] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1452] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1453] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1458] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1459] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1460] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1462] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1463] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1464] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1466] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1467] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1471] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1474] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1475] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1476] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1479] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1480] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1491] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1492] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1495] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1496] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1499] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1505] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1506] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1507] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1508] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1509] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1511] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1520] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1523] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1526] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1527] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1528] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1533] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1538] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1541] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1543] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1544] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1549] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1551] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1556] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1558] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1561] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1563] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1566] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1568] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1572] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1575] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1576] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1584] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1585] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1591] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1604] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1605] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1607] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1611] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1612] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1613] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1616] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1618] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1619] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1621] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1622] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1628] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1631] = 0;
+  _$jscoverage['jquery.recurrenceinput.js'][1632] = 0;
 }
-_$jscoverage['jquery.recurrenceinput.js'].source = ["<span class=\"c\">/*jslint regexp: false, continue: true, indent: 4 */</span>","<span class=\"c\">/*global $, alert, jQuery */</span>","","<span class=\"k\">(</span><span class=\"k\">function</span> <span class=\"k\">(</span>$<span class=\"k\">)</span> <span class=\"k\">{</span>","    $<span class=\"k\">.</span>tools <span class=\"k\">=</span> $<span class=\"k\">.</span>tools <span class=\"k\">||</span> <span class=\"k\">{</span>version<span class=\"k\">:</span> <span class=\"s\">'@VERSION'</span><span class=\"k\">}</span><span class=\"k\">;</span>","    ","    <span class=\"k\">var</span> tool<span class=\"k\">;</span>","    <span class=\"k\">var</span> LABELS <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","    ","    tool <span class=\"k\">=</span> $<span class=\"k\">.</span>tools<span class=\"k\">.</span>recurrenceinput <span class=\"k\">=</span> <span class=\"k\">{</span>","        conf<span class=\"k\">:</span> <span class=\"k\">{</span>","        ","            lang<span class=\"k\">:</span> <span class=\"s\">'en'</span><span class=\"k\">,</span>","            readOnly<span class=\"k\">:</span> <span class=\"k\">false</span><span class=\"k\">,</span>","            ","            <span class=\"c\">// \"REMOTE\" FIELD</span>","            startField<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","            ajaxURL<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","        ","            <span class=\"c\">// FORM OVERLAY</span>","            formOverlay<span class=\"k\">:</span> <span class=\"k\">{</span>","                speed<span class=\"k\">:</span> <span class=\"s\">'fast'</span><span class=\"k\">,</span>","                fixed<span class=\"k\">:</span> <span class=\"k\">false</span>","            <span class=\"k\">}</span><span class=\"k\">,</span>","        ","            <span class=\"c\">// JQUERY TEMPLATE NAMES</span>","            template<span class=\"k\">:</span> <span class=\"k\">{</span>","                form<span class=\"k\">:</span> <span class=\"s\">'#jquery-recurrenceinput-form-tmpl'</span><span class=\"k\">,</span>","                display<span class=\"k\">:</span> <span class=\"s\">'#jquery-recurrenceinput-display-tmpl'</span>","            <span class=\"k\">}</span><span class=\"k\">,</span>","        ","            <span class=\"c\">// RECURRENCE TEMPLATES</span>","            rtemplate<span class=\"k\">:</span> <span class=\"k\">{</span>","                daily<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=DAILY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'ridailyinterval'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                mondayfriday<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=WEEKLY;BYDAY=MO,FR'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                weekdays<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                weekly<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=WEEKLY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'riweeklyinterval'</span><span class=\"k\">,</span>","                        <span class=\"s\">'riweeklyweekdays'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                monthly<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=MONTHLY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'rimonthlyoptions'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                yearly<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=YEARLY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'riyearlyoptions'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span><span class=\"k\">,</span>","        ","        localize<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>language<span class=\"k\">,</span> labels<span class=\"k\">)</span> <span class=\"k\">{</span>","            LABELS<span class=\"k\">[</span>language<span class=\"k\">]</span> <span class=\"k\">=</span> labels<span class=\"k\">;</span>        ","        <span class=\"k\">}</span><span class=\"k\">,</span>","        ","        setTemplates<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>templates<span class=\"k\">,</span> titles<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> lang<span class=\"k\">,</span> template<span class=\"k\">;</span>","            tool<span class=\"k\">.</span>conf<span class=\"k\">.</span>rtemplate <span class=\"k\">=</span> templates<span class=\"k\">;</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>lang <span class=\"k\">in</span> titles<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>titles<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>lang<span class=\"k\">))</span> <span class=\"k\">{</span>","                    <span class=\"k\">for</span> <span class=\"k\">(</span>template <span class=\"k\">in</span> titles<span class=\"k\">[</span>lang<span class=\"k\">])</span> <span class=\"k\">{</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>titles<span class=\"k\">[</span>lang<span class=\"k\">].</span>hasOwnProperty<span class=\"k\">(</span>template<span class=\"k\">))</span> <span class=\"k\">{</span>","                            LABELS<span class=\"k\">[</span>lang<span class=\"k\">].</span>rtemplate<span class=\"k\">[</span>template<span class=\"k\">]</span> <span class=\"k\">=</span> titles<span class=\"k\">[</span>lang<span class=\"k\">][</span>template<span class=\"k\">];</span>","                        <span class=\"k\">}</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","    <span class=\"k\">}</span><span class=\"k\">;</span>","    ","    tool<span class=\"k\">.</span>localize<span class=\"k\">(</span><span class=\"s\">\"en\"</span><span class=\"k\">,</span> <span class=\"k\">{</span>","        displayUnactivate<span class=\"k\">:</span> <span class=\"s\">'Does not repeat'</span><span class=\"k\">,</span>","        displayActivate<span class=\"k\">:</span> <span class=\"s\">'Repeats '</span><span class=\"k\">,</span>","        edit<span class=\"k\">:</span> <span class=\"s\">'Edit...'</span><span class=\"k\">,</span>","        add<span class=\"k\">:</span>  <span class=\"s\">'Add'</span><span class=\"k\">,</span>","        ","        recurrenceType<span class=\"k\">:</span> <span class=\"s\">'Recurrence type:'</span><span class=\"k\">,</span>","","        dailyInterval1<span class=\"k\">:</span> <span class=\"s\">'Every'</span><span class=\"k\">,</span>","        dailyInterval2<span class=\"k\">:</span> <span class=\"s\">'days'</span><span class=\"k\">,</span>","","        weeklyInterval1<span class=\"k\">:</span> <span class=\"s\">'Every'</span><span class=\"k\">,</span>","        weeklyInterval2<span class=\"k\">:</span> <span class=\"s\">'week(s)'</span><span class=\"k\">,</span>","        weeklyWeekdays<span class=\"k\">:</span> <span class=\"s\">'On:'</span><span class=\"k\">,</span>","","        monthlyDayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'Day'</span><span class=\"k\">,</span>","        monthlyDayOfMonth2<span class=\"k\">:</span> <span class=\"s\">'of the month'</span><span class=\"k\">,</span>","        monthlyDayOfMonth3<span class=\"k\">:</span> <span class=\"s\">', every'</span><span class=\"k\">,</span>","        monthlyDayOfMonth4<span class=\"k\">:</span> <span class=\"s\">'month(s)'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'The'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth2<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth3<span class=\"k\">:</span> <span class=\"s\">', every'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth4<span class=\"k\">:</span> <span class=\"s\">'month(s)'</span><span class=\"k\">,</span>","","        yearlyDayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'Every'</span><span class=\"k\">,</span>","        yearlyDayOfMonth2<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyDayOfMonth3<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'The'</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth2<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth3<span class=\"k\">:</span> <span class=\"s\">'of'</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth4<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        ","        range<span class=\"k\">:</span> <span class=\"s\">'End recurrance:'</span><span class=\"k\">,</span>","        rangeNoEnd<span class=\"k\">:</span> <span class=\"s\">'No end'</span><span class=\"k\">,</span>","        rangeByOccurrences1<span class=\"k\">:</span> <span class=\"s\">'Ending after'</span><span class=\"k\">,</span>","        rangeByOccurrences2<span class=\"k\">:</span> <span class=\"s\">'occurrence(s)'</span><span class=\"k\">,</span>","        rangeByEndDate<span class=\"k\">:</span> <span class=\"s\">'Until '</span><span class=\"k\">,</span>","        ","        including<span class=\"k\">:</span> <span class=\"s\">', and also '</span><span class=\"k\">,</span>","        except<span class=\"k\">:</span> <span class=\"s\">', except for'</span><span class=\"k\">,</span>","","        cancel<span class=\"k\">:</span> <span class=\"s\">'Cancel'</span><span class=\"k\">,</span>        ","        save<span class=\"k\">:</span> <span class=\"s\">'Save'</span><span class=\"k\">,</span>","","        orderIndexes<span class=\"k\">:</span> <span class=\"k\">[</span><span class=\"s\">'First'</span><span class=\"k\">,</span> <span class=\"s\">'Second'</span><span class=\"k\">,</span> <span class=\"s\">'Third'</span><span class=\"k\">,</span> <span class=\"s\">'Fourth'</span><span class=\"k\">,</span> <span class=\"s\">'Last'</span><span class=\"k\">],</span>","        months<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'January'</span><span class=\"k\">,</span> <span class=\"s\">'February'</span><span class=\"k\">,</span> <span class=\"s\">'March'</span><span class=\"k\">,</span> <span class=\"s\">'April'</span><span class=\"k\">,</span> <span class=\"s\">'May'</span><span class=\"k\">,</span> <span class=\"s\">'June'</span><span class=\"k\">,</span>","            <span class=\"s\">'July'</span><span class=\"k\">,</span> <span class=\"s\">'August'</span><span class=\"k\">,</span> <span class=\"s\">'September'</span><span class=\"k\">,</span> <span class=\"s\">'October'</span><span class=\"k\">,</span> <span class=\"s\">'November'</span><span class=\"k\">,</span> <span class=\"s\">'December'</span><span class=\"k\">],</span>","        shortMonths<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'Jan'</span><span class=\"k\">,</span> <span class=\"s\">'Feb'</span><span class=\"k\">,</span> <span class=\"s\">'Mar'</span><span class=\"k\">,</span> <span class=\"s\">'Apr'</span><span class=\"k\">,</span> <span class=\"s\">'May'</span><span class=\"k\">,</span> <span class=\"s\">'Jun'</span><span class=\"k\">,</span>","            <span class=\"s\">'Jul'</span><span class=\"k\">,</span> <span class=\"s\">'Aug'</span><span class=\"k\">,</span> <span class=\"s\">'Sep'</span><span class=\"k\">,</span> <span class=\"s\">'Oct'</span><span class=\"k\">,</span> <span class=\"s\">'Nov'</span><span class=\"k\">,</span> <span class=\"s\">'Dec'</span><span class=\"k\">],</span>","        weekdays<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'Monday'</span><span class=\"k\">,</span> <span class=\"s\">'Tuesday'</span><span class=\"k\">,</span> <span class=\"s\">'Wednesday'</span><span class=\"k\">,</span> <span class=\"s\">'Thursday'</span><span class=\"k\">,</span>","            <span class=\"s\">'Friday'</span><span class=\"k\">,</span> <span class=\"s\">'Saturday'</span><span class=\"k\">,</span> <span class=\"s\">'Sunday'</span><span class=\"k\">],</span>","        shortWeekdays<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'Mon'</span><span class=\"k\">,</span> <span class=\"s\">'Tue'</span><span class=\"k\">,</span> <span class=\"s\">'Wed'</span><span class=\"k\">,</span> <span class=\"s\">'Thu'</span><span class=\"k\">,</span> <span class=\"s\">'Fri'</span><span class=\"k\">,</span> <span class=\"s\">'Sat'</span><span class=\"k\">,</span> <span class=\"s\">'Sun'</span><span class=\"k\">],</span>","            ","        longDateFormat<span class=\"k\">:</span> <span class=\"s\">'mmmm dd, yyyy'</span><span class=\"k\">,</span>","        shortDateFormat<span class=\"k\">:</span> <span class=\"s\">'mm/dd/yyyy'</span><span class=\"k\">,</span>","            ","        unsupportedFeatures<span class=\"k\">:</span> <span class=\"s\">'Warning: This event uses recurrence features not '</span> <span class=\"k\">+</span>","                              <span class=\"s\">'supported by this widget. Saving the recurrence '</span> <span class=\"k\">+</span>","                              <span class=\"s\">'may change the recurrence in unintended ways:'</span><span class=\"k\">,</span>","        noTemplateMatch<span class=\"k\">:</span> <span class=\"s\">'No matching recurrence template'</span><span class=\"k\">,</span>","        multipleDayOfMonth<span class=\"k\">:</span> <span class=\"s\">'This widget does not support multiple days in monthly or yearly recurrence'</span><span class=\"k\">,</span>","        bysetpos<span class=\"k\">:</span> <span class=\"s\">'BYSETPOS is not supported'</span><span class=\"k\">,</span>","                           ","        rtemplate<span class=\"k\">:</span> <span class=\"k\">{</span>","            daily<span class=\"k\">:</span> <span class=\"s\">'Daily'</span><span class=\"k\">,</span>","            mondayfriday<span class=\"k\">:</span> <span class=\"s\">'Mondays and Fridays'</span><span class=\"k\">,</span>","            weekdays<span class=\"k\">:</span> <span class=\"s\">'Weekdays'</span><span class=\"k\">,</span>","            weekly<span class=\"k\">:</span> <span class=\"s\">'Weekly'</span><span class=\"k\">,</span>","            monthly<span class=\"k\">:</span> <span class=\"s\">'Monthly'</span><span class=\"k\">,</span>","            yearly<span class=\"k\">:</span> <span class=\"s\">'Yearly'</span>","        <span class=\"k\">}</span>","    <span class=\"k\">}</span><span class=\"k\">);</span>","","","    <span class=\"k\">var</span> OCCURRENCETMPL <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"rioccurrences\"&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'{{each occurrences}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;div class=\"occurrence\"&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;span class=\"${occurrences[$index].type}\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'${occurrences[$index].formattedDate}'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{if !readOnly}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;span class=\"action\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{if occurrences[$index].type === \"rrule\"}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a date=\"${occurrences[$index].date}\" href=\"#\"'</span><span class=\"k\">,</span>","                               <span class=\"s\">'class=\"${occurrences[$index].type}\" &gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'Exclude'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{if occurrences[$index].type === \"rdate\"}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a date=\"${occurrences[$index].date}\" href=\"#\"'</span><span class=\"k\">,</span>","                               <span class=\"s\">'class=\"${occurrences[$index].type}\" &gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'Remove'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{if occurrences[$index].type === \"exdate\"}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a date=\"${occurrences[$index].date}\" href=\"#\"'</span><span class=\"k\">,</span>","                               <span class=\"s\">'class=\"${occurrences[$index].type}\" &gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'Include'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;div class=\"batching\"&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{each batch.batches}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{if $index === batch.currentBatch}}&lt;span class=\"current\"&gt;{{/if}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;a href=\"#\" start=\"${batch.batches[$index][0]}\"&gt;[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]&lt;/a&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{if $index === batch.currentBatch}}&lt;/span&gt;{{/if}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;/div&gt;&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","    ","    $<span class=\"k\">.</span>template<span class=\"k\">(</span><span class=\"s\">'occurrenceTmpl'</span><span class=\"k\">,</span> OCCURRENCETMPL<span class=\"k\">);</span>","","    <span class=\"k\">var</span> DISPLAYTMPL <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"ridisplay\"&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;div class=\"rimain\"&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{if !readOnly}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;input type=\"checkbox\" name=\"richeckbox\" /&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;label class=\"ridisplay\"&gt;${i18n.displayUnactivate}&lt;/label&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{if !readOnly}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;a href=\"#\" name=\"riedit\"&gt;${i18n.edit}&lt;/a&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;div class=\"rioccurrences\" style=\"display:none\" /&gt;&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","        ","    $<span class=\"k\">.</span>template<span class=\"k\">(</span><span class=\"s\">'displayTmpl'</span><span class=\"k\">,</span> DISPLAYTMPL<span class=\"k\">);</span>","    ","    <span class=\"k\">var</span> FORMTMPL <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"riform\"&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;form&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div id=\"messagearea\" style=\"display: none;\"&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div id=\"rirtemplate\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;label for=\"${name}rtemplate\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'${i18n.recurrenceType}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;select name=\"rirtemplate\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{each rtemplate}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;option value=\"${$index}\"&gt;${i18n.rtemplate[$index]}&lt;/value&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div id=\"riformfields\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"ridailyinterval\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"${name}dailyinterval\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.dailyInterval1}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"1\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"ridailyinterval\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}dailyinterval\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.dailyInterval2}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riweeklyinterval\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"${name}weeklyinterval\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.weeklyInterval1}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"1\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"riweeklyinterval\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}weeklyinterval\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.weeklyInterval2}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riweeklyweekdays\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"${name}weeklyinterval\"&gt;${i18n.weeklyWeekdays}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{each i18n.weekdays}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"checkbox\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"riweeklyweekdays${weekdays[$index]}\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}weeklyWeekdays${weekdays[$index]}\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"${weekdays[$index]}\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}weeklyWeekdays${weekdays[$index]}\"&gt;${$value}&lt;/label&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{if $index==3}}&lt;br/&gt;{{/if}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/ul&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"rimonthlyoptions\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"DAYOFMONTH\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rimonthlytype\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}monthlytype:DAYOFMONTH\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}monthlytype:DAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyDayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"rimonthlydayofmonthday\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}monthlydayofmonthday\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$value}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyDayOfMonth2}${i18n.monthlyDayOfMonth3}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"1\" '</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rimonthlydayofmonthinterval\"/&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyDayOfMonth4}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"WEEKDAYOFMONTH\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rimonthlytype\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}monthlytype:WEEKDAYOFMONTH\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}monthlytype:WEEKDAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyWeekdayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"rimonthlyweekdayofmonthindex\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.orderIndexes}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${orderIndexes[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyWeekdayOfMonth2}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"rimonthlyweekdayofmonth\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.weekdays}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${weekdays[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyWeekdayOfMonth3}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"1\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rimonthlyweekdayofmonthinterval\" /&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyWeekdayOfMonth4}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riyearlyoptions\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"DAYOFMONTH\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"riyearlyType\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}yearlytype:DAYOFMONTH\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}yearlytype:DAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyDayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlydayofmonthmonth\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.months}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$index+1}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyDayOfMonth2}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlydayofmonthday\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$value}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyDayOfMonth3}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"WEEKDAYOFMONTH\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"riyearlyType\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}yearlytype:WEEKDAYOFMONTH\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}yearlytype:WEEKDAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyWeekdayOfMonth1}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;select name=\"riyearlyweekdayofmonthindex\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{each i18n.orderIndexes}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;option value=\"${orderIndexes[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}yearlytype:WEEKDAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyWeekdayOfMonth2}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlyweekdayofmonthday\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.weekdays}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${weekdays[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyWeekdayOfMonth3}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlyweekdayofmonthmonth\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.months}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$index+1}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyWeekdayOfMonth4}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"rirangeoptions\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label&gt;${i18n.range}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"NOENDDATE\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rirangetype\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}rangetype:NOENDDATE\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}rangetype:NOENDDATE\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.rangeNoEnd}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"BYOCCURRENCES\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rirangetype\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}rangetype:BYOCCURRENCES\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}rangetype:BYOCCURRENCES\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.rangeByOccurrences1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"text\" size=\"3\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"10\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rirangebyoccurrencesvalue\" /&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.rangeByOccurrences2}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"BYENDDATE\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rirangetype\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}rangetype:BYENDDATE\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;label for=\"${name}rangetype:BYENDDATE\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.rangeByEndDate}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                <span class=\"s\">'type=\"date\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rirangebyenddatecalendar\" /&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div class=\"rioccurrencesactions\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;span class=\"riaddoccurrence\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"date\" name=\"adddate\" id=\"adddate\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"button\" name=\"addaction\" id=\"addaction\" value=\"${i18n.add}\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;span class=\"refreshbutton action\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a class=\"rirefreshbutton\" href=\"#\" &gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'Refresh'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div class=\"rioccurrences\"&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div class=\"ributtons\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                        <span class=\"s\">'type=\"submit\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'class=\"ricancelbutton\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'value=\"${i18n.cancel}\" /&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                        <span class=\"s\">'type=\"submit\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'class=\"risavebutton\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'value=\"${i18n.save}\" /&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;/form&gt;&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","    ","    $<span class=\"k\">.</span>template<span class=\"k\">(</span><span class=\"s\">'formTmpl'</span><span class=\"k\">,</span> FORMTMPL<span class=\"k\">);</span>","    ","    <span class=\"c\">// Formatting function (mostly) from jQueryTools dateinput</span>","    <span class=\"k\">var</span> Re <span class=\"k\">=</span> <span class=\"s\">/d{1,4}|m{1,4}|yy(?:yy)?|\"[^\"]*\"|'[^']*'/g</span><span class=\"k\">;</span>","    ","    <span class=\"k\">function</span> zeropad<span class=\"k\">(</span>val<span class=\"k\">,</span> len<span class=\"k\">)</span> <span class=\"k\">{</span>","        val <span class=\"k\">=</span> val<span class=\"k\">.</span>toString<span class=\"k\">();</span>","        len <span class=\"k\">=</span> len <span class=\"k\">||</span> <span class=\"s\">2</span><span class=\"k\">;</span>","        <span class=\"k\">while</span> <span class=\"k\">(</span>val<span class=\"k\">.</span>length <span class=\"k\">&lt;</span> len<span class=\"k\">)</span> <span class=\"k\">{</span> val <span class=\"k\">=</span> <span class=\"s\">\"0\"</span> <span class=\"k\">+</span> val<span class=\"k\">;</span> <span class=\"k\">}</span>","        <span class=\"k\">return</span> val<span class=\"k\">;</span>","    <span class=\"k\">}</span>  ","    ","    <span class=\"k\">function</span> format<span class=\"k\">(</span>date<span class=\"k\">,</span> fmt<span class=\"k\">,</span> conf<span class=\"k\">)</span> <span class=\"k\">{</span>","            ","        <span class=\"k\">var</span> d <span class=\"k\">=</span> date<span class=\"k\">.</span>getDate<span class=\"k\">(),</span>","            D <span class=\"k\">=</span> date<span class=\"k\">.</span>getDay<span class=\"k\">(),</span>","            m <span class=\"k\">=</span> date<span class=\"k\">.</span>getMonth<span class=\"k\">(),</span>","            y <span class=\"k\">=</span> date<span class=\"k\">.</span>getFullYear<span class=\"k\">(),</span>","","            flags <span class=\"k\">=</span> <span class=\"k\">{</span>","                d<span class=\"k\">:</span>    d<span class=\"k\">,</span>","                dd<span class=\"k\">:</span>   zeropad<span class=\"k\">(</span>d<span class=\"k\">),</span>","                ddd<span class=\"k\">:</span>  conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortWeekdays<span class=\"k\">[</span>D<span class=\"k\">],</span>","                dddd<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>D<span class=\"k\">],</span>","                m<span class=\"k\">:</span>    m <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">,</span>","                mm<span class=\"k\">:</span>   zeropad<span class=\"k\">(</span>m <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">),</span>","                mmm<span class=\"k\">:</span>  conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortMonths<span class=\"k\">[</span>m<span class=\"k\">],</span>","                mmmm<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>months<span class=\"k\">[</span>m<span class=\"k\">],</span>","                yy<span class=\"k\">:</span>   String<span class=\"k\">(</span>y<span class=\"k\">).</span>slice<span class=\"k\">(</span><span class=\"s\">2</span><span class=\"k\">),</span>","                yyyy<span class=\"k\">:</span> y","            <span class=\"k\">}</span><span class=\"k\">;</span>","","        <span class=\"k\">var</span> result <span class=\"k\">=</span> fmt<span class=\"k\">.</span>replace<span class=\"k\">(</span>Re<span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">(</span>$0<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">return</span> flags<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>$0<span class=\"k\">)</span> <span class=\"k\">?</span> flags<span class=\"k\">[</span>$0<span class=\"k\">]</span> <span class=\"k\">:</span> $0<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">1</span><span class=\"k\">,</span> $0<span class=\"k\">.</span>length <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">);</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","        ","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","            ","    <span class=\"k\">}</span>","    ","    <span class=\"c\">/**</span>","<span class=\"c\">     * Parsing RFC5545 from widget</span>","<span class=\"c\">     */</span>","    <span class=\"k\">function</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> tz<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> value <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","        <span class=\"k\">var</span> rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>value<span class=\"k\">];</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> rtemplate<span class=\"k\">.</span>rrule<span class=\"k\">;</span>","        <span class=\"k\">var</span> human <span class=\"k\">=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>value<span class=\"k\">];</span>","        <span class=\"k\">var</span> field<span class=\"k\">,</span> input<span class=\"k\">,</span> weekdays<span class=\"k\">,</span> i18nweekdays<span class=\"k\">,</span> i<span class=\"k\">,</span> j<span class=\"k\">,</span> index<span class=\"k\">,</span> tmp<span class=\"k\">;</span>","        <span class=\"k\">var</span> day<span class=\"k\">,</span> month<span class=\"k\">,</span> year<span class=\"k\">,</span> interval<span class=\"k\">,</span> yearlyType<span class=\"k\">,</span> occurrences<span class=\"k\">,</span> date<span class=\"k\">;</span>","        ","        <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","            field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#'</span> <span class=\"k\">+</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">[</span>i<span class=\"k\">]);</span>","            ","            <span class=\"k\">switch</span> <span class=\"k\">(</span>field<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'id'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","            ","            <span class=\"k\">case</span> <span class=\"s\">'ridailyinterval'</span><span class=\"k\">:</span>","                input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=ridailyinterval]'</span><span class=\"k\">);</span>","                result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> input<span class=\"k\">.</span>val<span class=\"k\">();</span>","                human <span class=\"k\">=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>dailyInterval1 <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> input<span class=\"k\">.</span>val<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>dailyInterval2<span class=\"k\">;</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riweeklyinterval'</span><span class=\"k\">:</span>","                input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyinterval]'</span><span class=\"k\">);</span>","                result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> input<span class=\"k\">.</span>val<span class=\"k\">();</span>","                human <span class=\"k\">=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weeklyInterval1 <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> input<span class=\"k\">.</span>val<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weeklyInterval2<span class=\"k\">;</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riweeklyweekdays'</span><span class=\"k\">:</span>","                weekdays <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","                i18nweekdays <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>j <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> j <span class=\"k\">&lt;</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">.</span>length<span class=\"k\">;</span> j<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyweekdays'</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>j<span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>input<span class=\"k\">.</span>is<span class=\"k\">(</span><span class=\"s\">':checked'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>weekdays<span class=\"k\">)</span> <span class=\"k\">{</span>","                            weekdays <span class=\"k\">+=</span> <span class=\"s\">','</span><span class=\"k\">;</span>","                            i18nweekdays <span class=\"k\">+=</span> <span class=\"s\">', '</span><span class=\"k\">;</span>","                        <span class=\"k\">}</span>","                        weekdays <span class=\"k\">+=</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>j<span class=\"k\">];</span>","                        i18nweekdays <span class=\"k\">+=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>j<span class=\"k\">];</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>weekdays<span class=\"k\">)</span> <span class=\"k\">{</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYDAY='</span> <span class=\"k\">+</span> weekdays<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weeklyWeekdays <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> i18nweekdays<span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rimonthlyoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> monthlyType <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlytype]:checked'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>monthlyType<span class=\"k\">)</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">:</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlydayofmonthday]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    interval <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlydayofmonthinterval]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTHDAY='</span> <span class=\"k\">+</span> day<span class=\"k\">;</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> interval<span class=\"k\">;</span>                        ","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth1 <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> day <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth2<span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>interval <span class=\"k\">!==</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        human <span class=\"k\">+=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth3 <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> interval <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth4<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">case</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">:</span>","                    index <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonthindex]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonth]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    interval <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlyweekdayofmonthinterval]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>day<span class=\"k\">,</span> <span class=\"k\">[</span><span class=\"s\">'MO'</span><span class=\"k\">,</span> <span class=\"s\">'TU'</span><span class=\"k\">,</span> <span class=\"s\">'WE'</span><span class=\"k\">,</span> <span class=\"s\">'TH'</span><span class=\"k\">,</span> <span class=\"s\">'FR'</span><span class=\"k\">,</span> <span class=\"s\">'SA'</span><span class=\"k\">,</span> <span class=\"s\">'SU'</span><span class=\"k\">])</span> <span class=\"k\">&gt;</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        result <span class=\"k\">+=</span> <span class=\"s\">';BYDAY='</span> <span class=\"k\">+</span> index <span class=\"k\">+</span> day<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyWeekdayOfMonth1 <span class=\"k\">+</span> <span class=\"s\">' '</span><span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>orderIndexes<span class=\"k\">[</span>conf<span class=\"k\">.</span>orderIndexes<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>index<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyWeekdayOfMonth2<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>conf<span class=\"k\">.</span>weekdays<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>day<span class=\"k\">)];</span>","                    <span class=\"k\">}</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> interval<span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>interval <span class=\"k\">!==</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyWeekdayOfMonth3 <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> interval <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyWeekdayOfMonth4<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riyearlyoptions'</span><span class=\"k\">:</span>","                yearlyType <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[name=riyearlyType]:checked'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>yearlyType<span class=\"k\">)</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">:</span>","                    month <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthmonth]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthday]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTH='</span> <span class=\"k\">+</span> month<span class=\"k\">;</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTHDAY='</span> <span class=\"k\">+</span> day<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>months<span class=\"k\">[</span>month <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> day<span class=\"k\">;</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">case</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">:</span>","                    index <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthindex]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthday]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    month <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthmonth]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTH='</span> <span class=\"k\">+</span> month<span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>day<span class=\"k\">,</span> <span class=\"k\">[</span><span class=\"s\">'MO'</span><span class=\"k\">,</span> <span class=\"s\">'TU'</span><span class=\"k\">,</span> <span class=\"s\">'WE'</span><span class=\"k\">,</span> <span class=\"s\">'TH'</span><span class=\"k\">,</span> <span class=\"s\">'FR'</span><span class=\"k\">,</span> <span class=\"s\">'SA'</span><span class=\"k\">,</span> <span class=\"s\">'SU'</span><span class=\"k\">])</span> <span class=\"k\">&gt;</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        result <span class=\"k\">+=</span> <span class=\"s\">';BYDAY='</span> <span class=\"k\">+</span> index <span class=\"k\">+</span> day<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth1<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>orderIndexes<span class=\"k\">[</span>conf<span class=\"k\">.</span>orderIndexes<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>index<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth2<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>conf<span class=\"k\">.</span>weekdays<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>day<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth3<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>months<span class=\"k\">[</span>month <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth4<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rirangeoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> rangeType <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangetype]:checked'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>rangeType<span class=\"k\">)</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'BYOCCURRENCES'</span><span class=\"k\">:</span>","                    occurrences <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyoccurrencesvalue]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';COUNT='</span> <span class=\"k\">+</span> occurrences<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rangeByOccurrences1<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> occurrences<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rangeByOccurrences2<span class=\"k\">;</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">case</span> <span class=\"s\">'BYENDDATE'</span><span class=\"k\">:</span>","                    field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">);</span>","                    date <span class=\"k\">=</span> field<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">).</span>getValue<span class=\"k\">(</span><span class=\"s\">'yyyymmdd'</span><span class=\"k\">);</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';UNTIL='</span> <span class=\"k\">+</span> date <span class=\"k\">+</span> <span class=\"s\">'T000000'</span><span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>tz <span class=\"k\">===</span> <span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// Make it UTC:</span>","                        result <span class=\"k\">+=</span> <span class=\"s\">'Z'</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rangeByEndDate<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> field<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">).</span>getValue<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">);</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>sort<span class=\"k\">();</span>","            tmp <span class=\"k\">=</span> <span class=\"k\">[];</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">]</span> <span class=\"k\">!==</span> <span class=\"s\">''</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    year <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">4</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">4</span><span class=\"k\">,</span> <span class=\"s\">6</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">)</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">;</span>","                    day <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">6</span><span class=\"k\">,</span> <span class=\"s\">8</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    tmp<span class=\"k\">.</span>push<span class=\"k\">(</span>format<span class=\"k\">(</span><span class=\"k\">new</span> Date<span class=\"k\">(</span>year<span class=\"k\">,</span> month<span class=\"k\">,</span> day<span class=\"k\">),</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">,</span> conf<span class=\"k\">));</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tmp<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                human <span class=\"k\">=</span> human <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>including <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> tmp<span class=\"k\">.</span>join<span class=\"k\">(</span><span class=\"s\">'; '</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>sort<span class=\"k\">();</span>","            tmp <span class=\"k\">=</span> <span class=\"k\">[];</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">]</span> <span class=\"k\">!==</span> <span class=\"s\">''</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    year <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">4</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">4</span><span class=\"k\">,</span> <span class=\"s\">6</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">)</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">;</span>","                    day <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">6</span><span class=\"k\">,</span> <span class=\"s\">8</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    tmp<span class=\"k\">.</span>push<span class=\"k\">(</span>format<span class=\"k\">(</span><span class=\"k\">new</span> Date<span class=\"k\">(</span>year<span class=\"k\">,</span> month<span class=\"k\">,</span> day<span class=\"k\">),</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">,</span> conf<span class=\"k\">));</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tmp<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                human <span class=\"k\">=</span> human <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>except <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> tmp<span class=\"k\">.</span>join<span class=\"k\">(</span><span class=\"s\">'; '</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        result <span class=\"k\">=</span> <span class=\"s\">'RRULE:'</span> <span class=\"k\">+</span> result<span class=\"k\">;</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>join<span class=\"k\">()</span> <span class=\"k\">!==</span> <span class=\"s\">\"\"</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tz <span class=\"k\">===</span> <span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Make it UTC:</span>","                tmp <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>map<span class=\"k\">(</span><span class=\"k\">function</span> <span class=\"k\">(</span>x<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>x<span class=\"k\">.</span>length <span class=\"k\">===</span> <span class=\"s\">8</span><span class=\"k\">)</span> <span class=\"k\">{</span> <span class=\"c\">// DATE format. Make it DATE-TIME</span>","                        x <span class=\"k\">+=</span> <span class=\"s\">'T000000'</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">return</span> x <span class=\"k\">+</span> <span class=\"s\">'Z'</span><span class=\"k\">;</span> ","                <span class=\"k\">}</span><span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                tmp <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            result <span class=\"k\">=</span> result <span class=\"k\">+</span> <span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">EXDATE:'</span> <span class=\"k\">+</span> tmp<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>join<span class=\"k\">()</span> <span class=\"k\">!==</span> <span class=\"s\">\"\"</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tz <span class=\"k\">===</span> <span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Make it UTC:</span>","                tmp <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>map<span class=\"k\">(</span><span class=\"k\">function</span> <span class=\"k\">(</span>x<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>x<span class=\"k\">.</span>length <span class=\"k\">===</span> <span class=\"s\">8</span><span class=\"k\">)</span> <span class=\"k\">{</span> <span class=\"c\">// DATE format. Make it DATE-TIME</span>","                        x <span class=\"k\">+=</span> <span class=\"s\">'T000000'</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">return</span> x <span class=\"k\">+</span> <span class=\"s\">'Z'</span><span class=\"k\">;</span>","                <span class=\"k\">}</span><span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                tmp <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            result <span class=\"k\">=</span> result <span class=\"k\">+</span> <span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">RDATE:'</span> <span class=\"k\">+</span> tmp<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> <span class=\"k\">{</span>result<span class=\"k\">:</span> result<span class=\"k\">,</span> description<span class=\"k\">:</span> human<span class=\"k\">}</span><span class=\"k\">;</span>","    <span class=\"k\">}</span>","","    <span class=\"k\">function</span> parseLine<span class=\"k\">(</span>icalline<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> pos <span class=\"k\">=</span> icalline<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"s\">':'</span><span class=\"k\">);</span>","        <span class=\"k\">var</span> property <span class=\"k\">=</span> icalline<span class=\"k\">.</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> pos<span class=\"k\">);</span>","        result<span class=\"k\">.</span>value <span class=\"k\">=</span> icalline<span class=\"k\">.</span>substring<span class=\"k\">(</span>pos <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>property<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"s\">';'</span><span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            pos <span class=\"k\">=</span> property<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"s\">';'</span><span class=\"k\">);</span>","            result<span class=\"k\">.</span>parameters <span class=\"k\">=</span> property<span class=\"k\">.</span>substring<span class=\"k\">(</span>pos <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","            result<span class=\"k\">.</span>property <span class=\"k\">=</span> property<span class=\"k\">.</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> pos<span class=\"k\">);</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            result<span class=\"k\">.</span>parameters <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            result<span class=\"k\">.</span>property <span class=\"k\">=</span> property<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","    <span class=\"k\">}</span>","    ","    <span class=\"k\">function</span> cleanDates<span class=\"k\">(</span>dates<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"c\">// Get rid of timezones</span>","        <span class=\"c\">// TODO: We could parse dates and range here, maybe?</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> splitDates <span class=\"k\">=</span> dates<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">','</span><span class=\"k\">);</span>","        <span class=\"k\">var</span> date<span class=\"k\">;</span>","        ","        <span class=\"k\">for</span> <span class=\"k\">(</span>date <span class=\"k\">in</span> splitDates<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>splitDates<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>date<span class=\"k\">))</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>splitDates<span class=\"k\">[</span>date<span class=\"k\">].</span>indexOf<span class=\"k\">(</span><span class=\"s\">'Z'</span><span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result<span class=\"k\">.</span>push<span class=\"k\">(</span>splitDates<span class=\"k\">[</span>date<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">15</span><span class=\"k\">));</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                    result<span class=\"k\">.</span>push<span class=\"k\">(</span>splitDates<span class=\"k\">[</span>date<span class=\"k\">]);</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","    <span class=\"k\">}</span>","    ","    <span class=\"k\">function</span> parseIcal<span class=\"k\">(</span>icaldata<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> lines <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> propAndValue <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> line <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> nextline<span class=\"k\">;</span>","        ","        lines <span class=\"k\">=</span> icaldata<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","        lines<span class=\"k\">.</span>reverse<span class=\"k\">();</span>","        <span class=\"k\">while</span> <span class=\"k\">(</span><span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>lines<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                nextline <span class=\"k\">=</span> lines<span class=\"k\">.</span>pop<span class=\"k\">();</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>nextline<span class=\"k\">.</span>charAt<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">' '</span> <span class=\"k\">||</span> nextline<span class=\"k\">.</span>charAt<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">'</span><span class=\"t\">\\t</span><span class=\"s\">'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">// Line continuation:</span>","                    line <span class=\"k\">=</span> line <span class=\"k\">+</span> nextline<span class=\"k\">;</span>","                    <span class=\"k\">continue</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                nextline <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// New line; the current one is finished, add it to the result.</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>line <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span> ","                line <span class=\"k\">=</span> parseLine<span class=\"k\">(</span>line<span class=\"k\">);</span>","                 <span class=\"c\">// We ignore properties for now</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>line<span class=\"k\">.</span>property <span class=\"k\">===</span> <span class=\"s\">'RDATE'</span> <span class=\"k\">||</span> line<span class=\"k\">.</span>property <span class=\"k\">===</span> <span class=\"s\">'EXDATE'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result<span class=\"k\">[</span>line<span class=\"k\">.</span>property<span class=\"k\">]</span> <span class=\"k\">=</span> cleanDates<span class=\"k\">(</span>line<span class=\"k\">.</span>value<span class=\"k\">);</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                    result<span class=\"k\">[</span>line<span class=\"k\">.</span>property<span class=\"k\">]</span> <span class=\"k\">=</span> line<span class=\"k\">.</span>value<span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            line <span class=\"k\">=</span> nextline<span class=\"k\">;</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>line <span class=\"k\">===</span> <span class=\"s\">''</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","    <span class=\"k\">}</span>","    ","    <span class=\"k\">function</span> widgetLoadFromRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> icaldata<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> unsupportedFeatures <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> i<span class=\"k\">,</span> matches<span class=\"k\">,</span> match<span class=\"k\">,</span> matchIndex<span class=\"k\">,</span> rtemplate<span class=\"k\">,</span> d<span class=\"k\">,</span> input<span class=\"k\">,</span> index<span class=\"k\">;</span>","        <span class=\"k\">var</span> selector<span class=\"k\">,</span> selectors<span class=\"k\">,</span> field<span class=\"k\">,</span> radiobutton<span class=\"k\">,</span> start<span class=\"k\">,</span> end<span class=\"k\">;</span>","        <span class=\"k\">var</span> interval<span class=\"k\">,</span> byday<span class=\"k\">,</span> bymonth<span class=\"k\">,</span> bymonthday<span class=\"k\">,</span> count<span class=\"k\">,</span> until<span class=\"k\">;</span>","        <span class=\"k\">var</span> day<span class=\"k\">,</span> month<span class=\"k\">,</span> year<span class=\"k\">,</span> weekday<span class=\"k\">,</span> ical<span class=\"k\">;</span>","","        form<span class=\"k\">.</span>ical <span class=\"k\">=</span> parseIcal<span class=\"k\">(</span>icaldata<span class=\"k\">);</span>","        ","        matches <span class=\"k\">=</span> <span class=\"s\">/INTERVAL=([0-9]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            interval <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            interval <span class=\"k\">=</span> <span class=\"s\">'1'</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","    ","        matches <span class=\"k\">=</span> <span class=\"s\">/BYDAY=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            byday <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            byday <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","        ","        matches <span class=\"k\">=</span> <span class=\"s\">/BYMONTHDAY=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            bymonthday <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">].</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">);</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            bymonthday <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","    ","        matches <span class=\"k\">=</span> <span class=\"s\">/BYMONTH=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            bymonth <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">].</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">);</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            bymonth <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","    ","        matches <span class=\"k\">=</span> <span class=\"s\">/COUNT=([0-9]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            count <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            count <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","        ","        matches <span class=\"k\">=</span> <span class=\"s\">/UNTIL=([0-9T]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            until <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            until <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","","        matches <span class=\"k\">=</span> <span class=\"s\">/BYSETPOS=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>bysetpos<span class=\"k\">);</span>","        <span class=\"k\">}</span>","","        <span class=\"c\">// Find the best rule:</span>","        match <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","        matchIndex <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">in</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>conf<span class=\"k\">.</span>rtemplate<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>i<span class=\"k\">))</span> <span class=\"k\">{</span>","                rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>i<span class=\"k\">];</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>rtemplate<span class=\"k\">.</span>rrule<span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> match<span class=\"k\">.</span>length<span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// This is the best match so far</span>","                        match <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">;</span>","                        matchIndex <span class=\"k\">=</span> i<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span>  ","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>match<span class=\"k\">)</span> <span class=\"k\">{</span>","            rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>matchIndex<span class=\"k\">];</span>","            <span class=\"c\">// Set the selector:</span>","            selector <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>matchIndex<span class=\"k\">);</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>rtemplate <span class=\"k\">in</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>conf<span class=\"k\">.</span>rtemplate<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>rtemplate<span class=\"k\">))</span> <span class=\"k\">{</span>","                    rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>rtemplate<span class=\"k\">];</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noTemplateMatch<span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","            field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#'</span> <span class=\"k\">+</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">[</span>i<span class=\"k\">]);</span>","            <span class=\"k\">switch</span> <span class=\"k\">(</span>field<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'id'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","            ","            <span class=\"k\">case</span> <span class=\"s\">'ridailyinterval'</span><span class=\"k\">:</span>","                field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=ridailyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>  ","                ","            <span class=\"k\">case</span> <span class=\"s\">'riweeklyinterval'</span><span class=\"k\">:</span>","                field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riweeklyweekdays'</span><span class=\"k\">:</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>d <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> d <span class=\"k\">&lt;</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">.</span>length<span class=\"k\">;</span> d<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    day <span class=\"k\">=</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>d<span class=\"k\">];</span>","                    input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyweekdays'</span> <span class=\"k\">+</span> day <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","                    input<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> byday<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>day<span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">);</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rimonthlyoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> monthlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span> <span class=\"c\">// Default to using BYMONTHDAY</span>","                ","                <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">)</span> <span class=\"k\">{</span>","                    monthlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// No support for multiple days in one month</span>","                        unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                        <span class=\"c\">// Just keep the first</span>","                        bymonthday <span class=\"k\">=</span> bymonthday<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                    <span class=\"k\">}</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonthday<span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlydayofmonthinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                <span class=\"k\">}</span>","    ","                <span class=\"k\">if</span> <span class=\"k\">(</span>byday<span class=\"k\">)</span> <span class=\"k\">{</span>","                    monthlyType <span class=\"k\">=</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">;</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>byday<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"s\">','</span><span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// No support for multiple days in one month</span>","                        unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                        byday <span class=\"k\">=</span> byday<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                    <span class=\"k\">}</span>","                    index <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                    weekday <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>index<span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>weekday<span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlyweekdayofmonthinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                ","                selectors <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlytype]'</span><span class=\"k\">);</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>index <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> index <span class=\"k\">&lt;</span> selectors<span class=\"k\">.</span>length<span class=\"k\">;</span> index<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    radiobutton <span class=\"k\">=</span> selectors<span class=\"k\">[</span>index<span class=\"k\">];</span>","                    $<span class=\"k\">(</span>radiobutton<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> radiobutton<span class=\"k\">.</span>value <span class=\"k\">===</span> monthlyType<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","    ","            <span class=\"k\">case</span> <span class=\"s\">'riyearlyoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> yearlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span> <span class=\"c\">// Default to using BYMONTHDAY</span>","                ","                <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">)</span> <span class=\"k\">{</span>","                    yearlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// No support for multiple days in one month</span>","                        unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                        bymonthday <span class=\"k\">=</span> bymonthday<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                    <span class=\"k\">}</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonth<span class=\"k\">);</span>                    ","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonthday<span class=\"k\">);</span>                    ","                <span class=\"k\">}</span>","    ","                <span class=\"k\">if</span> <span class=\"k\">(</span>byday<span class=\"k\">)</span> <span class=\"k\">{</span>","                    yearlyType <span class=\"k\">=</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">;</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>byday<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"s\">','</span><span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// No support for multiple days in one month</span>","                        unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                        byday <span class=\"k\">=</span> byday<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                    <span class=\"k\">}</span>","                    index <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                    weekday <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>index<span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>weekday<span class=\"k\">);</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonth<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                ","                selectors <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riyearlyType]'</span><span class=\"k\">);</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>index <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> index <span class=\"k\">&lt;</span> selectors<span class=\"k\">.</span>length<span class=\"k\">;</span> index<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    radiobutton <span class=\"k\">=</span> selectors<span class=\"k\">[</span>index<span class=\"k\">];</span>","                    $<span class=\"k\">(</span>radiobutton<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> radiobutton<span class=\"k\">.</span>value <span class=\"k\">===</span> yearlyType<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rirangeoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> rangeType <span class=\"k\">=</span> <span class=\"s\">'NOENDDATE'</span><span class=\"k\">;</span>","                ","                <span class=\"k\">if</span> <span class=\"k\">(</span>count<span class=\"k\">)</span> <span class=\"k\">{</span>","                    rangeType <span class=\"k\">=</span> <span class=\"s\">'BYOCCURRENCES'</span><span class=\"k\">;</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyoccurrencesvalue]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>count<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                ","                <span class=\"k\">if</span> <span class=\"k\">(</span>until<span class=\"k\">)</span> <span class=\"k\">{</span>","                    rangeType <span class=\"k\">=</span> <span class=\"s\">'BYENDDATE'</span><span class=\"k\">;</span>","                    input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">);</span>","                    year <span class=\"k\">=</span> until<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">4</span><span class=\"k\">);</span>","                    month <span class=\"k\">=</span> until<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">4</span><span class=\"k\">,</span> <span class=\"s\">6</span><span class=\"k\">);</span>","                    month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>month<span class=\"k\">,</span> <span class=\"s\">10</span><span class=\"k\">)</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">;</span>","                    day <span class=\"k\">=</span> until<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">6</span><span class=\"k\">,</span> <span class=\"s\">8</span><span class=\"k\">);</span>","                    input<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">).</span>setValue<span class=\"k\">(</span>year<span class=\"k\">,</span> month<span class=\"k\">,</span> day<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                ","                selectors <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangetype]'</span><span class=\"k\">);</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>index <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> index <span class=\"k\">&lt;</span>  selectors<span class=\"k\">.</span>length<span class=\"k\">;</span> index<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    radiobutton <span class=\"k\">=</span> selectors<span class=\"k\">[</span>index<span class=\"k\">];</span>","                    $<span class=\"k\">(</span>radiobutton<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> radiobutton<span class=\"k\">.</span>value <span class=\"k\">===</span> rangeType<span class=\"k\">);</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">var</span> messagearea <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#messagearea'</span><span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>unsupportedFeatures<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>unsupportedFeatures <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> unsupportedFeatures<span class=\"k\">.</span>join<span class=\"k\">(</span><span class=\"s\">'; '</span><span class=\"k\">));</span>","            messagearea<span class=\"k\">.</span>show<span class=\"k\">();</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","            messagearea<span class=\"k\">.</span>hide<span class=\"k\">();</span>","        <span class=\"k\">}</span>","    ","    <span class=\"k\">}</span>","    ","    <span class=\"c\">/**</span>","<span class=\"c\">     * RecurrenceInput - form, display and tools for recurrenceinput widget</span>","<span class=\"c\">     */</span>","    <span class=\"k\">function</span> RecurrenceInput<span class=\"k\">(</span>conf<span class=\"k\">,</span> textarea<span class=\"k\">)</span> <span class=\"k\">{</span>","","        <span class=\"k\">var</span> self <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> form<span class=\"k\">,</span> display<span class=\"k\">;</span>","","        <span class=\"c\">// Extend conf with non-configurable data used by templates.</span>","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>conf<span class=\"k\">,</span> <span class=\"k\">{</span>","            orderIndexes<span class=\"k\">:</span> <span class=\"k\">[</span><span class=\"s\">'+1'</span><span class=\"k\">,</span> <span class=\"s\">'+2'</span><span class=\"k\">,</span> <span class=\"s\">'+3'</span><span class=\"k\">,</span> <span class=\"s\">'+4'</span><span class=\"k\">,</span> <span class=\"s\">'-1'</span><span class=\"k\">],</span>","            weekdays<span class=\"k\">:</span> <span class=\"k\">[</span><span class=\"s\">'MO'</span><span class=\"k\">,</span> <span class=\"s\">'TU'</span><span class=\"k\">,</span> <span class=\"s\">'WE'</span><span class=\"k\">,</span> <span class=\"s\">'TH'</span><span class=\"k\">,</span> <span class=\"s\">'FR'</span><span class=\"k\">,</span> <span class=\"s\">'SA'</span><span class=\"k\">,</span> <span class=\"s\">'SU'</span><span class=\"k\">]</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","        ","        <span class=\"c\">// The recurrence type dropdown should show certain fields depending</span>","        <span class=\"c\">// on selection:        </span>","        <span class=\"k\">function</span> displayFields<span class=\"k\">(</span>selector<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> i<span class=\"k\">;</span>","            <span class=\"c\">// First hide all the fields</span>","            form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rifield'</span><span class=\"k\">).</span>hide<span class=\"k\">();</span>","            <span class=\"c\">// Then show the ones that should be shown.</span>","            <span class=\"k\">var</span> value <span class=\"k\">=</span> selector<span class=\"k\">.</span>val<span class=\"k\">();</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>value<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">var</span> rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>value<span class=\"k\">];</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#'</span> <span class=\"k\">+</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">[</span>i<span class=\"k\">]).</span>show<span class=\"k\">();</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> occurrenceExclude<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>push<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>date<span class=\"k\">.</span>value<span class=\"k\">);</span>","            <span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">[</span><span class=\"s\">'class'</span><span class=\"k\">].</span>value <span class=\"k\">=</span> <span class=\"s\">'exdate'</span><span class=\"k\">;</span>","            $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>unbind<span class=\"k\">(</span>event<span class=\"k\">);</span>","            $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceInclude<span class=\"k\">);</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> occurrenceInclude<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>splice<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>date<span class=\"k\">.</span>value<span class=\"k\">),</span> <span class=\"s\">1</span><span class=\"k\">);</span>","            <span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">[</span><span class=\"s\">'class'</span><span class=\"k\">].</span>value <span class=\"k\">=</span> <span class=\"s\">'rrule'</span><span class=\"k\">;</span>","            $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>unbind<span class=\"k\">(</span>event<span class=\"k\">);</span>","            $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceExclude<span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> occurrenceDelete<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>splice<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>indexOf<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>date<span class=\"k\">.</span>value<span class=\"k\">),</span> <span class=\"s\">1</span><span class=\"k\">);</span>","            $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>parent<span class=\"k\">().</span>parent<span class=\"k\">().</span>hide<span class=\"k\">(</span><span class=\"s\">'slow'</span><span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","                $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>remove<span class=\"k\">();</span>","            <span class=\"k\">}</span><span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> occurrenceAdd<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            <span class=\"k\">var</span> dateinput <span class=\"k\">=</span> form","                <span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'span.riaddoccurrence input#adddate'</span><span class=\"k\">)</span>","                <span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">);</span>","            <span class=\"k\">var</span> datevalue <span class=\"k\">=</span> dateinput<span class=\"k\">.</span>getValue<span class=\"k\">(</span><span class=\"s\">'yyyymmddT000000'</span><span class=\"k\">);</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>push<span class=\"k\">(</span>datevalue<span class=\"k\">);</span>","            <span class=\"k\">var</span> html <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"occurrence\" style=\"display: none;\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;span class=\"rdate\"&gt;'</span><span class=\"k\">,</span>","                        dateinput<span class=\"k\">.</span>getValue<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">),</span>","                    <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;span class=\"action\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;a date=\"'</span> <span class=\"k\">+</span> datevalue <span class=\"k\">+</span> <span class=\"s\">'\" href=\"#\" class=\"rdate\" &gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'Include'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","            form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrences'</span><span class=\"k\">).</span>prepend<span class=\"k\">(</span>html<span class=\"k\">);</span>","            $<span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrences div'</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">]).</span>slideDown<span class=\"k\">();</span>","            $<span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrences .action a.rdate'</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">]).</span>click<span class=\"k\">(</span>occurrenceDelete<span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// element is where to find the tag in question. Can be the form</span>","        <span class=\"c\">// or the display widget. Defaults to the form.</span>","        <span class=\"k\">function</span> loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> rfc5545<span class=\"k\">,</span> start<span class=\"k\">,</span> readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> element<span class=\"k\">,</span> occurrenceDiv<span class=\"k\">;</span>","            ","            <span class=\"k\">if</span> <span class=\"k\">(!</span>readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","                element <span class=\"k\">=</span> form<span class=\"k\">;</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                element <span class=\"k\">=</span> display<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            ","            occurrenceDiv <span class=\"k\">=</span> element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">);</span>","            occurrenceDiv<span class=\"k\">.</span>hide<span class=\"k\">();</span>","            ","            ","            $<span class=\"k\">.</span>ajax<span class=\"k\">(</span><span class=\"k\">{</span>","                url<span class=\"k\">:</span> conf<span class=\"k\">.</span>ajaxURL<span class=\"k\">,</span>","                async<span class=\"k\">:</span> <span class=\"k\">false</span><span class=\"k\">,</span> <span class=\"c\">// Can't be tested if it's asynchronous, annoyingly.</span>","                type<span class=\"k\">:</span> <span class=\"s\">'post'</span><span class=\"k\">,</span>","                dataType<span class=\"k\">:</span> <span class=\"s\">'json'</span><span class=\"k\">,</span>","                data<span class=\"k\">:</span> <span class=\"k\">{</span>year<span class=\"k\">:</span> startdate<span class=\"k\">.</span>getFullYear<span class=\"k\">(),</span>","                       month<span class=\"k\">:</span> startdate<span class=\"k\">.</span>getMonth<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">,</span> <span class=\"c\">// Sending January as 0? I think not.</span>","                       day<span class=\"k\">:</span> startdate<span class=\"k\">.</span>getDate<span class=\"k\">(),</span>","                       rrule<span class=\"k\">:</span> rfc5545<span class=\"k\">,</span>","                       format<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">,</span>","                       start<span class=\"k\">:</span> start<span class=\"k\">}</span><span class=\"k\">,</span>","                success<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>data<span class=\"k\">,</span> status<span class=\"k\">,</span> jqXHR<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">var</span> result<span class=\"k\">,</span> element<span class=\"k\">;</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(!</span>readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","                        element <span class=\"k\">=</span> form<span class=\"k\">;</span>","                    <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                        element <span class=\"k\">=</span> display<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    data<span class=\"k\">.</span>readOnly <span class=\"k\">=</span> readonly<span class=\"k\">;</span>","                    result <span class=\"k\">=</span> $<span class=\"k\">.</span>tmpl<span class=\"k\">(</span><span class=\"s\">'occurrenceTmpl'</span><span class=\"k\">,</span> data<span class=\"k\">);</span>","                    occurrenceDiv <span class=\"k\">=</span> element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">);</span>","                    occurrenceDiv<span class=\"k\">.</span>replaceWith<span class=\"k\">(</span>result<span class=\"k\">);</span>","                    ","                    <span class=\"c\">// Add the batch actions:</span>","                    element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .batching a'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>","                        <span class=\"k\">function</span> <span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","                            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","                            loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> rfc5545<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>start<span class=\"k\">.</span>value<span class=\"k\">,</span> readonly<span class=\"k\">);</span>","                        <span class=\"k\">}</span>","                    <span class=\"k\">);</span>","","                    <span class=\"c\">// Add the delete/undelete actions:</span>","                    <span class=\"k\">if</span> <span class=\"k\">(!</span>readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","                        element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .action a.rrule'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceExclude<span class=\"k\">);</span>","                        element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .action a.exdate'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceInclude<span class=\"k\">);</span>","                        element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .action a.rdate'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceDelete<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    <span class=\"c\">// Show the new div</span>","                    element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">).</span>show<span class=\"k\">();</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                error<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>jqXHR<span class=\"k\">,</span> textStatus<span class=\"k\">,</span> errorThrown<span class=\"k\">)</span> <span class=\"k\">{</span>","                    alert<span class=\"k\">(</span>textStatus<span class=\"k\">);</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span><span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> findStartDate<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> startField<span class=\"k\">,</span> startdate<span class=\"k\">;</span>","            <span class=\"c\">// Find the default byday and bymonthday from the start date, if any:</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>conf<span class=\"k\">.</span>startField<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Se if it is a field already</span>","                startField <span class=\"k\">=</span> $<span class=\"k\">(</span>conf<span class=\"k\">.</span>startField<span class=\"k\">);</span>","                <span class=\"k\">if</span> <span class=\"k\">(!</span>startField<span class=\"k\">.</span>length<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">// Otherwise, we assume it's an id:</span>","                    startField <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[id='</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>startField <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","                <span class=\"k\">}</span>","                ","                <span class=\"c\">// Now we have a field, see if it is a dateinput field:</span>","                startdate <span class=\"k\">=</span> startField<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">);</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>startdate <span class=\"k\">===</span> undefined <span class=\"k\">||</span> startdate <span class=\"k\">===</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">//No, it wasn't, just try to interpret it with Date()</span>","                    startdate <span class=\"k\">=</span> startField<span class=\"k\">.</span>val<span class=\"k\">();</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                    <span class=\"c\">// Yes it was, get the date:</span>","                    startdate <span class=\"k\">=</span> startdate<span class=\"k\">.</span>getValue<span class=\"k\">();</span>","                <span class=\"k\">}</span>","                startdate <span class=\"k\">=</span> <span class=\"k\">new</span> Date<span class=\"k\">(</span>startdate<span class=\"k\">);</span>","                ","                <span class=\"k\">if</span> <span class=\"k\">(</span>isNaN<span class=\"k\">(</span>startdate<span class=\"k\">))</span> <span class=\"k\">{</span>","                    <span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">return</span> startdate<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            <span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"c\">// Loading (populating) display and form widget with</span>","        <span class=\"c\">// passed RFC5545 string (data)</span>","        <span class=\"k\">function</span> loadData<span class=\"k\">(</span>rfc5545<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> selector<span class=\"k\">,</span> format<span class=\"k\">,</span> startField<span class=\"k\">,</span> startdate<span class=\"k\">,</span> dayindex<span class=\"k\">,</span> day<span class=\"k\">;</span>","","            <span class=\"k\">if</span> <span class=\"k\">(</span>rfc5545<span class=\"k\">)</span> <span class=\"k\">{</span>","                widgetLoadFromRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> rfc5545<span class=\"k\">);</span>","                <span class=\"c\">// check checkbox</span>","                display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">)</span>","                    <span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","","            startdate <span class=\"k\">=</span> findStartDate<span class=\"k\">();</span>","            ","            <span class=\"k\">if</span> <span class=\"k\">(</span>startdate <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// If the date is a real date, set the defaults in the form</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getDate<span class=\"k\">());</span>","                dayindex <span class=\"k\">=</span> conf<span class=\"k\">.</span>orderIndexes<span class=\"k\">[</span>Math<span class=\"k\">.</span>floor<span class=\"k\">((</span>startdate<span class=\"k\">.</span>getDate<span class=\"k\">()</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">/</span> <span class=\"s\">7</span><span class=\"k\">)];</span>","                day <span class=\"k\">=</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>startdate<span class=\"k\">.</span>getDay<span class=\"k\">()</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">];</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>dayindex<span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>day<span class=\"k\">);</span>","","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getMonth<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getDate<span class=\"k\">());</span>                    ","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>dayindex<span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>day<span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getMonth<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","                ","                <span class=\"c\">// Now when we have a start date, we can also do an ajax call to calculate occurrences:</span>","                loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">).</span>result<span class=\"k\">,</span> <span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">);</span>","                ","                <span class=\"c\">// Show the add and refresh buttons:</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrencesactions'</span><span class=\"k\">).</span>show<span class=\"k\">();</span>","                ","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                <span class=\"c\">// No EXDATE/RDATE support</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrencesactions'</span><span class=\"k\">).</span>hide<span class=\"k\">();</span>","            <span class=\"k\">}</span>","","            ","            selector <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">);</span>","            displayFields<span class=\"k\">(</span>selector<span class=\"k\">);</span>            ","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> recurrenceOn<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> RFC5545 <span class=\"k\">=</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            <span class=\"k\">var</span> label <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'label[class=ridisplay]'</span><span class=\"k\">);</span>","            label<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>displayActivate <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> RFC5545<span class=\"k\">.</span>description<span class=\"k\">);</span>","            textarea<span class=\"k\">.</span>val<span class=\"k\">(</span>RFC5545<span class=\"k\">.</span>result<span class=\"k\">);</span>","            <span class=\"k\">var</span> startdate <span class=\"k\">=</span> findStartDate<span class=\"k\">();</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>startdate <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">).</span>result<span class=\"k\">,</span> <span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> recurrenceOff<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> label <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'label[class=ridisplay]'</span><span class=\"k\">);</span>","            label<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>displayUnactivate<span class=\"k\">);</span>","            textarea<span class=\"k\">.</span>val<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","            display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">).</span>hide<span class=\"k\">();</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> toggleRecurrence<span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> checkbox <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>checkbox<span class=\"k\">.</span>is<span class=\"k\">(</span><span class=\"s\">':checked'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","                recurrenceOn<span class=\"k\">();</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                recurrenceOff<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> save<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            <span class=\"c\">// close overlay</span>","            form<span class=\"k\">.</span>overlay<span class=\"k\">().</span>close<span class=\"k\">();</span>","            <span class=\"c\">// check checkbox</span>","            display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">)</span>","                <span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            recurrenceOn<span class=\"k\">();</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> cancel<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            <span class=\"c\">// close overlay</span>","            form<span class=\"k\">.</span>overlay<span class=\"k\">().</span>close<span class=\"k\">();</span>","        <span class=\"k\">}</span>","","        <span class=\"c\">/* </span>","<span class=\"c\">          Load the templates</span>","<span class=\"c\">        */</span>","","        display <span class=\"k\">=</span> $<span class=\"k\">.</span>tmpl<span class=\"k\">(</span><span class=\"s\">'displayTmpl'</span><span class=\"k\">,</span> conf<span class=\"k\">);</span>","        form <span class=\"k\">=</span> $<span class=\"k\">.</span>tmpl<span class=\"k\">(</span><span class=\"s\">'formTmpl'</span><span class=\"k\">,</span> conf<span class=\"k\">);</span>","","        <span class=\"c\">//// The overlay = form popup</span>","        <span class=\"c\">//if ($.template.riform === undefined) {</span>","            <span class=\"c\">//$.ajax({</span>","                <span class=\"c\">//url: $(conf.template.form)[0].src,</span>","                <span class=\"c\">//async: false,</span>","                <span class=\"c\">//success: function (data) {</span>","                    <span class=\"c\">//conf.template.form = data;</span>","                <span class=\"c\">//},</span>","                <span class=\"c\">//error: function (request, status, error) {</span>","                    <span class=\"c\">//alert(error.message + \": \" + error.filename);</span>","                <span class=\"c\">//}</span>","            <span class=\"c\">//});</span>","            <span class=\"c\">//$(conf.template.form).template('riform');</span>","        <span class=\"c\">//}</span>","        <span class=\"c\">//form = $.tmpl('riform', conf);</span>","        <span class=\"c\">// Make an overlay and hide it</span>","        form<span class=\"k\">.</span>overlay<span class=\"k\">(</span>conf<span class=\"k\">.</span>formOverlay<span class=\"k\">).</span>hide<span class=\"k\">();</span>","        form<span class=\"k\">.</span>ical <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","        ","        <span class=\"c\">// Make the date input into a calendar dateinput()</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">).</span>dateinput<span class=\"k\">(</span><span class=\"k\">{</span>","            selectors<span class=\"k\">:</span> <span class=\"k\">true</span><span class=\"k\">,</span>","            format<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortDateFormat<span class=\"k\">,</span>","            yearRange<span class=\"k\">:</span> <span class=\"k\">[-</span><span class=\"s\">5</span><span class=\"k\">,</span> <span class=\"s\">10</span><span class=\"k\">]</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","","        <span class=\"k\">if</span> <span class=\"k\">(</span>textarea<span class=\"k\">.</span>val<span class=\"k\">())</span> <span class=\"k\">{</span>","            widgetLoadFromRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> textarea<span class=\"k\">.</span>val<span class=\"k\">());</span>","            recurrenceOn<span class=\"k\">();</span>","        <span class=\"k\">}</span>","","        <span class=\"c\">/* </span>","<span class=\"c\">          Do all the GUI stuff:</span>","<span class=\"c\">        */</span>","        ","        <span class=\"c\">// When you click on the checkbox, recurrence should toggle on/off.</span>","        display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>toggleRecurrence<span class=\"k\">);</span>","","        <span class=\"c\">// Show form overlay when you click on the \"Edit...\" link</span>","        display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'a[name=riedit]'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Load the form to set up the right fields to show, etc.</span>","                loadData<span class=\"k\">(</span>textarea<span class=\"k\">.</span>val<span class=\"k\">());</span>","                e<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","                form<span class=\"k\">.</span>overlay<span class=\"k\">().</span>load<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","","        <span class=\"c\">// Pop up the little add form when clicking \"Add...\"</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'span.riaddoccurrence input#adddate'</span><span class=\"k\">).</span>dateinput<span class=\"k\">(</span><span class=\"k\">{</span>","            selectors<span class=\"k\">:</span> <span class=\"k\">true</span><span class=\"k\">,</span>","            format<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortDateFormat<span class=\"k\">,</span>","            yearRange<span class=\"k\">:</span> <span class=\"k\">[-</span><span class=\"s\">5</span><span class=\"k\">,</span> <span class=\"s\">10</span><span class=\"k\">]</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input#addaction'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceAdd<span class=\"k\">);</span>","","        <span class=\"c\">// When the reload button is clicked, reload</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'a.rirefreshbutton'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","                event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","                loadOccurrences<span class=\"k\">(</span>findStartDate<span class=\"k\">(),</span>","                    widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">).</span>result<span class=\"k\">,</span>","                    <span class=\"s\">0</span><span class=\"k\">,</span>","                    <span class=\"k\">false</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","        ","        <span class=\"c\">// When selecting template, update what fieldsets are visible.</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                displayFields<span class=\"k\">(</span>$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">));</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","","        <span class=\"c\">// When focus goes to a drop-down, select the relevant radiobutton.</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>parent<span class=\"k\">().</span>find<span class=\"k\">(</span><span class=\"s\">'&gt; input'</span><span class=\"k\">).</span>click<span class=\"k\">().</span>change<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","        ","        <span class=\"c\">/*</span>","<span class=\"c\">          Save and cancel methods:</span>","<span class=\"c\">        */</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.ricancelbutton'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>cancel<span class=\"k\">);</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.risavebutton'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>save<span class=\"k\">);</span>","        ","        <span class=\"c\">/*</span>","<span class=\"c\">         * Public API of RecurrenceInput</span>","<span class=\"c\">         */</span>","         ","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>self<span class=\"k\">,</span> <span class=\"k\">{</span>","            display<span class=\"k\">:</span> display<span class=\"k\">,</span>","            form<span class=\"k\">:</span> form<span class=\"k\">,</span>","            loadData<span class=\"k\">:</span> loadData<span class=\"k\">,</span> <span class=\"c\">//Used by tests.</span>","            save<span class=\"k\">:</span> save <span class=\"c\">//Used by tests.</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","","    <span class=\"k\">}</span>","","","    <span class=\"c\">/*</span>","<span class=\"c\">     * jQuery plugin implementation</span>","<span class=\"c\">     */</span>","    $<span class=\"k\">.</span>fn<span class=\"k\">.</span>recurrenceinput <span class=\"k\">=</span> <span class=\"k\">function</span> <span class=\"k\">(</span>conf<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'recurrenceinput'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","            <span class=\"c\">// plugin already installed</span>","            <span class=\"k\">return</span> <span class=\"k\">this</span><span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'recurrenceinput'</span><span class=\"k\">);</span> ","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// \"compile\" configuration for widget</span>","        <span class=\"k\">var</span> config <span class=\"k\">=</span> $<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">{}</span><span class=\"k\">,</span> tool<span class=\"k\">.</span>conf<span class=\"k\">);</span>","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>config<span class=\"k\">,</span> conf<span class=\"k\">);</span>","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>config<span class=\"k\">,</span> <span class=\"k\">{</span>i18n<span class=\"k\">:</span> LABELS<span class=\"k\">[</span>config<span class=\"k\">.</span>lang<span class=\"k\">],</span> name<span class=\"k\">:</span> <span class=\"k\">this</span><span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'name'</span><span class=\"k\">)</span><span class=\"k\">}</span><span class=\"k\">);</span>","","        <span class=\"c\">// our recurrenceinput widget instance</span>","        <span class=\"k\">var</span> recurrenceinput <span class=\"k\">=</span> <span class=\"k\">new</span> RecurrenceInput<span class=\"k\">(</span>config<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">);</span>","        <span class=\"c\">// hide textarea and place display widget after textarea</span>","        recurrenceinput<span class=\"k\">.</span>form<span class=\"k\">.</span>appendTo<span class=\"k\">(</span><span class=\"s\">'body'</span><span class=\"k\">);</span>","        <span class=\"k\">this</span><span class=\"k\">.</span>after<span class=\"k\">(</span>recurrenceinput<span class=\"k\">.</span>display<span class=\"k\">);</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>val<span class=\"k\">())</span> <span class=\"k\">{</span>","            recurrenceinput<span class=\"k\">.</span>display<span class=\"k\">.</span>find<span class=\"k\">(</span>","                <span class=\"s\">'input[name=richeckbox]'</span>","            <span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// hide the textarea</span>","        <span class=\"k\">this</span><span class=\"k\">.</span>hide<span class=\"k\">();</span>","        ","        <span class=\"c\">// save the data for next call</span>","        <span class=\"k\">this</span><span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'recurrenceinput'</span><span class=\"k\">,</span> recurrenceinput<span class=\"k\">);</span>","        <span class=\"k\">return</span> recurrenceinput<span class=\"k\">;</span>","    <span class=\"k\">}</span><span class=\"k\">;</span>","","<span class=\"k\">}</span><span class=\"k\">(</span>jQuery<span class=\"k\">));</span>"];
+_$jscoverage['jquery.recurrenceinput.js'].source = ["<span class=\"c\">/*jslint regexp: false, continue: true, indent: 4 */</span>","<span class=\"c\">/*global $, alert, jQuery */</span>","","<span class=\"k\">(</span><span class=\"k\">function</span> <span class=\"k\">(</span>$<span class=\"k\">)</span> <span class=\"k\">{</span>","    $<span class=\"k\">.</span>tools <span class=\"k\">=</span> $<span class=\"k\">.</span>tools <span class=\"k\">||</span> <span class=\"k\">{</span>version<span class=\"k\">:</span> <span class=\"s\">'@VERSION'</span><span class=\"k\">}</span><span class=\"k\">;</span>","    ","    <span class=\"k\">var</span> tool<span class=\"k\">;</span>","    <span class=\"k\">var</span> LABELS <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","    ","    tool <span class=\"k\">=</span> $<span class=\"k\">.</span>tools<span class=\"k\">.</span>recurrenceinput <span class=\"k\">=</span> <span class=\"k\">{</span>","        conf<span class=\"k\">:</span> <span class=\"k\">{</span>","        ","            lang<span class=\"k\">:</span> <span class=\"s\">'en'</span><span class=\"k\">,</span>","            readOnly<span class=\"k\">:</span> <span class=\"k\">false</span><span class=\"k\">,</span>","            ","            <span class=\"c\">// \"REMOTE\" FIELD</span>","            startField<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","            ajaxURL<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","        ","            <span class=\"c\">// FORM OVERLAY</span>","            formOverlay<span class=\"k\">:</span> <span class=\"k\">{</span>","                speed<span class=\"k\">:</span> <span class=\"s\">'fast'</span><span class=\"k\">,</span>","                fixed<span class=\"k\">:</span> <span class=\"k\">false</span>","            <span class=\"k\">}</span><span class=\"k\">,</span>","        ","            <span class=\"c\">// JQUERY TEMPLATE NAMES</span>","            template<span class=\"k\">:</span> <span class=\"k\">{</span>","                form<span class=\"k\">:</span> <span class=\"s\">'#jquery-recurrenceinput-form-tmpl'</span><span class=\"k\">,</span>","                display<span class=\"k\">:</span> <span class=\"s\">'#jquery-recurrenceinput-display-tmpl'</span>","            <span class=\"k\">}</span><span class=\"k\">,</span>","        ","            <span class=\"c\">// RECURRENCE TEMPLATES</span>","            rtemplate<span class=\"k\">:</span> <span class=\"k\">{</span>","                daily<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=DAILY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'ridailyinterval'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                mondayfriday<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=WEEKLY;BYDAY=MO,FR'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                weekdays<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                weekly<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=WEEKLY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'riweeklyinterval'</span><span class=\"k\">,</span>","                        <span class=\"s\">'riweeklyweekdays'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                monthly<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=MONTHLY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'rimonthlyinterval'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rimonthlyoptions'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                yearly<span class=\"k\">:</span> <span class=\"k\">{</span>","                    rrule<span class=\"k\">:</span> <span class=\"s\">'FREQ=YEARLY'</span><span class=\"k\">,</span>","                    fields<span class=\"k\">:</span> <span class=\"k\">[</span>","                        <span class=\"s\">'riyearlyinterval'</span><span class=\"k\">,</span>","                        <span class=\"s\">'riyearlyoptions'</span><span class=\"k\">,</span>","                        <span class=\"s\">'rirangeoptions'</span>","                    <span class=\"k\">]</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span><span class=\"k\">,</span>","        ","        localize<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>language<span class=\"k\">,</span> labels<span class=\"k\">)</span> <span class=\"k\">{</span>","            LABELS<span class=\"k\">[</span>language<span class=\"k\">]</span> <span class=\"k\">=</span> labels<span class=\"k\">;</span>        ","        <span class=\"k\">}</span><span class=\"k\">,</span>","        ","        setTemplates<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>templates<span class=\"k\">,</span> titles<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> lang<span class=\"k\">,</span> template<span class=\"k\">;</span>","            tool<span class=\"k\">.</span>conf<span class=\"k\">.</span>rtemplate <span class=\"k\">=</span> templates<span class=\"k\">;</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>lang <span class=\"k\">in</span> titles<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>titles<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>lang<span class=\"k\">))</span> <span class=\"k\">{</span>","                    <span class=\"k\">for</span> <span class=\"k\">(</span>template <span class=\"k\">in</span> titles<span class=\"k\">[</span>lang<span class=\"k\">])</span> <span class=\"k\">{</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>titles<span class=\"k\">[</span>lang<span class=\"k\">].</span>hasOwnProperty<span class=\"k\">(</span>template<span class=\"k\">))</span> <span class=\"k\">{</span>","                            LABELS<span class=\"k\">[</span>lang<span class=\"k\">].</span>rtemplate<span class=\"k\">[</span>template<span class=\"k\">]</span> <span class=\"k\">=</span> titles<span class=\"k\">[</span>lang<span class=\"k\">][</span>template<span class=\"k\">];</span>","                        <span class=\"k\">}</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","    <span class=\"k\">}</span><span class=\"k\">;</span>","    ","    tool<span class=\"k\">.</span>localize<span class=\"k\">(</span><span class=\"s\">\"en\"</span><span class=\"k\">,</span> <span class=\"k\">{</span>","        displayUnactivate<span class=\"k\">:</span> <span class=\"s\">'Does not repeat'</span><span class=\"k\">,</span>","        displayActivate<span class=\"k\">:</span> <span class=\"s\">'Repeats every'</span><span class=\"k\">,</span>","        edit<span class=\"k\">:</span> <span class=\"s\">'Edit...'</span><span class=\"k\">,</span>","        add<span class=\"k\">:</span>  <span class=\"s\">'Add'</span><span class=\"k\">,</span>","        refresh<span class=\"k\">:</span> <span class=\"s\">'Refresh'</span><span class=\"k\">,</span>","","        title<span class=\"k\">:</span> <span class=\"s\">'Repeat'</span><span class=\"k\">,</span>","        preview<span class=\"k\">:</span> <span class=\"s\">'Selected dates'</span><span class=\"k\">,</span>","        addDate<span class=\"k\">:</span> <span class=\"s\">'Add date'</span><span class=\"k\">,</span>","        ","        recurrenceType<span class=\"k\">:</span> <span class=\"s\">'Repeats:'</span><span class=\"k\">,</span>","","        dailyInterval1<span class=\"k\">:</span> <span class=\"s\">'Repeat every:'</span><span class=\"k\">,</span>","        dailyInterval2<span class=\"k\">:</span> <span class=\"s\">'days'</span><span class=\"k\">,</span>","","        weeklyInterval1<span class=\"k\">:</span> <span class=\"s\">'Repeat every:'</span><span class=\"k\">,</span>","        weeklyInterval2<span class=\"k\">:</span> <span class=\"s\">'week(s)'</span><span class=\"k\">,</span>","        weeklyWeekdays<span class=\"k\">:</span> <span class=\"s\">'Repeat on:'</span><span class=\"k\">,</span>","        weeklyWeekdaysHuman<span class=\"k\">:</span> <span class=\"s\">'on: '</span><span class=\"k\">,</span>","","        monthlyInterval<span class=\"k\">:</span> <span class=\"s\">'Repeat every:'</span><span class=\"k\">,</span>","        monthlyDayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'Day'</span><span class=\"k\">,</span>","        monthlyDayOfMonth1Human<span class=\"k\">:</span> <span class=\"s\">'on day'</span><span class=\"k\">,</span>","        monthlyDayOfMonth2<span class=\"k\">:</span> <span class=\"s\">'of the month'</span><span class=\"k\">,</span>","        monthlyDayOfMonth3<span class=\"k\">:</span> <span class=\"s\">', every'</span><span class=\"k\">,</span>","        monthlyDayOfMonth4<span class=\"k\">:</span> <span class=\"s\">'month(s)'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'The'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth1Human<span class=\"k\">:</span> <span class=\"s\">'on the'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth2<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth3<span class=\"k\">:</span> <span class=\"s\">', every'</span><span class=\"k\">,</span>","        monthlyWeekdayOfMonth4<span class=\"k\">:</span> <span class=\"s\">'month(s)'</span><span class=\"k\">,</span>","        monthlyRepeatOn<span class=\"k\">:</span> <span class=\"s\">'Repeat on:'</span><span class=\"k\">,</span>","","        yearlyInterval1<span class=\"k\">:</span> <span class=\"s\">'Repeat every:'</span><span class=\"k\">,</span>","        yearlyInterval2<span class=\"k\">:</span> <span class=\"s\">'year(s)'</span><span class=\"k\">,</span>","        yearlyDayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'Every'</span><span class=\"k\">,</span>","        yearlyDayOfMonth1Human<span class=\"k\">:</span> <span class=\"s\">'on'</span><span class=\"k\">,</span>","        yearlyDayOfMonth2<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyDayOfMonth3<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth1<span class=\"k\">:</span> <span class=\"s\">'The'</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth1Human<span class=\"k\">:</span> <span class=\"s\">'on the'</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth2<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth3<span class=\"k\">:</span> <span class=\"s\">'of'</span><span class=\"k\">,</span>","        yearlyWeekdayOfMonth4<span class=\"k\">:</span> <span class=\"s\">''</span><span class=\"k\">,</span>","        yearlyRepeatOn<span class=\"k\">:</span> <span class=\"s\">'Repeat on:'</span><span class=\"k\">,</span>","        ","        range<span class=\"k\">:</span> <span class=\"s\">'End recurrence:'</span><span class=\"k\">,</span>","        rangeNoEnd<span class=\"k\">:</span> <span class=\"s\">'Never'</span><span class=\"k\">,</span>","        rangeByOccurrences1<span class=\"k\">:</span> <span class=\"s\">'After'</span><span class=\"k\">,</span>","        rangeByOccurrences1Human<span class=\"k\">:</span> <span class=\"s\">'ends after'</span><span class=\"k\">,</span>","        rangeByOccurrences2<span class=\"k\">:</span> <span class=\"s\">'occurrence(s)'</span><span class=\"k\">,</span>","        rangeByEndDate<span class=\"k\">:</span> <span class=\"s\">'On '</span><span class=\"k\">,</span>","        rangeByEndDateHuman<span class=\"k\">:</span> <span class=\"s\">'ends on '</span><span class=\"k\">,</span>","        ","        including<span class=\"k\">:</span> <span class=\"s\">', and also '</span><span class=\"k\">,</span>","        except<span class=\"k\">:</span> <span class=\"s\">', except for'</span><span class=\"k\">,</span>","","        cancel<span class=\"k\">:</span> <span class=\"s\">'Cancel'</span><span class=\"k\">,</span>        ","        save<span class=\"k\">:</span> <span class=\"s\">'Save'</span><span class=\"k\">,</span>","","        recurrenceStart<span class=\"k\">:</span> <span class=\"s\">'Start of the recurrence'</span><span class=\"k\">,</span>","        additionalDate<span class=\"k\">:</span> <span class=\"s\">'Additional date'</span><span class=\"k\">,</span>","        include<span class=\"k\">:</span> <span class=\"s\">'Include'</span><span class=\"k\">,</span>","        exclude<span class=\"k\">:</span> <span class=\"s\">'Exclude'</span><span class=\"k\">,</span>","        remove<span class=\"k\">:</span> <span class=\"s\">'Remove'</span><span class=\"k\">,</span>","        ","        orderIndexes<span class=\"k\">:</span> <span class=\"k\">[</span><span class=\"s\">'First'</span><span class=\"k\">,</span> <span class=\"s\">'Second'</span><span class=\"k\">,</span> <span class=\"s\">'Third'</span><span class=\"k\">,</span> <span class=\"s\">'Fourth'</span><span class=\"k\">,</span> <span class=\"s\">'Last'</span><span class=\"k\">],</span>","        months<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'January'</span><span class=\"k\">,</span> <span class=\"s\">'February'</span><span class=\"k\">,</span> <span class=\"s\">'March'</span><span class=\"k\">,</span> <span class=\"s\">'April'</span><span class=\"k\">,</span> <span class=\"s\">'May'</span><span class=\"k\">,</span> <span class=\"s\">'June'</span><span class=\"k\">,</span>","            <span class=\"s\">'July'</span><span class=\"k\">,</span> <span class=\"s\">'August'</span><span class=\"k\">,</span> <span class=\"s\">'September'</span><span class=\"k\">,</span> <span class=\"s\">'October'</span><span class=\"k\">,</span> <span class=\"s\">'November'</span><span class=\"k\">,</span> <span class=\"s\">'December'</span><span class=\"k\">],</span>","        shortMonths<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'Jan'</span><span class=\"k\">,</span> <span class=\"s\">'Feb'</span><span class=\"k\">,</span> <span class=\"s\">'Mar'</span><span class=\"k\">,</span> <span class=\"s\">'Apr'</span><span class=\"k\">,</span> <span class=\"s\">'May'</span><span class=\"k\">,</span> <span class=\"s\">'Jun'</span><span class=\"k\">,</span>","            <span class=\"s\">'Jul'</span><span class=\"k\">,</span> <span class=\"s\">'Aug'</span><span class=\"k\">,</span> <span class=\"s\">'Sep'</span><span class=\"k\">,</span> <span class=\"s\">'Oct'</span><span class=\"k\">,</span> <span class=\"s\">'Nov'</span><span class=\"k\">,</span> <span class=\"s\">'Dec'</span><span class=\"k\">],</span>","        weekdays<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'Monday'</span><span class=\"k\">,</span> <span class=\"s\">'Tuesday'</span><span class=\"k\">,</span> <span class=\"s\">'Wednesday'</span><span class=\"k\">,</span> <span class=\"s\">'Thursday'</span><span class=\"k\">,</span>","            <span class=\"s\">'Friday'</span><span class=\"k\">,</span> <span class=\"s\">'Saturday'</span><span class=\"k\">,</span> <span class=\"s\">'Sunday'</span><span class=\"k\">],</span>","        shortWeekdays<span class=\"k\">:</span> <span class=\"k\">[</span>","            <span class=\"s\">'Mon'</span><span class=\"k\">,</span> <span class=\"s\">'Tue'</span><span class=\"k\">,</span> <span class=\"s\">'Wed'</span><span class=\"k\">,</span> <span class=\"s\">'Thu'</span><span class=\"k\">,</span> <span class=\"s\">'Fri'</span><span class=\"k\">,</span> <span class=\"s\">'Sat'</span><span class=\"k\">,</span> <span class=\"s\">'Sun'</span><span class=\"k\">],</span>","            ","        longDateFormat<span class=\"k\">:</span> <span class=\"s\">'mmmm dd, yyyy'</span><span class=\"k\">,</span>","        shortDateFormat<span class=\"k\">:</span> <span class=\"s\">'mm/dd/yyyy'</span><span class=\"k\">,</span>","            ","        unsupportedFeatures<span class=\"k\">:</span> <span class=\"s\">'Warning: This event uses recurrence features not '</span> <span class=\"k\">+</span>","                              <span class=\"s\">'supported by this widget. Saving the recurrence '</span> <span class=\"k\">+</span>","                              <span class=\"s\">'may change the recurrence in unintended ways:'</span><span class=\"k\">,</span>","        noTemplateMatch<span class=\"k\">:</span> <span class=\"s\">'No matching recurrence template'</span><span class=\"k\">,</span>","        multipleDayOfMonth<span class=\"k\">:</span> <span class=\"s\">'This widget does not support multiple days in monthly or yearly recurrence'</span><span class=\"k\">,</span>","        bysetpos<span class=\"k\">:</span> <span class=\"s\">'BYSETPOS is not supported'</span><span class=\"k\">,</span>","        noRule<span class=\"k\">:</span> <span class=\"s\">'No RRULE in RRULE data'</span><span class=\"k\">,</span>","        noRepeatEvery<span class=\"k\">:</span> <span class=\"s\">'Error: Repeat every field must be a positive integer value (max. 1000)'</span><span class=\"k\">,</span>","        noEndDate<span class=\"k\">:</span> <span class=\"s\">'Error: End date is not set. Please set a correct value'</span><span class=\"k\">,</span>","        pastEndDate<span class=\"k\">:</span> <span class=\"s\">'Error: End date cannot be before start date'</span><span class=\"k\">,</span>","        noEndAfterNOccurrences<span class=\"k\">:</span> <span class=\"s\">'Error: After N occurrences field must be a positive integer value (max. 1000)'</span><span class=\"k\">,</span>","        noRepeatOn<span class=\"k\">:</span> <span class=\"s\">'Error: Repeat on value must be selected'</span><span class=\"k\">,</span>","        ","        rtemplate<span class=\"k\">:</span> <span class=\"k\">{</span>","            daily<span class=\"k\">:</span> <span class=\"s\">'Daily'</span><span class=\"k\">,</span>","            mondayfriday<span class=\"k\">:</span> <span class=\"s\">'Mondays and Fridays'</span><span class=\"k\">,</span>","            weekdays<span class=\"k\">:</span> <span class=\"s\">'Weekdays'</span><span class=\"k\">,</span>","            weekly<span class=\"k\">:</span> <span class=\"s\">'Weekly'</span><span class=\"k\">,</span>","            monthly<span class=\"k\">:</span> <span class=\"s\">'Monthly'</span><span class=\"k\">,</span>","            yearly<span class=\"k\">:</span> <span class=\"s\">'Yearly'</span>","        <span class=\"k\">}</span>","    <span class=\"k\">}</span><span class=\"k\">);</span>","","","    <span class=\"k\">var</span> OCCURRENCETMPL <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"rioccurrences\"&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'{{each occurrences}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;div class=\"occurrence {{if occurrences[$index].type === \"exdate\"}}dimm{{/if}} {{if occurrences[$index].type === \"rdate\"}}exc{{/if}}\"&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;span class=\"${occurrences[$index].type}\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'${occurrences[$index].formattedDate}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'{{if occurrences[$index].type === \"start\"}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;span&gt;${i18n.recurrenceStart}&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'{{if occurrences[$index].type === \"rdate\"}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;span&gt;${i18n.additionalDate}&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{if !readOnly}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;span class=\"action\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{if occurrences[$index].type === \"rrule\"}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a date=\"${occurrences[$index].date}\" href=\"#\"'</span><span class=\"k\">,</span>","                               <span class=\"s\">'class=\"${occurrences[$index].type}\" title=\"${i18n.exclude}\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.exclude}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{if occurrences[$index].type === \"rdate\"}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a date=\"${occurrences[$index].date}\" href=\"#\"'</span><span class=\"k\">,</span>","                               <span class=\"s\">'class=\"${occurrences[$index].type}\" title=\"${i18n.remove}\" &gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.remove}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{if occurrences[$index].type === \"exdate\"}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a date=\"${occurrences[$index].date}\" href=\"#\"'</span><span class=\"k\">,</span>","                               <span class=\"s\">'class=\"${occurrences[$index].type}\" title=\"${i18n.include}\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.include}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;div class=\"batching\"&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{each batch.batches}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{if $index === batch.currentBatch}}&lt;span class=\"current\"&gt;{{/if}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;a href=\"#\" start=\"${batch.batches[$index][0]}\"&gt;[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]&lt;/a&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'{{if $index === batch.currentBatch}}&lt;/span&gt;{{/if}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;/div&gt;&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","    ","    $<span class=\"k\">.</span>template<span class=\"k\">(</span><span class=\"s\">'occurrenceTmpl'</span><span class=\"k\">,</span> OCCURRENCETMPL<span class=\"k\">);</span>","","    <span class=\"k\">var</span> DISPLAYTMPL <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"ridisplay\"&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;div class=\"rimain\"&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{if !readOnly}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;input type=\"checkbox\" name=\"richeckbox\" /&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;label class=\"ridisplay\"&gt;${i18n.displayUnactivate}&lt;/label&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{if !readOnly}}'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;a href=\"#\" name=\"riedit\"&gt;${i18n.edit}&lt;/a&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'{{/if}}'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","        <span class=\"s\">'&lt;div class=\"rioccurrences\" style=\"display:none\" /&gt;&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","        ","    $<span class=\"k\">.</span>template<span class=\"k\">(</span><span class=\"s\">'displayTmpl'</span><span class=\"k\">,</span> DISPLAYTMPL<span class=\"k\">);</span>","    ","    <span class=\"k\">var</span> FORMTMPL <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"riform\"&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;form&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;h1&gt;${i18n.title}&lt;/h1&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div id=\"messagearea\" style=\"display: none;\"&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div id=\"rirtemplate\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;label for=\"${name}rtemplate\" class=\"label\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'${i18n.recurrenceType}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;select id=\"rirtemplate\" name=\"rirtemplate\" class=\"field\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{each rtemplate}}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;option value=\"${$index}\"&gt;${i18n.rtemplate[$index]}&lt;/value&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div id=\"riformfields\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"ridailyinterval\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"${name}dailyinterval\" class=\"label\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.dailyInterval1}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"1\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"ridailyinterval\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}dailyinterval\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.dailyInterval2}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>                            ","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riweeklyinterval\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"${name}weeklyinterval\" class=\"label\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.weeklyInterval1}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"1\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"riweeklyinterval\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'id=\"${name}weeklyinterval\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.weeklyInterval2}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riweeklyweekdays\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"${name}weeklyinterval\" class=\"label\"&gt;${i18n.weeklyWeekdays}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{each i18n.shortWeekdays}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;div class=\"riweeklyweekday\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;input type=\"checkbox\"'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'name=\"riweeklyweekdays${weekdays[$index]}\"'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'id=\"${name}weeklyWeekdays${weekdays[$index]}\"'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'value=\"${weekdays[$index]}\" /&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;label for=\"${name}weeklyWeekdays${weekdays[$index]}\"&gt;${$value}&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"rimonthlyinterval\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"rimonthlyinterval\" class=\"label\"&gt;${i18n.monthlyInterval}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"1\" '</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"rimonthlyinterval\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.monthlyDayOfMonth4}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"rimonthlyoptions\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"rimonthlytype\" class=\"label\"&gt;${i18n.monthlyRepeatOn}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"DAYOFMONTH\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rimonthlytype\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}monthlytype:DAYOFMONTH\" /&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}monthlytype:DAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.monthlyDayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"rimonthlydayofmonthday\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}monthlydayofmonthday\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$value}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyDayOfMonth2}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"WEEKDAYOFMONTH\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rimonthlytype\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}monthlytype:WEEKDAYOFMONTH\" /&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}monthlytype:WEEKDAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.monthlyWeekdayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"rimonthlyweekdayofmonthindex\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'{{each i18n.orderIndexes}}'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'&lt;option value=\"${orderIndexes[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.monthlyWeekdayOfMonth2}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"rimonthlyweekdayofmonth\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'{{each i18n.weekdays}}'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'&lt;option value=\"${weekdays[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riyearlyinterval\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"riyearlyinterval\" class=\"label\"&gt;${i18n.yearlyInterval1}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;input type=\"text\" size=\"2\"'</span><span class=\"k\">,</span>","                                <span class=\"s\">'value=\"1\" '</span><span class=\"k\">,</span>","                                <span class=\"s\">'name=\"riyearlyinterval\"/&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'${i18n.yearlyInterval2}'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"riyearlyoptions\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label for=\"riyearlyType\" class=\"label\"&gt;${i18n.yearlyRepeatOn}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"DAYOFMONTH\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"riyearlyType\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}yearlytype:DAYOFMONTH\" /&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}yearlytype:DAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.yearlyDayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlydayofmonthmonth\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.months}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$index+1}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyDayOfMonth2}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlydayofmonthday\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,'</span><span class=\"k\">,</span>","                                        <span class=\"s\">'18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$value}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyDayOfMonth3}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"WEEKDAYOFMONTH\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"riyearlyType\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}yearlytype:WEEKDAYOFMONTH\"/&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}yearlytype:WEEKDAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.yearlyWeekdayOfMonth1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlyweekdayofmonthindex\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.orderIndexes}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${orderIndexes[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}yearlytype:WEEKDAYOFMONTH\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.yearlyWeekdayOfMonth2}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlyweekdayofmonthday\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.weekdays}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${weekdays[$index]}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyWeekdayOfMonth3}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;select name=\"riyearlyweekdayofmonthmonth\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{each i18n.months}}'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'&lt;option value=\"${$index+1}\"&gt;${$value}&lt;/option&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'{{/each}}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/select&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.yearlyWeekdayOfMonth4}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div id=\"rirangeoptions\" class=\"rifield\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;label class=\"label\"&gt;${i18n.range}&lt;/label&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;div class=\"field\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"NOENDDATE\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rirangetype\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}rangetype:NOENDDATE\"/&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}rangetype:NOENDDATE\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.rangeNoEnd}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"BYOCCURRENCES\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rirangetype\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}rangetype:BYOCCURRENCES\"/&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}rangetype:BYOCCURRENCES\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.rangeByOccurrences1}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"text\" size=\"3\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"10\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rirangebyoccurrencesvalue\" /&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.rangeByOccurrences2}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"radio\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'value=\"BYENDDATE\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rirangetype\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'id=\"${name}rangetype:BYENDDATE\"/&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;label for=\"${name}rangetype:BYENDDATE\"&gt;'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'${i18n.rangeByEndDate}'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;/label&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'type=\"date\"'</span><span class=\"k\">,</span>","                                    <span class=\"s\">'name=\"rirangebyenddatecalendar\" /&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div class=\"rioccurrencesactions\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div class=\"rioccurancesheader\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;h2&gt;${i18n.preview}&lt;/h2&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;span class=\"refreshbutton action\"&gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;a class=\"rirefreshbutton\" href=\"#\" title=\"${i18n.refresh}\"&gt;'</span><span class=\"k\">,</span>","                                <span class=\"s\">'${i18n.refresh}'</span><span class=\"k\">,</span>","                            <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div class=\"rioccurrences\"&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;div class=\"rioccurrencesactions\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div class=\"rioccurancesheader\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;h2&gt;${i18n.addDate}&lt;/h2&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;div class=\"riaddoccurrence\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;input type=\"date\" name=\"adddate\" id=\"adddate\" /&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;input type=\"button\" name=\"addaction\" id=\"addaction\" value=\"${i18n.add}\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","                ","                <span class=\"s\">'&lt;div class=\"ributtons\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                        <span class=\"s\">'type=\"submit\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'class=\"ricancelbutton\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'value=\"${i18n.cancel}\" /&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;input'</span><span class=\"k\">,</span>","                        <span class=\"s\">'type=\"submit\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'class=\"risavebutton\"'</span><span class=\"k\">,</span>","                        <span class=\"s\">'value=\"${i18n.save}\" /&gt;'</span><span class=\"k\">,</span>","                <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">,</span>","            <span class=\"s\">'&lt;/form&gt;&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","    ","    $<span class=\"k\">.</span>template<span class=\"k\">(</span><span class=\"s\">'formTmpl'</span><span class=\"k\">,</span> FORMTMPL<span class=\"k\">);</span>","    ","    <span class=\"c\">// Formatting function (mostly) from jQueryTools dateinput</span>","    <span class=\"k\">var</span> Re <span class=\"k\">=</span> <span class=\"s\">/d{1,4}|m{1,4}|yy(?:yy)?|\"[^\"]*\"|'[^']*'/g</span><span class=\"k\">;</span>","    ","    <span class=\"k\">function</span> zeropad<span class=\"k\">(</span>val<span class=\"k\">,</span> len<span class=\"k\">)</span> <span class=\"k\">{</span>","        val <span class=\"k\">=</span> val<span class=\"k\">.</span>toString<span class=\"k\">();</span>","        len <span class=\"k\">=</span> len <span class=\"k\">||</span> <span class=\"s\">2</span><span class=\"k\">;</span>","        <span class=\"k\">while</span> <span class=\"k\">(</span>val<span class=\"k\">.</span>length <span class=\"k\">&lt;</span> len<span class=\"k\">)</span> <span class=\"k\">{</span> val <span class=\"k\">=</span> <span class=\"s\">\"0\"</span> <span class=\"k\">+</span> val<span class=\"k\">;</span> <span class=\"k\">}</span>","        <span class=\"k\">return</span> val<span class=\"k\">;</span>","    <span class=\"k\">}</span>  ","    ","    <span class=\"k\">function</span> format<span class=\"k\">(</span>date<span class=\"k\">,</span> fmt<span class=\"k\">,</span> conf<span class=\"k\">)</span> <span class=\"k\">{</span>","            ","        <span class=\"k\">var</span> d <span class=\"k\">=</span> date<span class=\"k\">.</span>getDate<span class=\"k\">(),</span>","            D <span class=\"k\">=</span> date<span class=\"k\">.</span>getDay<span class=\"k\">(),</span>","            m <span class=\"k\">=</span> date<span class=\"k\">.</span>getMonth<span class=\"k\">(),</span>","            y <span class=\"k\">=</span> date<span class=\"k\">.</span>getFullYear<span class=\"k\">(),</span>","","            flags <span class=\"k\">=</span> <span class=\"k\">{</span>","                d<span class=\"k\">:</span>    d<span class=\"k\">,</span>","                dd<span class=\"k\">:</span>   zeropad<span class=\"k\">(</span>d<span class=\"k\">),</span>","                ddd<span class=\"k\">:</span>  conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortWeekdays<span class=\"k\">[</span>D<span class=\"k\">],</span>","                dddd<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>D<span class=\"k\">],</span>","                m<span class=\"k\">:</span>    m <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">,</span>","                mm<span class=\"k\">:</span>   zeropad<span class=\"k\">(</span>m <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">),</span>","                mmm<span class=\"k\">:</span>  conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortMonths<span class=\"k\">[</span>m<span class=\"k\">],</span>","                mmmm<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>months<span class=\"k\">[</span>m<span class=\"k\">],</span>","                yy<span class=\"k\">:</span>   String<span class=\"k\">(</span>y<span class=\"k\">).</span>slice<span class=\"k\">(</span><span class=\"s\">2</span><span class=\"k\">),</span>","                yyyy<span class=\"k\">:</span> y","            <span class=\"k\">}</span><span class=\"k\">;</span>","","        <span class=\"k\">var</span> result <span class=\"k\">=</span> fmt<span class=\"k\">.</span>replace<span class=\"k\">(</span>Re<span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">(</span>$0<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">return</span> flags<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>$0<span class=\"k\">)</span> <span class=\"k\">?</span> flags<span class=\"k\">[</span>$0<span class=\"k\">]</span> <span class=\"k\">:</span> $0<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">1</span><span class=\"k\">,</span> $0<span class=\"k\">.</span>length <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">);</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","        ","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","            ","    <span class=\"k\">}</span>","    ","    <span class=\"c\">/**</span>","<span class=\"c\">     * Parsing RFC5545 from widget</span>","<span class=\"c\">     */</span>","    <span class=\"k\">function</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> tz<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> value <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","        <span class=\"k\">var</span> rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>value<span class=\"k\">];</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> rtemplate<span class=\"k\">.</span>rrule<span class=\"k\">;</span>","        <span class=\"k\">var</span> human <span class=\"k\">=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>value<span class=\"k\">];</span>","        <span class=\"k\">var</span> field<span class=\"k\">,</span> input<span class=\"k\">,</span> weekdays<span class=\"k\">,</span> i18nweekdays<span class=\"k\">,</span> i<span class=\"k\">,</span> j<span class=\"k\">,</span> index<span class=\"k\">,</span> tmp<span class=\"k\">;</span>","        <span class=\"k\">var</span> day<span class=\"k\">,</span> month<span class=\"k\">,</span> year<span class=\"k\">,</span> interval<span class=\"k\">,</span> yearlyType<span class=\"k\">,</span> occurrences<span class=\"k\">,</span> date<span class=\"k\">;</span>","        ","        <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","            field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#'</span> <span class=\"k\">+</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">[</span>i<span class=\"k\">]);</span>","            ","            <span class=\"k\">switch</span> <span class=\"k\">(</span>field<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'id'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","            ","            <span class=\"k\">case</span> <span class=\"s\">'ridailyinterval'</span><span class=\"k\">:</span>","                interval <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=ridailyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>interval <span class=\"k\">!=</span> <span class=\"s\">'1'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> interval<span class=\"k\">;</span>","                <span class=\"k\">}</span>","                human <span class=\"k\">=</span> interval <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>dailyInterval2<span class=\"k\">;</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riweeklyinterval'</span><span class=\"k\">:</span>","                interval <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>interval <span class=\"k\">!=</span> <span class=\"s\">'1'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> interval<span class=\"k\">;</span>","                <span class=\"k\">}</span>","                human <span class=\"k\">=</span> interval <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weeklyInterval2<span class=\"k\">;</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riweeklyweekdays'</span><span class=\"k\">:</span>","                weekdays <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","                i18nweekdays <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>j <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> j <span class=\"k\">&lt;</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">.</span>length<span class=\"k\">;</span> j<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyweekdays'</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>j<span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>input<span class=\"k\">.</span>is<span class=\"k\">(</span><span class=\"s\">':checked'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>weekdays<span class=\"k\">)</span> <span class=\"k\">{</span>","                            weekdays <span class=\"k\">+=</span> <span class=\"s\">','</span><span class=\"k\">;</span>","                            i18nweekdays <span class=\"k\">+=</span> <span class=\"s\">', '</span><span class=\"k\">;</span>","                        <span class=\"k\">}</span>","                        weekdays <span class=\"k\">+=</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>j<span class=\"k\">];</span>","                        i18nweekdays <span class=\"k\">+=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>j<span class=\"k\">];</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>weekdays<span class=\"k\">)</span> <span class=\"k\">{</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYDAY='</span> <span class=\"k\">+</span> weekdays<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weeklyWeekdaysHuman <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> i18nweekdays<span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rimonthlyinterval'</span><span class=\"k\">:</span>","                interval <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>interval <span class=\"k\">!=</span> <span class=\"s\">'1'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> interval<span class=\"k\">;</span>","                <span class=\"k\">}</span>","                human <span class=\"k\">=</span> interval <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth4<span class=\"k\">;</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rimonthlyoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> monthlyType <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlytype]:checked'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>monthlyType<span class=\"k\">)</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">:</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlydayofmonthday]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTHDAY='</span> <span class=\"k\">+</span> day<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth1Human <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> day <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth2<span class=\"k\">;</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">case</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">:</span>","                    index <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonthindex]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonth]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>day<span class=\"k\">,</span> <span class=\"k\">[</span><span class=\"s\">'MO'</span><span class=\"k\">,</span> <span class=\"s\">'TU'</span><span class=\"k\">,</span> <span class=\"s\">'WE'</span><span class=\"k\">,</span> <span class=\"s\">'TH'</span><span class=\"k\">,</span> <span class=\"s\">'FR'</span><span class=\"k\">,</span> <span class=\"s\">'SA'</span><span class=\"k\">,</span> <span class=\"s\">'SU'</span><span class=\"k\">])</span> <span class=\"k\">&gt;</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        result <span class=\"k\">+=</span> <span class=\"s\">';BYDAY='</span> <span class=\"k\">+</span> index <span class=\"k\">+</span> day<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyWeekdayOfMonth1Human <span class=\"k\">+</span> <span class=\"s\">' '</span><span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>orderIndexes<span class=\"k\">[</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>index<span class=\"k\">,</span> conf<span class=\"k\">.</span>orderIndexes<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyWeekdayOfMonth2<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>day<span class=\"k\">,</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>monthlyDayOfMonth2<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riyearlyinterval'</span><span class=\"k\">:</span>","                interval <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riyearlyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>interval <span class=\"k\">!=</span> <span class=\"s\">'1'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';INTERVAL='</span> <span class=\"k\">+</span> interval<span class=\"k\">;</span>","                <span class=\"k\">}</span>","                human <span class=\"k\">=</span> interval <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyInterval2<span class=\"k\">;</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'riyearlyoptions'</span><span class=\"k\">:</span>","                yearlyType <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[name=riyearlyType]:checked'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>yearlyType<span class=\"k\">)</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">:</span>","                    month <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthmonth]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthday]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTH='</span> <span class=\"k\">+</span> month<span class=\"k\">;</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTHDAY='</span> <span class=\"k\">+</span> day<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyDayOfMonth1Human <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>months<span class=\"k\">[</span>month <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> day<span class=\"k\">;</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">case</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">:</span>","                    index <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthindex]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    day <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthday]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    month <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthmonth]'</span><span class=\"k\">,</span> form<span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';BYMONTH='</span> <span class=\"k\">+</span> month<span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>day<span class=\"k\">,</span> <span class=\"k\">[</span><span class=\"s\">'MO'</span><span class=\"k\">,</span> <span class=\"s\">'TU'</span><span class=\"k\">,</span> <span class=\"s\">'WE'</span><span class=\"k\">,</span> <span class=\"s\">'TH'</span><span class=\"k\">,</span> <span class=\"s\">'FR'</span><span class=\"k\">,</span> <span class=\"s\">'SA'</span><span class=\"k\">,</span> <span class=\"s\">'SU'</span><span class=\"k\">])</span> <span class=\"k\">&gt;</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        result <span class=\"k\">+=</span> <span class=\"s\">';BYDAY='</span> <span class=\"k\">+</span> index <span class=\"k\">+</span> day<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth1Human<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>orderIndexes<span class=\"k\">[</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>index<span class=\"k\">,</span> conf<span class=\"k\">.</span>orderIndexes<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth2<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span>day<span class=\"k\">,</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">)];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth3<span class=\"k\">;</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>months<span class=\"k\">[</span>month <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">];</span>","                        human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>yearlyWeekdayOfMonth4<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","                ","            <span class=\"k\">case</span> <span class=\"s\">'rirangeoptions'</span><span class=\"k\">:</span>","                <span class=\"k\">var</span> rangeType <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangetype]:checked'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>rangeType<span class=\"k\">)</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'BYOCCURRENCES'</span><span class=\"k\">:</span>","                    occurrences <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyoccurrencesvalue]'</span><span class=\"k\">).</span>val<span class=\"k\">();</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';COUNT='</span> <span class=\"k\">+</span> occurrences<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rangeByOccurrences1Human<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> occurrences<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rangeByOccurrences2<span class=\"k\">;</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">case</span> <span class=\"s\">'BYENDDATE'</span><span class=\"k\">:</span>","                    field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">);</span>","                    date <span class=\"k\">=</span> field<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">).</span>getValue<span class=\"k\">(</span><span class=\"s\">'yyyymmdd'</span><span class=\"k\">);</span>","                    result <span class=\"k\">+=</span> <span class=\"s\">';UNTIL='</span> <span class=\"k\">+</span> date <span class=\"k\">+</span> <span class=\"s\">'T000000'</span><span class=\"k\">;</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>tz <span class=\"k\">===</span> <span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">// Make it UTC:</span>","                        result <span class=\"k\">+=</span> <span class=\"s\">'Z'</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">', '</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>rangeByEndDateHuman<span class=\"k\">;</span>","                    human <span class=\"k\">+=</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> field<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">).</span>getValue<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">);</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>sort<span class=\"k\">();</span>","            tmp <span class=\"k\">=</span> <span class=\"k\">[];</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">]</span> <span class=\"k\">!==</span> <span class=\"s\">''</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    year <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">4</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">4</span><span class=\"k\">,</span> <span class=\"s\">6</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">)</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">;</span>","                    day <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">6</span><span class=\"k\">,</span> <span class=\"s\">8</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    tmp<span class=\"k\">.</span>push<span class=\"k\">(</span>format<span class=\"k\">(</span><span class=\"k\">new</span> Date<span class=\"k\">(</span>year<span class=\"k\">,</span> month<span class=\"k\">,</span> day<span class=\"k\">),</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">,</span> conf<span class=\"k\">));</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tmp<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                human <span class=\"k\">=</span> human <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>including <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> tmp<span class=\"k\">.</span>join<span class=\"k\">(</span><span class=\"s\">'; '</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>sort<span class=\"k\">();</span>","            tmp <span class=\"k\">=</span> <span class=\"k\">[];</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">]</span> <span class=\"k\">!==</span> <span class=\"s\">''</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    year <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">4</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">4</span><span class=\"k\">,</span> <span class=\"s\">6</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">)</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">;</span>","                    day <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">[</span>i<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">6</span><span class=\"k\">,</span> <span class=\"s\">8</span><span class=\"k\">),</span> <span class=\"s\">10</span><span class=\"k\">);</span>","                    tmp<span class=\"k\">.</span>push<span class=\"k\">(</span>format<span class=\"k\">(</span><span class=\"k\">new</span> Date<span class=\"k\">(</span>year<span class=\"k\">,</span> month<span class=\"k\">,</span> day<span class=\"k\">),</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">,</span> conf<span class=\"k\">));</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tmp<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                human <span class=\"k\">=</span> human <span class=\"k\">+</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>except <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> tmp<span class=\"k\">.</span>join<span class=\"k\">(</span><span class=\"s\">'; '</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        result <span class=\"k\">=</span> <span class=\"s\">'RRULE:'</span> <span class=\"k\">+</span> result<span class=\"k\">;</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>join<span class=\"k\">()</span> <span class=\"k\">!==</span> <span class=\"s\">\"\"</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tz <span class=\"k\">===</span> <span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Make it UTC:</span>","                tmp <span class=\"k\">=</span> $<span class=\"k\">.</span>map<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">(</span>x<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>x<span class=\"k\">.</span>length <span class=\"k\">===</span> <span class=\"s\">8</span><span class=\"k\">)</span> <span class=\"k\">{</span> <span class=\"c\">// DATE format. Make it DATE-TIME</span>","                        x <span class=\"k\">+=</span> <span class=\"s\">'T000000'</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">return</span> x <span class=\"k\">+</span> <span class=\"s\">'Z'</span><span class=\"k\">;</span> ","                <span class=\"k\">}</span><span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                tmp <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            result <span class=\"k\">=</span> result <span class=\"k\">+</span> <span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">EXDATE:'</span> <span class=\"k\">+</span> tmp<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE <span class=\"k\">!==</span> undefined <span class=\"k\">&amp;&amp;</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>join<span class=\"k\">()</span> <span class=\"k\">!==</span> <span class=\"s\">\"\"</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>tz <span class=\"k\">===</span> <span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Make it UTC:</span>","                tmp <span class=\"k\">=</span> $<span class=\"k\">.</span>map<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">(</span>x<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>x<span class=\"k\">.</span>length <span class=\"k\">===</span> <span class=\"s\">8</span><span class=\"k\">)</span> <span class=\"k\">{</span> <span class=\"c\">// DATE format. Make it DATE-TIME</span>","                        x <span class=\"k\">+=</span> <span class=\"s\">'T000000'</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">return</span> x <span class=\"k\">+</span> <span class=\"s\">'Z'</span><span class=\"k\">;</span>","                <span class=\"k\">}</span><span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                tmp <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            result <span class=\"k\">=</span> result <span class=\"k\">+</span> <span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">RDATE:'</span> <span class=\"k\">+</span> tmp<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> <span class=\"k\">{</span>result<span class=\"k\">:</span> result<span class=\"k\">,</span> description<span class=\"k\">:</span> human<span class=\"k\">}</span><span class=\"k\">;</span>","    <span class=\"k\">}</span>","","    <span class=\"k\">function</span> parseLine<span class=\"k\">(</span>icalline<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> pos <span class=\"k\">=</span> $<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"s\">':'</span><span class=\"k\">,</span> icalline<span class=\"k\">);</span>","        <span class=\"k\">var</span> property <span class=\"k\">=</span> icalline<span class=\"k\">.</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> pos<span class=\"k\">);</span>","        result<span class=\"k\">.</span>value <span class=\"k\">=</span> icalline<span class=\"k\">.</span>substring<span class=\"k\">(</span>pos <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"s\">';'</span><span class=\"k\">,</span> property<span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            pos <span class=\"k\">=</span> $<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"s\">';'</span><span class=\"k\">,</span> property<span class=\"k\">);</span>","            result<span class=\"k\">.</span>parameters <span class=\"k\">=</span> property<span class=\"k\">.</span>substring<span class=\"k\">(</span>pos <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","            result<span class=\"k\">.</span>property <span class=\"k\">=</span> property<span class=\"k\">.</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> pos<span class=\"k\">);</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            result<span class=\"k\">.</span>parameters <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            result<span class=\"k\">.</span>property <span class=\"k\">=</span> property<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","    <span class=\"k\">}</span>","    ","    <span class=\"k\">function</span> cleanDates<span class=\"k\">(</span>dates<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"c\">// Get rid of timezones</span>","        <span class=\"c\">// TODO: We could parse dates and range here, maybe?</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> splitDates <span class=\"k\">=</span> dates<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">','</span><span class=\"k\">);</span>","        <span class=\"k\">var</span> date<span class=\"k\">;</span>","        ","        <span class=\"k\">for</span> <span class=\"k\">(</span>date <span class=\"k\">in</span> splitDates<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>splitDates<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>date<span class=\"k\">))</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"s\">'Z'</span><span class=\"k\">,</span> splitDates<span class=\"k\">[</span>date<span class=\"k\">])</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result<span class=\"k\">.</span>push<span class=\"k\">(</span>splitDates<span class=\"k\">[</span>date<span class=\"k\">].</span>substring<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">15</span><span class=\"k\">));</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                    result<span class=\"k\">.</span>push<span class=\"k\">(</span>splitDates<span class=\"k\">[</span>date<span class=\"k\">]);</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","    <span class=\"k\">}</span>","    ","    <span class=\"k\">function</span> parseIcal<span class=\"k\">(</span>icaldata<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> lines <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> result <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> propAndValue <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> line <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> nextline<span class=\"k\">;</span>","        ","        lines <span class=\"k\">=</span> icaldata<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","        lines<span class=\"k\">.</span>reverse<span class=\"k\">();</span>","        <span class=\"k\">while</span> <span class=\"k\">(</span><span class=\"k\">true</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>lines<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                nextline <span class=\"k\">=</span> lines<span class=\"k\">.</span>pop<span class=\"k\">();</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>nextline<span class=\"k\">.</span>charAt<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">' '</span> <span class=\"k\">||</span> nextline<span class=\"k\">.</span>charAt<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">'</span><span class=\"t\">\\t</span><span class=\"s\">'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">// Line continuation:</span>","                    line <span class=\"k\">=</span> line <span class=\"k\">+</span> nextline<span class=\"k\">;</span>","                    <span class=\"k\">continue</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                nextline <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// New line; the current one is finished, add it to the result.</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>line <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span> ","                line <span class=\"k\">=</span> parseLine<span class=\"k\">(</span>line<span class=\"k\">);</span>","                 <span class=\"c\">// We ignore properties for now</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>line<span class=\"k\">.</span>property <span class=\"k\">===</span> <span class=\"s\">'RDATE'</span> <span class=\"k\">||</span> line<span class=\"k\">.</span>property <span class=\"k\">===</span> <span class=\"s\">'EXDATE'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    result<span class=\"k\">[</span>line<span class=\"k\">.</span>property<span class=\"k\">]</span> <span class=\"k\">=</span> cleanDates<span class=\"k\">(</span>line<span class=\"k\">.</span>value<span class=\"k\">);</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                    result<span class=\"k\">[</span>line<span class=\"k\">.</span>property<span class=\"k\">]</span> <span class=\"k\">=</span> line<span class=\"k\">.</span>value<span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            line <span class=\"k\">=</span> nextline<span class=\"k\">;</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>line <span class=\"k\">===</span> <span class=\"s\">''</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">break</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        <span class=\"k\">return</span> result<span class=\"k\">;</span>","    <span class=\"k\">}</span>","    ","    <span class=\"k\">function</span> widgetLoadFromRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> icaldata<span class=\"k\">,</span> force<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">var</span> unsupportedFeatures <span class=\"k\">=</span> <span class=\"k\">[];</span>","        <span class=\"k\">var</span> i<span class=\"k\">,</span> matches<span class=\"k\">,</span> match<span class=\"k\">,</span> matchIndex<span class=\"k\">,</span> rtemplate<span class=\"k\">,</span> d<span class=\"k\">,</span> input<span class=\"k\">,</span> index<span class=\"k\">;</span>","        <span class=\"k\">var</span> selector<span class=\"k\">,</span> selectors<span class=\"k\">,</span> field<span class=\"k\">,</span> radiobutton<span class=\"k\">,</span> start<span class=\"k\">,</span> end<span class=\"k\">;</span>","        <span class=\"k\">var</span> interval<span class=\"k\">,</span> byday<span class=\"k\">,</span> bymonth<span class=\"k\">,</span> bymonthday<span class=\"k\">,</span> count<span class=\"k\">,</span> until<span class=\"k\">;</span>","        <span class=\"k\">var</span> day<span class=\"k\">,</span> month<span class=\"k\">,</span> year<span class=\"k\">,</span> weekday<span class=\"k\">,</span> ical<span class=\"k\">;</span>","","        form<span class=\"k\">.</span>ical <span class=\"k\">=</span> parseIcal<span class=\"k\">(</span>icaldata<span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE <span class=\"k\">===</span> undefined<span class=\"k\">)</span> <span class=\"k\">{</span>","            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRule<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(!</span>force<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">return</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">;</span> <span class=\"c\">// Fail!</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","  ","        ","            matches <span class=\"k\">=</span> <span class=\"s\">/INTERVAL=([0-9]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                interval <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                interval <span class=\"k\">=</span> <span class=\"s\">'1'</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        ","            matches <span class=\"k\">=</span> <span class=\"s\">/BYDAY=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                byday <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                byday <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","            ","            matches <span class=\"k\">=</span> <span class=\"s\">/BYMONTHDAY=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                bymonthday <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">].</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                bymonthday <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        ","            matches <span class=\"k\">=</span> <span class=\"s\">/BYMONTH=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                bymonth <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">].</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                bymonth <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","        ","            matches <span class=\"k\">=</span> <span class=\"s\">/COUNT=([0-9]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                count <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                count <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","            ","            matches <span class=\"k\">=</span> <span class=\"s\">/UNTIL=([0-9T]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                until <span class=\"k\">=</span> matches<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                until <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","    ","            matches <span class=\"k\">=</span> <span class=\"s\">/BYSETPOS=([^;]+);?/</span><span class=\"k\">.</span>exec<span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>matches<span class=\"k\">)</span> <span class=\"k\">{</span>","                unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>bysetpos<span class=\"k\">);</span>","            <span class=\"k\">}</span>","    ","            <span class=\"c\">// Find the best rule:</span>","            match <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","            matchIndex <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">in</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>conf<span class=\"k\">.</span>rtemplate<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>i<span class=\"k\">))</span> <span class=\"k\">{</span>","                    rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>i<span class=\"k\">];</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>rtemplate<span class=\"k\">.</span>rrule<span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> match<span class=\"k\">.</span>length<span class=\"k\">)</span> <span class=\"k\">{</span>","                            <span class=\"c\">// This is the best match so far</span>","                            match <span class=\"k\">=</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">;</span>","                            matchIndex <span class=\"k\">=</span> i<span class=\"k\">;</span>","                        <span class=\"k\">}</span>","                    <span class=\"k\">}</span>  ","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"k\">if</span> <span class=\"k\">(</span>match<span class=\"k\">)</span> <span class=\"k\">{</span>","                rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>matchIndex<span class=\"k\">];</span>","                <span class=\"c\">// Set the selector:</span>","                selector <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>matchIndex<span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>rtemplate <span class=\"k\">in</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">if</span> <span class=\"k\">(</span>conf<span class=\"k\">.</span>rtemplate<span class=\"k\">.</span>hasOwnProperty<span class=\"k\">(</span>rtemplate<span class=\"k\">))</span> <span class=\"k\">{</span>","                        rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>rtemplate<span class=\"k\">];</span>","                        <span class=\"k\">break</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span>","                unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noTemplateMatch<span class=\"k\">);</span>","            <span class=\"k\">}</span>","            ","            <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#'</span> <span class=\"k\">+</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">[</span>i<span class=\"k\">]);</span>","                <span class=\"k\">switch</span> <span class=\"k\">(</span>field<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'id'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","                ","                <span class=\"k\">case</span> <span class=\"s\">'ridailyinterval'</span><span class=\"k\">:</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=ridailyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>  ","                    ","                <span class=\"k\">case</span> <span class=\"s\">'riweeklyinterval'</span><span class=\"k\">:</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                    ","                <span class=\"k\">case</span> <span class=\"s\">'riweeklyweekdays'</span><span class=\"k\">:</span>","                    <span class=\"k\">for</span> <span class=\"k\">(</span>d <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> d <span class=\"k\">&lt;</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">.</span>length<span class=\"k\">;</span> d<span class=\"k\">++)</span> <span class=\"k\">{</span>","                        day <span class=\"k\">=</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>d<span class=\"k\">];</span>","                        input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riweeklyweekdays'</span> <span class=\"k\">+</span> day <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","                        input<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> byday<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>day<span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","","                <span class=\"k\">case</span> <span class=\"s\">'rimonthlyinterval'</span><span class=\"k\">:</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                    ","                <span class=\"k\">case</span> <span class=\"s\">'rimonthlyoptions'</span><span class=\"k\">:</span>","                    <span class=\"k\">var</span> monthlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span> <span class=\"c\">// Default to using BYMONTHDAY</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">)</span> <span class=\"k\">{</span>","                        monthlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                            <span class=\"c\">// No support for multiple days in one month</span>","                            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                            <span class=\"c\">// Just keep the first</span>","                            bymonthday <span class=\"k\">=</span> bymonthday<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                        <span class=\"k\">}</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonthday<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","        ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>byday<span class=\"k\">)</span> <span class=\"k\">{</span>","                        monthlyType <span class=\"k\">=</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">;</span>","                        ","                        <span class=\"k\">if</span> <span class=\"k\">(</span>form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RRULE<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>rtemplate<span class=\"k\">.</span>rrule<span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                            <span class=\"c\">// No support for multiple days in one month</span>","                            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                            byday <span class=\"k\">=</span> byday<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                        <span class=\"k\">}</span>","                        index <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                        weekday <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>index<span class=\"k\">);</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>weekday<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    ","                    selectors <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rimonthlytype]'</span><span class=\"k\">);</span>","                    <span class=\"k\">for</span> <span class=\"k\">(</span>index <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> index <span class=\"k\">&lt;</span> selectors<span class=\"k\">.</span>length<span class=\"k\">;</span> index<span class=\"k\">++)</span> <span class=\"k\">{</span>","                        radiobutton <span class=\"k\">=</span> selectors<span class=\"k\">[</span>index<span class=\"k\">];</span>","                        $<span class=\"k\">(</span>radiobutton<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> radiobutton<span class=\"k\">.</span>value <span class=\"k\">===</span> monthlyType<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","        ","                <span class=\"k\">case</span> <span class=\"s\">'riyearlyinterval'</span><span class=\"k\">:</span>","                    field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riyearlyinterval]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>interval<span class=\"k\">);</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                    ","                <span class=\"k\">case</span> <span class=\"s\">'riyearlyoptions'</span><span class=\"k\">:</span>","                    <span class=\"k\">var</span> yearlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span> <span class=\"c\">// Default to using BYMONTHDAY</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">)</span> <span class=\"k\">{</span>","                        yearlyType <span class=\"k\">=</span> <span class=\"s\">'DAYOFMONTH'</span><span class=\"k\">;</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span>bymonthday<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                            <span class=\"c\">// No support for multiple days in one month</span>","                            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                            bymonthday <span class=\"k\">=</span> bymonthday<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                        <span class=\"k\">}</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonth<span class=\"k\">);</span>                    ","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonthday<span class=\"k\">);</span>                    ","                    <span class=\"k\">}</span>","        ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>byday<span class=\"k\">)</span> <span class=\"k\">{</span>","                        yearlyType <span class=\"k\">=</span> <span class=\"s\">'WEEKDAYOFMONTH'</span><span class=\"k\">;</span>","                        ","                        <span class=\"k\">if</span> <span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"s\">','</span><span class=\"k\">,</span> byday<span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                            <span class=\"c\">// No support for multiple days in one month</span>","                            unsupportedFeatures<span class=\"k\">.</span>push<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>multipleDayOfMonth<span class=\"k\">);</span>","                            byday <span class=\"k\">=</span> byday<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">\",\"</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">];</span>","                        <span class=\"k\">}</span>","                        index <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                        weekday <span class=\"k\">=</span> byday<span class=\"k\">.</span>slice<span class=\"k\">(-</span><span class=\"s\">2</span><span class=\"k\">);</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>index<span class=\"k\">);</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>weekday<span class=\"k\">);</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>bymonth<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    ","                    selectors <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=riyearlyType]'</span><span class=\"k\">);</span>","                    <span class=\"k\">for</span> <span class=\"k\">(</span>index <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> index <span class=\"k\">&lt;</span> selectors<span class=\"k\">.</span>length<span class=\"k\">;</span> index<span class=\"k\">++)</span> <span class=\"k\">{</span>","                        radiobutton <span class=\"k\">=</span> selectors<span class=\"k\">[</span>index<span class=\"k\">];</span>","                        $<span class=\"k\">(</span>radiobutton<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> radiobutton<span class=\"k\">.</span>value <span class=\"k\">===</span> yearlyType<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                    ","                <span class=\"k\">case</span> <span class=\"s\">'rirangeoptions'</span><span class=\"k\">:</span>","                    <span class=\"k\">var</span> rangeType <span class=\"k\">=</span> <span class=\"s\">'NOENDDATE'</span><span class=\"k\">;</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>count<span class=\"k\">)</span> <span class=\"k\">{</span>","                        rangeType <span class=\"k\">=</span> <span class=\"s\">'BYOCCURRENCES'</span><span class=\"k\">;</span>","                        field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyoccurrencesvalue]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>count<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(</span>until<span class=\"k\">)</span> <span class=\"k\">{</span>","                        rangeType <span class=\"k\">=</span> <span class=\"s\">'BYENDDATE'</span><span class=\"k\">;</span>","                        input <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">);</span>","                        year <span class=\"k\">=</span> until<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">4</span><span class=\"k\">);</span>","                        month <span class=\"k\">=</span> until<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">4</span><span class=\"k\">,</span> <span class=\"s\">6</span><span class=\"k\">);</span>","                        month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span>month<span class=\"k\">,</span> <span class=\"s\">10</span><span class=\"k\">)</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">;</span>","                        day <span class=\"k\">=</span> until<span class=\"k\">.</span>slice<span class=\"k\">(</span><span class=\"s\">6</span><span class=\"k\">,</span> <span class=\"s\">8</span><span class=\"k\">);</span>","                        input<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">).</span>setValue<span class=\"k\">(</span>year<span class=\"k\">,</span> month<span class=\"k\">,</span> day<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    ","                    selectors <span class=\"k\">=</span> field<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangetype]'</span><span class=\"k\">);</span>","                    <span class=\"k\">for</span> <span class=\"k\">(</span>index <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> index <span class=\"k\">&lt;</span>  selectors<span class=\"k\">.</span>length<span class=\"k\">;</span> index<span class=\"k\">++)</span> <span class=\"k\">{</span>","                        radiobutton <span class=\"k\">=</span> selectors<span class=\"k\">[</span>index<span class=\"k\">];</span>","                        $<span class=\"k\">(</span>radiobutton<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> radiobutton<span class=\"k\">.</span>value <span class=\"k\">===</span> rangeType<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    <span class=\"k\">break</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">var</span> messagearea <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#messagearea'</span><span class=\"k\">);</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span>unsupportedFeatures<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","            messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>unsupportedFeatures <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> unsupportedFeatures<span class=\"k\">.</span>join<span class=\"k\">(</span><span class=\"s\">'; '</span><span class=\"k\">));</span>","            messagearea<span class=\"k\">.</span>show<span class=\"k\">();</span>","            <span class=\"k\">return</span> <span class=\"s\">1</span><span class=\"k\">;</span>","        <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","            messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","            messagearea<span class=\"k\">.</span>hide<span class=\"k\">();</span>","            <span class=\"k\">return</span> <span class=\"s\">0</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","    ","    <span class=\"k\">}</span>","    ","    <span class=\"c\">/**</span>","<span class=\"c\">     * RecurrenceInput - form, display and tools for recurrenceinput widget</span>","<span class=\"c\">     */</span>","    <span class=\"k\">function</span> RecurrenceInput<span class=\"k\">(</span>conf<span class=\"k\">,</span> textarea<span class=\"k\">)</span> <span class=\"k\">{</span>","","        <span class=\"k\">var</span> self <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","        <span class=\"k\">var</span> form<span class=\"k\">,</span> display<span class=\"k\">;</span>","","        <span class=\"c\">// Extend conf with non-configurable data used by templates.</span>","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>conf<span class=\"k\">,</span> <span class=\"k\">{</span>","            orderIndexes<span class=\"k\">:</span> <span class=\"k\">[</span><span class=\"s\">'+1'</span><span class=\"k\">,</span> <span class=\"s\">'+2'</span><span class=\"k\">,</span> <span class=\"s\">'+3'</span><span class=\"k\">,</span> <span class=\"s\">'+4'</span><span class=\"k\">,</span> <span class=\"s\">'-1'</span><span class=\"k\">],</span>","            weekdays<span class=\"k\">:</span> <span class=\"k\">[</span><span class=\"s\">'MO'</span><span class=\"k\">,</span> <span class=\"s\">'TU'</span><span class=\"k\">,</span> <span class=\"s\">'WE'</span><span class=\"k\">,</span> <span class=\"s\">'TH'</span><span class=\"k\">,</span> <span class=\"s\">'FR'</span><span class=\"k\">,</span> <span class=\"s\">'SA'</span><span class=\"k\">,</span> <span class=\"s\">'SU'</span><span class=\"k\">]</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","        ","        <span class=\"c\">// The recurrence type dropdown should show certain fields depending</span>","        <span class=\"c\">// on selection:        </span>","        <span class=\"k\">function</span> displayFields<span class=\"k\">(</span>selector<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> i<span class=\"k\">;</span>","            <span class=\"c\">// First hide all the fields</span>","            form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rifield'</span><span class=\"k\">).</span>hide<span class=\"k\">();</span>","            <span class=\"c\">// Then show the ones that should be shown.</span>","            <span class=\"k\">var</span> value <span class=\"k\">=</span> selector<span class=\"k\">.</span>val<span class=\"k\">();</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>value<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">var</span> rtemplate <span class=\"k\">=</span> conf<span class=\"k\">.</span>rtemplate<span class=\"k\">[</span>value<span class=\"k\">];</span>","                <span class=\"k\">for</span> <span class=\"k\">(</span>i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span> <span class=\"k\">{</span>","                    form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#'</span> <span class=\"k\">+</span> rtemplate<span class=\"k\">.</span>fields<span class=\"k\">[</span>i<span class=\"k\">]).</span>show<span class=\"k\">();</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> occurrenceExclude<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>push<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>date<span class=\"k\">.</span>value<span class=\"k\">);</span>","            $this <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","            $this<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'class'</span><span class=\"k\">,</span> <span class=\"s\">'exdate'</span><span class=\"k\">);</span>","            $this<span class=\"k\">.</span>parent<span class=\"k\">().</span>parent<span class=\"k\">().</span>addClass<span class=\"k\">(</span><span class=\"s\">'dimm'</span><span class=\"k\">);</span>","            $this<span class=\"k\">.</span>unbind<span class=\"k\">(</span>event<span class=\"k\">);</span>","            $this<span class=\"k\">.</span>click<span class=\"k\">(</span>occurrenceInclude<span class=\"k\">);</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> occurrenceInclude<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">.</span>splice<span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>date<span class=\"k\">.</span>value<span class=\"k\">,</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>EXDATE<span class=\"k\">),</span> <span class=\"s\">1</span><span class=\"k\">);</span>","            $this <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","            $this<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'class'</span><span class=\"k\">,</span> <span class=\"s\">'rrule'</span><span class=\"k\">);</span>","            $this<span class=\"k\">.</span>parent<span class=\"k\">().</span>parent<span class=\"k\">().</span>removeClass<span class=\"k\">(</span><span class=\"s\">'dimm'</span><span class=\"k\">);</span>","            $this<span class=\"k\">.</span>unbind<span class=\"k\">(</span>event<span class=\"k\">);</span>","            $this<span class=\"k\">.</span>click<span class=\"k\">(</span>occurrenceExclude<span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> occurrenceDelete<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>splice<span class=\"k\">(</span>$<span class=\"k\">.</span>inArray<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>date<span class=\"k\">.</span>value<span class=\"k\">,</span> form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">),</span> <span class=\"s\">1</span><span class=\"k\">);</span>","            $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>parent<span class=\"k\">().</span>parent<span class=\"k\">().</span>hide<span class=\"k\">(</span><span class=\"s\">'slow'</span><span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","                $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>remove<span class=\"k\">();</span>","            <span class=\"k\">}</span><span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> occurrenceAdd<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            <span class=\"k\">var</span> dateinput <span class=\"k\">=</span> form","                <span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.riaddoccurrence input#adddate'</span><span class=\"k\">)</span>","                <span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">);</span>","            <span class=\"k\">var</span> datevalue <span class=\"k\">=</span> dateinput<span class=\"k\">.</span>getValue<span class=\"k\">(</span><span class=\"s\">'yyyymmddT000000'</span><span class=\"k\">);</span>","            form<span class=\"k\">.</span>ical<span class=\"k\">.</span>RDATE<span class=\"k\">.</span>push<span class=\"k\">(</span>datevalue<span class=\"k\">);</span>","            <span class=\"k\">var</span> html <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"s\">'&lt;div class=\"occurrence exc\" style=\"display: none;\"&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;span class=\"rdate\"&gt;'</span><span class=\"k\">,</span>","                        dateinput<span class=\"k\">.</span>getValue<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">),</span>","                    <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;span class=\"action\"&gt;'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;a date=\"'</span> <span class=\"k\">+</span> datevalue <span class=\"k\">+</span> <span class=\"s\">'\" href=\"#\" class=\"rdate\" &gt;'</span><span class=\"k\">,</span>","                            <span class=\"s\">'Include'</span><span class=\"k\">,</span>","                        <span class=\"s\">'&lt;/a&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/span&gt;'</span><span class=\"k\">,</span>","                    <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'</span><span class=\"t\">\\n</span><span class=\"s\">'</span><span class=\"k\">);</span>","            form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrences'</span><span class=\"k\">).</span>prepend<span class=\"k\">(</span>html<span class=\"k\">);</span>","            $<span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrences div'</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">]).</span>slideDown<span class=\"k\">();</span>","            $<span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrences .action a.rdate'</span><span class=\"k\">)[</span><span class=\"s\">0</span><span class=\"k\">]).</span>click<span class=\"k\">(</span>occurrenceDelete<span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// element is where to find the tag in question. Can be the form</span>","        <span class=\"c\">// or the display widget. Defaults to the form.</span>","        <span class=\"k\">function</span> loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> rfc5545<span class=\"k\">,</span> start<span class=\"k\">,</span> readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> element<span class=\"k\">,</span> occurrenceDiv<span class=\"k\">;</span>","            ","            <span class=\"k\">if</span> <span class=\"k\">(!</span>readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","                element <span class=\"k\">=</span> form<span class=\"k\">;</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                element <span class=\"k\">=</span> display<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            ","            occurrenceDiv <span class=\"k\">=</span> element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">);</span>","            occurrenceDiv<span class=\"k\">.</span>hide<span class=\"k\">();</span>","            ","            ","            $<span class=\"k\">.</span>ajax<span class=\"k\">(</span><span class=\"k\">{</span>","                url<span class=\"k\">:</span> conf<span class=\"k\">.</span>ajaxURL<span class=\"k\">,</span>","                async<span class=\"k\">:</span> <span class=\"k\">false</span><span class=\"k\">,</span> <span class=\"c\">// Can't be tested if it's asynchronous, annoyingly.</span>","                type<span class=\"k\">:</span> <span class=\"s\">'post'</span><span class=\"k\">,</span>","                dataType<span class=\"k\">:</span> <span class=\"s\">'json'</span><span class=\"k\">,</span>","                data<span class=\"k\">:</span> <span class=\"k\">{</span>year<span class=\"k\">:</span> startdate<span class=\"k\">.</span>getFullYear<span class=\"k\">(),</span>","                       month<span class=\"k\">:</span> startdate<span class=\"k\">.</span>getMonth<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">,</span> <span class=\"c\">// Sending January as 0? I think not.</span>","                       day<span class=\"k\">:</span> startdate<span class=\"k\">.</span>getDate<span class=\"k\">(),</span>","                       rrule<span class=\"k\">:</span> rfc5545<span class=\"k\">,</span>","                       format<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>longDateFormat<span class=\"k\">,</span>","                       start<span class=\"k\">:</span> start<span class=\"k\">}</span><span class=\"k\">,</span>","                success<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>data<span class=\"k\">,</span> status<span class=\"k\">,</span> jqXHR<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"k\">var</span> result<span class=\"k\">,</span> element<span class=\"k\">;</span>","                    ","                    <span class=\"k\">if</span> <span class=\"k\">(!</span>readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","                        element <span class=\"k\">=</span> form<span class=\"k\">;</span>","                    <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                        element <span class=\"k\">=</span> display<span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                    data<span class=\"k\">.</span>readOnly <span class=\"k\">=</span> readonly<span class=\"k\">;</span>","                    data<span class=\"k\">.</span>i18n <span class=\"k\">=</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">;</span>","                    ","                    result <span class=\"k\">=</span> $<span class=\"k\">.</span>tmpl<span class=\"k\">(</span><span class=\"s\">'occurrenceTmpl'</span><span class=\"k\">,</span> data<span class=\"k\">);</span>","                    occurrenceDiv <span class=\"k\">=</span> element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">);</span>","                    occurrenceDiv<span class=\"k\">.</span>replaceWith<span class=\"k\">(</span>result<span class=\"k\">);</span>","                    ","                    <span class=\"c\">// Add the batch actions:</span>","                    element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .batching a'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>","                        <span class=\"k\">function</span> <span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","                            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","                            loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> rfc5545<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>attributes<span class=\"k\">.</span>start<span class=\"k\">.</span>value<span class=\"k\">,</span> readonly<span class=\"k\">);</span>","                        <span class=\"k\">}</span>","                    <span class=\"k\">);</span>","","                    <span class=\"c\">// Add the delete/undelete actions:</span>","                    <span class=\"k\">if</span> <span class=\"k\">(!</span>readonly<span class=\"k\">)</span> <span class=\"k\">{</span>","                        element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .action a.rrule'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceExclude<span class=\"k\">);</span>","                        element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .action a.exdate'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceInclude<span class=\"k\">);</span>","                        element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences .action a.rdate'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceDelete<span class=\"k\">);</span>","                    <span class=\"k\">}</span>","                    <span class=\"c\">// Show the new div</span>","                    element<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">).</span>show<span class=\"k\">();</span>","                <span class=\"k\">}</span><span class=\"k\">,</span>","                error<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>jqXHR<span class=\"k\">,</span> textStatus<span class=\"k\">,</span> errorThrown<span class=\"k\">)</span> <span class=\"k\">{</span>","                    alert<span class=\"k\">(</span>textStatus<span class=\"k\">);</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span><span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> findStartDate<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> startField<span class=\"k\">,</span> startdate<span class=\"k\">;</span>","            <span class=\"c\">// Find the default byday and bymonthday from the start date, if any:</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>conf<span class=\"k\">.</span>startField<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Se if it is a field already</span>","                startField <span class=\"k\">=</span> $<span class=\"k\">(</span>conf<span class=\"k\">.</span>startField<span class=\"k\">);</span>","                <span class=\"k\">if</span> <span class=\"k\">(!</span>startField<span class=\"k\">.</span>length<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">// Otherwise, we assume it's an id:</span>","                    startField <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'input[id='</span> <span class=\"k\">+</span> conf<span class=\"k\">.</span>startField <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","                <span class=\"k\">}</span>","                ","                <span class=\"c\">// Now we have a field, see if it is a dateinput field:</span>","                startdate <span class=\"k\">=</span> startField<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">);</span>","                <span class=\"k\">if</span> <span class=\"k\">(</span>startdate <span class=\"k\">===</span> undefined <span class=\"k\">||</span> startdate <span class=\"k\">===</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">//No, it wasn't, just try to interpret it with Date()</span>","                    startdate <span class=\"k\">=</span> startField<span class=\"k\">.</span>val<span class=\"k\">();</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                    <span class=\"c\">// Yes it was, get the date:</span>","                    startdate <span class=\"k\">=</span> startdate<span class=\"k\">.</span>getValue<span class=\"k\">();</span>","                <span class=\"k\">}</span>","                startdate <span class=\"k\">=</span> <span class=\"k\">new</span> Date<span class=\"k\">(</span>startdate<span class=\"k\">);</span>","                ","                <span class=\"k\">if</span> <span class=\"k\">(</span>isNaN<span class=\"k\">(</span>startdate<span class=\"k\">))</span> <span class=\"k\">{</span>","                    <span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                <span class=\"k\">return</span> startdate<span class=\"k\">;</span>","            <span class=\"k\">}</span>","            <span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">function</span> findEndDate<span class=\"k\">(</span>form<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> endField<span class=\"k\">,</span> enddate<span class=\"k\">;</span>","            ","            endField <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">);</span>","            ","            <span class=\"c\">// Now we have a field, see if it is a dateinput field:</span>","            enddate <span class=\"k\">=</span> endField<span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'dateinput'</span><span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>enddate <span class=\"k\">===</span> undefined <span class=\"k\">||</span> enddate <span class=\"k\">===</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">//No, it wasn't, just try to interpret it with Date()</span>","                enddate <span class=\"k\">=</span> endField<span class=\"k\">.</span>val<span class=\"k\">();</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                <span class=\"c\">// Yes it was, get the date:</span>","                enddate <span class=\"k\">=</span> enddate<span class=\"k\">.</span>getValue<span class=\"k\">();</span>","            <span class=\"k\">}</span>","            enddate <span class=\"k\">=</span> <span class=\"k\">new</span> Date<span class=\"k\">(</span>enddate<span class=\"k\">);</span>","            ","            <span class=\"c\">// if the end date is incorrect or the field is left empty</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>isNaN<span class=\"k\">(</span>enddate<span class=\"k\">)</span> <span class=\"k\">||</span> endField<span class=\"k\">.</span>val<span class=\"k\">()</span> <span class=\"k\">===</span> <span class=\"s\">\"\"</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","            <span class=\"k\">return</span> enddate<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        <span class=\"k\">function</span> findIntField<span class=\"k\">(</span>fieldName<span class=\"k\">,</span> form<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> field<span class=\"k\">,</span> num<span class=\"k\">,</span> isInt<span class=\"k\">;</span>","            ","            field <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name='</span> <span class=\"k\">+</span> fieldName <span class=\"k\">+</span> <span class=\"s\">']'</span><span class=\"k\">);</span>","            ","            num <span class=\"k\">=</span> field<span class=\"k\">.</span>val<span class=\"k\">();</span>","","            <span class=\"c\">// if it's not a number or the field is left empty</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>isNaN<span class=\"k\">(</span>num<span class=\"k\">)</span> <span class=\"k\">||</span> <span class=\"k\">(</span>num<span class=\"k\">.</span>toString<span class=\"k\">().</span>indexOf<span class=\"k\">(</span><span class=\"s\">'.'</span><span class=\"k\">)!=-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">||</span> field<span class=\"k\">.</span>val<span class=\"k\">()</span> <span class=\"k\">===</span> <span class=\"s\">\"\"</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","            <span class=\"k\">return</span> num<span class=\"k\">;</span>","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// Loading (populating) display and form widget with</span>","        <span class=\"c\">// passed RFC5545 string (data)</span>","        <span class=\"k\">function</span> loadData<span class=\"k\">(</span>rfc5545<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> selector<span class=\"k\">,</span> format<span class=\"k\">,</span> startField<span class=\"k\">,</span> startdate<span class=\"k\">,</span> dayindex<span class=\"k\">,</span> day<span class=\"k\">;</span>","","            <span class=\"k\">if</span> <span class=\"k\">(</span>rfc5545<span class=\"k\">)</span> <span class=\"k\">{</span>","                widgetLoadFromRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> rfc5545<span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","                <span class=\"c\">// check checkbox</span>","                display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">)</span>","                    <span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","","            startdate <span class=\"k\">=</span> findStartDate<span class=\"k\">();</span>","            ","            <span class=\"k\">if</span> <span class=\"k\">(</span>startdate <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// If the date is a real date, set the defaults in the form</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getDate<span class=\"k\">());</span>","                dayindex <span class=\"k\">=</span> conf<span class=\"k\">.</span>orderIndexes<span class=\"k\">[</span>Math<span class=\"k\">.</span>floor<span class=\"k\">((</span>startdate<span class=\"k\">.</span>getDate<span class=\"k\">()</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">/</span> <span class=\"s\">7</span><span class=\"k\">)];</span>","                day <span class=\"k\">=</span> conf<span class=\"k\">.</span>weekdays<span class=\"k\">[</span>startdate<span class=\"k\">.</span>getDay<span class=\"k\">()</span> <span class=\"k\">-</span> <span class=\"s\">1</span><span class=\"k\">];</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>dayindex<span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rimonthlyweekdayofmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>day<span class=\"k\">);</span>","","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getMonth<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlydayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getDate<span class=\"k\">());</span>                    ","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthindex]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>dayindex<span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthday]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>day<span class=\"k\">);</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=riyearlyweekdayofmonthmonth]'</span><span class=\"k\">).</span>val<span class=\"k\">(</span>startdate<span class=\"k\">.</span>getMonth<span class=\"k\">()</span> <span class=\"k\">+</span> <span class=\"s\">1</span><span class=\"k\">);</span>","                ","                <span class=\"c\">// Now when we have a start date, we can also do an ajax call to calculate occurrences:</span>","                loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">).</span>result<span class=\"k\">,</span> <span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">);</span>","                ","                <span class=\"c\">// Show the add and refresh buttons:</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrencesactions'</span><span class=\"k\">).</span>show<span class=\"k\">();</span>","                ","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                <span class=\"c\">// No EXDATE/RDATE support</span>","                form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.rioccurrencesactions'</span><span class=\"k\">).</span>hide<span class=\"k\">();</span>","            <span class=\"k\">}</span>","","            ","            selector <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">);</span>","            displayFields<span class=\"k\">(</span>selector<span class=\"k\">);</span>            ","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> recurrenceOn<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> RFC5545 <span class=\"k\">=</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            <span class=\"k\">var</span> label <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'label[class=ridisplay]'</span><span class=\"k\">);</span>","            label<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>displayActivate <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> RFC5545<span class=\"k\">.</span>description<span class=\"k\">);</span>","            textarea<span class=\"k\">.</span>val<span class=\"k\">(</span>RFC5545<span class=\"k\">.</span>result<span class=\"k\">);</span>","            <span class=\"k\">var</span> startdate <span class=\"k\">=</span> findStartDate<span class=\"k\">();</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>startdate <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                loadOccurrences<span class=\"k\">(</span>startdate<span class=\"k\">,</span> widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">).</span>result<span class=\"k\">,</span> <span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> recurrenceOff<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> label <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'label[class=ridisplay]'</span><span class=\"k\">);</span>","            label<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>displayUnactivate<span class=\"k\">);</span>","            textarea<span class=\"k\">.</span>val<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","            display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrences'</span><span class=\"k\">).</span>hide<span class=\"k\">();</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> toggleRecurrence<span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> checkbox <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>checkbox<span class=\"k\">.</span>is<span class=\"k\">(</span><span class=\"s\">':checked'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","                recurrenceOn<span class=\"k\">();</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                recurrenceOff<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> save<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            <span class=\"c\">// if no field errors, process the request</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>checkFields<span class=\"k\">(</span>form<span class=\"k\">))</span> <span class=\"k\">{</span>","                <span class=\"c\">// close overlay</span>","                form<span class=\"k\">.</span>overlay<span class=\"k\">().</span>close<span class=\"k\">();</span>","                <span class=\"c\">// check checkbox</span>","                display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">)</span>","                    <span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","                recurrenceOn<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"k\">function</span> cancel<span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","            event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","            <span class=\"c\">// close overlay</span>","            form<span class=\"k\">.</span>overlay<span class=\"k\">().</span>close<span class=\"k\">();</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> checkFields<span class=\"k\">(</span>form<span class=\"k\">)</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> startDate<span class=\"k\">,</span> endDate<span class=\"k\">,</span> num<span class=\"k\">,</span> messagearea<span class=\"k\">;</span>","            startDate <span class=\"k\">=</span> findStartDate<span class=\"k\">();</span>","            ","            <span class=\"c\">// Hide any error message from before</span>","            messagearea <span class=\"k\">=</span> form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#messagearea'</span><span class=\"k\">);</span>","            messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","            messagearea<span class=\"k\">.</span>hide<span class=\"k\">();</span>","            ","            <span class=\"c\">// Repeats Dialy</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#ridailyinterval'</span><span class=\"k\">).</span>css<span class=\"k\">(</span><span class=\"s\">'display'</span><span class=\"k\">)</span> <span class=\"k\">==</span> <span class=\"s\">'block'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Check repeat every field</span>","                num <span class=\"k\">=</span> findIntField<span class=\"k\">(</span><span class=\"s\">'ridailyinterval'</span><span class=\"k\">,</span> form<span class=\"k\">);</span>","                <span class=\"k\">if</span><span class=\"k\">(!</span>num <span class=\"k\">||</span> num <span class=\"k\">&lt;</span> <span class=\"s\">0</span> <span class=\"k\">||</span> num <span class=\"k\">&gt;</span> <span class=\"s\">1000</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatEvery<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// Repeats Weekly</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#riweeklyinterval'</span><span class=\"k\">).</span>css<span class=\"k\">(</span><span class=\"s\">'display'</span><span class=\"k\">)</span> <span class=\"k\">==</span> <span class=\"s\">'block'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Check repeat every field</span>","                num <span class=\"k\">=</span> findIntField<span class=\"k\">(</span><span class=\"s\">'riweeklyinterval'</span><span class=\"k\">,</span> form<span class=\"k\">);</span>","                <span class=\"k\">if</span><span class=\"k\">(!</span>num <span class=\"k\">||</span> num <span class=\"k\">&lt;</span> <span class=\"s\">0</span> <span class=\"k\">||</span> num <span class=\"k\">&gt;</span> <span class=\"s\">1000</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatEvery<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                ","                <span class=\"c\">// Check repeat on</span>","                <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.riweeklyweekday input:checked'</span><span class=\"k\">).</span>length <span class=\"k\">==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatOn<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// Repeats Monthly</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#rimonthlyinterval'</span><span class=\"k\">).</span>css<span class=\"k\">(</span><span class=\"s\">'display'</span><span class=\"k\">)</span> <span class=\"k\">==</span> <span class=\"s\">'block'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Check repeat every field</span>","                num <span class=\"k\">=</span> findIntField<span class=\"k\">(</span><span class=\"s\">'rimonthlyinterval'</span><span class=\"k\">,</span> form<span class=\"k\">);</span>","                <span class=\"k\">if</span><span class=\"k\">(!</span>num <span class=\"k\">||</span> num <span class=\"k\">&lt;</span> <span class=\"s\">0</span> <span class=\"k\">||</span> num <span class=\"k\">&gt;</span> <span class=\"s\">1000</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatEvery<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                ","                <span class=\"c\">// Check repeat on</span>","                <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#rimonthlyoptions input:checked'</span><span class=\"k\">).</span>length <span class=\"k\">==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatOn<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// Repeats Yearly</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#riyearlyinterval'</span><span class=\"k\">).</span>css<span class=\"k\">(</span><span class=\"s\">'display'</span><span class=\"k\">)</span> <span class=\"k\">==</span> <span class=\"s\">'block'</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Check repeat every field</span>","                num <span class=\"k\">=</span> findIntField<span class=\"k\">(</span><span class=\"s\">'riyearlyinterval'</span><span class=\"k\">,</span> form<span class=\"k\">);</span>","                <span class=\"k\">if</span><span class=\"k\">(!</span>num <span class=\"k\">||</span> num <span class=\"k\">&lt;</span> <span class=\"s\">0</span> <span class=\"k\">||</span> num <span class=\"k\">&gt;</span> <span class=\"s\">1000</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatEvery<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","                ","                <span class=\"c\">// Check repeat on</span>","                <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'#riyearlyoptions input:checked'</span><span class=\"k\">).</span>length <span class=\"k\">==</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRepeatOn<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// End recurrence fields</span>","            ","            <span class=\"c\">// If after N occurences is selected, check its value</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[value=\"BYOCCURRENCES\"]:visible:checked'</span><span class=\"k\">).</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                num <span class=\"k\">=</span> findIntField<span class=\"k\">(</span><span class=\"s\">'rirangebyoccurrencesvalue'</span><span class=\"k\">,</span> form<span class=\"k\">);</span>","                <span class=\"k\">if</span><span class=\"k\">(!</span>num <span class=\"k\">||</span> num <span class=\"k\">&lt;</span> <span class=\"s\">0</span> <span class=\"k\">||</span> num <span class=\"k\">&gt;</span> <span class=\"s\">1000</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noEndAfterNOccurrences<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"c\">// If end date is selected, check its value</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[value=\"BYENDDATE\"]:visible:checked'</span><span class=\"k\">).</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                endDate <span class=\"k\">=</span> findEndDate<span class=\"k\">(</span>form<span class=\"k\">);</span>","                <span class=\"k\">if</span> <span class=\"k\">(!</span>endDate<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">// if end date is null that means the field is empty</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noEndDate<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">if</span> <span class=\"k\">(</span>endDate <span class=\"k\">&lt;</span> startDate<span class=\"k\">)</span> <span class=\"k\">{</span>","                    <span class=\"c\">// the end date cannot be before start date</span>","                    messagearea<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>pastEndDate<span class=\"k\">).</span>show<span class=\"k\">();</span>","                    <span class=\"k\">return</span> <span class=\"k\">false</span><span class=\"k\">;</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","            ","            <span class=\"k\">return</span> <span class=\"k\">true</span><span class=\"k\">;</span>","        <span class=\"k\">}</span>","        ","        <span class=\"k\">function</span> updateOccurances<span class=\"k\">()</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> startDate<span class=\"k\">;</span>","            startDate <span class=\"k\">=</span> findStartDate<span class=\"k\">();</span>","            ","            <span class=\"c\">// if no field errors, process the request</span>","            <span class=\"k\">if</span><span class=\"k\">(</span>checkFields<span class=\"k\">(</span>form<span class=\"k\">))</span> <span class=\"k\">{</span>","                loadOccurrences<span class=\"k\">(</span>startDate<span class=\"k\">,</span>","                    widgetSaveToRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> <span class=\"k\">false</span><span class=\"k\">).</span>result<span class=\"k\">,</span>","                    <span class=\"s\">0</span><span class=\"k\">,</span>","                    <span class=\"k\">false</span><span class=\"k\">);</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"c\">/* </span>","<span class=\"c\">          Load the templates</span>","<span class=\"c\">        */</span>","","        display <span class=\"k\">=</span> $<span class=\"k\">.</span>tmpl<span class=\"k\">(</span><span class=\"s\">'displayTmpl'</span><span class=\"k\">,</span> conf<span class=\"k\">);</span>","        form <span class=\"k\">=</span> $<span class=\"k\">.</span>tmpl<span class=\"k\">(</span><span class=\"s\">'formTmpl'</span><span class=\"k\">,</span> conf<span class=\"k\">);</span>","","        <span class=\"c\">// Make an overlay and hide it</span>","        form<span class=\"k\">.</span>overlay<span class=\"k\">(</span>conf<span class=\"k\">.</span>formOverlay<span class=\"k\">).</span>hide<span class=\"k\">();</span>","        form<span class=\"k\">.</span>ical <span class=\"k\">=</span> <span class=\"k\">{</span>RDATE<span class=\"k\">:</span> <span class=\"k\">[],</span> EXDATE<span class=\"k\">:</span> <span class=\"k\">[]</span><span class=\"k\">}</span><span class=\"k\">;</span>","        ","        <span class=\"c\">// Make the date input into a calendar dateinput()</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">).</span>dateinput<span class=\"k\">(</span><span class=\"k\">{</span>","            selectors<span class=\"k\">:</span> <span class=\"k\">true</span><span class=\"k\">,</span>","            format<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortDateFormat<span class=\"k\">,</span>","            yearRange<span class=\"k\">:</span> <span class=\"k\">[-</span><span class=\"s\">5</span><span class=\"k\">,</span> <span class=\"s\">10</span><span class=\"k\">]</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","","        <span class=\"k\">if</span> <span class=\"k\">(</span>textarea<span class=\"k\">.</span>val<span class=\"k\">())</span> <span class=\"k\">{</span>","            <span class=\"k\">var</span> result <span class=\"k\">=</span> widgetLoadFromRfc5545<span class=\"k\">(</span>form<span class=\"k\">,</span> conf<span class=\"k\">,</span> textarea<span class=\"k\">.</span>val<span class=\"k\">(),</span> <span class=\"k\">false</span><span class=\"k\">);</span>","            <span class=\"k\">if</span> <span class=\"k\">(</span>result <span class=\"k\">===</span> <span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">var</span> label <span class=\"k\">=</span> display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'label[class=ridisplay]'</span><span class=\"k\">);</span>","                label<span class=\"k\">.</span>text<span class=\"k\">(</span>conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>noRule<span class=\"k\">);</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                recurrenceOn<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">}</span>","","        <span class=\"c\">/* </span>","<span class=\"c\">          Do all the GUI stuff:</span>","<span class=\"c\">        */</span>","        ","        <span class=\"c\">// When you click on the checkbox, recurrence should toggle on/off.</span>","        display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=richeckbox]'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>toggleRecurrence<span class=\"k\">);</span>","","        <span class=\"c\">// Show form overlay when you click on the \"Edit...\" link</span>","        display<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'a[name=riedit]'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Load the form to set up the right fields to show, etc.</span>","                loadData<span class=\"k\">(</span>textarea<span class=\"k\">.</span>val<span class=\"k\">());</span>","                e<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","                form<span class=\"k\">.</span>overlay<span class=\"k\">().</span>load<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","","        <span class=\"c\">// Pop up the little add form when clicking \"Add...\"</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'div.riaddoccurrence input#adddate'</span><span class=\"k\">).</span>dateinput<span class=\"k\">(</span><span class=\"k\">{</span>","            selectors<span class=\"k\">:</span> <span class=\"k\">true</span><span class=\"k\">,</span>","            format<span class=\"k\">:</span> conf<span class=\"k\">.</span>i18n<span class=\"k\">.</span>shortDateFormat<span class=\"k\">,</span>","            yearRange<span class=\"k\">:</span> <span class=\"k\">[-</span><span class=\"s\">5</span><span class=\"k\">,</span> <span class=\"s\">10</span><span class=\"k\">]</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input#addaction'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>occurrenceAdd<span class=\"k\">);</span>","","        <span class=\"c\">// When the reload button is clicked, reload</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'a.rirefreshbutton'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>event<span class=\"k\">)</span> <span class=\"k\">{</span>","                event<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","                updateOccurances<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","        ","        <span class=\"c\">// When selecting template, update what fieldsets are visible.</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select[name=rirtemplate]'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                displayFields<span class=\"k\">(</span>$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">));</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","","        <span class=\"c\">// When focus goes to a drop-down, select the relevant radiobutton.</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'select'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>parent<span class=\"k\">().</span>find<span class=\"k\">(</span><span class=\"s\">'&gt; input'</span><span class=\"k\">).</span>click<span class=\"k\">().</span>change<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyoccurrencesvalue]'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>parent<span class=\"k\">().</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangetype]'</span><span class=\"k\">).</span>click<span class=\"k\">().</span>change<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangebyenddatecalendar]'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                $<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>parent<span class=\"k\">().</span>find<span class=\"k\">(</span><span class=\"s\">'input[name=rirangetype]'</span><span class=\"k\">).</span>click<span class=\"k\">().</span>change<span class=\"k\">();</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","        <span class=\"c\">// Also update the selected dates section</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'input:radio, #connectedweeklyinterval, .riweeklyweekday &gt; input, input[name=rimonthlyinterval], input[name=riyearlyinterval]'</span><span class=\"k\">).</span>change<span class=\"k\">(</span>","            <span class=\"k\">function</span> <span class=\"k\">(</span>e<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"c\">// Update only if the occurances are shown</span>","                <span class=\"k\">if</span><span class=\"k\">(</span>form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.rioccurrencesactions:visible'</span><span class=\"k\">).</span>length <span class=\"k\">!=</span> <span class=\"s\">0</span><span class=\"k\">)</span> <span class=\"k\">{</span>","                    updateOccurances<span class=\"k\">();</span>","                <span class=\"k\">}</span>","            <span class=\"k\">}</span>","        <span class=\"k\">);</span>","                ","        <span class=\"c\">/*</span>","<span class=\"c\">          Save and cancel methods:</span>","<span class=\"c\">        */</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.ricancelbutton'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>cancel<span class=\"k\">);</span>","        form<span class=\"k\">.</span>find<span class=\"k\">(</span><span class=\"s\">'.risavebutton'</span><span class=\"k\">).</span>click<span class=\"k\">(</span>save<span class=\"k\">);</span>","        ","        <span class=\"c\">/*</span>","<span class=\"c\">         * Public API of RecurrenceInput</span>","<span class=\"c\">         */</span>","         ","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>self<span class=\"k\">,</span> <span class=\"k\">{</span>","            display<span class=\"k\">:</span> display<span class=\"k\">,</span>","            form<span class=\"k\">:</span> form<span class=\"k\">,</span>","            loadData<span class=\"k\">:</span> loadData<span class=\"k\">,</span> <span class=\"c\">//Used by tests.</span>","            save<span class=\"k\">:</span> save <span class=\"c\">//Used by tests.</span>","        <span class=\"k\">}</span><span class=\"k\">);</span>","","    <span class=\"k\">}</span>","","","    <span class=\"c\">/*</span>","<span class=\"c\">     * jQuery plugin implementation</span>","<span class=\"c\">     */</span>","    $<span class=\"k\">.</span>fn<span class=\"k\">.</span>recurrenceinput <span class=\"k\">=</span> <span class=\"k\">function</span> <span class=\"k\">(</span>conf<span class=\"k\">)</span> <span class=\"k\">{</span>","        <span class=\"k\">if</span> <span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'recurrenceinput'</span><span class=\"k\">))</span> <span class=\"k\">{</span>","            <span class=\"c\">// plugin already installed</span>","            <span class=\"k\">return</span> <span class=\"k\">this</span><span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'recurrenceinput'</span><span class=\"k\">);</span> ","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// \"compile\" configuration for widget</span>","        <span class=\"k\">var</span> config <span class=\"k\">=</span> $<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">{}</span><span class=\"k\">,</span> tool<span class=\"k\">.</span>conf<span class=\"k\">);</span>","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>config<span class=\"k\">,</span> conf<span class=\"k\">);</span>","        $<span class=\"k\">.</span>extend<span class=\"k\">(</span>config<span class=\"k\">,</span> <span class=\"k\">{</span>i18n<span class=\"k\">:</span> LABELS<span class=\"k\">[</span>config<span class=\"k\">.</span>lang<span class=\"k\">],</span> name<span class=\"k\">:</span> <span class=\"k\">this</span><span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'name'</span><span class=\"k\">)</span><span class=\"k\">}</span><span class=\"k\">);</span>","","        <span class=\"c\">// our recurrenceinput widget instance</span>","        <span class=\"k\">var</span> recurrenceinput <span class=\"k\">=</span> <span class=\"k\">new</span> RecurrenceInput<span class=\"k\">(</span>config<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">);</span>","        <span class=\"c\">// hide textarea and place display widget after textarea</span>","        recurrenceinput<span class=\"k\">.</span>form<span class=\"k\">.</span>appendTo<span class=\"k\">(</span><span class=\"s\">'body'</span><span class=\"k\">);</span>","        <span class=\"k\">this</span><span class=\"k\">.</span>after<span class=\"k\">(</span>recurrenceinput<span class=\"k\">.</span>display<span class=\"k\">);</span>","        ","        <span class=\"k\">if</span> <span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>val<span class=\"k\">())</span> <span class=\"k\">{</span>","            recurrenceinput<span class=\"k\">.</span>display<span class=\"k\">.</span>find<span class=\"k\">(</span>","                <span class=\"s\">'input[name=richeckbox]'</span>","            <span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'checked'</span><span class=\"k\">,</span> <span class=\"k\">true</span><span class=\"k\">);</span>","        <span class=\"k\">}</span>","        ","        <span class=\"c\">// hide the textarea</span>","        <span class=\"k\">this</span><span class=\"k\">.</span>hide<span class=\"k\">();</span>","        ","        <span class=\"c\">// save the data for next call</span>","        <span class=\"k\">this</span><span class=\"k\">.</span>data<span class=\"k\">(</span><span class=\"s\">'recurrenceinput'</span><span class=\"k\">,</span> recurrenceinput<span class=\"k\">);</span>","        <span class=\"k\">return</span> recurrenceinput<span class=\"k\">;</span>","    <span class=\"k\">}</span><span class=\"k\">;</span>","","<span class=\"k\">}</span><span class=\"k\">(</span>jQuery<span class=\"k\">));</span>"];
 _$jscoverage['jquery.recurrenceinput.js'][4]++;
 (function ($) {
   _$jscoverage['jquery.recurrenceinput.js'][5]++;
@@ -560,1198 +661,1446 @@ _$jscoverage['jquery.recurrenceinput.js'][4]++;
   _$jscoverage['jquery.recurrenceinput.js'][8]++;
   var LABELS = {};
   _$jscoverage['jquery.recurrenceinput.js'][10]++;
-  tool = ($.tools.recurrenceinput = {conf: {lang: "en", readOnly: false, startField: null, ajaxURL: null, formOverlay: {speed: "fast", fixed: false}, template: {form: "#jquery-recurrenceinput-form-tmpl", display: "#jquery-recurrenceinput-display-tmpl"}, rtemplate: {daily: {rrule: "FREQ=DAILY", fields: ["ridailyinterval", "rirangeoptions"]}, mondayfriday: {rrule: "FREQ=WEEKLY;BYDAY=MO,FR", fields: ["rirangeoptions"]}, weekdays: {rrule: "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", fields: ["rirangeoptions"]}, weekly: {rrule: "FREQ=WEEKLY", fields: ["riweeklyinterval", "riweeklyweekdays", "rirangeoptions"]}, monthly: {rrule: "FREQ=MONTHLY", fields: ["rimonthlyoptions", "rirangeoptions"]}, yearly: {rrule: "FREQ=YEARLY", fields: ["riyearlyoptions", "rirangeoptions"]}}}, localize: (function (language, labels) {
-  _$jscoverage['jquery.recurrenceinput.js'][79]++;
+  tool = ($.tools.recurrenceinput = {conf: {lang: "en", readOnly: false, startField: null, ajaxURL: null, formOverlay: {speed: "fast", fixed: false}, template: {form: "#jquery-recurrenceinput-form-tmpl", display: "#jquery-recurrenceinput-display-tmpl"}, rtemplate: {daily: {rrule: "FREQ=DAILY", fields: ["ridailyinterval", "rirangeoptions"]}, mondayfriday: {rrule: "FREQ=WEEKLY;BYDAY=MO,FR", fields: ["rirangeoptions"]}, weekdays: {rrule: "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", fields: ["rirangeoptions"]}, weekly: {rrule: "FREQ=WEEKLY", fields: ["riweeklyinterval", "riweeklyweekdays", "rirangeoptions"]}, monthly: {rrule: "FREQ=MONTHLY", fields: ["rimonthlyinterval", "rimonthlyoptions", "rirangeoptions"]}, yearly: {rrule: "FREQ=YEARLY", fields: ["riyearlyinterval", "riyearlyoptions", "rirangeoptions"]}}}, localize: (function (language, labels) {
+  _$jscoverage['jquery.recurrenceinput.js'][81]++;
   LABELS[language] = labels;
 }), setTemplates: (function (templates, titles) {
-  _$jscoverage['jquery.recurrenceinput.js'][83]++;
-  var lang, template;
-  _$jscoverage['jquery.recurrenceinput.js'][84]++;
-  tool.conf.rtemplate = templates;
   _$jscoverage['jquery.recurrenceinput.js'][85]++;
+  var lang, template;
+  _$jscoverage['jquery.recurrenceinput.js'][86]++;
+  tool.conf.rtemplate = templates;
+  _$jscoverage['jquery.recurrenceinput.js'][87]++;
   for (lang in titles) {
-    _$jscoverage['jquery.recurrenceinput.js'][86]++;
+    _$jscoverage['jquery.recurrenceinput.js'][88]++;
     if (titles.hasOwnProperty(lang)) {
-      _$jscoverage['jquery.recurrenceinput.js'][87]++;
+      _$jscoverage['jquery.recurrenceinput.js'][89]++;
       for (template in titles[lang]) {
-        _$jscoverage['jquery.recurrenceinput.js'][88]++;
+        _$jscoverage['jquery.recurrenceinput.js'][90]++;
         if (titles[lang].hasOwnProperty(template)) {
-          _$jscoverage['jquery.recurrenceinput.js'][89]++;
+          _$jscoverage['jquery.recurrenceinput.js'][91]++;
           LABELS[lang].rtemplate[template] = titles[lang][template];
         }
 }
     }
 }
 })});
-  _$jscoverage['jquery.recurrenceinput.js'][98]++;
-  tool.localize("en", {displayUnactivate: "Does not repeat", displayActivate: "Repeats ", edit: "Edit...", add: "Add", recurrenceType: "Recurrence type:", dailyInterval1: "Every", dailyInterval2: "days", weeklyInterval1: "Every", weeklyInterval2: "week(s)", weeklyWeekdays: "On:", monthlyDayOfMonth1: "Day", monthlyDayOfMonth2: "of the month", monthlyDayOfMonth3: ", every", monthlyDayOfMonth4: "month(s)", monthlyWeekdayOfMonth1: "The", monthlyWeekdayOfMonth2: "", monthlyWeekdayOfMonth3: ", every", monthlyWeekdayOfMonth4: "month(s)", yearlyDayOfMonth1: "Every", yearlyDayOfMonth2: "", yearlyDayOfMonth3: "", yearlyWeekdayOfMonth1: "The", yearlyWeekdayOfMonth2: "", yearlyWeekdayOfMonth3: "of", yearlyWeekdayOfMonth4: "", range: "End recurrance:", rangeNoEnd: "No end", rangeByOccurrences1: "Ending after", rangeByOccurrences2: "occurrence(s)", rangeByEndDate: "Until ", including: ", and also ", except: ", except for", cancel: "Cancel", save: "Save", orderIndexes: ["First", "Second", "Third", "Fourth", "Last"], months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], weekdays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], shortWeekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], longDateFormat: "mmmm dd, yyyy", shortDateFormat: "mm/dd/yyyy", unsupportedFeatures: "Warning: This event uses recurrence features not supported by this widget. Saving the recurrence may change the recurrence in unintended ways:", noTemplateMatch: "No matching recurrence template", multipleDayOfMonth: "This widget does not support multiple days in monthly or yearly recurrence", bysetpos: "BYSETPOS is not supported", rtemplate: {daily: "Daily", mondayfriday: "Mondays and Fridays", weekdays: "Weekdays", weekly: "Weekly", monthly: "Monthly", yearly: "Yearly"}});
-  _$jscoverage['jquery.recurrenceinput.js'][176]++;
-  var OCCURRENCETMPL = ["<div class=\"rioccurrences\">", "{{each occurrences}}", "<div class=\"occurrence\">", "<span class=\"${occurrences[$index].type}\">", "${occurrences[$index].formattedDate}", "</span>", "{{if !readOnly}}", "<span class=\"action\">", "{{if occurrences[$index].type === \"rrule\"}}", "<a date=\"${occurrences[$index].date}\" href=\"#\"", "class=\"${occurrences[$index].type}\" >", "Exclude", "</a>", "{{/if}}", "{{if occurrences[$index].type === \"rdate\"}}", "<a date=\"${occurrences[$index].date}\" href=\"#\"", "class=\"${occurrences[$index].type}\" >", "Remove", "</a>", "{{/if}}", "{{if occurrences[$index].type === \"exdate\"}}", "<a date=\"${occurrences[$index].date}\" href=\"#\"", "class=\"${occurrences[$index].type}\" >", "Include", "</a>", "{{/if}}", "</span>", "{{/if}}", "</div>", "{{/each}}", "<div class=\"batching\">", "{{each batch.batches}}", "{{if $index === batch.currentBatch}}<span class=\"current\">{{/if}}", "<a href=\"#\" start=\"${batch.batches[$index][0]}\">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>", "{{if $index === batch.currentBatch}}</span>{{/if}}", "{{/each}}", "</div></div>"].join("\n");
-  _$jscoverage['jquery.recurrenceinput.js'][214]++;
+  _$jscoverage['jquery.recurrenceinput.js'][100]++;
+  tool.localize("en", {displayUnactivate: "Does not repeat", displayActivate: "Repeats every", edit: "Edit...", add: "Add", refresh: "Refresh", title: "Repeat", preview: "Selected dates", addDate: "Add date", recurrenceType: "Repeats:", dailyInterval1: "Repeat every:", dailyInterval2: "days", weeklyInterval1: "Repeat every:", weeklyInterval2: "week(s)", weeklyWeekdays: "Repeat on:", weeklyWeekdaysHuman: "on: ", monthlyInterval: "Repeat every:", monthlyDayOfMonth1: "Day", monthlyDayOfMonth1Human: "on day", monthlyDayOfMonth2: "of the month", monthlyDayOfMonth3: ", every", monthlyDayOfMonth4: "month(s)", monthlyWeekdayOfMonth1: "The", monthlyWeekdayOfMonth1Human: "on the", monthlyWeekdayOfMonth2: "", monthlyWeekdayOfMonth3: ", every", monthlyWeekdayOfMonth4: "month(s)", monthlyRepeatOn: "Repeat on:", yearlyInterval1: "Repeat every:", yearlyInterval2: "year(s)", yearlyDayOfMonth1: "Every", yearlyDayOfMonth1Human: "on", yearlyDayOfMonth2: "", yearlyDayOfMonth3: "", yearlyWeekdayOfMonth1: "The", yearlyWeekdayOfMonth1Human: "on the", yearlyWeekdayOfMonth2: "", yearlyWeekdayOfMonth3: "of", yearlyWeekdayOfMonth4: "", yearlyRepeatOn: "Repeat on:", range: "End recurrence:", rangeNoEnd: "Never", rangeByOccurrences1: "After", rangeByOccurrences1Human: "ends after", rangeByOccurrences2: "occurrence(s)", rangeByEndDate: "On ", rangeByEndDateHuman: "ends on ", including: ", and also ", except: ", except for", cancel: "Cancel", save: "Save", recurrenceStart: "Start of the recurrence", additionalDate: "Additional date", include: "Include", exclude: "Exclude", remove: "Remove", orderIndexes: ["First", "Second", "Third", "Fourth", "Last"], months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], weekdays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], shortWeekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], longDateFormat: "mmmm dd, yyyy", shortDateFormat: "mm/dd/yyyy", unsupportedFeatures: "Warning: This event uses recurrence features not supported by this widget. Saving the recurrence may change the recurrence in unintended ways:", noTemplateMatch: "No matching recurrence template", multipleDayOfMonth: "This widget does not support multiple days in monthly or yearly recurrence", bysetpos: "BYSETPOS is not supported", noRule: "No RRULE in RRULE data", noRepeatEvery: "Error: Repeat every field must be a positive integer value (max. 1000)", noEndDate: "Error: End date is not set. Please set a correct value", pastEndDate: "Error: End date cannot be before start date", noEndAfterNOccurrences: "Error: After N occurrences field must be a positive integer value (max. 1000)", noRepeatOn: "Error: Repeat on value must be selected", rtemplate: {daily: "Daily", mondayfriday: "Mondays and Fridays", weekdays: "Weekdays", weekly: "Weekly", monthly: "Monthly", yearly: "Yearly"}});
+  _$jscoverage['jquery.recurrenceinput.js'][207]++;
+  var OCCURRENCETMPL = ["<div class=\"rioccurrences\">", "{{each occurrences}}", "<div class=\"occurrence {{if occurrences[$index].type === \"exdate\"}}dimm{{/if}} {{if occurrences[$index].type === \"rdate\"}}exc{{/if}}\">", "<span class=\"${occurrences[$index].type}\">", "${occurrences[$index].formattedDate}", "{{if occurrences[$index].type === \"start\"}}", "<span>${i18n.recurrenceStart}</span>", "{{/if}}", "{{if occurrences[$index].type === \"rdate\"}}", "<span>${i18n.additionalDate}</span>", "{{/if}}", "</span>", "{{if !readOnly}}", "<span class=\"action\">", "{{if occurrences[$index].type === \"rrule\"}}", "<a date=\"${occurrences[$index].date}\" href=\"#\"", "class=\"${occurrences[$index].type}\" title=\"${i18n.exclude}\">", "${i18n.exclude}", "</a>", "{{/if}}", "{{if occurrences[$index].type === \"rdate\"}}", "<a date=\"${occurrences[$index].date}\" href=\"#\"", "class=\"${occurrences[$index].type}\" title=\"${i18n.remove}\" >", "${i18n.remove}", "</a>", "{{/if}}", "{{if occurrences[$index].type === \"exdate\"}}", "<a date=\"${occurrences[$index].date}\" href=\"#\"", "class=\"${occurrences[$index].type}\" title=\"${i18n.include}\">", "${i18n.include}", "</a>", "{{/if}}", "</span>", "{{/if}}", "</div>", "{{/each}}", "<div class=\"batching\">", "{{each batch.batches}}", "{{if $index === batch.currentBatch}}<span class=\"current\">{{/if}}", "<a href=\"#\" start=\"${batch.batches[$index][0]}\">[${batch.batches[$index][0]} - ${batch.batches[$index][1]}]</a>", "{{if $index === batch.currentBatch}}</span>{{/if}}", "{{/each}}", "</div></div>"].join("\n");
+  _$jscoverage['jquery.recurrenceinput.js'][251]++;
   $.template("occurrenceTmpl", OCCURRENCETMPL);
-  _$jscoverage['jquery.recurrenceinput.js'][216]++;
+  _$jscoverage['jquery.recurrenceinput.js'][253]++;
   var DISPLAYTMPL = ["<div class=\"ridisplay\">", "<div class=\"rimain\">", "{{if !readOnly}}", "<input type=\"checkbox\" name=\"richeckbox\" />", "{{/if}}", "<label class=\"ridisplay\">${i18n.displayUnactivate}</label>", "{{if !readOnly}}", "<a href=\"#\" name=\"riedit\">${i18n.edit}</a>", "{{/if}}", "</div>", "<div class=\"rioccurrences\" style=\"display:none\" /></div>"].join("\n");
-  _$jscoverage['jquery.recurrenceinput.js'][228]++;
+  _$jscoverage['jquery.recurrenceinput.js'][265]++;
   $.template("displayTmpl", DISPLAYTMPL);
-  _$jscoverage['jquery.recurrenceinput.js'][230]++;
-  var FORMTMPL = ["<div class=\"riform\">", "<form>", "<div id=\"messagearea\" style=\"display: none;\">", "</div>", "<div id=\"rirtemplate\">", "<label for=\"${name}rtemplate\">", "${i18n.recurrenceType}", "<select name=\"rirtemplate\">", "{{each rtemplate}}", "<option value=\"${$index}\">${i18n.rtemplate[$index]}</value>", "{{/each}}", "</select>", "</label>", "<div>", "<div id=\"riformfields\">", "<div id=\"ridailyinterval\" class=\"rifield\">", "<label for=\"${name}dailyinterval\">", "${i18n.dailyInterval1}", "<input type=\"text\" size=\"2\"", "value=\"1\"", "name=\"ridailyinterval\"", "id=\"${name}dailyinterval\" />", "${i18n.dailyInterval2}", "</label>", "</div>", "<div id=\"riweeklyinterval\" class=\"rifield\">", "<label for=\"${name}weeklyinterval\">", "${i18n.weeklyInterval1}", "<input type=\"text\" size=\"2\"", "value=\"1\"", "name=\"riweeklyinterval\"", "id=\"${name}weeklyinterval\"/>", "${i18n.weeklyInterval2}", "</label>", "</div>", "<div id=\"riweeklyweekdays\" class=\"rifield\">", "<label for=\"${name}weeklyinterval\">${i18n.weeklyWeekdays}</label>", "{{each i18n.weekdays}}", "<input type=\"checkbox\"", "name=\"riweeklyweekdays${weekdays[$index]}\"", "id=\"${name}weeklyWeekdays${weekdays[$index]}\"", "value=\"${weekdays[$index]}\" />", "<label for=\"${name}weeklyWeekdays${weekdays[$index]}\">${$value}</label>", "{{if $index==3}}<br/>{{/if}}", "{{/each}}", "</ul>", "</div>", "<div id=\"rimonthlyoptions\" class=\"rifield\">", "<div>", "<input", "type=\"radio\"", "value=\"DAYOFMONTH\"", "name=\"rimonthlytype\"", "id=\"${name}monthlytype:DAYOFMONTH\" />", "<label for=\"${name}monthlytype:DAYOFMONTH\">", "${i18n.monthlyDayOfMonth1}", "<select name=\"rimonthlydayofmonthday\"", "id=\"${name}monthlydayofmonthday\">", "{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,", "18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}", "<option value=\"${$value}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.monthlyDayOfMonth2}${i18n.monthlyDayOfMonth3}", "<input type=\"text\" size=\"2\"", "value=\"1\" ", "name=\"rimonthlydayofmonthinterval\"/>", "${i18n.monthlyDayOfMonth4}", "</label>", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"WEEKDAYOFMONTH\"", "name=\"rimonthlytype\"", "id=\"${name}monthlytype:WEEKDAYOFMONTH\" />", "<label for=\"${name}monthlytype:WEEKDAYOFMONTH\">", "${i18n.monthlyWeekdayOfMonth1}", "<select name=\"rimonthlyweekdayofmonthindex\">", "{{each i18n.orderIndexes}}", "<option value=\"${orderIndexes[$index]}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.monthlyWeekdayOfMonth2}", "<select name=\"rimonthlyweekdayofmonth\">", "{{each i18n.weekdays}}", "<option value=\"${weekdays[$index]}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.monthlyWeekdayOfMonth3}", "<input type=\"text\" size=\"2\"", "value=\"1\"", "name=\"rimonthlyweekdayofmonthinterval\" />", "${i18n.monthlyWeekdayOfMonth4}", "</label>", "</div>", "</div>", "<div id=\"riyearlyoptions\" class=\"rifield\">", "<div>", "<input", "type=\"radio\"", "value=\"DAYOFMONTH\"", "name=\"riyearlyType\"", "id=\"${name}yearlytype:DAYOFMONTH\" />", "<label for=\"${name}yearlytype:DAYOFMONTH\">", "${i18n.yearlyDayOfMonth1}", "<select name=\"riyearlydayofmonthmonth\">", "{{each i18n.months}}", "<option value=\"${$index+1}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyDayOfMonth2}", "<select name=\"riyearlydayofmonthday\">", "{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,", "18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}", "<option value=\"${$value}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyDayOfMonth3}", "</label>", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"WEEKDAYOFMONTH\"", "name=\"riyearlyType\"", "id=\"${name}yearlytype:WEEKDAYOFMONTH\"/>", "<label for=\"${name}yearlytype:WEEKDAYOFMONTH\">", "${i18n.yearlyWeekdayOfMonth1}", "</label>", "<select name=\"riyearlyweekdayofmonthindex\">", "{{each i18n.orderIndexes}}", "<option value=\"${orderIndexes[$index]}\">${$value}</option>", "{{/each}}", "</select>", "<label for=\"${name}yearlytype:WEEKDAYOFMONTH\">", "${i18n.yearlyWeekdayOfMonth2}", "<select name=\"riyearlyweekdayofmonthday\">", "{{each i18n.weekdays}}", "<option value=\"${weekdays[$index]}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyWeekdayOfMonth3}", "<select name=\"riyearlyweekdayofmonthmonth\">", "{{each i18n.months}}", "<option value=\"${$index+1}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyWeekdayOfMonth4}", "</label>", "</div>", "</div>", "<div id=\"rirangeoptions\" class=\"rifield\">", "<label>${i18n.range}</label>", "<div>", "<input", "type=\"radio\"", "value=\"NOENDDATE\"", "name=\"rirangetype\"", "id=\"${name}rangetype:NOENDDATE\"/>", "<label for=\"${name}rangetype:NOENDDATE\">", "${i18n.rangeNoEnd}", "</label>", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"BYOCCURRENCES\"", "name=\"rirangetype\"", "id=\"${name}rangetype:BYOCCURRENCES\"/>", "<label for=\"${name}rangetype:BYOCCURRENCES\">", "${i18n.rangeByOccurrences1}", "<input", "type=\"text\" size=\"3\"", "value=\"10\"", "name=\"rirangebyoccurrencesvalue\" />", "${i18n.rangeByOccurrences2}", "</label>", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"BYENDDATE\"", "name=\"rirangetype\"", "id=\"${name}rangetype:BYENDDATE\"/>", "<label for=\"${name}rangetype:BYENDDATE\">", "${i18n.rangeByEndDate}", "</label>", "<input", "type=\"date\"", "name=\"rirangebyenddatecalendar\" />", "</div>", "</div>", "</div>", "<div class=\"rioccurrencesactions\">", "<div>", "<span class=\"riaddoccurrence\">", "<input type=\"date\" name=\"adddate\" id=\"adddate\" />", "<input type=\"button\" name=\"addaction\" id=\"addaction\" value=\"${i18n.add}\">", "</span>", "<span class=\"refreshbutton action\">", "<a class=\"rirefreshbutton\" href=\"#\" >", "Refresh", "</a>", "</span>", "</div>", "</div>", "<div class=\"rioccurrences\">", "</div>", "<div class=\"ributtons\">", "<input", "type=\"submit\"", "class=\"ricancelbutton\"", "value=\"${i18n.cancel}\" />", "<input", "type=\"submit\"", "class=\"risavebutton\"", "value=\"${i18n.save}\" />", "</div>", "</form></div>"].join("\n");
-  _$jscoverage['jquery.recurrenceinput.js'][451]++;
+  _$jscoverage['jquery.recurrenceinput.js'][267]++;
+  var FORMTMPL = ["<div class=\"riform\">", "<form>", "<h1>${i18n.title}</h1>", "<div id=\"messagearea\" style=\"display: none;\">", "</div>", "<div id=\"rirtemplate\">", "<label for=\"${name}rtemplate\" class=\"label\">", "${i18n.recurrenceType}", "</label>", "<select id=\"rirtemplate\" name=\"rirtemplate\" class=\"field\">", "{{each rtemplate}}", "<option value=\"${$index}\">${i18n.rtemplate[$index]}</value>", "{{/each}}", "</select>", "<div>", "<div id=\"riformfields\">", "<div id=\"ridailyinterval\" class=\"rifield\">", "<label for=\"${name}dailyinterval\" class=\"label\">", "${i18n.dailyInterval1}", "</label>", "<div class=\"field\">", "<input type=\"text\" size=\"2\"", "value=\"1\"", "name=\"ridailyinterval\"", "id=\"${name}dailyinterval\" />", "${i18n.dailyInterval2}", "</div>", "</div>", "<div id=\"riweeklyinterval\" class=\"rifield\">", "<label for=\"${name}weeklyinterval\" class=\"label\">", "${i18n.weeklyInterval1}", "</label>", "<div class=\"field\">", "<input type=\"text\" size=\"2\"", "value=\"1\"", "name=\"riweeklyinterval\"", "id=\"${name}weeklyinterval\"/>", "${i18n.weeklyInterval2}", "</div>", "</div>", "<div id=\"riweeklyweekdays\" class=\"rifield\">", "<label for=\"${name}weeklyinterval\" class=\"label\">${i18n.weeklyWeekdays}</label>", "<div class=\"field\">", "{{each i18n.shortWeekdays}}", "<div class=\"riweeklyweekday\">", "<input type=\"checkbox\"", "name=\"riweeklyweekdays${weekdays[$index]}\"", "id=\"${name}weeklyWeekdays${weekdays[$index]}\"", "value=\"${weekdays[$index]}\" />", "<label for=\"${name}weeklyWeekdays${weekdays[$index]}\">${$value}</label>", "</div>", "{{/each}}", "</div>", "</div>", "<div id=\"rimonthlyinterval\" class=\"rifield\">", "<label for=\"rimonthlyinterval\" class=\"label\">${i18n.monthlyInterval}</label>", "<div class=\"field\">", "<input type=\"text\" size=\"2\"", "value=\"1\" ", "name=\"rimonthlyinterval\"/>", "${i18n.monthlyDayOfMonth4}", "</div>", "</div>", "<div id=\"rimonthlyoptions\" class=\"rifield\">", "<label for=\"rimonthlytype\" class=\"label\">${i18n.monthlyRepeatOn}</label>", "<div class=\"field\">", "<div>", "<input", "type=\"radio\"", "value=\"DAYOFMONTH\"", "name=\"rimonthlytype\"", "id=\"${name}monthlytype:DAYOFMONTH\" />", "<label for=\"${name}monthlytype:DAYOFMONTH\">", "${i18n.monthlyDayOfMonth1}", "</label>", "<select name=\"rimonthlydayofmonthday\"", "id=\"${name}monthlydayofmonthday\">", "{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,", "18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}", "<option value=\"${$value}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.monthlyDayOfMonth2}", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"WEEKDAYOFMONTH\"", "name=\"rimonthlytype\"", "id=\"${name}monthlytype:WEEKDAYOFMONTH\" />", "<label for=\"${name}monthlytype:WEEKDAYOFMONTH\">", "${i18n.monthlyWeekdayOfMonth1}", "</label>", "<select name=\"rimonthlyweekdayofmonthindex\">", "{{each i18n.orderIndexes}}", "<option value=\"${orderIndexes[$index]}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.monthlyWeekdayOfMonth2}", "<select name=\"rimonthlyweekdayofmonth\">", "{{each i18n.weekdays}}", "<option value=\"${weekdays[$index]}\">${$value}</option>", "{{/each}}", "</select>", "</div>", "</div>", "</div>", "<div id=\"riyearlyinterval\" class=\"rifield\">", "<label for=\"riyearlyinterval\" class=\"label\">${i18n.yearlyInterval1}</label>", "<div class=\"field\">", "<input type=\"text\" size=\"2\"", "value=\"1\" ", "name=\"riyearlyinterval\"/>", "${i18n.yearlyInterval2}", "</div>", "</div>", "<div id=\"riyearlyoptions\" class=\"rifield\">", "<label for=\"riyearlyType\" class=\"label\">${i18n.yearlyRepeatOn}</label>", "<div class=\"field\">", "<div>", "<input", "type=\"radio\"", "value=\"DAYOFMONTH\"", "name=\"riyearlyType\"", "id=\"${name}yearlytype:DAYOFMONTH\" />", "<label for=\"${name}yearlytype:DAYOFMONTH\">", "${i18n.yearlyDayOfMonth1}", "</label>", "<select name=\"riyearlydayofmonthmonth\">", "{{each i18n.months}}", "<option value=\"${$index+1}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyDayOfMonth2}", "<select name=\"riyearlydayofmonthday\">", "{{each [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,", "18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}", "<option value=\"${$value}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyDayOfMonth3}", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"WEEKDAYOFMONTH\"", "name=\"riyearlyType\"", "id=\"${name}yearlytype:WEEKDAYOFMONTH\"/>", "<label for=\"${name}yearlytype:WEEKDAYOFMONTH\">", "${i18n.yearlyWeekdayOfMonth1}", "</label>", "<select name=\"riyearlyweekdayofmonthindex\">", "{{each i18n.orderIndexes}}", "<option value=\"${orderIndexes[$index]}\">${$value}</option>", "{{/each}}", "</select>", "<label for=\"${name}yearlytype:WEEKDAYOFMONTH\">", "${i18n.yearlyWeekdayOfMonth2}", "</label>", "<select name=\"riyearlyweekdayofmonthday\">", "{{each i18n.weekdays}}", "<option value=\"${weekdays[$index]}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyWeekdayOfMonth3}", "<select name=\"riyearlyweekdayofmonthmonth\">", "{{each i18n.months}}", "<option value=\"${$index+1}\">${$value}</option>", "{{/each}}", "</select>", "${i18n.yearlyWeekdayOfMonth4}", "</div>", "</div>", "</div>", "<div id=\"rirangeoptions\" class=\"rifield\">", "<label class=\"label\">${i18n.range}</label>", "<div class=\"field\">", "<div>", "<input", "type=\"radio\"", "value=\"NOENDDATE\"", "name=\"rirangetype\"", "id=\"${name}rangetype:NOENDDATE\"/>", "<label for=\"${name}rangetype:NOENDDATE\">", "${i18n.rangeNoEnd}", "</label>", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"BYOCCURRENCES\"", "name=\"rirangetype\"", "id=\"${name}rangetype:BYOCCURRENCES\"/>", "<label for=\"${name}rangetype:BYOCCURRENCES\">", "${i18n.rangeByOccurrences1}", "</label>", "<input", "type=\"text\" size=\"3\"", "value=\"10\"", "name=\"rirangebyoccurrencesvalue\" />", "${i18n.rangeByOccurrences2}", "</div>", "<div>", "<input", "type=\"radio\"", "value=\"BYENDDATE\"", "name=\"rirangetype\"", "id=\"${name}rangetype:BYENDDATE\"/>", "<label for=\"${name}rangetype:BYENDDATE\">", "${i18n.rangeByEndDate}", "</label>", "<input", "type=\"date\"", "name=\"rirangebyenddatecalendar\" />", "</div>", "</div>", "</div>", "</div>", "<div class=\"rioccurrencesactions\">", "<div class=\"rioccurancesheader\">", "<h2>${i18n.preview}</h2>", "<span class=\"refreshbutton action\">", "<a class=\"rirefreshbutton\" href=\"#\" title=\"${i18n.refresh}\">", "${i18n.refresh}", "</a>", "</span>", "</div>", "</div>", "<div class=\"rioccurrences\">", "</div>", "<div class=\"rioccurrencesactions\">", "<div class=\"rioccurancesheader\">", "<h2>${i18n.addDate}</h2>", "</div>", "<div class=\"riaddoccurrence\">", "<input type=\"date\" name=\"adddate\" id=\"adddate\" />", "<input type=\"button\" name=\"addaction\" id=\"addaction\" value=\"${i18n.add}\">", "</div>", "</div>", "<div class=\"ributtons\">", "<input", "type=\"submit\"", "class=\"ricancelbutton\"", "value=\"${i18n.cancel}\" />", "<input", "type=\"submit\"", "class=\"risavebutton\"", "value=\"${i18n.save}\" />", "</div>", "</form></div>"].join("\n");
+  _$jscoverage['jquery.recurrenceinput.js'][519]++;
   $.template("formTmpl", FORMTMPL);
-  _$jscoverage['jquery.recurrenceinput.js'][454]++;
+  _$jscoverage['jquery.recurrenceinput.js'][522]++;
   var Re = /d{1,4}|m{1,4}|yy(?:yy)?|"[^"]*"|'[^']*'/g;
-  _$jscoverage['jquery.recurrenceinput.js'][456]++;
+  _$jscoverage['jquery.recurrenceinput.js'][524]++;
   function zeropad(val, len) {
-    _$jscoverage['jquery.recurrenceinput.js'][457]++;
+    _$jscoverage['jquery.recurrenceinput.js'][525]++;
     val = val.toString();
-    _$jscoverage['jquery.recurrenceinput.js'][458]++;
+    _$jscoverage['jquery.recurrenceinput.js'][526]++;
     len = (len || 2);
-    _$jscoverage['jquery.recurrenceinput.js'][459]++;
+    _$jscoverage['jquery.recurrenceinput.js'][527]++;
     while ((val.length < len)) {
-      _$jscoverage['jquery.recurrenceinput.js'][459]++;
+      _$jscoverage['jquery.recurrenceinput.js'][527]++;
       val = ("0" + val);
 }
-    _$jscoverage['jquery.recurrenceinput.js'][460]++;
+    _$jscoverage['jquery.recurrenceinput.js'][528]++;
     return val;
 }
-  _$jscoverage['jquery.recurrenceinput.js'][463]++;
+  _$jscoverage['jquery.recurrenceinput.js'][531]++;
   function format(date, fmt, conf) {
-    _$jscoverage['jquery.recurrenceinput.js'][465]++;
+    _$jscoverage['jquery.recurrenceinput.js'][533]++;
     var d = date.getDate(), D = date.getDay(), m = date.getMonth(), y = date.getFullYear(), flags = {d: d, dd: zeropad(d), ddd: conf.i18n.shortWeekdays[D], dddd: conf.i18n.weekdays[D], m: (m + 1), mm: zeropad((m + 1)), mmm: conf.i18n.shortMonths[m], mmmm: conf.i18n.months[m], yy: String(y).slice(2), yyyy: y};
-    _$jscoverage['jquery.recurrenceinput.js'][483]++;
+    _$jscoverage['jquery.recurrenceinput.js'][551]++;
     var result = fmt.replace(Re, (function ($0) {
-  _$jscoverage['jquery.recurrenceinput.js'][484]++;
+  _$jscoverage['jquery.recurrenceinput.js'][552]++;
   return (flags.hasOwnProperty($0)? flags[$0]: $0.slice(1, ($0.length - 1)));
 }));
-    _$jscoverage['jquery.recurrenceinput.js'][487]++;
+    _$jscoverage['jquery.recurrenceinput.js'][555]++;
     return result;
 }
-  _$jscoverage['jquery.recurrenceinput.js'][494]++;
+  _$jscoverage['jquery.recurrenceinput.js'][562]++;
   function widgetSaveToRfc5545(form, conf, tz) {
-    _$jscoverage['jquery.recurrenceinput.js'][495]++;
+    _$jscoverage['jquery.recurrenceinput.js'][563]++;
     var value = form.find("select[name=rirtemplate]").val();
-    _$jscoverage['jquery.recurrenceinput.js'][496]++;
+    _$jscoverage['jquery.recurrenceinput.js'][564]++;
     var rtemplate = conf.rtemplate[value];
-    _$jscoverage['jquery.recurrenceinput.js'][497]++;
+    _$jscoverage['jquery.recurrenceinput.js'][565]++;
     var result = rtemplate.rrule;
-    _$jscoverage['jquery.recurrenceinput.js'][498]++;
+    _$jscoverage['jquery.recurrenceinput.js'][566]++;
     var human = conf.i18n.rtemplate[value];
-    _$jscoverage['jquery.recurrenceinput.js'][499]++;
+    _$jscoverage['jquery.recurrenceinput.js'][567]++;
     var field, input, weekdays, i18nweekdays, i, j, index, tmp;
-    _$jscoverage['jquery.recurrenceinput.js'][500]++;
+    _$jscoverage['jquery.recurrenceinput.js'][568]++;
     var day, month, year, interval, yearlyType, occurrences, date;
-    _$jscoverage['jquery.recurrenceinput.js'][502]++;
+    _$jscoverage['jquery.recurrenceinput.js'][570]++;
     for (i = 0; (i < rtemplate.fields.length); (i++)) {
-      _$jscoverage['jquery.recurrenceinput.js'][503]++;
+      _$jscoverage['jquery.recurrenceinput.js'][571]++;
       field = form.find(("#" + rtemplate.fields[i]));
-      _$jscoverage['jquery.recurrenceinput.js'][505]++;
+      _$jscoverage['jquery.recurrenceinput.js'][573]++;
       switch (field.attr("id")) {
       case "ridailyinterval":
-        _$jscoverage['jquery.recurrenceinput.js'][508]++;
-        input = field.find("input[name=ridailyinterval]");
-        _$jscoverage['jquery.recurrenceinput.js'][509]++;
-        result += (";INTERVAL=" + input.val());
-        _$jscoverage['jquery.recurrenceinput.js'][510]++;
-        human = (conf.i18n.dailyInterval1 + " " + input.val() + " " + conf.i18n.dailyInterval2);
-        _$jscoverage['jquery.recurrenceinput.js'][511]++;
+        _$jscoverage['jquery.recurrenceinput.js'][576]++;
+        interval = field.find("input[name=ridailyinterval]").val();
+        _$jscoverage['jquery.recurrenceinput.js'][577]++;
+        if ((interval != "1")) {
+          _$jscoverage['jquery.recurrenceinput.js'][578]++;
+          result += (";INTERVAL=" + interval);
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][580]++;
+        human = (interval + " " + conf.i18n.dailyInterval2);
+        _$jscoverage['jquery.recurrenceinput.js'][581]++;
         break;
       case "riweeklyinterval":
-        _$jscoverage['jquery.recurrenceinput.js'][514]++;
-        input = field.find("input[name=riweeklyinterval]");
-        _$jscoverage['jquery.recurrenceinput.js'][515]++;
-        result += (";INTERVAL=" + input.val());
-        _$jscoverage['jquery.recurrenceinput.js'][516]++;
-        human = (conf.i18n.weeklyInterval1 + " " + input.val() + " " + conf.i18n.weeklyInterval2);
-        _$jscoverage['jquery.recurrenceinput.js'][517]++;
+        _$jscoverage['jquery.recurrenceinput.js'][584]++;
+        interval = field.find("input[name=riweeklyinterval]").val();
+        _$jscoverage['jquery.recurrenceinput.js'][585]++;
+        if ((interval != "1")) {
+          _$jscoverage['jquery.recurrenceinput.js'][586]++;
+          result += (";INTERVAL=" + interval);
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][588]++;
+        human = (interval + " " + conf.i18n.weeklyInterval2);
+        _$jscoverage['jquery.recurrenceinput.js'][589]++;
         break;
       case "riweeklyweekdays":
-        _$jscoverage['jquery.recurrenceinput.js'][520]++;
+        _$jscoverage['jquery.recurrenceinput.js'][592]++;
         weekdays = "";
-        _$jscoverage['jquery.recurrenceinput.js'][521]++;
+        _$jscoverage['jquery.recurrenceinput.js'][593]++;
         i18nweekdays = "";
-        _$jscoverage['jquery.recurrenceinput.js'][522]++;
+        _$jscoverage['jquery.recurrenceinput.js'][594]++;
         for (j = 0; (j < conf.weekdays.length); (j++)) {
-          _$jscoverage['jquery.recurrenceinput.js'][523]++;
+          _$jscoverage['jquery.recurrenceinput.js'][595]++;
           input = field.find(("input[name=riweeklyweekdays" + conf.weekdays[j] + "]"));
-          _$jscoverage['jquery.recurrenceinput.js'][524]++;
+          _$jscoverage['jquery.recurrenceinput.js'][596]++;
           if (input.is(":checked")) {
-            _$jscoverage['jquery.recurrenceinput.js'][525]++;
+            _$jscoverage['jquery.recurrenceinput.js'][597]++;
             if (weekdays) {
-              _$jscoverage['jquery.recurrenceinput.js'][526]++;
+              _$jscoverage['jquery.recurrenceinput.js'][598]++;
               weekdays += ",";
-              _$jscoverage['jquery.recurrenceinput.js'][527]++;
+              _$jscoverage['jquery.recurrenceinput.js'][599]++;
               i18nweekdays += ", ";
             }
-            _$jscoverage['jquery.recurrenceinput.js'][529]++;
+            _$jscoverage['jquery.recurrenceinput.js'][601]++;
             weekdays += conf.weekdays[j];
-            _$jscoverage['jquery.recurrenceinput.js'][530]++;
+            _$jscoverage['jquery.recurrenceinput.js'][602]++;
             i18nweekdays += conf.i18n.weekdays[j];
           }
 }
-        _$jscoverage['jquery.recurrenceinput.js'][533]++;
+        _$jscoverage['jquery.recurrenceinput.js'][605]++;
         if (weekdays) {
-          _$jscoverage['jquery.recurrenceinput.js'][534]++;
+          _$jscoverage['jquery.recurrenceinput.js'][606]++;
           result += (";BYDAY=" + weekdays);
-          _$jscoverage['jquery.recurrenceinput.js'][535]++;
-          human += (" " + conf.i18n.weeklyWeekdays + " " + i18nweekdays);
+          _$jscoverage['jquery.recurrenceinput.js'][607]++;
+          human += (" " + conf.i18n.weeklyWeekdaysHuman + " " + i18nweekdays);
         }
-        _$jscoverage['jquery.recurrenceinput.js'][537]++;
+        _$jscoverage['jquery.recurrenceinput.js'][609]++;
+        break;
+      case "rimonthlyinterval":
+        _$jscoverage['jquery.recurrenceinput.js'][612]++;
+        interval = field.find("input[name=rimonthlyinterval]").val();
+        _$jscoverage['jquery.recurrenceinput.js'][613]++;
+        if ((interval != "1")) {
+          _$jscoverage['jquery.recurrenceinput.js'][614]++;
+          result += (";INTERVAL=" + interval);
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][616]++;
+        human = (interval + " " + conf.i18n.monthlyDayOfMonth4);
+        _$jscoverage['jquery.recurrenceinput.js'][617]++;
         break;
       case "rimonthlyoptions":
-        _$jscoverage['jquery.recurrenceinput.js'][540]++;
+        _$jscoverage['jquery.recurrenceinput.js'][620]++;
         var monthlyType = $("input[name=rimonthlytype]:checked", form).val();
-        _$jscoverage['jquery.recurrenceinput.js'][541]++;
+        _$jscoverage['jquery.recurrenceinput.js'][621]++;
         switch (monthlyType) {
         case "DAYOFMONTH":
-          _$jscoverage['jquery.recurrenceinput.js'][544]++;
+          _$jscoverage['jquery.recurrenceinput.js'][624]++;
           day = $("select[name=rimonthlydayofmonthday]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][545]++;
-          interval = $("input[name=rimonthlydayofmonthinterval]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][546]++;
+          _$jscoverage['jquery.recurrenceinput.js'][625]++;
           result += (";BYMONTHDAY=" + day);
-          _$jscoverage['jquery.recurrenceinput.js'][547]++;
-          result += (";INTERVAL=" + interval);
-          _$jscoverage['jquery.recurrenceinput.js'][548]++;
-          human += (", " + conf.i18n.monthlyDayOfMonth1 + " " + day + " " + conf.i18n.monthlyDayOfMonth2);
-          _$jscoverage['jquery.recurrenceinput.js'][549]++;
-          if ((interval !== 1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][550]++;
-            human += (conf.i18n.monthlyDayOfMonth3 + " " + interval + " " + conf.i18n.monthlyDayOfMonth4);
-          }
-          _$jscoverage['jquery.recurrenceinput.js'][552]++;
+          _$jscoverage['jquery.recurrenceinput.js'][626]++;
+          human += (", " + conf.i18n.monthlyDayOfMonth1Human + " " + day + " " + conf.i18n.monthlyDayOfMonth2);
+          _$jscoverage['jquery.recurrenceinput.js'][627]++;
           break;
         case "WEEKDAYOFMONTH":
-          _$jscoverage['jquery.recurrenceinput.js'][554]++;
+          _$jscoverage['jquery.recurrenceinput.js'][629]++;
           index = $("select[name=rimonthlyweekdayofmonthindex]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][555]++;
+          _$jscoverage['jquery.recurrenceinput.js'][630]++;
           day = $("select[name=rimonthlyweekdayofmonth]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][556]++;
-          interval = $("input[name=rimonthlyweekdayofmonthinterval]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][557]++;
+          _$jscoverage['jquery.recurrenceinput.js'][631]++;
           if (($.inArray(day, ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]) > -1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][558]++;
+            _$jscoverage['jquery.recurrenceinput.js'][632]++;
             result += (";BYDAY=" + index + day);
-            _$jscoverage['jquery.recurrenceinput.js'][559]++;
-            human += (", " + conf.i18n.monthlyWeekdayOfMonth1 + " ");
-            _$jscoverage['jquery.recurrenceinput.js'][560]++;
-            human += (" " + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)]);
-            _$jscoverage['jquery.recurrenceinput.js'][561]++;
+            _$jscoverage['jquery.recurrenceinput.js'][633]++;
+            human += (", " + conf.i18n.monthlyWeekdayOfMonth1Human + " ");
+            _$jscoverage['jquery.recurrenceinput.js'][634]++;
+            human += (" " + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)]);
+            _$jscoverage['jquery.recurrenceinput.js'][635]++;
             human += (" " + conf.i18n.monthlyWeekdayOfMonth2);
-            _$jscoverage['jquery.recurrenceinput.js'][562]++;
-            human += (" " + conf.i18n.weekdays[conf.weekdays.indexOf(day)]);
+            _$jscoverage['jquery.recurrenceinput.js'][636]++;
+            human += (" " + conf.i18n.weekdays[$.inArray(day, conf.weekdays)]);
+            _$jscoverage['jquery.recurrenceinput.js'][637]++;
+            human += (" " + conf.i18n.monthlyDayOfMonth2);
           }
-          _$jscoverage['jquery.recurrenceinput.js'][564]++;
-          result += (";INTERVAL=" + interval);
-          _$jscoverage['jquery.recurrenceinput.js'][565]++;
-          if ((interval !== 1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][566]++;
-            human += (" " + conf.i18n.monthlyWeekdayOfMonth3 + " " + interval + " " + conf.i18n.monthlyWeekdayOfMonth4);
-          }
-          _$jscoverage['jquery.recurrenceinput.js'][568]++;
+          _$jscoverage['jquery.recurrenceinput.js'][639]++;
           break;
         }
-        _$jscoverage['jquery.recurrenceinput.js'][570]++;
+        _$jscoverage['jquery.recurrenceinput.js'][641]++;
+        break;
+      case "riyearlyinterval":
+        _$jscoverage['jquery.recurrenceinput.js'][644]++;
+        interval = field.find("input[name=riyearlyinterval]").val();
+        _$jscoverage['jquery.recurrenceinput.js'][645]++;
+        if ((interval != "1")) {
+          _$jscoverage['jquery.recurrenceinput.js'][646]++;
+          result += (";INTERVAL=" + interval);
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][648]++;
+        human = (interval + " " + conf.i18n.yearlyInterval2);
+        _$jscoverage['jquery.recurrenceinput.js'][649]++;
         break;
       case "riyearlyoptions":
-        _$jscoverage['jquery.recurrenceinput.js'][573]++;
+        _$jscoverage['jquery.recurrenceinput.js'][652]++;
         yearlyType = $("input[name=riyearlyType]:checked", form).val();
-        _$jscoverage['jquery.recurrenceinput.js'][574]++;
+        _$jscoverage['jquery.recurrenceinput.js'][653]++;
         switch (yearlyType) {
         case "DAYOFMONTH":
-          _$jscoverage['jquery.recurrenceinput.js'][577]++;
+          _$jscoverage['jquery.recurrenceinput.js'][656]++;
           month = $("select[name=riyearlydayofmonthmonth]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][578]++;
+          _$jscoverage['jquery.recurrenceinput.js'][657]++;
           day = $("select[name=riyearlydayofmonthday]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][579]++;
+          _$jscoverage['jquery.recurrenceinput.js'][658]++;
           result += (";BYMONTH=" + month);
-          _$jscoverage['jquery.recurrenceinput.js'][580]++;
+          _$jscoverage['jquery.recurrenceinput.js'][659]++;
           result += (";BYMONTHDAY=" + day);
-          _$jscoverage['jquery.recurrenceinput.js'][581]++;
-          human += (", " + conf.i18n.months[(month - 1)] + " " + day);
-          _$jscoverage['jquery.recurrenceinput.js'][582]++;
+          _$jscoverage['jquery.recurrenceinput.js'][660]++;
+          human += (", " + conf.i18n.yearlyDayOfMonth1Human + " " + conf.i18n.months[(month - 1)] + " " + day);
+          _$jscoverage['jquery.recurrenceinput.js'][661]++;
           break;
         case "WEEKDAYOFMONTH":
-          _$jscoverage['jquery.recurrenceinput.js'][584]++;
+          _$jscoverage['jquery.recurrenceinput.js'][663]++;
           index = $("select[name=riyearlyweekdayofmonthindex]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][585]++;
+          _$jscoverage['jquery.recurrenceinput.js'][664]++;
           day = $("select[name=riyearlyweekdayofmonthday]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][586]++;
+          _$jscoverage['jquery.recurrenceinput.js'][665]++;
           month = $("select[name=riyearlyweekdayofmonthmonth]", form).val();
-          _$jscoverage['jquery.recurrenceinput.js'][587]++;
+          _$jscoverage['jquery.recurrenceinput.js'][666]++;
           result += (";BYMONTH=" + month);
-          _$jscoverage['jquery.recurrenceinput.js'][588]++;
+          _$jscoverage['jquery.recurrenceinput.js'][667]++;
           if (($.inArray(day, ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]) > -1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][589]++;
+            _$jscoverage['jquery.recurrenceinput.js'][668]++;
             result += (";BYDAY=" + index + day);
-            _$jscoverage['jquery.recurrenceinput.js'][590]++;
-            human += (", " + conf.i18n.yearlyWeekdayOfMonth1);
-            _$jscoverage['jquery.recurrenceinput.js'][591]++;
-            human += (" " + conf.i18n.orderIndexes[conf.orderIndexes.indexOf(index)]);
-            _$jscoverage['jquery.recurrenceinput.js'][592]++;
+            _$jscoverage['jquery.recurrenceinput.js'][669]++;
+            human += (", " + conf.i18n.yearlyWeekdayOfMonth1Human);
+            _$jscoverage['jquery.recurrenceinput.js'][670]++;
+            human += (" " + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)]);
+            _$jscoverage['jquery.recurrenceinput.js'][671]++;
             human += (" " + conf.i18n.yearlyWeekdayOfMonth2);
-            _$jscoverage['jquery.recurrenceinput.js'][593]++;
-            human += (" " + conf.i18n.weekdays[conf.weekdays.indexOf(day)]);
-            _$jscoverage['jquery.recurrenceinput.js'][594]++;
+            _$jscoverage['jquery.recurrenceinput.js'][672]++;
+            human += (" " + conf.i18n.weekdays[$.inArray(day, conf.weekdays)]);
+            _$jscoverage['jquery.recurrenceinput.js'][673]++;
             human += (" " + conf.i18n.yearlyWeekdayOfMonth3);
-            _$jscoverage['jquery.recurrenceinput.js'][595]++;
+            _$jscoverage['jquery.recurrenceinput.js'][674]++;
             human += (" " + conf.i18n.months[(month - 1)]);
-            _$jscoverage['jquery.recurrenceinput.js'][596]++;
+            _$jscoverage['jquery.recurrenceinput.js'][675]++;
             human += (" " + conf.i18n.yearlyWeekdayOfMonth4);
           }
-          _$jscoverage['jquery.recurrenceinput.js'][598]++;
+          _$jscoverage['jquery.recurrenceinput.js'][677]++;
           break;
         }
-        _$jscoverage['jquery.recurrenceinput.js'][600]++;
+        _$jscoverage['jquery.recurrenceinput.js'][679]++;
         break;
       case "rirangeoptions":
-        _$jscoverage['jquery.recurrenceinput.js'][603]++;
+        _$jscoverage['jquery.recurrenceinput.js'][682]++;
         var rangeType = form.find("input[name=rirangetype]:checked").val();
-        _$jscoverage['jquery.recurrenceinput.js'][604]++;
+        _$jscoverage['jquery.recurrenceinput.js'][683]++;
         switch (rangeType) {
         case "BYOCCURRENCES":
-          _$jscoverage['jquery.recurrenceinput.js'][607]++;
+          _$jscoverage['jquery.recurrenceinput.js'][686]++;
           occurrences = form.find("input[name=rirangebyoccurrencesvalue]").val();
-          _$jscoverage['jquery.recurrenceinput.js'][608]++;
+          _$jscoverage['jquery.recurrenceinput.js'][687]++;
           result += (";COUNT=" + occurrences);
-          _$jscoverage['jquery.recurrenceinput.js'][609]++;
-          human += (", " + conf.i18n.rangeByOccurrences1);
-          _$jscoverage['jquery.recurrenceinput.js'][610]++;
+          _$jscoverage['jquery.recurrenceinput.js'][688]++;
+          human += (", " + conf.i18n.rangeByOccurrences1Human);
+          _$jscoverage['jquery.recurrenceinput.js'][689]++;
           human += (" " + occurrences);
-          _$jscoverage['jquery.recurrenceinput.js'][611]++;
+          _$jscoverage['jquery.recurrenceinput.js'][690]++;
           human += (" " + conf.i18n.rangeByOccurrences2);
-          _$jscoverage['jquery.recurrenceinput.js'][612]++;
+          _$jscoverage['jquery.recurrenceinput.js'][691]++;
           break;
         case "BYENDDATE":
-          _$jscoverage['jquery.recurrenceinput.js'][614]++;
+          _$jscoverage['jquery.recurrenceinput.js'][693]++;
           field = form.find("input[name=rirangebyenddatecalendar]");
-          _$jscoverage['jquery.recurrenceinput.js'][615]++;
+          _$jscoverage['jquery.recurrenceinput.js'][694]++;
           date = field.data("dateinput").getValue("yyyymmdd");
-          _$jscoverage['jquery.recurrenceinput.js'][616]++;
+          _$jscoverage['jquery.recurrenceinput.js'][695]++;
           result += (";UNTIL=" + date + "T000000");
-          _$jscoverage['jquery.recurrenceinput.js'][617]++;
+          _$jscoverage['jquery.recurrenceinput.js'][696]++;
           if ((tz === true)) {
-            _$jscoverage['jquery.recurrenceinput.js'][619]++;
+            _$jscoverage['jquery.recurrenceinput.js'][698]++;
             result += "Z";
           }
-          _$jscoverage['jquery.recurrenceinput.js'][621]++;
-          human += (", " + conf.i18n.rangeByEndDate);
-          _$jscoverage['jquery.recurrenceinput.js'][622]++;
+          _$jscoverage['jquery.recurrenceinput.js'][700]++;
+          human += (", " + conf.i18n.rangeByEndDateHuman);
+          _$jscoverage['jquery.recurrenceinput.js'][701]++;
           human += (" " + field.data("dateinput").getValue(conf.i18n.longDateFormat));
-          _$jscoverage['jquery.recurrenceinput.js'][623]++;
+          _$jscoverage['jquery.recurrenceinput.js'][702]++;
           break;
         }
-        _$jscoverage['jquery.recurrenceinput.js'][625]++;
+        _$jscoverage['jquery.recurrenceinput.js'][704]++;
         break;
       }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][629]++;
+    _$jscoverage['jquery.recurrenceinput.js'][708]++;
     if (((form.ical.RDATE !== undefined) && (form.ical.RDATE.length > 0))) {
-      _$jscoverage['jquery.recurrenceinput.js'][630]++;
+      _$jscoverage['jquery.recurrenceinput.js'][709]++;
       form.ical.RDATE.sort();
-      _$jscoverage['jquery.recurrenceinput.js'][631]++;
+      _$jscoverage['jquery.recurrenceinput.js'][710]++;
       tmp = [];
-      _$jscoverage['jquery.recurrenceinput.js'][632]++;
+      _$jscoverage['jquery.recurrenceinput.js'][711]++;
       for (i = 0; (i < form.ical.RDATE.length); (i++)) {
-        _$jscoverage['jquery.recurrenceinput.js'][633]++;
+        _$jscoverage['jquery.recurrenceinput.js'][712]++;
         if ((form.ical.RDATE[i] !== "")) {
-          _$jscoverage['jquery.recurrenceinput.js'][634]++;
+          _$jscoverage['jquery.recurrenceinput.js'][713]++;
           year = parseInt(form.ical.RDATE[i].substring(0, 4), 10);
-          _$jscoverage['jquery.recurrenceinput.js'][635]++;
+          _$jscoverage['jquery.recurrenceinput.js'][714]++;
           month = (parseInt(form.ical.RDATE[i].substring(4, 6), 10) - 1);
-          _$jscoverage['jquery.recurrenceinput.js'][636]++;
+          _$jscoverage['jquery.recurrenceinput.js'][715]++;
           day = parseInt(form.ical.RDATE[i].substring(6, 8), 10);
-          _$jscoverage['jquery.recurrenceinput.js'][637]++;
+          _$jscoverage['jquery.recurrenceinput.js'][716]++;
           tmp.push(format(new Date(year, month, day), conf.i18n.longDateFormat, conf));
         }
 }
-      _$jscoverage['jquery.recurrenceinput.js'][640]++;
+      _$jscoverage['jquery.recurrenceinput.js'][719]++;
       if ((tmp.length !== 0)) {
-        _$jscoverage['jquery.recurrenceinput.js'][641]++;
+        _$jscoverage['jquery.recurrenceinput.js'][720]++;
         human = (human + conf.i18n.including + " " + tmp.join("; "));
       }
     }
-    _$jscoverage['jquery.recurrenceinput.js'][645]++;
+    _$jscoverage['jquery.recurrenceinput.js'][724]++;
     if (((form.ical.EXDATE !== undefined) && (form.ical.EXDATE.length > 0))) {
-      _$jscoverage['jquery.recurrenceinput.js'][646]++;
+      _$jscoverage['jquery.recurrenceinput.js'][725]++;
       form.ical.EXDATE.sort();
-      _$jscoverage['jquery.recurrenceinput.js'][647]++;
+      _$jscoverage['jquery.recurrenceinput.js'][726]++;
       tmp = [];
-      _$jscoverage['jquery.recurrenceinput.js'][648]++;
+      _$jscoverage['jquery.recurrenceinput.js'][727]++;
       for (i = 0; (i < form.ical.EXDATE.length); (i++)) {
-        _$jscoverage['jquery.recurrenceinput.js'][649]++;
+        _$jscoverage['jquery.recurrenceinput.js'][728]++;
         if ((form.ical.EXDATE[i] !== "")) {
-          _$jscoverage['jquery.recurrenceinput.js'][650]++;
+          _$jscoverage['jquery.recurrenceinput.js'][729]++;
           year = parseInt(form.ical.EXDATE[i].substring(0, 4), 10);
-          _$jscoverage['jquery.recurrenceinput.js'][651]++;
+          _$jscoverage['jquery.recurrenceinput.js'][730]++;
           month = (parseInt(form.ical.EXDATE[i].substring(4, 6), 10) - 1);
-          _$jscoverage['jquery.recurrenceinput.js'][652]++;
+          _$jscoverage['jquery.recurrenceinput.js'][731]++;
           day = parseInt(form.ical.EXDATE[i].substring(6, 8), 10);
-          _$jscoverage['jquery.recurrenceinput.js'][653]++;
+          _$jscoverage['jquery.recurrenceinput.js'][732]++;
           tmp.push(format(new Date(year, month, day), conf.i18n.longDateFormat, conf));
         }
 }
-      _$jscoverage['jquery.recurrenceinput.js'][656]++;
+      _$jscoverage['jquery.recurrenceinput.js'][735]++;
       if ((tmp.length !== 0)) {
-        _$jscoverage['jquery.recurrenceinput.js'][657]++;
+        _$jscoverage['jquery.recurrenceinput.js'][736]++;
         human = (human + conf.i18n.except + " " + tmp.join("; "));
       }
     }
-    _$jscoverage['jquery.recurrenceinput.js'][660]++;
+    _$jscoverage['jquery.recurrenceinput.js'][739]++;
     result = ("RRULE:" + result);
-    _$jscoverage['jquery.recurrenceinput.js'][661]++;
+    _$jscoverage['jquery.recurrenceinput.js'][740]++;
     if (((form.ical.EXDATE !== undefined) && (form.ical.EXDATE.join() !== ""))) {
-      _$jscoverage['jquery.recurrenceinput.js'][662]++;
+      _$jscoverage['jquery.recurrenceinput.js'][741]++;
       if ((tz === true)) {
-        _$jscoverage['jquery.recurrenceinput.js'][664]++;
-        tmp = form.ical.EXDATE.map((function (x) {
-  _$jscoverage['jquery.recurrenceinput.js'][665]++;
+        _$jscoverage['jquery.recurrenceinput.js'][743]++;
+        tmp = $.map(form.ical.EXDATE, (function (x) {
+  _$jscoverage['jquery.recurrenceinput.js'][744]++;
   if ((x.length === 8)) {
-    _$jscoverage['jquery.recurrenceinput.js'][666]++;
+    _$jscoverage['jquery.recurrenceinput.js'][745]++;
     x += "T000000";
   }
-  _$jscoverage['jquery.recurrenceinput.js'][668]++;
+  _$jscoverage['jquery.recurrenceinput.js'][747]++;
   return (x + "Z");
 }));
       }
       else {
-        _$jscoverage['jquery.recurrenceinput.js'][671]++;
+        _$jscoverage['jquery.recurrenceinput.js'][750]++;
         tmp = form.ical.EXDATE;
       }
-      _$jscoverage['jquery.recurrenceinput.js'][673]++;
+      _$jscoverage['jquery.recurrenceinput.js'][752]++;
       result = (result + "\nEXDATE:" + tmp);
     }
-    _$jscoverage['jquery.recurrenceinput.js'][675]++;
+    _$jscoverage['jquery.recurrenceinput.js'][754]++;
     if (((form.ical.RDATE !== undefined) && (form.ical.RDATE.join() !== ""))) {
-      _$jscoverage['jquery.recurrenceinput.js'][676]++;
+      _$jscoverage['jquery.recurrenceinput.js'][755]++;
       if ((tz === true)) {
-        _$jscoverage['jquery.recurrenceinput.js'][678]++;
-        tmp = form.ical.RDATE.map((function (x) {
-  _$jscoverage['jquery.recurrenceinput.js'][679]++;
+        _$jscoverage['jquery.recurrenceinput.js'][757]++;
+        tmp = $.map(form.ical.RDATE, (function (x) {
+  _$jscoverage['jquery.recurrenceinput.js'][758]++;
   if ((x.length === 8)) {
-    _$jscoverage['jquery.recurrenceinput.js'][680]++;
+    _$jscoverage['jquery.recurrenceinput.js'][759]++;
     x += "T000000";
   }
-  _$jscoverage['jquery.recurrenceinput.js'][682]++;
+  _$jscoverage['jquery.recurrenceinput.js'][761]++;
   return (x + "Z");
 }));
       }
       else {
-        _$jscoverage['jquery.recurrenceinput.js'][685]++;
+        _$jscoverage['jquery.recurrenceinput.js'][764]++;
         tmp = form.ical.RDATE;
       }
-      _$jscoverage['jquery.recurrenceinput.js'][687]++;
+      _$jscoverage['jquery.recurrenceinput.js'][766]++;
       result = (result + "\nRDATE:" + tmp);
     }
-    _$jscoverage['jquery.recurrenceinput.js'][689]++;
+    _$jscoverage['jquery.recurrenceinput.js'][768]++;
     return ({result: result, description: human});
 }
-  _$jscoverage['jquery.recurrenceinput.js'][692]++;
+  _$jscoverage['jquery.recurrenceinput.js'][771]++;
   function parseLine(icalline) {
-    _$jscoverage['jquery.recurrenceinput.js'][693]++;
+    _$jscoverage['jquery.recurrenceinput.js'][772]++;
     var result = {};
-    _$jscoverage['jquery.recurrenceinput.js'][694]++;
-    var pos = icalline.indexOf(":");
-    _$jscoverage['jquery.recurrenceinput.js'][695]++;
+    _$jscoverage['jquery.recurrenceinput.js'][773]++;
+    var pos = $.inArray(":", icalline);
+    _$jscoverage['jquery.recurrenceinput.js'][774]++;
     var property = icalline.substring(0, pos);
-    _$jscoverage['jquery.recurrenceinput.js'][696]++;
+    _$jscoverage['jquery.recurrenceinput.js'][775]++;
     result.value = icalline.substring((pos + 1));
-    _$jscoverage['jquery.recurrenceinput.js'][698]++;
-    if ((property.indexOf(";") !== -1)) {
-      _$jscoverage['jquery.recurrenceinput.js'][699]++;
-      pos = property.indexOf(";");
-      _$jscoverage['jquery.recurrenceinput.js'][700]++;
+    _$jscoverage['jquery.recurrenceinput.js'][777]++;
+    if (($.inArray(";", property) !== -1)) {
+      _$jscoverage['jquery.recurrenceinput.js'][778]++;
+      pos = $.inArray(";", property);
+      _$jscoverage['jquery.recurrenceinput.js'][779]++;
       result.parameters = property.substring((pos + 1));
-      _$jscoverage['jquery.recurrenceinput.js'][701]++;
+      _$jscoverage['jquery.recurrenceinput.js'][780]++;
       result.property = property.substring(0, pos);
     }
     else {
-      _$jscoverage['jquery.recurrenceinput.js'][703]++;
+      _$jscoverage['jquery.recurrenceinput.js'][782]++;
       result.parameters = null;
-      _$jscoverage['jquery.recurrenceinput.js'][704]++;
+      _$jscoverage['jquery.recurrenceinput.js'][783]++;
       result.property = property;
     }
-    _$jscoverage['jquery.recurrenceinput.js'][706]++;
+    _$jscoverage['jquery.recurrenceinput.js'][785]++;
     return result;
 }
-  _$jscoverage['jquery.recurrenceinput.js'][709]++;
+  _$jscoverage['jquery.recurrenceinput.js'][788]++;
   function cleanDates(dates) {
-    _$jscoverage['jquery.recurrenceinput.js'][712]++;
+    _$jscoverage['jquery.recurrenceinput.js'][791]++;
     var result = [];
-    _$jscoverage['jquery.recurrenceinput.js'][713]++;
+    _$jscoverage['jquery.recurrenceinput.js'][792]++;
     var splitDates = dates.split(",");
-    _$jscoverage['jquery.recurrenceinput.js'][714]++;
+    _$jscoverage['jquery.recurrenceinput.js'][793]++;
     var date;
-    _$jscoverage['jquery.recurrenceinput.js'][716]++;
+    _$jscoverage['jquery.recurrenceinput.js'][795]++;
     for (date in splitDates) {
-      _$jscoverage['jquery.recurrenceinput.js'][717]++;
+      _$jscoverage['jquery.recurrenceinput.js'][796]++;
       if (splitDates.hasOwnProperty(date)) {
-        _$jscoverage['jquery.recurrenceinput.js'][718]++;
-        if ((splitDates[date].indexOf("Z") !== -1)) {
-          _$jscoverage['jquery.recurrenceinput.js'][719]++;
+        _$jscoverage['jquery.recurrenceinput.js'][797]++;
+        if (($.inArray("Z", splitDates[date]) !== -1)) {
+          _$jscoverage['jquery.recurrenceinput.js'][798]++;
           result.push(splitDates[date].substring(0, 15));
         }
         else {
-          _$jscoverage['jquery.recurrenceinput.js'][721]++;
+          _$jscoverage['jquery.recurrenceinput.js'][800]++;
           result.push(splitDates[date]);
         }
       }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][725]++;
+    _$jscoverage['jquery.recurrenceinput.js'][804]++;
     return result;
 }
-  _$jscoverage['jquery.recurrenceinput.js'][728]++;
+  _$jscoverage['jquery.recurrenceinput.js'][807]++;
   function parseIcal(icaldata) {
-    _$jscoverage['jquery.recurrenceinput.js'][729]++;
+    _$jscoverage['jquery.recurrenceinput.js'][808]++;
     var lines = [];
-    _$jscoverage['jquery.recurrenceinput.js'][730]++;
+    _$jscoverage['jquery.recurrenceinput.js'][809]++;
     var result = {};
-    _$jscoverage['jquery.recurrenceinput.js'][731]++;
+    _$jscoverage['jquery.recurrenceinput.js'][810]++;
     var propAndValue = [];
-    _$jscoverage['jquery.recurrenceinput.js'][732]++;
+    _$jscoverage['jquery.recurrenceinput.js'][811]++;
     var line = null;
-    _$jscoverage['jquery.recurrenceinput.js'][733]++;
+    _$jscoverage['jquery.recurrenceinput.js'][812]++;
     var nextline;
-    _$jscoverage['jquery.recurrenceinput.js'][735]++;
+    _$jscoverage['jquery.recurrenceinput.js'][814]++;
     lines = icaldata.split("\n");
-    _$jscoverage['jquery.recurrenceinput.js'][736]++;
+    _$jscoverage['jquery.recurrenceinput.js'][815]++;
     lines.reverse();
-    _$jscoverage['jquery.recurrenceinput.js'][737]++;
+    _$jscoverage['jquery.recurrenceinput.js'][816]++;
     while (true) {
-      _$jscoverage['jquery.recurrenceinput.js'][738]++;
+      _$jscoverage['jquery.recurrenceinput.js'][817]++;
       if ((lines.length > 0)) {
-        _$jscoverage['jquery.recurrenceinput.js'][739]++;
+        _$jscoverage['jquery.recurrenceinput.js'][818]++;
         nextline = lines.pop();
-        _$jscoverage['jquery.recurrenceinput.js'][740]++;
+        _$jscoverage['jquery.recurrenceinput.js'][819]++;
         if (((nextline.charAt(0) === " ") || (nextline.charAt(0) === "\t"))) {
-          _$jscoverage['jquery.recurrenceinput.js'][742]++;
+          _$jscoverage['jquery.recurrenceinput.js'][821]++;
           line = (line + nextline);
-          _$jscoverage['jquery.recurrenceinput.js'][743]++;
+          _$jscoverage['jquery.recurrenceinput.js'][822]++;
           continue;
         }
       }
       else {
-        _$jscoverage['jquery.recurrenceinput.js'][746]++;
+        _$jscoverage['jquery.recurrenceinput.js'][825]++;
         nextline = "";
       }
-      _$jscoverage['jquery.recurrenceinput.js'][750]++;
+      _$jscoverage['jquery.recurrenceinput.js'][829]++;
       if ((line !== null)) {
-        _$jscoverage['jquery.recurrenceinput.js'][751]++;
+        _$jscoverage['jquery.recurrenceinput.js'][830]++;
         line = parseLine(line);
-        _$jscoverage['jquery.recurrenceinput.js'][753]++;
+        _$jscoverage['jquery.recurrenceinput.js'][832]++;
         if (((line.property === "RDATE") || (line.property === "EXDATE"))) {
-          _$jscoverage['jquery.recurrenceinput.js'][754]++;
+          _$jscoverage['jquery.recurrenceinput.js'][833]++;
           result[line.property] = cleanDates(line.value);
         }
         else {
-          _$jscoverage['jquery.recurrenceinput.js'][756]++;
+          _$jscoverage['jquery.recurrenceinput.js'][835]++;
           result[line.property] = line.value;
         }
       }
-      _$jscoverage['jquery.recurrenceinput.js'][760]++;
+      _$jscoverage['jquery.recurrenceinput.js'][839]++;
       line = nextline;
-      _$jscoverage['jquery.recurrenceinput.js'][761]++;
+      _$jscoverage['jquery.recurrenceinput.js'][840]++;
       if ((line === "")) {
-        _$jscoverage['jquery.recurrenceinput.js'][762]++;
+        _$jscoverage['jquery.recurrenceinput.js'][841]++;
         break;
       }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][765]++;
+    _$jscoverage['jquery.recurrenceinput.js'][844]++;
     return result;
 }
-  _$jscoverage['jquery.recurrenceinput.js'][768]++;
-  function widgetLoadFromRfc5545(form, conf, icaldata) {
-    _$jscoverage['jquery.recurrenceinput.js'][769]++;
+  _$jscoverage['jquery.recurrenceinput.js'][847]++;
+  function widgetLoadFromRfc5545(form, conf, icaldata, force) {
+    _$jscoverage['jquery.recurrenceinput.js'][848]++;
     var unsupportedFeatures = [];
-    _$jscoverage['jquery.recurrenceinput.js'][770]++;
+    _$jscoverage['jquery.recurrenceinput.js'][849]++;
     var i, matches, match, matchIndex, rtemplate, d, input, index;
-    _$jscoverage['jquery.recurrenceinput.js'][771]++;
+    _$jscoverage['jquery.recurrenceinput.js'][850]++;
     var selector, selectors, field, radiobutton, start, end;
-    _$jscoverage['jquery.recurrenceinput.js'][772]++;
+    _$jscoverage['jquery.recurrenceinput.js'][851]++;
     var interval, byday, bymonth, bymonthday, count, until;
-    _$jscoverage['jquery.recurrenceinput.js'][773]++;
+    _$jscoverage['jquery.recurrenceinput.js'][852]++;
     var day, month, year, weekday, ical;
-    _$jscoverage['jquery.recurrenceinput.js'][775]++;
+    _$jscoverage['jquery.recurrenceinput.js'][854]++;
     form.ical = parseIcal(icaldata);
-    _$jscoverage['jquery.recurrenceinput.js'][777]++;
-    matches = /INTERVAL=([0-9]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][778]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][779]++;
-      interval = matches[1];
+    _$jscoverage['jquery.recurrenceinput.js'][855]++;
+    if ((form.ical.RRULE === undefined)) {
+      _$jscoverage['jquery.recurrenceinput.js'][856]++;
+      unsupportedFeatures.push(conf.i18n.noRule);
+      _$jscoverage['jquery.recurrenceinput.js'][857]++;
+      if ((! force)) {
+        _$jscoverage['jquery.recurrenceinput.js'][858]++;
+        return -1;
+      }
     }
     else {
-      _$jscoverage['jquery.recurrenceinput.js'][781]++;
-      interval = "1";
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][784]++;
-    matches = /BYDAY=([^;]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][785]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][786]++;
-      byday = matches[1];
-    }
-    else {
-      _$jscoverage['jquery.recurrenceinput.js'][788]++;
-      byday = "";
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][791]++;
-    matches = /BYMONTHDAY=([^;]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][792]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][793]++;
-      bymonthday = matches[1].split(",");
-    }
-    else {
-      _$jscoverage['jquery.recurrenceinput.js'][795]++;
-      bymonthday = null;
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][798]++;
-    matches = /BYMONTH=([^;]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][799]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][800]++;
-      bymonth = matches[1].split(",");
-    }
-    else {
-      _$jscoverage['jquery.recurrenceinput.js'][802]++;
-      bymonth = null;
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][805]++;
-    matches = /COUNT=([0-9]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][806]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][807]++;
-      count = matches[1];
-    }
-    else {
-      _$jscoverage['jquery.recurrenceinput.js'][809]++;
-      count = null;
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][812]++;
-    matches = /UNTIL=([0-9T]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][813]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][814]++;
-      until = matches[1];
-    }
-    else {
-      _$jscoverage['jquery.recurrenceinput.js'][816]++;
-      until = null;
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][819]++;
-    matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
-    _$jscoverage['jquery.recurrenceinput.js'][820]++;
-    if (matches) {
-      _$jscoverage['jquery.recurrenceinput.js'][821]++;
-      unsupportedFeatures.push(conf.i18n.bysetpos);
-    }
-    _$jscoverage['jquery.recurrenceinput.js'][825]++;
-    match = "";
-    _$jscoverage['jquery.recurrenceinput.js'][826]++;
-    matchIndex = null;
-    _$jscoverage['jquery.recurrenceinput.js'][827]++;
-    for (i in conf.rtemplate) {
-      _$jscoverage['jquery.recurrenceinput.js'][828]++;
-      if (conf.rtemplate.hasOwnProperty(i)) {
-        _$jscoverage['jquery.recurrenceinput.js'][829]++;
-        rtemplate = conf.rtemplate[i];
-        _$jscoverage['jquery.recurrenceinput.js'][830]++;
-        if ((form.ical.RRULE.indexOf(rtemplate.rrule) === 0)) {
-          _$jscoverage['jquery.recurrenceinput.js'][831]++;
-          if ((form.ical.RRULE.length > match.length)) {
-            _$jscoverage['jquery.recurrenceinput.js'][833]++;
-            match = form.ical.RRULE;
-            _$jscoverage['jquery.recurrenceinput.js'][834]++;
-            matchIndex = i;
+      _$jscoverage['jquery.recurrenceinput.js'][863]++;
+      matches = /INTERVAL=([0-9]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][864]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][865]++;
+        interval = matches[1];
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][867]++;
+        interval = "1";
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][870]++;
+      matches = /BYDAY=([^;]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][871]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][872]++;
+        byday = matches[1];
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][874]++;
+        byday = "";
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][877]++;
+      matches = /BYMONTHDAY=([^;]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][878]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][879]++;
+        bymonthday = matches[1].split(",");
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][881]++;
+        bymonthday = null;
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][884]++;
+      matches = /BYMONTH=([^;]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][885]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][886]++;
+        bymonth = matches[1].split(",");
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][888]++;
+        bymonth = null;
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][891]++;
+      matches = /COUNT=([0-9]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][892]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][893]++;
+        count = matches[1];
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][895]++;
+        count = null;
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][898]++;
+      matches = /UNTIL=([0-9T]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][899]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][900]++;
+        until = matches[1];
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][902]++;
+        until = null;
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][905]++;
+      matches = /BYSETPOS=([^;]+);?/.exec(form.ical.RRULE);
+      _$jscoverage['jquery.recurrenceinput.js'][906]++;
+      if (matches) {
+        _$jscoverage['jquery.recurrenceinput.js'][907]++;
+        unsupportedFeatures.push(conf.i18n.bysetpos);
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][911]++;
+      match = "";
+      _$jscoverage['jquery.recurrenceinput.js'][912]++;
+      matchIndex = null;
+      _$jscoverage['jquery.recurrenceinput.js'][913]++;
+      for (i in conf.rtemplate) {
+        _$jscoverage['jquery.recurrenceinput.js'][914]++;
+        if (conf.rtemplate.hasOwnProperty(i)) {
+          _$jscoverage['jquery.recurrenceinput.js'][915]++;
+          rtemplate = conf.rtemplate[i];
+          _$jscoverage['jquery.recurrenceinput.js'][916]++;
+          if ((form.ical.RRULE.indexOf(rtemplate.rrule) === 0)) {
+            _$jscoverage['jquery.recurrenceinput.js'][917]++;
+            if ((form.ical.RRULE.length > match.length)) {
+              _$jscoverage['jquery.recurrenceinput.js'][919]++;
+              match = form.ical.RRULE;
+              _$jscoverage['jquery.recurrenceinput.js'][920]++;
+              matchIndex = i;
+            }
           }
         }
-      }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][840]++;
-    if (match) {
-      _$jscoverage['jquery.recurrenceinput.js'][841]++;
-      rtemplate = conf.rtemplate[matchIndex];
-      _$jscoverage['jquery.recurrenceinput.js'][843]++;
-      selector = form.find("select[name=rirtemplate]").val(matchIndex);
-    }
-    else {
-      _$jscoverage['jquery.recurrenceinput.js'][845]++;
-      for (rtemplate in conf.rtemplate) {
-        _$jscoverage['jquery.recurrenceinput.js'][846]++;
-        if (conf.rtemplate.hasOwnProperty(rtemplate)) {
-          _$jscoverage['jquery.recurrenceinput.js'][847]++;
-          rtemplate = conf.rtemplate[rtemplate];
-          _$jscoverage['jquery.recurrenceinput.js'][848]++;
+      _$jscoverage['jquery.recurrenceinput.js'][926]++;
+      if (match) {
+        _$jscoverage['jquery.recurrenceinput.js'][927]++;
+        rtemplate = conf.rtemplate[matchIndex];
+        _$jscoverage['jquery.recurrenceinput.js'][929]++;
+        selector = form.find("select[name=rirtemplate]").val(matchIndex);
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][931]++;
+        for (rtemplate in conf.rtemplate) {
+          _$jscoverage['jquery.recurrenceinput.js'][932]++;
+          if (conf.rtemplate.hasOwnProperty(rtemplate)) {
+            _$jscoverage['jquery.recurrenceinput.js'][933]++;
+            rtemplate = conf.rtemplate[rtemplate];
+            _$jscoverage['jquery.recurrenceinput.js'][934]++;
+            break;
+          }
+}
+        _$jscoverage['jquery.recurrenceinput.js'][937]++;
+        unsupportedFeatures.push(conf.i18n.noTemplateMatch);
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][940]++;
+      for (i = 0; (i < rtemplate.fields.length); (i++)) {
+        _$jscoverage['jquery.recurrenceinput.js'][941]++;
+        field = form.find(("#" + rtemplate.fields[i]));
+        _$jscoverage['jquery.recurrenceinput.js'][942]++;
+        switch (field.attr("id")) {
+        case "ridailyinterval":
+          _$jscoverage['jquery.recurrenceinput.js'][945]++;
+          field.find("input[name=ridailyinterval]").val(interval);
+          _$jscoverage['jquery.recurrenceinput.js'][946]++;
+          break;
+        case "riweeklyinterval":
+          _$jscoverage['jquery.recurrenceinput.js'][949]++;
+          field.find("input[name=riweeklyinterval]").val(interval);
+          _$jscoverage['jquery.recurrenceinput.js'][950]++;
+          break;
+        case "riweeklyweekdays":
+          _$jscoverage['jquery.recurrenceinput.js'][953]++;
+          for (d = 0; (d < conf.weekdays.length); (d++)) {
+            _$jscoverage['jquery.recurrenceinput.js'][954]++;
+            day = conf.weekdays[d];
+            _$jscoverage['jquery.recurrenceinput.js'][955]++;
+            input = field.find(("input[name=riweeklyweekdays" + day + "]"));
+            _$jscoverage['jquery.recurrenceinput.js'][956]++;
+            input.attr("checked", (byday.indexOf(day) !== -1));
+}
+          _$jscoverage['jquery.recurrenceinput.js'][958]++;
+          break;
+        case "rimonthlyinterval":
+          _$jscoverage['jquery.recurrenceinput.js'][961]++;
+          field.find("input[name=rimonthlyinterval]").val(interval);
+          _$jscoverage['jquery.recurrenceinput.js'][962]++;
+          break;
+        case "rimonthlyoptions":
+          _$jscoverage['jquery.recurrenceinput.js'][965]++;
+          var monthlyType = "DAYOFMONTH";
+          _$jscoverage['jquery.recurrenceinput.js'][967]++;
+          if (bymonthday) {
+            _$jscoverage['jquery.recurrenceinput.js'][968]++;
+            monthlyType = "DAYOFMONTH";
+            _$jscoverage['jquery.recurrenceinput.js'][969]++;
+            if ((bymonthday.length > 1)) {
+              _$jscoverage['jquery.recurrenceinput.js'][971]++;
+              unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+              _$jscoverage['jquery.recurrenceinput.js'][973]++;
+              bymonthday = bymonthday[0];
+            }
+            _$jscoverage['jquery.recurrenceinput.js'][975]++;
+            field.find("select[name=rimonthlydayofmonthday]").val(bymonthday);
+          }
+          _$jscoverage['jquery.recurrenceinput.js'][978]++;
+          if (byday) {
+            _$jscoverage['jquery.recurrenceinput.js'][979]++;
+            monthlyType = "WEEKDAYOFMONTH";
+            _$jscoverage['jquery.recurrenceinput.js'][981]++;
+            if ((form.ical.RRULE.indexOf(rtemplate.rrule) === 0)) {
+              _$jscoverage['jquery.recurrenceinput.js'][983]++;
+              unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+              _$jscoverage['jquery.recurrenceinput.js'][984]++;
+              byday = byday.split(",")[0];
+            }
+            _$jscoverage['jquery.recurrenceinput.js'][986]++;
+            index = byday.slice(0, -2);
+            _$jscoverage['jquery.recurrenceinput.js'][987]++;
+            weekday = byday.slice(-2);
+            _$jscoverage['jquery.recurrenceinput.js'][988]++;
+            field.find("select[name=rimonthlyweekdayofmonthindex]").val(index);
+            _$jscoverage['jquery.recurrenceinput.js'][989]++;
+            field.find("select[name=rimonthlyweekdayofmonth]").val(weekday);
+          }
+          _$jscoverage['jquery.recurrenceinput.js'][992]++;
+          selectors = field.find("input[name=rimonthlytype]");
+          _$jscoverage['jquery.recurrenceinput.js'][993]++;
+          for (index = 0; (index < selectors.length); (index++)) {
+            _$jscoverage['jquery.recurrenceinput.js'][994]++;
+            radiobutton = selectors[index];
+            _$jscoverage['jquery.recurrenceinput.js'][995]++;
+            $(radiobutton).attr("checked", (radiobutton.value === monthlyType));
+}
+          _$jscoverage['jquery.recurrenceinput.js'][997]++;
+          break;
+        case "riyearlyinterval":
+          _$jscoverage['jquery.recurrenceinput.js'][1000]++;
+          field.find("input[name=riyearlyinterval]").val(interval);
+          _$jscoverage['jquery.recurrenceinput.js'][1001]++;
+          break;
+        case "riyearlyoptions":
+          _$jscoverage['jquery.recurrenceinput.js'][1004]++;
+          var yearlyType = "DAYOFMONTH";
+          _$jscoverage['jquery.recurrenceinput.js'][1006]++;
+          if (bymonthday) {
+            _$jscoverage['jquery.recurrenceinput.js'][1007]++;
+            yearlyType = "DAYOFMONTH";
+            _$jscoverage['jquery.recurrenceinput.js'][1008]++;
+            if ((bymonthday.length > 1)) {
+              _$jscoverage['jquery.recurrenceinput.js'][1010]++;
+              unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+              _$jscoverage['jquery.recurrenceinput.js'][1011]++;
+              bymonthday = bymonthday[0];
+            }
+            _$jscoverage['jquery.recurrenceinput.js'][1013]++;
+            field.find("select[name=riyearlydayofmonthmonth]").val(bymonth);
+            _$jscoverage['jquery.recurrenceinput.js'][1014]++;
+            field.find("select[name=riyearlydayofmonthday]").val(bymonthday);
+          }
+          _$jscoverage['jquery.recurrenceinput.js'][1017]++;
+          if (byday) {
+            _$jscoverage['jquery.recurrenceinput.js'][1018]++;
+            yearlyType = "WEEKDAYOFMONTH";
+            _$jscoverage['jquery.recurrenceinput.js'][1020]++;
+            if (($.inArray(",", byday) !== -1)) {
+              _$jscoverage['jquery.recurrenceinput.js'][1022]++;
+              unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
+              _$jscoverage['jquery.recurrenceinput.js'][1023]++;
+              byday = byday.split(",")[0];
+            }
+            _$jscoverage['jquery.recurrenceinput.js'][1025]++;
+            index = byday.slice(0, -2);
+            _$jscoverage['jquery.recurrenceinput.js'][1026]++;
+            weekday = byday.slice(-2);
+            _$jscoverage['jquery.recurrenceinput.js'][1027]++;
+            field.find("select[name=riyearlyweekdayofmonthindex]").val(index);
+            _$jscoverage['jquery.recurrenceinput.js'][1028]++;
+            field.find("select[name=riyearlyweekdayofmonthday]").val(weekday);
+            _$jscoverage['jquery.recurrenceinput.js'][1029]++;
+            field.find("select[name=riyearlyweekdayofmonthmonth]").val(bymonth);
+          }
+          _$jscoverage['jquery.recurrenceinput.js'][1032]++;
+          selectors = field.find("input[name=riyearlyType]");
+          _$jscoverage['jquery.recurrenceinput.js'][1033]++;
+          for (index = 0; (index < selectors.length); (index++)) {
+            _$jscoverage['jquery.recurrenceinput.js'][1034]++;
+            radiobutton = selectors[index];
+            _$jscoverage['jquery.recurrenceinput.js'][1035]++;
+            $(radiobutton).attr("checked", (radiobutton.value === yearlyType));
+}
+          _$jscoverage['jquery.recurrenceinput.js'][1037]++;
+          break;
+        case "rirangeoptions":
+          _$jscoverage['jquery.recurrenceinput.js'][1040]++;
+          var rangeType = "NOENDDATE";
+          _$jscoverage['jquery.recurrenceinput.js'][1042]++;
+          if (count) {
+            _$jscoverage['jquery.recurrenceinput.js'][1043]++;
+            rangeType = "BYOCCURRENCES";
+            _$jscoverage['jquery.recurrenceinput.js'][1044]++;
+            field.find("input[name=rirangebyoccurrencesvalue]").val(count);
+          }
+          _$jscoverage['jquery.recurrenceinput.js'][1047]++;
+          if (until) {
+            _$jscoverage['jquery.recurrenceinput.js'][1048]++;
+            rangeType = "BYENDDATE";
+            _$jscoverage['jquery.recurrenceinput.js'][1049]++;
+            input = field.find("input[name=rirangebyenddatecalendar]");
+            _$jscoverage['jquery.recurrenceinput.js'][1050]++;
+            year = until.slice(0, 4);
+            _$jscoverage['jquery.recurrenceinput.js'][1051]++;
+            month = until.slice(4, 6);
+            _$jscoverage['jquery.recurrenceinput.js'][1052]++;
+            month = (parseInt(month, 10) - 1);
+            _$jscoverage['jquery.recurrenceinput.js'][1053]++;
+            day = until.slice(6, 8);
+            _$jscoverage['jquery.recurrenceinput.js'][1054]++;
+            input.data("dateinput").setValue(year, month, day);
+          }
+          _$jscoverage['jquery.recurrenceinput.js'][1057]++;
+          selectors = field.find("input[name=rirangetype]");
+          _$jscoverage['jquery.recurrenceinput.js'][1058]++;
+          for (index = 0; (index < selectors.length); (index++)) {
+            _$jscoverage['jquery.recurrenceinput.js'][1059]++;
+            radiobutton = selectors[index];
+            _$jscoverage['jquery.recurrenceinput.js'][1060]++;
+            $(radiobutton).attr("checked", (radiobutton.value === rangeType));
+}
+          _$jscoverage['jquery.recurrenceinput.js'][1062]++;
           break;
         }
 }
-      _$jscoverage['jquery.recurrenceinput.js'][851]++;
-      unsupportedFeatures.push(conf.i18n.noTemplateMatch);
     }
-    _$jscoverage['jquery.recurrenceinput.js'][854]++;
-    for (i = 0; (i < rtemplate.fields.length); (i++)) {
-      _$jscoverage['jquery.recurrenceinput.js'][855]++;
-      field = form.find(("#" + rtemplate.fields[i]));
-      _$jscoverage['jquery.recurrenceinput.js'][856]++;
-      switch (field.attr("id")) {
-      case "ridailyinterval":
-        _$jscoverage['jquery.recurrenceinput.js'][859]++;
-        field.find("input[name=ridailyinterval]").val(interval);
-        _$jscoverage['jquery.recurrenceinput.js'][860]++;
-        break;
-      case "riweeklyinterval":
-        _$jscoverage['jquery.recurrenceinput.js'][863]++;
-        field.find("input[name=riweeklyinterval]").val(interval);
-        _$jscoverage['jquery.recurrenceinput.js'][864]++;
-        break;
-      case "riweeklyweekdays":
-        _$jscoverage['jquery.recurrenceinput.js'][867]++;
-        for (d = 0; (d < conf.weekdays.length); (d++)) {
-          _$jscoverage['jquery.recurrenceinput.js'][868]++;
-          day = conf.weekdays[d];
-          _$jscoverage['jquery.recurrenceinput.js'][869]++;
-          input = field.find(("input[name=riweeklyweekdays" + day + "]"));
-          _$jscoverage['jquery.recurrenceinput.js'][870]++;
-          input.attr("checked", (byday.indexOf(day) !== -1));
-}
-        _$jscoverage['jquery.recurrenceinput.js'][872]++;
-        break;
-      case "rimonthlyoptions":
-        _$jscoverage['jquery.recurrenceinput.js'][875]++;
-        var monthlyType = "DAYOFMONTH";
-        _$jscoverage['jquery.recurrenceinput.js'][877]++;
-        if (bymonthday) {
-          _$jscoverage['jquery.recurrenceinput.js'][878]++;
-          monthlyType = "DAYOFMONTH";
-          _$jscoverage['jquery.recurrenceinput.js'][879]++;
-          if ((bymonthday.length > 1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][881]++;
-            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-            _$jscoverage['jquery.recurrenceinput.js'][883]++;
-            bymonthday = bymonthday[0];
-          }
-          _$jscoverage['jquery.recurrenceinput.js'][885]++;
-          field.find("select[name=rimonthlydayofmonthday]").val(bymonthday);
-          _$jscoverage['jquery.recurrenceinput.js'][886]++;
-          field.find("input[name=rimonthlydayofmonthinterval]").val(interval);
-        }
-        _$jscoverage['jquery.recurrenceinput.js'][889]++;
-        if (byday) {
-          _$jscoverage['jquery.recurrenceinput.js'][890]++;
-          monthlyType = "WEEKDAYOFMONTH";
-          _$jscoverage['jquery.recurrenceinput.js'][892]++;
-          if ((byday.indexOf(",") !== -1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][894]++;
-            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-            _$jscoverage['jquery.recurrenceinput.js'][895]++;
-            byday = byday.split(",")[0];
-          }
-          _$jscoverage['jquery.recurrenceinput.js'][897]++;
-          index = byday.slice(0, -2);
-          _$jscoverage['jquery.recurrenceinput.js'][898]++;
-          weekday = byday.slice(-2);
-          _$jscoverage['jquery.recurrenceinput.js'][899]++;
-          field.find("select[name=rimonthlyweekdayofmonthindex]").val(index);
-          _$jscoverage['jquery.recurrenceinput.js'][900]++;
-          field.find("select[name=rimonthlyweekdayofmonth]").val(weekday);
-          _$jscoverage['jquery.recurrenceinput.js'][901]++;
-          field.find("input[name=rimonthlyweekdayofmonthinterval]").val(interval);
-        }
-        _$jscoverage['jquery.recurrenceinput.js'][904]++;
-        selectors = field.find("input[name=rimonthlytype]");
-        _$jscoverage['jquery.recurrenceinput.js'][905]++;
-        for (index = 0; (index < selectors.length); (index++)) {
-          _$jscoverage['jquery.recurrenceinput.js'][906]++;
-          radiobutton = selectors[index];
-          _$jscoverage['jquery.recurrenceinput.js'][907]++;
-          $(radiobutton).attr("checked", (radiobutton.value === monthlyType));
-}
-        _$jscoverage['jquery.recurrenceinput.js'][909]++;
-        break;
-      case "riyearlyoptions":
-        _$jscoverage['jquery.recurrenceinput.js'][912]++;
-        var yearlyType = "DAYOFMONTH";
-        _$jscoverage['jquery.recurrenceinput.js'][914]++;
-        if (bymonthday) {
-          _$jscoverage['jquery.recurrenceinput.js'][915]++;
-          yearlyType = "DAYOFMONTH";
-          _$jscoverage['jquery.recurrenceinput.js'][916]++;
-          if ((bymonthday.length > 1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][918]++;
-            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-            _$jscoverage['jquery.recurrenceinput.js'][919]++;
-            bymonthday = bymonthday[0];
-          }
-          _$jscoverage['jquery.recurrenceinput.js'][921]++;
-          field.find("select[name=riyearlydayofmonthmonth]").val(bymonth);
-          _$jscoverage['jquery.recurrenceinput.js'][922]++;
-          field.find("select[name=riyearlydayofmonthday]").val(bymonthday);
-        }
-        _$jscoverage['jquery.recurrenceinput.js'][925]++;
-        if (byday) {
-          _$jscoverage['jquery.recurrenceinput.js'][926]++;
-          yearlyType = "WEEKDAYOFMONTH";
-          _$jscoverage['jquery.recurrenceinput.js'][928]++;
-          if ((byday.indexOf(",") !== -1)) {
-            _$jscoverage['jquery.recurrenceinput.js'][930]++;
-            unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
-            _$jscoverage['jquery.recurrenceinput.js'][931]++;
-            byday = byday.split(",")[0];
-          }
-          _$jscoverage['jquery.recurrenceinput.js'][933]++;
-          index = byday.slice(0, -2);
-          _$jscoverage['jquery.recurrenceinput.js'][934]++;
-          weekday = byday.slice(-2);
-          _$jscoverage['jquery.recurrenceinput.js'][935]++;
-          field.find("select[name=riyearlyweekdayofmonthindex]").val(index);
-          _$jscoverage['jquery.recurrenceinput.js'][936]++;
-          field.find("select[name=riyearlyweekdayofmonthday]").val(weekday);
-          _$jscoverage['jquery.recurrenceinput.js'][937]++;
-          field.find("select[name=riyearlyweekdayofmonthmonth]").val(bymonth);
-        }
-        _$jscoverage['jquery.recurrenceinput.js'][940]++;
-        selectors = field.find("input[name=riyearlyType]");
-        _$jscoverage['jquery.recurrenceinput.js'][941]++;
-        for (index = 0; (index < selectors.length); (index++)) {
-          _$jscoverage['jquery.recurrenceinput.js'][942]++;
-          radiobutton = selectors[index];
-          _$jscoverage['jquery.recurrenceinput.js'][943]++;
-          $(radiobutton).attr("checked", (radiobutton.value === yearlyType));
-}
-        _$jscoverage['jquery.recurrenceinput.js'][945]++;
-        break;
-      case "rirangeoptions":
-        _$jscoverage['jquery.recurrenceinput.js'][948]++;
-        var rangeType = "NOENDDATE";
-        _$jscoverage['jquery.recurrenceinput.js'][950]++;
-        if (count) {
-          _$jscoverage['jquery.recurrenceinput.js'][951]++;
-          rangeType = "BYOCCURRENCES";
-          _$jscoverage['jquery.recurrenceinput.js'][952]++;
-          field.find("input[name=rirangebyoccurrencesvalue]").val(count);
-        }
-        _$jscoverage['jquery.recurrenceinput.js'][955]++;
-        if (until) {
-          _$jscoverage['jquery.recurrenceinput.js'][956]++;
-          rangeType = "BYENDDATE";
-          _$jscoverage['jquery.recurrenceinput.js'][957]++;
-          input = field.find("input[name=rirangebyenddatecalendar]");
-          _$jscoverage['jquery.recurrenceinput.js'][958]++;
-          year = until.slice(0, 4);
-          _$jscoverage['jquery.recurrenceinput.js'][959]++;
-          month = until.slice(4, 6);
-          _$jscoverage['jquery.recurrenceinput.js'][960]++;
-          month = (parseInt(month, 10) - 1);
-          _$jscoverage['jquery.recurrenceinput.js'][961]++;
-          day = until.slice(6, 8);
-          _$jscoverage['jquery.recurrenceinput.js'][962]++;
-          input.data("dateinput").setValue(year, month, day);
-        }
-        _$jscoverage['jquery.recurrenceinput.js'][965]++;
-        selectors = field.find("input[name=rirangetype]");
-        _$jscoverage['jquery.recurrenceinput.js'][966]++;
-        for (index = 0; (index < selectors.length); (index++)) {
-          _$jscoverage['jquery.recurrenceinput.js'][967]++;
-          radiobutton = selectors[index];
-          _$jscoverage['jquery.recurrenceinput.js'][968]++;
-          $(radiobutton).attr("checked", (radiobutton.value === rangeType));
-}
-        _$jscoverage['jquery.recurrenceinput.js'][970]++;
-        break;
-      }
-}
-    _$jscoverage['jquery.recurrenceinput.js'][974]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1067]++;
     var messagearea = form.find("#messagearea");
-    _$jscoverage['jquery.recurrenceinput.js'][975]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1068]++;
     if ((unsupportedFeatures.length !== 0)) {
-      _$jscoverage['jquery.recurrenceinput.js'][976]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1069]++;
       messagearea.text((conf.i18n.unsupportedFeatures + " " + unsupportedFeatures.join("; ")));
-      _$jscoverage['jquery.recurrenceinput.js'][977]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1070]++;
       messagearea.show();
+      _$jscoverage['jquery.recurrenceinput.js'][1071]++;
+      return 1;
     }
     else {
-      _$jscoverage['jquery.recurrenceinput.js'][979]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1073]++;
       messagearea.text("");
-      _$jscoverage['jquery.recurrenceinput.js'][980]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1074]++;
       messagearea.hide();
+      _$jscoverage['jquery.recurrenceinput.js'][1075]++;
+      return 0;
     }
 }
-  _$jscoverage['jquery.recurrenceinput.js'][988]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1083]++;
   function RecurrenceInput(conf, textarea) {
-    _$jscoverage['jquery.recurrenceinput.js'][990]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1085]++;
     var self = this;
-    _$jscoverage['jquery.recurrenceinput.js'][991]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1086]++;
     var form, display;
-    _$jscoverage['jquery.recurrenceinput.js'][994]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1089]++;
     $.extend(conf, {orderIndexes: ["+1", "+2", "+3", "+4", "-1"], weekdays: ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]});
-    _$jscoverage['jquery.recurrenceinput.js'][1001]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1096]++;
     function displayFields(selector) {
-      _$jscoverage['jquery.recurrenceinput.js'][1002]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1097]++;
       var i;
-      _$jscoverage['jquery.recurrenceinput.js'][1004]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1099]++;
       form.find(".rifield").hide();
-      _$jscoverage['jquery.recurrenceinput.js'][1006]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1101]++;
       var value = selector.val();
-      _$jscoverage['jquery.recurrenceinput.js'][1007]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1102]++;
       if (value) {
-        _$jscoverage['jquery.recurrenceinput.js'][1008]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1103]++;
         var rtemplate = conf.rtemplate[value];
-        _$jscoverage['jquery.recurrenceinput.js'][1009]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1104]++;
         for (i = 0; (i < rtemplate.fields.length); (i++)) {
-          _$jscoverage['jquery.recurrenceinput.js'][1010]++;
+          _$jscoverage['jquery.recurrenceinput.js'][1105]++;
           form.find(("#" + rtemplate.fields[i])).show();
 }
       }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1015]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1110]++;
     function occurrenceExclude(event) {
-      _$jscoverage['jquery.recurrenceinput.js'][1016]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1111]++;
       event.preventDefault();
-      _$jscoverage['jquery.recurrenceinput.js'][1017]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1112]++;
       form.ical.EXDATE.push(this.attributes.date.value);
-      _$jscoverage['jquery.recurrenceinput.js'][1018]++;
-      this.attributes["class"].value = "exdate";
-      _$jscoverage['jquery.recurrenceinput.js'][1019]++;
-      $(this).unbind(event);
-      _$jscoverage['jquery.recurrenceinput.js'][1020]++;
-      $(this).click(occurrenceInclude);
+      _$jscoverage['jquery.recurrenceinput.js'][1113]++;
+      $this = $(this);
+      _$jscoverage['jquery.recurrenceinput.js'][1114]++;
+      $this.attr("class", "exdate");
+      _$jscoverage['jquery.recurrenceinput.js'][1115]++;
+      $this.parent().parent().addClass("dimm");
+      _$jscoverage['jquery.recurrenceinput.js'][1116]++;
+      $this.unbind(event);
+      _$jscoverage['jquery.recurrenceinput.js'][1117]++;
+      $this.click(occurrenceInclude);
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1023]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1120]++;
     function occurrenceInclude(event) {
-      _$jscoverage['jquery.recurrenceinput.js'][1024]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1121]++;
       event.preventDefault();
-      _$jscoverage['jquery.recurrenceinput.js'][1025]++;
-      form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
-      _$jscoverage['jquery.recurrenceinput.js'][1026]++;
-      this.attributes["class"].value = "rrule";
-      _$jscoverage['jquery.recurrenceinput.js'][1027]++;
-      $(this).unbind(event);
-      _$jscoverage['jquery.recurrenceinput.js'][1028]++;
-      $(this).click(occurrenceExclude);
+      _$jscoverage['jquery.recurrenceinput.js'][1122]++;
+      form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
+      _$jscoverage['jquery.recurrenceinput.js'][1123]++;
+      $this = $(this);
+      _$jscoverage['jquery.recurrenceinput.js'][1124]++;
+      $this.attr("class", "rrule");
+      _$jscoverage['jquery.recurrenceinput.js'][1125]++;
+      $this.parent().parent().removeClass("dimm");
+      _$jscoverage['jquery.recurrenceinput.js'][1126]++;
+      $this.unbind(event);
+      _$jscoverage['jquery.recurrenceinput.js'][1127]++;
+      $this.click(occurrenceExclude);
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1031]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1130]++;
     function occurrenceDelete(event) {
-      _$jscoverage['jquery.recurrenceinput.js'][1032]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1131]++;
       event.preventDefault();
-      _$jscoverage['jquery.recurrenceinput.js'][1033]++;
-      form.ical.RDATE.splice(form.ical.RDATE.indexOf(this.attributes.date.value), 1);
-      _$jscoverage['jquery.recurrenceinput.js'][1034]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1132]++;
+      form.ical.RDATE.splice($.inArray(this.attributes.date.value, form.ical.RDATE), 1);
+      _$jscoverage['jquery.recurrenceinput.js'][1133]++;
       $(this).parent().parent().hide("slow", (function () {
-  _$jscoverage['jquery.recurrenceinput.js'][1035]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1134]++;
   $(this).remove();
 }));
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1039]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1138]++;
     function occurrenceAdd(event) {
-      _$jscoverage['jquery.recurrenceinput.js'][1040]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1139]++;
       event.preventDefault();
-      _$jscoverage['jquery.recurrenceinput.js'][1041]++;
-      var dateinput = form.find("span.riaddoccurrence input#adddate").data("dateinput");
-      _$jscoverage['jquery.recurrenceinput.js'][1044]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1140]++;
+      var dateinput = form.find("div.riaddoccurrence input#adddate").data("dateinput");
+      _$jscoverage['jquery.recurrenceinput.js'][1143]++;
       var datevalue = dateinput.getValue("yyyymmddT000000");
-      _$jscoverage['jquery.recurrenceinput.js'][1045]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1144]++;
       form.ical.RDATE.push(datevalue);
-      _$jscoverage['jquery.recurrenceinput.js'][1046]++;
-      var html = ["<div class=\"occurrence\" style=\"display: none;\">", "<span class=\"rdate\">", dateinput.getValue(conf.i18n.longDateFormat), "</span>", "<span class=\"action\">", ("<a date=\"" + datevalue + "\" href=\"#\" class=\"rdate\" >"), "Include", "</a>", "</span>", "</div>"].join("\n");
-      _$jscoverage['jquery.recurrenceinput.js'][1056]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1145]++;
+      var html = ["<div class=\"occurrence exc\" style=\"display: none;\">", "<span class=\"rdate\">", dateinput.getValue(conf.i18n.longDateFormat), "</span>", "<span class=\"action\">", ("<a date=\"" + datevalue + "\" href=\"#\" class=\"rdate\" >"), "Include", "</a>", "</span>", "</div>"].join("\n");
+      _$jscoverage['jquery.recurrenceinput.js'][1155]++;
       form.find("div.rioccurrences").prepend(html);
-      _$jscoverage['jquery.recurrenceinput.js'][1057]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1156]++;
       $(form.find("div.rioccurrences div")[0]).slideDown();
-      _$jscoverage['jquery.recurrenceinput.js'][1058]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1157]++;
       $(form.find("div.rioccurrences .action a.rdate")[0]).click(occurrenceDelete);
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1063]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1162]++;
     function loadOccurrences(startdate, rfc5545, start, readonly) {
-      _$jscoverage['jquery.recurrenceinput.js'][1064]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1163]++;
       var element, occurrenceDiv;
-      _$jscoverage['jquery.recurrenceinput.js'][1066]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1165]++;
       if ((! readonly)) {
-        _$jscoverage['jquery.recurrenceinput.js'][1067]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1166]++;
         element = form;
       }
       else {
-        _$jscoverage['jquery.recurrenceinput.js'][1069]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1168]++;
         element = display;
       }
-      _$jscoverage['jquery.recurrenceinput.js'][1072]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1171]++;
       occurrenceDiv = element.find(".rioccurrences");
-      _$jscoverage['jquery.recurrenceinput.js'][1073]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1172]++;
       occurrenceDiv.hide();
-      _$jscoverage['jquery.recurrenceinput.js'][1076]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1175]++;
       $.ajax({url: conf.ajaxURL, async: false, type: "post", dataType: "json", data: {year: startdate.getFullYear(), month: (startdate.getMonth() + 1), day: startdate.getDate(), rrule: rfc5545, format: conf.i18n.longDateFormat, start: start}, success: (function (data, status, jqXHR) {
-  _$jscoverage['jquery.recurrenceinput.js'][1088]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1187]++;
   var result, element;
-  _$jscoverage['jquery.recurrenceinput.js'][1090]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1189]++;
   if ((! readonly)) {
-    _$jscoverage['jquery.recurrenceinput.js'][1091]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1190]++;
     element = form;
   }
   else {
-    _$jscoverage['jquery.recurrenceinput.js'][1093]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1192]++;
     element = display;
   }
-  _$jscoverage['jquery.recurrenceinput.js'][1095]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1194]++;
   data.readOnly = readonly;
-  _$jscoverage['jquery.recurrenceinput.js'][1096]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1195]++;
+  data.i18n = conf.i18n;
+  _$jscoverage['jquery.recurrenceinput.js'][1197]++;
   result = $.tmpl("occurrenceTmpl", data);
-  _$jscoverage['jquery.recurrenceinput.js'][1097]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1198]++;
   occurrenceDiv = element.find(".rioccurrences");
-  _$jscoverage['jquery.recurrenceinput.js'][1098]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1199]++;
   occurrenceDiv.replaceWith(result);
-  _$jscoverage['jquery.recurrenceinput.js'][1101]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1202]++;
   element.find(".rioccurrences .batching a").click((function (event) {
-  _$jscoverage['jquery.recurrenceinput.js'][1103]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1204]++;
   event.preventDefault();
-  _$jscoverage['jquery.recurrenceinput.js'][1104]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1205]++;
   loadOccurrences(startdate, rfc5545, this.attributes.start.value, readonly);
 }));
-  _$jscoverage['jquery.recurrenceinput.js'][1109]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1210]++;
   if ((! readonly)) {
-    _$jscoverage['jquery.recurrenceinput.js'][1110]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1211]++;
     element.find(".rioccurrences .action a.rrule").click(occurrenceExclude);
-    _$jscoverage['jquery.recurrenceinput.js'][1111]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1212]++;
     element.find(".rioccurrences .action a.exdate").click(occurrenceInclude);
-    _$jscoverage['jquery.recurrenceinput.js'][1112]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1213]++;
     element.find(".rioccurrences .action a.rdate").click(occurrenceDelete);
   }
-  _$jscoverage['jquery.recurrenceinput.js'][1115]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1216]++;
   element.find(".rioccurrences").show();
 }), error: (function (jqXHR, textStatus, errorThrown) {
-  _$jscoverage['jquery.recurrenceinput.js'][1118]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1219]++;
   alert(textStatus);
 })});
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1123]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1224]++;
     function findStartDate() {
-      _$jscoverage['jquery.recurrenceinput.js'][1124]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1225]++;
       var startField, startdate;
-      _$jscoverage['jquery.recurrenceinput.js'][1126]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1227]++;
       if (conf.startField) {
-        _$jscoverage['jquery.recurrenceinput.js'][1128]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1229]++;
         startField = $(conf.startField);
-        _$jscoverage['jquery.recurrenceinput.js'][1129]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1230]++;
         if ((! startField.length)) {
-          _$jscoverage['jquery.recurrenceinput.js'][1131]++;
+          _$jscoverage['jquery.recurrenceinput.js'][1232]++;
           startField = $(("input[id=" + conf.startField + "]"));
         }
-        _$jscoverage['jquery.recurrenceinput.js'][1135]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1236]++;
         startdate = startField.data("dateinput");
-        _$jscoverage['jquery.recurrenceinput.js'][1136]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1237]++;
         if (((startdate === undefined) || (startdate === null))) {
-          _$jscoverage['jquery.recurrenceinput.js'][1138]++;
+          _$jscoverage['jquery.recurrenceinput.js'][1239]++;
           startdate = startField.val();
         }
         else {
-          _$jscoverage['jquery.recurrenceinput.js'][1141]++;
+          _$jscoverage['jquery.recurrenceinput.js'][1242]++;
           startdate = startdate.getValue();
         }
-        _$jscoverage['jquery.recurrenceinput.js'][1143]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1244]++;
         startdate = new Date(startdate);
-        _$jscoverage['jquery.recurrenceinput.js'][1145]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1246]++;
         if (isNaN(startdate)) {
-          _$jscoverage['jquery.recurrenceinput.js'][1146]++;
+          _$jscoverage['jquery.recurrenceinput.js'][1247]++;
           return null;
         }
-        _$jscoverage['jquery.recurrenceinput.js'][1148]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1249]++;
         return startdate;
       }
-      _$jscoverage['jquery.recurrenceinput.js'][1150]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1251]++;
       return null;
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1154]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1253]++;
+    function findEndDate(form) {
+      _$jscoverage['jquery.recurrenceinput.js'][1254]++;
+      var endField, enddate;
+      _$jscoverage['jquery.recurrenceinput.js'][1256]++;
+      endField = form.find("input[name=rirangebyenddatecalendar]");
+      _$jscoverage['jquery.recurrenceinput.js'][1259]++;
+      enddate = endField.data("dateinput");
+      _$jscoverage['jquery.recurrenceinput.js'][1260]++;
+      if (((enddate === undefined) || (enddate === null))) {
+        _$jscoverage['jquery.recurrenceinput.js'][1262]++;
+        enddate = endField.val();
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][1265]++;
+        enddate = enddate.getValue();
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1267]++;
+      enddate = new Date(enddate);
+      _$jscoverage['jquery.recurrenceinput.js'][1270]++;
+      if ((isNaN(enddate) || (endField.val() === ""))) {
+        _$jscoverage['jquery.recurrenceinput.js'][1271]++;
+        return null;
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1273]++;
+      return enddate;
+}
+    _$jscoverage['jquery.recurrenceinput.js'][1275]++;
+    function findIntField(fieldName, form) {
+      _$jscoverage['jquery.recurrenceinput.js'][1276]++;
+      var field, num, isInt;
+      _$jscoverage['jquery.recurrenceinput.js'][1278]++;
+      field = form.find(("input[name=" + fieldName + "]"));
+      _$jscoverage['jquery.recurrenceinput.js'][1280]++;
+      num = field.val();
+      _$jscoverage['jquery.recurrenceinput.js'][1283]++;
+      if ((isNaN(num) || (num.toString().indexOf(".") != -1) || (field.val() === ""))) {
+        _$jscoverage['jquery.recurrenceinput.js'][1284]++;
+        return null;
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1286]++;
+      return num;
+}
+    _$jscoverage['jquery.recurrenceinput.js'][1291]++;
     function loadData(rfc5545) {
-      _$jscoverage['jquery.recurrenceinput.js'][1155]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1292]++;
       var selector, format, startField, startdate, dayindex, day;
-      _$jscoverage['jquery.recurrenceinput.js'][1157]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1294]++;
       if (rfc5545) {
-        _$jscoverage['jquery.recurrenceinput.js'][1158]++;
-        widgetLoadFromRfc5545(form, conf, rfc5545);
-        _$jscoverage['jquery.recurrenceinput.js'][1160]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1295]++;
+        widgetLoadFromRfc5545(form, conf, rfc5545, true);
+        _$jscoverage['jquery.recurrenceinput.js'][1297]++;
         display.find("input[name=richeckbox]").attr("checked", true);
       }
-      _$jscoverage['jquery.recurrenceinput.js'][1164]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1301]++;
       startdate = findStartDate();
-      _$jscoverage['jquery.recurrenceinput.js'][1166]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1303]++;
       if ((startdate !== null)) {
-        _$jscoverage['jquery.recurrenceinput.js'][1168]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1305]++;
         form.find("select[name=rimonthlydayofmonthday]").val(startdate.getDate());
-        _$jscoverage['jquery.recurrenceinput.js'][1169]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1306]++;
         dayindex = conf.orderIndexes[Math.floor(((startdate.getDate() - 1) / 7))];
-        _$jscoverage['jquery.recurrenceinput.js'][1170]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1307]++;
         day = conf.weekdays[(startdate.getDay() - 1)];
-        _$jscoverage['jquery.recurrenceinput.js'][1171]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1308]++;
         form.find("select[name=rimonthlyweekdayofmonthindex]").val(dayindex);
-        _$jscoverage['jquery.recurrenceinput.js'][1172]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1309]++;
         form.find("select[name=rimonthlyweekdayofmonth]").val(day);
-        _$jscoverage['jquery.recurrenceinput.js'][1174]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1311]++;
         form.find("select[name=riyearlydayofmonthmonth]").val((startdate.getMonth() + 1));
-        _$jscoverage['jquery.recurrenceinput.js'][1175]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1312]++;
         form.find("select[name=riyearlydayofmonthday]").val(startdate.getDate());
-        _$jscoverage['jquery.recurrenceinput.js'][1176]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1313]++;
         form.find("select[name=riyearlyweekdayofmonthindex]").val(dayindex);
-        _$jscoverage['jquery.recurrenceinput.js'][1177]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1314]++;
         form.find("select[name=riyearlyweekdayofmonthday]").val(day);
-        _$jscoverage['jquery.recurrenceinput.js'][1178]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1315]++;
         form.find("select[name=riyearlyweekdayofmonthmonth]").val((startdate.getMonth() + 1));
-        _$jscoverage['jquery.recurrenceinput.js'][1181]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1318]++;
         loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, false);
-        _$jscoverage['jquery.recurrenceinput.js'][1184]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1321]++;
         form.find("div.rioccurrencesactions").show();
       }
       else {
-        _$jscoverage['jquery.recurrenceinput.js'][1188]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1325]++;
         form.find("div.rioccurrencesactions").hide();
       }
-      _$jscoverage['jquery.recurrenceinput.js'][1192]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1329]++;
       selector = form.find("select[name=rirtemplate]");
-      _$jscoverage['jquery.recurrenceinput.js'][1193]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1330]++;
       displayFields(selector);
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1196]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1333]++;
     function recurrenceOn() {
-      _$jscoverage['jquery.recurrenceinput.js'][1197]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1334]++;
       var RFC5545 = widgetSaveToRfc5545(form, conf, true);
-      _$jscoverage['jquery.recurrenceinput.js'][1198]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1335]++;
       var label = display.find("label[class=ridisplay]");
-      _$jscoverage['jquery.recurrenceinput.js'][1199]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1336]++;
       label.text((conf.i18n.displayActivate + " " + RFC5545.description));
-      _$jscoverage['jquery.recurrenceinput.js'][1200]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1337]++;
       textarea.val(RFC5545.result);
-      _$jscoverage['jquery.recurrenceinput.js'][1201]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1338]++;
       var startdate = findStartDate();
-      _$jscoverage['jquery.recurrenceinput.js'][1202]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1339]++;
       if ((startdate !== null)) {
-        _$jscoverage['jquery.recurrenceinput.js'][1203]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1340]++;
         loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, true);
       }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1207]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1344]++;
     function recurrenceOff() {
-      _$jscoverage['jquery.recurrenceinput.js'][1208]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1345]++;
       var label = display.find("label[class=ridisplay]");
-      _$jscoverage['jquery.recurrenceinput.js'][1209]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1346]++;
       label.text(conf.i18n.displayUnactivate);
-      _$jscoverage['jquery.recurrenceinput.js'][1210]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1347]++;
       textarea.val("");
-      _$jscoverage['jquery.recurrenceinput.js'][1211]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1348]++;
       display.find(".rioccurrences").hide();
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1214]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1351]++;
     function toggleRecurrence(e) {
-      _$jscoverage['jquery.recurrenceinput.js'][1215]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1352]++;
       var checkbox = display.find("input[name=richeckbox]");
-      _$jscoverage['jquery.recurrenceinput.js'][1216]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1353]++;
       if (checkbox.is(":checked")) {
-        _$jscoverage['jquery.recurrenceinput.js'][1217]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1354]++;
         recurrenceOn();
       }
       else {
-        _$jscoverage['jquery.recurrenceinput.js'][1219]++;
+        _$jscoverage['jquery.recurrenceinput.js'][1356]++;
         recurrenceOff();
       }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1223]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1360]++;
     function save(event) {
-      _$jscoverage['jquery.recurrenceinput.js'][1224]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1361]++;
       event.preventDefault();
-      _$jscoverage['jquery.recurrenceinput.js'][1226]++;
-      form.overlay().close();
-      _$jscoverage['jquery.recurrenceinput.js'][1228]++;
-      display.find("input[name=richeckbox]").attr("checked", true);
-      _$jscoverage['jquery.recurrenceinput.js'][1230]++;
-      recurrenceOn();
+      _$jscoverage['jquery.recurrenceinput.js'][1363]++;
+      if (checkFields(form)) {
+        _$jscoverage['jquery.recurrenceinput.js'][1365]++;
+        form.overlay().close();
+        _$jscoverage['jquery.recurrenceinput.js'][1367]++;
+        display.find("input[name=richeckbox]").attr("checked", true);
+        _$jscoverage['jquery.recurrenceinput.js'][1369]++;
+        recurrenceOn();
+      }
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1233]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1373]++;
     function cancel(event) {
-      _$jscoverage['jquery.recurrenceinput.js'][1234]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1374]++;
       event.preventDefault();
-      _$jscoverage['jquery.recurrenceinput.js'][1236]++;
+      _$jscoverage['jquery.recurrenceinput.js'][1376]++;
       form.overlay().close();
 }
-    _$jscoverage['jquery.recurrenceinput.js'][1243]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1379]++;
+    function checkFields(form) {
+      _$jscoverage['jquery.recurrenceinput.js'][1380]++;
+      var startDate, endDate, num, messagearea;
+      _$jscoverage['jquery.recurrenceinput.js'][1381]++;
+      startDate = findStartDate();
+      _$jscoverage['jquery.recurrenceinput.js'][1384]++;
+      messagearea = form.find("#messagearea");
+      _$jscoverage['jquery.recurrenceinput.js'][1385]++;
+      messagearea.text("");
+      _$jscoverage['jquery.recurrenceinput.js'][1386]++;
+      messagearea.hide();
+      _$jscoverage['jquery.recurrenceinput.js'][1389]++;
+      if ((form.find("#ridailyinterval").css("display") == "block")) {
+        _$jscoverage['jquery.recurrenceinput.js'][1391]++;
+        num = findIntField("ridailyinterval", form);
+        _$jscoverage['jquery.recurrenceinput.js'][1392]++;
+        if (((! num) || (num < 0) || (num > 1000))) {
+          _$jscoverage['jquery.recurrenceinput.js'][1393]++;
+          messagearea.text(conf.i18n.noRepeatEvery).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1394]++;
+          return false;
+        }
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1399]++;
+      if ((form.find("#riweeklyinterval").css("display") == "block")) {
+        _$jscoverage['jquery.recurrenceinput.js'][1401]++;
+        num = findIntField("riweeklyinterval", form);
+        _$jscoverage['jquery.recurrenceinput.js'][1402]++;
+        if (((! num) || (num < 0) || (num > 1000))) {
+          _$jscoverage['jquery.recurrenceinput.js'][1403]++;
+          messagearea.text(conf.i18n.noRepeatEvery).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1404]++;
+          return false;
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][1408]++;
+        if ((form.find(".riweeklyweekday input:checked").length == 0)) {
+          _$jscoverage['jquery.recurrenceinput.js'][1409]++;
+          messagearea.text(conf.i18n.noRepeatOn).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1410]++;
+          return false;
+        }
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1415]++;
+      if ((form.find("#rimonthlyinterval").css("display") == "block")) {
+        _$jscoverage['jquery.recurrenceinput.js'][1417]++;
+        num = findIntField("rimonthlyinterval", form);
+        _$jscoverage['jquery.recurrenceinput.js'][1418]++;
+        if (((! num) || (num < 0) || (num > 1000))) {
+          _$jscoverage['jquery.recurrenceinput.js'][1419]++;
+          messagearea.text(conf.i18n.noRepeatEvery).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1420]++;
+          return false;
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][1424]++;
+        if ((form.find("#rimonthlyoptions input:checked").length == 0)) {
+          _$jscoverage['jquery.recurrenceinput.js'][1425]++;
+          messagearea.text(conf.i18n.noRepeatOn).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1426]++;
+          return false;
+        }
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1431]++;
+      if ((form.find("#riyearlyinterval").css("display") == "block")) {
+        _$jscoverage['jquery.recurrenceinput.js'][1433]++;
+        num = findIntField("riyearlyinterval", form);
+        _$jscoverage['jquery.recurrenceinput.js'][1434]++;
+        if (((! num) || (num < 0) || (num > 1000))) {
+          _$jscoverage['jquery.recurrenceinput.js'][1435]++;
+          messagearea.text(conf.i18n.noRepeatEvery).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1436]++;
+          return false;
+        }
+        _$jscoverage['jquery.recurrenceinput.js'][1440]++;
+        if ((form.find("#riyearlyoptions input:checked").length == 0)) {
+          _$jscoverage['jquery.recurrenceinput.js'][1441]++;
+          messagearea.text(conf.i18n.noRepeatOn).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1442]++;
+          return false;
+        }
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1449]++;
+      if ((form.find("input[value=\"BYOCCURRENCES\"]:visible:checked").length > 0)) {
+        _$jscoverage['jquery.recurrenceinput.js'][1450]++;
+        num = findIntField("rirangebyoccurrencesvalue", form);
+        _$jscoverage['jquery.recurrenceinput.js'][1451]++;
+        if (((! num) || (num < 0) || (num > 1000))) {
+          _$jscoverage['jquery.recurrenceinput.js'][1452]++;
+          messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1453]++;
+          return false;
+        }
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1458]++;
+      if ((form.find("input[value=\"BYENDDATE\"]:visible:checked").length > 0)) {
+        _$jscoverage['jquery.recurrenceinput.js'][1459]++;
+        endDate = findEndDate(form);
+        _$jscoverage['jquery.recurrenceinput.js'][1460]++;
+        if ((! endDate)) {
+          _$jscoverage['jquery.recurrenceinput.js'][1462]++;
+          messagearea.text(conf.i18n.noEndDate).show();
+          _$jscoverage['jquery.recurrenceinput.js'][1463]++;
+          return false;
+        }
+        else {
+          _$jscoverage['jquery.recurrenceinput.js'][1464]++;
+          if ((endDate < startDate)) {
+            _$jscoverage['jquery.recurrenceinput.js'][1466]++;
+            messagearea.text(conf.i18n.pastEndDate).show();
+            _$jscoverage['jquery.recurrenceinput.js'][1467]++;
+            return false;
+          }
+        }
+      }
+      _$jscoverage['jquery.recurrenceinput.js'][1471]++;
+      return true;
+}
+    _$jscoverage['jquery.recurrenceinput.js'][1474]++;
+    function updateOccurances() {
+      _$jscoverage['jquery.recurrenceinput.js'][1475]++;
+      var startDate;
+      _$jscoverage['jquery.recurrenceinput.js'][1476]++;
+      startDate = findStartDate();
+      _$jscoverage['jquery.recurrenceinput.js'][1479]++;
+      if (checkFields(form)) {
+        _$jscoverage['jquery.recurrenceinput.js'][1480]++;
+        loadOccurrences(startDate, widgetSaveToRfc5545(form, conf, false).result, 0, false);
+      }
+}
+    _$jscoverage['jquery.recurrenceinput.js'][1491]++;
     display = $.tmpl("displayTmpl", conf);
-    _$jscoverage['jquery.recurrenceinput.js'][1244]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1492]++;
     form = $.tmpl("formTmpl", conf);
-    _$jscoverage['jquery.recurrenceinput.js'][1262]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1495]++;
     form.overlay(conf.formOverlay).hide();
-    _$jscoverage['jquery.recurrenceinput.js'][1263]++;
-    form.ical = {};
-    _$jscoverage['jquery.recurrenceinput.js'][1266]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1496]++;
+    form.ical = {RDATE: [], EXDATE: []};
+    _$jscoverage['jquery.recurrenceinput.js'][1499]++;
     form.find("input[name=rirangebyenddatecalendar]").dateinput({selectors: true, format: conf.i18n.shortDateFormat, yearRange: [-5, 10]});
-    _$jscoverage['jquery.recurrenceinput.js'][1272]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1505]++;
     if (textarea.val()) {
-      _$jscoverage['jquery.recurrenceinput.js'][1273]++;
-      widgetLoadFromRfc5545(form, conf, textarea.val());
-      _$jscoverage['jquery.recurrenceinput.js'][1274]++;
-      recurrenceOn();
+      _$jscoverage['jquery.recurrenceinput.js'][1506]++;
+      var result = widgetLoadFromRfc5545(form, conf, textarea.val(), false);
+      _$jscoverage['jquery.recurrenceinput.js'][1507]++;
+      if ((result === -1)) {
+        _$jscoverage['jquery.recurrenceinput.js'][1508]++;
+        var label = display.find("label[class=ridisplay]");
+        _$jscoverage['jquery.recurrenceinput.js'][1509]++;
+        label.text(conf.i18n.noRule);
+      }
+      else {
+        _$jscoverage['jquery.recurrenceinput.js'][1511]++;
+        recurrenceOn();
+      }
     }
-    _$jscoverage['jquery.recurrenceinput.js'][1282]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1520]++;
     display.find("input[name=richeckbox]").click(toggleRecurrence);
-    _$jscoverage['jquery.recurrenceinput.js'][1285]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1523]++;
     display.find("a[name=riedit]").click((function (e) {
-  _$jscoverage['jquery.recurrenceinput.js'][1288]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1526]++;
   loadData(textarea.val());
-  _$jscoverage['jquery.recurrenceinput.js'][1289]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1527]++;
   e.preventDefault();
-  _$jscoverage['jquery.recurrenceinput.js'][1290]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1528]++;
   form.overlay().load();
 }));
-    _$jscoverage['jquery.recurrenceinput.js'][1295]++;
-    form.find("span.riaddoccurrence input#adddate").dateinput({selectors: true, format: conf.i18n.shortDateFormat, yearRange: [-5, 10]});
-    _$jscoverage['jquery.recurrenceinput.js'][1300]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1533]++;
+    form.find("div.riaddoccurrence input#adddate").dateinput({selectors: true, format: conf.i18n.shortDateFormat, yearRange: [-5, 10]});
+    _$jscoverage['jquery.recurrenceinput.js'][1538]++;
     form.find("input#addaction").click(occurrenceAdd);
-    _$jscoverage['jquery.recurrenceinput.js'][1303]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1541]++;
     form.find("a.rirefreshbutton").click((function (event) {
-  _$jscoverage['jquery.recurrenceinput.js'][1305]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1543]++;
   event.preventDefault();
-  _$jscoverage['jquery.recurrenceinput.js'][1306]++;
-  loadOccurrences(findStartDate(), widgetSaveToRfc5545(form, conf, false).result, 0, false);
+  _$jscoverage['jquery.recurrenceinput.js'][1544]++;
+  updateOccurances();
 }));
-    _$jscoverage['jquery.recurrenceinput.js'][1314]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1549]++;
     form.find("select[name=rirtemplate]").change((function (e) {
-  _$jscoverage['jquery.recurrenceinput.js'][1316]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1551]++;
   displayFields($(this));
 }));
-    _$jscoverage['jquery.recurrenceinput.js'][1321]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1556]++;
     form.find("select").change((function (e) {
-  _$jscoverage['jquery.recurrenceinput.js'][1323]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1558]++;
   $(this).parent().find("> input").click().change();
 }));
-    _$jscoverage['jquery.recurrenceinput.js'][1330]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1561]++;
+    form.find("input[name=rirangebyoccurrencesvalue]").change((function (e) {
+  _$jscoverage['jquery.recurrenceinput.js'][1563]++;
+  $(this).parent().find("input[name=rirangetype]").click().change();
+}));
+    _$jscoverage['jquery.recurrenceinput.js'][1566]++;
+    form.find("input[name=rirangebyenddatecalendar]").change((function (e) {
+  _$jscoverage['jquery.recurrenceinput.js'][1568]++;
+  $(this).parent().find("input[name=rirangetype]").click().change();
+}));
+    _$jscoverage['jquery.recurrenceinput.js'][1572]++;
+    form.find("input:radio, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]").change((function (e) {
+  _$jscoverage['jquery.recurrenceinput.js'][1575]++;
+  if ((form.find(".rioccurrencesactions:visible").length != 0)) {
+    _$jscoverage['jquery.recurrenceinput.js'][1576]++;
+    updateOccurances();
+  }
+}));
+    _$jscoverage['jquery.recurrenceinput.js'][1584]++;
     form.find(".ricancelbutton").click(cancel);
-    _$jscoverage['jquery.recurrenceinput.js'][1331]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1585]++;
     form.find(".risavebutton").click(save);
-    _$jscoverage['jquery.recurrenceinput.js'][1337]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1591]++;
     $.extend(self, {display: display, form: form, loadData: loadData, save: save});
 }
-  _$jscoverage['jquery.recurrenceinput.js'][1350]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1604]++;
   $.fn.recurrenceinput = (function (conf) {
-  _$jscoverage['jquery.recurrenceinput.js'][1351]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1605]++;
   if (this.data("recurrenceinput")) {
-    _$jscoverage['jquery.recurrenceinput.js'][1353]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1607]++;
     return this.data("recurrenceinput");
   }
-  _$jscoverage['jquery.recurrenceinput.js'][1357]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1611]++;
   var config = $.extend({}, tool.conf);
-  _$jscoverage['jquery.recurrenceinput.js'][1358]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1612]++;
   $.extend(config, conf);
-  _$jscoverage['jquery.recurrenceinput.js'][1359]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1613]++;
   $.extend(config, {i18n: LABELS[config.lang], name: this.attr("name")});
-  _$jscoverage['jquery.recurrenceinput.js'][1362]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1616]++;
   var recurrenceinput = new RecurrenceInput(config, this);
-  _$jscoverage['jquery.recurrenceinput.js'][1364]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1618]++;
   recurrenceinput.form.appendTo("body");
-  _$jscoverage['jquery.recurrenceinput.js'][1365]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1619]++;
   this.after(recurrenceinput.display);
-  _$jscoverage['jquery.recurrenceinput.js'][1367]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1621]++;
   if (this.val()) {
-    _$jscoverage['jquery.recurrenceinput.js'][1368]++;
+    _$jscoverage['jquery.recurrenceinput.js'][1622]++;
     recurrenceinput.display.find("input[name=richeckbox]").attr("checked", true);
   }
-  _$jscoverage['jquery.recurrenceinput.js'][1374]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1628]++;
   this.hide();
-  _$jscoverage['jquery.recurrenceinput.js'][1377]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1631]++;
   this.data("recurrenceinput", recurrenceinput);
-  _$jscoverage['jquery.recurrenceinput.js'][1378]++;
+  _$jscoverage['jquery.recurrenceinput.js'][1632]++;
   return recurrenceinput;
 });
 })(jQuery);
