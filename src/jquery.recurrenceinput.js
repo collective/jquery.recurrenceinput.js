@@ -117,7 +117,8 @@
         weeklyInterval2: 'week(s)',
         weeklyWeekdays: 'Repeat on:',
 
-        monthlyInterval: 'Repeat every:',
+        monthlyInterval1: 'Repeat every:',
+        monthlyInterval2: 'month(s)',
         monthlyDayOfMonth1: 'Day',
         monthlyDayOfMonth2: 'of the month',
         monthlyDayOfMonth3: ', every',
@@ -194,14 +195,14 @@
 
     var OCCURRENCETMPL = ['<div class="rioccurrences">',
         '{{each occurrences}}',
-            '<div class="occurrence {{if occurrences[$index].type === "exdate"}}dimm{{/if}} {{if occurrences[$index].type === "rdate"}}exc{{/if}}">',
-                '<span class="${occurrences[$index].type}">',
+            '<div class="occurrence ${occurrences[$index].type}">',
+                '<span>',
                     '${occurrences[$index].formattedDate}',
                     '{{if occurrences[$index].type === "start"}}',
-                        '<span>${i18n.recurrenceStart}</span>',
+                        '<span class="rlabel">${i18n.recurrenceStart}</span>',
                     '{{/if}}',
                     '{{if occurrences[$index].type === "rdate"}}',
-                        '<span>${i18n.additionalDate}</span>',
+                        '<span class="rlabel">${i18n.additionalDate}</span>',
                     '{{/if}}',
                 '</span>',
                 '{{if !readOnly}}',
@@ -307,7 +308,7 @@
                         '</div>',
                     '</div>',
                     '<div id="rimonthlyinterval" class="rifield">',
-                        '<label for="rimonthlyinterval" class="label">${i18n.monthlyInterval}</label>',
+                        '<label for="rimonthlyinterval" class="label">${i18n.monthlyInterval1}</label>',
                         '<div class="field">',
                             '<input type="text" size="2"',
                                 'value="1" ',
@@ -684,7 +685,7 @@
                         // Make it UTC:
                         result += 'Z';
                     }
-                    human += ', ' + conf.i18n.rangeByEndDate;
+                    human += ', ' +conf.i18n.range + ' ' + conf.i18n.rangeByEndDate;
                     human += ' ' + field.data('dateinput').getValue(conf.i18n.longDateFormat);
                     break;
                 }
@@ -1099,7 +1100,7 @@
             form.ical.EXDATE.push(this.attributes.date.value);
             $this = $(this);
             $this.attr('class', 'exdate');
-            $this.parent().parent().addClass('dimm');
+            $this.parent().parent().addClass('exdate');
             $this.unbind(event);
             $this.click(occurrenceInclude);
         }
@@ -1109,7 +1110,7 @@
             form.ical.EXDATE.splice(form.ical.EXDATE.indexOf(this.attributes.date.value), 1);
             $this = $(this);
             $this.attr('class', 'rrule');
-            $this.parent().parent().removeClass('dimm');
+            $this.parent().parent().removeClass('exdate');
             $this.unbind(event);
             $this.click(occurrenceExclude);
         }
@@ -1129,7 +1130,7 @@
                 .data('dateinput');
             var datevalue = dateinput.getValue('yyyymmddT000000');
             form.ical.RDATE.push(datevalue);
-            var html = ['<div class="occurrence exc" style="display: none;">',
+            var html = ['<div class="occurrence rdate" style="display: none;">',
                     '<span class="rdate">',
                         dateinput.getValue(conf.i18n.longDateFormat),
                     '</span>',

@@ -118,6 +118,16 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             occurrences.append({'date': date.strftime('%Y%m%dT%H%M%S'),
                                 'formattedDate': date.strftime(date_format),
                                 'type': occurrence_type,})
+
+        
+        while exdates:
+            # There are exdates that are after the end of the recurrence.
+            # Excluding the last dates make no sense, as you can change the
+            # range instead, but we need to support it anyway.
+            exdate = exdates.pop(0)
+            occurrences.append({'date': exdate.strftime('%Y%m%dT%H%M%S'),
+                                'formattedDate': exdate.strftime(date_format),
+                                'type': 'exdate',})
         
         # Calculate no of occurrences, but only to a max of three times
         # the batch size. This will support infinite recurrance in a

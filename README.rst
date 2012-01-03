@@ -39,13 +39,6 @@ Known bugs
 
 * Does not work on IE
 
-* If a disabled item is the last on the list it will become invisible.
-
-* Some human readable labels are no longer working.
-
-* The date picker is missing arrows.
-
-
 To Do
 -----
 

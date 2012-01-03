@@ -125,27 +125,31 @@ div.rioccurrences .occurrence:hover {
     border-bottom: 1px solid #DDDDDD;
 }
 
-div.rioccurrences .occurrence .start span,
-div.rioccurrences .occurrence .rdate span {
+div.rioccurrences .occurrence.start span.rlabel,
+div.rioccurrences .occurrence.rdate span.rlabel {
     color: #9CBA9B;
     margin: 0 5px;
     font-size: 70%;
     font-weight: bold;
 }
 
-div.rioccurrences .occurrence.dimm {
+div.rioccurrences .occurrence.exdate {
     opacity:0.4;
     filter:alpha(opacity=40);
 }
 
-div.rioccurrences .occurrence.exc {
+div.ridisplay .occurrence.exdate {
+    display: none;
+}
+
+div.rioccurrences .occurrence.rdate {
     background: #FFFFE0;
 }
 
-div.rioccurrences span.start,
-div.rioccurrences span.rrule,
-div.rioccurrences span.rdate,
-div.rioccurrences span.exdate {
+div.rioccurrences div.start,
+div.rioccurrences div.rrule,
+div.rioccurrences div.rdate,
+div.rioccurrences div.exdate {
     margin-left: 5px;
 }
 
