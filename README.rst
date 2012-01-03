@@ -37,7 +37,6 @@ This widget does not support all features of RRULE's. For example:
 Known bugs
 ----------
 
-* Does not work on IE
 
 To Do
 -----
@@ -45,12 +44,6 @@ To Do
 High priority:
 
 * 100% code coverage from tests (currently 97%).
-* You should only be able to add dates after the start date, and you should not 
-  be able to input an end date before the start-date.
-* There should be validation of all input fields where you can type, and also
-  legnth limits, etc.
-* The automatic selection of radio-buttons depending on field selections have
-  stopped working.
 
 Medium priority:
 
@@ -62,10 +55,7 @@ Medium priority:
 Low priority:
 
 * Support more obscure RFC5545 options.
-  
-Maybe priority: 
-* Automatically refresh the occurrence list after changing the recurrence.
-  
+
 
 Developer information
 ---------------------
@@ -130,6 +120,8 @@ This project was originally started by Rok Garbas.
 Authors:
   * Lennart Regebro
   * Rok Garbas
-  
+  * Vilmos Somogyi
+  * Johannes Raggam
+
 Thanks to Hexagon IT, http://www.hexagonit.fi/, who funded the main body
 of work, done by Lennart Regebro.
