@@ -15,6 +15,9 @@
             
             // "REMOTE" FIELD
             startField: null,
+            startFieldYear: null,
+            startFieldMonth: null,
+            startFieldDay: null,
             ajaxURL: null,
         
             // FORM OVERLAY
@@ -1220,18 +1223,29 @@
                 }
             });
         }
-        
+
+        function pad(number, length) {
+            // http://www.electrictoolbox.com/pad-number-zeroes-javascript/  
+            var str = '' + number;
+            while (str.length < length) {
+                str = '0' + str;
+            }
+            return str;
+        }
+        function getField(field) {
+            // See if it is a field already
+            realField = $(field);
+            if (!realField.length) {
+                // Otherwise, we assume it's an id:
+                realField = $('#' + field);
+            }
+            return realField;
+        }
         function findStartDate() {
-            var startField, startdate;
+            var startdate = null;
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
-                // Se if it is a field already
-                startField = $(conf.startField);
-                if (!startField.length) {
-                    // Otherwise, we assume it's an id:
-                    startField = $('input[id=' + conf.startField + ']');
-                }
-                
+                startField = getField(conf.startField);
                 // Now we have a field, see if it is a dateinput field:
                 startdate = startField.data('dateinput');
                 if (startdate === undefined || startdate === null) {
@@ -1241,14 +1255,21 @@
                     // Yes it was, get the date:
                     startdate = startdate.getValue();
                 }
-                startdate = new Date(startdate);
-                
-                if (isNaN(startdate)) {
-                    return null;
-                }
-                return startdate;
+            } else if (conf.startFieldYear &&
+                       conf.startFieldMonth &&
+                       conf.startFieldDay) {
+                startFieldYear = getField(conf.startFieldYear);
+                startFieldMonth = getField(conf.startFieldMonth);
+                startFieldDay = getField(conf.startFieldDay);
+                startdate = startFieldYear.val() + '-' +
+                            pad(startFieldMonth.val(), 2) + '-' +
+                            pad(startFieldDay.val(), 2);
             }
-            return null;
+            startdate = new Date(startdate);
+            if (isNaN(startdate)) {
+                return null;
+            }
+            return startdate;
         }
         function findEndDate(form) {
             var endField, enddate;
@@ -1289,7 +1310,7 @@
         // Loading (populating) display and form widget with
         // passed RFC5545 string (data)
         function loadData(rfc5545) {
-            var selector, format, startField, startdate, dayindex, day;
+            var selector, format, startdate, dayindex, day;
 
             if (rfc5545) {
                 widgetLoadFromRfc5545(form, conf, rfc5545, true);
