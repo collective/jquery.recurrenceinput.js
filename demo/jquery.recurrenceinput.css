@@ -27,6 +27,7 @@ div.riform .rifield {
 
 div.riform .rifield .field {
     float:left;
+    clear: none;
 }
 
 div.riform .label {

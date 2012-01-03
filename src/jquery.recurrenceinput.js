@@ -1114,6 +1114,9 @@
 
         function occurrenceExclude(event) {
             event.preventDefault();
+            if (form.ical.EXDATE === undefined) {
+                form.ical.EXDATE = [];
+            }
             form.ical.EXDATE.push(this.attributes.date.value);
             $this = $(this);
             $this.attr('class', 'exdate');
@@ -1146,6 +1149,9 @@
                 .find('div.riaddoccurrence input#adddate')
                 .data('dateinput');
             var datevalue = dateinput.getValue('yyyymmddT000000');
+            if (form.ical.RDATE === undefined) {
+                form.ical.RDATE = [];
+            }
             form.ical.RDATE.push(datevalue);
             var html = ['<div class="occurrence rdate" style="display: none;">',
                     '<span class="rdate">',
