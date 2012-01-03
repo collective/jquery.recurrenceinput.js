@@ -331,7 +331,7 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
 });
 
 test("Field validations", function () {
-    expect(44);
+    expect(52);
     
     // This sets the text area rule, and opens the dialog box.
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
@@ -375,38 +375,33 @@ test("Field validations", function () {
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '');
     ok(input.form.find('#messagearea').css('display') === 'block');
     ok(input.form.find('#messagearea').text() === 'Error: End date is not set. Please set a correct value');
-    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2015', '12', '31');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2015', '7', '15');
     input.form.find('input[value=BYENDDATE]').click();
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
-    // ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '12/31/2015');
-    // TODO: for some reason the set date is 01/31/2016 instead of 12/31/2015
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '08/15/2015');
     
     // End date before start date
-    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2001', '12', '31');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2001', '7', '15');
     input.form.find('input[value=BYENDDATE]').click();
     input.form.find('.rirefreshbutton').click();
-    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
-    //ok(input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').getValue() === '11/30/2001');
-    // TODO: for some reason the set date is 12/31/2006 instead of 11/30/2001
     ok(input.form.find('#messagearea').css('display') === 'block');
     ok(input.form.find('#messagearea').text() === 'Error: End date cannot be before start date');
-    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2015', '12', '31');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2013', '7', '15');
     input.form.find('input[value=BYENDDATE]').click();
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
-    //ok(input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').getValue() === '12/31/2015');
-    // TODO: for some reason the set date is 01/31/2016 instead of 12/31/2015
-    
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '08/15/2013');
     
     // Weekly
-    input.form.find('select[name=rirtemplate]').val('weekly');
+    input.form.find('select[name=rirtemplate]').val('weekly').change();
     ok(input.form.find('select[name=rirtemplate]').val() === 'weekly');
     
     // Empty Repeat every N days field
     input.form.find('input[name=riweeklyinterval]').val('');
+    input.form.find('#riweeklyweekdays input:checkbox').attr('checked', true);
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('input[name=riweeklyinterval]').val() === '');
     ok(input.form.find('#messagearea').css('display') === 'block');
@@ -424,19 +419,19 @@ test("Field validations", function () {
     input.form.find('#riweeklyweekdays input:checkbox').attr('checked', true);
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
-    //26
     
     // Monthly
-    input.form.find('select[name=rirtemplate]').val('monthly');
+    input.form.find('select[name=rirtemplate]').val('monthly').change();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
     
     // No Repeat on radio button is selected
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'block');
     ok(input.form.find('#messagearea').text() === 'Error: Repeat on value must be selected');
-    input.form.find('input[name=rimonthlytype]').click();
+    input.form.find('input[name=rimonthlytype]').attr('checked', true);
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
+    //38
     
     // Empty Repeat every N days field
     input.form.find('input[name=rimonthlyinterval]').val('');
@@ -448,6 +443,30 @@ test("Field validations", function () {
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
     ok(input.form.find('input[name=rimonthlyinterval]').val() === '5');
+    
+    // Yearly
+    input.form.find('select[name=rirtemplate]').val('yearly').change();
+    ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
+    
+    // No Repeat on radio button is selected
+    input.form.find('input[name=riyearlyType]').attr('checked', false);
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: Repeat on value must be selected');
+    input.form.find('input[name=riyearlyType]').attr('checked', true);
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    
+    // Empty Repeat every N days field
+    input.form.find('input[name=riyearlyinterval]').val('');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=riyearlyinterval]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: Repeat every field must be a positive integer value (max. 1000)');
+    input.form.find('input[name=riyearlyinterval]').val('5');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=riyearlyinterval]').val() === '5');
     
     // And this saves it.
     input.form.find('.risavebutton').click();
