@@ -124,6 +124,7 @@ Authors:
   * Lennart Regebro
   * Rok Garbas
   * Vilmos Somogyi
-  
+  * Johannes Raggam
+
 Thanks to Hexagon IT, http://www.hexagonit.fi/, who funded the main body
 of work, done by Lennart Regebro.
