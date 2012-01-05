@@ -126,13 +126,11 @@
         monthlyDayOfMonth1: 'Day',
         monthlyDayOfMonth1Human: 'on day',
         monthlyDayOfMonth2: 'of the month',
-        monthlyDayOfMonth3: ', every',
-        monthlyDayOfMonth4: 'month(s)',
+        monthlyDayOfMonth3: 'month(s)',
         monthlyWeekdayOfMonth1: 'The',
         monthlyWeekdayOfMonth1Human: 'on the',
         monthlyWeekdayOfMonth2: '',
-        monthlyWeekdayOfMonth3: ', every',
-        monthlyWeekdayOfMonth4: 'month(s)',
+        monthlyWeekdayOfMonth3: 'of the month',
         monthlyRepeatOn: 'Repeat on:',
 
         yearlyInterval1: 'Repeat every:',
@@ -327,7 +325,7 @@
                             '<input type="text" size="2"',
                                 'value="1" ',
                                 'name="rimonthlyinterval"/>',
-                            '${i18n.monthlyDayOfMonth4}',
+                            '${i18n.monthlyInterval2}',
                         '</div>',
                     '</div>',
                     '<div id="rimonthlyoptions" class="rifield">',
@@ -371,6 +369,7 @@
                                         '<option value="${weekdays[$index]}">${$value}</option>',
                                     '{{/each}}',
                                 '</select>',
+                                '${i18n.monthlyWeekdayOfMonth3}',
                             '</div>',
                         '</div>',
                     '</div>',
@@ -616,7 +615,7 @@
                 if (interval != '1') {
                     result += ';INTERVAL=' + interval;
                 }
-                human = interval + ' ' + conf.i18n.monthlyDayOfMonth4;
+                human = interval + ' ' + conf.i18n.monthlyInterval2;
                 break;
                 
             case 'rimonthlyoptions':
