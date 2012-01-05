@@ -37,6 +37,9 @@ This widget does not support all features of RRULE's. For example:
 Known bugs
 ----------
 
+* Read only mode still requires a write-start widget. Of course it should work 
+  even with just a plain text-field.
+
 
 To Do
 -----
@@ -47,10 +50,10 @@ High priority:
 
 Medium priority:
 
-* The human readable output should probably be done directly from the RRULE and
-  not by using the form i18n, to improve the grammar and rule support.
 * Make it possible to change the order of the fields as a part of the i18n.
   (jQuery templates)?
+* The human readable output should probably be done directly from the RRULE and
+  not by using the form i18n, to improve the grammar and rule support.
 
 Low priority:
 

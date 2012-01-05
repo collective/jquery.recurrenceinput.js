@@ -119,7 +119,7 @@
         weeklyInterval1: 'Repeat every:',
         weeklyInterval2: 'week(s)',
         weeklyWeekdays: 'Repeat on:',
-        weeklyWeekdaysHuman: 'on: ',
+        weeklyWeekdaysHuman: 'on:',
 
         monthlyInterval1: 'Repeat every:',
         monthlyInterval2: 'month(s)',
@@ -151,10 +151,10 @@
         rangeByOccurrences1: 'After',
         rangeByOccurrences1Human: 'ends after',
         rangeByOccurrences2: 'occurrence(s)',
-        rangeByEndDate: 'On ',
-        rangeByEndDateHuman: 'ends on ',
+        rangeByEndDate: 'On',
+        rangeByEndDateHuman: 'ends on',
         
-        including: ', and also ',
+        including: ', and also',
         except: ', except for',
 
         cancel: 'Cancel',        
@@ -189,10 +189,10 @@
         multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos: 'BYSETPOS is not supported',
         noRule: 'No RRULE in RRULE data',
-        noRepeatEvery: 'Error: "Repeat every"-field must be a positive integer value (max. 1000)',
+        noRepeatEvery: 'Error: The "Repeat every"-field must be a positive integer value (max. 1000)',
         noEndDate: 'Error: End date is not set. Please set a correct value',
         pastEndDate: 'Error: End date cannot be before start date',
-        noEndAfterNOccurrences: 'Error: "After N occurrences"-field must be a positive integer value (max. 1000)',
+        noEndAfterNOccurrences: 'Error: The "After N occurrences"-field must be a positive integer value (max. 1000)',
         
         rtemplate: {
             daily: 'Daily',
