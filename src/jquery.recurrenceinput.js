@@ -168,7 +168,7 @@
         exclude: 'Exclude',
         remove: 'Remove',
         
-        orderIndexes: ['First', 'Second', 'Third', 'Fourth', 'Last'],
+        orderIndexes: ['first', 'second', 'third', 'fourth', 'last'],
         months: [
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'],
@@ -191,16 +191,16 @@
         multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos: 'BYSETPOS is not supported',
         noRule: 'No RRULE in RRULE data',
-        noRepeatEvery: 'Error: Repeat every field must be a positive integer value (max. 1000)',
+        noRepeatEvery: 'Error: "Repeat every"-field must be a positive integer value (max. 1000)',
         noEndDate: 'Error: End date is not set. Please set a correct value',
         pastEndDate: 'Error: End date cannot be before start date',
-        noEndAfterNOccurrences: 'Error: After N occurrences field must be a positive integer value (max. 1000)',
-        noRepeatOn: 'Error: Repeat on value must be selected',
+        noEndAfterNOccurrences: 'Error: "After N occurrences"-field must be a positive integer value (max. 1000)',
+        noRepeatOn: 'Error: "Repeat on"-value must be selected',
         
         rtemplate: {
             daily: 'Daily',
-            mondayfriday: 'Mondays and Fridays',
-            weekdays: 'Weekdays',
+            mondayfriday: 'Monday and Friday',
+            weekdays: 'Weekday',
             weekly: 'Weekly',
             monthly: 'Monthly',
             yearly: 'Yearly'

@@ -101,14 +101,17 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             weeklyInterval1: 'Varje',
             weeklyInterval2: 'vecka/veckor',
             weeklyWeekdays: 'P\u00E5:',
+	    weeklyWeekdaysHuman: 'p\u00E5: ',
     
             monthlyInterval1: '\u00C5terkom varje:',
 	    monthlyInterval2: 'm\u00E5nad(er)',
             monthlyDayOfMonth1: 'Den',
+            monthlyDayOfMonth1Human: 'den',	    
             monthlyDayOfMonth2: 'dagen i m\u00E5naden',
             monthlyDayOfMonth3: ', var',
             monthlyDayOfMonth4: 'm\u00E5nad',
             monthlyWeekdayOfMonth1: '',
+            monthlyWeekdayOfMonth1Human: 'p\u00E5',	    
             monthlyWeekdayOfMonth2: '',
             monthlyWeekdayOfMonth3: ', varje',
             monthlyWeekdayOfMonth4: 'm\u00E5nad',
@@ -117,9 +120,11 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
 	    yearlyInterval1: '\u00C5terkom varje:',
 	    yearlyInterval2: '\u00E5r',
             yearlyDayOfMonth1: 'Varje',
+            yearlyDayOfMonth1Human: 'p\u00E5',
             yearlyDayOfMonth2: '',
             yearlyDayOfMonth3: '',
             yearlyWeekdayOfMonth1: '',
+            yearlyWeekdayOfMonth1Human: 'p\u00E5',
             yearlyWeekdayOfMonth2: '',
             yearlyWeekdayOfMonth3: '',
             yearlyWeekdayOfMonth4: '',
@@ -128,8 +133,10 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             range: '\u00C5terkomsten stoppar:',
             rangeNoEnd: 'Inte',
             rangeByOccurrences1: 'Stoppar efter',
+	    rangeByOccurrences1Human: 'stoppar after',	    
             rangeByOccurrences2: '\u00E5terkomster',
             rangeByEndDate: 'Till och med',
+	    rangeByEndDateHuman: 'till och med ',
     
             including: ', samt den',
             except: ', f\u00F6rutom den',
@@ -159,14 +166,22 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
             longDateFormat: 'dd mmmm yyyy',
             shortDateFormat: 'yyyy-mm-dd',
                 
-            noTemplateMatch: 'Varning: Denna h\u00E4ndelse anv\u00E4nder funktionalitet ' +
-                               'som denna dialog inte st\u00F6djer. Om du sparar kan ' +
-                               'detta \u00E4ndra n\u00E4r h\u00E4ndelsen \u00E5terkommer.',
+            unsupportedFeatures: 'Varning: Denna h\u00E4ndelse anv\u00E4nder funktionalitet ' +
+                                 'som denna dialog inte st\u00F6djer. Om du sparar kan ' +
+	    noTemplateMatch: 'Hittar ingen \u00E5terkomstmall som passar',
+	    multipleDayOfMonth: '\u00C5terkomster med flera dagar st\u00F6ds inte i m\u00E5natlig eller \u00E5rlig \u00E5terkomst',
+	    bysetpos: 'BYSETPOS st\u00F6ds ej',
+	    noRule: 'Ingen RRULE funnen',
+	    noRepeatEvery: 'Fel: "\u00C5terkom var"-f\u00E4ltet m\u00E5ste vara mellan 1 och 1000',
+	    noEndDate: 'Fel: Slutdatum \u00E4r inte satt.',
+	    pastEndDate: 'Fel: Slutdatum kan inte vara f\u00F6re startdatum',
+	    noEndAfterNOccurrences: 'Fel: "Efter N \u00E5terkomster"-f\u00E4ltet m\u00E5ste vara mellan 1 och 1000',
+	    noRepeatOn: 'Fel: "\u00C5terkom p\u00E5" m\u00E5ste vara valt',
                                
             rtemplate: {
                 daily: 'Varje dag',
-                mondayfriday: 'M\u00E5ndagar och Fredagar',
-                weekdays: 'Veckodagar',
+                mondayfriday: 'M\u00E5ndag och Fredag',
+                weekdays: 'Veckodag',
                 weekly: 'Varje vecka',
                 monthly: 'Varje m\u00E5nad',
                 yearly: 'Varje \u00E5r'
