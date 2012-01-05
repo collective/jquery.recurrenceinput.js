@@ -982,7 +982,7 @@
                     if (byday) {
                         monthlyType = 'WEEKDAYOFMONTH';
                         
-                        if (form.ical.RRULE.indexOf(rtemplate.rrule) === 0) {
+                        if ($.inArray(',', byday) !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
