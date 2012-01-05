@@ -576,7 +576,7 @@
             
             case 'ridailyinterval':
                 interval = field.find('input[name=ridailyinterval]').val();
-                if (interval != '1') {
+                if (interval !== '1') {
                     result += ';INTERVAL=' + interval;
                 }
                 human = interval + ' ' + conf.i18n.dailyInterval2;
@@ -584,7 +584,7 @@
                 
             case 'riweeklyinterval':
                 interval = field.find('input[name=riweeklyinterval]').val();
-                if (interval != '1') {
+                if (interval !== '1') {
                     result += ';INTERVAL=' + interval;
                 }
                 human = interval + ' ' + conf.i18n.weeklyInterval2;
@@ -612,7 +612,7 @@
                 
             case 'rimonthlyinterval':
                 interval = field.find('input[name=rimonthlyinterval]').val();
-                if (interval != '1') {
+                if (interval !== '1') {
                     result += ';INTERVAL=' + interval;
                 }
                 human = interval + ' ' + conf.i18n.monthlyInterval2;
@@ -644,7 +644,7 @@
                 
             case 'riyearlyinterval':
                 interval = field.find('input[name=riyearlyinterval]').val();
-                if (interval != '1') {
+                if (interval !== '1') {
                     result += ';INTERVAL=' + interval;
                 }
                 human = interval + ' ' + conf.i18n.yearlyInterval2;
@@ -1116,17 +1116,17 @@
                 form.ical.EXDATE = [];
             }
             form.ical.EXDATE.push(this.attributes.date.value);
-            $this = $(this);
+            var $this = $(this);
             $this.attr('class', 'exdate');
             $this.parent().parent().addClass('exdate');
             $this.unbind(event);
-            $this.click(occurrenceInclude);
+            $this.click(occurrenceInclude); // Jslint warns here, but that's OK.
         }
 
         function occurrenceInclude(event) {
             event.preventDefault();
             form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
-            $this = $(this);
+            var $this = $(this);
             $this.attr('class', 'rrule');
             $this.parent().parent().removeClass('exdate');
             $this.unbind(event);
@@ -1232,7 +1232,7 @@
 
         function pad(number, length) {
             // http://www.electrictoolbox.com/pad-number-zeroes-javascript/  
-            var str = '' + number;
+            var str = '' + number; // Confuses jslint.
             while (str.length < length) {
                 str = '0' + str;
             }
@@ -1240,7 +1240,7 @@
         }
         function getField(field) {
             // See if it is a field already
-            realField = $(field);
+            var realField = $(field);
             if (!realField.length) {
                 // Otherwise, we assume it's an id:
                 realField = $('#' + field);
@@ -1249,6 +1249,8 @@
         }
         function findStartDate() {
             var startdate = null;
+            var startField, startFieldYear, startFieldMonth, startFieldDay;
+            
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
                 startField = getField(conf.startField);
@@ -1268,8 +1270,8 @@
                 startFieldMonth = getField(conf.startFieldMonth);
                 startFieldDay = getField(conf.startFieldDay);
                 startdate = startFieldYear.val() + '-' +
-                            pad(startFieldMonth.val(), 2) + '-' +
-                            pad(startFieldDay.val(), 2);
+                    pad(startFieldMonth.val(), 2) + '-' +
+                    pad(startFieldDay.val(), 2);
             }
             startdate = new Date(startdate);
             if (isNaN(startdate)) {
@@ -1307,7 +1309,7 @@
             num = field.val();
 
             // if it's not a number or the field is left empty
-            if (isNaN(num) || (num.toString().indexOf('.')!=-1) || field.val() === "") {
+            if (isNaN(num) || (num.toString().indexOf('.') !== -1) || field.val() === "") {
                 return null;
             }
             return num;
@@ -1384,25 +1386,6 @@
             }
         }
 
-        function save(event) {
-            event.preventDefault();
-            // if no field errors, process the request
-            if(checkFields(form)) {
-                // close overlay
-                form.overlay().close();
-                // check checkbox
-                display.find('input[name=richeckbox]')
-                    .attr('checked', true);
-                recurrenceOn();
-            }
-        }
-
-        function cancel(event) {
-            event.preventDefault();
-            // close overlay
-            form.overlay().close();
-        }
-        
         function checkFields(form) {
             var startDate, endDate, num, messagearea;
             startDate = findStartDate();
@@ -1413,40 +1396,40 @@
             messagearea.hide();
             
             // Repeats Dialy
-            if(form.find('#ridailyinterval').css('display') == 'block') {
+            if (form.find('#ridailyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('ridailyinterval', form);
-                if(!num || num < 0 || num > 1000) {
+                if (!num || num < 0 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
             }
             
             // Repeats Weekly
-            if(form.find('#riweeklyinterval').css('display') == 'block') {
+            if (form.find('#riweeklyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riweeklyinterval', form);
-                if(!num || num < 0 || num > 1000) {
+                if (!num || num < 0 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
             }
             
             // Repeats Monthly
-            if(form.find('#rimonthlyinterval').css('display') == 'block') {
+            if (form.find('#rimonthlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('rimonthlyinterval', form);
-                if(!num || num < 0 || num > 1000) {
+                if (!num || num < 0 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
             }
             
             // Repeats Yearly
-            if(form.find('#riyearlyinterval').css('display') == 'block') {
+            if (form.find('#riyearlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riyearlyinterval', form);
-                if(!num || num < 0 || num > 1000) {
+                if (!num || num < 0 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1455,16 +1438,16 @@
             // End recurrence fields
             
             // If after N occurences is selected, check its value
-            if(form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
+            if (form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
                 num = findIntField('rirangebyoccurrencesvalue', form);
-                if(!num || num < 0 || num > 1000) {
+                if (!num || num < 0 || num > 1000) {
                     messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
                     return false;
                 }
             }
             
             // If end date is selected, check its value
-            if(form.find('input[value="BYENDDATE"]:visible:checked').length > 0) {
+            if (form.find('input[value="BYENDDATE"]:visible:checked').length > 0) {
                 endDate = findEndDate(form);
                 if (!endDate) {
                     // if end date is null that means the field is empty
@@ -1479,13 +1462,32 @@
             
             return true;
         }
-        
+
+        function save(event) {
+            event.preventDefault();
+            // if no field errors, process the request
+            if (checkFields(form)) {
+                // close overlay
+                form.overlay().close();
+                // check checkbox
+                display.find('input[name=richeckbox]')
+                    .attr('checked', true);
+                recurrenceOn();
+            }
+        }
+
+        function cancel(event) {
+            event.preventDefault();
+            // close overlay
+            form.overlay().close();
+        }
+                
         function updateOccurances() {
             var startDate;
             startDate = findStartDate();
             
             // if no field errors, process the request
-            if(checkFields(form)) {
+            if (checkFields(form)) {
                 loadOccurrences(startDate,
                     widgetSaveToRfc5545(form, conf, false).result,
                     0,
@@ -1581,7 +1583,7 @@
         form.find('input:radio, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
             function (e) {
                 // Update only if the occurances are shown
-                if(form.find('.rioccurrencesactions:visible').length != 0) {
+                if (form.find('.rioccurrencesactions:visible').length !== 0) {
                     updateOccurances();
                 }
             }
