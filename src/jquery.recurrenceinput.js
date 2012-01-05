@@ -195,7 +195,6 @@
         noEndDate: 'Error: End date is not set. Please set a correct value',
         pastEndDate: 'Error: End date cannot be before start date',
         noEndAfterNOccurrences: 'Error: "After N occurrences"-field must be a positive integer value (max. 1000)',
-        noRepeatOn: 'Error: "Repeat on"-value must be selected',
         
         rtemplate: {
             daily: 'Daily',
@@ -1432,12 +1431,6 @@
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
-                
-                // Check repeat on
-                if(form.find('.riweeklyweekday input:checked').length == 0) {
-                    messagearea.text(conf.i18n.noRepeatOn).show();
-                    return false;
-                }
             }
             
             // Repeats Monthly
@@ -1448,12 +1441,6 @@
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
-                
-                // Check repeat on
-                if(form.find('#rimonthlyoptions input:checked').length == 0) {
-                    messagearea.text(conf.i18n.noRepeatOn).show();
-                    return false;
-                }
             }
             
             // Repeats Yearly
@@ -1462,12 +1449,6 @@
                 num = findIntField('riyearlyinterval', form);
                 if(!num || num < 0 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
-                    return false;
-                }
-                
-                // Check repeat on
-                if(form.find('#riyearlyoptions input:checked').length == 0) {
-                    messagearea.text(conf.i18n.noRepeatOn).show();
                     return false;
                 }
             }
