@@ -40,79 +40,6 @@
         <div class="field repeatfield">
             <textarea name="repeat"></textarea>
             <script type="text/javascript">
-		$.tools.recurrenceinput.localize("sv", {
-		    displayUnactivate: '\u00C5terkommer inte',
-		    displayLabelActivate: '\u00C5terkommer',
-		    edit: 'Redigera...',
-		    add: 'L\u00E4gg till',
-		    
-		    recurrenceType: 'Typ av \u00E5terkomst:',
-	    
-		    dailyInterval1: 'Varje',
-		    dailyInterval2: 'dag(ar)',
-	    
-		    weeklyInterval1: 'Varje',
-		    weeklyInterval2: 'vecka/veckor',
-		    weeklyWeekdays: 'P\u00E5:',
-	    
-		    monthlyDayOfMonth1: 'Den',
-		    monthlyDayOfMonth2: 'dagen i m\u00E5naden',
-		    monthlyDayOfMonth3: 'm\u00E5nad',
-		    monthlyWeekdayOfMonth1: '',
-		    monthlyWeekdayOfMonth2: '',
-		    monthlyWeekdayOfMonth3: ', varje',
-	    
-		    yearlyDayOfMonth1: 'Varje',
-		    yearlyDayOfMonth2: '',
-		    yearlyDayOfMonth3: '',
-		    yearlyWeekdayOfMonth1: '',
-		    yearlyWeekdayOfMonth2: '',
-		    yearlyWeekdayOfMonth3: '',
-		    yearlyWeekdayOfMonth4: '',
-		    
-		    range: '\u00C5terkomsten stoppar:',
-		    rangeNoEnd: 'Inte',
-		    rangeByOccurrences1: 'Stoppar efter',
-		    rangeByOccurrences2: '\u00E5terkomster',
-		    rangeByEndDate: 'Till och med',
-	    
-		    including: ', samt den',
-		    except: ', f\u00F6rutom den',
-	
-		    cancel: 'Avbryt',        
-		    save: 'Spara',
-	    
-		    orderIndexes: ['F\u00F6rsta', 'Andra', 'Tredje', 'Fj\u00E4rde', 'Sista'],
-		    months: [
-			'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
-			'Juli', 'Augusti', 'September', 'October', 'November', 'December'],
-		    shortMonths: [
-			'Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun',
-			'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
-		    weekdays: [
-			'M\u00E5ndag', 'Tisdag', 'Onsdag', 'Torsdag',
-			'Fredag', 'L\u00F6rdag', 'S\u00F6ndag'],
-		    shortWeekdays: [
-			'M\u00E5n', 'Tis', 'Ons', 'Tor','Fre', 'L\u00F6r', 'S\u00F6n'],
-			
-		    longDateFormat: 'dd mmmm yyyy',
-		    shortDateFormat: 'yyyy-mm-dd',
-			
-		    noTemplateMatch: 'Varning: Denna h\u00E4ndelse anv\u00E4nder funktionalitet ' +
-				       'som denna dialog inte st\u00F6djer. Om du sparar kan ' +
-				       'detta \u00E4ndra n\u00E4r h\u00E4ndelsen \u00E5terkommer.',
-				       
-		    rtemplate: {
-			daily: 'Varje dag',
-			mondayfriday: 'M\u00E5ndagar och Fredagar',
-			weekdays: 'Veckodagar',
-			weekly: 'Varje vecka',
-			monthly: 'Varje m\u00E5nad',
-			yearly: 'Varje \u00E5r',
-		    }
-	
-		});
-		
 		$.tools.recurrenceinput.setTemplates(
 		    {
 			daily: {
@@ -122,39 +49,15 @@
 				'rirangeoptions'
 			    ]
 			},
-			mondayfriday: {
-			    rrule: 'FREQ=WEEKLY;BYDAY=MO,FR',
+			mowefr: {
+			    rrule: 'FREQ=WEEKLY;BYDAY=MO,WE,FR',
 			    fields: [
 				'rirangeoptions'
 			    ]
 			},
-			weekdays: {
-			    rrule: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
+			weekends: {
+			    rrule: 'FREQ=WEEKLY;BYDAY=SA,SU',
 			    fields: [
-				'rirangeoptions'
-			    ]
-			},
-			weekly: {
-			    rrule: 'FREQ=WEEKLY',
-			    fields: [
-				'riweeklyinterval',
-				'riweeklyweekdays',
-				'rirangeoptions'
-			    ]
-			},
-			monthly: {
-			    rrule: 'FREQ=MONTHLY',
-			    fields: [
-				'rimonthlyinterval',
-				'rimonthlyoptions',
-				'rirangeoptions'
-			    ]
-			},
-			yearly: {
-			    rrule: 'FREQ=YEARLY',
-			    fields: [
-				'riyearlyinterval',
-				'riyearlyoptions',
 				'rirangeoptions'
 			    ]
 			}
@@ -162,26 +65,20 @@
 		    {
 			en: {
 			    daily: 'Daily',
-			    mondayfriday: 'Monday and Friday',
-			    weekdays: 'Weekdays',
-			    weekly: 'Weekly',
-			    monthly: 'Monthly',
-			    yearly: 'Yearly',
+			    mowefr: 'Mondays, Wednesdays, Fridays',
+			    weekends: 'Weekends'
 			},
 			sv: {
 			    daily: 'Dagligen',
-			    mondayfriday: 'M\u00E5ndagar och Fredagar',
-			    weekdays: 'Veckodagar',
-			    weekly: 'Varje vecka',
-			    monthly: 'Varje m\u00E5nad',
-			    yearly: 'Varje \u00E5r',
+			    mowefr: 'M\u00E5ndagar, Onsdagar, Fredagar',
+			    weekends: 'Veckoslut'
 			}
 		    }        
 		);
 		
-                $("textarea[name=repeat]").recurrenceinput({startField: "start",  ajaxURL: document.URL, formOverlay: {speed: 1}});
+                $("textarea[name=custom]").recurrenceinput({startField: "start",  ajaxURL: document.URL, formOverlay: {speed: 1}});
             </script>
-        </div>
+         </div>
 	
         <div class="field customfield">
             <textarea name="custom"></textarea>
