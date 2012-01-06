@@ -1260,6 +1260,10 @@
                 if (startdate === undefined || startdate === null) {
                     //No, it wasn't, just try to interpret it with Date()
                     startdate = startField.val();
+                    if (startdate === "") {
+                        // Probably not an input at all. Try to see if it contains a date
+                        startdate = startField.text();
+                    }
                 } else {
                     // Yes it was, get the date:
                     startdate = startdate.getValue();
@@ -1274,6 +1278,10 @@
                     pad(startFieldMonth.val(), 2) + '-' +
                     pad(startFieldDay.val(), 2);
             }
+            if (startdate === null) {
+               return null
+            }
+            // We have some sort of startdate:
             startdate = new Date(startdate);
             if (isNaN(startdate)) {
                 return null;

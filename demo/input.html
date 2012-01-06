@@ -71,11 +71,20 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
     <h2>Read only mode</h2>
     
     <!-- This also works as a test that both empty (above) and non-empty works -->
-    <textarea name="repeat2">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
+    <textarea name="repeat_ro">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8</textarea>
     <script type="text/javascript">
-        $("textarea[name=repeat2]").recurrenceinput({readOnly: true});
+        $("textarea[name=repeat_ro]").recurrenceinput({readOnly: true});
     </script>
 
+
+    <h2>Connected read only mode</h2>
+
+    <strong>Start: </strong><div id="readonly_start">January 15, 2012</div>
+    <br/>
+    <textarea name="connected_ro">RRULE:FREQ=DAILY;INTERVAL=5;COUNT=80</textarea>
+    <script type="text/javascript">
+        $("textarea[name=connected_ro]").recurrenceinput({startField: "readonly_start",  ajaxURL: document.URL, readOnly: true});
+    </script>
     
     <h2>Translated to Swedish</h2>
     
@@ -85,7 +94,7 @@ RDATE:20121214T000000,20121215T000000Z,20121216T000000Z</textarea>
         $.tools.recurrenceinput.localize("sv", {
             displayUnactivate: '\u00C5terkommer inte',
             displayActivate: '\u00C5terkommer var',
-            edit: 'Ändra...',
+            edit: '\u00C4ndra...',
             add: 'L\u00E4gg till',
             refresh: 'Ladda om',
             

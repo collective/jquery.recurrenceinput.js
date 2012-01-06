@@ -37,9 +37,6 @@ This widget does not support all features of RRULE's. For example:
 Known bugs
 ----------
 
-* Read only mode still requires a write-start widget. Of course it should work 
-  even with just a plain text-field.
-
 
 To Do
 -----
