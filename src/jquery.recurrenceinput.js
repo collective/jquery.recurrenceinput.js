@@ -189,10 +189,11 @@
         multipleDayOfMonth: 'This widget does not support multiple days in monthly or yearly recurrence',
         bysetpos: 'BYSETPOS is not supported',
         noRule: 'No RRULE in RRULE data',
-        noRepeatEvery: 'Error: The "Repeat every"-field must be a positive integer value (max. 1000)',
+        noRepeatEvery: 'Error: The "Repeat every"-field must be between 1 and 1000',
         noEndDate: 'Error: End date is not set. Please set a correct value',
+        noRepeatOn: 'Error: "Repeat on"-value must be selected',
         pastEndDate: 'Error: End date cannot be before start date',
-        noEndAfterNOccurrences: 'Error: The "After N occurrences"-field must be a positive integer value (max. 1000)',
+        noEndAfterNOccurrences: 'Error: The "After N occurrences"-field must be between 1 and 1000',
         
         rtemplate: {
             daily: 'Daily',
@@ -956,7 +957,7 @@
                     for (d = 0; d < conf.weekdays.length; d++) {
                         day = conf.weekdays[d];
                         input = field.find('input[name=riweeklyweekdays' + day + ']');
-                        input.attr('checked', $.inArray(day, byday) !== -1);
+                        input.attr('checked', byday.indexOf(day) !== -1);
                     }
                     break;
 
@@ -1395,7 +1396,7 @@
             messagearea.text('');
             messagearea.hide();
             
-            // Repeats Dialy
+            // Repeats Daily
             if (form.find('#ridailyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('ridailyinterval', form);
@@ -1423,6 +1424,13 @@
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
+                
+
+                // Check repeat on
+                if(form.find('#rimonthlyoptions input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }                
             }
             
             // Repeats Yearly
@@ -1433,6 +1441,12 @@
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
+                
+                // Check repeat on
+                if(form.find('#riyearlyoptions input:checked').length == 0) {
+                    messagearea.text(conf.i18n.noRepeatOn).show();
+                    return false;
+                }                
             }
             
             // End recurrence fields

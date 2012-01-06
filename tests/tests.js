@@ -4,7 +4,7 @@
 module("jquery.recurrenceinput widget");
 
 test("Basics", function () {
-    expect(3);
+    expect(4);
     
     // This sets the text area rule, and opens the dialog box.
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -26,6 +26,10 @@ test("Basics", function () {
     $('.repeatfield input[name=richeckbox]').click();
     ok($("textarea[name=repeat]").val() === rrule);
     
+    // Open the dialog box and close it with cancel
+    $('.repeatfield a[name=riedit]').click();
+    input.form.find('.ricancelbutton').click();
+    ok(input.form.is(':visible'));
 });
 
 test("Invalid ical data", function () {
@@ -124,15 +128,16 @@ test("Trimonthly recurrence by day", function () {
 });
 
 test("Yearly by month day recurrence without end", function () {
-    expect(6);
+    expect(7);
 
     // The second wednesday of April, forevah.
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYMONTHDAY=11";
+    var rrule = "RRULE:FREQ=YEARLY;INTERVAL=3;BYMONTH=4;BYMONTHDAY=11";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
         
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
+    ok(input.form.find('input[name=riyearlyinterval]').val() === '3');
     ok(input.form.find('input[name=riyearlyType]:checked').val() === 'DAYOFMONTH');
     ok(input.form.find('select[name=riyearlydayofmonthmonth]').val() === '4');
     ok(input.form.find('select[name=riyearlydayofmonthday]').val() === '11');
@@ -323,6 +328,138 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
     
+});
+
+test("Field validations", function () {
+    expect(49);
+    
+    // This sets the text area rule, and opens the dialog box.
+    var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
+    $('textarea[name=repeat]').val(rrule);
+    $('#start').val('12/31/2011');
+    $('.repeatfield a[name=riedit]').click();
+
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    
+    // Daily
+    ok(input.form.find('select[name=rirtemplate]').val() === 'daily');
+    
+    // Empty Repeat every N days field
+    input.form.find('input[name=ridailyinterval]').val('');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=ridailyinterval]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: The "Repeat every"-field must be between 1 and 1000');
+    input.form.find('input[name=ridailyinterval]').val('5');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=ridailyinterval]').val() === '5');    
+    
+    // Empty End recurrence after N occurances field
+    input.form.find('input[name=rirangebyoccurrencesvalue]').val('');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
+    ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: The "After N occurrences"-field must be between 1 and 1000');
+    input.form.find('input[name=rirangebyoccurrencesvalue]').val('5');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
+    ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '5');
+    
+    // Empty End recurrence On field
+    input.form.find('input[value=BYENDDATE]').click();
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: End date is not set. Please set a correct value');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2015', '7', '15');
+    input.form.find('input[value=BYENDDATE]').click();
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '08/15/2015');
+    
+    // End date before start date
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2001', '7', '15');
+    input.form.find('input[value=BYENDDATE]').click();
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: End date cannot be before start date');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2013', '7', '15');
+    input.form.find('input[value=BYENDDATE]').click();
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
+    ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '08/15/2013');
+    
+    // Weekly
+    input.form.find('select[name=rirtemplate]').val('weekly').change();
+    ok(input.form.find('select[name=rirtemplate]').val() === 'weekly');
+    
+    // Empty Repeat every N days field
+    input.form.find('input[name=riweeklyinterval]').val('');
+    input.form.find('#riweeklyweekdays input:checkbox').attr('checked', true);
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=riweeklyinterval]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: The "Repeat every"-field must be between 1 and 1000');
+    input.form.find('input[name=riweeklyinterval]').val('5');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=riweeklyinterval]').val() === '5');
+    
+    // Monthly
+    input.form.find('select[name=rirtemplate]').val('monthly').change();
+    ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
+    
+    // No Repeat on radio button is selected
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: "Repeat on"-value must be selected');
+    input.form.find('input[name=rimonthlytype]').attr('checked', true);
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    
+    // Empty Repeat every N days field
+    input.form.find('input[name=rimonthlyinterval]').val('');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=rimonthlyinterval]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: The "Repeat every"-field must be between 1 and 1000');
+    input.form.find('input[name=rimonthlyinterval]').val('5');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=rimonthlyinterval]').val() === '5');
+    
+    // Yearly
+    input.form.find('select[name=rirtemplate]').val('yearly').change();
+    ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
+    
+    // No Repeat on radio button is selected
+    input.form.find('input[name=riyearlyType]').attr('checked', false);
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: "Repeat on"-value must be selected');
+    input.form.find('input[name=riyearlyType]').attr('checked', true);
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    
+    // Empty Repeat every N days field
+    input.form.find('input[name=riyearlyinterval]').val('');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('input[name=riyearlyinterval]').val() === '');
+    ok(input.form.find('#messagearea').css('display') === 'block');
+    ok(input.form.find('#messagearea').text() === 'Error: The "Repeat every"-field must be between 1 and 1000');
+    input.form.find('input[name=riyearlyinterval]').val('5');
+    input.form.find('.rirefreshbutton').click();
+    ok(input.form.find('#messagearea').css('display') === 'none');
+    ok(input.form.find('input[name=riyearlyinterval]').val() === '5');
+    
+    // And this saves it.
+    input.form.find('.risavebutton').click();
 });
 
 test("Unsupported features (incomplete)", function () {
