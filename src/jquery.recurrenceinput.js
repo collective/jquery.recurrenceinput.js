@@ -1267,7 +1267,7 @@
                 startField = getField(conf.startField);
                 // Now we have a field, see if it is a dateinput field:
                 startdate = startField.data('dateinput');
-                if (startdate === undefined || startdate === null) {
+                if (!startdate) {
                     //No, it wasn't, just try to interpret it with Date()
                     startdate = startField.val();
                     if (startdate === "") {
@@ -1305,7 +1305,7 @@
             
             // Now we have a field, see if it is a dateinput field:
             enddate = endField.data('dateinput');
-            if (enddate === undefined || enddate === null) {
+            if (!enddate) {
                 //No, it wasn't, just try to interpret it with Date()
                 enddate = endField.val();
             } else {
