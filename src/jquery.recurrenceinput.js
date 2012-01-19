@@ -1416,6 +1416,9 @@
             messagearea.text('');
             messagearea.hide();
             
+            // Hide add field errors
+            form.find('.riaddoccurrence div.errorarea').text('').hide();
+            
             // Repeats Daily
             if (form.find('#ridailyinterval').css('display') === 'block') {
                 // Check repeat every field

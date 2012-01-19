@@ -147,10 +147,7 @@ div.rioccurrences .occurrence.rdate {
     background: #FFFFE0;
 }
 
-div.rioccurrences div.start,
-div.rioccurrences div.rrule,
-div.rioccurrences div.rdate,
-div.rioccurrences div.exdate {
+div.rioccurrences div.occurrence {
     margin-left: 5px;
 }
 
