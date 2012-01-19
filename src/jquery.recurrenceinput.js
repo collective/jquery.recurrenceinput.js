@@ -1279,7 +1279,7 @@
                     pad(startFieldDay.val(), 2);
             }
             if (startdate === null) {
-               return null
+               return null;
             }
             // We have some sort of startdate:
             startdate = new Date(startdate);
@@ -1408,7 +1408,7 @@
             if (form.find('#ridailyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('ridailyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1418,7 +1418,7 @@
             if (form.find('#riweeklyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riweeklyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1428,7 +1428,7 @@
             if (form.find('#rimonthlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('rimonthlyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1445,7 +1445,7 @@
             if (form.find('#riyearlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riyearlyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1462,7 +1462,7 @@
             // If after N occurences is selected, check its value
             if (form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
                 num = findIntField('rirangebyoccurrencesvalue', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
                     return false;
                 }

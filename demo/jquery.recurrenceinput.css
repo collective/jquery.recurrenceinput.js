@@ -184,9 +184,9 @@ div.rioccurrencesactions a.rirefreshbutton {
 
 div#messagearea {
     background-color: red;
+    color: white;
     font-weight: bold;
-    width: 24em;
-    padding: 1em;
+    padding: 5px 15px;
 }
 
 div#calroot {
