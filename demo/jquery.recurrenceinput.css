@@ -182,11 +182,13 @@ div.rioccurrencesactions a.rirefreshbutton {
     margin-right: 5px;
 }
 
-div#messagearea {
+div#messagearea,
+div.errorarea {
+    display: none;
     background-color: red;
     color: white;
     font-weight: bold;
-    padding: 5px 15px;
+    padding: 2px 10px;
 }
 
 div#calroot {
