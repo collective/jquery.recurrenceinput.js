@@ -194,7 +194,7 @@
         noRepeatOn: 'Error: "Repeat on"-value must be selected',
         pastEndDate: 'Error: End date cannot be before start date',
         noEndAfterNOccurrences: 'Error: The "After N occurrences"-field must be between 1 and 1000',
-        alreadyAdded: 'Date already added.',
+        alreadyAdded: 'This date was already added',
         
         rtemplate: {
             daily: 'Daily',
