@@ -65,7 +65,7 @@ test("Weekly recurrence with days and end", function () {
     expect(12);
     
     // Set a recurrence rule and open the dialog box.
-    var rrule = "RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000Z";
+    var rrule = "RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
     
@@ -195,7 +195,7 @@ test("RDATE and EXDATE", function () {
     $("input[name=start]").val('04/13/2011');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
     var input = $("textarea[name=repeat]").recurrenceinput();
     
@@ -244,7 +244,7 @@ test("Adding RDATE", function () {
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
@@ -274,7 +274,7 @@ test("Adding RDATE", function () {
     input.form.find('#addaction').click();
     
     input.form.find('.risavebutton').click();
-    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20110614T000000Z,20120606T000000Z");
+    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20110614T000000,20120606T000000");
     
 });
 
@@ -286,7 +286,7 @@ test("Adding EXDATE", function () {
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z";
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
@@ -312,7 +312,7 @@ test("Adding EXDATE", function () {
     }, 1000);
         
     input.form.find('.risavebutton').click();
-    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000Z\nEXDATE:20130410T000000Z\nRDATE:20120606T000000Z");
+    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000\nEXDATE:20130410T000000\nRDATE:20120606T000000");
     
 });
 
@@ -322,11 +322,11 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     expect(1);
 
     var input = $("textarea[name=repeat]").recurrenceinput();
-    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000Z\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
+    var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
     input.form.find('.risavebutton').click();
-    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000Z\nEXDATE:20120411T000000Z\nRDATE:20120606T000000Z");
+    ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000");
     
 });
 

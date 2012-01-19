@@ -743,31 +743,29 @@
         }
         result = 'RRULE:' + result;
         if (form.ical.EXDATE !== undefined && form.ical.EXDATE.join() !== "") {
-            if (tz === true) {
-                // Make it UTC:
-                tmp = $.map(form.ical.EXDATE, function (x) {
-                    if (x.length === 8) { // DATE format. Make it DATE-TIME
-                        x += 'T000000';
-                    }
-                    return x + 'Z'; 
-                });
-            } else {
-                tmp = form.ical.EXDATE;
-            }
+            tmp = $.map(form.ical.EXDATE, function (x) {
+                if (x.length === 8) { // DATE format. Make it DATE-TIME
+                    x += 'T000000';
+                }
+                if (tz === true) {
+                    // Make it UTC:
+                    x += 'Z';
+                }
+                return x; 
+            });
             result = result + '\nEXDATE:' + tmp;
         }
         if (form.ical.RDATE !== undefined && form.ical.RDATE.join() !== "") {
-            if (tz === true) {
-                // Make it UTC:
-                tmp = $.map(form.ical.RDATE, function (x) {
-                    if (x.length === 8) { // DATE format. Make it DATE-TIME
-                        x += 'T000000';
-                    }
-                    return x + 'Z';
-                });
-            } else {
-                tmp = form.ical.RDATE;
-            }
+            tmp = $.map(form.ical.RDATE, function (x) {
+                if (x.length === 8) { // DATE format. Make it DATE-TIME
+                    x += 'T000000';
+                }
+                if (tz === true) {
+                    // Make it UTC:
+                    x += 'Z';
+                }
+                return x;
+            });
             result = result + '\nRDATE:' + tmp;
         }
         return {result: result, description: human};
@@ -1381,7 +1379,7 @@
         }
         
         function recurrenceOn() {
-            var RFC5545 = widgetSaveToRfc5545(form, conf, true);
+            var RFC5545 = widgetSaveToRfc5545(form, conf, false);
             var label = display.find('label[class=ridisplay]');
             label.text(conf.i18n.displayActivate + ' ' + RFC5545.description);
             textarea.val(RFC5545.result);
