@@ -194,6 +194,7 @@
         noRepeatOn: 'Error: "Repeat on"-value must be selected',
         pastEndDate: 'Error: End date cannot be before start date',
         noEndAfterNOccurrences: 'Error: The "After N occurrences"-field must be between 1 and 1000',
+        alreadyAdded: 'Date already added.',
         
         rtemplate: {
             daily: 'Daily',
@@ -502,6 +503,7 @@
                         '<h2>${i18n.addDate}</h2>',
                     '</div>',
                     '<div class="riaddoccurrence">',
+                        '<div class="errorarea"></div>',
                         '<input type="date" name="adddate" id="adddate" />',
                         '<input type="button" name="addaction" id="addaction" value="${i18n.add}">',
                     '</div>',
@@ -1145,26 +1147,36 @@
         function occurrenceAdd(event) {
             event.preventDefault();
             var dateinput = form
-                .find('div.riaddoccurrence input#adddate')
+                .find('.riaddoccurrence input#adddate')
                 .data('dateinput');
             var datevalue = dateinput.getValue('yyyymmddT000000');
             if (form.ical.RDATE === undefined) {
                 form.ical.RDATE = [];
             }
-            form.ical.RDATE.push(datevalue);
-            var html = ['<div class="occurrence rdate" style="display: none;">',
-                    '<span class="rdate">',
-                        dateinput.getValue(conf.i18n.longDateFormat),
-                    '</span>',
-                    '<span class="action">',
-                        '<a date="' + datevalue + '" href="#" class="rdate" >',
-                            'Include',
-                        '</a>',
-                    '</span>',
-                    '</div>'].join('\n');
-            form.find('div.rioccurrences').prepend(html);
-            $(form.find('div.rioccurrences div')[0]).slideDown();
-            $(form.find('div.rioccurrences .action a.rdate')[0]).click(occurrenceDelete);
+            var errorarea = form.find('.riaddoccurrence div.errorarea');
+            errorarea.text('');
+            errorarea.hide();
+            
+            // Add date only if it is not already in RDATE
+            if($.inArray(datevalue, form.ical.RDATE) === -1) {
+                form.ical.RDATE.push(datevalue);
+                var html = ['<div class="occurrence rdate" style="display: none;">',
+                        '<span class="rdate">',
+                            dateinput.getValue(conf.i18n.longDateFormat),
+                            '<span class="rlabel">' + conf.i18n.additionalDate + '</span>',
+                        '</span>',
+                        '<span class="action">',
+                            '<a date="' + datevalue + '" href="#" class="rdate" >',
+                                'Include',
+                            '</a>',
+                        '</span>',
+                        '</div>'].join('\n');
+                form.find('div.rioccurrences').prepend(html);
+                $(form.find('div.rioccurrences div')[0]).slideDown();
+                $(form.find('div.rioccurrences .action a.rdate')[0]).click(occurrenceDelete);
+            } else {
+                errorarea.text(conf.i18n.alreadyAdded).show();
+            }
         }
         
         // element is where to find the tag in question. Can be the form
@@ -1279,7 +1291,7 @@
                     pad(startFieldDay.val(), 2);
             }
             if (startdate === null) {
-               return null
+               return null;
             }
             // We have some sort of startdate:
             startdate = new Date(startdate);
@@ -1404,11 +1416,14 @@
             messagearea.text('');
             messagearea.hide();
             
+            // Hide add field errors
+            form.find('.riaddoccurrence div.errorarea').text('').hide();
+            
             // Repeats Daily
             if (form.find('#ridailyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('ridailyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1418,7 +1433,7 @@
             if (form.find('#riweeklyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riweeklyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1428,12 +1443,11 @@
             if (form.find('#rimonthlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('rimonthlyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
                 
-
                 // Check repeat on
                 if(form.find('#rimonthlyoptions input:checked').length == 0) {
                     messagearea.text(conf.i18n.noRepeatOn).show();
@@ -1445,7 +1459,7 @@
             if (form.find('#riyearlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riyearlyinterval', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1462,7 +1476,7 @@
             // If after N occurences is selected, check its value
             if (form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
                 num = findIntField('rirangebyoccurrencesvalue', form);
-                if (!num || num < 0 || num > 1000) {
+                if(!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
                     return false;
                 }
@@ -1472,7 +1486,7 @@
             if (form.find('input[value="BYENDDATE"]:visible:checked').length > 0) {
                 endDate = findEndDate(form);
                 if (!endDate) {
-                    // if end date is null that means the field is empty
+                    // if endDate is null that means the field is empty
                     messagearea.text(conf.i18n.noEndDate).show();
                     return false;
                 } else if (endDate < startDate) {
@@ -1533,7 +1547,7 @@
             selectors: true,
             format: conf.i18n.shortDateFormat,
             yearRange: [-5, 10]
-        });
+        }).data('dateinput').setValue(new Date());
 
         if (textarea.val()) {
             var result = widgetLoadFromRfc5545(form, conf, textarea.val(), false);
@@ -1567,7 +1581,7 @@
             selectors: true,
             format: conf.i18n.shortDateFormat,
             yearRange: [-5, 10]
-        });
+        }).data('dateinput').setValue(new Date());
         form.find('input#addaction').click(occurrenceAdd);
 
         // When the reload button is clicked, reload
@@ -1596,13 +1610,15 @@
                 $(this).parent().find('input[name=rirangetype]').click().change();
             }
         );
-        form.find('input[name=rirangebyenddatecalendar]').change(
-            function (e) {
-                $(this).parent().find('input[name=rirangetype]').click().change();
+        form.find('input[name=rirangebyenddatecalendar]').change(function() {
+            // Update only if the occurances are shown
+            $(this).parent().find('input[name=rirangetype]').click();
+            if (form.find('.rioccurrencesactions:visible').length !== 0) {
+                updateOccurances();
             }
-        );
-        // Also update the selected dates section
-        form.find('input:radio, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
+        });
+        // Update the selected dates section
+        form.find('input:radio, #connecteddailyinterval, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
             function (e) {
                 // Update only if the occurances are shown
                 if (form.find('.rioccurrencesactions:visible').length !== 0) {

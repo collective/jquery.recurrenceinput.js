@@ -147,10 +147,7 @@ div.rioccurrences .occurrence.rdate {
     background: #FFFFE0;
 }
 
-div.rioccurrences div.start,
-div.rioccurrences div.rrule,
-div.rioccurrences div.rdate,
-div.rioccurrences div.exdate {
+div.rioccurrences div.occurrence {
     margin-left: 5px;
 }
 
@@ -182,11 +179,13 @@ div.rioccurrencesactions a.rirefreshbutton {
     margin-right: 5px;
 }
 
-div#messagearea {
+div#messagearea,
+div.errorarea {
+    display: none;
     background-color: red;
+    color: white;
     font-weight: bold;
-    width: 24em;
-    padding: 1em;
+    padding: 2px 10px;
 }
 
 div#calroot {
