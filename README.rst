@@ -1,4 +1,4 @@
-jQuery recurranceinput widget
+jQuery recurrenceinput widget
 =============================
 
 Jquery plugin widget which support the definition of complex recurrence
