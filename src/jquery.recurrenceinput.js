@@ -1616,7 +1616,7 @@
             }
         });
         // Update the selected dates section
-        form.find('input:radio, #connecteddailyinterval, #connectedweeklyinterval, .riweeklyweekday > input, input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
+        form.find('input:radio, .riweeklyweekday > input, input[name=ridailyinterval], input[name=riweeklyinterval], input[name=rimonthlyinterval], input[name=riyearlyinterval]').change(
             function (e) {
                 // Update only if the occurances are shown
                 if (form.find('.rioccurrencesactions:visible').length !== 0) {

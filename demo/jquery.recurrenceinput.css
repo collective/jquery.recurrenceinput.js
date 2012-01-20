@@ -114,6 +114,7 @@ div.riform span.action a {
     width: 19px;
     overflow: hidden;
     float: right;
+    text-indent: 9999px;
 }
 
 div.rioccurrences .occurrence {
