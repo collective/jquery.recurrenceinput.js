@@ -458,6 +458,7 @@
                             '<div>',
                                 '<input',
                                     'type="radio"',
+                                    'checked="checked"',
                                     'value="BYOCCURRENCES"',
                                     'name="rirangetype"',
                                     'id="${name}rangetype:BYOCCURRENCES"/>',

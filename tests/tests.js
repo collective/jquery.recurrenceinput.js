@@ -42,6 +42,19 @@ test("Invalid ical data", function () {
     input.form.find('.risavebutton').click();
 });
 
+test("No recurrence rule opens empty form with limited Recurrence Type to prevent unlimited Recurrences.", function () {
+    expect(2);
+    
+    // This sets the text area rule, and opens the dialog box.
+    var rrule = "";
+    $("textarea[name=repeat]").val(rrule);
+    $('.repeatfield a[name=riedit]').click();
+
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
+    ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '10');
+});
+
 test("Daily recurrence with count", function () {
     expect(5);
     
