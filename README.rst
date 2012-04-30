@@ -16,7 +16,7 @@ Features
 --------
 
 * The recurrence widget supports most of the options of the iCalendar RRULE
-  as well as EXDATE and RDATE. 
+  as well as EXDATE and RDATE.
 * It supports internationalization.
 * It supports predetermined recurrence rules, so called "templates".
 
@@ -69,18 +69,18 @@ Here are some examples of how to do this, depending on your platform:
 Debian/Ubuntu:
 
     $ sudo apt-get install python-dateutil
-    
+
 A non-system Python 2 with setuptools or distribute installed:
 
     $ <pathtopython>/easy_install python-dateutil==1.5
-    
+
 
 The demo/input.html document contains basic usecases and can be used when
 developing on this widget. For these to work you either need to have them on a
 webserver, or you need to tell your web-browser to allow Ajax loading from your
 local hard drive.
 
-In Firefox you allow this by going to about:config and setting 
+In Firefox you allow this by going to about:config and setting
 `security.fileuri.strict_origin_policy` to `false`.
 
 In Chrome and Chromium you allow this by starting Chrome with
@@ -96,13 +96,13 @@ To run these you need to install a JavaScript engine, such as
 Rhino or SpiderMonkey. You then run it with::
 
     $ js tests/jslint.js <file>
- 
+
 The following files should be jslinted::
 
     src/jquery.recurrenceinput.js
     src/tests.js
 
-To keep the Coverage tests updated you need to install jscoverage 
+To keep the Coverage tests updated you need to install jscoverage
 ( http://siliconforks.com/jscoverage/ ). You then keep the coverage code
 updated by running::
 
@@ -111,7 +111,7 @@ updated by running::
 To run the coverage tests you go to
 http://localhost:8000/coverage/jscoverage.html?/tests/coveragetest.html
 
-    
+
 Contributors
 ------------
 
