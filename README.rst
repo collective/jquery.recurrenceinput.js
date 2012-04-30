@@ -123,6 +123,7 @@ Authors:
   * Vilmos Somogyi
   * Johannes Raggam
   * Mike Rhodes
+  * Kai Lautaportti
 
 Thanks to Hexagon IT, http://www.hexagonit.fi/, who funded the main body
 of work, done by Lennart Regebro.
