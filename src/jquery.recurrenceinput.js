@@ -12,6 +12,7 @@
 
             lang: 'en',
             readOnly: false,
+            firstDay: 0,
 
             // "REMOTE" FIELD
             startField: null,
@@ -1541,10 +1542,19 @@
         form.overlay(conf.formOverlay).hide();
         form.ical = {RDATE: [], EXDATE: []};
 
+        $.tools.dateinput.localize(conf.lang,  {
+            months:      LABELS[conf.lang].months.join(),
+            shortMonths: LABELS[conf.lang].shortMonths.join(),
+            days:        LABELS[conf.lang].weekdays.join(),
+            shortDays:   LABELS[conf.lang].shortWeekdays.join()
+        });
+
         // Make the date input into a calendar dateinput()
         form.find('input[name=rirangebyenddatecalendar]').dateinput({
             selectors: true,
+            lang: conf.lang,
             format: conf.i18n.shortDateFormat,
+            firstDay: conf.firstDay,
             yearRange: [-5, 10]
         }).data('dateinput').setValue(new Date());
 
@@ -1578,7 +1588,9 @@
         // Pop up the little add form when clicking "Add..."
         form.find('div.riaddoccurrence input#adddate').dateinput({
             selectors: true,
+            lang: conf.lang,
             format: conf.i18n.shortDateFormat,
+            firstDay: conf.firstDay,
             yearRange: [-5, 10]
         }).data('dateinput').setValue(new Date());
         form.find('input#addaction').click(occurrenceAdd);

@@ -1,6 +1,10 @@
 jquery.recurrenceinput.js changelog
 ===================================
 
+- Localization of the jquery tools dateinputs and first day configuration option
+  added to set which is the first day of the month.
+  [vsomogyi] 
+
 - Fixed a compatibility issue with IE8 and below.
   [dokai]
 
