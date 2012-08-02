@@ -53,6 +53,7 @@ test("No recurrence rule opens empty form with limited Recurrence Type to preven
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
     ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '10');
+    input.form.find('.risavebutton').click();
 });
 
 test("Daily recurrence with count", function () {
@@ -383,6 +384,7 @@ test("Field validations", function () {
     
     // Empty End recurrence On field
     input.form.find('input[value=BYENDDATE]').click();
+    input.form.find('input[name =rirangebyenddatecalendar]').val('');
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYENDDATE');
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '');
