@@ -1057,7 +1057,7 @@
                         month = until.slice(4, 6);
                         month = parseInt(month, 10) - 1;
                         day = until.slice(6, 8);
-                        input.data('dateinput').setValue(year, month, day);
+                        input.data('dateinput').setValue(new Date(year, month, day));
                     }
 
                     selectors = field.find('input[name=rirangetype]');
