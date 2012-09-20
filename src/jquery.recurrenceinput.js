@@ -7,6 +7,25 @@
     var tool;
     var LABELS = {};
 
+    function safeInArray(value, aryData)
+    {
+      var result;
+      var isAnArray = Object.prototype.toString.call( aryData ) === '[object Array]';
+
+      if (isAnArray)
+      {
+        result = $.inArray(value, aryData);
+      }
+      else
+      {
+        var strValue = aryData + "";
+        result = strValue.indexOf(value);
+      }
+
+      return result;
+    };
+
+
     tool = $.tools.recurrenceinput = {
         conf: {
 
@@ -175,10 +194,12 @@
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         weekdays: [
-            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-            'Friday', 'Saturday'],
+            'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+            'Friday', 'Saturday', 'Sunday'],
+        shortWeekdaysLocalize: [
+            'Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
         shortWeekdays: [
-            'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
 
         longDateFormat: 'mmmm dd, yyyy',
         shortDateFormat: 'mm/dd/yyyy',
@@ -635,12 +656,13 @@
                 case 'WEEKDAYOFMONTH':
                     index = $('select[name=rimonthlyweekdayofmonthindex]', form).val();
                     day = $('select[name=rimonthlyweekdayofmonth]', form).val();
-                    if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
+                    if (safeInArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1)
+                    {
                         result += ';BYDAY=' + index + day;
                         human += ', ' + conf.i18n.monthlyWeekdayOfMonth1Human + ' ';
-                        human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
+                        human += ' ' + conf.i18n.orderIndexes[safeInArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.monthlyWeekdayOfMonth2;
-                        human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
+                        human += ' ' + conf.i18n.weekdays[safeInArray(day, conf.weekdays)];
                         human += ' ' + conf.i18n.monthlyDayOfMonth2;
                     }
                     break;
@@ -671,12 +693,12 @@
                     day = $('select[name=riyearlyweekdayofmonthday]', form).val();
                     month = $('select[name=riyearlyweekdayofmonthmonth]', form).val();
                     result += ';BYMONTH=' + month;
-                    if ($.inArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
+                    if (safeInArray(day, ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']) > -1) {
                         result += ';BYDAY=' + index + day;
                         human += ', ' + conf.i18n.yearlyWeekdayOfMonth1Human;
-                        human += ' ' + conf.i18n.orderIndexes[$.inArray(index, conf.orderIndexes)];
+                        human += ' ' + conf.i18n.orderIndexes[safeInArray(index, conf.orderIndexes)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth2;
-                        human += ' ' + conf.i18n.weekdays[$.inArray(day, conf.weekdays)];
+                        human += ' ' + conf.i18n.weekdays[safeInArray(day, conf.weekdays)];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth3;
                         human += ' ' + conf.i18n.months[month - 1];
                         human += ' ' + conf.i18n.yearlyWeekdayOfMonth4;
@@ -775,12 +797,12 @@
 
     function parseLine(icalline) {
         var result = {};
-        var pos = $.inArray(':', icalline);
+        var pos =  icalline.indexOf(':');
         var property = icalline.substring(0, pos);
         result.value = icalline.substring(pos + 1);
 
-        if ($.inArray(';', property) !== -1) {
-            pos = $.inArray(';', property);
+        pos =  property.indexOf(';');
+        if (pos !== -1) {
             result.parameters = property.substring(pos + 1);
             result.property = property.substring(0, pos);
         } else {
@@ -799,7 +821,7 @@
 
         for (date in splitDates) {
             if (splitDates.hasOwnProperty(date)) {
-                if ($.inArray('Z', splitDates[date]) !== -1) {
+                if (safeInArray('Z', splitDates[date]) !== -1) {
                     result.push(splitDates[date].substring(0, 15));
                 } else {
                     result.push(splitDates[date]);
@@ -959,7 +981,7 @@
                     for (d = 0; d < conf.weekdays.length; d++) {
                         day = conf.weekdays[d];
                         input = field.find('input[name=riweeklyweekdays' + day + ']');
-                        input.attr('checked', $.inArray(day, byday) !== -1);
+                        input.attr('checked', safeInArray(day, byday) !== -1);
                     }
                     break;
 
@@ -984,7 +1006,7 @@
                     if (byday) {
                         monthlyType = 'WEEKDAYOFMONTH';
 
-                        if ($.inArray(',', byday) !== -1) {
+                        if (safeInArray(',', byday) !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1023,7 +1045,7 @@
                     if (byday) {
                         yearlyType = 'WEEKDAYOFMONTH';
 
-                        if ($.inArray(',', byday) !== -1) {
+                        if (safeInArray(',', byday) !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1128,7 +1150,7 @@
 
         function occurrenceInclude(event) {
             event.preventDefault();
-            form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
+            form.ical.EXDATE.splice(safeInArray(this.attributes.date.value, form.ical.EXDATE), 1);
             var $this = $(this);
             $this.attr('class', 'rrule');
             $this.parent().parent().removeClass('exdate');
@@ -1138,7 +1160,7 @@
 
         function occurrenceDelete(event) {
             event.preventDefault();
-            form.ical.RDATE.splice($.inArray(this.attributes.date.value, form.ical.RDATE), 1);
+            form.ical.RDATE.splice(safeInArray(this.attributes.date.value, form.ical.RDATE), 1);
             $(this).parent().parent().hide('slow', function () {
                 $(this).remove();
             });
@@ -1158,7 +1180,7 @@
             errorarea.hide();
 
             // Add date only if it is not already in RDATE
-            if($.inArray(datevalue, form.ical.RDATE) === -1) {
+            if(safeInArray(datevalue, form.ical.RDATE) === -1) {
                 form.ical.RDATE.push(datevalue);
                 var html = ['<div class="occurrence rdate" style="display: none;">',
                         '<span class="rdate">',
@@ -1546,7 +1568,7 @@
             months:      LABELS[conf.lang].months.join(),
             shortMonths: LABELS[conf.lang].shortMonths.join(),
             days:        LABELS[conf.lang].weekdays.join(),
-            shortDays:   LABELS[conf.lang].shortWeekdays.join()
+            shortDays:   LABELS[conf.lang].shortWeekdaysLocalize.join()
         });
 
         // Make the date input into a calendar dateinput()
