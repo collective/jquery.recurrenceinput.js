@@ -175,10 +175,10 @@
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         weekdays: [
-            'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-            'Friday', 'Saturday', 'Sunday'],
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+            'Friday', 'Saturday'],
         shortWeekdays: [
-            'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 
         longDateFormat: 'mmmm dd, yyyy',
         shortDateFormat: 'mm/dd/yyyy',
@@ -311,13 +311,13 @@
                     '<div id="riweeklyweekdays" class="rifield">',
                         '<label for="${name}weeklyinterval" class="label">${i18n.weeklyWeekdays}</label>',
                         '<div class="field">',
-                            '{{each i18n.shortWeekdays}}',
+                            '{{each orderedWeekdays}}',
                                 '<div class="riweeklyweekday">',
                                     '<input type="checkbox"',
-                                        'name="riweeklyweekdays${weekdays[$index]}"',
-                                        'id="${name}weeklyWeekdays${weekdays[$index]}"',
-                                        'value="${weekdays[$index]}" />',
-                                    '<label for="${name}weeklyWeekdays${weekdays[$index]}">${$value}</label>',
+                                        'name="riweeklyweekdays${weekdays[$value]}"',
+                                        'id="${name}weeklyWeekdays${weekdays[$value]}"',
+                                        'value="${weekdays[$value]}" />',
+                                    '<label for="${name}weeklyWeekdays${weekdays[$value]}">${i18n.shortWeekdays[$value]}</label>',
                                 '</div>',
                             '{{/each}}',
                         '</div>',
@@ -368,8 +368,8 @@
                                 '</select>',
                                 '${i18n.monthlyWeekdayOfMonth2}',
                                 '<select name="rimonthlyweekdayofmonth">',
-                                    '{{each i18n.weekdays}}',
-                                        '<option value="${weekdays[$index]}">${$value}</option>',
+                                    '{{each orderedWeekdays}}',
+                                        '<option value="${weekdays[$value]}">${i18n.weekdays[$value]}</option>',
                                     '{{/each}}',
                                 '</select>',
                                 '${i18n.monthlyWeekdayOfMonth3}',
@@ -429,8 +429,8 @@
                                     '${i18n.yearlyWeekdayOfMonth2}',
                                 '</label>',
                                 '<select name="riyearlyweekdayofmonthday">',
-                                '{{each i18n.weekdays}}',
-                                    '<option value="${weekdays[$index]}">${$value}</option>',
+                                '{{each orderedWeekdays}}',
+                                    '<option value="${weekdays[$value]}">${i18n.weekdays[$value]}</option>',
                                 '{{/each}}',
                                 '</select>',
                                 '${i18n.yearlyWeekdayOfMonth3}',
@@ -1092,9 +1092,20 @@
         var form, display;
 
         // Extend conf with non-configurable data used by templates.
+        orderedWeekdays = [];
+        var index;
+        for (i = 0; i < 7; i++) {
+            index = i + conf.firstDay;
+            if (index > 6) {
+                index = index - 7;
+            }
+            orderedWeekdays.push(index);
+        }
+        
         $.extend(conf, {
             orderIndexes: ['+1', '+2', '+3', '+4', '-1'],
-            weekdays: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
+            weekdays: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'],
+            orderedWeekdays: orderedWeekdays
         });
 
         // The recurrence type dropdown should show certain fields depending
