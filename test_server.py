@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# This returns a formattedDate attribute on each occurrence,
+# this is deprecated, as it requires i18n on both client and
+# server side. Formatting is now done on the client side.
+
 import sys
 import SimpleHTTPServer
 import SocketServer

@@ -1226,6 +1226,19 @@
                     }
                     data.readOnly = readonly;
                     data.i18n = conf.i18n;
+                    
+                    // Format dates:
+                    var occurrence, date, y, m, d;
+                    for (each in data.occurrences) {
+                        if (data.occurrences.hasOwnProperty(each)) {
+                            occurrence = data.occurrences[each];
+                            date = occurrence.date;
+                            y = parseInt(date.substring(0, 4), 10);
+                            m = parseInt(date.substring(4, 6), 10) - 1;
+                            d = parseInt(date.substring(6, 8), 10);
+                            occurrence.formattedDate = format(new Date(y, m, d), conf.i18n.longDateFormat, conf);
+                        }
+                    }
 
                     result = $.tmpl('occurrenceTmpl', data);
                     occurrenceDiv = element.find('.rioccurrences');
