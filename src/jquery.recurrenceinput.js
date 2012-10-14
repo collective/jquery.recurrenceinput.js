@@ -1365,7 +1365,7 @@
                 // If the date is a real date, set the defaults in the form
                 form.find('select[name=rimonthlydayofmonthday]').val(startdate.getDate());
                 dayindex = conf.orderIndexes[Math.floor((startdate.getDate() - 1) / 7)];
-                day = conf.weekdays[startdate.getDay() - 1];
+                day = conf.weekdays[startdate.getDay()];
                 form.find('select[name=rimonthlyweekdayofmonthindex]').val(dayindex);
                 form.find('select[name=rimonthlyweekdayofmonth]').val(day);
 
