@@ -33,10 +33,15 @@ This widget does not support all features of RRULE's. For example:
   this will be made into UTC with no timezone translation.
 * Any parameters will be ignored and stripped on saving the rule.
 
+Requirements
+------------
 
-Known bugs
-----------
+Requires jQuery and jQuery Tools datetime widget and overlay support.
+It is currently being tested with jQuery 1.4 and 1.7.
+jQuery 1.5 may work, but bugs in jQuery 1.6.4 means it does *not* work.
+jQuery Tools doesn't support jQuery 1.8 yet.
 
+It's tested on Chromium (Linux), Firefox (Linux), IE9 (Windows).
 
 To Do
 -----

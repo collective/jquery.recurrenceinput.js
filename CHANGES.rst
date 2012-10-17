@@ -1,6 +1,14 @@
 1.0dev (unreleased)
 ===================
 
+Tested with:
+* jQuery 1.4.2 + jQuery Tools 1.2.5
+* jQuery 1.7.2 + jQuery Tools 1.2.7
+
+jQuery Tools does not yet support jQuery 1.8, and there are at least one
+serious bug in jQuery 1.6.4 that means this widget does not work with
+jQuery 1.6.
+
 - Setting first day of the week now works.
   [regebro]
 
