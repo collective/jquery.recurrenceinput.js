@@ -984,7 +984,7 @@
                     if (byday) {
                         monthlyType = 'WEEKDAYOFMONTH';
 
-                        if ($.inArray(',', byday) !== -1) {
+                        if (byday.indexOf(',') !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1023,7 +1023,7 @@
                     if (byday) {
                         yearlyType = 'WEEKDAYOFMONTH';
 
-                        if ($.inArray(',', byday) !== -1) {
+                        if (byday.indexOf(',') !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
