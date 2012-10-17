@@ -6,10 +6,10 @@
     <link type="text/css" href="jquery.tools.dateinput.css" rel="stylesheet"></link>
     <link type="text/css" href="jquery.recurrenceinput.css" rel="stylesheet"></link>
     <link type="text/css" href="overlays.css" rel="stylesheet"></link>
-    <script type="text/javascript" src="../lib/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../lib/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
-    <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
-    <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.5.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.7.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.7.js"></script>
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
 </head>
 
@@ -157,7 +157,7 @@
         //   $.tools.recurrenceinput.conf.lang = 'sv';
         // Or you pass it in as a custom config parameter which changes only
         // this input:
-        $("textarea[name=swedish]").recurrenceinput({lang:'sv', startField: "connected_start",  ajaxURL: document.URL, firstDay: 1});
+        $("textarea[name=swedish]").recurrenceinput({lang:'sv', startField: "connected_start",  ajaxURL: '/wsgitest/test_server_wsgi.py', firstDay: 1});
     </script>
     
 
