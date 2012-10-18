@@ -1092,8 +1092,8 @@
         var form, display;
 
         // Extend conf with non-configurable data used by templates.
-        orderedWeekdays = [];
-        var index;
+        var orderedWeekdays = [];
+        var index, i;
         for (i = 0; i < 7; i++) {
             index = i + conf.firstDay;
             if (index > 6) {
@@ -1169,7 +1169,7 @@
             errorarea.hide();
 
             // Add date only if it is not already in RDATE
-            if($.inArray(datevalue, form.ical.RDATE) === -1) {
+            if ($.inArray(datevalue, form.ical.RDATE) === -1) {
                 form.ical.RDATE.push(datevalue);
                 var html = ['<div class="occurrence rdate" style="display: none;">',
                         '<span class="rdate">',
@@ -1236,7 +1236,7 @@
                     data.i18n = conf.i18n;
                     
                     // Format dates:
-                    var occurrence, date, y, m, d;
+                    var occurrence, date, y, m, d, each;
                     for (each in data.occurrences) {
                         if (data.occurrences.hasOwnProperty(each)) {
                             occurrence = data.occurrences[each];
@@ -1325,7 +1325,7 @@
                     pad(startFieldDay.val(), 2);
             }
             if (startdate === null) {
-               return null;
+                return null;
             }
             // We have some sort of startdate:
             startdate = new Date(startdate);
@@ -1457,7 +1457,7 @@
             if (form.find('#ridailyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('ridailyinterval', form);
-                if(!num || num < 1 || num > 1000) {
+                if (!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1467,7 +1467,7 @@
             if (form.find('#riweeklyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riweeklyinterval', form);
-                if(!num || num < 1 || num > 1000) {
+                if (!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
@@ -1477,13 +1477,13 @@
             if (form.find('#rimonthlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('rimonthlyinterval', form);
-                if(!num || num < 1 || num > 1000) {
+                if (!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
 
                 // Check repeat on
-                if(form.find('#rimonthlyoptions input:checked').length == 0) {
+                if (form.find('#rimonthlyoptions input:checked').length === 0) {
                     messagearea.text(conf.i18n.noRepeatOn).show();
                     return false;
                 }
@@ -1493,13 +1493,13 @@
             if (form.find('#riyearlyinterval').css('display') === 'block') {
                 // Check repeat every field
                 num = findIntField('riyearlyinterval', form);
-                if(!num || num < 1 || num > 1000) {
+                if (!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noRepeatEvery).show();
                     return false;
                 }
 
                 // Check repeat on
-                if(form.find('#riyearlyoptions input:checked').length == 0) {
+                if (form.find('#riyearlyoptions input:checked').length === 0) {
                     messagearea.text(conf.i18n.noRepeatOn).show();
                     return false;
                 }
@@ -1510,7 +1510,7 @@
             // If after N occurences is selected, check its value
             if (form.find('input[value="BYOCCURRENCES"]:visible:checked').length > 0) {
                 num = findIntField('rirangebyoccurrencesvalue', form);
-                if(!num || num < 1 || num > 1000) {
+                if (!num || num < 1 || num > 1000) {
                     messagearea.text(conf.i18n.noEndAfterNOccurrences).show();
                     return false;
                 }
@@ -1655,7 +1655,7 @@
                 $(this).parent().find('input[name=rirangetype]').click().change();
             }
         );
-        form.find('input[name=rirangebyenddatecalendar]').change(function() {
+        form.find('input[name=rirangebyenddatecalendar]').change(function () {
             // Update only if the occurances are shown
             $(this).parent().find('input[name=rirangetype]').click();
             if (form.find('.rioccurrencesactions:visible').length !== 0) {
