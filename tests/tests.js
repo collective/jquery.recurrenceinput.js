@@ -188,7 +188,7 @@ test("Test of connected start field and showing of occurrences", function () {
     expect(1);
 
     // Set the start date to test the XML javascript stuff.
-    $("input[name=start]").val('2011-04-13');
+    $("input[name=start]").val('2011/04/13');
         
     // The second wednesday of April, forevah.
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -206,7 +206,7 @@ test("RDATE and EXDATE", function () {
     expect(12);
 
     // Set the start date to test the Ajax request stuff.
-    $("input[name=start]").val('2011-04-13');    
+    $("input[name=start]").val('2011/04/13');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
@@ -217,8 +217,8 @@ test("RDATE and EXDATE", function () {
     stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
         var occurrences = input.display.find('.rioccurrences .occurrence span');
-        ok(occurrences[0].firstChild.data === " April 13, 2011  ");
-        ok(occurrences[8].firstChild.data === " April 13, 2016   ");
+        ok($.trim(occurrences[0].firstChild.data) === "April 13, 2011");
+        ok($.trim(occurrences[8].firstChild.data) === "April 13, 2016");
         start();
     }, 1000);
 
@@ -242,8 +242,8 @@ test("RDATE and EXDATE", function () {
     stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
         var occurrences = input.display.find('.rioccurrences .occurrence span');
-        ok(occurrences[0].firstChild.data === " April 13, 2011  ");
-        ok(occurrences[8].firstChild.data === " April 13, 2016   ");
+        ok($.trim(occurrences[0].firstChild.data) === "April 13, 2011");
+        ok($.trim(occurrences[8].firstChild.data) === "April 13, 2016");
         start();
     }, 1000);
 
@@ -254,7 +254,7 @@ test("Adding RDATE", function () {
     expect(4);
     
     // Set the start date to test the Ajax request stuff.
-    $("input[name=start]").val('2011-04-13');    
+    $("input[name=start]").val('2011/04/13');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -296,7 +296,7 @@ test("Adding EXDATE", function () {
     expect(4);
     
     // Set the start date to test the Ajax request stuff.
-    $("input[name=start]").val('2011-04-13');    
+    $("input[name=start]").val('2011/04/13');    
     
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -350,7 +350,7 @@ test("Field validations", function () {
     // This sets the text area rule, and opens the dialog box.
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $('textarea[name=repeat]').val(rrule);
-    $('#start').val('2011-12-31');
+    $('#start').val('2011/12/31');
     $('.repeatfield a[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
