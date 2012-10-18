@@ -70,6 +70,7 @@ div.riform #riweeklyweekdays .riweeklyweekday {
 div.riform input.ricancelbutton {
     background-image: url(pb_close.png);
     background-color: transparent;
+    font-size: 0; /* For IE8 */
     color: transparent;
     border: none;
     position: absolute;
