@@ -775,12 +775,12 @@
 
     function parseLine(icalline) {
         var result = {};
-        var pos = $.inArray(':', icalline);
+        var pos = icalline.indexOf(':');
         var property = icalline.substring(0, pos);
         result.value = icalline.substring(pos + 1);
 
-        if ($.inArray(';', property) !== -1) {
-            pos = $.inArray(';', property);
+        if (property.indexOf(';') !== -1) {
+            pos = property.indexOf(';');
             result.parameters = property.substring(pos + 1);
             result.property = property.substring(0, pos);
         } else {
@@ -799,7 +799,7 @@
 
         for (date in splitDates) {
             if (splitDates.hasOwnProperty(date)) {
-                if ($.inArray('Z', splitDates[date]) !== -1) {
+                if (splitDates[date].indexOf('Z') !== -1) {
                     result.push(splitDates[date].substring(0, 15));
                 } else {
                     result.push(splitDates[date]);
@@ -984,7 +984,7 @@
                     if (byday) {
                         monthlyType = 'WEEKDAYOFMONTH';
 
-                        if ($.inArray(',', byday) !== -1) {
+                        if (byday.indexOf(',') !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1023,7 +1023,7 @@
                     if (byday) {
                         yearlyType = 'WEEKDAYOFMONTH';
 
-                        if ($.inArray(',', byday) !== -1) {
+                        if (byday.indexOf(',') !== -1) {
                             // No support for multiple days in one month
                             unsupportedFeatures.push(conf.i18n.multipleDayOfMonth);
                             byday = byday.split(",")[0];
@@ -1204,18 +1204,26 @@
             occurrenceDiv = element.find('.rioccurrences');
             occurrenceDiv.hide();
 
+            var year, month, day;
+            year = startdate.getFullYear();
+            month = startdate.getMonth() + 1;
+            day = startdate.getDate();
+            
+            var data = {year: year,
+                       month: month, // Sending January as 0? I think not.
+                       day: day,
+                       rrule: rfc5545,
+                       format: conf.i18n.longDateFormat,
+                       start: start};
 
-            $.ajax({
+            var dict = {
                 url: conf.ajaxURL,
                 async: false, // Can't be tested if it's asynchronous, annoyingly.
                 type: 'post',
                 dataType: 'json',
-                data: {year: startdate.getFullYear(),
-                       month: startdate.getMonth() + 1, // Sending January as 0? I think not.
-                       day: startdate.getDate(),
-                       rrule: rfc5545,
-                       format: conf.i18n.longDateFormat,
-                       start: start},
+                contentType: 'application/json; charset=utf8',
+                cache: false,
+                data: data,
                 success: function (data, status, jqXHR) {
                     var result, element;
 
@@ -1264,7 +1272,9 @@
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert(textStatus);
                 }
-            });
+            };
+            
+            $.ajax(dict);
         }
 
         function pad(number, length) {
