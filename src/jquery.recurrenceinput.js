@@ -1277,14 +1277,6 @@
             $.ajax(dict);
         }
 
-        function pad(number, length) {
-            // http://www.electrictoolbox.com/pad-number-zeroes-javascript/
-            var str = '' + number; // Confuses jslint.
-            while (str.length < length) {
-                str = '0' + str;
-            }
-            return str;
-        }
         function getField(field) {
             // See if it is a field already
             var realField = $(field);
@@ -1321,8 +1313,8 @@
                 startFieldMonth = getField(conf.startFieldMonth);
                 startFieldDay = getField(conf.startFieldDay);
                 startdate = startFieldYear.val() + '-' +
-                    pad(startFieldMonth.val(), 2) + '-' +
-                    pad(startFieldDay.val(), 2);
+                    zeropad(startFieldMonth.val(), 2) + '-' +
+                    zeropad(startFieldDay.val(), 2);
             }
             if (startdate === null) {
                 return null;
