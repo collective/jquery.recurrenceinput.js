@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 
 <head>
@@ -6,11 +7,21 @@
     <link type="text/css" href="jquery.tools.dateinput.css" rel="stylesheet"></link>
     <link type="text/css" href="jquery.recurrenceinput.css" rel="stylesheet"></link>
     <link type="text/css" href="overlays.css" rel="stylesheet"></link>
-    <script type="text/javascript" src="../lib/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../lib/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
-    <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
-    <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.5.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.7.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.7.js"></script>
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
+    
+    <!-- Because IE8 doesn't support box-shadow, I simply put in a 2px border instead. -->
+    <!--[if IE]>
+        <style type="text/css">
+            div.riform {
+                border: 2px solid black;
+            }
+        </style>
+    <![endif]-->
+    
 </head>
 
 <body>
@@ -39,7 +50,7 @@
 	    months: 'Januari,Februari,Mars,April,Maj,Juni,Juli,Augusti,September,October,November,December',
 	    shortMonths: 'Jan,Feb,Mar,Apr,Maj,Jun,Jul,Aug,Sep,Okt,Nov,Dec',
             days: 's\u00F6ndagen,m\u00E5ndagen,tisdagen,onsdagen,torsdagen,fredagen,l\u00F6rdagen',
-            shortDays: 'S\u00F6n,M\u00E5n,Tis,Ons,Tor,Fre,L\u00F6r',
+            shortDays: 'S\u00F6n,M\u00E5n,Tis,Ons,Tor,Fre,L\u00F6r'
       });
       $('input#connected_start').dateinput({lang: 'sv', firstDay: 1, selectors: true});
     </script>
@@ -157,7 +168,7 @@
         //   $.tools.recurrenceinput.conf.lang = 'sv';
         // Or you pass it in as a custom config parameter which changes only
         // this input:
-        $("textarea[name=swedish]").recurrenceinput({lang:'sv', startField: "connected_start",  ajaxURL: document.URL, firstDay: 1});
+        $("textarea[name=swedish]").recurrenceinput({lang:'sv', startField: "connected_start",  ajaxURL: '/wsgitest/test_server_wsgi.py', firstDay: 1});
     </script>
     
 
