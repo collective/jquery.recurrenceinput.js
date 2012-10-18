@@ -1,18 +1,21 @@
-1.0dev (unreleased)
+1.0rc1 (2012-10-18)
 ===================
 
 Tested with:
 * jQuery 1.4.2 + jQuery Tools 1.2.5
 * jQuery 1.7.2 + jQuery Tools 1.2.7
+* IE 8 (Win), Chromium 20 (Linux), Firefox 16 (Linux, Android)
 
-jQuery Tools does not yet support jQuery 1.8, and there are at least one
-serious bug in jQuery 1.6.4 that means this widget does not work with
-jQuery 1.6.
+- Added IE8 support
+  [regebro]
+  
+- Rewrote the demo/test server as WSGI for increased reliability.
+  [regebro]
 
 - Setting first day of the week now works.
   [regebro]
 
-- The tests run on Chromium again.
+- The tests run on Chromium 20.
   [regebro]
 
 - Moved the localized demo to it's own page, because jQuery Tools dateinput
@@ -22,9 +25,9 @@ jQuery 1.6.
 - A license file was added to be explicit about the licensing.
   [regebro]
 
-- Localization of the jquery tools dateinputs and first day configuration option
-  added to set which is the first day of the month.
-  [vsomogyi] 
+- Localization of the jquery tools dateinputs and first day configuration
+  option added to set which is the first day of the month.
+  [vsomogyi]
 
 - Fixed a compatibility issue with IE8 and below.
   [dokai]
