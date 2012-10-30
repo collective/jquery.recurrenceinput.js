@@ -6,6 +6,10 @@ Tested with:
 * jQuery 1.7.2 + jQuery Tools 1.2.7
 * IE 8 (Win), Chromium 20 (Linux), Firefox 16 (Linux, Android)
 
+- Add ajaxContentType parameter to allow configuring of the content type of the
+  ajax request sent to the server for getting the recurrence occurences.
+  [thet]
+
 - Added IE8 support
   [regebro]
   

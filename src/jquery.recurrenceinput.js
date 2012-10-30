@@ -20,6 +20,7 @@
             startFieldMonth: null,
             startFieldDay: null,
             ajaxURL: null,
+            ajaxContentType: 'application/json; charset=utf8',
 
             // FORM OVERLAY
             formOverlay: {
@@ -1221,7 +1222,7 @@
                 async: false, // Can't be tested if it's asynchronous, annoyingly.
                 type: 'post',
                 dataType: 'json',
-                contentType: 'application/json; charset=utf8',
+                contentType: conf.ajaxContentType,
                 cache: false,
                 data: data,
                 success: function (data, status, jqXHR) {
