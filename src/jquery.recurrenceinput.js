@@ -1243,7 +1243,7 @@
                             occurrence = data.occurrences[each];
                             date = occurrence.date;
                             y = parseInt(date.substring(0, 4), 10);
-                            m = parseInt(date.substring(4, 6), 10) - 1;
+                            m = parseInt(date.substring(4, 6), 10) - 1; // jan=0
                             d = parseInt(date.substring(6, 8), 10);
                             occurrence.formattedDate = format(new Date(y, m, d), conf.i18n.longDateFormat, conf);
                         }
