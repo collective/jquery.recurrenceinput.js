@@ -555,6 +555,7 @@ test("Configure ributtonExtraClass.", function () {
 });
 
 test("Pull-Request #9: Recurrence end date not properly saved.", function () {
+    // TODO: once i saw this test passing. i swear!
     expect(1);
     set_date_value($("input[name=start]"), '2013/01/17');
     var rrule = "RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20130120T000000";
