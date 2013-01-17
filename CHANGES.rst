@@ -7,6 +7,9 @@ Tested with:
 * IE 8 (Win), Chromium 20 (Linux), Firefox 16 (Linux, Android)
 
 
+- Fix Pull-Request #9: Recurrence end date not properly saved.
+  [aroemen, thet]
+
 - Add ributtonExtraClass config parameter for setting extra classes on cancel
   and save buttons. This allows frameworks to react on submit for buttons
   marked with a special class.
@@ -18,7 +21,7 @@ Tested with:
 
 - Added IE8 support
   [regebro]
-  
+
 - Rewrote the demo/test server as WSGI for increased reliability.
   [regebro]
 
@@ -31,7 +34,7 @@ Tested with:
 - Moved the localized demo to it's own page, because jQuery Tools dateinput
   can not have different configurations on one page.
   [regebro]
-  
+
 - A license file was added to be explicit about the licensing.
   [regebro]
 
