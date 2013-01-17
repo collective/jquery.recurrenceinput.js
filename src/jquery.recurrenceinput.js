@@ -1,5 +1,6 @@
 /*jslint regexp: false, continue: true, indent: 4 */
 /*global $, alert, jQuery */
+"use strict"
 
 (function ($) {
     $.tools = $.tools || {version: '@VERSION'};
