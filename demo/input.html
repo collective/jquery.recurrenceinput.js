@@ -167,12 +167,9 @@ RDATE:20121214T000000,20121215T000000,20121216T000000</textarea>
                 'Jul', 'Aug', 'Sep',
                 'Okt', 'Nov', 'Dez'],
             weekdays: [
-                'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag',
-                'Freitag', 'Samstag', 'Sonntag'],
-            shortWeekdays: [
-                'Mon', 'Die', 'Mit',
-                'Don', 'Fre', 'Sam',
-                'Son'],
+                'Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag',
+                'Freitag', 'Samstag'],
+            shortWeekdays: ['Son', 'Die', 'Mit', 'Don', 'Fre', 'Sam'],
             longDateFormat: 'dddd mmmm dd, yyyy',
             shortDateFormat: 'dd.mm.yy',
             unsupportedFeatures: 'Warning: This event uses recurrence features not supported by this widget. Saving the recurrence may change the recurrence in unintended ways: ',
@@ -194,9 +191,11 @@ RDATE:20121214T000000,20121215T000000,20121216T000000</textarea>
                 monthly: 'Monatlich',
                 yearly: 'Jährlich',
                 }
-        }); 
-        
-        $("textarea[name=custom_lang_de]").recurrenceinput({firstDay:0, lang:'de', startField: "connected_start",  ajaxURL: document.URL});
+        });
+
+        // $firstDay=1 doesn't work in this setup, because of other recurrenceinput instances.
+        // is there a global somewhere? dateutil?
+        $("textarea[name=custom_lang_de]").recurrenceinput({lang:'de', startField: "connected_start",  ajaxURL: document.URL});
     </script>
 
 
