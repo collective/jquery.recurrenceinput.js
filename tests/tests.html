@@ -7,14 +7,14 @@
     <link type="text/css" href="../demo/jquery.tools.dateinput.css" rel="stylesheet"></link>
     <link type="text/css" href="../demo/jquery.recurrenceinput.css" rel="stylesheet"></link>
     <link type="text/css" href="../demo/overlays.css" rel="stylesheet"></link>
-    <link type="text/css" href="qunit.css" rel="stylesheet"></link>
+    <link type="text/css" href="qunit-1.10.0.css" rel="stylesheet"></link>
     
     <script type="text/javascript" src="../lib/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="../lib/jquery.tmpl-beta1.js"></script>
     <script type="text/javascript" src="../lib/jquery.tools.dateinput-1.2.5.js"></script>
     <script type="text/javascript" src="../lib/jquery.tools.overlay-1.2.5.js"></script>
     <script type="text/javascript" src="../src/jquery.recurrenceinput.js"></script>
-    <script type="text/javascript" src="qunit.js"></script>
+    <script type="text/javascript" src="qunit-1.10.0.js"></script>
     <script type="text/javascript" src="tests.js"></script>
     
     <!-- Because IE8 doesn't support box-shadow, I simply put in a 2px border instead. -->
@@ -154,7 +154,7 @@
 		    }
 		});
 		
-                $("textarea[name=repeat]").recurrenceinput({startField: "start",  ajaxURL: document.URL, formOverlay: {speed: 1}});
+                $("textarea[name=repeat]").recurrenceinput({startField: "start",  ajaxURL: document.URL, formOverlay: {speed: 1}, ributtonExtraClass: 'totally extra'});
             </script>
         </div>
 

@@ -1,5 +1,6 @@
 /*jslint regexp: false, continue: true, indent: 4 */
 /*global $, alert, jQuery */
+"use strict"
 
 (function ($) {
     $.tools = $.tools || {version: '@VERSION'};
@@ -20,6 +21,8 @@
             startFieldMonth: null,
             startFieldDay: null,
             ajaxURL: null,
+            ajaxContentType: 'application/json; charset=utf8',
+            ributtonExtraClass: '',
 
             // FORM OVERLAY
             formOverlay: {
@@ -514,11 +517,11 @@
                 '<div class="ributtons">',
                     '<input',
                         'type="submit"',
-                        'class="ricancelbutton"',
+                        'class="ricancelbutton ${ributtonExtraClass}"',
                         'value="${i18n.cancel}" />',
                     '<input',
                         'type="submit"',
-                        'class="risavebutton"',
+                        'class="risavebutton ${ributtonExtraClass}"',
                         'value="${i18n.save}" />',
                 '</div>',
             '</form></div>'].join('\n');
@@ -1221,7 +1224,7 @@
                 async: false, // Can't be tested if it's asynchronous, annoyingly.
                 type: 'post',
                 dataType: 'json',
-                contentType: 'application/json; charset=utf8',
+                contentType: conf.ajaxContentType,
                 cache: false,
                 data: data,
                 success: function (data, status, jqXHR) {
@@ -1242,7 +1245,7 @@
                             occurrence = data.occurrences[each];
                             date = occurrence.date;
                             y = parseInt(date.substring(0, 4), 10);
-                            m = parseInt(date.substring(4, 6), 10) - 1;
+                            m = parseInt(date.substring(4, 6), 10) - 1; // jan=0
                             d = parseInt(date.substring(6, 8), 10);
                             occurrence.formattedDate = format(new Date(y, m, d), conf.i18n.longDateFormat, conf);
                         }
