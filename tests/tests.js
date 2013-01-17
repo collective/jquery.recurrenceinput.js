@@ -542,3 +542,16 @@ test("Unsupported features (incomplete)", function () {
 
 
 });
+
+
+test("Configure ributtonExtraClass.", function () {
+    expect(4);
+    
+    var input_1 = $("textarea[name=repeat]").recurrenceinput();
+    ok(input_1.form.find('input.ricancelbutton').attr('class') === 'ricancelbutton totally extra');
+    ok(input_1.form.find('input.risavebutton').attr('class') === 'risavebutton totally extra');
+    
+    var input_2 = $("textarea[name=custom]").recurrenceinput();
+    ok(input_2.form.find('input.ricancelbutton').attr('class') === 'ricancelbutton ');
+    ok(input_2.form.find('input.risavebutton').attr('class') === 'risavebutton ');
+ });
