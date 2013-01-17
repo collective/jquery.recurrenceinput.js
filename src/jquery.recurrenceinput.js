@@ -21,6 +21,7 @@
             startFieldDay: null,
             ajaxURL: null,
             ajaxContentType: 'application/json; charset=utf8',
+            ributtonExtraClass: '',
 
             // FORM OVERLAY
             formOverlay: {
@@ -515,11 +516,11 @@
                 '<div class="ributtons">',
                     '<input',
                         'type="submit"',
-                        'class="ricancelbutton"',
+                        'class="ricancelbutton ${ributtonExtraClass}"',
                         'value="${i18n.cancel}" />',
                     '<input',
                         'type="submit"',
-                        'class="risavebutton"',
+                        'class="risavebutton ${ributtonExtraClass}"',
                         'value="${i18n.save}" />',
                 '</div>',
             '</form></div>'].join('\n');
