@@ -81,7 +81,7 @@ Debian/Ubuntu:
 
 A non-system Python 2 with setuptools or distribute installed:
 
-    $ <pathtopython>/easy_install python-dateutil==1.5
+    $ <pathtopython>/easy_install python-dateutil
 
 
 The demo/input.html document contains basic usecases and can be used when
