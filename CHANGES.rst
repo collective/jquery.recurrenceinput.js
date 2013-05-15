@@ -5,7 +5,11 @@ Changelog
 -------------------
 TODO: ADD MISSING CHANGELOG ENTRIES HERE
 
-- backport pbauers fix of "use strict is not a function".
+- Move jquery.recurrenceinput.css from demo/ to src/ directory. This file is
+  likely to be needed for integration.
+  [thet]
+
+- Backport pbauers fix of "use strict is not a function".
   [thet]
 
 
