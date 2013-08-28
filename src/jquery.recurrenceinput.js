@@ -993,6 +993,10 @@
                             byday = byday.split(",")[0];
                         }
                         index = byday.slice(0, -2);
+                        if (index.charAt(0) !== '+' && index.charAt(0) !== '-')
+						{
+							index = '+' + index;
+						}
                         weekday = byday.slice(-2);
                         field.find('select[name=rimonthlyweekdayofmonthindex]').val(index);
                         field.find('select[name=rimonthlyweekdayofmonth]').val(weekday);
@@ -1032,6 +1036,10 @@
                             byday = byday.split(",")[0];
                         }
                         index = byday.slice(0, -2);
+                        if (index.charAt(0) !== '+' && index.charAt(0) !== '-')
+						{
+							index = '+' + index;
+						}
                         weekday = byday.slice(-2);
                         field.find('select[name=riyearlyweekdayofmonthindex]').val(index);
                         field.find('select[name=riyearlyweekdayofmonthday]').val(weekday);
