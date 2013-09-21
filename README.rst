@@ -83,6 +83,17 @@ A non-system Python 2 with setuptools or distribute installed:
 
     $ <pathtopython>/easy_install python-dateutil
 
+Then start the tests server like so::
+
+    $ python ./test_server.py
+
+And run the demos::
+|    http://localhost:8000/demo/input.html
+|    http://localhost:8000/demo/localized.html
+
+And the tests::
+    http://localhost:8000/tests/tests.html
+
 
 The demo/input.html document contains basic usecases and can be used when
 developing on this widget.
