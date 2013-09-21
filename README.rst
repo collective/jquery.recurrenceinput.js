@@ -87,15 +87,10 @@ Then start the tests server like so::
 
     $ python ./test_server.py
 
-And run the demos::
+Open the demo pages http://localhost:8000/demo/input.html and
+http://localhost:8000/demo/localized.html
 
-    http://localhost:8000/demo/input.html
-
-    http://localhost:8000/demo/localized.html
-
-And the tests::
-
-    http://localhost:8000/tests/tests.html
+And Open the tests: http://localhost:8000/tests/tests.html
 
 
 The demo/input.html document contains basic usecases and can be used when
