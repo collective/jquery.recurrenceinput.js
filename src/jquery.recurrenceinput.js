@@ -993,10 +993,9 @@
                             byday = byday.split(",")[0];
                         }
                         index = byday.slice(0, -2);
-                        if (index.charAt(0) !== '+' && index.charAt(0) !== '-')
-						{
-							index = '+' + index;
-						}
+                        if (index.charAt(0) !== '+' && index.charAt(0) !== '-') {
+                            index = '+' + index;
+                        }
                         weekday = byday.slice(-2);
                         field.find('select[name=rimonthlyweekdayofmonthindex]').val(index);
                         field.find('select[name=rimonthlyweekdayofmonth]').val(weekday);
@@ -1036,10 +1035,9 @@
                             byday = byday.split(",")[0];
                         }
                         index = byday.slice(0, -2);
-                        if (index.charAt(0) !== '+' && index.charAt(0) !== '-')
-						{
-							index = '+' + index;
-						}
+                        if (index.charAt(0) !== '+' && index.charAt(0) !== '-') {
+                            index = '+' + index;
+                        }
                         weekday = byday.slice(-2);
                         field.find('select[name=riyearlyweekdayofmonthindex]').val(index);
                         field.find('select[name=riyearlyweekdayofmonthday]').val(weekday);
@@ -1112,7 +1110,7 @@
             }
             orderedWeekdays.push(index);
         }
-        
+
         $.extend(conf, {
             orderIndexes: ['+1', '+2', '+3', '+4', '-1'],
             weekdays: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'],
@@ -1219,7 +1217,7 @@
             year = startdate.getFullYear();
             month = startdate.getMonth() + 1;
             day = startdate.getDate();
-            
+
             var data = {year: year,
                        month: month, // Sending January as 0? I think not.
                        day: day,
@@ -1245,7 +1243,7 @@
                     }
                     data.readOnly = readonly;
                     data.i18n = conf.i18n;
-                    
+
                     // Format dates:
                     var occurrence, date, y, m, d, each;
                     for (each in data.occurrences) {
@@ -1284,7 +1282,7 @@
                     alert(textStatus);
                 }
             };
-            
+
             $.ajax(dict);
         }
 

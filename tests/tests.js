@@ -50,8 +50,9 @@ test("Basics", function () {
 });
 
 test("Invalid ical data", function () {
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    expect(1);
 
+    var input = $("textarea[name=repeat]").recurrenceinput();
     // Looks valid, but it doens't contain the RRULE data:
     $("textarea[name=repeat]").val("FREQ=MONTHLY;COUNT=3");
     $('.repeatfield a[name=riedit]').click();
@@ -563,4 +564,35 @@ test("Pull-Request #9: Recurrence end date not properly saved.", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
 
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '01/20/2013');
+});
+
+test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
+    /* Pull-Request #16 fixes a parsing error with following valid RRULE:
+     * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH"
+     * it's returned to the Textarea as 
+     * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+1TH"
+     * which is just wrong.
+     * It should instead read:
+     * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH"
+     * See: http://tools.ietf.org/html/rfc5545#section-3.3.10 how to define the
+     * BYDAY Weekdaylist values.
+     */
+    expect(7);
+    
+    // Set a recurrence rule and open the dialog box.
+    var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH";
+    var rrule_fixed = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH";
+    $("textarea[name=repeat]").val(rrule);
+    $('.repeatfield a[name=riedit]').click();
+
+    var input = $("textarea[name=repeat]").recurrenceinput();
+    ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
+    ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'WEEKDAYOFMONTH');
+    ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+3');
+    ok(input.form.find('select[name=rimonthlyweekdayofmonth]').val() === 'TH');
+    ok(input.form.find('input[name=rimonthlyinterval]').val() === '3');
+    ok(input.form.find('input[name=rirangetype]:checked').val() === 'NOENDDATE');
+
+    input.form.find('.risavebutton').click();
+    ok($("textarea[name=repeat]").val() === rrule_fixed);
 });
