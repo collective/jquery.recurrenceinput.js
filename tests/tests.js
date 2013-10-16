@@ -596,3 +596,15 @@ test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule_fixed);
 });
+
+test("Optional repeat forever button", function () {
+    expect(3);
+
+    var input = $('<textarea name="notforever"></textarea>').recurrenceinput({hasRepeatForeverButton: false});
+    $('.repeatfield a[name=riedit]', input).click();
+    // we find 'on' and 'after'
+    ok(input.form.find('input[value="BYOCCURRENCES"]').size() == 1)
+    ok(input.form.find('input[value="BYENDDATE"]').size() == 1)
+    // but not 'never'
+    ok(input.form.find('input[value="NOENDDATE"]').size() == 0)
+});
