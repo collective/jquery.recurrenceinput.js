@@ -1315,21 +1315,21 @@
                     // Yes it was, get the date:
                     startdate = startdate.getValue();
                 }
+                startdate = new Date(startdate);
             } else if (conf.startFieldYear &&
                        conf.startFieldMonth &&
                        conf.startFieldDay) {
                 startFieldYear = getField(conf.startFieldYear);
                 startFieldMonth = getField(conf.startFieldMonth);
                 startFieldDay = getField(conf.startFieldDay);
-                startdate = startFieldYear.val() + '-' +
-                    zeropad(startFieldMonth.val(), 2) + '-' +
-                    zeropad(startFieldDay.val(), 2);
+                startdate = new Date(startFieldYear.val(),
+                                     startFieldMonth.val() - 1,
+                                     startFieldDay.val());
             }
             if (startdate === null) {
                 return null;
             }
             // We have some sort of startdate:
-            startdate = new Date(startdate);
             if (isNaN(startdate)) {
                 return null;
             }
@@ -1380,7 +1380,7 @@
                 widgetLoadFromRfc5545(form, conf, rfc5545, true);
                 // check checkbox
                 display.find('input[name=richeckbox]')
-                    .attr('checked', true);
+                    .attr('checked', true).change();
             }
 
             startdate = findStartDate();
@@ -1542,7 +1542,7 @@
                 form.overlay().close();
                 // check checkbox
                 display.find('input[name=richeckbox]')
-                    .attr('checked', true);
+                    .attr('checked', true).change();
                 recurrenceOn();
             }
         }
@@ -1716,7 +1716,7 @@
         if (this.val()) {
             recurrenceinput.display.find(
                 'input[name=richeckbox]'
-            ).attr('checked', true);
+            ).attr('checked', true).change();
         }
 
         // hide the textarea
