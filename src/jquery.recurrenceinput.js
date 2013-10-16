@@ -24,6 +24,9 @@
             ajaxContentType: 'application/json; charset=utf8',
             ributtonExtraClass: '',
 
+            // INPUT CONFIGURATION
+            hasRepeatForeverButton: true,
+
             // FORM OVERLAY
             formOverlay: {
                 speed: 'fast',
@@ -449,6 +452,7 @@
                     '<div id="rirangeoptions" class="rifield">',
                         '<label class="label">${i18n.range}</label>',
                         '<div class="field">',
+                          '{{if hasRepeatForeverButton}}',
                             '<div>',
                                 '<input',
                                     'type="radio"',
@@ -459,6 +463,7 @@
                                     '${i18n.rangeNoEnd}',
                                 '</label>',
                             '</div>',
+                          '{{/if}}',
                             '<div>',
                                 '<input',
                                     'type="radio"',
