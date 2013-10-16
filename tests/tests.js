@@ -603,8 +603,8 @@ test("Optional repeat forever button", function () {
     var input = $('<textarea name="notforever"></textarea>').recurrenceinput({hasRepeatForeverButton: false});
     $('.repeatfield a[name=riedit]', input).click();
     // we find 'on' and 'after'
-    ok(input.form.find('input[value="BYOCCURRENCES"]').size() == 1)
-    ok(input.form.find('input[value="BYENDDATE"]').size() == 1)
+    ok(input.form.find('input[value="BYOCCURRENCES"]').size() === 1);
+    ok(input.form.find('input[value="BYENDDATE"]').size() === 1);
     // but not 'never'
-    ok(input.form.find('input[value="NOENDDATE"]').size() == 0)
+    ok(input.form.find('input[value="NOENDDATE"]').size() === 0);
 });
