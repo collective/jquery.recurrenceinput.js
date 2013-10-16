@@ -1380,7 +1380,7 @@
                 widgetLoadFromRfc5545(form, conf, rfc5545, true);
                 // check checkbox
                 display.find('input[name=richeckbox]')
-                    .attr('checked', true);
+                    .attr('checked', true).change();
             }
 
             startdate = findStartDate();
@@ -1542,7 +1542,7 @@
                 form.overlay().close();
                 // check checkbox
                 display.find('input[name=richeckbox]')
-                    .attr('checked', true);
+                    .attr('checked', true).change();
                 recurrenceOn();
             }
         }
@@ -1716,7 +1716,7 @@
         if (this.val()) {
             recurrenceinput.display.find(
                 'input[name=richeckbox]'
-            ).attr('checked', true);
+            ).attr('checked', true).change();
         }
 
         // hide the textarea
