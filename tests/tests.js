@@ -1,14 +1,15 @@
 /*jslint indent: 4 */
 /*global $, ok, module, test, stop, start, expect */
-QUnit.config.autostart = false;
-
 module("jquery.recurrenceinput widget");
+
+//QUnit.config.autostart = false;
 
 
 // HELPER
 
 
 function rload1() {
+    runload();
     $.tools.recurrenceinput.localize("sv", {
         displayUnactivate: '\u00C5terkommer inte',
         displayActivate: '\u00C5terkommer var',
@@ -127,6 +128,7 @@ function rload1() {
 }
 
 function rload2() {
+    runload();
     $.tools.recurrenceinput.setTemplates({
         daily: {
             rrule: 'FREQ=DAILY',
@@ -167,6 +169,8 @@ function rload2() {
 
 function runload() {
     $("div.ridisplay").remove();
+    $("div#calroot").remove();
+    $("div.riform").remove();
     $("textarea[name=repeat]").show();
 }
 
@@ -182,13 +186,13 @@ function set_date_value(ele, date) {
 }
 
 
-$(document).ready(function() {
-    QUnit.start();
-});
+//$(document).ready(function() {
+//    QUnit.start();
+//});
 
 // TESTS
 
-asyncTest("Basics", function () {
+test("1 Basics", function () {
     expect(4);
 
     // This sets the text area rule, and opens the dialog box.
@@ -217,11 +221,10 @@ asyncTest("Basics", function () {
     input.form.find('.ricancelbutton').click();
     ok(input.form.is(':visible'));
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Invalid ical data", function () {
+test("2 Invalid ical data", function () {
     expect(1);
     var input = rload1();
 
@@ -231,11 +234,10 @@ asyncTest("Invalid ical data", function () {
     ok(input.form.find('#messagearea').text().indexOf('No RRULE in RRULE data') !== -1);
     input.form.find('.risavebutton').click();
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("No recurrence rule opens empty form with limited Recurrence Type to prevent unlimited Recurrences.", function () {
+test("3 No recurrence rule opens empty form with limited Recurrence Type to prevent unlimited Recurrences.", function () {
     expect(2);
 
     // This sets the text area rule, and opens the dialog box.
@@ -248,11 +250,10 @@ asyncTest("No recurrence rule opens empty form with limited Recurrence Type to p
     ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '10');
     input.form.find('.risavebutton').click();
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Daily recurrence with count", function () {
+test("4 Daily recurrence with count", function () {
     expect(5);
 
     // This sets the text area rule, and opens the dialog box.
@@ -270,11 +271,10 @@ asyncTest("Daily recurrence with count", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Weekly recurrence with days and end", function () {
+test("Weekly recurrence with days and end", function () {
     expect(12);
 
     // Set a recurrence rule and open the dialog box.
@@ -298,11 +298,10 @@ asyncTest("Weekly recurrence with days and end", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Bimonthly recurrence by month day", function () {
+test("Bimonthly recurrence by month day", function () {
     expect(5);
 
     // Set a recurrence rule and open the dialog box.
@@ -319,11 +318,10 @@ asyncTest("Bimonthly recurrence by month day", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Trimonthly recurrence by day", function () {
+test("Trimonthly recurrence by day", function () {
     expect(7);
 
     // Set a recurrence rule and open the dialog box.
@@ -342,11 +340,10 @@ asyncTest("Trimonthly recurrence by day", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Yearly by month day recurrence without end", function () {
+test("Yearly by month day recurrence without end", function () {
     expect(7);
 
     // The second wednesday of April, forevah.
@@ -365,11 +362,10 @@ asyncTest("Yearly by month day recurrence without end", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Yearly byday recurrence without end", function () {
+test("Yearly byday recurrence without end", function () {
     expect(6);
 
     // The second wednesday of April, forevah.
@@ -387,11 +383,10 @@ asyncTest("Yearly byday recurrence without end", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Test of connected start field and showing of occurrences", function () {
+test("Test of connected start field and showing of occurrences", function () {
     expect(1);
 
     // Set the start date to test the XML javascript stuff.
@@ -407,14 +402,14 @@ asyncTest("Test of connected start field and showing of occurrences", function (
 
     input.form.find('.risavebutton').click();
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("RDATE and EXDATE", function () {
+test("RDATE and EXDATE", function () {
     expect(12);
 
     // Set the start date to test the Ajax request stuff.
+    debugger;
     set_date_value($("input[name=start]"), '2011/04/13');
 
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
@@ -423,15 +418,18 @@ asyncTest("RDATE and EXDATE", function () {
 
     var input = rload1();
 
+    var occurrences = input.display.find('.rioccurrences .occurrence span');
+    ok($.trim(occurrences[0].firstChild.data) === "April 13, 2011");
+    ok($.trim(occurrences[8].firstChild.data) === "April 13, 2016");
     // Verify the list of dates
-    stop(); // Delay this 1 second so the Ajax request can finish.
+/*  stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
         var occurrences = input.display.find('.rioccurrences .occurrence span');
         ok($.trim(occurrences[0].firstChild.data) === "April 13, 2011");
         ok($.trim(occurrences[8].firstChild.data) === "April 13, 2016");
         start();
     }, 1000);
-
+*/
 
     $('.repeatfield a[name=riedit]').click();
 
@@ -448,20 +446,22 @@ asyncTest("RDATE and EXDATE", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
+    var occurrences = input.display.find('.rioccurrences .occurrence span');
+    ok($.trim(occurrences[0].firstChild.data) === "April 13, 2011");
+    ok($.trim(occurrences[8].firstChild.data) === "April 13, 2016");
     // Verify the list of dates
-    stop(); // Delay this 1 second so the Ajax request can finish.
+/*  stop(); // Delay this 1 second so the Ajax request can finish.
     setTimeout(function () {
         var occurrences = input.display.find('.rioccurrences .occurrence span');
         ok($.trim(occurrences[0].firstChild.data) === "April 13, 2011");
         ok($.trim(occurrences[8].firstChild.data) === "April 13, 2016");
         start();
     }, 1000);
-
-    runload();
-    start();
+*/
+    //start();
 });
 
-asyncTest("Adding RDATE", function () {
+test("Adding RDATE", function () {
     expect(4);
 
     // Set the start date to test the Ajax request stuff.
@@ -501,11 +501,10 @@ asyncTest("Adding RDATE", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20110614T000000,20120606T000000");
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Adding EXDATE", function () {
+test("Adding EXDATE", function () {
     expect(4);
 
     // Set the start date to test the Ajax request stuff.
@@ -541,11 +540,10 @@ asyncTest("Adding EXDATE", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000\nEXDATE:20130410T000000\nRDATE:20120606T000000");
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Parameters get stripped, dates converted to date times, multiple row lines merged.", function () {
+test("Parameters get stripped, dates converted to date times, multiple row lines merged.", function () {
     // XXX: I suspect, but I have to verify this, that it should be the other way around.
     // We should force EXDATES and RDATES to by DATE's only.
     expect(1);
@@ -557,11 +555,10 @@ asyncTest("Parameters get stripped, dates converted to date times, multiple row 
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000");
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Field validations", function () {
+test("Field validations", function () {
     expect(49);
 
     // This sets the text area rule, and opens the dialog box.
@@ -695,11 +692,10 @@ asyncTest("Field validations", function () {
     // And this saves it.
     input.form.find('.risavebutton').click();
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Unsupported features (incomplete)", function () {
+test("Unsupported features (incomplete)", function () {
     expect(13);
     var input = rload2();
 
@@ -744,11 +740,10 @@ asyncTest("Unsupported features (incomplete)", function () {
     ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
     input.form.find('.risavebutton').click();
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Configure ributtonExtraClass.", function () {
+test("Configure ributtonExtraClass.", function () {
     expect(4);
 
     var input = rload1();
@@ -759,11 +754,10 @@ asyncTest("Configure ributtonExtraClass.", function () {
     ok(input_2.form.find('input.ricancelbutton').attr('class') === 'ricancelbutton ');
     ok(input_2.form.find('input.risavebutton').attr('class') === 'risavebutton ');
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Pull-Request #9: Recurrence end date not properly saved.", function () {
+test("Pull-Request #9: Recurrence end date not properly saved.", function () {
     expect(1);
     set_date_value($("input[name=start]"), '2013/01/17');
     var rrule = "RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20130120T000000";
@@ -772,11 +766,10 @@ asyncTest("Pull-Request #9: Recurrence end date not properly saved.", function (
 
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '01/20/2013');
 
-    runload();
-    start();
+    //start();
 });
 
-asyncTest("Pull-Request #16: Trimonthly recurrence by day fix", function () {
+test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
     /* Pull-Request #16 fixes a parsing error with following valid RRULE:
      * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH"
      * it's returned to the Textarea as
@@ -806,6 +799,5 @@ asyncTest("Pull-Request #16: Trimonthly recurrence by day fix", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule_fixed);
 
-    runload();
-    start();
+    //start();
 });
