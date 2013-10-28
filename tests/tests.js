@@ -1,10 +1,174 @@
 /*jslint indent: 4 */
 /*global $, ok, module, test, stop, start, expect */
+QUnit.config.autostart = false;
 
 module("jquery.recurrenceinput widget");
 
 
 // HELPER
+
+
+function rload1() {
+    $.tools.recurrenceinput.localize("sv", {
+        displayUnactivate: '\u00C5terkommer inte',
+        displayActivate: '\u00C5terkommer var',
+        edit: 'Redigera...',
+        add: 'L\u00E4gg till',
+        refresh: 'Ladda om',
+
+        title: '\u00C5terkomster',
+        preview: 'Valda datum',
+        addDate: 'L\u00E4gg till',
+
+        recurrenceType: 'Typ av \u00E5terkomst:',
+
+        dailyInterval1: 'Varje',
+        dailyInterval2: 'dag(ar)',
+
+        weeklyInterval1: 'Varje',
+        weeklyInterval2: 'vecka/veckor',
+        weeklyWeekdays: 'P\u00E5:',
+        weeklyWeekdaysHuman: 'p\u00E5: ',
+
+        monthlyInterval1: '\u00C5terkom varje:',
+        monthlyInterval2: 'm\u00E5nad(er)',
+        monthlyDayOfMonth1: 'Den',
+        monthlyDayOfMonth1Human: 'den',
+        monthlyDayOfMonth2: 'dagen i m\u00E5naden',
+        monthlyDayOfMonth3: 'm\u00E5nad',
+        monthlyWeekdayOfMonth1: '',
+        monthlyWeekdayOfMonth1Human: 'p\u00E5',
+        monthlyWeekdayOfMonth2: '',
+        monthlyWeekdayOfMonth3: 'i m\u00E5naden',
+        monthlyRepeatOn: '\u00C5terkom p\u00E5:',
+
+        yearlyInterval1: '\u00C5terkom varje:',
+        yearlyInterval2: '\u00E5r',
+        yearlyDayOfMonth1: 'Varje',
+        yearlyDayOfMonth1Human: 'p\u00E5',
+        yearlyDayOfMonth2: '',
+        yearlyDayOfMonth3: '',
+        yearlyWeekdayOfMonth1: '',
+        yearlyWeekdayOfMonth1Human: 'p\u00E5',
+        yearlyWeekdayOfMonth2: '',
+        yearlyWeekdayOfMonth3: 'i',
+        yearlyWeekdayOfMonth4: '',
+        yearlyRepeatOn: '\u00C5terkom p\u00E5:',
+
+        range: '\u00C5terkomsten stoppar:',
+        rangeNoEnd: 'Inte',
+        rangeByOccurrences1: 'Stoppar efter',
+        rangeByOccurrences1Human: 'stoppar after',
+        rangeByOccurrences2: '\u00E5terkomster',
+        rangeByEndDate: 'Till och med',
+        rangeByEndDateHuman: 'till och med ',
+
+        including: ', samt den',
+        except: ', f\u00F6rutom den',
+
+        cancel: 'Avbryt',
+        save: 'Spara',
+
+        recurrenceStart: 'F\u00F6rsta g\u00E5ngen',
+        additionalDate: 'Tillagt datum',
+        include: 'Inkludera',
+        exclude: 'Exkludera',
+        remove: 'Ta bort',
+
+        orderIndexes: ['f\u00F6rsta', 'andra', 'tredje', 'fj\u00E4rde', 'sista'],
+        months: [
+            'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
+            'Juli', 'Augusti', 'September', 'October', 'November', 'December'
+        ],
+        shortMonths: [
+            'Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'
+        ],
+        weekdays: [
+            'm\u00E5ndagen', 'tisdagen', 'onsdagen', 'torsdagen',
+            'fredagen', 'l\u00F6rdagen', 's\u00F6ndagen'
+        ],
+        shortWeekdays: [
+            'M\u00E5n', 'Tis', 'Ons', 'Tor','Fre', 'L\u00F6r', 'S\u00F6n'
+        ],
+
+        longDateFormat: 'dd mmmm yyyy',
+        shortDateFormat: 'yyyy-mm-dd',
+
+        unsupportedFeatures: 'Varning: Denna h\u00E4ndelse anv\u00E4nder funktionalitet ' +
+                             'som denna dialog inte st\u00F6djer. Om du sparar kan ' +
+                             'detta \u00E4ndra n\u00E4r h\u00E4ndelsen \u00E5terkommer.',
+        noTemplateMatch: 'Hittar ingen \u00E5terkomstmall som passar',
+        multipleDayOfMonth: '\u00C5terkomster med flera dagar st\u00F6ds inte i m\u00E5natlig eller \u00E5rlig \u00E5terkomst',
+        bysetpos: 'BYSETPOS st\u00F6ds ej',
+        noRule: 'Ingen RRULE funnen',
+        noRepeatEvery: 'Fel: "\u00C5terkom var"-f\u00E4ltet m\u00E5ste vara mellan 1 och 1000',
+        noEndDate: 'Fel: Slutdatum \u00E4r inte satt.',
+        pastEndDate: 'Fel: Slutdatum kan inte vara f\u00F6re startdatum',
+        noEndAfterNOccurrences: 'Fel: "Efter N \u00E5terkomster"-f\u00E4ltet m\u00E5ste vara mellan 1 och 1000',
+
+        rtemplate: {
+            daily: 'Varje dag',
+            mondayfriday: 'M\u00E5ndag och Fredag',
+            weekdays: 'Veckodag',
+            weekly: 'Varje vecka',
+            monthly: 'Varje m\u00E5nad',
+            yearly: 'Varje \u00E5r'
+        }
+    });
+
+    var rinput = $("textarea[name=repeat]").recurrenceinput({
+        startField: "start",
+        ajaxURL: document.URL,
+        formOverlay: { speed: 1 },
+        ributtonExtraClass: 'totally extra'
+    });
+    return rinput;
+}
+
+function rload2() {
+    $.tools.recurrenceinput.setTemplates({
+        daily: {
+            rrule: 'FREQ=DAILY',
+            fields: [
+                'ridailyinterval',
+                'rirangeoptions'
+            ]
+        },
+        mowefr: {
+            rrule: 'FREQ=WEEKLY;BYDAY=MO,WE,FR',
+            fields: ['rirangeoptions']
+        },
+        weekends: {
+            rrule: 'FREQ=WEEKLY;BYDAY=SA,SU',
+            fields: ['rirangeoptions']
+        }
+    },
+    {
+        en: {
+            daily: 'Daily',
+            mowefr: 'Mondays, Wednesdays, Fridays',
+            weekends: 'Weekends'
+        },
+        sv: {
+            daily: 'Dagligen',
+            mowefr: 'M\u00E5ndagar, Onsdagar, Fredagar',
+            weekends: 'Veckoslut'
+        }
+    });
+
+    var rinput = $("textarea[name=repeat]").recurrenceinput({
+        startField: "start",
+        ajaxURL: document.URL,
+        formOverlay: { speed: 1 }
+    });
+    return rinput;
+}
+
+function runload() {
+    $("div.ridisplay").remove();
+    $("textarea[name=repeat]").show();
+}
 
 function set_date_value(ele, date) {
     // set date on an input element.
@@ -18,13 +182,18 @@ function set_date_value(ele, date) {
 }
 
 
+$(document).ready(function() {
+    QUnit.start();
+});
+
 // TESTS
 
 test("Basics", function () {
     expect(4);
 
     // This sets the text area rule, and opens the dialog box.
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
+
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
@@ -47,17 +216,21 @@ test("Basics", function () {
     $('.repeatfield a[name=riedit]').click();
     input.form.find('.ricancelbutton').click();
     ok(input.form.is(':visible'));
+
+    runload();
 });
 
 test("Invalid ical data", function () {
     expect(1);
+    var input = rload1();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
     // Looks valid, but it doens't contain the RRULE data:
     $("textarea[name=repeat]").val("FREQ=MONTHLY;COUNT=3");
     $('.repeatfield a[name=riedit]').click();
     ok(input.form.find('#messagearea').text().indexOf('No RRULE in RRULE data') !== -1);
     input.form.find('.risavebutton').click();
+
+    runload();
 });
 
 test("No recurrence rule opens empty form with limited Recurrence Type to prevent unlimited Recurrences.", function () {
@@ -68,10 +241,12 @@ test("No recurrence rule opens empty form with limited Recurrence Type to preven
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
     ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '10');
     input.form.find('.risavebutton').click();
+
+    runload();
 });
 
 test("Daily recurrence with count", function () {
@@ -82,7 +257,7 @@ test("Daily recurrence with count", function () {
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'daily');
     ok(input.form.find('input[name=ridailyinterval]').val() === '5');
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
@@ -91,6 +266,8 @@ test("Daily recurrence with count", function () {
     // And this saves it.
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
+
+    runload();
 });
 
 test("Weekly recurrence with days and end", function () {
@@ -101,7 +278,7 @@ test("Weekly recurrence with days and end", function () {
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'weekly');
     ok(input.form.find('input[name=riweeklyinterval]').val() === '4');
     ok(!input.form.find('input[name=riweeklyweekdaysMO]').attr('checked'));
@@ -117,6 +294,7 @@ test("Weekly recurrence with days and end", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
+    runload();
 });
 
 test("Bimonthly recurrence by month day", function () {
@@ -127,7 +305,7 @@ test("Bimonthly recurrence by month day", function () {
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
     ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'DAYOFMONTH');
     ok(input.form.find('input[name=rimonthlyinterval]').val() === '2');
@@ -136,6 +314,7 @@ test("Bimonthly recurrence by month day", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
+    runload();
 });
 
 test("Trimonthly recurrence by day", function () {
@@ -146,7 +325,7 @@ test("Trimonthly recurrence by day", function () {
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
     ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'WEEKDAYOFMONTH');
     ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+3');
@@ -157,6 +336,7 @@ test("Trimonthly recurrence by day", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
+    runload();
 });
 
 test("Yearly by month day recurrence without end", function () {
@@ -167,7 +347,7 @@ test("Yearly by month day recurrence without end", function () {
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
     ok(input.form.find('input[name=riyearlyinterval]').val() === '3');
     ok(input.form.find('input[name=riyearlyType]:checked').val() === 'DAYOFMONTH');
@@ -178,6 +358,7 @@ test("Yearly by month day recurrence without end", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
+    runload();
 });
 
 test("Yearly byday recurrence without end", function () {
@@ -188,7 +369,7 @@ test("Yearly byday recurrence without end", function () {
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
     ok(input.form.find('select[name=riyearlyweekdayofmonthindex]').val() === '+2');
     ok(input.form.find('select[name=riyearlyweekdayofmonthday]').val() === 'WE');
@@ -198,6 +379,7 @@ test("Yearly byday recurrence without end", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
+    runload();
 });
 
 test("Test of connected start field and showing of occurrences", function () {
@@ -207,7 +389,7 @@ test("Test of connected start field and showing of occurrences", function () {
     set_date_value($("input[name=start]"), '2011/04/13');
 
     // The second wednesday of April, forevah.
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
@@ -216,6 +398,7 @@ test("Test of connected start field and showing of occurrences", function () {
 
     input.form.find('.risavebutton').click();
 
+    runload();
 });
 
 test("RDATE and EXDATE", function () {
@@ -227,7 +410,8 @@ test("RDATE and EXDATE", function () {
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
-    var input = $("textarea[name=repeat]").recurrenceinput();
+
+    var input = rload1();
 
     // Verify the list of dates
     stop(); // Delay this 1 second so the Ajax request can finish.
@@ -263,7 +447,7 @@ test("RDATE and EXDATE", function () {
         start();
     }, 1000);
 
-
+    runload();
 });
 
 test("Adding RDATE", function () {
@@ -273,7 +457,7 @@ test("Adding RDATE", function () {
     set_date_value($("input[name=start]"), '2011/04/13');
 
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
@@ -306,6 +490,7 @@ test("Adding RDATE", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20110614T000000,20120606T000000");
 
+    runload();
 });
 
 test("Adding EXDATE", function () {
@@ -315,7 +500,7 @@ test("Adding EXDATE", function () {
     set_date_value($("input[name=start]"), '2011/04/13');
 
     // The second wednesday of April, until 2020, except 2012, but also June 6th 2012
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
@@ -344,20 +529,22 @@ test("Adding EXDATE", function () {
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000\nEXDATE:20130410T000000\nRDATE:20120606T000000");
 
+    runload();
 });
 
 test("Parameters get stripped, dates converted to date times, multiple row lines merged.", function () {
     // XXX: I suspect, but I have to verify this, that it should be the other way around.
     // We should force EXDATES and RDATES to by DATE's only.
     expect(1);
+    var input = rload1();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000");
 
+    runload();
 });
 
 test("Field validations", function () {
@@ -371,7 +558,7 @@ test("Field validations", function () {
 
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
 
     // Daily
     ok(input.form.find('select[name=rirtemplate]').val() === 'daily');
@@ -493,13 +680,13 @@ test("Field validations", function () {
 
     // And this saves it.
     input.form.find('.risavebutton').click();
+
+    runload();
 });
 
 test("Unsupported features (incomplete)", function () {
-
     expect(13);
-
-    var input = $("textarea[name=custom]").recurrenceinput();
+    var input = rload2();
 
     // No matching template
     $("textarea[name=custom]").val("RRULE:FREQ=MONTHLY;COUNT=3");
@@ -507,7 +694,7 @@ test("Unsupported features (incomplete)", function () {
     ok(input.form.find('#messagearea').text().indexOf('No matching recurrence template') !== -1);
     input.form.find('.risavebutton').click();
 
-    input = $("textarea[name=repeat]").recurrenceinput();
+    input = rload1();
     // No support for BYSETPOS (how would you do something like that in a UI!?)
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;COUNT=3;BYSETPOS=3");
     $('.repeatfield a[name=riedit]').click();
@@ -541,35 +728,40 @@ test("Unsupported features (incomplete)", function () {
     ok(input.form.find('select[name=riyearlyweekdayofmonthmonth]').val() === '4');
     ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
     input.form.find('.risavebutton').click();
+
+    runload();
 });
 
 test("Configure ributtonExtraClass.", function () {
     expect(4);
 
-    var input_1 = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input_1.form.find('input.ricancelbutton').attr('class') === 'ricancelbutton totally extra');
     ok(input_1.form.find('input.risavebutton').attr('class') === 'risavebutton totally extra');
 
-    var input_2 = $("textarea[name=custom]").recurrenceinput();
+    input = rload2();
     ok(input_2.form.find('input.ricancelbutton').attr('class') === 'ricancelbutton ');
     ok(input_2.form.find('input.risavebutton').attr('class') === 'risavebutton ');
+
+    runload();
 });
 
 test("Pull-Request #9: Recurrence end date not properly saved.", function () {
-    // TODO: once i saw this test passing. i swear!
     expect(1);
     set_date_value($("input[name=start]"), '2013/01/17');
     var rrule = "RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20130120T000000";
     $("textarea[name=repeat]").val(rrule);
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
 
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '01/20/2013');
+
+    runload();
 });
 
 test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
     /* Pull-Request #16 fixes a parsing error with following valid RRULE:
      * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH"
-     * it's returned to the Textarea as 
+     * it's returned to the Textarea as
      * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+1TH"
      * which is just wrong.
      * It should instead read:
@@ -578,14 +770,14 @@ test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
      * BYDAY Weekdaylist values.
      */
     expect(7);
-    
+
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH";
     var rrule_fixed = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH";
     $("textarea[name=repeat]").val(rrule);
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
+    var input = rload1();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
     ok(input.form.find('input[name=rimonthlytype]:checked').val() === 'WEEKDAYOFMONTH');
     ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+3');
@@ -595,4 +787,6 @@ test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
 
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule_fixed);
+
+    runload();
 });
