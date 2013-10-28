@@ -5,6 +5,9 @@ Changelog
 -------------------
 TODO: ADD MISSING CHANGELOG ENTRIES HERE
 
+- Make "repeat forever" button optional.
+  [deiferni]
+
 - Fix of parsing error of valid "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH",
   where the missing '+' sign in the BYDAY Weekdaylist was causing the error.
   [Aridor2006]
