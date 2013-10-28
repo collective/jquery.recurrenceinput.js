@@ -5,6 +5,9 @@ Changelog
 -------------------
 TODO: ADD MISSING CHANGELOG ENTRIES HERE
 
+- Fix ie8 startdate and fire events when changing checkbox values.
+  [deiferni]
+
 - Make "repeat forever" button optional.
   [deiferni]
 
