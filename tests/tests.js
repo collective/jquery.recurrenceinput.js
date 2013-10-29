@@ -408,7 +408,7 @@ test("Field validations", function () {
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '');
     ok(input.form.find('#messagearea').css('display') === 'block');
     ok(input.form.find('#messagearea').text() === 'Error: End date is not set. Please set a correct value');
-    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2015', '7', '15');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue(2015, 7, 15);
     input.form.find('input[value=BYENDDATE]').click();
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
@@ -416,12 +416,12 @@ test("Field validations", function () {
     ok(input.form.find('input[name=rirangebyenddatecalendar]').val() === '08/15/2015');
 
     // End date before start date
-    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2001', '7', '15');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue(2001, 7, 15);
     input.form.find('input[value=BYENDDATE]').click();
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'block');
     ok(input.form.find('#messagearea').text() === 'Error: End date cannot be before start date');
-    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue('2013', '7', '15');
+    input.form.find('input[name=rirangebyenddatecalendar]').data('dateinput').setValue(2013, 7, 15);
     input.form.find('input[value=BYENDDATE]').click();
     input.form.find('.rirefreshbutton').click();
     ok(input.form.find('#messagearea').css('display') === 'none');
