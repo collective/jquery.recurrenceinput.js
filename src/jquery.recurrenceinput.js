@@ -1142,8 +1142,8 @@
             if (form.ical.EXDATE === undefined) {
                 form.ical.EXDATE = [];
             }
-            form.ical.EXDATE.push(self.attributes.date.value);
-            var $this = $(self);
+            form.ical.EXDATE.push(this.attributes.date.value);
+            var $this = $(this);
             $this.attr('class', 'exdate');
             $this.parent().parent().addClass('exdate');
             $this.unbind(event);
@@ -1152,8 +1152,8 @@
 
         function occurrenceInclude(event) {
             event.preventDefault();
-            form.ical.EXDATE.splice($.inArray(self.attributes.date.value, form.ical.EXDATE), 1);
-            var $this = $(self);
+            form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
+            var $this = $(this);
             $this.attr('class', 'rrule');
             $this.parent().parent().removeClass('exdate');
             $this.unbind(event);
@@ -1162,9 +1162,9 @@
 
         function occurrenceDelete(event) {
             event.preventDefault();
-            form.ical.RDATE.splice($.inArray(self.attributes.date.value, form.ical.RDATE), 1);
-            $(self).parent().parent().hide('slow', function () {
-                $(self).remove();
+            form.ical.RDATE.splice($.inArray(this.attributes.date.value, form.ical.RDATE), 1);
+            $(this).parent().parent().hide('slow', function () {
+                $(this).remove();
             });
         }
 
