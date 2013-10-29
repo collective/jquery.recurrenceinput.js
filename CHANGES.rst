@@ -4,6 +4,12 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Remove ambiguous recurrence rule checkbox, which lead to UX confusion due to
+  double negation (unchecked checkbox said "no recurrence rule") and add
+  instead a "Delete" button.
+  Fixes: https://github.com/plone/plone.app.event/issues/70
+  [thet]
+
 - When there is no recurrence rule, the edit button should show "Add...", not
   "Edit...". Fixes: https://github.com/plone/plone.app.event/issues/43
   [thet]

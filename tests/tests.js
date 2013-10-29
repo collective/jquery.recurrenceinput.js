@@ -21,7 +21,7 @@ function set_date_value(ele, date) {
 // TESTS
 
 test("Basics", function () {
-    expect(4);
+    expect(2);
 
     // This sets the text area rule, and opens the dialog box.
     var input = $("textarea[name=repeat]").recurrenceinput();
@@ -31,16 +31,6 @@ test("Basics", function () {
 
     // And this saves it.
     input.form.find('.risavebutton').click();
-    ok($("textarea[name=repeat]").val() === rrule);
-
-    // And now we toggle it off.
-    $('.repeatfield input[name=richeckbox]')[0].checked = false;
-    $('.repeatfield input[name=richeckbox]').click();
-    ok($("textarea[name=repeat]").val() === '');
-
-    // And on again.
-    $('.repeatfield input[name=richeckbox]')[0].checked = true;
-    $('.repeatfield input[name=richeckbox]').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
     // Open the dialog box and close it with cancel
@@ -609,8 +599,8 @@ test("Optional repeat forever button", function () {
     ok(input.form.find('input[value="NOENDDATE"]').size() === 0);
 });
 
-test("Depending on available rules, the recurrence edit button show 'Add...' or 'Edit...'.", function () {
-    expect(2);
+test("Depending on available rules, the recurrence edit and delete buttons change.", function () {
+    expect(4);
     var input;
 
     // TODO: fix test setup to only load recurrenceinput on demand.
@@ -620,14 +610,29 @@ test("Depending on available rules, the recurrence edit button show 'Add...' or 
     //input = $("textarea[name=repeat]").recurrenceinput();
     //ok($('.repeatfield a[name=riedit]').text() === 'Edit...');
 
-    // Empty recurrence rule. Button should say "Add..."
+    // Empty recurrence rule. Button should say "Add"
     $("textarea[name=repeat]").val('');
     input = $("textarea[name=repeat]").recurrenceinput();
-    ok($('.repeatfield a[name=riedit]').text() === 'Add...');
+    ok($('.repeatfield a[name=riedit]').text() === 'Add');
+    ok($('.repeatfield a[name=ridelete]').is(':visible') === false);
 
     // Create recurrence rule. Button should then say "Edit..."
     $('.repeatfield a[name=riedit]').click();
     input.form.find('.risavebutton').click();  // Defaults to a recurrence rule to prevent unlimited recurrences.
-    ok($('.repeatfield a[name=riedit]').text() === 'Edit...');
+    ok($('.repeatfield a[name=riedit]').text() === 'Edit');
+    ok($('.repeatfield a[name=ridelete]').is(':visible') === true);
 
+});
+
+test("Clicking on recurrence delete button clears textarea.", function () {
+    expect(2);
+    var input;
+
+    input = $("textarea[name=repeat]").recurrenceinput();
+    // Create recurrence rule. Button should then say "Edit..."
+    $('.repeatfield a[name=riedit]').click();
+    input.form.find('.risavebutton').click();  // Defaults to a recurrence rule to prevent unlimited recurrences.
+    ok($("textarea[name=repeat]").val() !== '');
+    $('.repeatfield a[name=ridelete]').click();
+    ok($("textarea[name=repeat]").val() === '');
 });
