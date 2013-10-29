@@ -1428,7 +1428,6 @@
             if (startdate !== null) {
                 loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, true);
             }
-            console.log('recurrenceOn');
             display.find('a[name="riedit"]').text(conf.i18n.edit_rules);
         }
 
@@ -1437,7 +1436,6 @@
             label.text(conf.i18n.displayUnactivate);
             textarea.val('');
             display.find('.rioccurrences').hide();
-            console.log('recurrenceOff');
             display.find('a[name="riedit"]').text(conf.i18n.add_rules);
         }
 
