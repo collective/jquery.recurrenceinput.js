@@ -3,7 +3,10 @@ Changelog
 
 1.0dev (unreleased)
 -------------------
-TODO: ADD MISSING CHANGELOG ENTRIES HERE
+
+- When there is no recurrence rule, the edit button should show "Add...", not
+  "Edit...". Fixes: https://github.com/plone/plone.app.event/issues/43
+  [thet]
 
 - Fix ie8 startdate and fire events when changing checkbox values.
   [deiferni]

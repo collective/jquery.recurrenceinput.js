@@ -10,7 +10,6 @@
 
     tool = $.tools.recurrenceinput = {
         conf: {
-
             lang: 'en',
             readOnly: false,
             firstDay: 0,
@@ -110,7 +109,8 @@
     tool.localize("en", {
         displayUnactivate: 'Does not repeat',
         displayActivate: 'Repeats every',
-        edit: 'Edit...',
+        add_rules: 'Add...',
+        edit_rules: 'Edit...',
         add:  'Add',
         refresh: 'Refresh',
 
@@ -267,7 +267,7 @@
             '{{/if}}',
             '<label class="ridisplay">${i18n.displayUnactivate}</label>',
             '{{if !readOnly}}',
-                '<a href="#" name="riedit">${i18n.edit}</a>',
+                '<a href="#" name="riedit">${i18n.add_rules}</a>',
             '{{/if}}',
         '</div>',
         '<div class="rioccurrences" style="display:none" /></div>'].join('\n');
@@ -544,7 +544,6 @@
     }
 
     function format(date, fmt, conf) {
-
         var d = date.getDate(),
             D = date.getDay(),
             m = date.getMonth(),
@@ -1143,8 +1142,8 @@
             if (form.ical.EXDATE === undefined) {
                 form.ical.EXDATE = [];
             }
-            form.ical.EXDATE.push(this.attributes.date.value);
-            var $this = $(this);
+            form.ical.EXDATE.push(self.attributes.date.value);
+            var $this = $(self);
             $this.attr('class', 'exdate');
             $this.parent().parent().addClass('exdate');
             $this.unbind(event);
@@ -1153,8 +1152,8 @@
 
         function occurrenceInclude(event) {
             event.preventDefault();
-            form.ical.EXDATE.splice($.inArray(this.attributes.date.value, form.ical.EXDATE), 1);
-            var $this = $(this);
+            form.ical.EXDATE.splice($.inArray(self.attributes.date.value, form.ical.EXDATE), 1);
+            var $this = $(self);
             $this.attr('class', 'rrule');
             $this.parent().parent().removeClass('exdate');
             $this.unbind(event);
@@ -1163,9 +1162,9 @@
 
         function occurrenceDelete(event) {
             event.preventDefault();
-            form.ical.RDATE.splice($.inArray(this.attributes.date.value, form.ical.RDATE), 1);
-            $(this).parent().parent().hide('slow', function () {
-                $(this).remove();
+            form.ical.RDATE.splice($.inArray(self.attributes.date.value, form.ical.RDATE), 1);
+            $(self).parent().parent().hide('slow', function () {
+                $(self).remove();
             });
         }
 
@@ -1429,6 +1428,8 @@
             if (startdate !== null) {
                 loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, true);
             }
+            console.log('recurrenceOn');
+            display.find('a[name="riedit"]').text(conf.i18n.edit_rules);
         }
 
         function recurrenceOff() {
@@ -1436,6 +1437,8 @@
             label.text(conf.i18n.displayUnactivate);
             textarea.val('');
             display.find('.rioccurrences').hide();
+            console.log('recurrenceOff');
+            display.find('a[name="riedit"]').text(conf.i18n.add_rules);
         }
 
         function toggleRecurrence(e) {

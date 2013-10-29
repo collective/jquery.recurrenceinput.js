@@ -66,9 +66,9 @@ test("No recurrence rule opens empty form with limited Recurrence Type to preven
     // This sets the text area rule, and opens the dialog box.
     var rrule = "";
     $("textarea[name=repeat]").val(rrule);
+    var input = $("textarea[name=repeat]").recurrenceinput();
     $('.repeatfield a[name=riedit]').click();
 
-    var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
     ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '10');
     input.form.find('.risavebutton').click();
@@ -569,7 +569,7 @@ test("Pull-Request #9: Recurrence end date not properly saved.", function () {
 test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
     /* Pull-Request #16 fixes a parsing error with following valid RRULE:
      * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH"
-     * it's returned to the Textarea as 
+     * it's returned to the Textarea as
      * "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+1TH"
      * which is just wrong.
      * It should instead read:
@@ -578,7 +578,7 @@ test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
      * BYDAY Weekdaylist values.
      */
     expect(7);
-    
+
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH";
     var rrule_fixed = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH";
@@ -607,4 +607,27 @@ test("Optional repeat forever button", function () {
     ok(input.form.find('input[value="BYENDDATE"]').size() === 1);
     // but not 'never'
     ok(input.form.find('input[value="NOENDDATE"]').size() === 0);
+});
+
+test("Depending on available rules, the recurrence edit button show 'Add...' or 'Edit...'.", function () {
+    expect(2);
+    var input;
+
+    // TODO: fix test setup to only load recurrenceinput on demand.
+    // Preload with recurrence rule. Button should say "Edit..."
+    //var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
+    //$("textarea[name=repeat]").val(rrule);
+    //input = $("textarea[name=repeat]").recurrenceinput();
+    //ok($('.repeatfield a[name=riedit]').text() === 'Edit...');
+
+    // Empty recurrence rule. Button should say "Add..."
+    $("textarea[name=repeat]").val('');
+    input = $("textarea[name=repeat]").recurrenceinput();
+    ok($('.repeatfield a[name=riedit]').text() === 'Add...');
+
+    // Create recurrence rule. Button should then say "Edit..."
+    $('.repeatfield a[name=riedit]').click();
+    input.form.find('.risavebutton').click();  // Defaults to a recurrence rule to prevent unlimited recurrences.
+    ok($('.repeatfield a[name=riedit]').text() === 'Edit...');
+
 });
