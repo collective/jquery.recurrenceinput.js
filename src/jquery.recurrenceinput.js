@@ -1600,7 +1600,10 @@
         */
 
         // When you click "Delete...", the recurrence rules should be cleared.
-        display.find('a[name=ridelete]').click(recurrenceOff);
+        display.find('a[name=ridelete]').click(function (e) {
+            e.preventDefault();
+            recurrenceOff();
+        });
 
         // Show form overlay when you click on the "Edit..." link
         display.find('a[name=riedit]').click(
