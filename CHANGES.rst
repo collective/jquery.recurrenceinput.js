@@ -4,6 +4,9 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Default to one week of daily occurrences, instead of 10.
+  [gyst]
+
 - Remove ambiguous recurrence rule checkbox, which lead to UX confusion due to
   double negation (unchecked checkbox said "no recurrence rule") and add
   instead a "Delete" button.

@@ -475,7 +475,7 @@
                                 '</label>',
                                 '<input',
                                     'type="text" size="3"',
-                                    'value="10"',
+                                    'value="7"',
                                     'name="rirangebyoccurrencesvalue" />',
                                 '${i18n.rangeByOccurrences2}',
                             '</div>',
