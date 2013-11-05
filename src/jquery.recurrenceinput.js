@@ -1419,7 +1419,7 @@
             var RFC5545 = widgetSaveToRfc5545(form, conf, false);
             var label = display.find('label[class=ridisplay]');
             label.text(conf.i18n.displayActivate + ' ' + RFC5545.description);
-            textarea.val(RFC5545.result);
+            textarea.val(RFC5545.result).change();
             var startdate = findStartDate();
             if (startdate !== null) {
                 loadOccurrences(startdate, widgetSaveToRfc5545(form, conf, false).result, 0, true);
@@ -1431,7 +1431,7 @@
         function recurrenceOff() {
             var label = display.find('label[class=ridisplay]');
             label.text(conf.i18n.displayUnactivate);
-            textarea.val('');  // Clear the textarea.
+            textarea.val('').change();  // Clear the textarea.
             display.find('.rioccurrences').hide();
             display.find('a[name="riedit"]').text(conf.i18n.add_rules);
             display.find('a[name="ridelete"]').hide();
