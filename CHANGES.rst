@@ -4,6 +4,9 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Fire change events when rrule value is updated.
+  [deiferni]
+
 - Default to one week of daily occurrences, instead of 10.
   [gyst]
 
