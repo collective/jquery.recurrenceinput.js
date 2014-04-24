@@ -1296,6 +1296,10 @@
                 // Otherwise, we assume it's an id:
                 realField = $('#' + field);
             }
+            if (!realField.length) {
+                // Still not? Then it's a name.
+                realField = $("input[name='" + field + "']");
+            }
             return realField;
         }
         function findStartDate() {
@@ -1305,6 +1309,10 @@
             // Find the default byday and bymonthday from the start date, if any:
             if (conf.startField) {
                 startField = getField(conf.startField);
+                if (!startField.length) {
+                    // Field not found
+                    return null;
+                }
                 // Now we have a field, see if it is a dateinput field:
                 startdate = startField.data('dateinput');
                 if (!startdate) {
@@ -1318,6 +1326,11 @@
                     // Yes it was, get the date:
                     startdate = startdate.getValue();
                 }
+
+                // convert human readable, non ISO8601 dates, like
+                // '2014-04-24 19:00', where the 'T' separator is missing.
+                startdate = startdate.replace(' ', 'T');
+
                 startdate = new Date(startdate);
             } else if (conf.startFieldYear &&
                        conf.startFieldMonth &&
@@ -1325,6 +1338,12 @@
                 startFieldYear = getField(conf.startFieldYear);
                 startFieldMonth = getField(conf.startFieldMonth);
                 startFieldDay = getField(conf.startFieldDay);
+                if (!startFieldYear.length &&
+                    !startFieldMonth.length &&
+                    !startFieldDay.length) {
+                    // Field not found
+                    return null;
+                }
                 startdate = new Date(startFieldYear.val(),
                                      startFieldMonth.val() - 1,
                                      startFieldDay.val());

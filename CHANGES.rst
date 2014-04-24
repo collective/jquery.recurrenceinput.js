@@ -4,6 +4,12 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Be a bit more clever about guessing the startdate from the surrounding form.
+  Also, convert human-readable, non ISO8601 date strings to something
+  interpretable by the Date function, like '2014-04-24 19:00', where the 'T'
+  separator is missing.
+  [thet]
+
 - Fire change events when rrule value is updated.
   [deiferni]
 
