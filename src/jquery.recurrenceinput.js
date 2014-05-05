@@ -1327,9 +1327,11 @@
                     startdate = startdate.getValue();
                 }
 
-                // convert human readable, non ISO8601 dates, like
-                // '2014-04-24 19:00', where the 'T' separator is missing.
-                startdate = startdate.replace(' ', 'T');
+                if (startdate instanceof String) {
+                    // convert human readable, non ISO8601 dates, like
+                    // '2014-04-24 19:00', where the 'T' separator is missing.
+                    startdate = startdate.replace(' ', 'T');
+                }
 
                 startdate = new Date(startdate);
             } else if (conf.startFieldYear &&

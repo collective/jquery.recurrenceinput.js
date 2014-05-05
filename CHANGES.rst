@@ -4,6 +4,10 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Fixes an issue introduced with previous change, where the recurrence overlay
+  couldn't be opened in cases, the startdate was already a Date object.
+  [thet]
+
 - Be a bit more clever about guessing the startdate from the surrounding form.
   Also, convert human-readable, non ISO8601 date strings to something
   interpretable by the Date function, like '2014-04-24 19:00', where the 'T'
