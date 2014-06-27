@@ -1327,7 +1327,7 @@
                     startdate = startdate.getValue();
                 }
 
-                if (startdate instanceof String) {
+                if (typeof startdate === 'string') {
                     // convert human readable, non ISO8601 dates, like
                     // '2014-04-24 19:00', where the 'T' separator is missing.
                     startdate = startdate.replace(' ', 'T');

@@ -4,6 +4,13 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
+- Fix a condition, where the ``startdate`` string literal was checked, if it's
+  an instance of ``String``, which returned False. This led to the case, where
+  the list of occurrences wasn't shown. String literals should be checked
+  with``typeof`` instead of ``instanceof``.
+  See: http://stackoverflow.com/a/203757/3036508
+  [thet]
+
 - Fixes an issue introduced with previous change, where the recurrence overlay
   couldn't be opened in cases, the startdate was already a Date object.
   [thet]
