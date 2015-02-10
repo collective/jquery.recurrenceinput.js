@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0dev (unreleased)
--------------------
+1.0 (2015-02-2015)
+------------------
 
 - Fix a condition, where the ``startdate`` string literal was checked, if it's
   an instance of ``String``, which returned False. This led to the case, where
