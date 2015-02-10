@@ -1,8 +1,14 @@
 Changelog
 =========
 
-1.0.1 (2015-02-2015)
---------------------
+1.2 (2015-02-2015)
+------------------
+
+- do not push version numbers in filenames
+  [vangheem]
+
+1.1 (2015-02-2015)
+------------------
 
 - Upgrade jquery tools
   [vangheem]
