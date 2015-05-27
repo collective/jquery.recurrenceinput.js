@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4 (unreleased)
+1.4 (2015-05-27)
 ----------------
 
 - Include optimized base64 encoded image data in CSS files to avoid to have to
