@@ -1,11 +1,20 @@
 Changelog
 =========
 
+1.4 (unreleased)
+----------------
+
+- Include optimized base64 encoded image data in CSS files to avoid to have to
+  provide image resources.
+  [thet]
+
+
 1.3 (2015-02-13)
 ----------------
 
 - fix image resources in css
   [bloodbare]
+
 
 1.2 (2015-02-2015)
 ------------------
@@ -13,11 +22,13 @@ Changelog
 - do not push version numbers in filenames
   [vangheem]
 
+
 1.1 (2015-02-2015)
 ------------------
 
 - Upgrade jquery tools
   [vangheem]
+
 
 1.0 (2015-02-2015)
 ------------------
