@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5 (unreleased)
+1.5 (2015-05-28)
 ----------------
 
 - Depend on jQuery > 1.7. We have jQuery 1.7+ compatibility since update of
