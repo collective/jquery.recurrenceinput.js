@@ -1,6 +1,14 @@
 Changelog
 =========
 
+1.5 (unreleased)
+----------------
+
+- Depend on jQuery > 1.7. We have jQuery 1.7+ compatibility since update of
+  jquerytools from our fork: https://github.com/collective/jquerytools/tree/dev
+  [thet]
+
+
 1.4 (2015-05-27)
 ----------------
 
