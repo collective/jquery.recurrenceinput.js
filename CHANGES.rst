@@ -1,11 +1,18 @@
 Changelog
 =========
 
+1.5.2 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.5.1 (2015-06-03)
 ------------------
 
 - Set calroot width to auto. The calendar overlay was too narrow in some cases.
   [thet]
+
 
 1.5 (2015-05-28)
 ----------------
