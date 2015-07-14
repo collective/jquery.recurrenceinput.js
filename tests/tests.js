@@ -27,14 +27,14 @@ test("Basics", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     // And this saves it.
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === rrule);
 
     // Open the dialog box and close it with cancel
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     input.form.find('.ricancelbutton').click();
     ok(input.form.is(':visible'));
 });
@@ -45,7 +45,7 @@ test("Invalid ical data", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     // Looks valid, but it doens't contain the RRULE data:
     $("textarea[name=repeat]").val("FREQ=MONTHLY;COUNT=3");
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     ok(input.form.find('#messagearea').text().indexOf('No RRULE in RRULE data') !== -1);
     input.form.find('.risavebutton').click();
 });
@@ -57,7 +57,7 @@ test("No recurrence rule opens empty form with limited Recurrence Type to preven
     var rrule = "";
     $("textarea[name=repeat]").val(rrule);
     var input = $("textarea[name=repeat]").recurrenceinput();
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     ok(input.form.find('input[name=rirangetype]:checked').val() === 'BYOCCURRENCES');
     ok(input.form.find('input[name=rirangebyoccurrencesvalue]').val() === '10');
@@ -70,7 +70,7 @@ test("Daily recurrence with count", function () {
     // This sets the text area rule, and opens the dialog box.
     var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'daily');
@@ -89,7 +89,7 @@ test("Weekly recurrence with days and end", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=WEEKLY;INTERVAL=4;BYDAY=TU,TH,FR;UNTIL=20120922T000000";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'weekly');
@@ -115,7 +115,7 @@ test("Bimonthly recurrence by month day", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=12";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
@@ -134,7 +134,7 @@ test("Trimonthly recurrence by day", function () {
     // Set a recurrence rule and open the dialog box.
     var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
@@ -155,7 +155,7 @@ test("Yearly by month day recurrence without end", function () {
     // The second wednesday of April, forevah.
     var rrule = "RRULE:FREQ=YEARLY;INTERVAL=3;BYMONTH=4;BYMONTHDAY=11";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
@@ -176,7 +176,7 @@ test("Yearly byday recurrence without end", function () {
     // The second wednesday of April, forevah.
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
@@ -200,7 +200,7 @@ test("Test of connected start field and showing of occurrences", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     var occurrences = input.form.find('div.occurrence');
     ok(occurrences.length === 10);
 
@@ -229,7 +229,7 @@ test("RDATE and EXDATE", function () {
     }, 1000);
 
 
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     ok(input.form.find('select[name=rirtemplate]').val() === 'yearly');
     ok(input.form.find('select[name=riyearlyweekdayofmonthindex]').val() === '+2');
@@ -266,7 +266,7 @@ test("Adding RDATE", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     // Add a new date as an RDATE
     input.form.find('#adddate').data('dateinput').setValue(2011, 5, 13);
@@ -308,7 +308,7 @@ test("Adding EXDATE", function () {
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20210414T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     // Reinclude the one in the original rrule.
     var entity = input.form.find('.rioccurrences .occurrence span.action a')[0];
@@ -344,7 +344,7 @@ test("Parameters get stripped, dates converted to date times, multiple row lines
     var input = $("textarea[name=repeat]").recurrenceinput();
     var rrule = "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;\n UNTIL=20180419T000000\nEXDATE;VALUE=DATE:20120411\nRDATE;VALUE=DATE:20120606";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     input.form.find('.risavebutton').click();
     ok($("textarea[name=repeat]").val() === "RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE;UNTIL=20180419T000000\nEXDATE:20120411T000000\nRDATE:20120606T000000");
 
@@ -359,7 +359,7 @@ test("Field validations", function () {
 
     set_date_value($("input[name=start]"), '2011/12/13');
 
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
 
@@ -493,39 +493,39 @@ test("Unsupported features (incomplete)", function () {
 
     // No matching template
     $("textarea[name=custom]").val("RRULE:FREQ=MONTHLY;COUNT=3");
-    $('.customfield a[name=riedit]').click();
+    $('.customfield button[name=riedit]').click();
     ok(input.form.find('#messagearea').text().indexOf('No matching recurrence template') !== -1);
     input.form.find('.risavebutton').click();
 
     input = $("textarea[name=repeat]").recurrenceinput();
     // No support for BYSETPOS (how would you do something like that in a UI!?)
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;COUNT=3;BYSETPOS=3");
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     ok(input.form.find('#messagearea').text().indexOf('BYSETPOS') !== -1);
     input.form.find('.risavebutton').click();
 
     // Can't have multiple recurrences in a month with MONTHLY recurrence
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;BYMONTHDAY=2,3,9");
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     ok(input.form.find('select[name=rimonthlydayofmonthday]').val() === "2");
     ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
     input.form.find('.risavebutton').click();
 
     $("textarea[name=repeat]").val("RRULE:FREQ=MONTHLY;BYDAY=+2WE,+3TH");
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     ok(input.form.find('select[name=rimonthlyweekdayofmonthindex]').val() === '+2');
     ok(input.form.find('select[name=rimonthlyweekdayofmonth]').val() === 'WE');
     ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
     input.form.find('.risavebutton').click();
 
     $("textarea[name=repeat]").val("RRULE:FREQ=YEARLY;BYMONTH=12;BYMONTHDAY=2,3,9");
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     ok(input.form.find('select[name=riyearlydayofmonthday]').val() === "2");
     ok(input.form.find('#messagearea').text().indexOf('multiple days in') !== -1);
     input.form.find('.risavebutton').click();
 
     $("textarea[name=repeat]").val("RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=+2WE,+3TH");
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     ok(input.form.find('select[name=riyearlyweekdayofmonthindex]').val() === '+2');
     ok(input.form.find('select[name=riyearlyweekdayofmonthday]').val() === 'WE');
     ok(input.form.find('select[name=riyearlyweekdayofmonthmonth]').val() === '4');
@@ -573,7 +573,7 @@ test("Pull-Request #16: Trimonthly recurrence by day fix", function () {
     var rrule = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=3TH";
     var rrule_fixed = "RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=+3TH";
     $("textarea[name=repeat]").val(rrule);
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
 
     var input = $("textarea[name=repeat]").recurrenceinput();
     ok(input.form.find('select[name=rirtemplate]').val() === 'monthly');
@@ -591,7 +591,7 @@ test("Optional repeat forever button", function () {
     expect(3);
 
     var input = $('<textarea name="notforever"></textarea>').recurrenceinput({hasRepeatForeverButton: false});
-    $('.repeatfield a[name=riedit]', input).click();
+    $('.repeatfield button[name=riedit]', input).click();
     // we find 'on' and 'after'
     ok(input.form.find('input[value="BYOCCURRENCES"]').size() === 1);
     ok(input.form.find('input[value="BYENDDATE"]').size() === 1);
@@ -608,19 +608,19 @@ test("Depending on available rules, the recurrence edit and delete buttons chang
     //var rrule = "RRULE:FREQ=DAILY;INTERVAL=5;COUNT=8";
     //$("textarea[name=repeat]").val(rrule);
     //input = $("textarea[name=repeat]").recurrenceinput();
-    //ok($('.repeatfield a[name=riedit]').text() === 'Edit...');
+    //ok($('.repeatfield button[name=riedit]').text() === 'Edit...');
 
     // Empty recurrence rule. Button should say "Add"
     $("textarea[name=repeat]").val('');
     input = $("textarea[name=repeat]").recurrenceinput();
-    ok($('.repeatfield a[name=riedit]').text() === 'Add');
-    ok($('.repeatfield a[name=ridelete]').is(':visible') === false);
+    ok($('.repeatfield button[name=riedit]').text() === 'Add');
+    ok($('.repeatfield button[name=ridelete]').is(':visible') === false);
 
     // Create recurrence rule. Button should then say "Edit..."
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     input.form.find('.risavebutton').click();  // Defaults to a recurrence rule to prevent unlimited recurrences.
-    ok($('.repeatfield a[name=riedit]').text() === 'Edit');
-    ok($('.repeatfield a[name=ridelete]').is(':visible') === true);
+    ok($('.repeatfield button[name=riedit]').text() === 'Edit');
+    ok($('.repeatfield button[name=ridelete]').is(':visible') === true);
 
 });
 
@@ -630,9 +630,9 @@ test("Clicking on recurrence delete button clears textarea.", function () {
 
     input = $("textarea[name=repeat]").recurrenceinput();
     // Create recurrence rule. Button should then say "Edit..."
-    $('.repeatfield a[name=riedit]').click();
+    $('.repeatfield button[name=riedit]').click();
     input.form.find('.risavebutton').click();  // Defaults to a recurrence rule to prevent unlimited recurrences.
     ok($("textarea[name=repeat]").val() !== '');
-    $('.repeatfield a[name=ridelete]').click();
+    $('.repeatfield button[name=ridelete]').click();
     ok($("textarea[name=repeat]").val() === '');
 });
