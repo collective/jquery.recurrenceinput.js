@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5.2 (unreleased)
+1.5.2 (2015-07-16)
 ------------------
 
 - Changed font-weight for recurrence field label and added marging to actions.
