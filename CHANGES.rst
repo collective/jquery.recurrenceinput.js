@@ -4,7 +4,8 @@ Changelog
 1.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Changed font-weight for recurrence field label and added marging to actions.
+  [agitator]
 
 
 1.5.1 (2015-06-03)
