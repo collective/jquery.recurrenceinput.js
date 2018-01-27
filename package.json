@@ -1,0 +1,10 @@
+{
+  "name": "jquery.recurrenceinput.js",
+  "version": "1.6.0",
+  "description": "RFC5545 compatible recurrence widget",
+  "repository": "git@github.com:collective/jquery.recurrenceinput.js.git",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "jquery": ""
+  }
+}
