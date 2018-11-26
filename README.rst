@@ -9,9 +9,9 @@ usable in ics calendar files. It was developed for the Plone, but is
 completely independent of the web-framework. This widget is production ready
 and used in several sites.
 
-.. image:: http://github.com/collective/jquery.recurrenceinput.js/raw/master/Screenshot_thumb.png
+.. image:: https://raw.githubusercontent.com/collective/jquery.recurrenceinput.js/master/Screenshot_thumb.png
    :align: right
-   :target: http://github.com/collective/jquery.recurrenceinput.js/raw/master/Screenshot.png
+   :target: https://raw.githubusercontent.com/collective/jquery.recurrenceinput.js/master/Screenshot.png
 
 Features
 --------
