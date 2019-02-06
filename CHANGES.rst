@@ -1,6 +1,16 @@
 Changelog
 =========
 
+
+1.6 (unreleased)
+----------------
+
+Fixes:
+
+- Make this a npm package.
+  [thet]
+
+
 1.5.2 (2015-07-16)
 ------------------
 
