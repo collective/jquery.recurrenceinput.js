@@ -21,26 +21,9 @@ div.riform form {
     margin-bottom: 0;
 }
 
-div.riform .rifield {
-    clear: both;
-}
-
-div.riform .rifield .field {
-    float:left;
-    clear: none;
-}
-
 div.riform .label {
     display: block;
-    float: left;
     font-weight: bold;
-    margin-right: 10px;
-    text-align: right;
-    width: 130px;
-}
-
-div.riform #rirtemplate {
-    margin-top: 6px;
 }
 
 div#riformfields {

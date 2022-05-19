@@ -282,7 +282,7 @@
                     '<label for="${name}rtemplate" class="label">',
                         '${i18n.recurrenceType}',
                     '</label>',
-                    '<select id="rirtemplate" name="rirtemplate" class="field">',
+                    '<select id="rirtemplate" name="rirtemplate" class="form-select form-select-sm">',
                         '{{each rtemplate}}',
                             '<option value="${$index}">${i18n.rtemplate[$index]}</value>',
                         '{{/each}}',
@@ -293,8 +293,8 @@
                         '<label for="${name}dailyinterval" class="label">',
                             '${i18n.dailyInterval1}',
                         '</label>',
-                        '<div class="field">',
-                            '<input type="text" size="2"',
+                        '<div>',
+                            '<input type="text" size="2" class="form-control form-control-sm"',
                                 'value="1"',
                                 'name="ridailyinterval"',
                                 'id="${name}dailyinterval" />',
@@ -305,8 +305,8 @@
                         '<label for="${name}weeklyinterval" class="label">',
                             '${i18n.weeklyInterval1}',
                         '</label>',
-                        '<div class="field">',
-                            '<input type="text" size="2"',
+                        '<div>',
+                            '<input type="text" size="2" class="form-control form-control-sm"',
                                 'value="1"',
                                 'name="riweeklyinterval"',
                                 'id="${name}weeklyinterval"/>',
@@ -315,7 +315,7 @@
                     '</div>',
                     '<div id="riweeklyweekdays" class="rifield">',
                         '<label for="${name}weeklyinterval" class="label">${i18n.weeklyWeekdays}</label>',
-                        '<div class="field">',
+                        '<div>',
                             '{{each orderedWeekdays}}',
                                 '<div class="riweeklyweekday">',
                                     '<input type="checkbox"',
@@ -329,8 +329,8 @@
                     '</div>',
                     '<div id="rimonthlyinterval" class="rifield">',
                         '<label for="rimonthlyinterval" class="label">${i18n.monthlyInterval1}</label>',
-                        '<div class="field">',
-                            '<input type="text" size="2"',
+                        '<div>',
+                            '<input type="text" size="2" class="form-control form-control-sm"',
                                 'value="1" ',
                                 'name="rimonthlyinterval"/>',
                             '${i18n.monthlyInterval2}',
@@ -338,7 +338,7 @@
                     '</div>',
                     '<div id="rimonthlyoptions" class="rifield">',
                         '<label for="rimonthlytype" class="label">${i18n.monthlyRepeatOn}</label>',
-                        '<div class="field">',
+                        '<div>',
                             '<div>',
                                 '<input',
                                     'type="radio"',
@@ -383,8 +383,8 @@
                     '</div>',
                     '<div id="riyearlyinterval" class="rifield">',
                         '<label for="riyearlyinterval" class="label">${i18n.yearlyInterval1}</label>',
-                        '<div class="field">',
-                            '<input type="text" size="2"',
+                        '<div>',
+                            '<input type="text" size="2" class="form-control form-control-sm"',
                                 'value="1" ',
                                 'name="riyearlyinterval"/>',
                             '${i18n.yearlyInterval2}',
@@ -392,7 +392,7 @@
                     '</div>',
                     '<div id="riyearlyoptions" class="rifield">',
                         '<label for="riyearlyType" class="label">${i18n.yearlyRepeatOn}</label>',
-                        '<div class="field">',
+                        '<div>',
                             '<div>',
                                 '<input',
                                     'type="radio"',
@@ -450,7 +450,7 @@
                     '</div>',
                     '<div id="rirangeoptions" class="rifield">',
                         '<label class="label">${i18n.range}</label>',
-                        '<div class="field">',
+                        '<div>',
                           '{{if hasRepeatForeverButton}}',
                             '<div>',
                                 '<input',
@@ -704,14 +704,14 @@
                     break;
                 case 'BYENDDATE':
                     field = form.find('input[name=rirangebyenddatecalendar]');
-                    date = field.data('dateinput').getValue('yyyymmdd');
+                    date = field.val();
                     result += ';UNTIL=' + date + 'T000000';
                     if (tz === true) {
                         // Make it UTC:
                         result += 'Z';
                     }
                     human += ', ' + conf.i18n.rangeByEndDateHuman;
-                    human += ' ' + field.data('dateinput').getValue(conf.i18n.longDateFormat);
+                    human += ' ' + field.val();
                     break;
                 }
                 break;
@@ -1069,7 +1069,7 @@
                         month = until.slice(4, 6);
                         month = parseInt(month, 10) - 1;
                         day = until.slice(6, 8);
-                        input.data('dateinput').setValue(new Date(year, month, day));
+                        input[0].valueAsDate = new Date(year, month, day);
                     }
 
                     selectors = field.find('input[name=rirangetype]');
@@ -1169,10 +1169,8 @@
 
         function occurrenceAdd(event) {
             event.preventDefault();
-            var dateinput = form
-                .find('.riaddoccurrence input#adddate')
-                .data('dateinput');
-            var datevalue = dateinput.getValue('yyyymmddT000000');
+            var dateinput = form.find('.riaddoccurrence input#adddate');
+            var datevalue = dateinput[0].valueAsDate;
             if (form.ical.RDATE === undefined) {
                 form.ical.RDATE = [];
             }
@@ -1590,21 +1588,8 @@
         form.overlay(conf.formOverlay).hide();
         form.ical = {RDATE: [], EXDATE: []};
 
-        $.tools.dateinput.localize(conf.lang,  {
-            months:      LABELS[conf.lang].months.join(),
-            shortMonths: LABELS[conf.lang].shortMonths.join(),
-            days:        LABELS[conf.lang].weekdays.join(),
-            shortDays:   LABELS[conf.lang].shortWeekdays.join()
-        });
-
         // Make the date input into a calendar dateinput()
-        form.find('input[name=rirangebyenddatecalendar]').dateinput({
-            selectors: true,
-            lang: conf.lang,
-            format: conf.i18n.shortDateFormat,
-            firstDay: conf.firstDay,
-            yearRange: [-5, 10]
-        }).data('dateinput').setValue(new Date());
+        form.find('input[name=rirangebyenddatecalendar]').val(new Date());
 
         if (textarea.val()) {
             var result = widgetLoadFromRfc5545(form, conf, textarea.val(), false);
@@ -1637,13 +1622,8 @@
         );
 
         // Pop up the little add form when clicking "Add"
-        form.find('div.riaddoccurrence input#adddate').dateinput({
-            selectors: true,
-            lang: conf.lang,
-            format: conf.i18n.shortDateFormat,
-            firstDay: conf.firstDay,
-            yearRange: [-5, 10]
-        }).data('dateinput').setValue(new Date());
+        form.find('div.riaddoccurrence input#adddate').val(new Date());
+
         form.find('input#addaction').click(occurrenceAdd);
 
         // When the reload button is clicked, reload
